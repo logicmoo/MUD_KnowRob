@@ -1,0 +1,348 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix dce: <http://purl.org/dc/elements/1.1/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix ir: <http://www.ontologydesignpatterns.org/cp/owl/informationrealization.owl#>.
+@prefix irw: <http://www.ontologydesignpatterns.org/ont/web/irw.owl#>.
+@prefix agent: <http://eulersharp.sourceforge.net/2003/03swap/agent#>.
+@prefix event: <http://eulersharp.sourceforge.net/2003/03swap/event#>.
+@prefix physical: <http://eulersharp.sourceforge.net/2003/03swap/physicalResource#>.
+@prefix fos: <http://eulersharp.sourceforge.net/2003/03swap/foster#>.
+@prefix quant: <http://eulersharp.sourceforge.net/2003/03swap/quantities#>.
+@prefix human: <http://eulersharp.sourceforge.net/2003/03swap/human#>.
+@prefix doc: <http://eulersharp.sourceforge.net/2003/03swap/document#>.
+
+<http://eulersharp.sourceforge.net/2003/03swap/document>
+	a owl:Ontology;
+	dce:title """Document"""@en;
+	dce:description """Formal general description of document."""@en;
+	dce:creator """Hans Cools, MD, Agfa Healthcare/Belgium"""@en;
+	dce:contributor """Marc Twagirumukiza, MD, PhD, Agfa Healthcare/Belgium ; Until 2010: Pieterjan De Potter, Ghent University - IBBT/ELIS - Multimedia Lab/Belgium"""@en;
+	dce:publisher """Agfa Healthcare/Belgium"""@en;
+	dce:format """OWL-Full"""@en;
+	rdfs:comment """Copyright (c) 2009 Agfa-Gevaert Group and Ghent University - IBBT/ELIS - Multimedia Lab. All Rights Reserved. THIS IS UNPUBLISHED PROPRIETARY SOURCE CODE OF Agfa-Gevaert Group and Ghent University - IBBT/ELIS - Multimedia Lab The copyright notice above does not evidence any actual or intended publication of such source code."""@en;
+	rdfs:seeAlso <http://www.ontologydesignpatterns.org/cp/owl/informationrealization.owl>, <http://www.ontologydesignpatterns.org/ont/web/irw.owl>.
+
+#
+# CLASSES
+#
+
+doc:Content
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/document#>;
+	rdfs:label """content"""@en;
+	skos:definition """See definition of http://www.ontologydesignpatterns.org/ont/web/irw.owl#InformationResource."""@en;
+	rdfs:subClassOf irw:InformationResource.
+
+doc:Document
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/document#>;
+	rdfs:label """document"""@en;
+	skos:definition """See definition of <http://www.ontologydesignpatterns.org/cp/owl/informationrealization.owl#InformationRealization."""@en;
+	rdfs:subClassOf ir:InformationRealization.
+
+doc:Authoring
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/document#>;
+	rdfs:label """authoring"""@en;
+	skos:definition """Taking responsibility for a content."""@en;
+	skos:note """Different from creating a content"""@en;
+	rdfs:subClassOf event:Action, [
+		a owl:Restriction; owl:onProperty event:hasOutputObject; owl:someValuesFrom doc:Content].
+
+doc:Author
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/document#>;
+	rdfs:label """author"""@en;
+	skos:definition """Role of having responsibility for a document."""@en;
+	rdfs:subClassOf human:Role, [
+		a owl:Restriction; owl:onProperty agent:rolePlayedIn; owl:someValuesFrom doc:Authoring].
+
+doc:Report
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/document#>;
+	rdfs:label """report"""@en;
+	skos:definition """Content with focus on information communication."""@en;
+	rdfs:subClassOf doc:Content.
+
+doc:Record
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/document#>;
+	skos:definition """Content with focus on information administration."""@en;
+	rdfs:subClassOf doc:Content.
+
+doc:Letter
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/document#>;
+	rdfs:label """letter"""@en;
+	skos:definition """Directed report."""@en;
+	rdfs:subClassOf doc:Report.
+	
+doc:Summary
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/document#>;
+	rdfs:label """summary report"""@en;
+	skos:definition """Report containing the essentials of something."""@en;
+	rdfs:subClassOf doc:Report.
+
+doc:DigitalContent
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/document#>;
+	rdfs:label """digital content"""@en;
+	skos:definition """Content in electronic form as used by a digital computer."""@en;
+	rdfs:subClassOf doc:Content.
+
+doc:Parent
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/document#>;
+	rdfs:label """parent document"""@en;
+	skos:definition """First grade progenitor of a content."""@en;
+	rdfs:subClassOf doc:Content.
+
+doc:Deprecating
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/document#>;
+	rdfs:label """deprecating"""@en;
+	skos:definition """Marking a content as obsolete to warn against its use so that it may be phased out (www.thefreedictionary.com)."""@en;
+	rdfs:subClassOf [
+		a owl:Restriction; owl:onProperty event:hasObject; owl:someValuesFrom doc:Content], [
+		a owl:Restriction; owl:onProperty event:hasOutput; owl:someValuesFrom doc:Deprecation].
+
+doc:Deprecation
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/document#>;
+	rdfs:label """deprecation"""@en;
+	skos:definition """A content made obsolete to warn against its use so it may be phased out (www.thefreedictionary.com)."""@en;
+	rdfs:subClassOf [
+		a owl:Restriction; owl:onProperty event:outputOf; owl:someValuesFrom doc:Deprecating].
+
+doc:Deprecated
+	a rdfs:Class, event:State;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/document#>;
+	rdfs:label """deprecated"""@en;
+	skos:definition """Marked as obsolete to warn against its use so that it may be phased out (www.thefreedictionary.com)."""@en.
+
+doc:Image
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/document#>;
+	rdfs:label """image"""@en;
+	skos:definition """Content as representation of a physical thing."""@en;
+	rdfs:subClassOf doc:Content.
+
+doc:DataDefinitionOntology
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/document#>;
+	rdfs:label """data definition ontology"""@en;
+	skos:definition """Direct formal representation of a data source structure."""@en;
+	rdfs:comment """E.g. data base table column header as property, data base table as domain class, data base field as range class, data base field value as instance, row as instance graph."""@en;
+	rdfs:subClassOf owl:Ontology, doc:Content.
+
+#
+# PROPERTIES
+#
+
+doc:contains
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/document#>;
+	skos:definition """Specifying content of a document."""@en;
+	rdfs:subPropertyOf ir:realizes;
+	rdfs:domain doc:Document;
+	rdfs:range doc:Content.	
+
+doc:about
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/document#>;
+	skos:definition """Specifying something shown as a visual representation."""@en;
+	rdfs:subPropertyOf event:hasObject;
+	rdfs:domain doc:Content;
+	rdfs:range rdfs:Resource.
+
+doc:reportOf
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/document#>;
+	rdfs:subPropertyOf doc:about;
+	owl:inverseOf doc:hasReport;
+	rdfs:domain doc:Report;
+	rdfs:range rdfs:Resource.
+
+doc:hasReport
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/document#>;
+	rdfs:subPropertyOf doc:about;
+	owl:inverseOf doc:reportOf;
+	rdfs:domain rdfs:Resource;
+	rdfs:range doc:Report .
+
+doc:hasSummary
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/document#>;
+	rdfs:subPropertyOf doc:about;
+	owl:inverseOf doc:summaryOf;
+	rdfs:domain rdfs:Resource;
+	rdfs:range doc:Report .
+
+doc:summaryOf
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/document#>;
+	rdfs:subPropertyOf doc:about;
+	owl:inverseOf doc:hasSummary;
+	rdfs:domain doc:Summary;
+	rdfs:range rdfs:Resource.
+
+doc:hasLanguage
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/document#>;
+	skos:definition """Specifying a language wherein a content is represented."""@en;
+	rdfs:domain doc:Content;
+	rdfs:range fos:Language.
+
+doc:authoredBy
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/document#>;
+	rdfs:domain doc:Content;
+	rdfs:range [a owl:Restriction; owl:onProperty agent:playsRole; owl:someValuesFrom doc:Author].
+
+doc:authenticatedBy
+	a owl:ObjectProperty, owl:FunctionalProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/document#>;
+	rdfs:domain doc:Content;
+	rdfs:range [a owl:Restriction; owl:onProperty agent:playsRole; owl:someValuesFrom agent:Authenticator].
+
+doc:hasHash
+	a rdf:Property;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/document#>;
+	skos:definition """Specifying a hash of a digital content."""@en; # cryptographic hash function
+	rdfs:domain doc:DigitalContent;
+	rdfs:range rdfs:Literal. # hash value: fixed-size bit string
+
+doc:hasSha1Hash
+	a rdf:Property;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/document#>;
+	rdfs:subPropertyOf doc:hasHash;
+	skos:definition """Specifying a RFCC 3174 US Secure Hash Algorithm 1 (SHA1) of a digital content"""@en;
+	rdfs:domain doc:DigitalContent;
+	rdfs:range rdfs:Literal.
+	
+doc:hasMimeType
+	a rdf:Property;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/document#>;
+	skos:definition """Specifying a standard Multipurpose Internet Mail Extensions type of a digital content."""@en;
+	rdfs:domain doc:DigitalContent;
+	rdfs:range rdfs:Literal.
+
+doc:hasDigitalSize
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/document#>;
+	skos:definition """Specifying a digital size of a digital content."""@en;
+	rdfs:domain doc:DigitalContent;
+	rdfs:range quant:DigitalSize.
+
+doc:hasParent
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/document#>;
+	skos:definition """Specifying a parent content of a content."""@en;
+	rdfs:domain doc:Content;
+	rdfs:range doc:Content.
+
+doc:replaces
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/document#>;
+	skos:definition """Specifying a content replaced by another."""@en;
+	rdfs:domain doc:Content;
+	rdfs:range doc:Content.
+	
+doc:addedTo
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/document#>;
+	skos:definition """Specifying a content to which another is added."""@en;
+	rdfs:domain doc:Content;
+	rdfs:range doc:Content.
+	
+doc:transformedTo
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/document#>;
+	skos:definition """Specifying a content transformed to another content."""@en;
+	rdfs:domain doc:Content;
+	rdfs:range doc:Content.
+
+doc:hasTitle
+	a rdf:Property;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/document#>;
+	skos:definition """Specifying a title of a content."""@en;
+	rdfs:subPropertyOf dct:title;
+	rdfs:domain doc:Content;
+	rdfs:range rdfs:Literal.
+
+doc:hasDeprecator
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/document#>;
+	skos:definition """Specifying a deprecator acting in deprecating."""@en;
+	rdfs:domain doc:Deprecating;
+	rdfs:range [a owl:Restriction; owl:onProperty agent:playsRole; owl:someValuesFrom agent:Deprecator].
+
+doc:deprecationOf
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/document#>;
+	skos:definition """Specifying a deprecation of a content."""@en;
+	rdfs:subPropertyOf event:hasObject;
+	rdfs:domain doc:Deprecation;
+	rdfs:range [
+		rdfs:subClassOf doc:Content, [
+			a owl:Restriction; owl:onProperty event:hasState; owl:someValuesFrom doc:Deprecated]].
+
+doc:whereinDeprecated
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/document#>;
+	skos:definition """Specifying a content deprecated in a deprecating."""@en;
+	rdfs:subPropertyOf event:hasOutputObject;
+	rdfs:domain doc:Deprecating;
+	rdfs:range [
+		rdfs:subClassOf doc:Content, [
+			a owl:Restriction; owl:onProperty event:hasState; owl:someValuesFrom doc:Deprecated]].
+
+doc:deprecatedIn
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/document#>;
+	skos:definition """Specifying a deprecating wherein a content is deprecated."""@en;
+	rdfs:subPropertyOf event:outputObjectOf;
+	owl:inverseOf doc:whereinDeprecated;
+	rdfs:domain [
+		rdfs:subClassOf doc:Content, [
+			a owl:Restriction; owl:onProperty event:hasState; owl:someValuesFrom doc:Deprecated]];
+	rdfs:range doc:Deprecating.
+
+doc:deprecates
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/document#>;
+	skos:definition """Specifying a content a deprecator has deprecated."""@en;
+	rdfs:domain [a owl:Restriction; owl:onProperty agent:playsRole; owl:someValuesFrom agent:Deprecator];
+	rdfs:range [
+		rdfs:subClassOf doc:Content, [
+			a owl:Restriction; owl:onProperty event:hasState; owl:someValuesFrom doc:Deprecated]].
+
+doc:deprecatedBy
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/document#>;
+	skos:definition """Specifying a deprecator of a deprecated content."""@en;
+	owl:inverseOf doc:deprecates;
+	rdfs:domain [
+		rdfs:subClassOf doc:Content, [
+			a owl:Restriction; owl:onProperty event:hasState; owl:someValuesFrom doc:Deprecated]];
+	rdfs:range [a owl:Restriction; owl:onProperty agent:playsRole; owl:someValuesFrom agent:Deprecator].
+
+doc:hasDeprecationDateTime
+	a owl:DatatypeProperty, owl:FunctionalProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/document#>;
+	skos:definition """Specifying a point in time of a deprecation of a content."""@en;
+	rdfs:domain doc:Deprecation;
+	rdfs:range xsd:dateTime.
+
+doc:imageOf
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/document#>;
+	rdfs:subPropertyOf doc:about;
+	rdfs:domain doc:Image;
+	rdfs:range physical:Resource.

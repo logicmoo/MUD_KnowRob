@@ -1,0 +1,171 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>
+		<meta name="generator" content="AGFA HealthCare N3 to HTML convertor"/>
+		<link rel="alternate" type="text/n3" title="RDF Representation" href="http://eulersharp.sourceforge.net/2003/03swap/genomeAbnormality"/>
+		<title>genomeAbnormality</title>
+		<style type="text/css">
+			a[href]:link { text-decoration:none; }
+			a[href]:visited { text-decoration:none; }
+			a[href]:active { text-decoration:underline; }
+			a:hover { background:#ffa; }
+			.keyword { font-weight: bold; }
+			.literal { color: blue }
+			.uri { color: darkblue }
+			.qname { color: black }
+			.var { color: gray }
+			.comment { font-style:italic; color: darkgreen }
+		</style>
+	</head>
+	<body>
+	<div>
+		<pre>
+<span class="keyword">@prefix</span> dce: <a class="uri" href="http://purl.org/dc/elements/1.1/">&lt;http://purl.org/dc/elements/1.1/&gt;</a>.
+<span class="keyword">@prefix</span> owl: <a class="uri" href="http://www.w3.org/2002/07/owl">&lt;http://www.w3.org/2002/07/owl#&gt;</a>.
+<span class="keyword">@prefix</span> rdfs: <a class="uri" href="http://www.w3.org/2000/01/rdf-schema">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</a>.
+<span class="keyword">@prefix</span> skos: <a class="uri" href="http://www.w3.org/2004/02/skos/core.html#">&lt;http://www.w3.org/2004/02/skos/core#&gt;</a>.
+<span class="keyword">@prefix</span> event: <a class="uri" href="http://eulersharp.sourceforge.net/2003/03swap/event.html#">&lt;http://eulersharp.sourceforge.net/2003/03swap/event#&gt;</a>.
+<span class="keyword">@prefix</span> organism: <a class="uri" href="http://eulersharp.sourceforge.net/2003/03swap/organism.html#">&lt;http://eulersharp.sourceforge.net/2003/03swap/organism#&gt;</a>.
+<span class="keyword">@prefix</span> genomab: <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/genomeAbnormality#&gt;</a>.
+
+<a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/genomeAbnormality#&gt;</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Ontology</a>;
+	<a class="qname" href="http://purl.org/dc/elements/1.1">dce:title</a> <span class="literal">&quot;&quot;&quot;Genome Abnormality&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://purl.org/dc/elements/1.1">dce:creator</a> <span class="literal">&quot;&quot;&quot;Hans Cools, MD, Agfa Healthcare/Belgium&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://purl.org/dc/elements/1.1">dce:publisher</a> <span class="literal">&quot;&quot;&quot;Agfa Healthcare/Belgium&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://purl.org/dc/elements/1.1">dce:description</a> <span class="literal">&quot;&quot;&quot;Formal general description of genome abnormality.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://purl.org/dc/elements/1.1">dce:format</a> <span class="literal">&quot;&quot;&quot;OWL Full&quot;&quot;&quot;</span>@en.
+
+<span class="comment">#</span>
+<span class="comment"># CLASSES</span>
+<span class="comment">#</span>
+
+<a class="qname" name="GenomeAbnormality">genomab:GenomeAbnormality</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/genomeAbnormality#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;genome abnormality&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Genome different from what is normal for an organism.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/event.html#modificationOf">event:modificationOf</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/organism.html#Genome">organism:Genome</a>].
+
+<a class="qname" name="ChromosomeAbnormality">genomab:ChromosomeAbnormality</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/genomeAbnormality#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;chromosome abnormality&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Chromosome different from what is normal for an organism.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="#GenomeAbnormality">genomab:GenomeAbnormality</a>.
+
+<a class="qname" name="Aneuploidy">genomab:Aneuploidy</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/genomeAbnormality#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;aneuploidy&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Numerical chromosome abnormality.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="#ChromosomeAbnormality">genomab:ChromosomeAbnormality</a>.
+
+<a class="qname" name="ChromosomeMutation">genomab:ChromosomeMutation</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/genomeAbnormality#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;chromosome mutation&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Structural chromosome abnormality.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="#ChromosomeAbnormality">genomab:ChromosomeAbnormality</a>.
+
+<a class="qname" name="SingleChromosomeMutation">genomab:SingleChromosomeMutation</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/genomeAbnormality#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;single chromosome mutation&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Structural abnormality of 1 chromosome.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="#ChromosomeMutation">genomab:ChromosomeMutation</a>.
+
+<a class="qname" name="ChromosomeDeletion">genomab:ChromosomeDeletion</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/genomeAbnormality#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;chromosome deletion&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Loss of part of 1 chromosome.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="#SingleChromosomeMutation">genomab:SingleChromosomeMutation</a>.
+
+<a class="qname" name="ChromosomeDuplication">genomab:ChromosomeDuplication</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/genomeAbnormality#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;chromosome duplication&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Duplication of part of 1 chromosome.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="#SingleChromosomeMutation">genomab:SingleChromosomeMutation</a>.
+
+<a class="qname" name="ChromosomeInversion">genomab:ChromosomeInversion</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/genomeAbnormality#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;chromosome inversion&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Inversion of part of 1 chromosome.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="#SingleChromosomeMutation">genomab:SingleChromosomeMutation</a>.
+
+<a class="qname" name="TwoChromosomeMutation">genomab:TwoChromosomeMutation</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/genomeAbnormality#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;two chromosome mutation&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Structural abnormality of 2 chromosomes.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="#ChromosomeMutation">genomab:ChromosomeMutation</a>.
+
+<a class="qname" name="ChromosomeInsertion">genomab:ChromosomeInsertion</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/genomeAbnormality#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;chromosome insertion&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Part of one chromosome inserted into another chromosome.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="#TwoChromosomeMutation">genomab:TwoChromosomeMutation</a>.
+
+<a class="qname" name="ChromosomeTranslocation">genomab:ChromosomeTranslocation</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/genomeAbnormality#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;chromosome translocation&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;One part of 2 chromosomes exchanged.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="#TwoChromosomeMutation">genomab:TwoChromosomeMutation</a>.
+
+<a class="qname" name="GeneAbnormality">genomab:GeneAbnormality</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/genomeAbnormality#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;gene abnormality&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Gene different from what is normal for an organism.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="#GenomeAbnormality">genomab:GenomeAbnormality</a>.
+
+<a class="qname" name="MonogenicMutation">genomab:MonogenicMutation</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/genomeAbnormality#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;monogenic mutation&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;One gene different from what is normal for an organism.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="#GeneAbnormality">genomab:GeneAbnormality</a>.
+
+<a class="qname" name="PolygenicMutation">genomab:PolygenicMutation</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/genomeAbnormality#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;polygenic mutation&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;More than one gene different from what is normal for an organism.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="#GeneAbnormality">genomab:GeneAbnormality</a>.
+
+<a class="qname" name="Mutated">genomab:Mutated</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>, <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/event.html#State">event:State</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/genomeAbnormality#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;mutated&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;State of chromosome or gene being structurally changed.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/event.html#State">event:State</a>.
+
+<a class="qname" name="Unmutated">genomab:Unmutated</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>, <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/event.html#State">event:State</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/genomeAbnormality#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;unmutated&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;State of chromosome or gene being structurally unchanged.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/event.html#State">event:State</a>.
+
+<span class="comment">#</span>
+<span class="comment"># PROPERTIES</span>
+<span class="comment">#</span>
+
+<span class="comment">#genomab:mutationOf</span>
+<span class="comment">#	a owl:ObjectProperty;</span>
+<span class="comment">#	rdfs:isDefinedBy &lt;http://eulersharp.sourceforge.net/2003/03swap/genomeAbnormality#&gt;;</span>
+<span class="comment">#	rdfs:label &quot;&quot;&quot;mutation of&quot;&quot;&quot;@en;</span>
+<span class="comment">#	skos:definition &quot;&quot;&quot;Specifying a chromosome or gene having a mutation.&quot;&quot;&quot;@en;</span>
+<span class="comment">#	rdfs:domain owl:unionOf (genomab:ChromosomeMutation genomab:GeneAbnormality);</span>
+<span class="comment">#	rdfs:range humana:DNA.</span>
+		</pre>
+	</div>
+	</body>
+</html>

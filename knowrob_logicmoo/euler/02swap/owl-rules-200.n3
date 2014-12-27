@@ -1,0 +1,15 @@
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix math: <http://www.w3.org/2000/10/swap/math#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix : <http://eulersharp.sourceforge.net/2003/03swap/owl-rules-200#>.
+
+
+{?C owl:equivalentClass ?I. ?I owl:intersectionOf ?L. ?L rdf:first ?A. ?X a ?C} => {?X a ?A}.
+{?C owl:equivalentClass ?I. ?I owl:intersectionOf ?L. ?L rdf:rest ?K. ?K rdf:first ?A. ?X a ?C} => {?X a ?A}.
+{?C owl:equivalentClass ?R. ?R owl:onProperty ?P; owl:someValuesFrom ?A. ?X ?P ?Y. ?Y a ?A} => {?X a ?C}.
+{?C owl:equivalentClass ?I. ?I owl:intersectionOf ?L. ?L rdf:first ?A; rdf:rest ?K. ?K rdf:first ?B; rdf:rest rdf:nil. ?X a ?A, ?B} => {?X a ?C}.
+{?C owl:complementOf ?A. ?B owl:complementOf ?A. ?X @has rdf:type ?C} => {?X a ?B}.
+{?C owl:complementOf ?D. ?D owl:equivalentClass ?I. ?I owl:intersectionOf ?L. ?L rdf:first ?A; rdf:rest ?K. ?K rdf:first ?E; rdf:rest rdf:nil. ?E owl:complementOf ?B. ?X a ?C, ?A} => {?X a ?B}.

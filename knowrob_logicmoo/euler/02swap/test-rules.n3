@@ -1,0 +1,123 @@
+# see introspector.readme
+
+@prefix : <http://eulersharp.sourceforge.net/2003/03swap/test#>.
+
+#   Base was: file:/mnt/hda4/development/development2/w3c/2000/10/swap/introspector-test.n3
+
+@prefix dpo:  <http://www.daml.org/2001/03/daml+oil#> .
+@prefix idbl: <http://purl.oclc.org/NET/introspector/2002/11/24/logic/boolean#> .
+@prefix idfn: <http://purl.oclc.org/NET/introspector/2002/11/24/filenames#> .
+@prefix idnm: <http://purl.oclc.org/NET/introspector/2002/11/24/name#> .
+@prefix is:  <http://introspector.sf.net/2003/04/27/introspector#> .
+@prefix is: <http://introspector.sf.net/2003/04/27/introspector#> .
+@prefix isad: <http://purl.oclc.org/NET/introspector/2002/11/24/temp/node-addresses#>.
+@prefix isbl: <http://purl.oclc.org/NET/introspector/2002/11/24/logic/boolean#> .
+@prefix isfl: <http://purl.oclc.org/NET/introspector/2002/11/24/gcc/node_fields#> .
+@prefix isfn: <http://purl.oclc.org/NET/introspector/2002/11/24/filenames#> .
+@prefix isid: <http://purl.oclc.org/NET/introspector/2002/11/24/temp/node-ids#> .
+@prefix isnf: <http://purl.oclc.org/NET/introspector/2002/11/24/gcc/node_types#> .
+@prefix isnm: <http://purl.oclc.org/NET/introspector/2002/11/24/gcc/node_modifiers#> .
+@prefix isnt: <http://purl.oclc.org/NET/introspector/2002/11/24/gcc/node_types#> .
+@prefix log: <http://www.w3.org/2000/10/swap/log#> .
+@prefix math: <http://www.w3.org/2000/10/swap/math#> .
+@prefix neg: <http://www.agfa.com/w3c/euler/negation#> .
+@prefix ns: <http://www.agfa.com/w3c/euler/owl-rules#> .
+@prefix nsns: <http://www.agfa.com/w3c/euler/rdfs-rules#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix s: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix str: <http://www.w3.org/2000/10/swap/string#> .
+@prefix string:  <http://www.w3.org/2000/10/swap/string#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# this is the ruleset for the introspector project.
+
+# these two can be defined using standard dc rdf predicates.
+# source of the data.
+# author of the data.
+
+{ isid:someFunction isfl:prms  isid:someList .
+  isid:moreList isfl:chan isid:evenMoreList.
+  isid:moreList isfl:valu isid:someListValue.
+} .
+
+# no more
+isid:someList isfl:chan [ isfl:node_type isnt:tree_list; isfl:node-id   isid:EndOfList].
+
+# more
+isid:someList isfl:chan [ isfl:chan isid:evenMoreList ; isfl:node-id isid:moreList ] .
+
+
+isfl:chan 
+	a owl:SymmetricProperty;
+	a owl:TransitiveProperty;
+	rdfs:domain owl:Thing; 
+	rdfs:range owl:Thing.
+
+isfl:prms 
+	a owl:TransitiveProperty;
+	a owl:SymmetricProperty.
+
+isfl:args 
+	a owl:TransitiveProperty;
+	a owl:SymmetricProperty.
+
+isfl:dcls a rdf:Property.
+#	a owl:SymmetricProperty;
+#	a owl:TransitiveProperty.
+
+isnt:type_decl a s:Class;
+    s:label "a type_decl is a type declation in the c language";
+    s:comment """Type declarations are important structures in the compiler to manage the complexity of types. """.
+
+isnt:namespace_decl a s:Class;
+    s:label "a namespace_decl is a large object that contains identifiers";
+    s:comment """Namespaces are an idea from c++. """.
+
+#isfl:dcls a rdf:Property; s:label "Declarations";
+#    s:comment """The list of declarations in the namespace_decl""";
+#    a dpo:UniqueProperty;
+#    s:domain string:String;
+#    s:range string:String.
+
+isfl:filename a rdf:Property; s:label "FileName";
+    s:comment """The filename of the declaration""";
+    a dpo:UniqueProperty;
+    s:domain string:String;
+    s:range string:String.
+
+isfl:name a rdf:Property; s:label "Name";
+    s:comment """The name (identifer_node|typedecl) of the declaration""";
+    a dpo:UniqueProperty.
+#    s:domain string:String;
+#    s:range string:String.
+
+
+isfl:nstrng a rdf:Property; 
+    s:label "The named string";
+    s:comment """this is a named string""";
+    a dpo:UniqueProperty;
+#    s:domain string:String;
+    s:range string:String.
+
+#isfl:valu rdfs:subClassOf owl:SymmetricProperty.
+#isfl:chan rdf:type rdf:List .
+#isfl:prms rdf:type rdf:List .
+#isfl:valu a rdf:Property;
+#	s:label "the value in a list of the item";
+#	s:comment "this can be a Parameter in a parameter list.";
+#	a rdf:List.
+#	s:domain s:Class;
+#    	s:range is:Declaration.
+
+#	nota dpo:UniqueProperty.
+
+
+{?X isfl:chan ?O } => {?O isfl:chan ?X}.
+{?X isfl:chan ?O. ?S isfl:chan ?X} => {?S isfl:chan ?O}.
+
+#{?X isfl:args ?O } => {?O isfl:args ?X}.
+#{?X isfl:args ?O. ?S isfl:args ?X} => {?S isfl:args ?O}.
+
+isid:someNode isfl:node_type isnt:SomeNodeType .

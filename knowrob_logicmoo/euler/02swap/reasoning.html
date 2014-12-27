@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>Reasoning</title>
+    <link rel="stylesheet" href="style.css" type="text/css"/>
+    <style type="text/css">a:hover {background:#ffa;}</style>
+</head>
+
+<body>
+<h1>Reasoning is grounded in First Order Logic - What is Logic?</h1>
+
+<p>Logic is stable and universal, and is identified with classical first order
+logic. Other logics are here considered to be first order theories,
+syntactically sugared in notationally convenient forms. From this point of
+view higher order logic is essentially first order set theory.</p>
+
+<p>The most natural, intuitive and fruitful approach turned out to be the
+axiomatization, in the predicate calculus notation, of the concept of a set.
+Once this was done the way was cleared for a proper semantic foundation to
+be given to FOL itself. The rigorous mathematical concept of an interpretation,
+
+and of the denotation of a formula within an interpretation, was introduced by
+Alfred Tarski, who thus completed, in 1929, the fundamentals of the semantics
+of FOL.</p>
+
+<p>The notion of logical consequence could now be defined by saying that a
+sentence S logically follows from a sentence P if there is no interpretation
+in which P is true and S is false.</p>
+
+<p>This now made it possible to raise the following fundamental question about FOL:
+is the following Completeness Theorem provable: for all sentences S and P, S is
+
+formally derivable from P if and only if S logically follows from P?</p>
+
+<p>The question was soon positively answered, independently, in their respective
+doctoral theses, by two graduate students. Kurt Gödel received his degree on
+February 6, 1930 at the University of Vienna, aged 23, and Jacques Herbrand
+received his at the Sorbonne on 11 June, 1930, aged 22.</p>
+
+<p>The theorem is so important because the property of formal derivability is
+semidecidable: there is an algorithm by means of which, if a sentence S is in fact
+formally derivable from a sentence P, then this fact can be mechanically detected.
+
+Indeed, the detection procedure is usually organized in such a way that the
+detection consists of actually constructing a derivation of S from P. In other
+words, when looked at semantically, the syntactic detection algorithm becomes a
+proof procedure.</p>
+
+<p>Turing's 1936 paper on Hilbert's Decision Problem was crucial. Ostensibly it
+was yet another attempt to characterize with mathematical precision the concept
+of computability, which he needed to do in order to show that there is no fixed
+computation procedure by means of which every definite mathematical assertion
+
+can be decided (determined to be true or determined to be false).</p>
+
+<p>Alonzo Church independently reached the same result at essentially the same time,
+using his own quite different computational theory of lambda-definability.
+In either form, its significance for computational logic is that it proved the
+impossibility of a decision procedure for FOL. The semidecision procedure
+reflecting the deductive completeness of FOL is all there is, and we have to be
+content to work with that.</p>
+
+<p>&#45;&#45; John Alan Robinson</p>
+
+<p>'''Logic'''</p>
+
+<p>&nbsp; There are a number of ways of approaching the issues, but for purposes here a
+&nbsp; &#42;logic&#42; can be thought of as a (typically rather large and inclusive) family of
+&nbsp; formal languages together with a semantic theory for those languages.</p>
+
+<p>'''Semantic Theory'''</p>
+
+<p>&nbsp; A &#42;semantic theory&#42; for a class of languages is simply a systematic method of
+&nbsp; assigning semantic values to the members of the various syntactic categories of
+&nbsp; those languages.
+&nbsp; The Semantic Web model distinguishes properties and classes considered as
+&nbsp; objects from their extensions - the sets of object-value pairs which satisfy
+
+&nbsp; the property, or things that are 'in' the class - thereby allowing the extension
+&nbsp; of a property or class to contain the property or class itself without violating
+&nbsp; the axiom of foundation.</p>
+
+<p>'''Interpretation'''</p>
+
+<p>&nbsp; An application of a semantic theory to a particular language yields an
+&nbsp; &#42;interpretation&#42; of the language, i.e., an assignment of appropriate semantic
+
+&nbsp; values to the basic lexical items of the language. Appropriate semantic values
+&nbsp; are then assigned by the theory to complex syntactic constructions of the
+&nbsp; language &#45;&#45; notably, truth and falsity to sentences &#45;&#45; recursively in terms of
+&nbsp; the semantic values of their component parts.</p>
+
+<p>'''First Order Logic'''</p>
+
+<p>&nbsp; What makes a logic &#42;first-order&#42; is a fairly technical matter, but it consists
+&nbsp; essentially in the possession of two semantic properties, compactness and the
+&nbsp; downward Löwenheim-Skolem property. These properties are critically connected
+&nbsp; to the fact that FOL is &#42;complete*, that is, that it is possible to &#42;axiomatize&#42;
+
+&nbsp; logical consequence, i.e., the fundamental logical relation that holds between
+&nbsp; a set S of sentences and a given sentence A when any interpretation that makes
+&nbsp; all the members of S true also makes A true. It is (among other things)
+&nbsp; completeness that makes FOL so important to automated reasoning, as it means
+&nbsp; that, whenever A is a logical consequence of S in a first-order logic, there is
+&nbsp; actually a &#42;proof&#42; of A from some (finite) subset of S. (Alas, finding that
+
+&nbsp; proof is another kettle of fish entirely, which is why we have more constrained,
+&nbsp; less expressive logics like description logics and their ilk.)</p>
+
+<p>ps: Re compactness and the downward L-S property, for those who might be
+interested: Say that a set S of sentences of a logic is &#42;satisfiable&#42; if there
+is &#42;model&#42; of S, that is, an interpretation of the language of the logic in which
+
+all the members of S are true, and that S is &#42;unsatisfiable&#42; if it is not
+satisfiable. Compactness says, roughly, that unsatisfiability is in a certain
+sense a finite property; more exactly, compactness says that if a set S of
+sentences is unsatisfiable, then some finite subset of S is as well.
+From the compactness of FOL follows the very interesting fact that FOL is
+incapable of expressing the concept of finitude.</p>
+
+<p>The downward L-S property says, roughly, that it is not possible to force all of
+
+the models of any set of sentences to be larger than the set N of natural numbers;
+more exactly, a logic has the downward L-S property if, whenever, a set of
+sentences has an infinite model of any size, it also has a model the size of N.</p>
+
+<p>The characterization of first-order logic in terms of compactness and the
+downward L-S property is known as Lindström's Theorem.</p>
+
+<p>&#45;&#45; Pat Hayes</p>
+   
+</body>
+</html>
+

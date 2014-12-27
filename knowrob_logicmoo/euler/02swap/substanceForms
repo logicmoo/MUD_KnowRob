@@ -1,0 +1,35 @@
+@prefix dce: <http://purl.org/dc/elements/1.1/>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix state: <http://sweet.jpl.nasa.gov/2.3/statePhysical.owl#>.
+@prefix rela: <http://sweet.jpl.nasa.gov/2.3/rela.owl#>.
+@prefix physical: <http://eulersharp.sourceforge.net/2003/03swap/physicalResource#>.
+@prefix subfor: <http://eulersharp.sourceforge.net/2003/03swap/substanceForms#>.
+
+<http://eulersharp.sourceforge.net/2003/03swap/substanceForms#>
+	a owl:Ontology;
+	dce:title """Substance Forms"""@en;
+	dce:creator """Hans Cools, MD; Agfa Healthcare, Belgium"""@en;
+	dce:publisher """Agfa Healthcare/Belgium"""@en;
+	dce:description """Formal description of substance forms."""@en;
+	dce:format """OWL Full"""@en.
+
+#
+# CLASSES
+#	
+
+subfor:GranularSubstance
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/substanceForms#>;
+	rdfs:label """granular substance"""@en;
+	skos:definition """Conglomeration of discrete solid, macroscopic particles characterized by a loss of energy whenever the particles interact. The most common example would be friction when grains collide."""@en;
+	rdfs:subClassOf physical:Resource;
+	rela:hasState state:Solid.
+
+subfor:Powder
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/substanceForms#>;
+	rdfs:label """powder"""@en;
+	skos:definition """Bulk solid composed of a large number of very fine particles that may flow freely when shaken or tilted."""@en;
+	rdfs:subClassOf subfor:GranularSubstance.

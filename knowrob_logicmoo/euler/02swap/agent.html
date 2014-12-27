@@ -1,0 +1,561 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>
+		<meta name="generator" content="AGFA HealthCare N3 to HTML convertor"/>
+		<link rel="alternate" type="text/n3" title="RDF Representation" href="http://eulersharp.sourceforge.net/2003/03swap/agent"/>
+		<title>agent</title>
+		<style type="text/css">
+			a[href]:link { text-decoration:none; }
+			a[href]:visited { text-decoration:none; }
+			a[href]:active { text-decoration:underline; }
+			a:hover { background:#ffa; }
+			.keyword { font-weight: bold; }
+			.literal { color: blue }
+			.uri { color: darkblue }
+			.qname { color: black }
+			.var { color: gray }
+			.comment { font-style:italic; color: darkgreen }
+		</style>
+	</head>
+	<body>
+	<div>
+		<pre>
+<span class="keyword">@prefix</span> rdf: <a class="uri" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</a>.
+<span class="keyword">@prefix</span> rdfs: <a class="uri" href="http://www.w3.org/2000/01/rdf-schema">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</a>.
+<span class="keyword">@prefix</span> owl: <a class="uri" href="http://www.w3.org/2002/07/owl">&lt;http://www.w3.org/2002/07/owl#&gt;</a>.
+<span class="keyword">@prefix</span> xsd: <a class="uri" href="http://www.w3.org/2001/XMLSchema">&lt;http://www.w3.org/2001/XMLSchema#&gt;</a>.
+<span class="keyword">@prefix</span> skos: <a class="uri" href="http://www.w3.org/2004/02/skos/core.html#">&lt;http://www.w3.org/2004/02/skos/core#&gt;</a>.
+<span class="keyword">@prefix</span> dce: <a class="uri" href="http://purl.org/dc/elements/1.1/">&lt;http://purl.org/dc/elements/1.1/&gt;</a>.
+<span class="keyword">@prefix</span> con: <a class="uri" href="http://www.w3.org/2000/10/swap/pim/contact">&lt;http://www.w3.org/2000/10/swap/pim/contact#&gt;</a>.
+<span class="keyword">@prefix</span> foaf: <a class="uri" href="http://xmlns.com/foaf/0.1/">&lt;http://xmlns.com/foaf/0.1/&gt;</a>.
+<span class="keyword">@prefix</span> doc: <a class="uri" href="http://eulersharp.sourceforge.net/2003/03swap/document.html#">&lt;http://eulersharp.sourceforge.net/2003/03swap/document#&gt;</a>.
+<span class="keyword">@prefix</span> event: <a class="uri" href="http://eulersharp.sourceforge.net/2003/03swap/event.html#">&lt;http://eulersharp.sourceforge.net/2003/03swap/event#&gt;</a>.
+<span class="keyword">@prefix</span> fos: <a class="uri" href="http://eulersharp.sourceforge.net/2003/03swap/foster.html#">&lt;http://eulersharp.sourceforge.net/2003/03swap/foster#&gt;</a>.
+<span class="keyword">@prefix</span> physical: <a class="uri" href="http://eulersharp.sourceforge.net/2003/03swap/physicalResource.html#">&lt;http://eulersharp.sourceforge.net/2003/03swap/physicalResource#&gt;</a>.
+<span class="keyword">@prefix</span> agent: <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/agent#&gt;</a>.
+<span class="keyword">@prefix</span> human: <a class="uri" href="http://eulersharp.sourceforge.net/2003/03swap/human.html#">&lt;http://eulersharp.sourceforge.net/2003/03swap/human#&gt;</a>.
+<span class="keyword">@prefix</span> organism: <a class="uri" href="http://eulersharp.sourceforge.net/2003/03swap/organism.html#">&lt;http://eulersharp.sourceforge.net/2003/03swap/organism#&gt;</a>.
+
+<a class="uri" href="http://eulersharp.sourceforge.net/2003/03swap/agent.html">&lt;http://eulersharp.sourceforge.net/2003/03swap/agent&gt;</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Ontology</a>;
+	<a class="qname" href="http://purl.org/dc/elements/1.1">dce:title</a> <span class="literal">&quot;&quot;&quot;Agent&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://purl.org/dc/elements/1.1">dce:creator</a> <span class="literal">&quot;&quot;&quot;Hans Cools, MD, Agfa Healthcare/Belgium&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://purl.org/dc/elements/1.1">dce:contributor</a> <span class="literal">&quot;&quot;&quot;Marc Twagirumukiza, MD, PhD, Agfa Healthcare/Belgium; Until 2010: Pieterjan De Potter, Pedro Debevere, Ghent University - IBBT/ELIS - Multimedia Lab/Belgium&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://purl.org/dc/elements/1.1">dce:publisher</a> <span class="literal">&quot;&quot;&quot;Agfa Healthcare/Belgium&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://purl.org/dc/elements/1.1">dce:description</a> <span class="literal">&quot;&quot;&quot;Formal general description of agents and the roles they can play.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://purl.org/dc/elements/1.1">dce:source</a> <span class="literal">&quot;&quot;&quot;http://www.artint.info/html/ArtInt_34.html&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://purl.org/dc/elements/1.1">dce:format</a> <span class="literal">&quot;&quot;&quot;OWL Full&quot;&quot;&quot;</span>@en.
+
+<span class="comment">#</span>
+<span class="comment"># CLASSES</span>
+<span class="comment">#</span>
+
+<a class="qname" name="PurposiveAgent">agent:PurposiveAgent</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/agent#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;purposive agent&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Agent having preference of some state of the environment and acting to try to achieve most preferred state.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="http://xmlns.com/foaf/0.1">foaf:Agent</a>.
+
+<a class="qname" name="Group">agent:Group</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/agent#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;group of agents&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Group of agents.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/foster.html#Group">fos:Group</a>, <a class="qname" href="http://xmlns.com/foaf/0.1">foaf:Group</a>.
+
+<a class="qname" name="Community">agent:Community</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/agent#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;community&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Group of agents of which the members have something in common.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="#Group">agent:Group</a>.
+
+<a class="qname" name="Descendant">agent:Descendant</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/agent#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;descendant&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Something deriving in appearance, function, or general character from an earlier form.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="http://xmlns.com/foaf/0.1">foaf:Agent</a>, [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="#hasAscendant">agent:hasAscendant</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:minCardinality</a> <span class="literal">&quot;1&quot;</span>^^<a class="qname" href="http://www.w3.org/2001/XMLSchema">xsd:nonNegativeInteger</a>].
+
+<a class="qname" name="Offspring">agent:Offspring</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/agent#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;offspring&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;A descendant group of any kind of something.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="#Group">agent:Group</a>, [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://xmlns.com/foaf/0.1">foaf:member</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:allValuesFrom</a> <a class="qname" href="#Descendant">agent:Descendant</a>].
+
+<a class="qname" name="Ascendant">agent:Ascendant</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/agent#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;ascendant&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;An earlier form in appearance, function, or general character of something.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="#hasDescendant">agent:hasDescendant</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:minCardinality</a> <span class="literal">&quot;1&quot;</span>^^<a class="qname" href="http://www.w3.org/2001/XMLSchema">xsd:nonNegativeInteger</a>].
+
+<a class="qname" name="Ancestry">agent:Ancestry</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/agent#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;ancestry&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;An ascendant group of any kind of something.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="#Group">agent:Group</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://xmlns.com/foaf/0.1">foaf:member</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="#Ascendant">agent:Ascendant</a>].
+
+<a class="qname" name="Parent">agent:Parent</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/agent#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;parent&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;A first grade ascendant of something.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="#Ascendant">agent:Ascendant</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="#hasChild">agent:hasChild</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:minCardinality</a> <span class="literal">&quot;1&quot;</span>^^<a class="qname" href="http://www.w3.org/2001/XMLSchema">xsd:nonNegativeInteger</a>].
+
+<a class="qname" name="Child">agent:Child</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/agent#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;child&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;A first grade descendant of something.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="#Descendant">agent:Descendant</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="#hasParent">agent:hasParent</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:minCardinality</a> <span class="literal">&quot;1&quot;</span>^^<a class="qname" href="http://www.w3.org/2001/XMLSchema">xsd:nonNegativeInteger</a>].
+
+<a class="qname" name="MaritalStatus">agent:MaritalStatus</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/agent#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;marital status&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;the social and/or juridical status of being married or unmarried. &quot;&quot;&quot;</span>@en.
+
+<a class="qname" name="Machine">agent:Machine</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/agent#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;machine&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;A device using energy to perform an action.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="http://xmlns.com/foaf/0.1">foaf:Agent</a>, <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/physicalResource.html#Device">physical:Device</a>, <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/physicalResource.html#Product">physical:Product</a>.
+
+<a class="qname" name="Role">agent:Role</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/agent#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;role&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Specific function of an agent.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2002/07/owl">owl:disjointWith</a> <a class="qname" href="http://xmlns.com/foaf/0.1">foaf:Agent</a>.
+
+<a class="qname" name="GroupRole">agent:GroupRole</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/agent#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;group role&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Specific function of a group.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="#Role">agent:Role</a>, [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="#rolePlayedBy">agent:rolePlayedBy</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:allValuesFrom</a> <a class="qname" href="#Group">agent:Group</a>].
+
+<a class="qname" name="OrganizationRole">agent:OrganizationRole</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/agent#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;organization role&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Specific function of an organization.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#note">skos:note</a> <span class="literal">&quot;&quot;&quot;An organization can be a legal person.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="#Role">agent:Role</a>, [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="#rolePlayedBy">agent:rolePlayedBy</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:allValuesFrom</a> <a class="qname" href="http://xmlns.com/foaf/0.1">foaf:Organization</a>].
+
+<a class="qname" name="MachineRole">agent:MachineRole</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/agent#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;machine role&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Specific function of a machine.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="#Role">agent:Role</a>, [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="#rolePlayedBy">agent:rolePlayedBy</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:allValuesFrom</a> <a class="qname" href="#Machine">agent:Machine</a>].
+
+<a class="qname" name="Ability">agent:Ability</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/agent#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;ability&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Being able to do something.&quot;&quot;&quot;</span>@en.
+
+<a class="qname" name="User">agent:User</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/agent#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;user&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Role of putting something into service or applying for a purpose.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="#Role">agent:Role</a>.
+
+<a class="qname" name="UserCredential">agent:UserCredential</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/agent#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;user credential&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Convincible information as input to get user access, e.g. to a digital multiuser computer system.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/event.html#Input">event:Input</a>.
+
+<a class="qname" name="Examinator">agent:Examinator</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/agent#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;examinator&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Role of an agent examining something.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="#Role">agent:Role</a>, [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="#rolePlayedBy">agent:rolePlayedBy</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> [
+			<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="#actsIn">agent:actsIn</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/event.html#Examining">event:Examining</a>]].
+
+<a class="qname" name="Evaluator">agent:Evaluator</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/agent#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;evaluator&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Role of an agent evaluating something.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="#Role">agent:Role</a>, [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="#rolePlayedIn">agent:rolePlayedIn</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/event.html#Evaluating">event:Evaluating</a>].
+
+<a class="qname" name="Creator">agent:Creator</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/agent#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;creator&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Role of an agent creating something.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="#Role">agent:Role</a>, [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="#rolePlayedIn">agent:rolePlayedIn</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/event.html#Creating">event:Creating</a>].
+
+<a class="qname" name="Modifier">agent:Modifier</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/agent#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;modifier&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Role of an agent changing something.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="#Role">agent:Role</a>, [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="#rolePlayedIn">agent:rolePlayedIn</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/event.html#Modifying">event:Modifying</a>].
+
+<a class="qname" name="Completor">agent:Completor</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/agent#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;completor&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Role of an agent completing something.&quot;&quot;&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="#Role">agent:Role</a>, [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="#rolePlayedIn">agent:rolePlayedIn</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/event.html#Completing">event:Completing</a>].
+
+<a class="qname" name="Validator">agent:Validator</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/agent#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;validator&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Role of an agent validating something.&quot;&quot;&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="#Role">agent:Role</a>, [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="#rolePlayedIn">agent:rolePlayedIn</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/event.html#Validating">event:Validating</a>].
+
+<a class="qname" name="Submittor">agent:Submittor</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/agent#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;submittor&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Role of an agent submitting something.&quot;&quot;&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="#Role">agent:Role</a>, [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="#rolePlayedIn">agent:rolePlayedIn</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/event.html#Submitting">event:Submitting</a>].
+
+<a class="qname" name="Authenticator">agent:Authenticator</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/agent#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;authenticator&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Role of an agent authenticating something.&quot;&quot;&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="#Role">agent:Role</a>, [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="#rolePlayedIn">agent:rolePlayedIn</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/event.html#Authenticating">event:Authenticating</a>].
+
+<a class="qname" name="LegalAuthenticator">agent:LegalAuthenticator</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/agent#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;legal authenticator&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Role of an agent legally authenticating something.&quot;&quot;&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="#Authenticator">agent:Authenticator</a>, [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="#rolePlayedIn">agent:rolePlayedIn</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/event.html#LegalAuthenticating">event:LegalAuthenticating</a>].
+
+<a class="qname" name="Monitor">agent:Monitor</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/agent#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;monitor&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Role of an agent observing something to detect something.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="#Role">agent:Role</a>.
+
+<a class="qname" name="Donor">agent:Donor</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/agent#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;donor&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Role of an agent giving something.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="#Role">agent:Role</a>.
+
+<a class="qname" name="Sender">agent:Sender</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/agent#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;sender&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Role of agent sending something.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="#Donor">agent:Donor</a>.
+	
+<a class="qname" name="Messenger">agent:Messenger</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/agent#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;messenger&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Role of an agent sending a message.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="#Sender">agent:Sender</a>.
+
+<a class="qname" name="Recipient">agent:Recipient</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/agent#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;recipient&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Role of an agent receiving something.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="#Role">agent:Role</a>.
+
+<a class="qname" name="Sponsor">agent:Sponsor</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/agent#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;sponsor&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Role of an agent sponsoring something.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="#Role">agent:Role</a>.
+
+<a class="qname" name="Deprecator">agent:Deprecator</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/agent#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;deprecator&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Role of agent marking a digital document as obsolete to warn against its use so that it may be phased out (www.thefreedictionary.com).&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="#rolePlayedIn">agent:rolePlayedIn</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:allValuesFrom</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/document.html#Deprecating">doc:Deprecating</a>].
+
+<a class="qname" name="DrugSubstance">agent:DrugSubstance</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/agent#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;drug substance&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Substance, when absorbed into an organism, alters its functioning.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/physicalResource.html#Resource">physical:Resource</a>, <a class="qname" href="http://xmlns.com/foaf/0.1">foaf:Agent</a>.
+
+<a class="qname" name="WeighingDevice">agent:WeighingDevice</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/agent#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;weighing device&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Device to measure the weight of a physical resource.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/physicalResource.html#Device">physical:Device</a>.
+
+<span class="comment">#</span>
+<span class="comment"># PROPERTIES</span>
+<span class="comment">#</span>
+
+<a class="qname" name="actsIn">agent:actsIn</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:ObjectProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/agent#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Specifying an action an agent is involved in.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://xmlns.com/foaf/0.1">foaf:Agent</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/event.html#Action">event:Action</a>.
+
+<a class="qname" name="hasAgent">agent:hasAgent</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:ObjectProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/agent#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Specifying an agent involved in an action.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2002/07/owl">owl:inverseOf</a> <a class="qname" href="#actsIn">agent:actsIn</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/event.html#Action">event:Action</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://xmlns.com/foaf/0.1">foaf:Agent</a>.
+
+<a class="qname" name="actsBefore">agent:actsBefore</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:ObjectProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/agent#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Specifying an agent acting before another agent in a same action.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2002/07/owl">owl:PropertyChainAxiom</a> (<a class="qname" href="#actsIn">agent:actsIn</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/event.html#before">event:before</a> <a class="qname" href="#hasAgent">agent:hasAgent</a>);
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://xmlns.com/foaf/0.1">foaf:Agent</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://xmlns.com/foaf/0.1">foaf:Agent</a>.
+
+<a class="qname" name="actsAfter">agent:actsAfter</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:ObjectProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/agent#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Specifying an agent acting after another agent in a same action.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2002/07/owl">owl:PropertyChainAxiom</a> (<a class="qname" href="#actsIn">agent:actsIn</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/event.html#after">event:after</a> <a class="qname" href="#hasAgent">agent:hasAgent</a>);
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://xmlns.com/foaf/0.1">foaf:Agent</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://xmlns.com/foaf/0.1">foaf:Agent</a>.
+
+<a class="qname" name="playsRole">agent:playsRole</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:ObjectProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/agent#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Specifying a role an agent plays.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://xmlns.com/foaf/0.1">foaf:Agent</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="#Role">agent:Role</a>.
+	
+<a class="qname" name="rolePlayedBy">agent:rolePlayedBy</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:ObjectProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/agent#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Specifying an agent playing a role.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2002/07/owl">owl:inverseOf</a> <a class="qname" href="#playsRole">agent:playsRole</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="#Role">agent:Role</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://xmlns.com/foaf/0.1">foaf:Agent</a>.
+
+<a class="qname" name="hasPlayedRole">agent:hasPlayedRole</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:ObjectProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/agent#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Specifying a role played in an action.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/event.html#Action">event:Action</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="#Role">agent:Role</a>;
+	<a class="qname" href="http://www.w3.org/2002/07/owl">owl:PropertyChainAxiom</a> (<a class="qname" href="#hasAgent">agent:hasAgent</a> <a class="qname" href="#playsRole">agent:playsRole</a>).
+
+<a class="qname" name="rolePlayedIn">agent:rolePlayedIn</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:ObjectProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/agent#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Specifying an action a role is played in.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2002/07/owl">owl:inverseOf</a> <a class="qname" href="#hasPlayedRole">agent:hasPlayedRole</a>;
+	<a class="qname" href="http://www.w3.org/2002/07/owl">owl:PropertyChainAxiom</a> (<a class="qname" href="#rolePlayedBy">agent:rolePlayedBy</a> <a class="qname" href="#actsIn">agent:actsIn</a>).
+
+<a class="qname" name="hasDonor">agent:hasDonor</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:ObjectProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/agent#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Specifying a donor in a transfer of something.&quot;&quot;&quot;</span>@en;
+	<span class="comment">#rdfs:subPropertyOf agent:hasPlayedRole;</span>
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/event.html#Transferring">event:Transferring</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> [<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="#playsRole">agent:playsRole</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="#Donor">agent:Donor</a>].
+
+<a class="qname" name="hasRecipient">agent:hasRecipient</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:ObjectProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/agent#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Specifying a recipient in a transfer of something.&quot;&quot;&quot;</span>@en;
+	<span class="comment">#rdfs:subPropertyOf agent:hasPlayedRole;</span>
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/event.html#Transferring">event:Transferring</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> [<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="#playsRole">agent:playsRole</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="#Recipient">agent:Recipient</a>].
+
+<a class="qname" name="recipientIn">agent:recipientIn</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:ObjectProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/agent#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Specifying a transfer for a recipient of something.&quot;&quot;&quot;</span>@en;
+	<span class="comment">#rdfs:subPropertyOf agent:rolePlayedIn;</span>
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> [<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="#playsRole">agent:playsRole</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="#Recipient">agent:Recipient</a>];
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/event.html#Transferring">event:Transferring</a>.
+
+<a class="qname" name="memberOf">agent:memberOf</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:ObjectProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/agent#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Specifying a group an agent is a member of.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subPropertyOf</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/foster.html#memberOf">fos:memberOf</a>;
+	<a class="qname" href="http://www.w3.org/2002/07/owl">owl:inverseOf</a> <a class="qname" href="http://xmlns.com/foaf/0.1">foaf:member</a>.
+
+<a class="qname" name="interactsWith">agent:interactsWith</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:ObjectProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/agent#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Specifying an agent interacting with another agent in a sense that it changes the outcome of the action compared to one with the other agent alone.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#note">skos:note</a> <span class="literal">&quot;&quot;&quot;Not limited to direct interaction between 2 agents.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://xmlns.com/foaf/0.1">foaf:Agent</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://xmlns.com/foaf/0.1">foaf:Agent</a>.
+
+<a class="qname" name="hasAbility">agent:hasAbility</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:ObjectProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/agent#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Specifying an ability of an agent.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://xmlns.com/foaf/0.1">foaf:Agent</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="#Ability">agent:Ability</a>.
+
+<a class="qname" name="abilityOf">agent:abilityOf</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:ObjectProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/agent#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Specifying an agent having an ability.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2002/07/owl">owl:inverseOf</a> <a class="qname" href="#hasAbility">agent:hasAbility</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="#Ability">agent:Ability</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://xmlns.com/foaf/0.1">foaf:Agent</a>.
+
+<a class="qname" name="hasResidence">agent:hasResidence</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:ObjectProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/agent#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Specifying a place wherein an agent with a certain role resides and can be contacted.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://xmlns.com/foaf/0.1">foaf:Agent</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://www.w3.org/2000/10/swap/pim/contact">con:ContactLocation</a>.
+	<span class="comment"># also for other roles than that of persons (con:home etc) and organisations (orgion:hasSeat)</span>
+	<span class="comment"># con:home not rdfs:subPropertyOf agent:hasResidence because rdfs:domain con:Person, which is not a subclass of foaf:Agent.</span>
+
+<a class="qname" name="hasDescendant">agent:hasDescendant</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:ObjectProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/agent#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Specifying any descendant of an ascendant.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="#Ascendant">agent:Ascendant</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="#Descendant">agent:Descendant</a>.
+
+<a class="qname" name="hasOffspring">agent:hasOffspring</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:ObjectProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/agent#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Specifying a descendant group of an ascendant.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="#Ascendant">agent:Ascendant</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="#Offspring">agent:Offspring</a>.
+
+<a class="qname" name="hasAscendant">agent:hasAscendant</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:ObjectProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/agent#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Specifying any ascendant of a descendant.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="#Descendant">agent:Descendant</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="#Ascendant">agent:Ascendant</a>.
+
+<a class="qname" name="hasAncestry">agent:hasAncestry</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:ObjectProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/agent#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Specifying a ascendant group of a descendant.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="#Descendant">agent:Descendant</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="#Ancestry">agent:Ancestry</a>.
+
+<a class="qname" name="hasChild">agent:hasChild</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:ObjectProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/agent#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Specifying a first grade descendant of something.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subPropertyOf</a> <a class="qname" href="#hasDescendant">agent:hasDescendant</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="#Parent">agent:Parent</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="#Child">agent:Child</a>.
+	
+<a class="qname" name="hasParent">agent:hasParent</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:ObjectProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/agent#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Specifying a first grade ascendant of something.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subPropertyOf</a> <a class="qname" href="#hasAscendant">agent:hasAscendant</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="#Child">agent:Child</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="#Parent">agent:Parent</a>.
+
+<a class="qname" name="hasSpouse">agent:hasSpouse</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:ObjectProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/agent#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;has a spouse&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Specifying an agent having a partner (gender neutral) in a marriage, civil union, domestic partnership or common-law marriage.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://xmlns.com/foaf/0.1">foaf:Person</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://xmlns.com/foaf/0.1">foaf:Person</a>.
+
+<a class="qname" name="hasMaritalStatus">agent:hasMaritalStatus</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:ObjectProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/agent#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;has marital status&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Speciafying an agent having the social and/or juridical status of being married or unmarried. &quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://xmlns.com/foaf/0.1">foaf:Person</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="#MaritalStatus">agent:MaritalStatus</a>.
+
+
+<a class="qname" name="weighs">agent:weighs</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:ObjectProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/agent#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Specifying something weighed by a device.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="#WeighingDevice">agent:WeighingDevice</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/physicalResource.html#Resource">physical:Resource</a>.
+
+<a class="qname" name="hasUserCredential">agent:hasUserCredential</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:ObjectProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/agent#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Specifying credentials of a user to access e.g. a multiuser computer system.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> [<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="#playsRole">agent:playsRole</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="#User">agent:User</a>];
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="#UserCredential">agent:UserCredential</a>.
+	
+<a class="qname" name="hasUsername">agent:hasUsername</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:InverseFunctionalProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/agent#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Specifying a name of a user to access e.g. a multiuser computer system.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="#UserCredential">agent:UserCredential</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Literal</a>.
+
+<a class="qname" name="hasPassword">agent:hasPassword</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">rdf:Property</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/agent#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Specifying a password of a user to access e.g. a multiuser computer system.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="#UserCredential">agent:UserCredential</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Literal</a>.
+
+<a class="qname" name="authenticatesWith">agent:authenticatesWith</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:ObjectProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/agent#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Specifying credentials an agent uses to authenticate.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> [<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="#playsRole">agent:playsRole</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="#User">agent:User</a>];
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="#UserCredential">agent:UserCredential</a>.
+
+<a class="qname" name="isAuthenticationObjectFor">agent:isAuthenticationObjectFor</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:ObjectProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/agent#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Specifying something for which user credentials are needed to authenticate.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="#UserCredential">agent:UserCredential</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/event.html#Action">event:Action</a>.
+		</pre>
+	</div>
+	</body>
+</html>

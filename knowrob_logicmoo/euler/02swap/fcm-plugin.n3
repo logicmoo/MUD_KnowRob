@@ -1,0 +1,65 @@
+# --------------------------------
+# FCM plugin for EYE -- Jos De Roo
+# --------------------------------
+
+@prefix math: <http://www.w3.org/2000/10/swap/math#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix fl: <http://eulersharp.sourceforge.net/2003/03swap/fl-rules#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix prolog: <http://eulersharp.sourceforge.net/2003/03swap/prolog#>.
+@prefix fcm: <http://eulersharp.sourceforge.net/2006/02swap/fcm#>.
+
+{(?A ?B) fl:pi ?C} <=
+{	?SCOPE e:call {
+		(	{("fnet"^^prolog:atom "done"^^prolog:atom) prolog:nb_getval true}
+			true
+			{	(	{	(	{(?X ?Y) fl:mu ?Z}
+							{	(	{(?X) fcm:fm true}
+									true
+									{({(?X) fcm:fm true}) prolog:assertz true}
+								) prolog:if_then_else true.
+								((fcm:pi ?X ?Y ?Z)^prolog:univ) prolog:assertz true.
+							}
+						) prolog:forall true.
+						(	{(?X ?Y) fl:sigma ?V6}
+							{	(	{(?X) fcm:fs true}
+									true
+									{({(?X) fcm:fs true}) prolog:assertz true}
+								) prolog:if_then_else true.
+								(	{(?Y) fcm:fs true}
+									true
+									{({(?Y) fcm:fs true}) prolog:assertz true}
+								) prolog:if_then_else true.
+							}
+						) prolog:forall true.
+						(1 20 ?J) prolog:between true.
+						(?X) fcm:fm true.
+						(?Y) fcm:fs true.
+						(	?I
+							{	(?P ?Y) fl:sigma ?W.
+								((fcm:pi ?X ?P ?M)^prolog:univ) prolog:call true.
+								(((2 ?M)!prolog:product 1)!prolog:minus ((2 ?W)!prolog:product 1)!prolog:minus) prolog:product ?I.
+							}
+							?L
+						) prolog:findall true.
+						(	{?L log:equalTo ()}
+							true
+							{	?L math:sum ?S.
+								(1 (1 ((?S)!prolog:minus)!prolog:exp)!prolog:plus) prolog:quotient ?Z.
+								((fcm:pi ?X ?Y ?V1)^prolog:univ) prolog:retractall true.
+								((fcm:pi ?X ?Y ?Z)^prolog:univ) prolog:assertz true.
+							}
+						) prolog:if_then_else true.
+						() prolog:fail true.
+					}
+					{("fnet"^^prolog:atom "done"^^prolog:atom) prolog:nb_setval true}
+				) prolog:disjunction true
+			}
+		) prolog:if_then_else true.
+		((fcm:pi ?A ?B ?U)^prolog:univ) prolog:call true.
+		(	{?SCOPE e:closure {(?A ?B) fl:pi ?V}}
+			{?C log:equalTo ?V}
+			{?C log:equalTo ?U}
+		) prolog:if_then_else true.
+	}
+}.

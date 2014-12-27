@@ -1,0 +1,158 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>
+		<meta name="generator" content="AGFA HealthCare N3 to HTML convertor"/>
+		<link rel="alternate" type="text/n3" title="RDF Representation" href="http://eulersharp.sourceforge.net/2003/03swap/workflow"/>
+		<title>workflow</title>
+		<style type="text/css">
+			a[href]:link { text-decoration:none; }
+			a[href]:visited { text-decoration:none; }
+			a[href]:active { text-decoration:underline; }
+			a:hover { background:#ffa; }
+			.keyword { font-weight: bold; }
+			.literal { color: blue }
+			.uri { color: darkblue }
+			.qname { color: black }
+			.var { color: gray }
+			.comment { font-style:italic; color: darkgreen }
+		</style>
+	</head>
+	<body>
+	<div>
+		<pre>
+<span class="keyword">@prefix</span> rdfs: <a class="uri" href="http://www.w3.org/2000/01/rdf-schema">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</a>.
+<span class="keyword">@prefix</span> owl: <a class="uri" href="http://www.w3.org/2002/07/owl">&lt;http://www.w3.org/2002/07/owl#&gt;</a>.
+<span class="keyword">@prefix</span> dce: <a class="uri" href="http://purl.org/dc/elements/1.1/">&lt;http://purl.org/dc/elements/1.1/&gt;</a>.
+<span class="keyword">@prefix</span> event: <a class="uri" href="http://eulersharp.sourceforge.net/2003/03swap/event.html#">&lt;http://eulersharp.sourceforge.net/2003/03swap/event#&gt;</a>.
+<span class="keyword">@prefix</span> skos: <a class="uri" href="http://www.w3.org/2004/02/skos/core.html#">&lt;http://www.w3.org/2004/02/skos/core#&gt;</a>.
+<span class="keyword">@prefix</span> agent: <a class="uri" href="http://eulersharp.sourceforge.net/2003/03swap/agent.html#">&lt;http://eulersharp.sourceforge.net/2003/03swap/agent#&gt;</a>.
+<span class="keyword">@prefix</span> foaf: <a class="uri" href="http://xmlns.com/foaf/0.1/">&lt;http://xmlns.com/foaf/0.1/&gt;</a>.
+<span class="keyword">@prefix</span> workflow: <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/workflow#&gt;</a>.
+
+<a class="uri" href="http://eulersharp.sourceforge.net/2003/03swap/workflow.html">&lt;http://eulersharp.sourceforge.net/2003/03swap/workflow&gt;</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Ontology</a>;
+	<a class="qname" href="http://purl.org/dc/elements/1.1">dce:title</a> <span class="literal">&quot;&quot;&quot;Workflow&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://purl.org/dc/elements/1.1">dce:creator</a> <span class="literal">&quot;&quot;&quot;Hans Cools, MD; Agfa Healthcare/Belgium&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://purl.org/dc/elements/1.1">dce:publisher</a> <span class="literal">&quot;&quot;&quot;Agfa Healthcare, Belgium&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://purl.org/dc/elements/1.1">dce:description</a> <span class="literal">&quot;&quot;&quot;Formal description of how work in a organization or other system is planned and executed.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://purl.org/dc/elements/1.1">dce:source</a> <span class="literal">&quot;&quot;&quot;http://www.workflowpatterns.com/&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://purl.org/dc/elements/1.1">dce:format</a> <span class="literal">&quot;&quot;&quot;OWL Full&quot;&quot;&quot;</span>@en.
+
+<span class="comment">#</span>
+<span class="comment"># CLASSES</span>
+<span class="comment">#</span>
+
+<a class="qname" name="Workflow">workflow:Workflow</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/workflow#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;workflow&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Sequence of concatenated steps as abstraction of real work.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a><span class="literal">&quot;&quot;&quot;Both plan and execution.&quot;&quot;&quot;</span>@en.
+
+<a class="qname" name="Action">workflow:Action</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/workflow#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;workflow action&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;One of a sequence of concatenated steps as abstraction of real work.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a><span class="literal">&quot;&quot;&quot;Both plan and execution.&quot;&quot;&quot;</span>@en.
+
+<a class="qname" name="Resource">workflow:Resource</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/workflow#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;workflow action resource&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Resource for an action.&quot;&quot;&quot;</span>@en.
+
+<a class="qname" name="Agent">workflow:Agent</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/workflow#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;workflow agent&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Agent for an action.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;&quot;&quot;Agent can be e.g. person, group, organization, mechanism.&quot;&quot;&quot;</span>@en.
+
+<a class="qname" name="Input">workflow:Input</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/workflow#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;workflow action input&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Input of an action.&quot;&quot;&quot;</span>@en.
+
+<a class="qname" name="Output">workflow:Output</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/workflow#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;workflow action output&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Output of an action.&quot;&quot;&quot;</span>@en.
+
+<a class="qname" name="Role">workflow:Role</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/workflow#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;workflow agent role&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Role of an agent.&quot;&quot;&quot;</span>@en.
+
+<a class="qname" name="Pattern">workflow:Pattern</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/workflow#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;workflow pattern&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Way of executing actions.&quot;&quot;&quot;</span>@en.
+
+<a class="qname" name="Sequence">workflow:Sequence</a> <span class="comment"># sequential routing, serial routing</span>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/workflow#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;workflow sequence&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Workflow pattern describing enabling an action after completion of a preceding action in the same workflow.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="#Pattern">workflow:Pattern</a>.
+
+<a class="qname" name="ParallelSplit">workflow:ParallelSplit</a> <span class="comment"># AND-split, parallel routing, parallel split, fork</span>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/workflow#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;workflow parallel split&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Workflow pattern describing enabling 2 or more simultaneous actions after completion of a preceding action in the same workflow.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="#Pattern">workflow:Pattern</a>.
+
+<a class="qname" name="Synchronization">workflow:Synchronization</a> <span class="comment"># AND-join, rendezvous, synchronizer</span>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/workflow#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;workflow synchronization&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Workflow pattern describing enabling an action after completion of 2 or more simultaneous preceding actions in the same workflow.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="#Pattern">workflow:Pattern</a>.
+
+<a class="qname" name="ExclusiveChoice">workflow:ExclusiveChoice</a> <span class="comment"># XOR-split, exclusive OR-split, conditional routing, switch, decision, case statement</span>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/workflow#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;workflow exclusive choice&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Workflow pattern describing enabling an action chosen from 2 or more actions, after completion of a preceding action in the same workflow.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="#Pattern">workflow:Pattern</a>.
+
+<a class="qname" name="SimpleMerge">workflow:SimpleMerge</a> <span class="comment"># XOR-join, exclusive OR-join, asynchronous join, merge</span>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/workflow#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;workflow simple merge&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Workflow pattern describing enabling an action after completion of a preceding action chosen from 2 or more actions, in the same workflow.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="#Pattern">workflow:Pattern</a>.
+
+<span class="comment">#</span>
+<span class="comment"># PROPERTIES</span>
+<span class="comment">#</span>
+
+<a class="qname" name="hasWorkflow">workflow:hasWorkflow</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:ObjectProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/workflow#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Specifying a workflow of an agent.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://xmlns.com/foaf/0.1">foaf:Agent</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="#Workflow">workflow:Workflow</a>.
+
+<a class="qname" name="hasAction">workflow:hasAction</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:ObjectProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/workflow#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Specifying an action of a workflow.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="#Workflow">workflow:Workflow</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="#Action">workflow:Action</a>.
+
+<a class="qname" name="actionOf">workflow:actionOf</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:ObjectProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/workflow#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Specifying a workflow having an action.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="#Action">workflow:Action</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="#Workflow">workflow:Workflow</a>.		</pre>
+	</div>
+	</body>
+</html>

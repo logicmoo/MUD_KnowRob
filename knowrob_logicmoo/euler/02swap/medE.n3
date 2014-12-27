@@ -1,0 +1,129 @@
+#Processed by Id: euler.yap,v 1.112 2006/11/09 21:07:09 josd Exp 
+
+@prefix str: <http://www.w3.org/2000/10/swap/string#>.
+@prefix var: <http://localhost/var#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix list: <http://www.w3.org/2000/10/swap/list#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix : <http://eulersharp.sourceforge.net/2006/02swap/med#>.
+@prefix rpo: <http://eulersharp.sourceforge.net/2003/03swap/rpo-rules#>.
+@prefix time: <http://www.w3.org/2000/10/swap/time#>.
+@prefix os: <http://www.w3.org/2000/10/swap/os#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix n3: <http://www.w3.org/2004/06/rei#>.
+@prefix math: <http://www.w3.org/2000/10/swap/math#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix r: <http://www.w3.org/2000/10/swap/reason#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+[ a r:Proof, r:Conjunction;
+  r:component [ a r:Inference; r:gives {:Joe :isPrescribed :aspirinLowDose}; r:evidence (
+    [ a r:Extraction; r:gives {:Joe :isPrescribed :aspirinLowDose}; r:because [ a r:Inference; r:gives {:Joe :isPrescribed :aspirinLowDose}; r:evidence (
+      [ a r:Extraction; r:gives {(:Joe :AcuteMyocardialInfarction) rpo:mu 0.9}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/medmio.n3>]]
+      [ a r:Fact; r:gives {0.9 math:greaterThan 0.7}]
+      [ a r:Extraction; r:gives {:aspirinLowDose :prescribedFor :AcuteMyocardialInfarction}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/medmio.n3>]]
+      [ a r:Extraction; r:gives {:aspirinLowDose :excludedFor (:ActivePepticUlcerDisease :AllergyForAspirin)}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/medmio.n3>]]
+      [ a r:Extraction; r:gives {:Joe :fineWith (:ActivePepticUlcerDisease :AllergyForAspirin)}; r:because [ a r:Inference; r:gives {:Joe :fineWith (:ActivePepticUlcerDisease :AllergyForAspirin)}; r:evidence (
+        [ a r:Extraction; r:gives {(:Joe :ActivePepticUlcerDisease) rpo:mu 0.006}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/medmio.n3>]]
+        [ a r:Fact; r:gives {0.006 math:lessThan 0.01}]
+        [ a r:Extraction; r:gives {(:ActivePepticUlcerDisease :AllergyForAspirin) rdf:type rdf:List}; r:because [ a r:Inference; r:gives {(:ActivePepticUlcerDisease :AllergyForAspirin) rdf:type rdf:List}; r:evidence (
+          [ a r:Extraction; r:gives {:aspirinHighDose :excludedFor (:ActivePepticUlcerDisease :AllergyForAspirin)}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/medmio.n3>]]);
+          r:binding [ r:variable [ n3:uri "http://localhost/var#X"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2006/02swap/med#aspirinHighDose"]]; 
+          r:binding [ r:variable [ n3:uri "http://localhost/var#L"]; r:boundTo (:ActivePepticUlcerDisease :AllergyForAspirin)]; 
+          r:rule [ a r:Extraction; r:gives {@forAll var:X,var:L. {var:X :excludedFor var:L} => {var:L a rdf:List}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/medmio.n3>]]]]
+        [ a r:Fact; r:gives {(:ActivePepticUlcerDisease :AllergyForAspirin) rdf:first :ActivePepticUlcerDisease}]
+        [ a r:Fact; r:gives {(:ActivePepticUlcerDisease :AllergyForAspirin) rdf:rest (:AllergyForAspirin)}]
+        [ a r:Extraction; r:gives {:Joe :fineWith (:AllergyForAspirin)}; r:because [ a r:Inference; r:gives {:Joe :fineWith (:AllergyForAspirin)}; r:evidence (
+          [ a r:Extraction; r:gives {(:Joe :AllergyForAspirin) rpo:mu 0.001}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/medmio.n3>]]
+          [ a r:Fact; r:gives {0.001 math:lessThan 0.01}]
+          [ a r:Extraction; r:gives {(:AllergyForAspirin) rdf:type rdf:List}; r:because [ a r:Inference; r:gives {(:AllergyForAspirin) rdf:type rdf:List}; r:evidence (
+            [ a r:Fact; r:gives {(:ActivePepticUlcerDisease :AllergyForAspirin) rdf:rest (:AllergyForAspirin)}]
+            [ a r:Extraction; r:gives {(:ActivePepticUlcerDisease :AllergyForAspirin) rdf:type rdf:List}; r:because [ a r:Inference; r:gives {(:ActivePepticUlcerDisease :AllergyForAspirin) rdf:type rdf:List}; r:evidence (
+              [ a r:Extraction; r:gives {:aspirinHighDose :excludedFor (:ActivePepticUlcerDisease :AllergyForAspirin)}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/medmio.n3>]]);
+              r:binding [ r:variable [ n3:uri "http://localhost/var#X"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2006/02swap/med#aspirinHighDose"]]; 
+              r:binding [ r:variable [ n3:uri "http://localhost/var#L"]; r:boundTo (:ActivePepticUlcerDisease :AllergyForAspirin)]; 
+              r:rule [ a r:Extraction; r:gives {@forAll var:X,var:L. {var:X :excludedFor var:L} => {var:L a rdf:List}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/medmio.n3>]]]]);
+            r:binding [ r:variable [ n3:uri "http://localhost/var#X"]; r:boundTo (:ActivePepticUlcerDisease :AllergyForAspirin)]; 
+            r:binding [ r:variable [ n3:uri "http://localhost/var#L"]; r:boundTo (:AllergyForAspirin)]; 
+            r:rule [ a r:Extraction; r:gives {@forAll var:X,var:L. {var:X rdf:rest var:L. var:X a rdf:List} => {var:L a rdf:List}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/medmio.n3>]]]]
+          [ a r:Fact; r:gives {(:AllergyForAspirin) rdf:first :AllergyForAspirin}]
+          [ a r:Fact; r:gives {(:AllergyForAspirin) rdf:rest ()}]);
+          r:binding [ r:variable [ n3:uri "http://localhost/var#W"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2006/02swap/med#Joe"]]; 
+          r:binding [ r:variable [ n3:uri "http://localhost/var#D"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2006/02swap/med#AllergyForAspirin"]]; 
+          r:binding [ r:variable [ n3:uri "http://localhost/var#N"]; r:boundTo 0.001]; 
+          r:binding [ r:variable [ n3:uri "http://localhost/var#L"]; r:boundTo (:AllergyForAspirin)]; 
+          r:rule [ a r:Extraction; r:gives {@forAll var:W,var:D,var:N,var:L. {(var:W var:D) rpo:mu var:N. var:N math:lessThan 0.01. var:L a rdf:List. var:L rdf:first var:D. var:L rdf:rest ()} => {var:W :fineWith var:L}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/medmio.n3>]]]]);
+        r:binding [ r:variable [ n3:uri "http://localhost/var#W"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2006/02swap/med#Joe"]]; 
+        r:binding [ r:variable [ n3:uri "http://localhost/var#D"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2006/02swap/med#ActivePepticUlcerDisease"]]; 
+        r:binding [ r:variable [ n3:uri "http://localhost/var#N"]; r:boundTo 0.006]; 
+        r:binding [ r:variable [ n3:uri "http://localhost/var#L"]; r:boundTo (:ActivePepticUlcerDisease :AllergyForAspirin)]; 
+        r:binding [ r:variable [ n3:uri "http://localhost/var#R"]; r:boundTo (:AllergyForAspirin)]; 
+        r:rule [ a r:Extraction; r:gives {@forAll var:W,var:D,var:N,var:L,var:R. {(var:W var:D) rpo:mu var:N. var:N math:lessThan 0.01. var:L a rdf:List. var:L rdf:first var:D. var:L rdf:rest var:R. var:W :fineWith var:R} => {var:W :fineWith var:L}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/medmio.n3>]]]]);
+      r:binding [ r:variable [ n3:uri "http://localhost/var#W"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2006/02swap/med#Joe"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#D"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2006/02swap/med#AcuteMyocardialInfarction"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#N"]; r:boundTo 0.9]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#M"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2006/02swap/med#aspirinLowDose"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#L"]; r:boundTo (:ActivePepticUlcerDisease :AllergyForAspirin)]; 
+      r:rule [ a r:Extraction; r:gives {@forAll var:W,var:D,var:N,var:M,var:L. {(var:W var:D) rpo:mu var:N. var:N math:greaterThan 0.7. var:M :prescribedFor var:D. var:M :excludedFor var:L. var:W :fineWith var:L} => {var:W :isPrescribed var:M}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/medmio.n3>]]]]);
+    r:binding [ r:variable [ n3:uri "http://localhost/var#W"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2006/02swap/med#Joe"]]; 
+    r:binding [ r:variable [ n3:uri "http://localhost/var#M"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2006/02swap/med#aspirinLowDose"]]; 
+    r:rule [ a r:Extraction; r:gives {@forAll var:W,var:M. {var:W :isPrescribed var:M} => {var:W :isPrescribed var:M}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/medmioF.n3>]]];
+  r:component [ a r:Inference; r:gives {:Joe :isPrescribed :betaBlocker}; r:evidence (
+    [ a r:Extraction; r:gives {:Joe :isPrescribed :betaBlocker}; r:because [ a r:Inference; r:gives {:Joe :isPrescribed :betaBlocker}; r:evidence (
+      [ a r:Extraction; r:gives {(:Joe :AcuteMyocardialInfarction) rpo:mu 0.9}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/medmio.n3>]]
+      [ a r:Fact; r:gives {0.9 math:greaterThan 0.7}]
+      [ a r:Extraction; r:gives {:betaBlocker :prescribedFor :AcuteMyocardialInfarction}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/medmio.n3>]]
+      [ a r:Extraction; r:gives {:betaBlocker :excludedFor (:SevereAsthma :ChronicObstructivePumonaryDisease)}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/medmio.n3>]]
+      [ a r:Extraction; r:gives {:Joe :fineWith (:SevereAsthma :ChronicObstructivePumonaryDisease)}; r:because [ a r:Inference; r:gives {:Joe :fineWith (:SevereAsthma :ChronicObstructivePumonaryDisease)}; r:evidence (
+        [ a r:Extraction; r:gives {(:Joe :SevereAsthma) rpo:mu 0.001}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/medmio.n3>]]
+        [ a r:Fact; r:gives {0.001 math:lessThan 0.01}]
+        [ a r:Extraction; r:gives {(:SevereAsthma :ChronicObstructivePumonaryDisease) rdf:type rdf:List}; r:because [ a r:Inference; r:gives {(:SevereAsthma :ChronicObstructivePumonaryDisease) rdf:type rdf:List}; r:evidence (
+          [ a r:Extraction; r:gives {:betaBlocker :excludedFor (:SevereAsthma :ChronicObstructivePumonaryDisease)}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/medmio.n3>]]);
+          r:binding [ r:variable [ n3:uri "http://localhost/var#X"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2006/02swap/med#betaBlocker"]]; 
+          r:binding [ r:variable [ n3:uri "http://localhost/var#L"]; r:boundTo (:SevereAsthma :ChronicObstructivePumonaryDisease)]; 
+          r:rule [ a r:Extraction; r:gives {@forAll var:X,var:L. {var:X :excludedFor var:L} => {var:L a rdf:List}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/medmio.n3>]]]]
+        [ a r:Fact; r:gives {(:SevereAsthma :ChronicObstructivePumonaryDisease) rdf:first :SevereAsthma}]
+        [ a r:Fact; r:gives {(:SevereAsthma :ChronicObstructivePumonaryDisease) rdf:rest (:ChronicObstructivePumonaryDisease)}]
+        [ a r:Extraction; r:gives {:Joe :fineWith (:ChronicObstructivePumonaryDisease)}; r:because [ a r:Inference; r:gives {:Joe :fineWith (:ChronicObstructivePumonaryDisease)}; r:evidence (
+          [ a r:Extraction; r:gives {(:Joe :ChronicObstructivePumonaryDisease) rpo:mu 0.001}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/medmio.n3>]]
+          [ a r:Fact; r:gives {0.001 math:lessThan 0.01}]
+          [ a r:Extraction; r:gives {(:ChronicObstructivePumonaryDisease) rdf:type rdf:List}; r:because [ a r:Inference; r:gives {(:ChronicObstructivePumonaryDisease) rdf:type rdf:List}; r:evidence (
+            [ a r:Fact; r:gives {(:SevereAsthma :ChronicObstructivePumonaryDisease) rdf:rest (:ChronicObstructivePumonaryDisease)}]
+            [ a r:Extraction; r:gives {(:SevereAsthma :ChronicObstructivePumonaryDisease) rdf:type rdf:List}; r:because [ a r:Inference; r:gives {(:SevereAsthma :ChronicObstructivePumonaryDisease) rdf:type rdf:List}; r:evidence (
+              [ a r:Extraction; r:gives {:betaBlocker :excludedFor (:SevereAsthma :ChronicObstructivePumonaryDisease)}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/medmio.n3>]]);
+              r:binding [ r:variable [ n3:uri "http://localhost/var#X"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2006/02swap/med#betaBlocker"]]; 
+              r:binding [ r:variable [ n3:uri "http://localhost/var#L"]; r:boundTo (:SevereAsthma :ChronicObstructivePumonaryDisease)]; 
+              r:rule [ a r:Extraction; r:gives {@forAll var:X,var:L. {var:X :excludedFor var:L} => {var:L a rdf:List}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/medmio.n3>]]]]);
+            r:binding [ r:variable [ n3:uri "http://localhost/var#X"]; r:boundTo (:SevereAsthma :ChronicObstructivePumonaryDisease)]; 
+            r:binding [ r:variable [ n3:uri "http://localhost/var#L"]; r:boundTo (:ChronicObstructivePumonaryDisease)]; 
+            r:rule [ a r:Extraction; r:gives {@forAll var:X,var:L. {var:X rdf:rest var:L. var:X a rdf:List} => {var:L a rdf:List}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/medmio.n3>]]]]
+          [ a r:Fact; r:gives {(:ChronicObstructivePumonaryDisease) rdf:first :ChronicObstructivePumonaryDisease}]
+          [ a r:Fact; r:gives {(:ChronicObstructivePumonaryDisease) rdf:rest ()}]);
+          r:binding [ r:variable [ n3:uri "http://localhost/var#W"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2006/02swap/med#Joe"]]; 
+          r:binding [ r:variable [ n3:uri "http://localhost/var#D"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2006/02swap/med#ChronicObstructivePumonaryDisease"]]; 
+          r:binding [ r:variable [ n3:uri "http://localhost/var#N"]; r:boundTo 0.001]; 
+          r:binding [ r:variable [ n3:uri "http://localhost/var#L"]; r:boundTo (:ChronicObstructivePumonaryDisease)]; 
+          r:rule [ a r:Extraction; r:gives {@forAll var:W,var:D,var:N,var:L. {(var:W var:D) rpo:mu var:N. var:N math:lessThan 0.01. var:L a rdf:List. var:L rdf:first var:D. var:L rdf:rest ()} => {var:W :fineWith var:L}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/medmio.n3>]]]]);
+        r:binding [ r:variable [ n3:uri "http://localhost/var#W"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2006/02swap/med#Joe"]]; 
+        r:binding [ r:variable [ n3:uri "http://localhost/var#D"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2006/02swap/med#SevereAsthma"]]; 
+        r:binding [ r:variable [ n3:uri "http://localhost/var#N"]; r:boundTo 0.001]; 
+        r:binding [ r:variable [ n3:uri "http://localhost/var#L"]; r:boundTo (:SevereAsthma :ChronicObstructivePumonaryDisease)]; 
+        r:binding [ r:variable [ n3:uri "http://localhost/var#R"]; r:boundTo (:ChronicObstructivePumonaryDisease)]; 
+        r:rule [ a r:Extraction; r:gives {@forAll var:W,var:D,var:N,var:L,var:R. {(var:W var:D) rpo:mu var:N. var:N math:lessThan 0.01. var:L a rdf:List. var:L rdf:first var:D. var:L rdf:rest var:R. var:W :fineWith var:R} => {var:W :fineWith var:L}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/medmio.n3>]]]]);
+      r:binding [ r:variable [ n3:uri "http://localhost/var#W"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2006/02swap/med#Joe"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#D"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2006/02swap/med#AcuteMyocardialInfarction"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#N"]; r:boundTo 0.9]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#M"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2006/02swap/med#betaBlocker"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#L"]; r:boundTo (:SevereAsthma :ChronicObstructivePumonaryDisease)]; 
+      r:rule [ a r:Extraction; r:gives {@forAll var:W,var:D,var:N,var:M,var:L. {(var:W var:D) rpo:mu var:N. var:N math:greaterThan 0.7. var:M :prescribedFor var:D. var:M :excludedFor var:L. var:W :fineWith var:L} => {var:W :isPrescribed var:M}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/medmio.n3>]]]]);
+    r:binding [ r:variable [ n3:uri "http://localhost/var#W"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2006/02swap/med#Joe"]]; 
+    r:binding [ r:variable [ n3:uri "http://localhost/var#M"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2006/02swap/med#betaBlocker"]]; 
+    r:rule [ a r:Extraction; r:gives {@forAll var:W,var:M. {var:W :isPrescribed var:M} => {var:W :isPrescribed var:M}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/medmioF.n3>]]];
+  r:gives {
+    :Joe :isPrescribed :aspirinLowDose.
+    :Joe :isPrescribed :betaBlocker.}].
+
+#ENDS 10 msec.
+

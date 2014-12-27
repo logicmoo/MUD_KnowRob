@@ -1,0 +1,140 @@
+#Processed by Id: euler.yap,v 1.132 2006/12/13 00:33:49 josd Exp 
+
+@prefix str: <http://www.w3.org/2000/10/swap/string#>.
+@prefix var: <http://localhost/var#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix list: <http://www.w3.org/2000/10/swap/list#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix fn: <http://www.w3.org/2006/xpath-functions#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix : <http://eulersharp.sourceforge.net/2006/02swap/steamroller#>.
+@prefix time: <http://www.w3.org/2000/10/swap/time#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix n3: <http://www.w3.org/2004/06/rei#>.
+@prefix math: <http://www.w3.org/2000/10/swap/math#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix r: <http://www.w3.org/2000/10/swap/reason#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+[ a r:Proof, r:Conjunction;
+  r:component [ a r:Inference; r:gives {{:fox_1 :likes :bird_1} :steamroller {:bird_1 :likes :grain_1}}; r:evidence (
+    [ a r:Extraction; r:gives {:fox_1 rdf:type :Animal}; r:because [ a r:Inference; r:gives {:fox_1 rdf:type :Animal}; r:evidence (
+      [ a r:Extraction; r:gives {:fox_1 rdf:type :Fox}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/steamroller.n3>]]);
+      r:binding [ r:variable [ n3:uri "http://localhost/var#X"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2006/02swap/steamroller#fox_1"]]; 
+      r:rule [ a r:Extraction; r:gives {@forAll var:X. {var:X a :Fox} => {var:X a :Animal}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/steamroller.n3>]]]]
+    [ a r:Extraction; r:gives {:bird_1 rdf:type :Animal}; r:because [ a r:Inference; r:gives {:bird_1 rdf:type :Animal}; r:evidence (
+      [ a r:Extraction; r:gives {:bird_1 rdf:type :Bird}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/steamroller.n3>]]);
+      r:binding [ r:variable [ n3:uri "http://localhost/var#X"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2006/02swap/steamroller#bird_1"]]; 
+      r:rule [ a r:Extraction; r:gives {@forAll var:X. {var:X a :Bird} => {var:X a :Animal}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/steamroller.n3>]]]]
+    [ a r:Extraction; r:gives {:fox_1 :likes :bird_1}; r:because [ a r:Inference; r:gives {:fox_1 :likes :bird_1}; r:evidence (
+      [ a r:Extraction; r:gives {:fox_1 rdf:type :Animal}; r:because [ a r:Inference; r:gives {:fox_1 rdf:type :Animal}; r:evidence (
+        [ a r:Extraction; r:gives {:fox_1 rdf:type :Fox}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/steamroller.n3>]]);
+        r:binding [ r:variable [ n3:uri "http://localhost/var#X"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2006/02swap/steamroller#fox_1"]]; 
+        r:rule [ a r:Extraction; r:gives {@forAll var:X. {var:X a :Fox} => {var:X a :Animal}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/steamroller.n3>]]]]
+      [ a r:Extraction; r:gives {:bird_1 rdf:type :Animal}; r:because [ a r:Inference; r:gives {:bird_1 rdf:type :Animal}; r:evidence (
+        [ a r:Extraction; r:gives {:bird_1 rdf:type :Bird}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/steamroller.n3>]]);
+        r:binding [ r:variable [ n3:uri "http://localhost/var#X"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2006/02swap/steamroller#bird_1"]]; 
+        r:rule [ a r:Extraction; r:gives {@forAll var:X. {var:X a :Bird} => {var:X a :Animal}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/steamroller.n3>]]]]
+      [ a r:Extraction; r:gives {:bird_1 :smaller :fox_1}; r:because [ a r:Inference; r:gives {:bird_1 :smaller :fox_1}; r:evidence (
+        [ a r:Extraction; r:gives {:bird_1 rdf:type :Bird}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/steamroller.n3>]]
+        [ a r:Extraction; r:gives {:fox_1 rdf:type :Fox}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/steamroller.n3>]]);
+        r:binding [ r:variable [ n3:uri "http://localhost/var#X"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2006/02swap/steamroller#bird_1"]]; 
+        r:binding [ r:variable [ n3:uri "http://localhost/var#Y"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2006/02swap/steamroller#fox_1"]]; 
+        r:rule [ a r:Extraction; r:gives {@forAll var:X,var:Y. {var:X a :Bird. var:Y a :Fox} => {var:X :smaller var:Y}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/steamroller.n3>]]]]
+      [ a r:Fact; r:gives {((<http://www.agfa.com/w3c/euler/steamroller.n3>!log:semantics <http://www.agfa.com/w3c/euler/steamrollerF.n3>!log:semantics)!log:conjunction!log:conclusion 1) e:findall (:fox_1 {:fox_1 :dislikes :bird_1} ())}]
+      [ a r:Extraction; r:gives {:grain_1 rdf:type :Plant}; r:because [ a r:Inference; r:gives {:grain_1 rdf:type :Plant}; r:evidence (
+        [ a r:Extraction; r:gives {:grain_1 rdf:type :Grain}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/steamroller.n3>]]);
+        r:binding [ r:variable [ n3:uri "http://localhost/var#X"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2006/02swap/steamroller#grain_1"]]; 
+        r:rule [ a r:Extraction; r:gives {@forAll var:X. {var:X a :Grain} => {var:X a :Plant}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/steamroller.n3>]]]]
+      [ a r:Extraction; r:gives {:bird_1 :likes :grain_1}; r:because [ a r:Inference; r:gives {:bird_1 :likes :grain_1}; r:evidence (
+        [ a r:Extraction; r:gives {:bird_1 rdf:type :Animal}; r:because [ a r:Inference; r:gives {:bird_1 rdf:type :Animal}; r:evidence (
+          [ a r:Extraction; r:gives {:bird_1 rdf:type :Bird}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/steamroller.n3>]]);
+          r:binding [ r:variable [ n3:uri "http://localhost/var#X"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2006/02swap/steamroller#bird_1"]]; 
+          r:rule [ a r:Extraction; r:gives {@forAll var:X. {var:X a :Bird} => {var:X a :Animal}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/steamroller.n3>]]]]
+        [ a r:Extraction; r:gives {:caterpillar_1 rdf:type :Animal}; r:because [ a r:Inference; r:gives {:caterpillar_1 rdf:type :Animal}; r:evidence (
+          [ a r:Extraction; r:gives {:caterpillar_1 rdf:type :Caterpillar}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/steamroller.n3>]]);
+          r:binding [ r:variable [ n3:uri "http://localhost/var#X"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2006/02swap/steamroller#caterpillar_1"]]; 
+          r:rule [ a r:Extraction; r:gives {@forAll var:X. {var:X a :Caterpillar} => {var:X a :Animal}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/steamroller.n3>]]]]
+        [ a r:Extraction; r:gives {:caterpillar_1 :smaller :bird_1}; r:because [ a r:Inference; r:gives {:caterpillar_1 :smaller :bird_1}; r:evidence (
+          [ a r:Extraction; r:gives {:caterpillar_1 rdf:type :Caterpillar}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/steamroller.n3>]]
+          [ a r:Extraction; r:gives {:bird_1 rdf:type :Bird}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/steamroller.n3>]]);
+          r:binding [ r:variable [ n3:uri "http://localhost/var#X"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2006/02swap/steamroller#caterpillar_1"]]; 
+          r:binding [ r:variable [ n3:uri "http://localhost/var#Y"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2006/02swap/steamroller#bird_1"]]; 
+          r:rule [ a r:Extraction; r:gives {@forAll var:X,var:Y. {var:X a :Caterpillar. var:Y a :Bird} => {var:X :smaller var:Y}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/steamroller.n3>]]]]
+        [ a r:Fact; r:gives {((<http://www.agfa.com/w3c/euler/steamroller.n3>!log:semantics <http://www.agfa.com/w3c/euler/steamrollerF.n3>!log:semantics)!log:conjunction!log:conclusion 1) e:findall (:bird_1 {:bird_1 :dislikes :caterpillar_1} ())}]
+        [ a r:Extraction; r:gives {:caterpillar_1^:caterpillar_food_of rdf:type :Plant}; r:because [ a r:Inference; r:gives {:caterpillar_1^:caterpillar_food_of rdf:type :Plant}; r:evidence (
+          [ a r:Extraction; r:gives {:caterpillar_1 rdf:type :Caterpillar}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/steamroller.n3>]]);
+          r:binding [ r:variable [ n3:uri "http://localhost/var#X"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2006/02swap/steamroller#caterpillar_1"]]; 
+          r:rule [ a r:Extraction; r:gives {@forAll var:X. {var:X a :Caterpillar} => {var:X^:caterpillar_food_of a :Plant}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/steamroller.n3>]]]]
+        [ a r:Extraction; r:gives {:caterpillar_1 :likes :caterpillar_1^:caterpillar_food_of}; r:because [ a r:Inference; r:gives {:caterpillar_1 :likes :caterpillar_1^:caterpillar_food_of}; r:evidence (
+          [ a r:Extraction; r:gives {:caterpillar_1 rdf:type :Caterpillar}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/steamroller.n3>]]);
+          r:binding [ r:variable [ n3:uri "http://localhost/var#X"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2006/02swap/steamroller#caterpillar_1"]]; 
+          r:rule [ a r:Extraction; r:gives {@forAll var:X. {var:X a :Caterpillar} => {var:X :likes var:X^:caterpillar_food_of}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/steamroller.n3>]]]]
+        [ a r:Extraction; r:gives {:grain_1 rdf:type :Plant}; r:because [ a r:Inference; r:gives {:grain_1 rdf:type :Plant}; r:evidence (
+          [ a r:Extraction; r:gives {:grain_1 rdf:type :Grain}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/steamroller.n3>]]);
+          r:binding [ r:variable [ n3:uri "http://localhost/var#X"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2006/02swap/steamroller#grain_1"]]; 
+          r:rule [ a r:Extraction; r:gives {@forAll var:X. {var:X a :Grain} => {var:X a :Plant}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/steamroller.n3>]]]]
+        [ a r:Fact; r:gives {((<http://www.agfa.com/w3c/euler/steamroller.n3>!log:semantics <http://www.agfa.com/w3c/euler/steamrollerF.n3>!log:semantics)!log:conjunction!log:conclusion 1) e:findall (:bird_1 {:bird_1 :dislikes :grain_1} ())}]);
+        r:binding [ r:variable [ n3:uri "http://localhost/var#X"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2006/02swap/steamroller#bird_1"]]; 
+        r:binding [ r:variable [ n3:uri "http://localhost/var#Y"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2006/02swap/steamroller#caterpillar_1"]]; 
+        r:binding [ r:variable [ n3:uri "http://localhost/var#U"]; r:boundTo (<http://www.agfa.com/w3c/euler/steamroller.n3>!log:semantics <http://www.agfa.com/w3c/euler/steamrollerF.n3>!log:semantics)!log:conjunction!log:conclusion]; 
+        r:binding [ r:variable [ n3:uri "http://localhost/var#W"]; r:boundTo :caterpillar_1^:caterpillar_food_of]; 
+        r:binding [ r:variable [ n3:uri "http://localhost/var#Z"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2006/02swap/steamroller#grain_1"]]; 
+        r:rule [ a r:Extraction; r:gives {@forAll var:X,var:Y,var:U,var:W,var:Z. {var:X a :Animal. var:Y a :Animal. var:Y :smaller var:X. (var:U 1) e:findall (var:X {var:X :dislikes var:Y}  ()). var:W a :Plant. var:Y :likes var:W. var:Z a :Plant. (var:U 1) e:findall (var:X {var:X :dislikes var:Z}  ())} => {var:X :likes var:Z}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/steamroller.n3>]]]]
+      [ a r:Extraction; r:gives {:grain_1 rdf:type :Plant}; r:because [ a r:Inference; r:gives {:grain_1 rdf:type :Plant}; r:evidence (
+        [ a r:Extraction; r:gives {:grain_1 rdf:type :Grain}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/steamroller.n3>]]);
+        r:binding [ r:variable [ n3:uri "http://localhost/var#X"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2006/02swap/steamroller#grain_1"]]; 
+        r:rule [ a r:Extraction; r:gives {@forAll var:X. {var:X a :Grain} => {var:X a :Plant}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/steamroller.n3>]]]]
+      [ a r:Fact; r:gives {((<http://www.agfa.com/w3c/euler/steamroller.n3>!log:semantics <http://www.agfa.com/w3c/euler/steamrollerF.n3>!log:semantics)!log:conjunction!log:conclusion 1) e:findall (:fox_1 {:fox_1 :dislikes :grain_1} ())}]);
+      r:binding [ r:variable [ n3:uri "http://localhost/var#X"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2006/02swap/steamroller#fox_1"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#Y"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2006/02swap/steamroller#bird_1"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#U"]; r:boundTo (<http://www.agfa.com/w3c/euler/steamroller.n3>!log:semantics <http://www.agfa.com/w3c/euler/steamrollerF.n3>!log:semantics)!log:conjunction!log:conclusion]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#W"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2006/02swap/steamroller#grain_1"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#Z"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2006/02swap/steamroller#grain_1"]]; 
+      r:rule [ a r:Extraction; r:gives {@forAll var:X,var:Y,var:U,var:W,var:Z. {var:X a :Animal. var:Y a :Animal. var:Y :smaller var:X. (var:U 1) e:findall (var:X {var:X :dislikes var:Y}  ()). var:W a :Plant. var:Y :likes var:W. var:Z a :Plant. (var:U 1) e:findall (var:X {var:X :dislikes var:Z}  ())} => {var:X :likes var:Y}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/steamroller.n3>]]]]
+    [ a r:Extraction; r:gives {:grain_1 rdf:type :Grain}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/steamroller.n3>]]
+    [ a r:Extraction; r:gives {:bird_1 :likes :grain_1}; r:because [ a r:Inference; r:gives {:bird_1 :likes :grain_1}; r:evidence (
+      [ a r:Extraction; r:gives {:bird_1 rdf:type :Animal}; r:because [ a r:Inference; r:gives {:bird_1 rdf:type :Animal}; r:evidence (
+        [ a r:Extraction; r:gives {:bird_1 rdf:type :Bird}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/steamroller.n3>]]);
+        r:binding [ r:variable [ n3:uri "http://localhost/var#X"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2006/02swap/steamroller#bird_1"]]; 
+        r:rule [ a r:Extraction; r:gives {@forAll var:X. {var:X a :Bird} => {var:X a :Animal}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/steamroller.n3>]]]]
+      [ a r:Extraction; r:gives {:caterpillar_1 rdf:type :Animal}; r:because [ a r:Inference; r:gives {:caterpillar_1 rdf:type :Animal}; r:evidence (
+        [ a r:Extraction; r:gives {:caterpillar_1 rdf:type :Caterpillar}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/steamroller.n3>]]);
+        r:binding [ r:variable [ n3:uri "http://localhost/var#X"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2006/02swap/steamroller#caterpillar_1"]]; 
+        r:rule [ a r:Extraction; r:gives {@forAll var:X. {var:X a :Caterpillar} => {var:X a :Animal}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/steamroller.n3>]]]]
+      [ a r:Extraction; r:gives {:caterpillar_1 :smaller :bird_1}; r:because [ a r:Inference; r:gives {:caterpillar_1 :smaller :bird_1}; r:evidence (
+        [ a r:Extraction; r:gives {:caterpillar_1 rdf:type :Caterpillar}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/steamroller.n3>]]
+        [ a r:Extraction; r:gives {:bird_1 rdf:type :Bird}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/steamroller.n3>]]);
+        r:binding [ r:variable [ n3:uri "http://localhost/var#X"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2006/02swap/steamroller#caterpillar_1"]]; 
+        r:binding [ r:variable [ n3:uri "http://localhost/var#Y"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2006/02swap/steamroller#bird_1"]]; 
+        r:rule [ a r:Extraction; r:gives {@forAll var:X,var:Y. {var:X a :Caterpillar. var:Y a :Bird} => {var:X :smaller var:Y}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/steamroller.n3>]]]]
+      [ a r:Fact; r:gives {((<http://www.agfa.com/w3c/euler/steamroller.n3>!log:semantics <http://www.agfa.com/w3c/euler/steamrollerF.n3>!log:semantics)!log:conjunction!log:conclusion 1) e:findall (:bird_1 {:bird_1 :dislikes :caterpillar_1} ())}]
+      [ a r:Extraction; r:gives {:caterpillar_1^:caterpillar_food_of rdf:type :Plant}; r:because [ a r:Inference; r:gives {:caterpillar_1^:caterpillar_food_of rdf:type :Plant}; r:evidence (
+        [ a r:Extraction; r:gives {:caterpillar_1 rdf:type :Caterpillar}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/steamroller.n3>]]);
+        r:binding [ r:variable [ n3:uri "http://localhost/var#X"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2006/02swap/steamroller#caterpillar_1"]]; 
+        r:rule [ a r:Extraction; r:gives {@forAll var:X. {var:X a :Caterpillar} => {var:X^:caterpillar_food_of a :Plant}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/steamroller.n3>]]]]
+      [ a r:Extraction; r:gives {:caterpillar_1 :likes :caterpillar_1^:caterpillar_food_of}; r:because [ a r:Inference; r:gives {:caterpillar_1 :likes :caterpillar_1^:caterpillar_food_of}; r:evidence (
+        [ a r:Extraction; r:gives {:caterpillar_1 rdf:type :Caterpillar}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/steamroller.n3>]]);
+        r:binding [ r:variable [ n3:uri "http://localhost/var#X"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2006/02swap/steamroller#caterpillar_1"]]; 
+        r:rule [ a r:Extraction; r:gives {@forAll var:X. {var:X a :Caterpillar} => {var:X :likes var:X^:caterpillar_food_of}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/steamroller.n3>]]]]
+      [ a r:Extraction; r:gives {:grain_1 rdf:type :Plant}; r:because [ a r:Inference; r:gives {:grain_1 rdf:type :Plant}; r:evidence (
+        [ a r:Extraction; r:gives {:grain_1 rdf:type :Grain}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/steamroller.n3>]]);
+        r:binding [ r:variable [ n3:uri "http://localhost/var#X"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2006/02swap/steamroller#grain_1"]]; 
+        r:rule [ a r:Extraction; r:gives {@forAll var:X. {var:X a :Grain} => {var:X a :Plant}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/steamroller.n3>]]]]
+      [ a r:Fact; r:gives {((<http://www.agfa.com/w3c/euler/steamroller.n3>!log:semantics <http://www.agfa.com/w3c/euler/steamrollerF.n3>!log:semantics)!log:conjunction!log:conclusion 1) e:findall (:bird_1 {:bird_1 :dislikes :grain_1} ())}]);
+      r:binding [ r:variable [ n3:uri "http://localhost/var#X"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2006/02swap/steamroller#bird_1"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#Y"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2006/02swap/steamroller#caterpillar_1"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#U"]; r:boundTo (<http://www.agfa.com/w3c/euler/steamroller.n3>!log:semantics <http://www.agfa.com/w3c/euler/steamrollerF.n3>!log:semantics)!log:conjunction!log:conclusion]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#W"]; r:boundTo :caterpillar_1^:caterpillar_food_of]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#Z"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2006/02swap/steamroller#grain_1"]]; 
+      r:rule [ a r:Extraction; r:gives {@forAll var:X,var:Y,var:U,var:W,var:Z. {var:X a :Animal. var:Y a :Animal. var:Y :smaller var:X. (var:U 1) e:findall (var:X {var:X :dislikes var:Y}  ()). var:W a :Plant. var:Y :likes var:W. var:Z a :Plant. (var:U 1) e:findall (var:X {var:X :dislikes var:Z}  ())} => {var:X :likes var:Z}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/steamroller.n3>]]]]);
+    r:binding [ r:variable [ n3:uri "http://localhost/var#X"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2006/02swap/steamroller#fox_1"]]; 
+    r:binding [ r:variable [ n3:uri "http://localhost/var#Y"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2006/02swap/steamroller#bird_1"]]; 
+    r:binding [ r:variable [ n3:uri "http://localhost/var#Z"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2006/02swap/steamroller#grain_1"]]; 
+    r:rule [ a r:Extraction; r:gives {@forAll var:X,var:Y,var:Z. {var:X a :Animal. var:Y a :Animal. var:X :likes var:Y. var:Z a :Grain. var:Y :likes var:Z} => {{var:X :likes var:Y} :steamroller {var:Y :likes var:Z}}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/steamrollerF.n3>]]];
+  r:gives {
+    {:fox_1 :likes :bird_1} :steamroller {:bird_1 :likes :grain_1}.}].
+
+#ENDS 10 msec.
+

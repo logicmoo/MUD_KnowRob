@@ -1,0 +1,169 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE>README</TITLE>
+	<STYLE TYPE="text/css">a:hover {background:#ffa;}</STYLE>
+</HEAD>
+<BODY LANG="en-US" DIR="LTR">
+<H1>README</H1>
+<div style="border: solid black 1px; padding: 0.5em; background: #FFB;">
+  <p style="margin-top: 0; font-weight: bold;">This version is OBSOLETED.</p>
+  <p style="margin-bottom: 0;">Please see <a href="http://eulersharp.sourceforge.net/README">new version</a>.</p>
+</div>        
+        
+<PRE>
+Euler is an inference engine supporting logic based proofs. It is a backward-chaining reasoner
+enhanced with Euler path detection. It has implementations in Java, C#, Python, Javascript and Prolog.
+Via <A HREF="http://www.w3.org/TeamSubmission/n3/">N3</A> it is interoperable with W3C <A HREF="http://www.w3.org/2000/10/swap/doc/cwm.html">Cwm</A>.
+
+
+Installation of Euler
+---------------------
+
+When you use SVN see <A HREF="http://sourceforge.net/svn/?group_id=77046">http://sourceforge.net/svn/?group_id=77046</A>
+and checkout modules 2004/01swap, 2005/11swap and 2006/02swap in EULER_SVNDIR
+
+Stable file releases of the eulersharp package can be downloaded from
+<A HREF="http://sourceforge.net/project/showfiles.php?group_id=77046">http://sourceforge.net/project/showfiles.php?group_id=77046</A>
+or the latest version can be downloaded from 
+<A HREF="http://eulersharp.sourceforge.net/2004/01swap/deployment/Euler.zip">http://eulersharp.sourceforge.net/2004/01swap/deployment/Euler.zip</A>
+and extract the downloaded file to EYE_HOME.
+
+See also <A HREF="http://eulersharp.sourceforge.net/2006/02swap/INSTALL">INSTALL</A>.
+
+
+Just running Euler via command line
+-----------------------------------
+
+<I><SPAN STYLE="background: #e6e6e6">Current engine</SPAN></I>
+
+<B><SPAN ID="eye"><A HREF="http://eulersharp.sourceforge.net/2003/03swap/eye-note.txt">EYE</A></SPAN></B> - Euler Yet another proof Engine
+Get the self contained <A HREF="http://eulersharp.sourceforge.net/2004/01swap/bin/Euler.jar">Euler.jar</A> or get the jar file from the <A HREF="https://sourceforge.net/projects/eulersharp/files/eulersharp/maven2/euler/euler/">maven repository</A>.
+This jar file includes a 32 bit version of YAP for Windows and Linux and for any other usage
+install <A HREF="http://www.dcc.fc.up.pt/~vsc/Yap/downloads.html">YAP</A> + <A HREF="http://www.swi-prolog.org/Download.html">SWI-Prolog</A> + <A HREF="http://wget.addictivecode.org/FrequentlyAskedQuestions?action=show&amp;redirect=Faq#download">wget network utility</A> and make sure that they are in the PATH environment variable.
+
+Usage: <SPAN STYLE="background: #ffff00">eye &lt;options&gt;* &lt;data&gt;* &lt;query&gt;*</SPAN>
+eye
+	java -jar <A HREF="http://eulersharp.sourceforge.net/2004/01swap/bin/Euler.jar">Euler.jar</A>[--no-install] [--swipl] [--yap]
+	swipl -q -f <A HREF="http://eulersharp.sourceforge.net/2006/02swap/euler.yap">euler.yap</A> -g main --
+	yap -q -f <A HREF="http://eulersharp.sourceforge.net/2006/02swap/euler.yap">euler.yap</A> -g main --
+&lt;options&gt;
+	--nope			no proof explanation
+	--no-branch		no branch engine
+	--no-blank		no blank nodes in output
+	--no-qvars		no quantified variables in output
+	--no-qnames		no qnames in output
+	--no-span		no span control
+	--quiet			incomplete e:falseModel explanation
+	--quick-false		do not prove all e:falseModel
+	--quick-possible	do not prove all e:possibleModel
+	--quick-answer		do not prove all answers
+	--think			generate all proof paths
+	--ances			generate e:ancestorModel
+	--step &lt;count&gt;		set maximimum step count
+	--wcache &lt;uri&gt; &lt;file&gt;	to tell that uri is cached as file
+	--tmp-file &lt;file&gt;	temporary file used by N3 Socket
+	--wget-path &lt;path&gt;	the path followed by wget
+	--ignore-syntax-error	do not halt in case of syntax error
+	--n3p			output N3 P-code
+	--image &lt;file&gt;		output PVM code
+	--strings		output log:outputString objects
+	--warn			output warning info
+	--debug			output debug info
+	--debug-cnt		output debug info about counters
+	--debug-pvm		output debug info about PVM code
+	--profile		output profile info
+	--statistics		output statistics info
+	--version		show version info
+	--license		show license info
+	--help			show help info
+&lt;data&gt;
+	&lt;n3_resource&gt;		N3 facts and rules
+	--turtle &lt;ttl_resource&gt;	Turtle data
+	--plugin &lt;n3p_resource&gt;	plugin N3 P-code
+&lt;query&gt;
+	--query &lt;n3_resource&gt;	output filtered with filter rules
+	--pass			output deductive closure
+	--pass-all		output deductive closure plus rules
+
+
+<I><SPAN STYLE="background: #e6e6e6">Previous engines</SPAN></I>
+
+<B><SPAN ID="eulerj">Euler</SPAN></B> Java version: install JVM platform and either add
+EULER_SVNDIR/2004/01swap/bin/Euler.jar or EYE_HOME/bin/Euler.jar
+to the CLASSPATH
+Some additional jar files might be required in the CLASSPATH
+ o RDF/XML support requires JENA_INSTALLDIR/lib jar files
+ o XSD support requires <A HREF="http://eulersharp.sourceforge.net/2004/01swap/lib/xercesImpl.jar">http://eulersharp.sourceforge.net/2004/01swap/lib/xercesImpl.jar</A>
+ o SQLite support requires <A HREF="http://eulersharp.sourceforge.net/2004/01swap/lib/sqlitejdbc-v053.jar">http://eulersharp.sourceforge.net/2004/01swap/lib/sqlitejdbc-v053.jar</A>
+ o JSON support requires <A HREF="http://eulersharp.sourceforge.net/2004/01swap/lib/json.jar">http://eulersharp.sourceforge.net/2004/01swap/lib/json.jar</A>
+Usage: <SPAN STYLE="background: #ffff00">java euler.EulerRunner &lt;options&gt; [--rules|--trules] uris --query|--tquery uri</SPAN>
+options:
+  --prolog          translate to prolog
+  --prolog-bchain   translate to prolog backchain-only
+  --sem             translate to SEM
+  --sql             translate to SQL
+  --pass            pass-thru the N3
+  --json            translate to JSON
+  --prover9         translate to prover9
+  --nope            no proof explanation
+  --nobe            no belief explanation
+  --nefq            no ex falso quodlibet
+  --think           give all solutions
+  --step count      maximum number of reasoning steps
+  --debug           output debug info via stderr
+  --trace           output trace info via stderr
+  --test            output test run
+  --test-as         output test run as service
+  --profile         enable profiling
+  --help            show help
+
+<B>Euler2</B> C# version: install .NET platform and either add
+EULER_SVNDIR/2004/01swap/bin/Release/Euler.exe or EYE_HOME/bin/Release/Euler.exe to the PATH
+Usage: <SPAN STYLE="background: #ffff00">mono Euler.exe [--step count] [--debug] [--trace] uris [--nope] [--think] --query uri</SPAN>
+
+<B>Euler3</B> Python version: install Python platform
+Start Codd webizer service as described in "Just running Euler via RESTfull webservice"
+Usage: <SPAN STYLE="background: #ffff00">java euler.EulerRunner --pass --test-as [--why] [--once] [--debug] uris --query uri</SPAN>
+
+<B>Euler4</B> Javascript version: install Javascript platform
+Start Codd webizer service as described in "Just running Euler via RESTfull webservice"
+Usage: <SPAN STYLE="background: #ffff00">java euler.EulerRunner --json --test-as uris --query uri</SPAN>
+
+<B>Euler5</B> SWI-Prolog version: install SWI-Prolog platform
+For Windows add SWI_INSTALLDIR\pl\bin to PATH environment variable
+For Linux sudo ln -s /usr/local/bin/pl /usr/local/bin/plcon
+Start Codd webizer service as described in "Just running Euler via RESTfull webservice"
+Usage: <SPAN STYLE="background: #ffff00">java euler.EulerRunner --prolog|--prolog-bchain|--sem --test-as  [--nope] [--nobe] [--nefq] [--rules|--trules] uris --query|--tquery uri</SPAN>
+
+
+Just running Euler via RESTfull webservice
+------------------------------------------
+
+This is done as &quot;webized command line&quot; so same steps as above and
+start the Codd webizer in EULER_DATADIR (the subdirectory that will be web exposed) as
+java euler.Codd
+  --chatty 0 is the default and use up to 99 to get more debug info
+  --port 80 is the default and check when the webizer starts with e.g.
+    20 Oct 2006 19:18:07 GMT http://yourhost.yourdomain:80/ Codd 1.5.34
+  --properties ./codd.properties is the default and check its contents
+
+The configuration is done in EULER_DATADIR/codd.properties like for instance
+<A HREF="http://eulersharp.sourceforge.net/2004/01swap/codd.properties">http://eulersharp.sourceforge.net/2004/01swap/codd.properties</A>
+
+Following examples work as mapped services
+  o <A HREF="http://localhost/medService?WHO=Ann">http://localhost/medService?WHO=Ann</A>
+  o <A HREF="http://localhost/medic?why=think">http://localhost/medic?why=think</A>
+
+or as straight webized command lines
+  o <A HREF="http://localhost/.cwm+http%3A%2F%2Fwww.agfa.com%2Fw3c%2Feuler%2FmedP.n3+http%3A%2F%2Fwww.agfa.com%2Fw3c%2Feuler%2Frpo-rules.n3+-think+-filter%3Dhttp%3A%2F%2Fwww.agfa.com%2Fw3c%2Feuler%2FmedF.n3+-why">http://localhost/.cwm+http%3A%2F%2Fwww.agfa.com%2Fw3c%2Feuler%2FmedP.n3+http%3A%2F%2Fwww.agfa.com%2Fw3c%2Feuler%2Frpo-rules.n3+-think+-filter%3Dhttp%3A%2F%2Fwww.agfa.com%2Fw3c%2Feuler%2FmedF.n3+-why</A>
+  o <A HREF="http://localhost/.euler5as+--prolog+http%3A%2F%2Fwww.agfa.com%2Fw3c%2Feuler%2Fmedic.n3+--query+http%3A%2F%2Fwww.agfa.com%2Fw3c%2Feuler%2FmedicF.n3">http://localhost/.euler5as+--prolog+http%3A%2F%2Fwww.agfa.com%2Fw3c%2Feuler%2Fmedic.n3+--query+http%3A%2F%2Fwww.agfa.com%2Fw3c%2Feuler%2FmedicF.n3</A>
+
+For all the tests run via Codd.java which uses Process.java to wrap
+Yap, Cwm, SWI-Prolog, prover9, etc. To the external world it is then
+also a primitive webservice (a URI standing for a set of N3 triples).
+
+</PRE>
+</BODY>
+</HTML>

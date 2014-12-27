@@ -1,0 +1,362 @@
+@prefix dce: <http://purl.org/dc/elements/1.1/>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#>.
+@prefix event: <http://eulersharp.sourceforge.net/2003/03swap/event#>.
+@prefix space: <http://eulersharp.sourceforge.net/2003/03swap/space#>.
+@prefix physical: <http://eulersharp.sourceforge.net/2003/03swap/physicalResource#>.
+@prefix quant: <http://eulersharp.sourceforge.net/2003/03swap/quantities#>.
+@prefix units: <http://eulersharp.sourceforge.net/2003/03swap/units#>.
+@prefix agent: <http://eulersharp.sourceforge.net/2003/03swap/agent#>.
+@prefix organism: <http://eulersharp.sourceforge.net/2003/03swap/organism#>.
+@prefix human: <http://eulersharp.sourceforge.net/2003/03swap/human#>.
+@prefix hurifa: <http://www.agfa.com/w3c/2009/humanRiskFactors#>.
+@prefix clisko: <http://www.agfa.com/w3c/2009/clinicalSKOSSchemes#>.
+@prefix humanbody: <http://eulersharp.sourceforge.net/2003/03swap/humanBody#>.
+
+<http://eulersharp.sourceforge.net/2003/03swap/humanBody>
+	a owl:Ontology;
+	dce:title """Human body"""@en;
+	dce:creator """Hans Cools, MD, Agfa Healthcare/Belgium"""@en;
+	dce:contributor """"Until 2010: Pieterjan De Potter, Ghent University - IBBT/ELIS - Multimedia Lab/Belgium"""@en;
+	dce:publisher """Agfa Healthcare/Belgium"""@en;
+	dce:description """Formal general description of human body."""@en;
+	dce:format """OWL Full"""@en.
+
+#
+# CLASSES
+#
+
+humanbody:Body
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/humanBody#>;
+	rdfs:label """human body"""@en;
+	skos:definition """The whole body of a human."""@en;
+	rdfs:subClassOf physical:Resource, [
+		a owl:Restriction; owl:onProperty physical:complexityOf; owl:someValuesFrom human:Human];
+	skos:exactMatch [a skos:Concept; skos:inScheme clisko:sct20080731; skos:notation "38266002"^^clisko:sct20080731DT].
+
+humanbody:Newborn
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/humanBody#>;
+	rdfs:label """newborn body"""@en;
+	skos:definition """The whole body of a newborn human."""@en;
+	rdfs:subClassOf [
+		a owl:Restriction; owl:onProperty physical:complexityOf; owl:someValuesFrom human:Newborn], [
+		a owl:Restriction; owl:onProperty humanbody:hasWeight; owl:someValuesFrom humanbody:BirthWeight].
+
+humanbody:DeadBody
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/humanBody#>;
+	rdfs:label """human dead body"""@en;
+	skos:definition """Remainings of a human after life."""@en;
+	rdfs:subClassOf physical:Resource, space:SpatialResource, [
+		a owl:Restriction; owl:onProperty event:hasState; owl:hasValue organism:Dead], [
+		a owl:Restriction; owl:onProperty physical:hasComplexity; owl:someValuesFrom humanbody:Body];
+	#owl:disjointWith human:Human;
+	skos:exactMatch [a skos:Concept; skos:inScheme clisko:sct20080731; skos:notation "406139003"^^clisko:sct20080731DT].
+
+humanbody:Death
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/humanBody#>;
+	rdfs:label """human death"""@en;
+	skos:definition """Finding of a human body that stopped being a human."""@en;
+	rdfs:subClassOf organism:Death, [
+		a owl:Restriction; owl:onProperty agent:hasAgent; owl:someValuesFrom humanbody:DeadBody].
+
+humanbody:Substance
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/humanBody#>;
+	rdfs:label """human body substance"""@en;
+	skos:definition """Any sui generis substance contained by a human body."""@en;
+	rdfs:subClassOf physical:Resource, [
+		a owl:Restriction; owl:onProperty space:containedBy; owl:someValuesFrom humanbody:Body];
+	skos:exactMatch [
+		a skos:Concept; skos:inScheme clisko:sct20080731; skos:notation "91720002"^^clisko:sct20080731DT].
+
+humanbody:Structure
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/humanBody#>;
+	rdfs:label """human body structure"""@en;
+	skos:definition """Any structural part of the human body."""@en;
+	skos:note """This can be a site as object of a disease or a procedure."""@en;
+	rdfs:subClassOf humanbody:Substance;
+	skos:exactMatch [
+		a skos:Concept; skos:inScheme clisko:sct20080731; skos:notation "123037004"^^clisko:sct20080731DT].
+
+humanbody:AnatomicalStructure
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/humanBody#>;
+	rdfs:label """human anatomical structure"""@en;
+	skos:definition """Human structure of any kind as result of species evolution."""@en;
+	rdfs:subClassOf humanbody:Structure;
+	skos:exactMatch [
+		a skos:Concept; skos:inScheme clisko:sct20080731; skos:notation "91723000"^^clisko:sct20080731DT].
+
+humanbody:AcquiredStructure
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/humanBody#>;
+	rdfs:label """acquired human body structure"""@en;
+	skos:definition """Any acquired human body structure, e.g. a scar, an amputation stump."""@en;
+	rdfs:subClassOf humanbody:Structure;
+	owl:disjointWith humanbody:AnatomicalStructure;
+	skos:exactMatch [
+		a skos:Concept; skos:inScheme clisko:sct20080731; skos:notation "280115004"^^clisko:sct20080731DT].
+
+humanbody:Surface
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/humanBody#>;
+	rdfs:label """human body surface"""@en;
+	skos:definition """Outer surface of a human body."""@en;
+	rdfs:subClassOf space:OuterSurface.
+
+humanbody:Length
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/humanBody#>;
+	rdfs:label """human body length"""@en;
+	skos:definition """Length as physical property of a human body."""@en;
+	rdfs:subClassOf quant:Length, event:Observable.
+
+humanbody:LengthMeasuring
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/humanBody#>;
+	rdfs:label """measuring a human body length"""@en;
+	skos:definition """Measuring of the length of a human body from the vertex to the sole of the foot in upright position."""@en;
+	rdfs:subClassOf event:Examining, [
+		a owl:Restriction; owl:onProperty event:hasInput; owl:allValuesFrom humanbody:Length], [
+		a owl:Restriction; owl:onProperty event:hasOutput; owl:allValuesFrom humanbody:LengthMeasurement].
+
+humanbody:LengthMeasurement
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/humanBody#>;
+	rdfs:label """human body length measurement"""@en;
+	skos:definition """Measurement of the length of a human body from the vertex to the sole of the foot in upright position."""@en;
+	rdfs:subClassOf quant:Measurement, [
+		a owl:Restriction; owl:onProperty quant:measurementOf; owl:someValuesFrom humanbody:Length], [
+		a owl:Restriction; owl:onProperty event:outputOf; owl:someValuesFrom humanbody:LengthMeasuring];
+	skos:exactMatch [
+		a skos:Concept; skos:inScheme clisko:sct20080731; skos:notation "248334005"^^clisko:sct20080731DT].
+
+humanbody:SurfaceArea
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/humanBody#>;
+	rdfs:label """human body surface area"""@en;
+	skos:definition """Area as physical property of a human body surface."""@en;
+	rdfs:subClassOf quant:Area.
+
+humanbody:SurfaceAreaMeasurement
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/humanBody#>;
+	rdfs:label """human body surface area measurement"""@en;
+	skos:definition """Measurement of an area of a human body surface."""@en;
+	rdfs:comment """Approximative calculation, e.g. in an N3 rule with formula of Mosteller, see http://eulersharp.sourceforge.net/2003/03swap/bodySurfaceArea_rules.""";
+	rdfs:subClassOf quant:Measurement, [
+		a owl:Restriction; owl:onProperty quant:measurementOf; owl:someValuesFrom humanbody:SurfaceArea].
+
+humanbody:Weight
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/humanBody#>;
+	rdfs:label """human body weight"""@en;
+	skos:definition """Mass as physical property of a human body, since abstraction made of the gravitational acceleration."""@en;
+	rdfs:subClassOf quant:Mass.
+
+humanbody:BirthWeight
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/humanBody#>;
+	rdfs:label """human body birth weight"""@en;
+	skos:definition """Mass of a human body at birth."""@en;
+	rdfs:subClassOf humanbody:Weight.
+
+humanbody:Weighing
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/humanBody#>;
+	rdfs:label """weighing a human body"""@en;
+	skos:definition """Measuring a weight of a human body."""@en;
+	rdfs:subClassOf event:Examining, [
+		a owl:Restriction; owl:onProperty event:hasInput; owl:allValuesFrom humanbody:Weight], [
+		a owl:Restriction; owl:onProperty event:hasOutput; owl:allValuesFrom humanbody:WeightMeasurement];
+	skos:exactMatch [
+		a skos:Concept; skos:inScheme clisko:sct20080731; skos:notation "39857003"^^clisko:sct20080731DT].
+
+humanbody:WeightMeasurement
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/humanBody#>;
+	rdfs:label """human body weight measurement"""@en;
+	skos:definition """Measurement of a weight of a human body."""@en;
+	rdfs:subClassOf quant:Measurement, [
+		a owl:Restriction; owl:onProperty quant:measurementOf; owl:someValuesFrom humanbody:Weight], [
+		a owl:Restriction; owl:onProperty event:outputOf; owl:someValuesFrom humanbody:Weighing];
+	skos:exactMatch [
+		a skos:Concept; skos:inScheme clisko:sct20080731; skos:notation "27113001"^^clisko:sct20080731DT].
+
+humanbody:BirthWeightMeasurement
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/humanBody#>;
+	rdfs:label """human body birth weight measurement"""@en;
+	skos:definition """Measurement of a weight of a human body at birth."""@en;
+	rdfs:subClassOf humanbody:WeightMeasurement, [
+		a owl:Restriction; owl:onProperty quant:measurementOf; owl:someValuesFrom humanbody:BirthWeight], [
+		a owl:Restriction; owl:onProperty event:outputOf; owl:someValuesFrom humanbody:Weighing];
+	skos:exactMatch [
+		a skos:Concept; skos:inScheme clisko:sct20080731; skos:notation "364589006"^^clisko:sct20080731DT].
+
+humanbody:WeighingDevice
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/humanBody#>;
+	rdfs:label """human body weighing device"""@en;
+	skos:definition """Device to measure the human body weight."""@en;
+	rdfs:subClassOf agent:WeighingDevice;
+	rdfs:subClassOf [
+		a owl:Restriction; owl:onProperty agent:actsIn; owl:allValuesFrom humanbody:Weighing];
+	rdfs:subClassOf [
+		a owl:Restriction; owl:onProperty agent:weighs; owl:allValuesFrom humanbody:Body].
+
+humanbody:WeightStatus
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/humanBody#>;
+	rdfs:label """weight status"""@en;
+	skos:definition """Status of a human's weight"""@en;
+	rdfs:subClassOf event:Finding;
+	owl:oneOf (humanbody:SeverelyUnderweight humanbody:Underweight humanbody:NormalWeight humanbody:Overweight humanbody:Obese humanbody:MorbidlyObese humanbody:SuperObese).
+
+humanbody:SeverelyUnderweight
+	a humanbody:WeightStatus;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/humanBody#>;
+	rdfs:label """severely underweight"""@en;
+	skos:definition """A human's body weight being severely low."""@en;
+	rdfs:comment """Body mass index lower than 16 kg/m2."""@en;
+	rdfs:subClassOf hurifa:RiskFactor.
+
+humanbody:Underweight
+	a humanbody:WeightStatus;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/humanBody#>;
+	rdfs:label """underweight"""@en;
+	skos:definition """A human's body weight being too low."""@en;
+	rdfs:comment """Body mass index ranging 16-18.4 kg/m2."""@en;
+	rdfs:subClassOf hurifa:RiskFactor;
+	skos:exactMatch [
+		a skos:Concept; skos:inScheme clisko:sct20080731; skos:notation "248342006"^^clisko:sct20080731DT].
+
+humanbody:NormalWeight
+	a humanbody:WeightStatus;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/humanBody#>;
+	rdfs:label """normal weight"""@en;
+	skos:definition """A human's body weight being normal."""@en;
+	rdfs:comment """Body mass index ranging 18.5-24.9 kg/m2."""@en;
+	skos:exactMatch [
+		a skos:Concept; skos:inScheme clisko:sct20080731; skos:notation "63976003"^^clisko:sct20080731DT].
+
+humanbody:Overweight
+	a humanbody:WeightStatus;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/humanBody#>;
+	rdfs:label """overweight"""@en;
+	skos:definition """A human's body weight being too high."""@en;
+	rdfs:comment """Body mass index ranging 25-29.9 kg/m2."""@en;
+	rdfs:subClassOf hurifa:RiskFactor;
+	skos:exactMatch [
+		a skos:Concept; skos:inScheme clisko:sct20080731; skos:notation "238131007"^^clisko:sct20080731DT].
+
+humanbody:Obese
+	a humanbody:WeightStatus;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/humanBody#>;
+	rdfs:label """obese"""@en;
+	skos:definition """A human's body weight being pathologic."""@en;
+	rdfs:comment """Body mass index ranging 30-34.9 kg/m2."""@en;
+	rdfs:subClassOf hurifa:RiskFactor;
+	skos:exactMatch [
+		a skos:Concept; skos:inScheme clisko:sct20080731; skos:notation "414915002"^^clisko:sct20080731DT].
+
+humanbody:MorbidlyObese
+	a humanbody:WeightStatus;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/humanBody#>;
+	rdfs:label """morbidly obese"""@en;
+	skos:definition """A human's body weight being severely pathologic."""@en;
+	rdfs:comment """Body mass index ranging 35-44.9 kg/m2."""@en;
+	rdfs:subClassOf hurifa:RiskFactor.
+
+humanbody:SuperObese
+	a humanbody:WeightStatus;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/humanBody#>;
+	rdfs:label """super obese"""@en;
+	skos:definition """A human's body weight being extremely pathologic."""@en;
+	rdfs:comment """Body mass index over 44.9 kg/m2."""@en;
+	rdfs:subClassOf hurifa:RiskFactor.
+
+humanbody:AdultBodyMassIndex
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/humanBody#>;
+	rdfs:label """adult body mass index"""@en;
+	skos:definition """Physical quantity expressing total body fat based on body length and body weight applying to adult men and women."""@en;
+	rdfs:subClassOf quant:PhysicalQuantity.
+
+humanbody:AdultBodyMassIndexMeasurement
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/humanBody#>;
+	rdfs:label """adult body mass index measurement"""@en;
+	skos:definition """Estimation of total body fat based on body length and body weight applying to adult men and women."""@en;
+	rdfs:comment """May overestimate body fat in athletes and others who have a muscular build; may underestimate body fat in older persons and others who have lost muscle mass."""@en;
+	rdfs:subClassOf quant:Measurement, [
+		a owl:Restriction; owl:onProperty quant:measurementOf; owl:someValuesFrom humanbody:AdultBodyMassIndex], [
+		a owl:Restriction; owl:onProperty quant:hasUnit; owl:someValuesFrom units:kilogramPerMeterSquare].
+
+# fat-free mass index, fat mass index
+
+#
+# PROPERTIES
+#
+
+humanbody:hasLength
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/humanBody#>;
+	skos:definition """Specifying a human's body length."""@en;
+	rdfs:subPropertyOf quant:hasLength;
+	rdfs:domain humanbody:Body;
+	rdfs:range humanbody:Length.
+
+humanbody:hasSurfaceArea
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/humanBody#>;
+	skos:definition """Specifying a human's body surface area."""@en;
+	rdfs:subPropertyOf quant:hasArea;
+	rdfs:domain humanbody:Body;
+	rdfs:range humanbody:SurfaceArea.
+
+humanbody:hasWeight
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/humanBody#>;
+	skos:definition """Specifying a human's body weight."""@en;
+	rdfs:subPropertyOf quant:hasMass;
+	rdfs:domain humanbody:Body;
+	rdfs:range humanbody:Weight.
+
+humanbody:weightOf
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/humanBody#>;
+	skos:definition """Specifying a human body having a weight."""@en;
+	rdfs:subPropertyOf quant:massOf;
+	rdfs:domain humanbody:Weight;
+	rdfs:range humanbody:Body.
+
+humanbody:hasBirthWeight # rule matching birthdate and weight measurement date time
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/humanBody#>;
+	skos:definition """Specifying a human's body weight at birth."""@en;
+	rdfs:subPropertyOf humanbody:hasWeight;
+	rdfs:domain humanbody:Body;
+	rdfs:range humanbody:BirthWeight.
+
+humanbody:hasBodyMassIndex
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/humanBody#>;
+	skos:definition """Specifying a body mass index of a human adult's body'."""@en;
+	rdfs:domain humanbody:Body;
+	rdfs:range humanbody:AdultBodyMassIndex.
+
+humanbody:hasWeightStatus
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/humanBody#>;
+	skos:definition """Specifying a human body's weight status."""@en;
+	rdfs:domain humanbody:Body;
+	rdfs:range humanbody:WeightStatus.

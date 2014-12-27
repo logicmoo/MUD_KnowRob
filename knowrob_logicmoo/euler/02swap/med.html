@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+  <title>Medical test case</title>
+  <link rel="stylesheet" href="dynamic.css" type="text/css" />
+  <script src="euler.js" type="text/javascript"></script>
+  <script src="builtins.js" type="text/javascript"></script>
+  <script src="json.js" type="text/javascript"></script>
+</head>
+
+<body>
+<script language=javascript>
+
+var cases = {
+  "GND":{
+    "q:":"http://www.w3.org/2004/ql#",
+    "list:":"http://www.w3.org/2000/10/swap/list#",
+    "e:":"http://eulersharp.sourceforge.net/2003/03swap/log-rules#",
+    "xsd:":"http://www.w3.org/2001/XMLSchema#",
+    ":":"http://www.agfa.com/w3c/euler/medP#",
+    "rpo:":"http://eulersharp.sourceforge.net/2003/03swap/rpo-rules#",
+    "log:":"http://www.w3.org/2000/10/swap/log#",
+    "rdfs:":"http://www.w3.org/2000/01/rdf-schema#",
+    "math:":"http://www.w3.org/2000/10/swap/math#",
+    "owl:":"http://www.w3.org/2002/07/owl#",
+    "rdf:":"http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  },
+  "list:in":[
+    {head:{pred:"list:in", args:[{pred:"?I", args:[]}, {pred:"?L", args:[]}]}, body:[{pred:"rdf:first", args:[{pred:"?L", args:[]}, {pred:"?I", args:[]}]}, {pred:"a", args:[{pred:"?L", args:[]}, {pred:"rdf:List", args:[]}]}]},
+    {head:{pred:"list:in", args:[{pred:"?I", args:[]}, {pred:"?L", args:[]}]}, body:[{pred:"rdf:rest", args:[{pred:"?L", args:[]}, {pred:"?R", args:[]}]}, {pred:"a", args:[{pred:"?L", args:[]}, {pred:"rdf:List", args:[]}]}, {pred:"list:in", args:[{pred:"?I", args:[]}, {pred:"?R", args:[]}]}]}
+  ],
+  ":prescribedFor":[
+    {head:{pred:":prescribedFor", args:[{pred:":aspirin", args:[]}, {pred:":GastroEntritis", args:[]}]}, body:[]}
+  ],
+  "rdfs:range":[
+    {head:{pred:"rdfs:range", args:[{pred:":excludedFor", args:[]}, {pred:"rdf:List", args:[]}]}, body:[]},
+    {head:{pred:"rdfs:range", args:[{pred:"rdfs:subClassOf", args:[]}, {pred:"rdfs:Class", args:[]}]}, body:[]},
+    {head:{pred:"rdfs:range", args:[{pred:"rdfs:subPropertyOf", args:[]}, {pred:"rdf:Property", args:[]}]}, body:[]},
+    {head:{pred:"rdfs:range", args:[{pred:"owl:inverseOf", args:[]}, {pred:"owl:ObjectProperty", args:[]}]}, body:[]},
+    {head:{pred:"rdfs:range", args:[{pred:"owl:differentFrom", args:[]}, {pred:"owl:Thing", args:[]}]}, body:[]},
+    {head:{pred:"rdfs:range", args:[{pred:"owl:distinctMembers", args:[]}, {pred:"rdf:List", args:[]}]}, body:[]},
+    {head:{pred:"rdfs:range", args:[{pred:"rdf:first", args:[]}, {pred:"rdfs:Resource", args:[]}]}, body:[]},
+    {head:{pred:"rdfs:range", args:[{pred:"rdf:rest", args:[]}, {pred:"rdf:List", args:[]}]}, body:[]}
+  ],
+  ":excludedFor":[
+    {head:{pred:":excludedFor", args:[{pred:":aspirin", args:[]}, {pred:".", args:[{pred:":GastricUlcer", args:[]}, {pred:".", args:[{pred:":PostSurgery", args:[]}, {pred:".", args:[]}]}]}]}, body:[]}
+  ],
+  "rpo:mu":[
+    {head:{pred:"rpo:mu", args:[{pred:".", args:[{pred:":Ann", args:[]}, {pred:".", args:[{pred:":GastroEntritis", args:[]}, {pred:".", args:[]}]}]}, {pred:"0.8", args:[]}]}, body:[]},
+    {head:{pred:"rpo:mu", args:[{pred:".", args:[{pred:":Ann", args:[]}, {pred:".", args:[{pred:":GastricUlcer", args:[]}, {pred:".", args:[]}]}]}, {pred:"0.006", args:[]}]}, body:[]},
+    {head:{pred:"rpo:mu", args:[{pred:".", args:[{pred:":Ann", args:[]}, {pred:".", args:[{pred:":PostSurgery", args:[]}, {pred:".", args:[]}]}]}, {pred:"0", args:[]}]}, body:[]},
+    {head:{pred:"rpo:mu", args:[{pred:".", args:[{pred:"?X", args:[]}, {pred:".", args:[{pred:"?C", args:[]}, {pred:".", args:[]}]}]}, {pred:"?M", args:[]}]}, body:[{pred:"owl:intersectionOf", args:[{pred:"?C", args:[]}, {pred:".", args:[{pred:"?A", args:[]}, {pred:".", args:[{pred:"?B", args:[]}, {pred:".", args:[]}]}]}]}, {pred:"rpo:mu", args:[{pred:".", args:[{pred:"?X", args:[]}, {pred:".", args:[{pred:"?A", args:[]}, {pred:".", args:[]}]}]}, {pred:"?M", args:[]}]}, {pred:"rpo:mu", args:[{pred:".", args:[{pred:"?X", args:[]}, {pred:".", args:[{pred:"?B", args:[]}, {pred:".", args:[]}]}]}, {pred:"?N", args:[]}]}, {pred:"math:lessThan", args:[{pred:"?M", args:[]}, {pred:"?N", args:[]}]}]},
+    {head:{pred:"rpo:mu", args:[{pred:".", args:[{pred:"?X", args:[]}, {pred:".", args:[{pred:"?C", args:[]}, {pred:".", args:[]}]}]}, {pred:"?N", args:[]}]}, body:[{pred:"owl:intersectionOf", args:[{pred:"?C", args:[]}, {pred:".", args:[{pred:"?A", args:[]}, {pred:".", args:[{pred:"?B", args:[]}, {pred:".", args:[]}]}]}]}, {pred:"rpo:mu", args:[{pred:".", args:[{pred:"?X", args:[]}, {pred:".", args:[{pred:"?A", args:[]}, {pred:".", args:[]}]}]}, {pred:"?M", args:[]}]}, {pred:"rpo:mu", args:[{pred:".", args:[{pred:"?X", args:[]}, {pred:".", args:[{pred:"?B", args:[]}, {pred:".", args:[]}]}]}, {pred:"?N", args:[]}]}, {pred:"math:notLessThan", args:[{pred:"?M", args:[]}, {pred:"?N", args:[]}]}]},
+    {head:{pred:"rpo:mu", args:[{pred:".", args:[{pred:"?X", args:[]}, {pred:".", args:[{pred:"?C", args:[]}, {pred:".", args:[]}]}]}, {pred:"?N", args:[]}]}, body:[{pred:"owl:unionOf", args:[{pred:"?C", args:[]}, {pred:".", args:[{pred:"?A", args:[]}, {pred:".", args:[{pred:"?B", args:[]}, {pred:".", args:[]}]}]}]}, {pred:"rpo:mu", args:[{pred:".", args:[{pred:"?X", args:[]}, {pred:".", args:[{pred:"?A", args:[]}, {pred:".", args:[]}]}]}, {pred:"?M", args:[]}]}, {pred:"rpo:mu", args:[{pred:".", args:[{pred:"?X", args:[]}, {pred:".", args:[{pred:"?B", args:[]}, {pred:".", args:[]}]}]}, {pred:"?N", args:[]}]}, {pred:"math:lessThan", args:[{pred:"?M", args:[]}, {pred:"?N", args:[]}]}]},
+    {head:{pred:"rpo:mu", args:[{pred:".", args:[{pred:"?X", args:[]}, {pred:".", args:[{pred:"?C", args:[]}, {pred:".", args:[]}]}]}, {pred:"?M", args:[]}]}, body:[{pred:"owl:unionOf", args:[{pred:"?C", args:[]}, {pred:".", args:[{pred:"?A", args:[]}, {pred:".", args:[{pred:"?B", args:[]}, {pred:".", args:[]}]}]}]}, {pred:"rpo:mu", args:[{pred:".", args:[{pred:"?X", args:[]}, {pred:".", args:[{pred:"?A", args:[]}, {pred:".", args:[]}]}]}, {pred:"?M", args:[]}]}, {pred:"rpo:mu", args:[{pred:".", args:[{pred:"?X", args:[]}, {pred:".", args:[{pred:"?B", args:[]}, {pred:".", args:[]}]}]}, {pred:"?N", args:[]}]}, {pred:"math:notLessThan", args:[{pred:"?M", args:[]}, {pred:"?N", args:[]}]}]},
+    {head:{pred:"rpo:mu", args:[{pred:".", args:[{pred:"?X", args:[]}, {pred:".", args:[{pred:"?C", args:[]}, {pred:".", args:[]}]}]}, {pred:"?N", args:[]}]}, body:[{pred:"owl:complementOf", args:[{pred:"?C", args:[]}, {pred:"?A", args:[]}]}, {pred:"rpo:mu", args:[{pred:".", args:[{pred:"?X", args:[]}, {pred:".", args:[{pred:"?A", args:[]}, {pred:".", args:[]}]}]}, {pred:"?M", args:[]}]}, {pred:"math:difference", args:[{pred:".", args:[{pred:"1.0", args:[]}, {pred:".", args:[{pred:"?M", args:[]}, {pred:".", args:[]}]}]}, {pred:"?N", args:[]}]}]}
+  ],
+  "rpo:subListOf":[
+    {head:{pred:"rpo:subListOf", args:[{pred:"?L", args:[]}, {pred:"?L", args:[]}]}, body:[{pred:"a", args:[{pred:"?L", args:[]}, {pred:"rdf:List", args:[]}]}]},
+    {head:{pred:"rpo:subListOf", args:[{pred:"?X", args:[]}, {pred:"?L", args:[]}]}, body:[{pred:"rdf:rest", args:[{pred:"?L", args:[]}, {pred:"?R", args:[]}]}, {pred:"a", args:[{pred:"?L", args:[]}, {pred:"rdf:List", args:[]}]}, {pred:"rpo:subListOf", args:[{pred:"?X", args:[]}, {pred:"?R", args:[]}]}]}
+  ],
+  "rdfs:domain":[
+    {head:{pred:"rdfs:domain", args:[{pred:"rdfs:subClassOf", args:[]}, {pred:"rdfs:Class", args:[]}]}, body:[]},
+    {head:{pred:"rdfs:domain", args:[{pred:"rdfs:subPropertyOf", args:[]}, {pred:"rdf:Property", args:[]}]}, body:[]},
+    {head:{pred:"rdfs:domain", args:[{pred:"owl:inverseOf", args:[]}, {pred:"owl:ObjectProperty", args:[]}]}, body:[]},
+    {head:{pred:"rdfs:domain", args:[{pred:"owl:differentFrom", args:[]}, {pred:"owl:Thing", args:[]}]}, body:[]},
+    {head:{pred:"rdfs:domain", args:[{pred:"owl:distinctMembers", args:[]}, {pred:"owl:AllDifferent", args:[]}]}, body:[]},
+    {head:{pred:"rdfs:domain", args:[{pred:"rdf:first", args:[]}, {pred:"rdf:List", args:[]}]}, body:[]},
+    {head:{pred:"rdfs:domain", args:[{pred:"rdf:rest", args:[]}, {pred:"rdf:List", args:[]}]}, body:[]}
+  ],
+  "owl:differentFrom":[
+    {head:{pred:"owl:differentFrom", args:[{pred:"?X", args:[]}, {pred:"?Y", args:[]}]}, body:[{pred:"owl:distinctMembers", args:[{pred:"?A", args:[]}, {pred:"?D", args:[]}]}, {pred:"rpo:subListOf", args:[{pred:"?L", args:[]}, {pred:"?D", args:[]}]}, {pred:"rdf:first", args:[{pred:"?L", args:[]}, {pred:"?X", args:[]}]}, {pred:"rdf:rest", args:[{pred:"?L", args:[]}, {pred:"?R", args:[]}]}, {pred:"list:in", args:[{pred:"?Y", args:[]}, {pred:"?R", args:[]}]}]}
+  ],
+  "<file:/euler/rpo-rules.n3#rcsid>":[
+    {head:{pred:"<file:/euler/rpo-rules.n3#rcsid>", args:[{pred:"<file:/euler/rpo-rules.n3>", args:[]}, {pred:"\"$Id: med.html 1296 2007-05-11 16:55:51Z josd $\"", args:[]}]}, body:[]}
+  ],
+  ":fineWith":[
+    {head:{pred:":fineWith", args:[{pred:"?WHO", args:[]}, {pred:".", args:[]}]}, body:[{pred:"a", args:[{pred:"?WHO", args:[]}, {pred:":Patient", args:[]}]}]},
+    {head:{pred:":fineWith", args:[{pred:"?WHO", args:[]}, {pred:"?L", args:[]}]}, body:[{pred:"rdf:first", args:[{pred:"?L", args:[]}, {pred:"?D", args:[]}]}, {pred:"a", args:[{pred:"?L", args:[]}, {pred:"rdf:List", args:[]}]}, {pred:"rpo:mu", args:[{pred:".", args:[{pred:"?WHO", args:[]}, {pred:".", args:[{pred:"?D", args:[]}, {pred:".", args:[]}]}]}, {pred:"?N", args:[]}]}, {pred:"math:lessThan", args:[{pred:"?N", args:[]}, {pred:"0.01", args:[]}]}, {pred:"rdf:rest", args:[{pred:"?L", args:[]}, {pred:"?R", args:[]}]}, {pred:":fineWith", args:[{pred:"?WHO", args:[]}, {pred:"?R", args:[]}]}]}
+  ],
+  "?R":[
+    {head:{pred:"?R", args:[{pred:"?S", args:[]}, {pred:"?O", args:[]}]}, body:[{pred:"rdfs:subPropertyOf", args:[{pred:"?P", args:[]}, {pred:"?R", args:[]}]}, {pred:"?P", args:[{pred:"?S", args:[]}, {pred:"?O", args:[]}]}]}
+  ],
+  "=":[
+    {head:{pred:"=", args:[{pred:"?X", args:[]}, {pred:"?Y", args:[]}]}, body:[{pred:"a", args:[{pred:"?P", args:[]}, {pred:"owl:FunctionalProperty", args:[]}]}, {pred:"?P", args:[{pred:"?S", args:[]}, {pred:"?X", args:[]}]}, {pred:"?P", args:[{pred:"?S", args:[]}, {pred:"?Y", args:[]}]}]},
+    {head:{pred:"=", args:[{pred:"?X", args:[]}, {pred:"?Y", args:[]}]}, body:[{pred:"a", args:[{pred:"?P", args:[]}, {pred:"owl:InverseFunctionalProperty", args:[]}]}, {pred:"?P", args:[{pred:"?X", args:[]}, {pred:"?O", args:[]}]}, {pred:"?P", args:[{pred:"?Y", args:[]}, {pred:"?O", args:[]}]}]}
+  ],
+  "?Q":[
+    {head:{pred:"?Q", args:[{pred:"?O", args:[]}, {pred:"?S", args:[]}]}, body:[{pred:"owl:inverseOf", args:[{pred:"?P", args:[]}, {pred:"?Q", args:[]}]}, {pred:"?P", args:[{pred:"?S", args:[]}, {pred:"?O", args:[]}]}]}
+  ],
+  "?P":[
+    {head:{pred:"?P", args:[{pred:"?O", args:[]}, {pred:"?S", args:[]}]}, body:[{pred:"a", args:[{pred:"?P", args:[]}, {pred:"owl:SymmetricProperty", args:[]}]}, {pred:"?P", args:[{pred:"?S", args:[]}, {pred:"?O", args:[]}]}]},
+    {head:{pred:"?P", args:[{pred:"?S", args:[]}, {pred:"?O", args:[]}]}, body:[{pred:"a", args:[{pred:"?P", args:[]}, {pred:"owl:TransitiveProperty", args:[]}]}, {pred:"?P", args:[{pred:"?X", args:[]}, {pred:"?O", args:[]}]}, {pred:"?P", args:[{pred:"?S", args:[]}, {pred:"?X", args:[]}]}]}
+  ],
+  "a":[
+    {head:{pred:"a", args:[{pred:":Ann", args:[]}, {pred:":Patient", args:[]}]}, body:[]},
+    {head:{pred:"a", args:[{pred:"?R", args:[]}, {pred:"rdf:List", args:[]}]}, body:[{pred:"rdf:rest", args:[{pred:"?L", args:[]}, {pred:"?R", args:[]}]}, {pred:"a", args:[{pred:"?L", args:[]}, {pred:"rdf:List", args:[]}]}]},
+    {head:{pred:"a", args:[{pred:"rdfs:subClassOf", args:[]}, {pred:"owl:TransitiveProperty", args:[]}]}, body:[]},
+    {head:{pred:"a", args:[{pred:"rdfs:subPropertyOf", args:[]}, {pred:"owl:TransitiveProperty", args:[]}]}, body:[]},
+    {head:{pred:"a", args:[{pred:"owl:inverseOf", args:[]}, {pred:"owl:SymmetricProperty", args:[]}]}, body:[]},
+    {head:{pred:"a", args:[{pred:"owl:differentFrom", args:[]}, {pred:"owl:SymmetricProperty", args:[]}]}, body:[]},
+    {head:{pred:"a", args:[{pred:"rdf:first", args:[]}, {pred:"owl:FunctionalProperty", args:[]}]}, body:[]},
+    {head:{pred:"a", args:[{pred:"rdf:rest", args:[]}, {pred:"owl:FunctionalProperty", args:[]}]}, body:[]},
+    {head:{pred:"a", args:[{pred:"?S", args:[]}, {pred:"?C", args:[]}]}, body:[{pred:"rdfs:domain", args:[{pred:"?P", args:[]}, {pred:"?C", args:[]}]}, {pred:"?P", args:[{pred:"?S", args:[]}, {pred:"?O", args:[]}]}]},
+    {head:{pred:"a", args:[{pred:"?O", args:[]}, {pred:"?C", args:[]}]}, body:[{pred:"rdfs:range", args:[{pred:"?P", args:[]}, {pred:"?C", args:[]}]}, {pred:"?P", args:[{pred:"?S", args:[]}, {pred:"?O", args:[]}]}]},
+    {head:{pred:"a", args:[{pred:"?S", args:[]}, {pred:"?B", args:[]}]}, body:[{pred:"rdfs:subClassOf", args:[{pred:"?A", args:[]}, {pred:"?B", args:[]}]}, {pred:"a", args:[{pred:"?S", args:[]}, {pred:"?A", args:[]}]}]},
+    {head:{pred:"a", args:[{pred:"?X", args:[]}, {pred:"?C", args:[]}]}, body:[{pred:"owl:oneOf", args:[{pred:"?C", args:[]}, {pred:"?L", args:[]}]}, {pred:"list:in", args:[{pred:"?X", args:[]}, {pred:"?L", args:[]}]}]}
+  ],
+  "owl:distinctMembers":[
+    {head:{pred:"owl:distinctMembers", args:[{pred:"?A", args:[]}, {pred:"?R", args:[]}]}, body:[{pred:"owl:distinctMembers", args:[{pred:"?A", args:[]}, {pred:"?D", args:[]}]}, {pred:"rdf:rest", args:[{pred:"?D", args:[]}, {pred:"?R", args:[]}]}]}
+  ],
+  ":isPrescribed":[
+    {head:{pred:":isPrescribed", args:[{pred:"?WHO", args:[]}, {pred:"?MED", args:[]}]}, body:[{pred:":prescribedFor", args:[{pred:"?MED", args:[]}, {pred:"?D", args:[]}]}, {pred:":excludedFor", args:[{pred:"?MED", args:[]}, {pred:"?L", args:[]}]}, {pred:":fineWith", args:[{pred:"?WHO", args:[]}, {pred:"?L", args:[]}]}, {pred:"rpo:mu", args:[{pred:".", args:[{pred:"?WHO", args:[]}, {pred:".", args:[{pred:"?D", args:[]}, {pred:".", args:[]}]}]}, {pred:"?N", args:[]}]}, {pred:"math:greaterThan", args:[{pred:"?N", args:[]}, {pred:"0.7", args:[]}]}]}
+  ],
+  "":[
+    {head:{}, body:[{pred:":isPrescribed", args:[{pred:"?WHO", args:[]}, {pred:"?MED", args:[]}]}]}
+  ]
+}
+
+document.write('<pre>')
+var t = new Date()
+for (var i = 0; i < cases[""].length; i++) if (cases[""][i] != null) prove(cases[""][i], -1)
+for (var i in evidence) evidence["GND"] = cases["GND"]
+t = new Date() - t
+document.writeln('//' + version + '\n')
+document.writeln(JSON.stringify(evidence) + '\n')
+document.writeln('//ENDS [' + step + ' steps/' + t + ' msec]')
+document.write("</pre>")
+
+</script>
+</body>
+</html>

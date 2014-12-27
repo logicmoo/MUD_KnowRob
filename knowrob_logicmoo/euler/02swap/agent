@@ -1,0 +1,534 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix dce: <http://purl.org/dc/elements/1.1/>.
+@prefix con: <http://www.w3.org/2000/10/swap/pim/contact#>.
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+@prefix doc: <http://eulersharp.sourceforge.net/2003/03swap/document#>.
+@prefix event: <http://eulersharp.sourceforge.net/2003/03swap/event#>.
+@prefix fos: <http://eulersharp.sourceforge.net/2003/03swap/foster#>.
+@prefix physical: <http://eulersharp.sourceforge.net/2003/03swap/physicalResource#>.
+@prefix agent: <http://eulersharp.sourceforge.net/2003/03swap/agent#>.
+@prefix human: <http://eulersharp.sourceforge.net/2003/03swap/human#>.
+@prefix organism: <http://eulersharp.sourceforge.net/2003/03swap/organism#>.
+
+<http://eulersharp.sourceforge.net/2003/03swap/agent>
+	a owl:Ontology;
+	dce:title """Agent"""@en;
+	dce:creator """Hans Cools, MD, Agfa Healthcare/Belgium"""@en;
+	dce:contributor """Marc Twagirumukiza, MD, PhD, Agfa Healthcare/Belgium; Until 2010: Pieterjan De Potter, Pedro Debevere, Ghent University - IBBT/ELIS - Multimedia Lab/Belgium"""@en;
+	dce:publisher """Agfa Healthcare/Belgium"""@en;
+	dce:description """Formal general description of agents and the roles they can play."""@en;
+	dce:source """http://www.artint.info/html/ArtInt_34.html"""@en;
+	dce:format """OWL Full"""@en.
+
+#
+# CLASSES
+#
+
+agent:PurposiveAgent
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/agent#>;
+	rdfs:label """purposive agent"""@en;
+	skos:definition """Agent having preference of some state of the environment and acting to try to achieve most preferred state."""@en;
+	rdfs:subClassOf foaf:Agent.
+
+agent:Group
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/agent#>;
+	rdfs:label """group of agents"""@en;
+	skos:definition """Group of agents."""@en;
+	rdfs:subClassOf fos:Group, foaf:Group.
+
+agent:Community
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/agent#>;
+	rdfs:label """community"""@en;
+	skos:definition """Group of agents of which the members have something in common."""@en;
+	rdfs:subClassOf agent:Group.
+
+agent:Descendant
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/agent#>;
+	rdfs:label """descendant"""@en;
+	skos:definition """Something deriving in appearance, function, or general character from an earlier form."""@en;
+	rdfs:subClassOf foaf:Agent, [
+		a owl:Restriction; owl:onProperty agent:hasAscendant; owl:minCardinality "1"^^xsd:nonNegativeInteger].
+
+agent:Offspring
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/agent#>;
+	rdfs:label """offspring"""@en;
+	skos:definition """A descendant group of any kind of something."""@en;
+	rdfs:subClassOf agent:Group, [
+		a owl:Restriction; owl:onProperty foaf:member; owl:allValuesFrom agent:Descendant].
+
+agent:Ascendant
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/agent#>;
+	rdfs:label """ascendant"""@en;
+	skos:definition """An earlier form in appearance, function, or general character of something."""@en;
+	rdfs:subClassOf [
+		a owl:Restriction; owl:onProperty agent:hasDescendant; owl:minCardinality "1"^^xsd:nonNegativeInteger].
+
+agent:Ancestry
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/agent#>;
+	rdfs:label """ancestry"""@en;
+	skos:definition """An ascendant group of any kind of something."""@en;
+	rdfs:subClassOf agent:Group;
+	rdfs:subClassOf [
+		a owl:Restriction; owl:onProperty foaf:member; owl:someValuesFrom agent:Ascendant].
+
+agent:Parent
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/agent#>;
+	rdfs:label """parent"""@en;
+	skos:definition """A first grade ascendant of something."""@en;
+	rdfs:subClassOf agent:Ascendant;
+	rdfs:subClassOf [
+		a owl:Restriction; owl:onProperty agent:hasChild; owl:minCardinality "1"^^xsd:nonNegativeInteger].
+
+agent:Child
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/agent#>;
+	rdfs:label """child"""@en;
+	skos:definition """A first grade descendant of something."""@en;
+	rdfs:subClassOf agent:Descendant;
+	rdfs:subClassOf [
+		a owl:Restriction; owl:onProperty agent:hasParent; owl:minCardinality "1"^^xsd:nonNegativeInteger].
+
+agent:MaritalStatus
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/agent#>;
+	rdfs:label """marital status"""@en;
+	skos:definition """the social and/or juridical status of being married or unmarried. """@en.
+
+agent:Machine
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/agent#>;
+	rdfs:label """machine"""@en;
+	skos:definition """A device using energy to perform an action."""@en;
+	rdfs:subClassOf foaf:Agent, physical:Device, physical:Product.
+
+agent:Role
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/agent#>;
+	rdfs:label """role"""@en;
+	skos:definition """Specific function of an agent."""@en;
+	owl:disjointWith foaf:Agent.
+
+agent:GroupRole
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/agent#>;
+	rdfs:label """group role"""@en;
+	skos:definition """Specific function of a group."""@en;
+	rdfs:subClassOf agent:Role, [
+		a owl:Restriction; owl:onProperty agent:rolePlayedBy; owl:allValuesFrom agent:Group].
+
+agent:OrganizationRole
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/agent#>;
+	rdfs:label """organization role"""@en;
+	skos:definition """Specific function of an organization."""@en;
+	skos:note """An organization can be a legal person."""@en;
+	rdfs:subClassOf agent:Role, [
+		a owl:Restriction; owl:onProperty agent:rolePlayedBy; owl:allValuesFrom foaf:Organization].
+
+agent:MachineRole
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/agent#>;
+	rdfs:label """machine role"""@en;
+	skos:definition """Specific function of a machine."""@en;
+	rdfs:subClassOf agent:Role, [
+		a owl:Restriction; owl:onProperty agent:rolePlayedBy; owl:allValuesFrom agent:Machine].
+
+agent:Ability
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/agent#>;
+	rdfs:label """ability"""@en;
+	skos:definition """Being able to do something."""@en.
+
+agent:User
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/agent#>;
+	rdfs:label """user"""@en;
+	skos:definition """Role of putting something into service or applying for a purpose."""@en;
+	rdfs:subClassOf agent:Role.
+
+agent:UserCredential
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/agent#>;
+	rdfs:label """user credential"""@en;
+	skos:definition """Convincible information as input to get user access, e.g. to a digital multiuser computer system."""@en;
+	rdfs:subClassOf event:Input.
+
+agent:Examinator
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/agent#>;
+	rdfs:label """examinator"""@en;
+	skos:definition """Role of an agent examining something."""@en;
+	rdfs:subClassOf agent:Role, [
+		a owl:Restriction; owl:onProperty agent:rolePlayedBy; owl:someValuesFrom [
+			a owl:Restriction; owl:onProperty agent:actsIn; owl:someValuesFrom event:Examining]].
+
+agent:Evaluator
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/agent#>;
+	rdfs:label """evaluator"""@en;
+	skos:definition """Role of an agent evaluating something."""@en;
+	rdfs:subClassOf agent:Role, [
+		a owl:Restriction; owl:onProperty agent:rolePlayedIn; owl:someValuesFrom event:Evaluating].
+
+agent:Creator
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/agent#>;
+	rdfs:label """creator"""@en;
+	skos:definition """Role of an agent creating something."""@en;
+	rdfs:subClassOf agent:Role, [
+		a owl:Restriction; owl:onProperty agent:rolePlayedIn; owl:someValuesFrom event:Creating].
+
+agent:Modifier
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/agent#>;
+	rdfs:label """modifier"""@en;
+	skos:definition """Role of an agent changing something."""@en;
+	rdfs:subClassOf agent:Role, [
+		a owl:Restriction; owl:onProperty agent:rolePlayedIn; owl:someValuesFrom event:Modifying].
+
+agent:Completor
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/agent#>;
+	rdfs:label """completor"""@en;
+	skos:definition """Role of an agent completing something.""";
+	rdfs:subClassOf agent:Role, [
+		a owl:Restriction; owl:onProperty agent:rolePlayedIn; owl:someValuesFrom event:Completing].
+
+agent:Validator
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/agent#>;
+	rdfs:label """validator"""@en;
+	skos:definition """Role of an agent validating something.""";
+	rdfs:subClassOf agent:Role, [
+		a owl:Restriction; owl:onProperty agent:rolePlayedIn; owl:someValuesFrom event:Validating].
+
+agent:Submittor
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/agent#>;
+	rdfs:label """submittor"""@en;
+	skos:definition """Role of an agent submitting something.""";
+	rdfs:subClassOf agent:Role, [
+		a owl:Restriction; owl:onProperty agent:rolePlayedIn; owl:someValuesFrom event:Submitting].
+
+agent:Authenticator
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/agent#>;
+	rdfs:label """authenticator"""@en;
+	skos:definition """Role of an agent authenticating something.""";
+	rdfs:subClassOf agent:Role, [
+		a owl:Restriction; owl:onProperty agent:rolePlayedIn; owl:someValuesFrom event:Authenticating].
+
+agent:LegalAuthenticator
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/agent#>;
+	rdfs:label """legal authenticator"""@en;
+	skos:definition """Role of an agent legally authenticating something.""";
+	rdfs:subClassOf agent:Authenticator, [
+		a owl:Restriction; owl:onProperty agent:rolePlayedIn; owl:someValuesFrom event:LegalAuthenticating].
+
+agent:Monitor
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/agent#>;
+	rdfs:label """monitor"""@en;
+	skos:definition """Role of an agent observing something to detect something."""@en;
+	rdfs:subClassOf agent:Role.
+
+agent:Donor
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/agent#>;
+	rdfs:label """donor"""@en;
+	skos:definition """Role of an agent giving something."""@en;
+	rdfs:subClassOf agent:Role.
+
+agent:Sender
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/agent#>;
+	rdfs:label """sender"""@en;
+	skos:definition """Role of agent sending something."""@en;
+	rdfs:subClassOf agent:Donor.
+	
+agent:Messenger
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/agent#>;
+	rdfs:label """messenger"""@en;
+	skos:definition """Role of an agent sending a message."""@en;
+	rdfs:subClassOf agent:Sender.
+
+agent:Recipient
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/agent#>;
+	rdfs:label """recipient"""@en;
+	skos:definition """Role of an agent receiving something."""@en;
+	rdfs:subClassOf agent:Role.
+
+agent:Sponsor
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/agent#>;
+	rdfs:label """sponsor"""@en;
+	skos:definition """Role of an agent sponsoring something."""@en;
+	rdfs:subClassOf agent:Role.
+
+agent:Deprecator
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/agent#>;
+	rdfs:label """deprecator"""@en;
+	skos:definition """Role of agent marking a digital document as obsolete to warn against its use so that it may be phased out (www.thefreedictionary.com)."""@en;
+	rdfs:subClassOf [
+		a owl:Restriction; owl:onProperty agent:rolePlayedIn; owl:allValuesFrom doc:Deprecating].
+
+agent:DrugSubstance
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/agent#>;
+	rdfs:label """drug substance"""@en;
+	skos:definition """Substance, when absorbed into an organism, alters its functioning."""@en;
+	rdfs:subClassOf physical:Resource, foaf:Agent.
+
+agent:WeighingDevice
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/agent#>;
+	rdfs:label """weighing device"""@en;
+	skos:definition """Device to measure the weight of a physical resource."""@en;
+	rdfs:subClassOf physical:Device.
+
+#
+# PROPERTIES
+#
+
+agent:actsIn
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/agent#>;
+	skos:definition """Specifying an action an agent is involved in."""@en;
+	rdfs:domain foaf:Agent;
+	rdfs:range event:Action.
+
+agent:hasAgent
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/agent#>;
+	skos:definition """Specifying an agent involved in an action."""@en;
+	owl:inverseOf agent:actsIn;
+	rdfs:domain event:Action;
+	rdfs:range foaf:Agent.
+
+agent:actsBefore
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/agent#>;
+	skos:definition """Specifying an agent acting before another agent in a same action."""@en;
+	owl:PropertyChainAxiom (agent:actsIn event:before agent:hasAgent);
+	rdfs:domain foaf:Agent;
+	rdfs:range foaf:Agent.
+
+agent:actsAfter
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/agent#>;
+	skos:definition """Specifying an agent acting after another agent in a same action."""@en;
+	owl:PropertyChainAxiom (agent:actsIn event:after agent:hasAgent);
+	rdfs:domain foaf:Agent;
+	rdfs:range foaf:Agent.
+
+agent:playsRole
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/agent#>;
+	skos:definition """Specifying a role an agent plays."""@en;
+	rdfs:domain foaf:Agent;
+	rdfs:range agent:Role.
+	
+agent:rolePlayedBy
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/agent#>;
+	skos:definition """Specifying an agent playing a role."""@en;
+	owl:inverseOf agent:playsRole;
+	rdfs:domain agent:Role;
+	rdfs:range foaf:Agent.
+
+agent:hasPlayedRole
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/agent#>;
+	skos:definition """Specifying a role played in an action."""@en;
+	rdfs:domain event:Action;
+	rdfs:range agent:Role;
+	owl:PropertyChainAxiom (agent:hasAgent agent:playsRole).
+
+agent:rolePlayedIn
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/agent#>;
+	skos:definition """Specifying an action a role is played in."""@en;
+	owl:inverseOf agent:hasPlayedRole;
+	owl:PropertyChainAxiom (agent:rolePlayedBy agent:actsIn).
+
+agent:hasDonor
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/agent#>;
+	skos:definition """Specifying a donor in a transfer of something."""@en;
+	#rdfs:subPropertyOf agent:hasPlayedRole;
+	rdfs:domain event:Transferring;
+	rdfs:range [a owl:Restriction; owl:onProperty agent:playsRole; owl:someValuesFrom agent:Donor].
+
+agent:hasRecipient
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/agent#>;
+	skos:definition """Specifying a recipient in a transfer of something."""@en;
+	#rdfs:subPropertyOf agent:hasPlayedRole;
+	rdfs:domain event:Transferring;
+	rdfs:range [a owl:Restriction; owl:onProperty agent:playsRole; owl:someValuesFrom agent:Recipient].
+
+agent:recipientIn
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/agent#>;
+	skos:definition """Specifying a transfer for a recipient of something."""@en;
+	#rdfs:subPropertyOf agent:rolePlayedIn;
+	rdfs:domain [a owl:Restriction; owl:onProperty agent:playsRole; owl:someValuesFrom agent:Recipient];
+	rdfs:range event:Transferring.
+
+agent:memberOf
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/agent#>;
+	skos:definition """Specifying a group an agent is a member of."""@en;
+	rdfs:subPropertyOf fos:memberOf;
+	owl:inverseOf foaf:member.
+
+agent:interactsWith
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/agent#>;
+	skos:definition """Specifying an agent interacting with another agent in a sense that it changes the outcome of the action compared to one with the other agent alone."""@en;
+	skos:note """Not limited to direct interaction between 2 agents."""@en;
+	rdfs:domain foaf:Agent;
+	rdfs:range foaf:Agent.
+
+agent:hasAbility
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/agent#>;
+	skos:definition """Specifying an ability of an agent."""@en;
+	rdfs:domain foaf:Agent;
+	rdfs:range agent:Ability.
+
+agent:abilityOf
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/agent#>;
+	skos:definition """Specifying an agent having an ability."""@en;
+	owl:inverseOf agent:hasAbility;
+	rdfs:domain agent:Ability;
+	rdfs:range foaf:Agent.
+
+agent:hasResidence
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/agent#>;
+	skos:definition """Specifying a place wherein an agent with a certain role resides and can be contacted."""@en;
+	rdfs:domain foaf:Agent;
+	rdfs:range con:ContactLocation.
+	# also for other roles than that of persons (con:home etc) and organisations (orgion:hasSeat)
+	# con:home not rdfs:subPropertyOf agent:hasResidence because rdfs:domain con:Person, which is not a subclass of foaf:Agent.
+
+agent:hasDescendant
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/agent#>;
+	skos:definition """Specifying any descendant of an ascendant."""@en;
+	rdfs:domain agent:Ascendant;
+	rdfs:range agent:Descendant.
+
+agent:hasOffspring
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/agent#>;
+	skos:definition """Specifying a descendant group of an ascendant."""@en;
+	rdfs:domain agent:Ascendant;
+	rdfs:range agent:Offspring.
+
+agent:hasAscendant
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/agent#>;
+	skos:definition """Specifying any ascendant of a descendant."""@en;
+	rdfs:domain agent:Descendant;
+	rdfs:range agent:Ascendant.
+
+agent:hasAncestry
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/agent#>;
+	skos:definition """Specifying a ascendant group of a descendant."""@en;
+	rdfs:domain agent:Descendant;
+	rdfs:range agent:Ancestry.
+
+agent:hasChild
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/agent#>;
+	skos:definition """Specifying a first grade descendant of something."""@en;
+	rdfs:subPropertyOf agent:hasDescendant;
+	rdfs:domain agent:Parent;
+	rdfs:range agent:Child.
+	
+agent:hasParent
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/agent#>;
+	skos:definition """Specifying a first grade ascendant of something."""@en;
+	rdfs:subPropertyOf agent:hasAscendant;
+	rdfs:domain agent:Child;
+	rdfs:range agent:Parent.
+
+agent:hasSpouse
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/agent#>;
+	rdfs:label """has a spouse"""@en;
+	skos:definition """Specifying an agent having a partner (gender neutral) in a marriage, civil union, domestic partnership or common-law marriage."""@en;
+	rdfs:domain foaf:Person;
+	rdfs:range foaf:Person.
+
+agent:hasMaritalStatus
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/agent#>;
+	rdfs:label """has marital status"""@en;
+	skos:definition """Speciafying an agent having the social and/or juridical status of being married or unmarried. """@en;
+	rdfs:domain foaf:Person;
+	rdfs:range agent:MaritalStatus.
+
+
+agent:weighs
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/agent#>;
+	skos:definition """Specifying something weighed by a device."""@en;
+	rdfs:domain agent:WeighingDevice;
+	rdfs:range physical:Resource.
+
+agent:hasUserCredential
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/agent#>;
+	skos:definition """Specifying credentials of a user to access e.g. a multiuser computer system."""@en;
+	rdfs:domain [a owl:Restriction; owl:onProperty agent:playsRole; owl:someValuesFrom agent:User];
+	rdfs:range agent:UserCredential.
+	
+agent:hasUsername
+	a owl:InverseFunctionalProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/agent#>;
+	skos:definition """Specifying a name of a user to access e.g. a multiuser computer system."""@en;
+	rdfs:domain agent:UserCredential;
+	rdfs:range rdfs:Literal.
+
+agent:hasPassword
+	a rdf:Property;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/agent#>;
+	skos:definition """Specifying a password of a user to access e.g. a multiuser computer system."""@en;
+	rdfs:domain agent:UserCredential;
+	rdfs:range rdfs:Literal.
+
+agent:authenticatesWith
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/agent#>;
+	skos:definition """Specifying credentials an agent uses to authenticate."""@en;
+	rdfs:domain [a owl:Restriction; owl:onProperty agent:playsRole; owl:someValuesFrom agent:User];
+	rdfs:range agent:UserCredential.
+
+agent:isAuthenticationObjectFor
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/agent#>;
+	skos:definition """Specifying something for which user credentials are needed to authenticate."""@en;
+	rdfs:domain agent:UserCredential;
+	rdfs:range event:Action.

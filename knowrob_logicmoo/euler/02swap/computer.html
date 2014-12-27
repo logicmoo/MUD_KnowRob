@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>
+		<meta name="generator" content="AGFA HealthCare N3 to HTML convertor"/>
+		<link rel="alternate" type="text/n3" title="RDF Representation" href="http://eulersharp.sourceforge.net/2003/03swap/computer"/>
+		<title>computer</title>
+		<style type="text/css">
+			a[href]:link { text-decoration:none; }
+			a[href]:visited { text-decoration:none; }
+			a[href]:active { text-decoration:underline; }
+			a:hover { background:#ffa; }
+			.keyword { font-weight: bold; }
+			.literal { color: blue }
+			.uri { color: darkblue }
+			.qname { color: black }
+			.var { color: gray }
+			.comment { font-style:italic; color: darkgreen }
+		</style>
+	</head>
+	<body>
+	<div>
+		<pre>
+<span class="keyword">@prefix</span> rdf:  <a class="uri" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</a>.
+<span class="keyword">@prefix</span> rdfs: <a class="uri" href="http://www.w3.org/2000/01/rdf-schema">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</a>.
+<span class="keyword">@prefix</span> dce: <a class="uri" href="http://purl.org/dc/elements/1.1/">&lt;http://purl.org/dc/elements/1.1/&gt;</a>.
+<span class="keyword">@prefix</span> owl:  <a class="uri" href="http://www.w3.org/2002/07/owl">&lt;http://www.w3.org/2002/07/owl#&gt;</a>.
+<span class="keyword">@prefix</span> xsd:  <a class="uri" href="http://www.w3.org/2001/XMLSchema">&lt;http://www.w3.org/2001/XMLSchema#&gt;</a>.
+<span class="keyword">@prefix</span> skos: <a class="uri" href="http://www.w3.org/2004/02/skos/core.html#">&lt;http://www.w3.org/2004/02/skos/core#&gt;</a>.
+<span class="keyword">@prefix</span> event: <a class="uri" href="http://eulersharp.sourceforge.net/2003/03swap/event.html#">&lt;http://eulersharp.sourceforge.net/2003/03swap/event#&gt;</a>.
+<span class="keyword">@prefix</span> agent: <a class="uri" href="http://eulersharp.sourceforge.net/2003/03swap/agent.html#">&lt;http://eulersharp.sourceforge.net/2003/03swap/agent#&gt;</a>.
+<span class="keyword">@prefix</span> physical: <a class="uri" href="http://eulersharp.sourceforge.net/2003/03swap/physicalResource.html#">&lt;http://eulersharp.sourceforge.net/2003/03swap/physicalResource#&gt;</a>.
+<span class="keyword">@prefix</span> workflow: <a class="uri" href="http://eulersharp.sourceforge.net/2003/03swap/workflow.html#">&lt;http://eulersharp.sourceforge.net/2003/03swap/workflow#&gt;</a>.
+<span class="keyword">@prefix</span> digproc: <a class="uri" href="http://eulersharp.sourceforge.net/2003/03swap/digitalProcedure.html#">&lt;http://eulersharp.sourceforge.net/2003/03swap/digitalProcedure#&gt;</a>.
+<span class="keyword">@prefix</span> computer: <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/computer#&gt;</a>.
+
+<a class="uri" href="http://eulersharp.sourceforge.net/2003/03swap/computer.html">&lt;http://eulersharp.sourceforge.net/2003/03swap/computer&gt;</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Ontology</a>;
+	<a class="qname" href="http://purl.org/dc/elements/1.1">dce:title</a> <span class="literal">&quot;&quot;&quot;Digital Computer&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://purl.org/dc/elements/1.1">dce:creator</a> <span class="literal">&quot;&quot;&quot;Hans Cools, MD; Agfa Healthcare, Belgium&quot;&quot;&quot;</span>@nl;
+	<a class="qname" href="http://purl.org/dc/elements/1.1">dce:publisher</a> <span class="literal">&quot;&quot;&quot;Agfa Healthcare, Belgium&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://purl.org/dc/elements/1.1">dce:description</a> <span class="literal">&quot;&quot;&quot;Formal description of digital computer.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://purl.org/dc/elements/1.1">dce:format</a> <span class="literal">&quot;&quot;&quot;OWL Full&quot;&quot;&quot;</span>@en.
+
+<span class="comment">#</span>
+<span class="comment"># CLASSES</span>
+<span class="comment">#</span>
+
+<a class="qname" name="Computer">computer:Computer</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/computer#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;digital computer&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Programmable machine receiving input, storing and manipulating data, and providing output in a certain format.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/agent.html#Machine">agent:Machine</a>, <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/physicalResource.html#Product">physical:Product</a>.
+
+<a class="qname" name="Hardware">computer:Hardware</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/computer#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;digital computer hardware&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Hardware of a digital computer.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/physicalResource.html#Product">physical:Product</a>.
+
+<a class="qname" name="Software">computer:Software</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/computer#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;digital computer software&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Instruction to operate digital computer hardware.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/physicalResource.html#Product">physical:Product</a>, [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/agent.html#actsIn">agent:actsIn</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:allValuesFrom</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/digitalProcedure.html#Procedure">digproc:Procedure</a>].
+
+<span class="comment"># computer:Programme</span>
+
+<a class="qname" name="Data">computer:Data</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/computer#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;digital computer data&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Digitally stored data in a computer.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/physicalResource.html#Product">physical:Product</a>.
+
+<a class="qname" name="SearchEngine">computer:SearchEngine</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/computer#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;digital computer search engine&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Software for searching data on a digital computer.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="#Software">computer:Software</a>.		</pre>
+	</div>
+	</body>
+</html>

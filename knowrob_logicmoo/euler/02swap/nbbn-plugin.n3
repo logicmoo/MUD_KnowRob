@@ -1,0 +1,140 @@
+# -------------------------------------------------------
+# Naive Bayes Belief Network plugin for EYE -- Jos De Roo
+# -------------------------------------------------------
+
+@prefix math: <http://www.w3.org/2000/10/swap/math#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix list: <http://www.w3.org/2000/10/swap/list#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix prolog: <http://eulersharp.sourceforge.net/2003/03swap/prolog#>.
+@prefix bbn: <http://eulersharp.sourceforge.net/2006/02swap/nbbn-plugin#>.
+
+# unplug the Full Bayes Belief Network builtin
+true <= {(("/"^^prolog:atom e:biconditional 2)^prolog:univ) prolog:abolish true}.
+
+# plugin the Naive Bayes Belief Network builtin
+{[ rdf:first {?A e:boolean ?B}; rdf:rest ?C] e:biconditional ?D} <=
+{	?SCOPE e:call {
+		(	{("bnet"^^prolog:atom "done"^^prolog:atom) prolog:nb_getval true}
+			true
+			{	() bbn:bnet true.
+				("bnet"^^prolog:atom "done"^^prolog:atom) prolog:nb_setval true.
+			}
+		) prolog:if_then_else true.
+		(?A) bbn:bvar true.
+		(?B) bbn:bval true.
+		({?A e:boolean ?B} ?C ?D) bbn:nb true.
+	}
+}.
+
+{() bbn:bnet true} <=
+{	(	{	(	{	[ rdf:first ?I; rdf:rest ?J] e:conditional ?O.
+					?J e:sort ?K.
+					(	?Y
+						{	[ rdf:first ?I; rdf:rest ?X] e:conditional ?Y.
+							?X e:sort ?K.
+						}
+						?L
+					) prolog:findall true.
+					?L math:sum ?S.
+					?L math:memberCount ?N.
+					(?S ?N) math:quotient ?Z.
+					({[ rdf:first ?I; rdf:rest ?J] bbn:bcnd ?P}) prolog:not_provable true.
+					({[ rdf:first ?I; rdf:rest ?J] bbn:bcnd ?Z}) prolog:assertz true.
+					?I bbn:inverse ?M.
+					({[ rdf:first ?M; rdf:rest ?J] bbn:bcnd ?Q}) prolog:not_provable true.
+					(1 ?Z) math:difference ?E.
+					({[ rdf:first ?M; rdf:rest ?J] bbn:bcnd ?E}) prolog:assertz true.
+					() prolog:fail true.
+				}
+				{	[ rdf:first {?I e:boolean ?R}; rdf:rest ?J] bbn:bcnd ?T.
+					(	{	({(?I) bbn:bvar true}) prolog:not_provable true.
+							({(?I) bbn:bvar true}) prolog:assertz true.
+						}
+						true
+					) prolog:disjunction true.
+					{?K e:boolean ?U} list:in ?J.
+					({(?K) bbn:bvar true}) prolog:not_provable true.
+					({(?K) bbn:bvar true}) prolog:assertz true.
+					() prolog:fail true.
+				}
+			) prolog:disjunction true.
+		}
+		true
+	) prolog:disjunction true.
+}.
+
+{{?A e:boolean e:T} bbn:inverse {?A e:boolean e:F}} <= true.
+{{?A e:boolean e:F} bbn:inverse {?A e:boolean e:T}} <= true.
+
+(e:T) bbn:bval true.
+(e:F) bbn:bval true.
+
+{(?A ?B 1.0) bbn:nb true} <=
+{	(?A ?B) prolog:memberchk true.
+	() prolog:cut true.
+}.
+
+{({?A e:boolean e:T} ?B 0.0) bbn:nb true} <=
+{	({?A e:boolean e:F} ?B) prolog:memberchk true.
+	() prolog:cut true.
+}.
+
+{({?A e:boolean e:F} ?B ?C) bbn:nb true} <=
+{	(	{	({?A e:boolean e:T} ?B) prolog:memberchk true.
+			() prolog:cut true.
+			0.0 log:equalTo ?C.
+		}
+		{	() prolog:cut true.
+			({?A e:boolean e:T} ?B ?D) bbn:nb true.
+			(1 ?D) prolog:minus ?C.
+		}
+	) prolog:disjunction true.
+}.
+
+{(?A ?B ?C) bbn:nb true} <=
+{	[ rdf:first ?A; rdf:rest ?B] bbn:bcnd ?C.
+	() prolog:cut true.
+}.
+
+{(?A ?B ?C) bbn:nb true} <=
+{	(	{	(?A ?D) bbn:bcnd ?E.
+			(?D ?B ?F) bbn:nb true.
+			?D bbn:inverse ?G.
+			(?A ?G) bbn:bcnd ?H.
+			() prolog:cut true.
+			((?F ?E)!math:product ((1 ?F)!math:difference ?H)!math:product) math:sum ?C.
+		}
+		{	(?A ?B ?I) bbn:nc true.
+			() prolog:cut true.
+			?A bbn:inverse ?J.
+			(?J ?B ?K) bbn:nc true.
+			(1 (1 (2 (?K ?I)!math:difference)!math:exponentiation)!math:sum) math:quotient ?C.
+		}
+	) prolog:disjunction true.
+}.
+
+{(?A () 0.0) bbn:nc true} <=
+{	() prolog:cut true.
+}.
+
+{(?A [ rdf:first ?B; rdf:rest ?C] ?D) bbn:nc true} <=
+{	(	{	(	{(?B ?A) bbn:bcnd ?E}
+				{	?B bbn:inverse ?F.
+					(?F ?A) bbn:bcnd ?G.
+					(1 ?G) math:difference ?E.
+				}
+			) prolog:disjunction true.
+		}
+		{1.0 log:equalTo ?E}
+	) prolog:disjunction true.
+	() prolog:cut true.
+	(	{?E math:equalTo 0}
+		{() prolog:epsilon ?I}
+		{?I log:equalTo ?E}
+	) prolog:if_then_else true.
+	(?A ?C ?H) bbn:nc true.
+	(((?I)!prolog:log (2)!prolog:log)!math:quotient ?H) math:sum ?D.
+}.
+

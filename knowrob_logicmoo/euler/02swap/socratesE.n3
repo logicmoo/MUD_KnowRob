@@ -1,0 +1,41 @@
+#Processed by Id: euler.yap,v 1.112 2006/11/09 21:07:09 josd Exp 
+
+@prefix str: <http://www.w3.org/2000/10/swap/string#>.
+@prefix var: <http://localhost/var#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix list: <http://www.w3.org/2000/10/swap/list#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix : <http://www.agfa.com/w3c/euler/socrates#>.
+@prefix time: <http://www.w3.org/2000/10/swap/time#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix n3: <http://www.w3.org/2004/06/rei#>.
+@prefix math: <http://www.w3.org/2000/10/swap/math#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix r: <http://www.w3.org/2000/10/swap/reason#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+[ a r:Proof, r:Conjunction;
+  r:component [ a r:Inference; r:gives {@forSome var:Man_82_. :Socrates rdf:type var:Man_82_}; r:evidence (
+    [ a r:Extraction; r:gives {@forSome var:Man_82_. :Socrates rdf:type var:Man_82_}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/socrates.n3>]]);
+    r:binding [ r:variable [ n3:uri "http://localhost/var#WHO"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/socrates#Socrates"]]; 
+    r:binding [ r:variable [ n3:uri "http://localhost/var#WHAT"]; r:boundTo [ a r:Existential; n3:nodeId "http://localhost/var#Man_82_"]]; 
+    r:rule [ a r:Extraction; r:gives {@forAll var:WHO,var:WHAT. {var:WHO a var:WHAT} => {var:WHO a var:WHAT}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/socratesF.n3>]]];
+  r:component [ a r:Inference; r:gives {:Socrates rdf:type :Mortal}; r:evidence (
+    [ a r:Extraction; r:gives {:Socrates rdf:type :Mortal}; r:because [ a r:Inference; r:gives {:Socrates rdf:type :Mortal}; r:evidence (
+      [ a r:Extraction; r:gives {@forSome var:Man_82_. var:Man_82_ rdfs:subClassOf :Mortal}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/socrates.n3>]]
+      [ a r:Extraction; r:gives {@forSome var:Man_82_. :Socrates rdf:type var:Man_82_}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/socrates.n3>]]);
+      r:binding [ r:variable [ n3:uri "http://localhost/var#A"]; r:boundTo [ a r:Existential; n3:nodeId "http://localhost/var#Man_82_"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#B"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/socrates#Mortal"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#S"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/socrates#Socrates"]]; 
+      r:rule [ a r:Extraction; r:gives {@forAll var:A,var:B,var:S. {var:A rdfs:subClassOf var:B. var:S a var:A} => {var:S a var:B}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/socrates.n3>]]]]);
+    r:binding [ r:variable [ n3:uri "http://localhost/var#WHO"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/socrates#Socrates"]]; 
+    r:binding [ r:variable [ n3:uri "http://localhost/var#WHAT"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/socrates#Mortal"]]; 
+    r:rule [ a r:Extraction; r:gives {@forAll var:WHO,var:WHAT. {var:WHO a var:WHAT} => {var:WHO a var:WHAT}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/socratesF.n3>]]];
+  r:gives {
+    @forSome var:Man_82_. :Socrates rdf:type var:Man_82_.
+    :Socrates rdf:type :Mortal.}].
+
+#ENDS 10 msec.
+

@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>
+		<meta name="generator" content="AGFA HealthCare N3 to HTML convertor"/>
+		<link rel="alternate" type="text/n3" title="RDF Representation" href="http://eulersharp.sourceforge.net/2003/03swap/care"/>
+		<title>care</title>
+		<style type="text/css">
+			a[href]:link { text-decoration:none; }
+			a[href]:visited { text-decoration:none; }
+			a[href]:active { text-decoration:underline; }
+			a:hover { background:#ffa; }
+			.keyword { font-weight: bold; }
+			.literal { color: blue }
+			.uri { color: darkblue }
+			.qname { color: black }
+			.var { color: gray }
+			.comment { font-style:italic; color: darkgreen }
+		</style>
+	</head>
+	<body>
+	<div>
+		<pre>
+<span class="keyword">@prefix</span> dce: <a class="uri" href="http://purl.org/dc/elements/1.1/">&lt;http://purl.org/dc/elements/1.1/&gt;</a>.
+<span class="keyword">@prefix</span> owl: <a class="uri" href="http://www.w3.org/2002/07/owl">&lt;http://www.w3.org/2002/07/owl#&gt;</a>.
+<span class="keyword">@prefix</span> rdfs: <a class="uri" href="http://www.w3.org/2000/01/rdf-schema">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</a>.
+<span class="keyword">@prefix</span> skos: <a class="uri" href="http://www.w3.org/2004/02/skos/core.html#">&lt;http://www.w3.org/2004/02/skos/core#&gt;</a>.
+<span class="keyword">@prefix</span> event: <a class="uri" href="http://eulersharp.sourceforge.net/2003/03swap/event.html#">&lt;http://eulersharp.sourceforge.net/2003/03swap/event#&gt;</a>.
+<span class="keyword">@prefix</span> env: <a class="uri" href="http://eulersharp.sourceforge.net/2003/03swap/environment.html#">&lt;http://eulersharp.sourceforge.net/2003/03swap/environment#&gt;</a>.
+<span class="keyword">@prefix</span> human: <a class="uri" href="http://eulersharp.sourceforge.net/2003/03swap/human.html#">&lt;http://eulersharp.sourceforge.net/2003/03swap/human#&gt;</a>.
+<span class="keyword">@prefix</span> clisko: <a class="uri" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#">&lt;http://www.agfa.com/w3c/2009/clinicalSKOSSchemes#&gt;</a>.
+<span class="keyword">@prefix</span> care: <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/care#&gt;</a>.
+
+<a class="uri" href="http://eulersharp.sourceforge.net/2003/03swap/care.html">&lt;http://eulersharp.sourceforge.net/2003/03swap/care&gt;</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Ontology</a>;
+	<a class="qname" href="http://purl.org/dc/elements/1.1">dce:title</a> <span class="literal">&quot;&quot;&quot;Care&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://purl.org/dc/elements/1.1">dce:creator</a> <span class="literal">&quot;&quot;&quot;Hans Cools, MD; Agfa Healthcare/Belgium&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://purl.org/dc/elements/1.1">dce:contributor</a> <span class="literal">&quot;&quot;&quot;Until 2010: Pieterjan De Potter; Ghent University - IBBT/ELIS - Multimedia Lab/Belgium&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://purl.org/dc/elements/1.1">dce:publisher</a> <span class="literal">&quot;&quot;&quot;Agfa Healthcare/Belgium&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://purl.org/dc/elements/1.1">dce:description</a> <span class="literal">&quot;&quot;&quot;Formal general description of human care.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://purl.org/dc/elements/1.1">dce:format</a> <span class="literal">&quot;&quot;&quot;OWL-Full&quot;&quot;&quot;</span>@en.
+
+<span class="comment">#</span>
+<span class="comment"># CLASSES</span>
+<span class="comment">#</span>
+
+<a class="qname" name="Caring">care:Caring</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/care#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;caring&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Caring for a human.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/event.html#Action">event:Action</a>.
+
+<a class="qname" name="Environment">care:Environment</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/care#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;care environment&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Environment wherein a human is cared for.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/environment.html#HumanCommunityEnvironment">env:HumanCommunityEnvironment</a>.
+
+<a class="qname" name="ElderlyHome">care:ElderlyHome</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/care#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;home for the elderly&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Environment wherein elderly are cared for.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="#Environment">care:Environment</a>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#exactMatch">skos:exactMatch</a> [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#Concept">skos:Concept</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#inScheme">skos:inScheme</a> <a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731">clisko:sct20080731</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#notation">skos:notation</a> <span class="literal">&quot;257652008&quot;</span>^^<a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731DT">clisko:sct20080731DT</a>].
+
+<span class="comment">#</span>
+<span class="comment"># PROPERTIES</span>
+<span class="comment">#</span>
+
+<a class="qname" name="caresFor">care:caresFor</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:ObjectProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/care#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Specifying a human a person cares for.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/human.html#Person">human:Person</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/human.html#Human">human:Human</a>.		</pre>
+	</div>
+	</body>
+</html>

@@ -1,0 +1,139 @@
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix dce: <http://purl.org/dc/elements/1.1/>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix event: <http://eulersharp.sourceforge.net/2003/03swap/event#>.
+@prefix clinobs: <http://www.agfa.com/w3c/2009/clinicalObservation#>.
+@prefix computer: <http://eulersharp.sourceforge.net/2003/03swap/computer#>.
+@prefix digproc: <http://eulersharp.sourceforge.net/2003/03swap/digitalProcedure#>.
+@prefix quant: <http://eulersharp.sourceforge.net/2003/03swap/quantities#>.
+@prefix decisionsupport: <http://eulersharp.sourceforge.net/2003/03swap/decisionSupport#>.
+
+<http://eulersharp.sourceforge.net/2003/03swap/decisionSupport>
+	a owl:Ontology;
+	dce:title """Decision Support"""@en;
+	dce:creator """Hans Cools, MD; Agfa Healthcare, Belgium"""@en;
+	dce:contributor """Kristof Depraetere; Agfa Healthcare, Belgium"""@en;
+	dce:publisher """Agfa Healthcare, Belgium"""@en;
+	dce:description """Formal description of decision support."""@en;
+	dce:format """OWL Full"""@en.
+
+#
+# CLASSES
+#
+
+decisionsupport:Request	# TBD
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/decisionSupport#>;
+	rdfs:label """decision support request"""@en;
+	rdfs:subClassOf digproc:Request.			
+
+decisionsupport:ClinicalRequest # TBD
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/decisionSupport#>;
+	rdfs:label """clinical decision support request"""@en;
+	rdfs:subClassOf decisionsupport:Request, [
+		a owl:Restriction; owl:onProperty decisionsupport:hasObservablesResultFormula; owl:someValuesFrom decisionsupport:ClinicalObservablesResultFormula].
+
+decisionsupport:ResultFormula
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/decisionSupport#>;
+	rdfs:label """decision support result formula"""@en;
+	skos:definition """Formula related to its literal form expressing patient state in triples, as input for clinical decision support."""@en;	
+	rdfs:subClassOf log:Formula.
+
+decisionsupport:ObservablesResultFormula
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/decisionSupport#>;
+	rdfs:label """decision support observables result formula"""@en;
+	skos:definition """Formula related to its literal form expressing findings in boolean (nested) triples, as input for decision support."""@en;
+	rdfs:subClassOf log:Formula, [
+		a owl:Restriction; owl:onProperty log:n3String; owl:someValuesFrom log:String], [
+		a owl:Restriction; owl:onProperty event:hasObject; owl:someValuesFrom event:Finding].
+
+decisionsupport:ClinicalObservablesResultFormula
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/decisionSupport#>;
+	rdfs:label """clinical decision support observables result formula"""@en;
+	skos:definition """Formula related to its literal form expressing clinical findings in boolean (nested) triples, as input for clinical decision support."""@en;
+	rdfs:subClassOf decisionsupport:ObservablesResultFormula, [
+		a owl:Restriction; owl:onProperty log:n3String; owl:someValuesFrom log:String], [
+		a owl:Restriction; owl:onProperty event:hasObject; owl:someValuesFrom clinobs:Finding].
+
+decisionsupport:StateResultFormula
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/decisionSupport#>;
+	rdfs:label """decision support state result formula"""@en;
+	skos:definition """Formula related to its literal form expressing state of something in triples, as object of a clinical decision support request."""@en;
+	rdfs:subClassOf log:Formula.
+
+decisionsupport:PatientStateResultFormula
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/decisionSupport#>;
+	rdfs:label """decision support patient state result formula"""@en;
+	skos:definition """Formula related to its literal form expressing patient state in triples, as input for clinical decision support."""@en;
+	rdfs:subClassOf decisionsupport:StateResultFormula.
+
+decisionsupport:Belief
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/decisionSupport#>;
+	rdfs:label """belief probability"""@en;
+	skos:definition """Calculated probability of a belief in something."""@en;
+	rdfs:subClassOf quant:Probability, [
+		a owl:Restriction; owl:onProperty quant:hasMeasurement; owl:someValuesFrom [
+			a owl:Restriction; owl:onProperty quant:hasValue; owl:someValuesFrom xsd:double]].
+
+# TherapyTheory, DiagnosisTheory
+
+# evidence, hypothesis
+# MD: date, author, quality rank
+
+#
+# PROPERTIES
+#
+
+# decisionsupport:hasStrategy
+#	a owl:ObjectProperty;
+#	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/decisionSupport#>;
+#	skos:definition """Specifying a strategy for a decision support request."""@en;
+#	rdfs:domain decisionsupport:Request;
+#	rdfs:range decisionsupport:Strategy.
+
+decisionsupport:hasObservablesResultFormula
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/decisionSupport#>;
+	skos:definition """Specifying an observables result formula for a decision support request."""@en;
+	rdfs:domain decisionsupport:Request;
+	rdfs:range decisionsupport:ObservablesResultFormula.
+
+decisionsupport:hasPatientStateResultFormula
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/decisionSupport#>;
+	skos:definition """Specifying a patient state result formula for a clinical decision support request."""@en;
+	rdfs:domain decisionsupport:ClinicalRequest;
+	rdfs:range decisionsupport:PatientStateResultFormula.
+
+decisionsupport:hasResultFormula
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/decisionSupport#>;
+	skos:definition """Specifying a result formula for a decision support request."""@en;
+	rdfs:domain decisionsupport:Request;
+	rdfs:range decisionsupport:ResultFormula.
+
+decisionsupport:beliefIn
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/decisionSupport#>;
+	skos:definition """Specifying something that has a belief probability, e.g. a clinical therapy that is believed to be performed with a certain chance of being successful."""@en;
+	rdfs:domain decisionsupport:Belief;
+	skos:note """rdfs:range not specified, because it can be virtually anything; e.g. http://www.agfa.com/w3c/2009/therapy#Therapy (clinical therapy)."""@en;
+	rdfs:comment """E.g. ([quant:hasValue 9.660533530762310e-001]) decisionsupport:beliefIn i:Lomefloxacin_400mg_PO_UID_3D."""@en.
+
+decisionsupport:hasBelief
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/decisionSupport#>;
+	skos:definition """Specifying a belief probability of something, e.g. a clinical therapy."""@en;
+	rdfs:range decisionsupport:Belief;
+	skos:note """rdfs:domain not specified, because it can be virtually anything; e.g. http://www.agfa.com/w3c/2009/therapy#Therapy (clinical therapy)."""@en;
+	owl:inverseOf decisionsupport:beliefIn.

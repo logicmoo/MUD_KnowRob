@@ -1,0 +1,169 @@
+#
+# Prefixes
+#
+
+@prefix dce: <http://purl.org/dc/elements/1.1/>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix phys: <http://sweet.jpl.nasa.gov/2.0/phys.owl#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix snomedct: <http://www.ihtsdo.org/>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+
+@prefix agent: <http://eulersharp.sourceforge.net/2003/03swap/agent#>.
+@prefix event: <http://eulersharp.sourceforge.net/2003/03swap/event#>.
+@prefix fos: <http://eulersharp.sourceforge.net/2003/03swap/foster#>.
+@prefix quex: <http://eulersharp.sourceforge.net/2003/03swap/quantitiesExtension#>.
+@prefix human: <http://eulersharp.sourceforge.net/2003/03swap/human#>.
+@prefix humanbody: <http://eulersharp.sourceforge.net/2003/03swap/humanBody#>.
+
+@prefix clinskosch: <http://www.agfa.com/w3c/2009/clinicalSKOSSchemes#>.
+@prefix hurifa: <http://www.agfa.com/w3c/2009/humanRiskFactors#>.
+
+@prefix bowe: <http://eulersharp.sourceforge.net/2003/03swap/bodyWeight#>.
+
+bowe:
+	a owl:Ontology;
+	dce:title """Body Weight"""@en;
+	dce:creator """Hans Cools, MD; Pieterjan De Potter"""@en;
+	dce:publisher """Agfa Healthcare/Belgium, IBBT/Belgium, Multimedia Lab/Ghent University/Belgium"""@en;
+	dce:description """Formal description of body weight."""@en;
+	dce:format """OWL Full"""@en;
+	dce:identifier """bowe"""@en;
+	dce:language """English"""@en.
+
+#
+# Classes
+#
+
+bowe:BodyWeight
+	a rdfs:Class;
+	rdfs:isDefinedBy bowe:;
+	rdfs:label """human body weight"""@en;
+	skos:definition """Weight of a human body."""@en;
+	rdfs:comment """Abstraction made of the gravitational acceleration."""@en;
+	rdfs:subClassOf phys:Mass, event:Observable, [
+		a owl:Restriction; owl:onProperty quex:physicalQuantityOf; owl:allValuesFrom humanbody:Body], [
+		a owl:Restriction; owl:onProperty quex:physicalQuantityOf; owl:minCardinality "1"^^xsd:nonNegativeInteger], [
+		a owl:Restriction; owl:onProperty quex:hasValue; owl:someValuesFrom xsd:decimal], [
+		a owl:Restriction; owl:onProperty quex:hasUnit; owl:someValuesFrom [
+			a owl:Restriction; owl:onProperty quex:unitOf; owl:allValuesFrom phys:Mass;
+			a owl:Restriction; owl:onProperty quex:unitOf; owl:minCardinality "1"^^xsd:nonNegativeInteger]];
+	skos:exactMatch [
+		a skos:Concept; skos:inScheme clinskosch:sct20080731; skos:notation "27113001"^^clinskosch:sct20080731DT].
+
+bowe:Weighing
+	a rdfs:Class;
+	rdfs:isDefinedBy bowe:;
+	rdfs:label """weighing a human body"""@en;
+	skos:definition """Measuring the weight of a human body."""@en;
+	rdfs:subClassOf event:Examining, [
+		a owl:Restriction; owl:onProperty fos:hasObject; owl:allValuesFrom humanbody:Body], [
+		a owl:Restriction; owl:onProperty event:hasOutput; owl:allValuesFrom bowe:BodyWeight];
+	skos:exactMatch [
+		a skos:Concept; skos:inScheme clinskosch:sct20080731; skos:notation "39857003"^^clinskosch:sct20080731DT].
+	
+bowe:WeighingDevice
+	a rdfs:Class;
+	rdfs:isDefinedBy bowe:;
+	rdfs:label """human body weighing device"""@en;
+	skos:definition """Device to measure the human body weight."""@en;
+	rdfs:subClassOf agent:WeighingDevice;
+	rdfs:subClassOf [
+		a owl:Restriction;
+		owl:onProperty agent:actsIn;
+		owl:allValuesFrom bowe:Weighing
+	];
+	rdfs:subClassOf [
+		a owl:Restriction;
+		owl:onProperty agent:weighs;
+		owl:allValuesFrom humanbody:Body
+	].
+
+bowe:WeightStatus
+	a rdfs:Class;
+	rdfs:isDefinedBy bowe:;
+	rdfs:label """weight status"""@en;
+	skos:definition """Status of a human's weight"""@en;
+	rdfs:subClassOf event:Finding;
+	owl:oneOf (bowe:underweight bowe:normalWeight bowe:overweight bowe:obesity).
+
+bowe:underweight
+	a rdfs:Class;
+	rdfs:isDefinedBy bowe:;
+	rdfs:label """underweight"""@en;
+	skos:definition """A human's body weight being too low."""@en;
+	skos:comment """Body mass index lower than 18.5 kg/m2."""@en;
+	a bowe:WeightStatus;
+	rdfs:subClassOf hurifa:HumanRiskFactor;
+	rdfs:subClassOf snomedct:SCTID_248342006;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme clinskosch:sct20080731;
+		skos:notation "248342006"^^clinskosch:sct20080731DT
+	].
+
+bowe:normalWeight
+	a rdfs:Class;
+	rdfs:isDefinedBy bowe:;
+	rdfs:label """normal weight"""@en;
+	skos:definition """A human's body weight being normal."""@en;
+	skos:comment """Body mass index ranging 18.5-24.9 kg/m2."""@en;
+	a bowe:WeightStatus;
+	rdfs:subClassOf snomedct:SCTID_63976003;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme clinskosch:sct20080731;
+		skos:notation "63976003"^^clinskosch:sct20080731DT
+	].
+
+bowe:overweight
+	a rdfs:Class;
+	rdfs:isDefinedBy bowe:;
+	rdfs:label """overweight"""@en;
+	skos:definition """A human's body weight being too high."""@en;
+	skos:comment """Body mass index ranging 25-29.9 kg/m2."""@en;
+	a bowe:WeightStatus;
+	rdfs:subClassOf hurifa:HumanRiskFactor;
+	rdfs:subClassOf snomedct:SCTID_238131007;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme clinskosch:sct20080731;
+		skos:notation "238131007"^^clinskosch:sct20080731DT
+	].
+
+bowe:obesity
+	a rdfs:Class;
+	rdfs:isDefinedBy bowe:;
+	rdfs:label """obesity"""@en;
+	skos:definition """A human's body weight being pathologic."""@en;
+	skos:comment """Body mass index higher than 30 kg/m2."""@en;
+	a bowe:WeightStatus;
+	rdfs:subClassOf hurifa:HumanRiskFactor;
+	rdfs:subClassOf snomedct:SCTID_414915002;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme clinskosch:sct20080731;
+		skos:notation "414915002"^^clinskosch:sct20080731DT
+	].
+
+#
+# Properties
+#
+
+bowe:weighs
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy bowe:;
+	skos:definition """Specifying a human's body weight, expressed in kilogram."""@en;
+	skos:note """Used in N3 rules."""@en;
+	rdfs:domain human:Human;
+	rdfs:range [quex:hasValue xsd:decimal; quex:hasUnit [quex:unitOf phys:Mass]]. # -> rdf:List?
+
+bowe:status
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy bowe:;
+	skos:definition """Specifying a status of a human's body weight."""@en;
+	skos:note """Used in N3 rules."""@en;
+	rdfs:domain human:Human;
+	rdfs:range bowe:WeightStatus.

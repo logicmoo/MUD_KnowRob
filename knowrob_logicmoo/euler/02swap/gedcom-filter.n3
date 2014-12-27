@@ -1,0 +1,17 @@
+# $Id: gedcom-filter.n3,v 1.8 2006/09/14 18:49:05 amdus Exp $
+
+# PxButton | test     | java euler.EulerRunner gedcom-facts.n3 gedcom-relations.n3 rpo-rules.n3 --think --filter gedcom-filter.n3
+# PxButton | test#    | Euler gedcom-facts.n3 gedcom-relations.n3 rpo-rules.n3 --think --filter gedcom-filter.n3
+# PxButton | test#m   | mono /sfcvs/2004/01swap/bin/Release/Euler.exe gedcom-facts.n3 gedcom-relations.n3 rpo-rules.n3 --think --filter gedcom-filter.n3
+# PxButton | test#i   | ikvm euler.EulerRunner gedcom-facts.n3 gedcom-relations.n3 rpo-rules.n3 --think --filter gedcom-filter.n3
+# PxButton | cwm      | cwm gedcom-facts.n3 gedcom-relations.n3 rpo-rules.n3 --think --filter"=gedcom-filter.n3"
+# PxButton | cwm>     | cwm http://www.agfa.com/w3c/euler/gedcom-facts.n3 http://www.agfa.com/w3c/euler/gedcom-relations.n3 http://www.agfa.com/w3c/euler/rpo-rules.n3 --think --filter"=http://www.agfa.com/w3c/euler/gedcom-filter.n3" --why > gedcom-proof-cwm.n3
+# PxButton | prolog   | bash .wget http://localhost/.euler+--prolog+-nope+http://www.agfa.com/w3c/euler/gedcom-facts.n3+http://www.agfa.com/w3c/euler/gedcom-relations.n3+http://www.agfa.com/w3c/euler/rpo-rules.n3+--filter+http://www.agfa.com/w3c/euler/gedcom-filter.n3 > gedcom.yap
+# PxButton | euler5   | bash .euler5 http://localhost/euler/gedcom.yap
+
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix gc: <http://www.daml.org/2001/01/gedcom/gedcom#>.
+@prefix : <http://www.agfa.com/w3c/euler/gedcom-facts#>.
+
+{?A gc:mother ?M. ?M gc:daughter ?D. ?D gc:son ?S. ?S gc:uncle ?A} => {?A :testRelationship ?S}.

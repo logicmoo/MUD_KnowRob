@@ -1,0 +1,139 @@
+@prefix dce: <http://purl.org/dc/elements/1.1/>.
+@prefix owl:  <http://www.w3.org/2002/07/owl#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix digproc: <http://eulersharp.sourceforge.net/2003/03swap/digitalProcedure#>.
+@prefix event: <http://eulersharp.sourceforge.net/2003/03swap/event#>.
+@prefix sparql: <http://eulersharp.sourceforge.net/2003/03swap/sparql#>.
+@prefix sparante: <http://eulersharp.sourceforge.net/2003/03swap/sparqlAnalysisTemplate#>.
+@prefix sparan: <http://eulersharp.sourceforge.net/2003/03swap/sparqlAnalysis#>.
+
+<http://eulersharp.sourceforge.net/2003/03swap/sparqlAnalysis#>
+	a owl:Ontology;
+	dce:title """SPARQL Analysis"""@en;
+	dce:creator """Hans Cools, MD; Agfa Healthcare, Belgium"""@en;
+	dce:contributor """Kristof Depraetere, Boris De Vloed, Giovanni Mels, ir; Agfa Healthcare, Belgium"""@en;
+	dce:publisher """Agfa Healthcare, Belgium"""@en;
+	dce:description """Formal description of RDF data analysis using SPARQL."""@en;
+	dce:format """OWL Full"""@en.
+
+#
+# CLASSES
+#
+
+sparan:AnalysisQuery
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/sparqlAnalysis#>;
+	rdfs:label """analysis SPARQL query"""@en;
+	skos:definition """SPARQL query formulating what RDF data has to be analysed."""@en.
+	#rdfs:subClassOf sparql:Query.
+
+sparan:ClinicalAnalysisQuery
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/sparqlAnalysis#>;
+	rdfs:label """clinical analysis SPARQL query"""@en;
+	skos:definition """SPARQL query formulating what clinical RDF data has to be analysed."""@en;
+	rdfs:subClassOf sparan:AnalysisQuery, [
+		a owl:Restriction; owl:onProperty sparql:hasTemplate; owl:someValuesFrom sparante:ClinicalAnalysisQueryTemplate], [
+		a owl:Restriction; owl:onProperty sparql:hasBinding; owl:someValuesFrom sparante:ClinicalAnalysisQueryTemplateBinding], [
+		a owl:Restriction; owl:onProperty sparan:hasDataSetQuery; owl:someValuesFrom sparan:ClinicalDataSetQuery], [
+		a owl:Restriction; owl:onProperty digproc:hasResult; owl:someValuesFrom sparan:ClinicalAnalysisResult].
+
+sparan:SubmittedClinicalAnalysisQuery
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/sparqlAnalysis#>;
+	rdfs:label """submitted clinical analysis SPARQL query"""@en;
+	skos:definition """SPARQL query, formulating what clinical RDF data has to be analysed, in the submitted state."""@en;
+	rdfs:subClassOf sparan:ClinicalAnalysisQuery.
+
+sparan:CancelledClinicalAnalysisQuery
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/sparqlAnalysis#>;
+	rdfs:label """cancelled clinical analysis SPARQL query"""@en;
+	skos:definition """SPARQL query, formulating what clinical RDF data has to be analysed, in the unsubmitted state."""@en;
+	rdfs:subClassOf sparan:ClinicalAnalysisQuery.
+
+sparan:CompletedClinicalAnalysisQuery
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/sparqlAnalysis#>;
+	rdfs:label """completed clinical analysis SPARQL query"""@en;
+	skos:definition """SPARQL query, formulating what clinical RDF data has to be analysed, in the completed state."""@en;
+	rdfs:subClassOf sparan:ClinicalAnalysisQuery.
+
+sparan:DataSetQuery
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/sparqlAnalysis#>;
+	rdfs:label """data set SPARQL query"""@en;
+	skos:definition """SPARQL query on a repository with RDF data to be analysed."""@en.
+#	rdfs:subClassOf sparql:Query.
+	
+sparan:ClinicalDataSetQuery
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/sparqlAnalysis#>;
+	rdfs:label """clinical data set SPARQL query"""@en;
+	skos:definition """SPARQL query on a repository with clinical RDF data to be analysed."""@en;
+	rdfs:subClassOf sparan:DataSetQuery.
+
+sparan:InvalidClinicalDataSetQuery
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/sparqlAnalysis#>;
+	rdfs:label """invalid clinical data set SPARQL query"""@en;
+	skos:definition """Invalidated SPARQL query on a repository with clinical RDF data to be analysed."""@en;
+	rdfs:subClassOf sparan:ClinicalDataSetQuery.
+
+sparan:ClinicalAnalysisResult	# result without completion = draft
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/sparqlAnalysis#>;
+	rdfs:label """clinical analysis result"""@en;
+	skos:definition """SPARQL result of analysis of clinical RDF data."""@en;
+	rdfs:subClassOf [ # containing sparql:Result
+		a owl:Restriction; owl:onProperty sparql:hasBinding; owl:someValuesFrom sparante:ClinicalAnalysisResultBinding].
+
+sparan:InvalidClinicalAnalysisResult
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/sparqlAnalysis#>;
+	rdfs:label """invalid clinical analysis result"""@en;
+	skos:definition """Invalidated SPARQL result of analysis of clinical RDF data."""@en;
+	rdfs:subClassOf sparan:ClinicalAnalysisResult.
+
+sparan:DataRepository	# Digital repository, also known as a virtual or digital library
+	a rdfs:Class.
+
+sparan:ClinicalDataRepository
+	a rdfs:Class;
+	rdfs:subClassOf sparan:DataRepository.
+
+#
+# PROPERTIES
+#
+
+sparan:hasDataRepository
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/sparqlAnalysis#>;
+	skos:definition """Specifying a data repository to execute a data set SPARQL query on."""@en;
+	rdfs:domain sparan:DataSetQuery;
+	rdfs:range sparan:DataRepository.
+
+sparan:dataRepositoryOf
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/sparqlAnalysis#>;
+	skos:definition """Specifying a data set SPARQL query to be executed on a data repository."""@en;
+	owl:inverseOf sparan:hasDataRepository;
+	rdfs:domain sparan:DataRepository;
+	rdfs:range sparan:DataSetQuery.
+
+sparan:hasDataSetQuery
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/sparqlAnalysis#>;
+	skos:definition """Specifying a data set SPARQL query of an analysis SPARQL query."""@en;
+	rdfs:domain sparan:AnalysisQuery;
+	rdfs:range sparan:DataSetQuery.
+
+sparan:dataSetQueryOf
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/sparqlAnalysis#>;
+	skos:definition """Specifying an analysis SPARQL query of a data set SPARQL query."""@en;
+	owl:inverseOf sparan:hasDataSetQuery;
+	rdfs:domain sparan:DataSetQuery;
+	rdfs:range sparan:AnalysisQuery.	

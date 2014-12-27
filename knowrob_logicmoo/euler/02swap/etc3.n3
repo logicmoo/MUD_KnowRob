@@ -1,0 +1,44 @@
+# $Id: etc3.n3 1295 2007-05-11 16:52:51Z josd $
+
+# PxButton | run web    | java -Xmx800m euler.EulerRunner --step 8000000 etc3.n3
+# PxButton | run local  | java -Xmx800m euler.EulerRunner --local --step 8000000 etc3.n3
+# PxButton | run web#   | Euler --step 8000000 etc3.n3
+# PxButton | run local# | Euler --local --step 8000000 etc3.n3
+# PxButton | run output | java -Xmx800m euler.EulerRunner --local --step 8000000 http://eulersharp.sourceforge.net/2003/03swap/etc3.n3 > etc3-proof.n3
+
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+
+(<http://www.agfa.com/w3c/euler/authen.axiom.n3>!log:semantics)!log:conjunction => <http://www.agfa.com/w3c/euler/authen.lemma.n3>!log:semantics.
+(<http://www.agfa.com/w3c/euler/graph.axiom.n3>!log:semantics <http://eulersharp.sourceforge.net/2003/03swap/owl-rules.n3>!log:semantics <http://eulersharp.sourceforge.net/2003/03swap/rdfs-rules.n3>!log:semantics)!log:conjunction => <http://www.agfa.com/w3c/euler/graph.lemma.n3>!log:semantics.
+(<http://www.agfa.com/w3c/euler/gedcom-relations.n3>!log:semantics <http://www.agfa.com/w3c/euler/gedcom-facts.n3>!log:semantics <http://eulersharp.sourceforge.net/2003/03swap/owl-rules.n3>!log:semantics <http://eulersharp.sourceforge.net/2003/03swap/rdfs-rules.n3>!log:semantics)!log:conjunction => <http://www.agfa.com/w3c/euler/gedcom-query.n3>!log:semantics.
+(<http://www.agfa.com/w3c/euler/danc.n3>!log:semantics (think))!log:conjunction => <http://www.agfa.com/w3c/euler/danc-query.n3>!log:semantics.
+(<http://www.agfa.com/w3c/euler/ziv.n3>!log:semantics (think))!log:conjunction => <http://www.agfa.com/w3c/euler/ziv-query.n3>!log:semantics.
+(<http://www.agfa.com/w3c/euler/danb.n3>!log:semantics (think))!log:conjunction => <http://www.agfa.com/w3c/euler/danb-query.n3>!log:semantics.
+(<http://www.agfa.com/w3c/euler/test.n3>!log:semantics <http://eulersharp.sourceforge.net/2003/03swap/owl-rules.n3>!log:semantics <http://eulersharp.sourceforge.net/2003/03swap/rdfs-rules.n3>!log:semantics)!log:conjunction => <http://www.agfa.com/w3c/euler/test-test.n3>!log:semantics.
+(<http://www.agfa.com/w3c/euler/animal.n3>!log:semantics)!log:conjunction => <http://www.agfa.com/w3c/euler/animal-simple.n3>!log:semantics.
+(<http://www.agfa.com/w3c/euler/subprop.n3>!log:semantics <http://eulersharp.sourceforge.net/2003/03swap/rdfs-rules.n3>!log:semantics)!log:conjunction => <http://www.agfa.com/w3c/euler/subprop-query.n3>!log:semantics.
+(<http://www.agfa.com/w3c/euler/subclass.n3>!log:semantics <http://eulersharp.sourceforge.net/2003/03swap/rdfs-rules.n3>!log:semantics)!log:conjunction => <http://www.agfa.com/w3c/euler/subclass-query.n3>!log:semantics.
+(<http://www.agfa.com/w3c/euler/rdfs-facts.n3>!log:semantics <http://eulersharp.sourceforge.net/2003/03swap/rdfs-rules.n3>!log:semantics)!log:conjunction => <http://www.agfa.com/w3c/euler/rdfs-query.n3>!log:semantics.
+(<http://www.agfa.com/w3c/euler/owl-facts.n3>!log:semantics <http://eulersharp.sourceforge.net/2003/03swap/owl-rules.n3>!log:semantics <http://eulersharp.sourceforge.net/2003/03swap/rdfs-rules.n3>!log:semantics)!log:conjunction => <http://www.agfa.com/w3c/euler/owl-query.n3>!log:semantics.
+(<http://www.agfa.com/w3c/euler/inconsistent.n3>!log:semantics)!log:conjunction => <http://www.agfa.com/w3c/euler/builtins.n3>!log:semantics.
+()!log:conjunction => <http://www.w3.org/2000/10/rdf-tests/rdfcore/entailment/etc001.n3>!log:semantics.
+(<http://www.cs.rpi.edu/~puninj/RGML/N3/rgml_rules.n3>!log:semantics <http://www.cs.rpi.edu/~puninj/RGML/N3/simplegraph.n3>!log:semantics)!log:conjunction => <http://eulersharp.sourceforge.net/2004/04test/simplegraph_query.n3>!log:semantics.
+(<http://www.w3.org/2001/08swws67/poolGame-kb.n3>!log:semantics)!log:conjunction => <http://www.agfa.com/w3c/n3/poolGame-query-web.n3>!log:semantics.
+(<http://www.agfa.com/w3c/2000/10/swap/test/pathCross.n3>!log:semantics <http://eulersharp.sourceforge.net/2003/03swap/owl-rules.n3>!log:semantics <http://eulersharp.sourceforge.net/2003/03swap/rdfs-rules.n3>!log:semantics)!log:conjunction => <http://www.agfa.com/w3c/2000/10/swap/test/pathCrossQ.n3>!log:semantics.
+(<http://www.agfa.com/w3c/euler/dtP.n3>!log:semantics <http://eulersharp.sourceforge.net/2003/03swap/rdfs-rules.n3>!log:semantics <http://www.w3.org/2001/XMLSchema.n3>!log:semantics)!log:conjunction => <http://www.agfa.com/w3c/euler/dtC.n3>!log:semantics.
+(<http://www.agfa.com/w3c/2002/10/medicad/op/lldmD.n3>!log:semantics <http://www.agfa.com/w3c/2002/10/medicad/op/lldmP.n3>!log:semantics <http://eulersharp.sourceforge.net/2003/03swap/owl-rules.n3>!log:semantics <http://eulersharp.sourceforge.net/2003/03swap/rdfs-rules.n3>!log:semantics)!log:conjunction => <http://www.agfa.com/w3c/2002/10/medicad/op/lldmC.n3>!log:semantics.
+(<http://eulersharp.sourceforge.net/2003/01calt/pimP.n3>!log:semantics <http://eulersharp.sourceforge.net/2003/03swap/owl-rules.n3>!log:semantics <http://eulersharp.sourceforge.net/2003/03swap/rdfs-rules.n3>!log:semantics (think))!log:conjunction => <http://eulersharp.sourceforge.net/2003/01calt/pimC.n3>!log:semantics.
+(<http://www.agfa.com/w3c/euler/rdf-facts.n3>!log:semantics <http://www.agfa.com/w3c/euler/log-facts.n3>!log:semantics)!log:conjunction => <http://www.agfa.com/w3c/euler/log-query.n3>!log:semantics.
+(<http://www.agfa.com/w3c/euler/easterP.n3>!log:semantics (think))!log:conjunction => <http://www.agfa.com/w3c/euler/easterC.n3>!log:semantics.
+(<http://eulersharp.sourceforge.net/2003/05geot/continentsP.n3>!log:semantics <http://www.agfa.com/w3c/euler/owl-rules.n3>!log:semantics <http://www.agfa.com/w3c/euler/rdfs-rules.n3>!log:semantics)!log:conjunction => <http://eulersharp.sourceforge.net/2003/05geot/continentsC.n3>!log:semantics.
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/ntriples/test.nt>!log:semantics)!log:conjunction => <http://www.w3.org/2000/10/rdf-tests/rdfcore/ntriples/test.nt>!log:semantics.
+(<http://www.w3.org/2002/03owlt/mapInvP.n3>!log:semantics <http://eulersharp.sourceforge.net/2003/03swap/owl-rules.n3>!log:semantics <http://eulersharp.sourceforge.net/2003/03swap/rdfs-rules.n3>!log:semantics)!log:conjunction => <http://www.w3.org/2002/03owlt/mapInvC.n3>!log:semantics.
+(<http://www.w3.org/2002/03owlt/mapVocabP.n3>!log:semantics <http://eulersharp.sourceforge.net/2003/03swap/owl-rules.n3>!log:semantics <http://eulersharp.sourceforge.net/2003/03swap/rdfs-rules.n3>!log:semantics)!log:conjunction => <http://www.w3.org/2002/03owlt/mapVocabC.n3>!log:semantics.
+(<http://www.w3.org/2002/03owlt/oneOfP.n3>!log:semantics <http://eulersharp.sourceforge.net/2003/03swap/owl-rules.n3>!log:semantics <http://eulersharp.sourceforge.net/2003/03swap/rdfs-rules.n3>!log:semantics)!log:conjunction => <http://www.w3.org/2002/03owlt/oneOfC.n3>!log:semantics.
+(<http://www.w3.org/2002/03owlt/pathTransitiveP.n3>!log:semantics <http://eulersharp.sourceforge.net/2003/03swap/owl-rules.n3>!log:semantics <http://eulersharp.sourceforge.net/2003/03swap/rdfs-rules.n3>!log:semantics)!log:conjunction => <http://www.w3.org/2002/03owlt/pathTransitiveC.n3>!log:semantics.
+(<http://www.w3.org/2002/03owlt/unionOfP.n3>!log:semantics <http://eulersharp.sourceforge.net/2003/03swap/owl-rules.n3>!log:semantics <http://eulersharp.sourceforge.net/2003/03swap/rdfs-rules.n3>!log:semantics)!log:conjunction => <http://www.w3.org/2002/03owlt/unionOfC.n3>!log:semantics.
+(<http://www.w3.org/2002/03owlt/sameGuyP.n3>!log:semantics <http://eulersharp.sourceforge.net/2003/03swap/owl-rules.n3>!log:semantics <http://eulersharp.sourceforge.net/2003/03swap/rdfs-rules.n3>!log:semantics)!log:conjunction => <http://www.w3.org/2002/03owlt/sameGuyC.n3>!log:semantics.
+(<http://www.w3.org/2002/03owlt/sameStateP.n3>!log:semantics <http://eulersharp.sourceforge.net/2003/03swap/owl-rules.n3>!log:semantics <http://eulersharp.sourceforge.net/2003/03swap/rdfs-rules.n3>!log:semantics)!log:conjunction => <http://www.w3.org/2002/03owlt/sameStateC.n3>!log:semantics.
+(<http://www.w3.org/2002/03owlt/dbP.n3>!log:semantics <http://eulersharp.sourceforge.net/2003/03swap/owl-rules.n3>!log:semantics <http://eulersharp.sourceforge.net/2003/03swap/rdfs-rules.n3>!log:semantics)!log:conjunction => <http://www.w3.org/2002/03owlt/dbC.n3>!log:semantics.
+(<http://www.w3.org/2002/03owlt/intersectionOfP.n3>!log:semantics <http://www.w3.org/2002/03owlt/intersectionOfX.n3>!log:semantics <http://eulersharp.sourceforge.net/2003/03swap/owl-rules.n3>!log:semantics <http://eulersharp.sourceforge.net/2003/03swap/rdfs-rules.n3>!log:semantics)!log:conjunction => <http://www.w3.org/2002/03owlt/intersectionOfC.n3>!log:semantics.
+(<http://www.w3.org/2002/03owlt/SocratesP.n3>!log:semantics <http://www.w3.org/2002/03owlt/SocratesA.n3>!log:semantics <http://eulersharp.sourceforge.net/2003/03swap/owl-rules.n3>!log:semantics <http://eulersharp.sourceforge.net/2003/03swap/rdfs-rules.n3>!log:semantics)!log:conjunction => <http://www.w3.org/2002/03owlt/SocratesC.n3>!log:semantics.

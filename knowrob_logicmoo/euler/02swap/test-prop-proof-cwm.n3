@@ -1,0 +1,154 @@
+# ilrun ./Euler.exe --local --rules --think test.n3 test-prop-lemma.n3
+# ~/cwm/cwm.py --think test.n3  --filter=test-prop-lemma.n3 
+
+@prefix dpo:  <http://www.daml.org/2001/03/daml+oil#> .
+@prefix idbl: <http://purl.oclc.org/NET/introspector/2002/11/24/logic/boolean#> .
+@prefix idfn: <http://purl.oclc.org/NET/introspector/2002/11/24/filenames#> .
+@prefix idnm: <http://purl.oclc.org/NET/introspector/2002/11/24/name#> .
+@prefix is:  <http://introspector.sf.net/2003/04/27/introspector#> .
+@prefix is: <http://introspector.sf.net/2003/04/27/introspector#> .
+@prefix isad: <http://purl.oclc.org/NET/introspector/2002/11/24/temp/node-addresses#>.
+@prefix isbl: <http://purl.oclc.org/NET/introspector/2002/11/24/logic/boolean#> .
+@prefix isfl: <http://purl.oclc.org/NET/introspector/2002/11/24/gcc/node_fields#> .
+@prefix isfn: <http://purl.oclc.org/NET/introspector/2002/11/24/filenames#> .
+@prefix isid: <http://purl.oclc.org/NET/introspector/2002/11/24/temp/node-ids#> .
+@prefix isnf: <http://purl.oclc.org/NET/introspector/2002/11/24/gcc/node_types#> .
+@prefix isnm: <http://purl.oclc.org/NET/introspector/2002/11/24/gcc/node_modifiers#> .
+@prefix isnt: <http://purl.oclc.org/NET/introspector/2002/11/24/gcc/node_types#> .
+@prefix log: <http://www.w3.org/2000/10/swap/log#> .
+@prefix math: <http://www.w3.org/2000/10/swap/math#> .
+@prefix neg: <http://www.agfa.com/w3c/euler/negation#> .
+@prefix ns: <http://www.agfa.com/w3c/euler/owl-rules#> .
+@prefix nsns: <http://www.agfa.com/w3c/euler/rdfs-rules#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix s: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix str: <http://www.w3.org/2000/10/swap/string#> .
+@prefix string:  <http://www.w3.org/2000/10/swap/string#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix : <http://eulersharp.sourceforge.net/2003/03swap/test#>.
+
+
+{?someStruct20 isfl:name ?someName20 .} =>
+{?someStruct20 isfl:name ?someName20 .}.
+
+{?someName21    isfl:strg ?someStr21 .} =>
+{?someName21    isfl:strg ?someStr21 .}.
+
+{
+?someStruct22 isfl:namestr ?someStr22 .
+} => 
+{
+?someStruct22 isfl:namestr ?someStr22 .
+}.
+
+{?someOtherField3a isfl:chan ?someNextField3a .} =>
+{?someOtherField3a isfl:chan ?someNextField3a .}.
+
+{?lista1 isfl:valu ?listb1 .} =>
+{?lista1 isfl:valu ?listb1 .}.
+
+{
+?someStructA isfl:flds ?someField .
+}
+log:implies
+{
+?someStructA isfl:flds ?someField .
+}.
+
+
+{
+?someStructA isfl:name ?someNameA .
+}
+log:implies
+{
+?someStructA isfl:name ?someNameA .
+}.
+
+
+{
+?someName isfl:name ?someOtherName .
+}
+log:implies
+{
+?someName isfl:name ?someOtherName .
+}.
+
+
+
+{
+?someOtherName   isfl:strg ?someStr .
+}
+log:implies
+{
+?someOtherName   isfl:strg ?someStr .
+}.
+
+
+{
+?someStruct isfl:name ?someName .
+?someName isfl:name ?someOtherName .
+?someOtherName   isfl:strg ?someStr .
+}
+log:implies
+{
+	?someStruct isfl:namestr ?someStr .
+}.
+
+{
+?someStruct20 isfl:name ?someName20 .
+?someName20    isfl:strg ?someStr20 .
+}
+log:implies
+{
+	?someStruct20 isfl:namestr ?someStr20 .
+}.
+
+##
+{
+?someField5 isfl:chan ?someOtherField5 .
+?someField5 isfl:valu ?someOtherField5v .
+?someOtherField5 isfl:chan ?someNextField5 .
+?someOtherField5 isfl:valu ?someNextField5v .
+} 
+log:implies
+{
+?someField5      isfl:chan ?someNextField5 .
+?someField5      isfl:valu ?someNextField5v .
+
+?someNextField5      isfl:chan ?someOtherField5 .
+?someNextField5      isfl:valu ?someOtherField5v .
+
+}.
+
+
+{
+	?someOtherField4 isfl:chan ?someNextField4 .
+	?someOtherField4 isfl:valu ?someNextFieldValue4 .
+} 
+log:implies
+{
+	?someNextField4 isfl:chan ?someOtherField4  .
+	?someNextField4 isfl:valu ?someNextFieldValue4 .
+
+}.
+
+{
+	?someOtherField3 isfl:chan ?someNextField3 .
+	?someOtherField3 isfl:valu ?listValue3 .
+
+} 
+log:implies
+{
+	?someOtherField3 isfl:chan ?someNextField3 .
+	?someOtherField3 isfl:valu ?listValue3 .
+} .
+
+
+
+{?lista isfl:valu ?listb .} 
+log:implies
+{?lista isfl:valu ?listb .} .
+
+

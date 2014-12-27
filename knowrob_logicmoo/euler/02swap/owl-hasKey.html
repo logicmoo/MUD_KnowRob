@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>
+		<meta name="generator" content="AGFA HealthCare N3 to HTML convertor"/>
+		<link rel="alternate" type="text/n3" title="RDF Representation" href="http://eulersharp.sourceforge.net/2003/03swap/owl-hasKey"/>
+		<title>owl-hasKey</title>
+		<style type="text/css">
+			a[href]:link { text-decoration:none; }
+			a[href]:visited { text-decoration:none; }
+			a[href]:active { text-decoration:underline; }
+			a:hover { background:#ffa; }
+			.keyword { font-weight: bold; }
+			.literal { color: blue }
+			.uri { color: darkblue }
+			.qname { color: black }
+			.var { color: gray }
+			.comment { font-style:italic; color: darkgreen }
+		</style>
+	</head>
+	<body>
+	<div>
+		<pre>
+<span class="keyword">@prefix</span> list: <a class="uri" href="http://www.w3.org/2000/10/swap/list">&lt;http://www.w3.org/2000/10/swap/list#&gt;</a>.
+<span class="keyword">@prefix</span> log: <a class="uri" href="http://www.w3.org/2000/10/swap/log">&lt;http://www.w3.org/2000/10/swap/log#&gt;</a>.
+<span class="keyword">@prefix</span> owl: <a class="uri" href="http://www.w3.org/2002/07/owl">&lt;http://www.w3.org/2002/07/owl#&gt;</a>.
+<span class="keyword">@prefix</span> rdfs: <a class="uri" href="http://www.w3.org/2000/01/rdf-schema">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</a>.
+<span class="keyword">@prefix</span> rdf: <a class="uri" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</a>.
+<span class="keyword">@prefix</span> e: <a class="uri" href="http://eulersharp.sourceforge.net/2003/03swap/log-rules.html#">&lt;http://eulersharp.sourceforge.net/2003/03swap/log-rules#&gt;</a>.
+
+{<span class="var">?C</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:hasKey</a> <span class="var">?L</span>. <span class="var">?X</span> <span class="keyword">a</span> <span class="var">?C</span>. <span class="var">?Y</span> <span class="keyword">a</span> <span class="var">?C</span>. <span class="var">?X</span> <a class="qname" href="http://www.w3.org/2000/10/swap/log">log:notEqualTo</a> <span class="var">?Y</span>. <span class="var">?S</span> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/log-rules.html#findall">e:findall</a> (<span class="var">?P</span> {<span class="var">?P</span> <a class="qname" href="http://www.w3.org/2000/10/swap/list">list:in</a> <span class="var">?L</span>. <span class="var">?X</span> <span class="var">?P</span> <span class="var">?Z</span>. <span class="var">?Y</span> <span class="var">?P</span> <span class="var">?Z</span>} <span class="var">?L</span>)} =&gt; {<span class="var">?X</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:sameAs</a> <span class="var">?Y</span>}.
+		</pre>
+	</div>
+	</body>
+</html>

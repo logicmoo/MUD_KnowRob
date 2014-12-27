@@ -1,0 +1,40 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE>BUILD</TITLE>
+</HEAD>
+<BODY LANG="en-US" DIR="LTR">
+<PRE><FONT SIZE=4><B>$Id: MAKE 2928 2009-06-17 20:58:13Z josd $</B></FONT>
+
+Building Euler
+--------------
+
+cd ${EULER_SVNDIR}/2004/01swap/build
+ant
+
+cd ${EULER_SVNDIR}/2006/02swap
+javac classes/euler/Support.java
+cat euler.js builtins.js json.js runner.js > classes/Euler4.js
+java org.mozilla.javascript.tools.jsc.Main -opt 9 -package euler classes/Euler4.js
+
+
+Testing Euler
+-------------
+
+cd ${EULER_SVNDIR}/2003/03swap
+euler --step 800000 etc1.n3
+euler --step 800000 etc2.n3
+euler --step 800000 etc3.n3
+./etc
+
+cd ${EULER_SVNDIR}/2006/02swap
+./etc3
+./etc4
+./etc5
+./etc5a
+./etc00
+./etc01
+
+</BODY>
+</HTML>

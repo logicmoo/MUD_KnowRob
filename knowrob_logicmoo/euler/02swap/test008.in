@@ -1,0 +1,48 @@
+:- op(1200,xfx,':=').
+:- op(1199,xfx,'=>').
+
+:- dynamic(animal/1).
+:- dynamic(plant/1).
+:- dynamic(wolf/1).
+:- dynamic(fox/1).
+:- dynamic(bird/1).
+:- dynamic(ant/1).
+:- dynamic(snail/1).
+:- dynamic(grain/1).
+:- dynamic(eats/2).
+:- dynamic(much_smaller/2).
+:- dynamic(answer/1).
+
+flag(keywords).
+flag(quiet).
+
+pfx(':','<http://eulersharp.sourceforge.net/2006/02swap/test008#>').
+
+[there_is_a_wolf] := true => wolf(a_wolf).
+[there_is_a_fox] := true => fox(a_fox).
+[there_is_a_bird] := true => bird(a_bird).
+[there_is_a_ant] := true => ant(a_ant).
+[there_is_a_snail] := true => snail(a_snail).
+[there_is_a_grain] := true => grain(a_grain).
+[wolf_is_an_animal] := wolf(X) => animal(X).
+[fox_is_an_animal] := fox(X) => animal(X).
+[bird_is_an_animal] := bird(X) => animal(X).
+[ant_is_an_animal] := ant(X) => animal(X).
+[snail_is_an_animal] := snail(X) => animal(X).
+[grain_is_a_plant] := grain(X) => plant(X).
+[ant_smaller_than_bird] := ant(Ant), bird(Bird) => much_smaller(Ant, Bird).
+[snail_smaller_than_bird] := snail(Snail), bird(Bird) => much_smaller(Snail, Bird).
+[bird_smaller_than_fox] := bird(Bird), fox(Fox) => much_smaller(Bird, Fox).
+[fox_smaller_than_wolf] := fox(Fox), wolf(Wolf) => much_smaller(Fox, Wolf).
+[wolfs_dont_eat_foxes] := wolf(Wolf), fox(Fox), eats(Wolf, Fox) => false.
+[wolfs_dont_eat_grain] := wolf(Wolf), grain(Grain), eats(Wolf, Grain) => false.
+[bird_eats_ant] := bird(Bird), ant(Ant) => eats(Bird, Ant).
+[bird_dont_eat_snail] := bird(Bird), snail(Snail), eats(Bird, Snail) => false.
+[ant_food] := ant(Ant) => plant(Ant_food), eats(Ant, Ant_food).
+[snail_food] := snail(Snail) => plant(Snail_food), eats(Snail, Snail_food).
+[eating_habits] := animal(Animal), plant(Plant), animal(Small_animal), plant(Other_plant), much_smaller(Small_animal, Animal), eats(Small_animal, Other_plant)
+		=> eats(Animal, Plant); eats(Animal, Small_animal).
+
+[conjecture] := animal(Animal), animal(Grain_eater), grain(Grain), eats(Animal, Grain_eater), eats(Grain_eater, Grain) => answer(':result'(':test',':OK')).
+
+[] := answer(_) => goal.

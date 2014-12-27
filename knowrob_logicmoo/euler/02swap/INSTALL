@@ -1,0 +1,31 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE>INSTALL</TITLE>
+	<STYLE TYPE="text/css">a:hover {background:#ffa;}</STYLE>
+</HEAD>
+<BODY LANG="en-US" DIR="LTR">
+<H1>Installation of EYE</H1>
+<PRE>
+
+For Windows
+-----------
+
+ see <A HREF="http://eulersharp.sourceforge.net/README.Windows">README.Windows</A>
+
+
+For Linux
+---------
+
+ see <A HREF="http://eulersharp.sourceforge.net/README.Linux">README.Linux</A>
+
+
+For Mac
+-------
+
+ see <A HREF="http://eulersharp.sourceforge.net/README.MacOSX">README.MacOSX</A>
+
+</PRE>
+</BODY>
+</HTML>

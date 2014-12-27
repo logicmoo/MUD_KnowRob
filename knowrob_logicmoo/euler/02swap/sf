@@ -1,0 +1,30 @@
+#!/bin/bash
+echo pushd ~/github.com/SWI-Prolog/swipl
+echo ./configure --disable-readline
+echo make
+echo sudo make install
+echo popd
+echo --------
+echo pushd ~/eyesvn/2006/02swap
+echo ./make_eye_zip
+echo popd
+echo rm -fr /tmp/EYE-Winter15
+echo mkdir -p /tmp/EYE-Winter15
+echo rsync -azv ~/eyesvn/2006/02swap/eye.zip /tmp/EYE-Winter15
+echo rsync -azv -e ssh /tmp/EYE-Winter15 josd,eulersharp@frs.sourceforge.net:/home/frs/project/e/eu/eulersharp/eulersharp
+echo --------
+echo rsync -azv --delete --exclude=.svn ~/eyesvn/\* josd,eulersharp@web.sourceforge.net:/home/project-web/eulersharp
+echo --------
+echo svn co https://svn.code.sf.net/p/eulersharp/code/trunk/2006/02swap@7433 ~/temp/02swap
+echo svn log ~/eyesvn/2006/02swap/euler.yap \> ~/temp/eye.svn
+echo eye --debug-pvm 2\> ~/temp/pvm.txt
+echo --------
+echo rsync -av svn.code.sf.net::p/eulersharp ~/eulersharp
+echo ssh -t josd,eulersharp@shell.sourceforge.net create
+echo cd /home/frs/project/eulersharp/
+echo cd /home/project-web/eulersharp/
+echo --------
+echo rsync -azv ~/acasvn/ontologies/agent.n3 ~/acasvn/ontologies/bioSKOSSchemes.n3 ~/acasvn/ontologies/care.n3 ~/acasvn/ontologies/coding.n3 ~/acasvn/ontologies/computer.n3 ~/acasvn/ontologies/countries.n3 ~/acasvn/ontologies/decisionSupport.n3 ~/acasvn/ontologies/digitalProcedure.n3 ~/acasvn/ontologies/document.n3 ~/acasvn/ontologies/environment.n3 ~/acasvn/ontologies/event.n3 ~/acasvn/ontologies/foster.n3 ~/acasvn/ontologies/genomeAbnormality.n3 ~/acasvn/ontologies/human.n3 ~/acasvn/ontologies/humanBody.n3 ~/acasvn/ontologies/languages.n3 ~/acasvn/ontologies/organism.n3 ~/acasvn/ontologies/organization.n3 ~/acasvn/ontologies/physicalResource.n3 ~/acasvn/ontologies/quantities.n3 ~/acasvn/ontologies/space.n3 ~/acasvn/ontologies/sparql.n3 ~/acasvn/ontologies/sparqlAnalysis.n3 ~/acasvn/ontologies/sparqlAnalysisTemplate.n3 ~/acasvn/ontologies/substanceForms.n3 ~/acasvn/ontologies/time.n3 ~/acasvn/ontologies/units.n3 ~/acasvn/ontologies/weekScheme.n3 ~/acasvn/ontologies/workflow.n3 ~/acasvn/rules/age/age_rules.n3 ~/acasvn/rules/age/age_rules_backward.n3 ~/acasvn/rules/bodyMassIndex/bmi_rules.n3 ~/acasvn/rules/bodyMassIndex/weightStatus_rules.n3 ~/acasvn/rules/eventTime/eventTime_rules.n3 ~/acasvn/rules/skos/skos-rules.n3 ~/acasvn/rules/skos/skos-extra-rules.n3 ~/acasvn/rules/skos/skos-mapping-validation-rules.n3 ~/eyesvn/2003/03swap
+echo rsync -azv ~/acasvn/rules/age/age_instance.n3 ~/acasvn/rules/age/age_query.n3 ~/acasvn/rules/bodyMassIndex/bmi_instances.n3 ~/acasvn/rules/bodyMassIndex/bmi_query.n3 ~/acasvn/rules/eventTime/eventTime_instances_2.n3 ~/acasvn/rules/eventTime/eventTime_queries2.n3 ~/acasvn/rules/terminology-mapping-validation/terminology-mapping/skos-mapping-sample-snomed-icd10.n3 ~/acasvn/rules/terminology-mapping-validation/query/skos-mapping-validation-query.n3 ~/eyesvn/2007/07test
+echo sfh
+echo rsync -azv ~/www.agfa.com/w3c/Talks ~/eyesvn/htdocs

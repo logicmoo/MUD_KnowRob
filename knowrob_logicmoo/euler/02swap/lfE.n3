@@ -1,0 +1,49 @@
+#Processed by Id: euler.yap,v 1.112 2006/11/09 21:07:09 josd Exp 
+
+@prefix str: <http://www.w3.org/2000/10/swap/string#>.
+@prefix var: <http://localhost/var#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix list: <http://www.w3.org/2000/10/swap/list#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix : <http://eulersharp.sourceforge.net/2006/02swap/lf#>.
+@prefix time: <http://www.w3.org/2000/10/swap/time#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix n3: <http://www.w3.org/2004/06/rei#>.
+@prefix math: <http://www.w3.org/2000/10/swap/math#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix r: <http://www.w3.org/2000/10/swap/reason#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+[ a r:Proof, r:Conjunction;
+  r:component [ a r:Inference; r:gives {{{var:_1890 :p3 var:_1891. var:_1894 :p4 var:_1895} :p5 var:_1882} log:implies {{var:_1894 :p7 var:_1922. var:_1890 :p8 var:_1882} log:implies var:_1882}}; r:evidence (
+    [ a r:Extraction; r:gives {{{var:_1890 :p3 var:_1891. var:_1894 :p4 var:_1895} :p5 var:_1882} log:implies {{var:_1894 :p7 var:_1922. var:_1890 :p8 var:_1882} log:implies var:_1882}}; r:because [ a r:Parsing; r:source _1874]]);
+    r:binding [ r:variable [ n3:uri "http://localhost/var#X"]; r:boundTo {{var:_1890 :p3 var:_1891. var:_1894 :p4 var:_1895} :p5 var:_1882}]; 
+    r:binding [ r:variable [ n3:uri "http://localhost/var#Y"]; r:boundTo {{var:_1894 :p7 var:_1922. var:_1890 :p8 var:_1882} log:implies var:_1882}]; 
+    r:rule [ a r:Extraction; r:gives {@forAll var:X,var:Y. {var:X => var:Y} => {var:X => var:Y}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/lfF.n3>]]];
+  r:component [ a r:Inference; r:gives {{var:_1881 log:implies var:_1882} log:implies {var:_1881 log:implies var:_1882}}; r:evidence (
+    [ a r:Extraction; r:gives {{var:_1881 log:implies var:_1882} log:implies {var:_1881 log:implies var:_1882}}; r:because [ a r:Parsing; r:source _1874]]);
+    r:binding [ r:variable [ n3:uri "http://localhost/var#X"]; r:boundTo {var:_1881 log:implies var:_1882}]; 
+    r:binding [ r:variable [ n3:uri "http://localhost/var#Y"]; r:boundTo {var:_1881 log:implies var:_1882}]; 
+    r:rule [ a r:Extraction; r:gives {@forAll var:X,var:Y. {var:X => var:Y} => {var:X => var:Y}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/lfF.n3>]]];
+  r:component [ a r:Inference; r:gives {{:s4 :p7 var:_1882. {var:_1894 :p1 :o1. :s2 :p2 :o2} :p8 {:s6 :p6 var:_1905}} log:implies {:s6 :p6 var:_1905}}; r:evidence (
+    [ a r:Extraction; r:gives {{:s4 :p7 var:_1882. {var:_1894 :p1 :o1. :s2 :p2 :o2} :p8 {:s6 :p6 var:_1905}} log:implies {:s6 :p6 var:_1905}}; r:because [ a r:Inference; r:gives {{:s4 :p7 var:_1882. {var:_1894 :p1 :o1. :s2 :p2 :o2} :p8 {:s6 :p6 var:_1905}} log:implies {:s6 :p6 var:_1905}}; r:evidence (
+      [ a r:Extraction; r:gives {{{var:_1894 :p1 :o1. :s2 :p2 :o2} :p3 var:_2036. :s4 :p4 var:_2053} :p5 {:s6 :p6 var:_1905}}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/lf.n3>]]);
+      r:binding [ r:variable [ n3:uri "http://localhost/var#S3"]; r:boundTo {var:_1894 :p1 :o1. :s2 :p2 :o2}]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#O3"]; r:boundTo var:_2036]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#S4"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2006/02swap/lf#s4"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#O4"]; r:boundTo var:_2053]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#O5"]; r:boundTo {:s6 :p6 var:_1905}]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#O7"]; r:boundTo var:_1882]; 
+      r:rule [ a r:Extraction; r:gives {@forAll var:S3,var:O3,var:S4,var:O4,var:O5,var:O7. {{var:S3 :p3 var:O3. var:S4 :p4 var:O4} :p5 var:O5} => {{var:S4 :p7 var:O7. var:S3 :p8 var:O5} => var:O5}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/lf.n3>]]]]);
+    r:binding [ r:variable [ n3:uri "http://localhost/var#X"]; r:boundTo {:s4 :p7 var:_1882. {var:_1894 :p1 :o1. :s2 :p2 :o2} :p8 {:s6 :p6 var:_1905}}]; 
+    r:binding [ r:variable [ n3:uri "http://localhost/var#Y"]; r:boundTo {:s6 :p6 var:_1905}]; 
+    r:rule [ a r:Extraction; r:gives {@forAll var:X,var:Y. {var:X => var:Y} => {var:X => var:Y}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/lfF.n3>]]];
+  r:gives {
+    {{var:_1908 :p3 var:_1909. var:_1912 :p4 var:_1913} :p5 var:_1900} log:implies {{var:_1912 :p7 var:_1940. var:_1908 :p8 var:_1900} log:implies var:_1900}.
+    {var:_1899 log:implies var:_1900} log:implies {var:_1899 log:implies var:_1900}.
+    {:s4 :p7 var:_1900. {var:_1912 :p1 :o1. :s2 :p2 :o2} :p8 {:s6 :p6 var:_1923}} log:implies {:s6 :p6 var:_1923}.}].
+
+#ENDS 10 msec.
+

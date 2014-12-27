@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>
+		<meta name="generator" content="AGFA HealthCare N3 to HTML convertor"/>
+		<link rel="alternate" type="text/n3" title="RDF Representation" href="http://eulersharp.sourceforge.net/2003/03swap/skos-rules"/>
+		<title>skos-rules</title>
+		<style type="text/css">
+			a[href]:link { text-decoration:none; }
+			a[href]:visited { text-decoration:none; }
+			a[href]:active { text-decoration:underline; }
+			a:hover { background:#ffa; }
+			.keyword { font-weight: bold; }
+			.literal { color: blue }
+			.uri { color: darkblue }
+			.qname { color: black }
+			.var { color: gray }
+			.comment { font-style:italic; color: darkgreen }
+		</style>
+	</head>
+	<body>
+	<div>
+		<pre>
+<span class="keyword">@prefix</span> rdf:  <a class="uri" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</a>.
+<span class="keyword">@prefix</span> rdfs: <a class="uri" href="http://www.w3.org/2000/01/rdf-schema">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</a>.
+<span class="keyword">@prefix</span> log:  <a class="uri" href="http://www.w3.org/2000/10/swap/log">&lt;http://www.w3.org/2000/10/swap/log#&gt;</a>.
+<span class="keyword">@prefix</span> list: <a class="uri" href="http://www.w3.org/2000/10/swap/list">&lt;http://www.w3.org/2000/10/swap/list#&gt;</a>.
+<span class="keyword">@prefix</span> skos: <a class="uri" href="http://www.w3.org/2004/02/skos/core.html#">&lt;http://www.w3.org/2004/02/skos/core#&gt;</a>.
+<span class="keyword">@prefix</span> func: <a class="uri" href="http://www.w3.org/2007/rif-builtin-function">&lt;http://www.w3.org/2007/rif-builtin-function#&gt;</a>.
+<span class="keyword">@prefix</span> dce:  <a class="uri" href="http://purl.org/dc/elements/1.1/">&lt;http://purl.org/dc/elements/1.1/&gt;</a>.
+
+
+<a class="uri" href="http://eulersharp.sourceforge.net/2003/03swap/skos-rules.html">&lt;http://eulersharp.sourceforge.net/2003/03swap/skos-rules&gt;</a>
+	<a class="qname" href="http://purl.org/dc/elements/1.1">dce:title</a> <span class="literal">&quot;SKOS rules&quot;</span>@en;
+	<a class="qname" href="http://purl.org/dc/elements/1.1">dce:creator</a> <span class="literal">&quot;Giovanni Mels&quot;</span>;
+	<a class="qname" href="http://purl.org/dc/elements/1.1">dce:publisher</a> <span class="literal">&quot;Agfa Healthcare/Belgium&quot;</span>@en;
+	<a class="qname" href="http://purl.org/dc/elements/1.1">dce:description</a> <span class="literal">&quot;SKOS axioms expressed as N3 rules.&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:seeAlso</a> <a class="uri" href="http://www.w3.org/TR/skos-reference">&lt;http://www.w3.org/TR/skos-reference&gt;</a>.
+
+
+{ <span class="var">?c</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#topConceptOf">skos:topConceptOf</a>  <span class="var">?s</span> } =&gt; { <span class="var">?s</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#hasTopConcept">skos:hasTopConcept</a> <span class="var">?c</span> }.
+{ <span class="var">?s</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#hasTopConcept">skos:hasTopConcept</a> <span class="var">?c</span> } =&gt; { <span class="var">?c</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#topConceptOf">skos:topConceptOf</a>  <span class="var">?s</span> }.
+
+{ <span class="var">?x</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#related">skos:related</a> <span class="var">?y</span> } =&gt; { <span class="var">?y</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#related">skos:related</a> <span class="var">?x</span> }.
+
+{ <span class="var">?x</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#narrower">skos:narrower</a> <span class="var">?y</span> } =&gt; { <span class="var">?y</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#broader">skos:broader</a>  <span class="var">?x</span> }.
+{ <span class="var">?x</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#broader">skos:broader</a>  <span class="var">?y</span> } =&gt; { <span class="var">?y</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#narrower">skos:narrower</a> <span class="var">?x</span> }.
+{ <span class="var">?x</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#narrowerTransitive">skos:narrowerTransitive</a> <span class="var">?y</span> } =&gt; { <span class="var">?y</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#broaderTransitive">skos:broaderTransitive</a>  <span class="var">?x</span> }.
+{ <span class="var">?x</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#broaderTransitive">skos:broaderTransitive</a>  <span class="var">?y</span> } =&gt; { <span class="var">?y</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#narrowerTransitive">skos:narrowerTransitive</a> <span class="var">?x</span> }.
+
+{ <span class="var">?x</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#narrowerTransitive">skos:narrowerTransitive</a> <span class="var">?y</span>. <span class="var">?y</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#narrowerTransitive">skos:narrowerTransitive</a> <span class="var">?z</span> } =&gt; { <span class="var">?x</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#narrowerTransitive">skos:narrowerTransitive</a> <span class="var">?z</span> }.
+{ <span class="var">?x</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#broaderTransitive">skos:broaderTransitive</a>  <span class="var">?y</span>. <span class="var">?y</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#broaderTransitive">skos:broaderTransitive</a>  <span class="var">?z</span> } =&gt; { <span class="var">?x</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#broaderTransitive">skos:broaderTransitive</a>  <span class="var">?z</span> }.
+
+{ <span class="var">?x</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#memberList">skos:memberList</a> <span class="var">?L</span>. <span class="var">?e</span> <a class="qname" href="http://www.w3.org/2000/10/swap/list">list:in</a> <span class="var">?L</span> } =&gt; { <span class="var">?x</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#member">skos:member</a> <span class="var">?e</span> }.
+
+{ <span class="var">?x</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#narrowMatch">skos:narrowMatch</a> <span class="var">?y</span> } =&gt; { <span class="var">?y</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#broadMatch">skos:broadMatch</a>  <span class="var">?x</span> }.
+{ <span class="var">?x</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#broadMatch">skos:broadMatch</a>  <span class="var">?y</span> } =&gt; { <span class="var">?y</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#narrowMatch">skos:narrowMatch</a> <span class="var">?x</span> }.
+
+{ <span class="var">?x</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#relatedMatch">skos:relatedMatch</a> <span class="var">?y</span> } =&gt; { <span class="var">?y</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#relatedMatch">skos:relatedMatch</a> <span class="var">?x</span> }.
+{ <span class="var">?x</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#closeMatch">skos:closeMatch</a>   <span class="var">?y</span> } =&gt; { <span class="var">?y</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#closeMatch">skos:closeMatch</a>   <span class="var">?x</span> }.
+{ <span class="var">?x</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#exactMatch">skos:exactMatch</a>   <span class="var">?y</span> } =&gt; { <span class="var">?y</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#exactMatch">skos:exactMatch</a>   <span class="var">?x</span> }.
+
+{ <span class="var">?x</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#exactMatch">skos:exactMatch</a> <span class="var">?y</span>. <span class="var">?y</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#exactMatch">skos:exactMatch</a> <span class="var">?z</span> } =&gt; { <span class="var">?x</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#exactMatch">skos:exactMatch</a> <span class="var">?z</span> }.
+
+{ <span class="var">?x</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#broaderTransitive">skos:broaderTransitive</a>  <span class="var">?y</span> } =&gt; { <span class="var">?x</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#semanticRelation">skos:semanticRelation</a> <span class="var">?y</span> }.
+{ <span class="var">?x</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#narrowerTransitive">skos:narrowerTransitive</a> <span class="var">?y</span> } =&gt; { <span class="var">?x</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#semanticRelation">skos:semanticRelation</a> <span class="var">?y</span> }.
+{ <span class="var">?x</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#related">skos:related</a>            <span class="var">?y</span> } =&gt; { <span class="var">?x</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#semanticRelation">skos:semanticRelation</a> <span class="var">?y</span> }.
+{ <span class="var">?x</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#mappingRelation">skos:mappingRelation</a>    <span class="var">?y</span> } =&gt; { <span class="var">?x</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#semanticRelation">skos:semanticRelation</a> <span class="var">?y</span> }.
+
+{ <span class="var">?x</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#broader">skos:broader</a>  <span class="var">?y</span> } =&gt; { <span class="var">?x</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#broaderTransitive">skos:broaderTransitive</a> <span class="var">?y</span>  }.
+{ <span class="var">?x</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#narrower">skos:narrower</a> <span class="var">?y</span> } =&gt; { <span class="var">?x</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#narrowerTransitive">skos:narrowerTransitive</a> <span class="var">?y</span> }.
+
+{ <span class="var">?x</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#closeMatch">skos:closeMatch</a> <span class="var">?y</span>   } =&gt; { <span class="var">?x</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#mappingRelation">skos:mappingRelation</a> <span class="var">?y</span> }.
+{ <span class="var">?x</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#broadMatch">skos:broadMatch</a> <span class="var">?y</span>   } =&gt; { <span class="var">?x</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#mappingRelation">skos:mappingRelation</a> <span class="var">?y</span> }.
+{ <span class="var">?x</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#narrowMatch">skos:narrowMatch</a> <span class="var">?y</span>  } =&gt; { <span class="var">?x</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#mappingRelation">skos:mappingRelation</a> <span class="var">?y</span> }.
+{ <span class="var">?x</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#relatedMatch">skos:relatedMatch</a> <span class="var">?y</span> } =&gt; { <span class="var">?x</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#mappingRelation">skos:mappingRelation</a> <span class="var">?y</span> }.
+
+{ <span class="var">?x</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#broadMatch">skos:broadMatch</a>  <span class="var">?y</span> } =&gt; { <span class="var">?x</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#broader">skos:broader</a>  <span class="var">?y</span> }.
+{ <span class="var">?x</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#narrowMatch">skos:narrowMatch</a> <span class="var">?y</span> } =&gt; { <span class="var">?x</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#narrower">skos:narrower</a> <span class="var">?y</span> }.
+
+{ <span class="var">?x</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#exactMatch">skos:exactMatch</a> <span class="var">?y</span> } =&gt; { <span class="var">?x</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#closeMatch">skos:closeMatch</a> <span class="var">?y</span> }.
+
+{ <span class="var">?x</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#relatedMatch">skos:relatedMatch</a> <span class="var">?y</span> } =&gt; { <span class="var">?x</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#related">skos:related</a> <span class="var">?y</span> }.
+
+{ <span class="var">?c</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#topConceptOf">skos:topConceptOf</a> <span class="var">?s</span> } =&gt; { <span class="var">?c</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#inScheme">skos:inScheme</a> <span class="var">?s</span> }.
+
+{ <span class="var">?c</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#changeNote">skos:changeNote</a>    <span class="var">?n</span> } =&gt; { <span class="var">?c</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#note">skos:note</a> <span class="var">?n</span> }.
+{ <span class="var">?c</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a>    <span class="var">?n</span> } =&gt; { <span class="var">?c</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#note">skos:note</a> <span class="var">?n</span> }.
+{ <span class="var">?c</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#editorialNote">skos:editorialNote</a> <span class="var">?n</span> } =&gt; { <span class="var">?c</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#note">skos:note</a> <span class="var">?n</span> }.
+{ <span class="var">?c</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#example">skos:example</a>       <span class="var">?n</span> } =&gt; { <span class="var">?c</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#note">skos:note</a> <span class="var">?n</span> }.
+{ <span class="var">?c</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#historyNote">skos:historyNote</a>   <span class="var">?n</span> } =&gt; { <span class="var">?c</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#note">skos:note</a> <span class="var">?n</span> }.
+{ <span class="var">?c</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#scopeNote">skos:scopeNote</a>     <span class="var">?n</span> } =&gt; { <span class="var">?c</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#note">skos:note</a> <span class="var">?n</span> }.
+
+{ <span class="var">?c</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#inScheme">skos:inScheme</a> <span class="var">?s</span> } =&gt; { <span class="var">?s</span> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#ConceptScheme">skos:ConceptScheme</a> }.
+{ <span class="var">?s</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#hasTopConcept">skos:hasTopConcept</a> <span class="var">?c</span> } =&gt; { <span class="var">?s</span> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#ConceptScheme">skos:ConceptScheme</a>. <span class="var">?c</span> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#Concept">skos:Concept</a> }.
+{ <span class="var">?x</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#semanticRelation">skos:semanticRelation</a> <span class="var">?y</span> } =&gt; { <span class="var">?x</span> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#Concept">skos:Concept</a>. <span class="var">?y</span> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#Concept">skos:Concept</a> }.
+{ <span class="var">?c</span> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#OrderedCollection">skos:OrderedCollection</a> } =&gt; { <span class="var">?c</span> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#Collection">skos:Collection</a> }.
+{ <span class="var">?s</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#member">skos:member</a> <span class="var">?c</span> } =&gt; { <span class="var">?s</span> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#Collection">skos:Collection</a> }.
+{ <span class="var">?s</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#memberList">skos:memberList</a> <span class="var">?L</span> } =&gt; { <span class="var">?s</span> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#OrderedCollection">skos:OrderedCollection</a>. <span class="var">?L</span> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">rdf:List</a> }.
+
+
+
+<span class="comment">#</span>
+<span class="comment"># integrity constraints</span>
+<span class="comment">#</span>
+
+<span class="comment"># skos:ConceptScheme, skos:Concept and skos:Collection are all disjoint.</span>
+{ <span class="var">?x</span> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#ConceptScheme">skos:ConceptScheme</a>, <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#Concept">skos:Concept</a> } =&gt; <span class="keyword">@false</span>.
+{ <span class="var">?x</span> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#Collection">skos:Collection</a>, <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#Concept">skos:Concept</a> } =&gt; <span class="keyword">@false</span>.
+{ <span class="var">?x</span> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#Collection">skos:Collection</a>, <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#ConceptScheme">skos:ConceptScheme</a> } =&gt; <span class="keyword">@false</span>.
+
+<span class="comment"># Hierarchical and associative relations are disjoint.</span>
+{ <span class="var">?x</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#related">skos:related</a> <span class="var">?y</span>. <span class="var">?x</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#broaderTransitive">skos:broaderTransitive</a> <span class="var">?y</span> } =&gt; <span class="keyword">@false</span>.
+
+<span class="comment"># Exact and hierarchical relations are disjoint.</span>
+{ <span class="var">?x</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#exactMatch">skos:exactMatch</a> <span class="var">?y</span>. <span class="var">?x</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#broadMatch">skos:broadMatch</a> <span class="var">?y</span> } =&gt; <span class="keyword">@false</span>.
+
+<span class="comment"># Exact and associative relations are disjoint.</span>
+{ <span class="var">?x</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#exactMatch">skos:exactMatch</a> <span class="var">?y</span>. <span class="var">?x</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#relatedMatch">skos:relatedMatch</a> <span class="var">?y</span> } =&gt; <span class="keyword">@false</span>.
+
+<span class="comment"># skos:memberList is a functional property.</span>
+{ <span class="var">?c</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#memberList">skos:memberList</a> <span class="var">?L1</span>, <span class="var">?L2</span>. <span class="var">?L1</span> <a class="qname" href="http://www.w3.org/2000/10/swap/log">log:notEqualTo</a> <span class="var">?L2</span> } =&gt; <span class="keyword">@false</span>.
+
+<span class="comment"># skos:prefLabel, skos:altLabel and skos:hiddenLabel are all disjoint.</span>
+{ <span class="var">?c</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#prefLabel">skos:prefLabel</a> <span class="var">?l</span>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#altLabel">skos:altLabel</a> <span class="var">?l</span> } =&gt; <span class="keyword">@false</span>.
+{ <span class="var">?c</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#prefLabel">skos:prefLabel</a> <span class="var">?l</span>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#hiddenLabel">skos:hiddenLabel</a> <span class="var">?l</span> } =&gt; <span class="keyword">@false</span>.
+{ <span class="var">?c</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#altLabel">skos:altLabel</a> <span class="var">?l</span>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#hiddenLabel">skos:hiddenLabel</a> <span class="var">?l</span> } =&gt; <span class="keyword">@false</span>.
+
+<span class="comment"># A resource has no more than one value of skos:prefLabel per language tag.</span>
+{ <span class="var">?c</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#prefLabel">skos:prefLabel</a> <span class="var">?x</span>, <span class="var">?y</span>. <span class="var">?x</span> <a class="qname" href="http://www.w3.org/2000/10/swap/log">log:notEqualTo</a> <span class="var">?y</span>. (<span class="var">?x</span>) <a class="qname" href="http://www.w3.org/2007/rif-builtin-function">func:lang-from-PlainLiteral</a> <span class="var">?lang</span>. (<span class="var">?y</span>) <a class="qname" href="http://www.w3.org/2007/rif-builtin-function">func:lang-from-PlainLiteral</a> <span class="var">?lang</span> } =&gt; <span class="keyword">@false</span>.
+		</pre>
+	</div>
+	</body>
+</html>

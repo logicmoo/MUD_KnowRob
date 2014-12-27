@@ -1,0 +1,59 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix dce: <http://purl.org/dc/elements/1.1/>.
+@prefix owl:  <http://www.w3.org/2002/07/owl#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix event: <http://eulersharp.sourceforge.net/2003/03swap/event#>.
+@prefix sparql: <http://eulersharp.sourceforge.net/2003/03swap/sparql#>.
+@prefix sparan: <http://eulersharp.sourceforge.net/2003/03swap/sparqlAnalysis#>.
+@prefix sparante: <http://eulersharp.sourceforge.net/2003/03swap/sparqlAnalysisTemplate#>.
+
+<http://eulersharp.sourceforge.net/2003/03swap/sparqlAnalysisTemplate#>
+	a owl:Ontology;
+	dce:title """SPARQL Analysis Template"""@en;
+	dce:creator """Hans Cools, MD; Agfa Healthcare, Belgium"""@en;
+	dce:contributor """Kristof Depraetere, Boris De Vloed, Giovanni Mels, ir; Agfa Healthcare, Belgium"""@en;
+	dce:publisher """Agfa Healthcare, Belgium"""@en;
+	dce:description """Formal description of SPARQL query templates for RDF data analysis."""@en;
+	dce:format """OWL Full"""@en.
+
+#
+# CLASSES
+#
+
+sparante:ClinicalAnalysisQueryTemplate
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/sparqlAnalysisTemplate#>;
+	rdfs:label """clinical analysis SPARQL query template"""@en;
+	skos:definition """SPARQL template to formulate a query for clinical RDF data analysis."""@en;
+	rdfs:subClassOf sparql:Template.
+
+sparante:ClinicalAnalysisQueryTemplateBinding
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/sparqlAnalysisTemplate#>;
+	rdfs:label """clinical analysis SPARQL query template binding"""@en;
+	skos:definition """Variable value for clinical analysis SPARQL query template."""@en.
+
+sparante:AnalysisResultBinding
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/sparqlAnalysisTemplate#>;
+	rdfs:label """analysis result binding"""@en;
+	skos:definition """ ."""@en.
+
+sparante:ClinicalAnalysisResultBinding
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/sparqlAnalysisTemplate#>;
+	rdfs:label """clinical analysis result binding"""@en;
+	skos:definition """ ."""@en;
+	rdfs:subClassOf sparante:AnalysisResultBinding.
+
+#
+# PROPERTIES
+#
+
+sparante:resultBindingOf
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/sparqlAnalysisTemplate#>;
+	skos:definition """Specifying an analysis SPARQL query having an analysis result binding."""@en;
+	rdfs:domain sparante:AnalysisResultBinding;
+	rdfs:range sparan:AnalysisQuery.

@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>
+		<meta name="generator" content="AGFA HealthCare N3 to HTML convertor"/>
+		<link rel="alternate" type="text/n3" title="RDF Representation" href="http://eulersharp.sourceforge.net/2003/03swap/sparql"/>
+		<title>sparql</title>
+		<style type="text/css">
+			a[href]:link { text-decoration:none; }
+			a[href]:visited { text-decoration:none; }
+			a[href]:active { text-decoration:underline; }
+			a:hover { background:#ffa; }
+			.keyword { font-weight: bold; }
+			.literal { color: blue }
+			.uri { color: darkblue }
+			.qname { color: black }
+			.var { color: gray }
+			.comment { font-style:italic; color: darkgreen }
+		</style>
+	</head>
+	<body>
+	<div>
+		<pre>
+<span class="keyword">@prefix</span> rdf:  <a class="uri" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</a>.
+<span class="keyword">@prefix</span> rdfs: <a class="uri" href="http://www.w3.org/2000/01/rdf-schema">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</a>.
+<span class="keyword">@prefix</span> owl:  <a class="uri" href="http://www.w3.org/2002/07/owl">&lt;http://www.w3.org/2002/07/owl#&gt;</a>.
+<span class="keyword">@prefix</span> xsd:  <a class="uri" href="http://www.w3.org/2001/XMLSchema">&lt;http://www.w3.org/2001/XMLSchema#&gt;</a>.
+<span class="keyword">@prefix</span> dce: <a class="uri" href="http://purl.org/dc/elements/1.1/">&lt;http://purl.org/dc/elements/1.1/&gt;</a>.
+<span class="keyword">@prefix</span> skos: <a class="uri" href="http://www.w3.org/2004/02/skos/core.html#">&lt;http://www.w3.org/2004/02/skos/core#&gt;</a>.
+<span class="keyword">@prefix</span> event: <a class="uri" href="http://eulersharp.sourceforge.net/2003/03swap/event.html#">&lt;http://eulersharp.sourceforge.net/2003/03swap/event#&gt;</a>.
+<span class="keyword">@prefix</span> agent: <a class="uri" href="http://eulersharp.sourceforge.net/2003/03swap/agent.html#">&lt;http://eulersharp.sourceforge.net/2003/03swap/agent#&gt;</a>.
+<span class="keyword">@prefix</span> fos: <a class="uri" href="http://eulersharp.sourceforge.net/2003/03swap/foster.html#">&lt;http://eulersharp.sourceforge.net/2003/03swap/foster#&gt;</a>.
+<span class="keyword">@prefix</span> digproc: <a class="uri" href="http://eulersharp.sourceforge.net/2003/03swap/digitalProcedure.html#">&lt;http://eulersharp.sourceforge.net/2003/03swap/digitalProcedure#&gt;</a>.
+<span class="keyword">@prefix</span> sparql: <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/sparql#&gt;</a>.
+
+<a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/sparql#&gt;</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Ontology</a>;
+	<a class="qname" href="http://purl.org/dc/elements/1.1">dce:title</a> <span class="literal">&quot;&quot;&quot;SPARQL&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://purl.org/dc/elements/1.1">dce:creator</a> <span class="literal">&quot;&quot;&quot;Hans Cools, MD; Agfa Healthcare, Belgium&quot;&quot;&quot;</span>@nl;
+	<a class="qname" href="http://purl.org/dc/elements/1.1">dce:contributor</a> <span class="literal">&quot;&quot;&quot;Kristof Depraetere, Boris De Vloed, Giovanni Mels; Agfa Healthcare, Belgium&quot;&quot;&quot;</span>@nl;
+	<a class="qname" href="http://purl.org/dc/elements/1.1">dce:publisher</a> <span class="literal">&quot;&quot;&quot;Agfa Healthcare, Belgium&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://purl.org/dc/elements/1.1">dce:description</a> <span class="literal">&quot;&quot;&quot;Formal general description of SPARQL domain.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://purl.org/dc/elements/1.1">dce:format</a> <span class="literal">&quot;&quot;&quot;OWL Full&quot;&quot;&quot;</span>@en.
+
+<span class="comment"># check out spin</span>
+
+<span class="comment">#</span>
+<span class="comment"># CLASSES</span>
+<span class="comment">#</span>
+
+<a class="qname" name="SPARQL">sparql:SPARQL</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/sparql#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;SPARQL&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Computer query language for RDF.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#note">skos:note</a> <span class="literal">&quot;&quot;&quot;Expanded: SPARQL Protocol and RDF Query Language.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/digitalProcedure.html#QueryLanguage">digproc:QueryLanguage</a>.
+
+<a class="qname" name="Querying">sparql:Querying</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/sparql#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;SPARQL querying&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Executing a SPARQL query on a digital computer.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/digitalProcedure.html#Querying">digproc:Querying</a>, [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/event.html#hasInput">event:hasInput</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="#Query">sparql:Query</a>], [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/event.html#hasOutput">event:hasOutput</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="#Result">sparql:Result</a>].
+
+<a class="qname" name="Query">sparql:Query</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/sparql#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;SPARQL query&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Query formulated in SPARQL.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/digitalProcedure.html#Query">digproc:Query</a>.
+
+<a class="qname" name="Result">sparql:Result</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/sparql#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;SPARQL result&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Output of SPARQL querying.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/digitalProcedure.html#Result">digproc:Result</a>, [
+			<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/event.html#outputOf">event:outputOf</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="#Querying">sparql:Querying</a>].
+
+<a class="qname" name="Endpoint">sparql:Endpoint</a> <span class="comment"># service: agent</span>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/sparql#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;SPARQL endpoint&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;A resource containing a mapping system between RDF and SQL DB scheme in order to query the DB.&quot;&quot;&quot;</span>@en.
+
+<a class="qname" name="Template">sparql:Template</a> <span class="comment"># construct</span>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/sparql#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;SPARQL query template&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Digital template to formulate a SPARQL query.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/digitalProcedure.html#Template">digproc:Template</a>.
+
+<a class="qname" name="TemplateBinding">sparql:TemplateBinding</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/sparql#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;SPARQL query template binding&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Binding for a SPARQL query template.&quot;&quot;&quot;</span>@en.
+
+<span class="comment">#</span>
+<span class="comment"># PROPERTIES</span>
+<span class="comment">#</span>
+
+<a class="qname" name="hasTemplate">sparql:hasTemplate</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:ObjectProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/sparql#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Specifying a template for a SPARQL query.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="#Query">sparql:Query</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="#Template">sparql:Template</a>.
+
+<a class="qname" name="hasBinding">sparql:hasBinding</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:ObjectProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/sparql#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Specifying a binding for a SPARQL query template.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="#Template">sparql:Template</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="#TemplateBinding">sparql:TemplateBinding</a>.
+
+<a class="qname" name="hasQuery">sparql:hasQuery</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:ObjectProperty</a>;
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:ObjectProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/sparql#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Specifying a SPARQL query to execute.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subPropertyOf</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/event.html#hasInput">event:hasInput</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="#Querying">sparql:Querying</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="#Query">sparql:Query</a>.
+
+<a class="qname" name="executedOn">sparql:executedOn</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:ObjectProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/sparql#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Specifying a SPARQL endpoint on which to execute a query.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="#Query">sparql:Query</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="#Endpoint">sparql:Endpoint</a>.
+		</pre>
+	</div>
+	</body>
+</html>

@@ -1,0 +1,120 @@
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix math: <http://www.w3.org/2000/10/swap/math#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix : <http://eulersharp.sourceforge.net/2003/03swap/xsd-rules#>.
+
+
+### XML Schema Datatypes XSD
+
+xsd:ID a rdfs:Datatype; rdfs:subClassOf xsd:anyURI, xsd:Name.
+xsd:IDREF a rdfs:Datatype; rdfs:subClassOf xsd:anyURI, xsd:Name.
+xsd:NCName a rdfs:Datatype; rdfs:subClassOf xsd:anyURI, xsd:Name.
+xsd:NMTOKEN a rdfs:Datatype; rdfs:subClassOf xsd:token.
+xsd:Name a rdfs:Datatype; rdfs:subClassOf xsd:NMTOKEN.
+xsd:anyURI a rdfs:Datatype; rdfs:subClassOf xsd:token.
+xsd:base64Binary a rdfs:Datatype.
+xsd:boolean a rdfs:Datatype.
+xsd:byte a rdfs:Datatype; rdfs:subClassOf xsd:short.
+xsd:date a rdfs:Datatype.
+xsd:dateTime a rdfs:Datatype.
+xsd:decimal a rdfs:Datatype.
+xsd:double a rdfs:Datatype.
+xsd:duration a rdfs:Datatype.
+xsd:float a rdfs:Datatype; rdfs:subClassOf xsd:double.
+xsd:gDay a rdfs:Datatype.
+xsd:gMonth a rdfs:Datatype.
+xsd:gMonthDay a rdfs:Datatype.
+xsd:gYear a rdfs:Datatype.
+xsd:gYearMonth a rdfs:Datatype.
+xsd:hexBinary a rdfs:Datatype.
+xsd:int a rdfs:Datatype; rdfs:subClassOf xsd:long, xsd:double.
+xsd:integer a rdfs:Datatype; rdfs:subClassOf xsd:decimal.
+xsd:language a rdfs:Datatype; rdfs:subClassOf xsd:NCName, xsd:ID, xsd:IDREF.
+xsd:long a rdfs:Datatype; rdfs:subClassOf xsd:integer.
+xsd:negativeInteger a rdfs:Datatype; rdfs:subClassOf xsd:nonPositiveInteger.
+xsd:nonNegativeInteger a rdfs:Datatype; rdfs:subClassOf xsd:integer.
+xsd:nonPositiveInteger a rdfs:Datatype; rdfs:subClassOf xsd:integer.
+xsd:normalizedString a rdfs:Datatype; rdfs:subClassOf xsd:string.
+xsd:positiveInteger a rdfs:Datatype; rdfs:subClassOf xsd:nonNegativeInteger.
+xsd:short a rdfs:Datatype; rdfs:subClassOf xsd:int, xsd:float.
+xsd:string a rdfs:Datatype.
+xsd:time a rdfs:Datatype.
+xsd:token a rdfs:Datatype; rdfs:subClassOf xsd:normalizedString.
+xsd:unsignedByte a rdfs:Datatype; rdfs:subClassOf xsd:short, xsd:unsignedShort.
+xsd:unsignedInt a rdfs:Datatype; rdfs:subClassOf xsd:long, xsd:double, xsd:unsignedLong.
+xsd:unsignedLong a rdfs:Datatype; rdfs:subClassOf xsd:nonNegativeInteger.
+xsd:unsignedShort a rdfs:Datatype; rdfs:subClassOf xsd:int, xsd:float, xsd:unsignedInt.
+
+
+### inference rules for XML Schema Datatypes XSD
+
+{?S a xsd:int, xsd:nonNegativeInteger} => {?S a xsd:unsignedLong}.
+{?S a xsd:short, xsd:nonNegativeInteger} => {?S a xsd:unsignedInt}.
+{?S a xsd:byte, xsd:nonNegativeInteger} => {?S a xsd:unsignedShort}.
+
+{?P rdfs:range xsd:int, xsd:unsignedLong} => {?P rdfs:range xsd:unsignedInt}.
+{?P rdfs:range xsd:short, xsd:unsignedInt} => {?P rdfs:range xsd:unsignedShort}.
+{?P rdfs:range xsd:byte, xsd:unsignedShort} => {?P rdfs:range xsd:unsignedByte}.
+
+{?P rdfs:range xsd:nonNegativeInteger, xsd:nonPositiveInteger} => {?P rdfs:range xsd:short}.
+
+{?P rdfs:range xsd:byte} => {?P rdfs:range xsd:short}.
+
+{?P rdfs:range xsd:integer, xsd:string} => {?P rdfs:subPropertyOf ?Q}.
+
+{?R @has owl:onProperty ?P; owl:cardinality ?M. ?P rdfs:range xsd:byte, xsd:unsignedInt. ?M math:notLessThan 128. ?N math:lessThan ?M. ?S a ?R} => {?S ?P ?N}.
+{?R @has owl:onProperty ?P; owl:someValuesFrom xsd:nonPositiveInteger. ?P rdfs:range xsd:nonNegativeInteger. ?N math:equalTo 0. ?S a ?R} => {?S ?P ?N}.
+
+
+### inconsistency detections @@
+
+{?R owl:onProperty ?P; owl:cardinality ?M. ?P rdfs:range xsd:byte. ?M math:greaterThan 256} => false.
+{?R owl:onProperty ?P; owl:cardinality ?M. ?P rdfs:range xsd:byte, xsd:unsignedInt. ?M math:greaterThan 128} => false.
+{?P @has rdf:type owl:FunctionalProperty. ?X ?P ?Y, ?Z. (?A rdf:XMLLiteral) log:dtlit ?Y. (?B rdf:XMLLiteral) log:dtlit ?Z. ?A log:notEqualTo ?B} => false.
+
+{?P rdfs:range xsd:string. ?S ?P ?O. (?X xsd:decimal) log:dtlit ?O} => false.
+{?P rdfs:range ?D. ?D a rdfs:Datatype. ?S ?P ?X. ?X a xsd:string} => false.
+{?C rdfs:subClassOf xsd:decimal; rdfs:subClassOf xsd:string} => false.
+
+{?S a xsd:ID; e:clashesWith xsd:ID} => false.
+{?S a xsd:IDREF; e:clashesWith xsd:IDREF} => false.
+{?S a xsd:NCName; e:clashesWith xsd:NCName} => false.
+{?S a xsd:NMTOKEN; e:clashesWith xsd:NMTOKEN} => false.
+{?S a xsd:Name; e:clashesWith xsd:Name} => false.
+{?S a xsd:anyURI; e:clashesWith xsd:anyURI} => false.
+{?S a xsd:base64Binary; e:clashesWith xsd:base64Binary} => false.
+{?S a xsd:boolean; e:clashesWith xsd:boolean} => false.
+{?S a xsd:byte; e:clashesWith xsd:byte} => false.
+{?S a xsd:date; e:clashesWith xsd:date} => false.
+{?S a xsd:dateTime; e:clashesWith xsd:dateTime} => false.
+{?S a xsd:decimal; e:clashesWith xsd:decimal} => false.
+{?S a xsd:double; e:clashesWith xsd:double} => false.
+{?S a xsd:duration; e:clashesWith xsd:duration} => false.
+{?S a xsd:float; e:clashesWith xsd:float} => false.
+{?S a xsd:gDay; e:clashesWith xsd:gDay} => false.
+{?S a xsd:gMonth; e:clashesWith xsd:gMonth} => false.
+{?S a xsd:gMonthDay; e:clashesWith xsd:gMonthDay} => false.
+{?S a xsd:gYear; e:clashesWith xsd:gYear} => false.
+{?S a xsd:gYearMonth; e:clashesWith xsd:gYearMonth} => false.
+{?S a xsd:hexBinary; e:clashesWith xsd:hexBinary} => false.
+{?S a xsd:int; e:clashesWith xsd:int} => false.
+{?S a xsd:integer; e:clashesWith xsd:integer} => false.
+{?S a xsd:language; e:clashesWith xsd:language} => false.
+{?S a xsd:long; e:clashesWith xsd:long} => false.
+{?S a xsd:negativeInteger; e:clashesWith xsd:negativeInteger} => false.
+{?S a xsd:nonNegativeInteger; e:clashesWith xsd:nonNegativeInteger} => false.
+{?S a xsd:nonPositiveInteger; e:clashesWith xsd:nonPositiveInteger} => false.
+{?S a xsd:normalizedString; e:clashesWith xsd:normalizedString} => false.
+{?S a xsd:positiveInteger; e:clashesWith xsd:positiveInteger} => false.
+{?S a xsd:short; e:clashesWith xsd:short} => false.
+{?S a xsd:string; e:clashesWith xsd:string} => false.
+{?S a xsd:time; e:clashesWith xsd:time} => false.
+{?S a xsd:token; e:clashesWith xsd:token} => false.
+{?S a xsd:unsignedByte; e:clashesWith xsd:unsignedByte} => false.
+{?S a xsd:unsignedInt; e:clashesWith xsd:unsignedInt} => false.
+{?S a xsd:unsignedLong; e:clashesWith xsd:unsignedLong} => false.
+{?S a xsd:unsignedShort; e:clashesWith xsd:unsignedShort} => false.

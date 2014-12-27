@@ -1,0 +1,25 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><head><meta charset="UTF-8"/><title>Deep Taxonomy Benchmark</title></head><body><pre>
+=======================
+Deep Taxonomy Benchmark [1]
+=======================
+
+      depth |         <a href="http://www.w3.org/2000/10/swap/doc/cwm">cwm</a>         <a href="http://eulersharp.sourceforge.net/README">eye</a>      <a href="http://hermit-reasoner.com/">hermit</a>       <a href="http://www.jdrew.org/jDREWebsite/jDREW.html">jdrew</a>        <a href="http://jena.apache.org">jena</a>
+            |       [sec]       [sec]       [sec]       [sec]       [sec]
+------------|------------------------------------------------------------
+         10 |       0.160       0.018       0.055       0.130       0.047
+        100 |       1.050       0.022       1.040       0.200       0.422
+       1000 |      65.930       0.063       3.580       0.870       9.302
+      10000 |    7298.000       0.482     310.510      18.680    2597.242
+     100000 |    (9 days)       4.808  (OutOfMem)    1875.000  (OutOfMem)
+    1000000 |                  48.434              (OutOfMem)
+
+Test environment:
+	Linux 2.6.32-431.20.3.0.1.el6.centos.plus.x86_64 x86_64
+	processor	: 0 .. 15
+	model name	: Intel(R) Xeon(R) CPU E5-2665 0 @ 2.40GHz
+	MemTotal:       264532948 kB
+
+
+[1] <a href="http://ruleml.org/WellnessRules/files/WellnessRulesN3-2009-11-10.pdf">http://ruleml.org/WellnessRules/files/WellnessRulesN3-2009-11-10.pdf</a>
+</pre></body></html>

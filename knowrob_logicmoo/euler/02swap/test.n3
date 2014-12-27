@@ -1,0 +1,553 @@
+# see introspector.readme
+
+@prefix : <http://eulersharp.sourceforge.net/2003/03swap/test#>.
+
+#   Base was: file:/mnt/hda4/development/development2/w3c/2000/10/swap/introspector-test.n3
+
+@prefix dpo:  <http://www.daml.org/2001/03/daml+oil#> .
+@prefix idbl: <http://purl.oclc.org/NET/introspector/2002/11/24/logic/boolean#> .
+@prefix is: <http://introspector.sf.net/2003/04/27/introspector#> .
+
+@prefix isad: <http://purl.oclc.org/NET/introspector/2002/11/24/temp/node-addresses#> .
+
+@prefix isbl: <http://purl.oclc.org/NET/introspector/2002/11/24/logic/boolean#> .
+
+@prefix isfl: <http://purl.oclc.org/NET/introspector/2002/11/24/gcc/node_fields#> .
+
+
+@prefix isfn: <http://purl.oclc.org/NET/introspector/2002/11/24/temp/node-files#> .
+
+@prefix isid: <http://purl.oclc.org/NET/introspector/2002/11/24/temp/node-ids#> .
+@prefix isnm: <http://purl.oclc.org/NET/introspector/2002/11/24/gcc/node_modifiers#> .
+
+
+@prefix isnt: <http://purl.oclc.org/NET/introspector/2002/11/24/gcc/node_types#> .
+@prefix log: <http://www.w3.org/2000/10/swap/log#> .
+@prefix math: <http://www.w3.org/2000/10/swap/math#> .
+@prefix neg: <http://www.agfa.com/w3c/euler/negation#> .
+@prefix neg: <negation#>.
+@prefix ns: <http://www.agfa.com/w3c/euler/owl-rules#> .
+
+@prefix nsns: <http://www.agfa.com/w3c/euler/rdfs-rules#> .
+
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+@prefix s: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix str: <http://www.w3.org/2000/10/swap/string#> .
+@prefix string:  <http://www.w3.org/2000/10/swap/string#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+
+# this is the ruleset for the introspector project.
+
+# these two can be defined using standard dc rdf predicates.
+# source of the data.
+# author of the data.
+
+
+#foreach { _:c isfl:prms  _:l }.
+#_:e rdf:first 
+#_:e rdf:first { _:c isfl:prms  _:l }.
+#_:e rdf:rest { _:l isfl:chan _:l2 } .
+#_:e rdf:type rdf:List .
+
+
+isfl:chan 
+	a owl:SymmetricProperty;
+	a owl:TransitiveProperty;
+	rdfs:domain owl:Thing; 
+	rdfs:range owl:Thing.
+
+isfl:prms 
+	a owl:TransitiveProperty;
+	a owl:SymmetricProperty.
+
+isfl:args 
+	a owl:TransitiveProperty;
+	a owl:SymmetricProperty.
+
+isfl:dcls a rdf:Property.
+#	a owl:SymmetricProperty;
+#	a owl:TransitiveProperty.
+
+isnt:type_decl a s:Class;
+    s:label "a type_decl is a type declation in the c language";
+    s:comment """Type declarations are important structures in the compiler to manage the complexity of types. """.
+
+isnt:namespace_decl a s:Class;
+    s:label "a namespace_decl is a large object that contains identifiers";
+    s:comment """Namespaces are an idea from c++. """.
+
+#isfl:dcls a rdf:Property; s:label "Declarations";
+#    s:comment """The list of declarations in the namespace_decl""";
+#    a dpo:UniqueProperty;
+#    s:domain string:String;
+#    s:range string:String.
+
+isfl:filename a rdf:Property; s:label "FileName";
+    s:comment """The filename of the declaration""";
+    a dpo:UniqueProperty;
+    s:domain string:String;
+    s:range string:String.
+
+isfl:name a rdf:Property; s:label "Name";
+    s:comment """The name (identifer_node|typedecl) of the declaration""";
+    a dpo:UniqueProperty.
+#    s:domain string:String;
+#    s:range string:String.
+
+
+isfl:nstrng a rdf:Property; 
+    s:label "The named string";
+    s:comment """this is a named string""";
+    a dpo:UniqueProperty;
+#    s:domain string:String;
+    s:range string:String.
+
+#isfl:valu rdfs:subClassOf owl:SymmetricProperty.
+#isfl:chan rdf:type rdf:List .
+#isfl:prms rdf:type rdf:List .
+#isfl:valu a rdf:Property;
+#	s:label "the value in a list of the item";
+#	s:comment "this can be a Parameter in a parameter list.";
+#	a rdf:List.
+#	s:domain s:Class;
+#    	s:range is:Declaration.
+
+#	nota dpo:UniqueProperty.
+
+
+{?X isfl:chan ?O } => {?O isfl:chan ?X}.
+{?X isfl:chan ?O. ?S isfl:chan ?X} => {?S isfl:chan ?O}.
+
+#{?X isfl:args ?O } => {?O isfl:args ?X}.
+#{?X isfl:args ?O. ?S isfl:args ?X} => {?S isfl:args ?O}.
+
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix is:  <http://introspector.sf.net/2003/04/27/introspector#> .
+@prefix isid: <http://purl.oclc.org/NET/introspector/2002/11/24/temp/node-ids#> .
+
+@prefix isfl: <http://purl.oclc.org/NET/introspector/2002/11/24/gcc/node_fields#> .
+
+@prefix isnf: <http://purl.oclc.org/NET/introspector/2002/11/24/gcc/node_types#> .
+@prefix isad: <http://purl.oclc.org/NET/introspector/2002/11/24/temp/node-addresses#>.
+@prefix isfn: <http://purl.oclc.org/NET/introspector/2002/11/24/temp/node-files#>.
+@prefix isbl: <http://purl.oclc.org/NET/introspector/2002/11/24/logic/boolean#> .
+@prefix isnm: <http://purl.oclc.org/NET/introspector/2002/11/24/gcc/node_modifiers#>.
+
+@prefix isfn: <http://purl.oclc.org/NET/introspector/2002/11/24/filenames#> .
+@prefix isnm: <http://purl.oclc.org/NET/introspector/2002/11/24/name#> .
+@prefix idfn: <http://purl.oclc.org/NET/introspector/2002/11/24/filenames#> .
+@prefix idnm: <http://purl.oclc.org/NET/introspector/2002/11/24/name#> .
+
+
+
+
+isid:id-1 isfl:dcls isid:id-3 .
+isid:id-1 isfl:dcls isnt:type_decl .
+isid:id-1 isfl:name isid:id-2 .
+isid:id-1 isfl:name isnt:identifier_node .
+isid:id-1 isfl:filename idfn:internal.
+isid:id-1 isfl:node_type isnt:namespace_decl .
+isid:id-2 isfl:value isad:2 .
+isid:id-2 isfl:strg "::" .
+isid:id-2 isfl:node_type isnt:identifier_node .
+
+isid:id-3 rdf:type idnm:artificial;
+ isfl:node_type isnt:type_decl ;
+ isfl:name isid:id-4 ;
+ isfl:type isid:id-5 ;
+ isfl:type isnt:record_type ;
+ isfl:filename "test.CC" .
+
+
+isid:id-4 isfl:value isad:1 .
+isid:id-4 isfl:strg "y" .
+isid:id-4 isfl:node_type isnt:identifier_node .
+
+
+isid:id-5 isfl:value isad:32 .
+isid:id-5 rdf:type idnm:struct.
+isid:id-5 isfl:binf isid:id-9 .
+isid:id-9 isfl:binft isnt:tree_vec .
+isid:id-5 isfl:flds isid:id-7 .
+isid:id-7 isfl:fldst isnt:field_decl .
+isid:id-5 isfl:fncs isid:id-8 .
+isid:id-8 isfl:fncst isnt:function_decl .
+isid:id-5 isfl:name isid:id-3 .
+isid:id-5 isfl:name isnt:type_decl .
+
+isid:id-5 isfl:node_type isnt:record_type .
+
+isid:id-5 isfl:size isid:id-6 .
+isid:id-6 isfl:size isnt:integer_cst .
+
+# the first size object, 32!
+isid:id-6 isfl:value isad:32 .
+isid:id-6 isfl:type isid:id-10 .
+isid:id-6 isfl:type isnt:integer_type .
+isid:id-6 isfl:node_type isnt:integer_cst .
+
+isid:id-7 rdf:type idnm:public.
+isid:id-7 isfl:value isad:32 .
+isid:id-7 isfl:bpos isid:id-14 .
+isid:id-7 isfl:bpos isnt:integer_cst .
+isid:id-7 isfl:name isid:id-11 .
+isid:id-7 isfl:name isnt:identifier_node .
+isid:id-7 isfl:scpe isid:id-5 .
+isid:id-7 isfl:scpe isnt:record_type .
+isid:id-7 isfl:size isid:id-13 .
+isid:id-7 isfl:size isnt:integer_cst .
+isid:id-7 isfl:type isid:id-12 .
+isid:id-7 isfl:type isnt:integer_type .
+isid:id-7 isfl:filename "test.CC" .
+isid:id-7 isfl:node_type isnt:field_decl .
+isid:id-8 rdf:type idnm:artificial.
+isid:id-8 rdf:type idnm:operator.
+isid:id-8 rdf:type idnm:assign.
+isid:id-8 rdf:type idnm:member.
+isid:id-8 rdf:type idnm:public.
+isid:id-8 rdf:type idnm:undefined.
+isid:id-8 rdf:type idnm:extern.
+isid:id-8 isfl:args isid:id-17 .
+isid:id-8 isfl:args isnt:parm_decl .
+isid:id-8 isfl:name isid:id-15 .
+isid:id-8 isfl:name isnt:identifier_node .
+isid:id-8 isfl:scpe isid:id-5 .
+isid:id-8 isfl:scpe isnt:record_type .
+isid:id-8 isfl:type isid:id-16 .
+isid:id-8 isfl:type isnt:method_type .
+isid:id-8 isfl:filename "test.CC" .
+isid:id-8 isfl:node_type isnt:function_decl .
+isid:id-9 isfl:type isid:id-5 .
+isid:id-9 isfl:type isnt:record_type .
+isid:id-9 isfl:node_type isnt:binfo .
+isid:id-10 isfl:value isad:64 .
+isid:id-10 isfl:value isad:36 .
+isid:id-10 rdf:type idnm:unsigned.
+isid:id-10 isfl:max isid:id-21 .
+isid:id-10 isfl:max isnt:integer_cst .
+isid:id-10 isfl:min isid:id-20 .
+isid:id-10 isfl:min isnt:integer_cst .
+isid:id-10 isfl:name isid:id-18 .
+isid:id-10 isfl:name isnt:identifier_node .
+isid:id-10 isfl:size isid:id-19 .
+isid:id-10 isfl:size isnt:integer_cst .
+isid:id-10 isfl:node_type isnt:integer_type .
+isid:id-11 isfl:value isad:1 .
+isid:id-11 isfl:strg "g" .
+isid:id-11 isfl:node_type isnt:identifier_node .
+isid:id-12 isfl:value isad:32 .
+isid:id-12 isfl:value isad:32 .
+isid:id-12 isfl:max isid:id-24 .
+isid:id-12 isfl:max isnt:integer_cst .
+isid:id-12 isfl:min isid:id-23 .
+isid:id-12 isfl:min isnt:integer_cst .
+isid:id-12 isfl:name isid:id-22 .
+isid:id-12 isfl:name isnt:type_decl .
+isid:id-12 isfl:size isid:id-13 .
+isid:id-12 isfl:size isnt:integer_cst .
+isid:id-12 isfl:node_type isnt:integer_type .
+isid:id-13 isfl:value isad:32 .
+isid:id-13 isfl:type isid:id-10 .
+isid:id-13 isfl:type isnt:integer_type .
+isid:id-13 isfl:node_type isnt:integer_cst .
+isid:id-14 isfl:value isad:0 .
+isid:id-14 isfl:type isid:id-10 .
+isid:id-14 isfl:type isnt:integer_type .
+isid:id-14 isfl:node_type isnt:integer_cst .
+isid:id-15 rdf:type idnm:operator.
+isid:id-15 isfl:node_type isnt:identifier_node .
+isid:id-16 isfl:value isad:64 .
+isid:id-16 isfl:clas isid:id-5 .
+isid:id-16 isfl:clas isnt:record_type .
+isid:id-16 isfl:prms isid:id-27 .
+isid:id-16 isfl:prms isnt:tree_list .
+isid:id-16 isfl:retn isid:id-26 .
+isid:id-16 isfl:retn isnt:reference_type .
+isid:id-16 isfl:size isid:id-19 .
+isid:id-16 isfl:size isnt:integer_cst .
+isid:id-16 isfl:unql isid:id-25 .
+isid:id-16 isfl:unql isnt:method_type .
+isid:id-16 isfl:node_type isnt:method_type .
+isid:id-17 rdf:type idnm:artificial.
+isid:id-17 isfl:value isad:32 .
+isid:id-17 isfl:value isad:0 .
+isid:id-17 isfl:argt isid:id-29 .
+isid:id-17 isfl:argt isnt:pointer_type .
+isid:id-17 isfl:name isid:id-28 .
+isid:id-17 isfl:name isnt:identifier_node .
+isid:id-17 isfl:size isid:id-6 .
+isid:id-17 isfl:size isnt:integer_cst .
+isid:id-17 isfl:type isid:id-29 .
+isid:id-17 isfl:type isnt:pointer_type .
+isid:id-17 isfl:filename "test.CC" .
+isid:id-17 isfl:node_type isnt:parm_decl .
+isid:id-18 isfl:value isad:13 .
+isid:id-18 isfl:strg "bit_size_type" .
+isid:id-18 isfl:node_type isnt:identifier_node .
+isid:id-19 isfl:value isad:64 .
+isid:id-19 isfl:type isid:id-10 .
+isid:id-19 isfl:type isnt:integer_type .
+isid:id-19 isfl:node_type isnt:integer_cst .
+isid:id-20 isfl:value isad:0 .
+isid:id-20 isfl:type isid:id-10 .
+isid:id-20 isfl:type isnt:integer_type .
+isid:id-20 isfl:node_type isnt:integer_cst .
+isid:id-21 isfl:value isad:15 .
+isid:id-21 isfl:value isad:-1 .
+isid:id-21 isfl:type isid:id-10 .
+isid:id-21 isfl:type isnt:integer_type .
+isid:id-21 isfl:node_type isnt:integer_cst .
+isid:id-22 isfl:name isid:id-30 .
+isid:id-22 isfl:name isnt:identifier_node .
+isid:id-22 isfl:type isid:id-12 .
+isid:id-22 isfl:type isnt:integer_type .
+isid:id-22 isfl:filename idfn:internal .
+isid:id-22 isfl:node_type isnt:type_decl .
+isid:id-23 isfl:value isad:-1 .
+isid:id-23 isfl:value isad:-2147483648 .
+isid:id-23 isfl:type isid:id-12 .
+isid:id-23 isfl:type isnt:integer_type .
+isid:id-23 isfl:node_type isnt:integer_cst .
+isid:id-24 isfl:value isad:2147483647 .
+isid:id-24 isfl:type isid:id-12 .
+isid:id-24 isfl:type isnt:integer_type .
+isid:id-24 isfl:node_type isnt:integer_cst .
+isid:id-25 isfl:value isad:64 .
+isid:id-25 isfl:clas isid:id-5 .
+isid:id-25 isfl:clas isnt:record_type .
+isid:id-25 isfl:prms isid:id-27 .
+isid:id-25 isfl:prms isnt:tree_list .
+isid:id-25 isfl:retn isid:id-26 .
+isid:id-25 isfl:retn isnt:reference_type .
+isid:id-25 isfl:size isid:id-19 .
+isid:id-25 isfl:size isnt:integer_cst .
+isid:id-25 isfl:node_type isnt:method_type .
+isid:id-26 isfl:value isad:32 .
+isid:id-26 isfl:refd isid:id-5 .
+isid:id-26 isfl:refd isnt:record_type .
+isid:id-26 isfl:size isid:id-6 .
+isid:id-26 isfl:size isnt:integer_cst .
+isid:id-26 isfl:node_type isnt:reference_type .
+isid:id-27 isfl:chan isid:id-32 .
+isid:id-27 isfl:chan isnt:tree_list .
+isid:id-27 isfl:valu isid:id-31 .
+isid:id-27 isfl:valu isnt:pointer_type .
+isid:id-27 isfl:node_type isnt:tree_list .
+isid:id-28 isfl:value isad:4 .
+isid:id-28 isfl:strg "this" .
+isid:id-28 isfl:node_type isnt:identifier_node .
+isid:id-29 isfl:value isad:32 .
+isid:id-29 isfl:ptd isid:id-5 .
+isid:id-29 isfl:ptd isnt:record_type .
+isid:id-29 isfl:size isid:id-6 .
+isid:id-29 isfl:size isnt:integer_cst .
+isid:id-29 isfl:unql isid:id-31 .
+isid:id-29 isfl:unql isnt:pointer_type .
+isid:id-29 isfl:node_type isnt:pointer_type .
+isid:id-29 isfl:qualconst idbl:true .
+isid:id-30 isfl:value isad:3 .
+isid:id-30 isfl:strg "int" .
+isid:id-30 isfl:node_type isnt:identifier_node .
+isid:id-31 isfl:value isad:32 .
+isid:id-31 isfl:ptd isid:id-5 .
+isid:id-31 isfl:ptd isnt:record_type .
+isid:id-31 isfl:size isid:id-6 .
+isid:id-31 isfl:size isnt:integer_cst .
+isid:id-31 isfl:node_type isnt:pointer_type .
+isid:id-32 isfl:chan isid:id-34 .
+isid:id-32 isfl:chan isnt:tree_list .
+isid:id-32 isfl:valu isid:id-33 .
+isid:id-32 isfl:valu isnt:reference_type .
+isid:id-32 isfl:node_type isnt:tree_list .
+isid:id-33 isfl:value isad:32 .
+isid:id-33 isfl:refd isid:id-35 .
+isid:id-33 isfl:refd isnt:record_type .
+isid:id-33 isfl:size isid:id-6 .
+isid:id-33 isfl:size isnt:integer_cst .
+isid:id-33 isfl:node_type isnt:reference_type .
+isid:id-34 isfl:valu isid:id-36 .
+isid:id-34 isfl:valu isnt:void_type .
+isid:id-34 isfl:node_type isnt:tree_list .
+isid:id-35 isfl:value isad:32 .
+isid:id-35 rdf:type idnm:struct.
+isid:id-35 isfl:binf isid:id-9 .
+isid:id-35 isfl:binf isnt:tree_vec .
+isid:id-35 isfl:flds isid:id-7 .
+isid:id-35 isfl:flds isnt:field_decl .
+isid:id-35 isfl:fncs isid:id-8 .
+isid:id-35 isfl:fncs isnt:function_decl .
+isid:id-35 isfl:name isid:id-3 .
+isid:id-35 isfl:name isnt:type_decl .
+isid:id-35 isfl:size isid:id-6 .
+isid:id-35 isfl:size isnt:integer_cst .
+isid:id-35 isfl:unql isid:id-5 .
+isid:id-35 isfl:unql isnt:record_type .
+isid:id-35 isfl:node_type isnt:record_type .
+isid:id-35 isfl:qualconst idbl:true .
+isid:id-36 isfl:value isad:8 .
+isid:id-36 isfl:name isid:id-37 .
+isid:id-36 isfl:name isnt:type_decl .
+isid:id-36 isfl:node_type isnt:void_type .
+isid:id-37 isfl:name isid:id-38 .
+isid:id-37 isfl:name isnt:identifier_node .
+isid:id-37 isfl:type isid:id-36 .
+isid:id-37 isfl:type isnt:void_type .
+isid:id-37 isfl:filename idfn:internal.
+isid:id-37 isfl:node_type isnt:type_decl .
+isid:id-38 isfl:value isad:4 .
+isid:id-38 isfl:strg "void" .
+
+isid:id-38 isfl:node_type isnt:identifier_node .
+
+isid:someNode isfl:node_type isnt:SomeNodeType .
+
+
+isnt:integer_type a isnt:NodeClass .
+isnt:NodeClass a owl:Class.
+
+# { 
+# 	?someSizedObject isfl:size ?someSizeObject . 
+# } 
+# 	log:implies
+# {
+# 	?someSizeObject 
+# 		 isfl:value ?someValue ;
+# 		 isfl:type [ isfl:node_type isnt:integer_type ] ;
+# 		 isfl:node_type isnt:integer_cst .
+# }.
+
+
+# #?someTypeDecl  isfl:node_type isnt:type_decl ;
+# #		rdf:type ?SomeTypeModifier;
+# # 		isfl:name [ isfl:type  isnt:identifier_node];
+# # 		isfl:type [ isfl:type isnt:record_type ];
+# # 		isfl:filename ?someFileName.
+
+# ?someTypeDecl2  isfl:node_type isnt:type_decl ;
+# 		rdf:type ?SomeTypeModifier2;
+#  		isfl:name [ 
+# 				isfl:type  isnt:identifier_node;
+# 				isfl:strg  ?someObjectsName ;
+# 			  ];
+#  		isfl:type [ isfl:type isnt:record_type ;
+# 			    isfl:flds ?someRecordsFields;
+# 			].
+
+
+#{?X isfl:chan ?O } => {?O isfl:chan ?X}.
+#{?X isfl:chan ?O. ?S isfl:chan ?X} => {?S isfl:chan ?O}.
+
+#this log:forAll {
+#	?SomeStruct isfl:flds ?SomeFields.
+#	 ?SomeFields isfl:chan ?SomeField.
+#}.
+
+#?SomeStruct isfl:flds ?SomeFields.
+
+{
+?someStructA isfl:flds ?someField .
+}
+log:implies
+{
+?someStructA isfl:flds ?someField .
+}.
+
+
+{
+?someStructA isfl:name ?someNameA .
+}
+log:implies
+{
+?someStructA isfl:name ?someNameA .
+}.
+
+
+{
+?someName isfl:name ?someOtherName .
+}
+log:implies
+{
+?someName isfl:name ?someOtherName .
+}.
+
+
+
+{
+?someOtherName   isfl:strg ?someStr .
+}
+log:implies
+{
+?someOtherName   isfl:strg ?someStr .
+}.
+
+
+{
+?someStruct isfl:name ?someName .
+?someName isfl:name ?someOtherName .
+?someOtherName   isfl:strg ?someStr .
+}
+log:implies
+{
+	?someStruct isfl:namestr ?someStr .
+}.
+
+{
+?someStruct20 isfl:name ?someName20 .
+?someName20    isfl:strg ?someStr20 .
+}
+log:implies
+{
+	?someStruct20 isfl:namestr ?someStr20 .
+}.
+
+##
+{
+?someField5 isfl:chan ?someOtherField5 .
+?someField5 isfl:valu ?someOtherField5v .
+?someOtherField5 isfl:chan ?someNextField5 .
+?someOtherField5 isfl:valu ?someNextField5v .
+} 
+log:implies
+{
+?someField5      isfl:chan ?someNextField5 .
+?someField5      isfl:valu ?someNextField5v .
+
+?someNextField5      isfl:chan ?someOtherField5 .
+?someNextField5      isfl:valu ?someOtherField5v .
+
+}.
+
+
+{
+	?someOtherField4 isfl:chan ?someNextField4 .
+	?someOtherField4 isfl:valu ?someNextFieldValue4 .
+} 
+log:implies
+{
+	?someNextField4 isfl:chan ?someOtherField4  .
+	?someNextField4 isfl:valu ?someNextFieldValue4 .
+
+}.
+
+{
+	?someOtherField3 isfl:chan ?someNextField3 .
+	?someOtherField3 isfl:valu ?listValue3 .
+
+} 
+log:implies
+{
+	?someOtherField3 isfl:chan ?someNextField3 .
+	?someOtherField3 isfl:valu ?listValue3 .
+} .
+
+
+
+{?lista isfl:valu ?listb .} 
+log:implies
+{?lista isfl:valu ?listb .} .
+

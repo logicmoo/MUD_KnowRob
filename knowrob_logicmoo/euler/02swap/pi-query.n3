@@ -1,0 +1,26 @@
+# $Id: pi-query.n3 2724 2009-03-10 08:33:56Z josd $
+
+# PxButton | euler | bash .euler pi-data.n3 pi-calc.n3 --filter pi-query.n3
+# PxButton | cwm   | bash .cwm pi-data.n3 pi-calc.n3 --think --filter"=pi-query.n3"
+# PxButton | test  | bash .euler http://eulersharp.sourceforge.net/2003/03swap/pi-data.n3 http://eulersharp.sourceforge.net/2003/03swap/pi-calc.n3 --filter http://eulersharp.sourceforge.net/2003/03swap/pi-query.n3 > pi-result.n3
+
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix str: <http://www.w3.org/2000/10/swap/string#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix d: <http://eulersharp.sourceforge.net/2003/03swap/pi-data#>.
+@prefix : <http://eulersharp.sourceforge.net/2003/03swap/pi-calc#>.
+
+{(d:p1 (d:p2 d:p3)!:composition)!:composition :congruent ((d:p3 d:p1)!:composition d:p2)!:composition}
+ => {d:compositionTest1 d:result ((d:p3 d:p1)!:composition d:p2)!:composition}.
+
+{(d:process1) :identifies ?D1.
+ (d:process2) :identifies ?D2.
+ ?D1 :congruent ?D2}
+ => {d:summationTest1 d:result (d:process1 d:process2)}.
+
+{((d:p1 (d:x (?U ?Y) (?U (d:v d:w) :empty)!:output)!:input)!:summation
+  ((d:x (d:y d:z) :empty)!:output d:p2)!:summation)!:composition :reduction ?X}
+ => {d:reductionTest1 d:result ?X}.

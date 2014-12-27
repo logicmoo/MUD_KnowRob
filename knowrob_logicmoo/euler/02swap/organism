@@ -1,0 +1,524 @@
+@prefix dce: <http://purl.org/dc/elements/1.1/>.
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+@prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix unicore: <http://purl.uniprot.org/core/>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix agent: <http://eulersharp.sourceforge.net/2003/03swap/agent#>.
+@prefix event: <http://eulersharp.sourceforge.net/2003/03swap/event#>.
+@prefix space: <http://eulersharp.sourceforge.net/2003/03swap/space#>.
+@prefix physical: <http://eulersharp.sourceforge.net/2003/03swap/physicalResource#>.
+@prefix fos: <http://eulersharp.sourceforge.net/2003/03swap/foster#>.
+@prefix clisko: <http://www.agfa.com/w3c/2009/clinicalSKOSSchemes#>.
+@prefix organism: <http://eulersharp.sourceforge.net/2003/03swap/organism#>.
+
+<http://eulersharp.sourceforge.net/2003/03swap/organism#>
+	a owl:Ontology;
+	dce:title """Organism"""@en;
+	dce:creator """Hans Cools, MD, Agfa Healthcare/Belgium"""@en;
+	dce:contributor """Until 2010: Pieterjan De Potter, Pedro Debevere, Ghent University - IBBT/ELIS - Multimedia Lab/Belgium""";
+	dce:publisher """Agfa Healthcare/Belgium"""@en;
+	dce:description """Formal general description of organism."""@en;
+	dce:format """OWL Full"""@en.
+
+#
+# CLASSES
+#
+
+organism:Organism
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/organism#>;
+	rdfs:label """organism"""@en;
+	skos:definition """Something that lives."""@en;
+	skos:note """Superclass can be organism in a more general way: any complex thing having properties and functions determined not only by the properties of its individual parts, but by the character of the whole that they compose and by the relations of the parts to the whole."""@en;
+	rdfs:subClassOf foaf:Agent, physical:Resource, [a owl:Restriction; owl:onProperty event:hasState; owl:someValuesFrom organism:Alive];
+	# owl:disjointWith unicore:Taxon;
+	skos:exactMatch [a skos:Concept; skos:inScheme clisko:sct20080731; skos:notation "410607006"^^clisko:sct20080731DT].
+
+organism:Life
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/organism#>;
+	rdfs:label """life"""@en;
+	skos:definition """The action of being alive."""@en;
+	rdfs:subClassOf event:Action, event:Existence.
+
+organism:IndividualLife
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/organism#>;
+	rdfs:label """individual life"""@en;
+	skos:definition """Life of an organism after birth."""@en;
+	rdfs:subClassOf organism:Life.
+
+organism:Alive
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/organism#>;
+	rdfs:label """alive"""@en;
+	skos:definition """State of being capable of response to stimuli, reproduction, growth and development, and maintenance of homeostasis as a stable whole."""@en;
+	skos:note """Up till now no satisfying definition."""@en.
+
+organism:Mortal
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/organism#>;
+	rdfs:label """mortal"""@en;
+	skos:definition """State of having a limited lifetime."""@en.
+
+organism:Death
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/organism#>;
+	rdfs:label """death"""@en;
+	skos:definition """Finding of the remains of an organism."""@en;
+	rdfs:subClassOf event:Finding;
+	skos:exactMatch [
+		a skos:Concept; skos:inScheme clisko:sct20080731; skos:notation "419620001"^^clisko:sct20080731DT].
+
+organism:Dead
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/organism#>;
+	rdfs:label """dead"""@en;
+	skos:definition """State of being not alive anymore."""@en;
+	skos:exactMatch [
+		a skos:Concept; skos:inScheme clisko:sct20080731; skos:notation "419099009"^^clisko:sct20080731DT], [
+		a skos:Concept; skos:inScheme clisko:icpc2; skos:notation "A96"^^clisko:icpc2DT], [
+		a skos:Concept; skos:inScheme clisko:icd10; skos:notation "R99"^^clisko:icd10DT].
+
+organism:DeathCause
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/organism#>;
+	rdfs:label """cause of death"""@en;
+	skos:definition """Action causing death."""@en;
+	rdfs:subClassOf [a owl:Restriction; owl:onProperty event:causes; owl:someValuesFrom organism:Death].
+
+#Following elements provided by http://purl.uniprot.org/core/
+#organism:Taxon
+#	a rdfs:Class;
+#	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/organism#>;
+#	rdfs:label """taxonomic position"""@en;
+#	skos:definition """Position of an organism in the hierarchy of the biological classification or taxonomy."""@en;
+#	a rdfs:Class.
+#organism:Domain down to organism:Subspecies rdfs:subClassOf organism:TaxonRank.
+
+organism:DevelopmentState
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/organism#>;
+	rdfs:label """development state"""@en;
+	skos:definition """Any state of development."""@en.
+
+organism:Immature
+	a rdfs:Class, organism:DevelopmentState;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/organism#>;
+	rdfs:label """immature"""@en;
+	skos:definition """State of being biologically not full-grown."""@en.
+
+organism:Mature
+	a rdfs:Class, organism:DevelopmentState;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/organism#>;
+	rdfs:label """mature"""@en;
+	skos:definition """State of being biologically full-grown."""@en;
+	rdfs:comment """A criterium can be: capable of reproduction."""@en.
+
+organism:MatureOrganism
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/organism#>;
+	rdfs:label """mature organism"""@en;
+	skos:definition """Organism being mature."""@en;
+	rdfs:subClassOf organism:Organism, [
+		a owl:Restriction; owl:onProperty organism:hasDevelopmentState; owl:someValuesFrom organism:Mature].
+
+organism:ImmatureOrganism
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/organism#>;
+	rdfs:label """immature organism"""@en;
+	skos:definition """Organism being immature."""@en;
+	rdfs:subClassOf organism:Organism, [
+		a owl:Restriction; owl:onProperty organism:hasDevelopmentState; owl:someValuesFrom organism:Immature].
+
+organism:Gravidity
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/organism#>;
+	rdfs:label """gravidity"""@en;
+	skos:definition """Any state of gravidity."""@en;
+	owl:oneOf (organism:Pregnant organism:Nonpregnant).
+
+organism:Pregnant
+	a rdfs:Class, organism:Gravidity;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/organism#>;
+	rdfs:label """pregnant"""@en;
+	skos:definition """State of an organism of having offspring developing in its body."""@en.
+
+organism:Nonpregnant
+	a rdfs:Class, organism:Gravidity;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/organism#>;
+	rdfs:label """nonpregnant"""@en;
+	skos:definition """State of an organism of not having offspring developing in its body."""@en.
+
+organism:PregnantOrganism
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/organism#>;
+	rdfs:label """pregnant organism"""@en;
+	skos:definition """Organism being pregnant."""@en;
+	rdfs:subClassOf organism:Organism, [
+		a owl:Restriction; owl:onProperty organism:hasGravidity; owl:someValuesFrom organism:Pregnant].
+
+organism:Ascendant
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/organism#>;
+	rdfs:label """biological ascendant"""@en;
+	skos:definition """Living ascendant of any kind."""@en;
+	rdfs:subClassOf agent:Ascendant, organism:Organism;
+	rdfs:comment """Organism that is an earlier form of another organism."""@en.
+	
+organism:Parent
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/organism#>;
+	rdfs:label """biological parent"""@en;
+	skos:definition """First grade ascendant of an organism."""@en;
+	rdfs:comment """Organism that produces another."""@en;
+	rdfs:subClassOf agent:Parent, organism:MatureOrganism, organism:Ascendant, [
+		a owl:Restriction; owl:onProperty organism:hasChild; owl:minCardinality "1"^^xsd:nonNegativeInteger].
+
+organism:Ancestry
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/organism#>;
+	rdfs:subClassOf agent:Ancestry;
+	rdfs:subClassOf [a owl:Restriction; owl:onProperty foaf:member; owl:someValuesFrom organism:Ascendant].
+
+organism:Parents # restriction: all parents need to have a same biological child
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/organism#>;
+	rdfs:subClassOf organism:Ancestry, [
+		a owl:Restriction; owl:onProperty foaf:member; owl:someValuesFrom organism:Parent], [
+		a owl:Restriction; owl:onProperty foaf:member; owl:cardinality "2"^^xsd:nonNegativeInteger].
+
+organism:Mother
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/organism#>;
+	rdfs:label """biological mother"""@en;
+	skos:definition """Female biological parent."""@en;
+	rdfs:subClassOf organism:Parent;
+	owl:disjointWith organism:Father.
+
+organism:Father
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/organism#>;
+	rdfs:label """biological father"""@en;
+	skos:definition """Male biological parent."""@en;
+	rdfs:subClassOf organism:Parent.
+
+organism:Descendant
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/organism#>;
+	rdfs:label """biological descendant"""@en;
+	skos:definition """Living descendant of any kind."""@en;
+	rdfs:comment """Organism deriving from an earlier form."""@en;
+	rdfs:subClassOf agent:Descendant, organism:Organism.
+	
+organism:Child
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/organism#>;
+	rdfs:label """biological child"""@en;
+	skos:definition """First grade living descendant of any kind."""@en;
+	rdfs:subClassOf agent:Child, organism:Descendant;
+	rdfs:comment """Organism that is produced by another."""@en;
+	rdfs:subClassOf [
+		a owl:Restriction; owl:onProperty organism:hasParent; owl:minCardinality "1"^^xsd:nonNegativeInteger];
+	skos:exactMatch [
+		a skos:Concept; skos:inScheme clisko:sct20080731; skos:notation "75226009"^^clisko:sct20080731DT].
+
+organism:Offspring
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/organism#>;
+	rdfs:label """biological offspring"""@en;
+	rdfs:subClassOf agent:Offspring, [
+		a owl:Restriction; owl:onProperty foaf:member; owl:allValuesFrom organism:Descendant].
+
+organism:Children
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/organism#>;
+	skos:definition """Children of the same biological parent(s)."""@en;
+	rdfs:subClassOf organism:Offspring, [
+		a owl:Restriction; owl:onProperty foaf:member; owl:allValuesFrom organism:Child].
+
+organism:Eukaryote
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/organism#>;
+	rdfs:label """eukaryote"""@en;
+	skos:definition """Organism with a cellular nucleus."""@en;
+	rdfs:subClassOf organism:Organism.
+
+organism:UnbranchedBioPolymer
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/organism#>;
+	rdfs:label """unbranched bioPolymer"""@en;
+	skos:definition """Polymer of an organism without branch."""@en.
+
+organism:Genome
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/organism#>;
+	rdfs:label """genome"""@en;
+	skos:definition """All hereditary information of an organism coded in nucleotide chains."""@en.
+
+organism:DNA
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/organism#>;
+	rdfs:label """deoxyribonucleic acid """@en;
+	skos:definition """Nucleic acid containing genetic instructions for development and functioning of organisms, except RNA viruses."""@en.
+
+organism:Karyotyping
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/organism#>;
+	rdfs:label """karyotyping"""@en;
+	skos:definition """Classifying chromosomes from a nucleus of a eukaryotic cell according to number, size, shape, banding pattern, placement of centromere or other characteristics."""@en;
+	rdfs:subClassOf event:Examining, [
+		a owl:Restriction; owl:onProperty event:hasOutput; owl:someValuesFrom organism:Karyotype].
+
+organism:Karyotype
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/organism#>;
+	rdfs:label """karyotype"""@en;
+	skos:definition """Classification of chromosomes from a nucleus of a eukaryotic cell according to the number, size, shape, banding pattern, placement of centromere or other characteristics."""@en;
+	rdfs:subClassOf event:Examination, [
+		a owl:Restriction; owl:onProperty event:outputOf; owl:someValuesFrom organism:Karyotyping].
+
+organism:Sequencing
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/organism#>;
+	rdfs:label """sequencing"""@en;
+	skos:definition """Determining a primary structure or sequence of an unbranched biopolymer of an organism."""@en;
+	rdfs:subClassOf event:Examining, [
+		a owl:Restriction; owl:onProperty event:hasOutput; owl:someValuesFrom organism:Sequence].
+
+organism:Sequence
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/organism#>;
+	rdfs:label """sequence"""@en;
+	skos:definition """Determination of a primary structure or sequence of an unbranched biopolymer of an organism."""@en;
+	rdfs:subClassOf event:Examination, [
+		a owl:Restriction; owl:onProperty event:outputOf; owl:someValuesFrom organism:Sequencing].
+
+organism:DNASequencing
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/organism#>;
+	rdfs:label """DNA sequencing"""@en;
+	skos:definition """Determining a nucleotide order of DNA of an organism."""@en;
+	rdfs:subClassOf organism:Sequencing, [
+		a owl:Restriction; owl:onProperty event:hasOutput; owl:someValuesFrom organism:DNASequence].
+
+organism:DNASequence
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/organism#>;
+	rdfs:label """DNA sequence"""@en;
+	skos:definition """Determination of a nucleotide order of DNA of an organism."""@en;
+	rdfs:subClassOf organism:Sequence, [
+		a owl:Restriction; owl:onProperty event:outputOf; owl:someValuesFrom organism:DNASequencing], [
+		a owl:Restriction; owl:onProperty organism:sequenceOf; owl:someValuesFrom organism:DNA].
+
+#
+# PROPERTIES
+#
+
+organism:lives
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/organism#>;
+	skos:definition """Specifying a life process of an organism."""@en;
+	rdfs:subPropertyOf event:exists;
+	rdfs:domain organism:Organism;
+	rdfs:range organism:Life.
+
+organism:hasDevelopmentState
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/organism#>;
+	skos:definition """Specifying the state of development of an individual organism."""@en;
+	rdfs:domain organism:Organism;
+	rdfs:range organism:DevelopmentState.
+
+organism:hasGravidity
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/organism#>;
+	skos:definition """Specifying the gravidity of an organism."""@en;
+	rdfs:domain organism:Organism;
+	rdfs:range organism:Gravidity.
+
+organism:begins
+	a owl:DatatypeProperty, owl:FunctionalProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/organism#>;
+	skos:definition """Specifying the beginning of a life of an organism as individual."""@en;
+	skos:note """End of a delivery."""@en;
+	rdfs:subPropertyOf event:begins;
+	rdfs:domain organism:IndividualLife;
+	rdfs:range xsd:dateTime.
+
+organism:beginDate
+	a owl:DatatypeProperty, owl:FunctionalProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/organism#>;
+	skos:definition """Specifying the beginning of a life of an organism as individual."""@en;
+	skos:note """End of a delivery."""@en;
+	rdfs:subPropertyOf event:beginDate;
+	rdfs:domain organism:IndividualLife;
+	rdfs:range xsd:date.
+
+organism:hasBirthDateTime
+	a owl:DatatypeProperty, owl:FunctionalProperty;
+	rdfs:label """has birth date time"""@en;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/organism#>;
+	skos:definition """Specifying a snapshot event's date and time an organism is born on."""@en;
+	owl:propertyChainAxiom (organism:lives organism:begins);
+	rdfs:subPropertyOf event:hasOriginationDateTime;
+	rdfs:domain organism:Organism;
+	rdfs:range xsd:dateTime.
+
+organism:hasBirthDate
+	a owl:DatatypeProperty, owl:FunctionalProperty;
+	rdfs:label """has birth date"""@en;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/organism#>;
+	skos:definition """Specifying a date an organism is born on."""@en;
+	owl:propertyChainAxiom (organism:lives organism:beginDate);
+	rdfs:subPropertyOf event:hasOriginationDate;
+	rdfs:domain organism:Organism;
+	rdfs:range xsd:date.
+
+organism:hasBirthTime
+	a owl:DatatypeProperty, owl:FunctionalProperty;
+	rdfs:label """has birth time"""@en;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/organism#>;
+	skos:definition """Specifying a snapshot event's time of a day an organism is born on."""@en;
+	rdfs:domain organism:Organism;
+	rdfs:range xsd:time.
+
+organism:ends
+	a owl:DatatypeProperty, owl:FunctionalProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/organism#>;
+	skos:definition """Specifying the endpoint in time of a life of an organism."""@en;
+	rdfs:subPropertyOf event:expires;
+	rdfs:domain organism:Life;
+	rdfs:range xsd:dateTime, [skos:exactMatch [
+		a skos:Concept; skos:inScheme clisko:sct20080731; skos:notation "399753006"^^clisko:sct20080731DT]].
+
+organism:endDate
+	a owl:DatatypeProperty, owl:FunctionalProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/organism#>;
+	skos:definition """Specifying the endpoint in time of a life of an organism."""@en;
+	#rdfs:subPropertyOf event:expires;
+	rdfs:domain organism:Life;
+	rdfs:range xsd:date.
+
+organism:hasDeathDateTime
+	a owl:DatatypeProperty, owl:FunctionalProperty;
+	rdfs:label """has death date time"""@en;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/organism#>;
+	skos:definition """Specifying a snapshot event's date and time an organism died on."""@en;
+	owl:propertyChainAxiom (organism:lives organism:ends);
+	rdfs:subPropertyOf event:hasVanishingDateTime;
+	rdfs:domain organism:Organism;
+	rdfs:range xsd:dateTime.
+
+organism:hasDeathDate
+	a owl:DatatypeProperty, owl:FunctionalProperty;
+	rdfs:label """has death date"""@en;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/organism#>;
+	skos:definition """Specifying a snapshot event's date an organism died on."""@en;
+	owl:propertyChainAxiom (organism:lives organism:endDate);
+	rdfs:domain organism:Organism;
+	rdfs:range xsd:date.
+
+organism:hasDeathTime
+	a owl:DatatypeProperty, owl:FunctionalProperty;
+	rdfs:label """has death time"""@en;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/organism#>;
+	skos:definition """Specifying the time of a day an organism died."""@en;
+	rdfs:domain organism:Organism;
+	rdfs:range xsd:time.
+
+organism:hasCauseOfDeath
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/organism#>;
+	skos:definition """Specifying a cause of death of an organism."""@en;
+	rdfs:domain organism:Organism;
+	rdfs:range organism:DeathCause.
+
+organism:hasParent
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/organism#>;
+	skos:definition """Specifying the first grade ascendent of an organism or group of organisms."""@en;
+	rdfs:subPropertyOf agent:hasParent;
+	rdfs:domain [owl:unionOf(organism:Child organism:Children)];
+	rdfs:range organism:Parent.
+	
+organism:hasMother
+	a owl:ObjectProperty, owl:FunctionalProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/organism#>;
+	skos:definition """Specifying the first grade female ascendent of an organism."""@en;
+	rdfs:subPropertyOf organism:hasParent;
+	rdfs:domain organism:Child;
+	rdfs:range organism:Mother.
+	
+organism:hasFather
+	a owl:ObjectProperty, owl:FunctionalProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/organism#>;
+	skos:definition """Specifying the first grade male ascendent of an organism."""@en;
+	rdfs:subPropertyOf organism:hasParent;
+	rdfs:domain organism:Child;
+	rdfs:range organism:Father.
+
+organism:hasChild
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/organism#>;
+	skos:definition """Specifying the first grade descendant of an organism or group of organisms."""@en;
+	rdfs:subPropertyOf agent:hasChild;
+	rdfs:domain [owl:unionOf(organism:Parent organism:Parents)];
+	rdfs:range organism:Child.
+
+organism:hasTaxon
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/organism#>;
+	skos:definition """Specifying the taxonomic identity of an organism as defined in uniprot taxonomy."""@en;
+	rdfs:domain organism:Organism;
+	rdfs:range unicore:Taxon. # conflict: uniprot considers a taxon same as an organism, cf. owl:ObjectProperty unicore:organism
+
+organism:hasSequence
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/organism#>;
+	rdfs:label """has sequence"""@en;
+	skos:definition """Specifying a sequence of an organism."""@en;
+	rdfs:domain organism:Organism;
+	rdfs:range organism:Sequence.
+
+organism:sequenceOf
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/organism#>;
+	rdfs:label """sequence of"""@en;
+	skos:definition """Specifying an organism's specimen having a sequence."""@en;
+	rdfs:subPropertyOf event:examinationOf;
+	owl:propertyChainAxiom (organism:sequenceOf space:containedBy);
+	rdfs:domain organism:Sequence;
+	rdfs:range organism:UnbranchedBioPolymer.
+
+organism:hasKaryotype
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/organism#>;
+	rdfs:label """has karyotype"""@en;
+	skos:definition """Specifying a karyotype of a eukaryote."""@en;
+	rdfs:domain	organism:Eukaryote;
+	rdfs:range organism:Karyotype.
+
+organism:hasDNASequence
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/organism#>;
+	rdfs:label """has DNA Sequence"""@en;
+	skos:definition """Specifying a DNA sequence of an organism."""@en;
+	rdfs:domain organism:Organism;
+	rdfs:range organism:DNASequence.
+
+#organism:taxonRank # provided by unicore:
+#	skos:definition """Specifying the taxonomic rank of an organism."""@en;
+#	rdfs:subPropertyOf fos:quality;
+#	rdfs:domain organism:Taxon;
+#	rdfs:range [owl:oneOf(organism:Domain organism:Kingdom organism:Subkingdom organism:Phylum organism:Subphylum organism:Class organism:Subclass organism:Order organism:Superfamily organism:Family organism:Subfamily organism:Tribe organism:Subtribe organism:Genus organism:Species organism:Subspecies)].
+
+#organism:taxonName # provided by unicore:
+#	skos:definition """Specifying the taxonomic name of an organism."""@en;
+#	rdfs:subPropertyOf foaf:name;
+#	rdfs:domain organism:Taxon;
+#	rdfs:range rdfs:Literal.
+

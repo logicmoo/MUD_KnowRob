@@ -1,0 +1,7 @@
+# PxButton | cwm   | bash .cwm medmio.n3 --think --filter=medmioF.n3
+# PxButton | euler | bash .euler medmio.n3 --nope --think --filter medmioF.n3
+
+@prefix os: <http://www.w3.org/2000/10/swap/os#>.
+@prefix : <http://eulersharp.sourceforge.net/2006/02swap/med#>.
+
+{?W :isPrescribed ?M} => {?W :isPrescribed ?M}.

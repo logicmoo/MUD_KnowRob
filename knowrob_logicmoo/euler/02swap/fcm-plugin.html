@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>
+		<meta name="generator" content="AGFA HealthCare N3 to HTML convertor"/>
+		<link rel="alternate" type="text/n3" title="RDF Representation" href="http://eulersharp.sourceforge.net/2006/02swap/fcm-plugin"/>
+		<title>fcm-plugin</title>
+		<style type="text/css">
+			a[href]:link { text-decoration:none; }
+			a[href]:visited { text-decoration:none; }
+			a[href]:active { text-decoration:underline; }
+			a:hover { background:#ffa; }
+			.keyword { font-weight: bold; }
+			.literal { color: blue }
+			.uri { color: darkblue }
+			.qname { color: black }
+			.var { color: gray }
+			.comment { font-style:italic; color: darkgreen }
+		</style>
+	</head>
+	<body>
+	<div>
+		<pre>
+<span class="comment"># --------------------------------</span>
+<span class="comment"># FCM plugin for EYE -- Jos De Roo</span>
+<span class="comment"># --------------------------------</span>
+
+<span class="keyword">@prefix</span> math: <a class="uri" href="http://www.w3.org/2000/10/swap/math">&lt;http://www.w3.org/2000/10/swap/math#&gt;</a>.
+<span class="keyword">@prefix</span> log: <a class="uri" href="http://www.w3.org/2000/10/swap/log">&lt;http://www.w3.org/2000/10/swap/log#&gt;</a>.
+<span class="keyword">@prefix</span> fl: <a class="uri" href="http://eulersharp.sourceforge.net/2003/03swap/fl-rules.html#">&lt;http://eulersharp.sourceforge.net/2003/03swap/fl-rules#&gt;</a>.
+<span class="keyword">@prefix</span> e: <a class="uri" href="http://eulersharp.sourceforge.net/2003/03swap/log-rules.html#">&lt;http://eulersharp.sourceforge.net/2003/03swap/log-rules#&gt;</a>.
+<span class="keyword">@prefix</span> prolog: <a class="uri" href="http://eulersharp.sourceforge.net/2003/03swap/prolog.html#">&lt;http://eulersharp.sourceforge.net/2003/03swap/prolog#&gt;</a>.
+<span class="keyword">@prefix</span> fcm: <a class="uri" href="http://eulersharp.sourceforge.net/2006/02swap/fcm.html#">&lt;http://eulersharp.sourceforge.net/2006/02swap/fcm#&gt;</a>.
+
+{(<span class="var">?A</span> <span class="var">?B</span>) <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/fl-rules.html#pi">fl:pi</a> <span class="var">?C</span>} &lt;=
+{	<span class="var">?SCOPE</span> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/log-rules.html#call">e:call</a> {
+		(	{(<span class="literal">&quot;fnet&quot;</span>^^<a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/prolog.html#atom">prolog:atom</a> <span class="literal">&quot;done&quot;</span>^^<a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/prolog.html#atom">prolog:atom</a>) <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/prolog.html#nb_getval">prolog:nb_getval</a> <span class="keyword">true</span>}
+			<span class="keyword">true</span>
+			{	(	{	(	{(<span class="var">?X</span> <span class="var">?Y</span>) <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/fl-rules.html#mu">fl:mu</a> <span class="var">?Z</span>}
+							{	(	{(<span class="var">?X</span>) <a class="qname" href="http://eulersharp.sourceforge.net/2006/02swap/fcm.html#fm">fcm:fm</a> <span class="keyword">true</span>}
+									<span class="keyword">true</span>
+									{({(<span class="var">?X</span>) <a class="qname" href="http://eulersharp.sourceforge.net/2006/02swap/fcm.html#fm">fcm:fm</a> <span class="keyword">true</span>}) <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/prolog.html#assertz">prolog:assertz</a> <span class="keyword">true</span>}
+								) <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/prolog.html#if_then_else">prolog:if_then_else</a> <span class="keyword">true</span>.
+								((<a class="qname" href="http://eulersharp.sourceforge.net/2006/02swap/fcm.html#pi">fcm:pi</a> <span class="var">?X</span> <span class="var">?Y</span> <span class="var">?Z</span>)^<a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/prolog.html#univ">prolog:univ</a>) <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/prolog.html#assertz">prolog:assertz</a> <span class="keyword">true</span>.
+							}
+						) <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/prolog.html#forall">prolog:forall</a> <span class="keyword">true</span>.
+						(	{(<span class="var">?X</span> <span class="var">?Y</span>) <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/fl-rules.html#sigma">fl:sigma</a> <span class="var">?V6</span>}
+							{	(	{(<span class="var">?X</span>) <a class="qname" href="http://eulersharp.sourceforge.net/2006/02swap/fcm.html#fs">fcm:fs</a> <span class="keyword">true</span>}
+									<span class="keyword">true</span>
+									{({(<span class="var">?X</span>) <a class="qname" href="http://eulersharp.sourceforge.net/2006/02swap/fcm.html#fs">fcm:fs</a> <span class="keyword">true</span>}) <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/prolog.html#assertz">prolog:assertz</a> <span class="keyword">true</span>}
+								) <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/prolog.html#if_then_else">prolog:if_then_else</a> <span class="keyword">true</span>.
+								(	{(<span class="var">?Y</span>) <a class="qname" href="http://eulersharp.sourceforge.net/2006/02swap/fcm.html#fs">fcm:fs</a> <span class="keyword">true</span>}
+									<span class="keyword">true</span>
+									{({(<span class="var">?Y</span>) <a class="qname" href="http://eulersharp.sourceforge.net/2006/02swap/fcm.html#fs">fcm:fs</a> <span class="keyword">true</span>}) <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/prolog.html#assertz">prolog:assertz</a> <span class="keyword">true</span>}
+								) <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/prolog.html#if_then_else">prolog:if_then_else</a> <span class="keyword">true</span>.
+							}
+						) <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/prolog.html#forall">prolog:forall</a> <span class="keyword">true</span>.
+						(<span class="literal">1</span> <span class="literal">20</span> <span class="var">?J</span>) <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/prolog.html#between">prolog:between</a> <span class="keyword">true</span>.
+						(<span class="var">?X</span>) <a class="qname" href="http://eulersharp.sourceforge.net/2006/02swap/fcm.html#fm">fcm:fm</a> <span class="keyword">true</span>.
+						(<span class="var">?Y</span>) <a class="qname" href="http://eulersharp.sourceforge.net/2006/02swap/fcm.html#fs">fcm:fs</a> <span class="keyword">true</span>.
+						(	<span class="var">?I</span>
+							{	(<span class="var">?P</span> <span class="var">?Y</span>) <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/fl-rules.html#sigma">fl:sigma</a> <span class="var">?W</span>.
+								((<a class="qname" href="http://eulersharp.sourceforge.net/2006/02swap/fcm.html#pi">fcm:pi</a> <span class="var">?X</span> <span class="var">?P</span> <span class="var">?M</span>)^<a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/prolog.html#univ">prolog:univ</a>) <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/prolog.html#call">prolog:call</a> <span class="keyword">true</span>.
+								(((<span class="literal">2</span> <span class="var">?M</span>)!<a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/prolog.html#product">prolog:product</a> <span class="literal">1</span>)!<a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/prolog.html#minus">prolog:minus</a> ((<span class="literal">2</span> <span class="var">?W</span>)!<a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/prolog.html#product">prolog:product</a> <span class="literal">1</span>)!<a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/prolog.html#minus">prolog:minus</a>) <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/prolog.html#product">prolog:product</a> <span class="var">?I</span>.
+							}
+							<span class="var">?L</span>
+						) <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/prolog.html#findall">prolog:findall</a> <span class="keyword">true</span>.
+						(	{<span class="var">?L</span> <a class="qname" href="http://www.w3.org/2000/10/swap/log">log:equalTo</a> ()}
+							<span class="keyword">true</span>
+							{	<span class="var">?L</span> <a class="qname" href="http://www.w3.org/2000/10/swap/math">math:sum</a> <span class="var">?S</span>.
+								(<span class="literal">1</span> (<span class="literal">1</span> ((<span class="var">?S</span>)!<a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/prolog.html#minus">prolog:minus</a>)!<a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/prolog.html#exp">prolog:exp</a>)!<a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/prolog.html#plus">prolog:plus</a>) <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/prolog.html#quotient">prolog:quotient</a> <span class="var">?Z</span>.
+								((<a class="qname" href="http://eulersharp.sourceforge.net/2006/02swap/fcm.html#pi">fcm:pi</a> <span class="var">?X</span> <span class="var">?Y</span> <span class="var">?V1</span>)^<a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/prolog.html#univ">prolog:univ</a>) <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/prolog.html#retractall">prolog:retractall</a> <span class="keyword">true</span>.
+								((<a class="qname" href="http://eulersharp.sourceforge.net/2006/02swap/fcm.html#pi">fcm:pi</a> <span class="var">?X</span> <span class="var">?Y</span> <span class="var">?Z</span>)^<a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/prolog.html#univ">prolog:univ</a>) <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/prolog.html#assertz">prolog:assertz</a> <span class="keyword">true</span>.
+							}
+						) <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/prolog.html#if_then_else">prolog:if_then_else</a> <span class="keyword">true</span>.
+						() <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/prolog.html#fail">prolog:fail</a> <span class="keyword">true</span>.
+					}
+					{(<span class="literal">&quot;fnet&quot;</span>^^<a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/prolog.html#atom">prolog:atom</a> <span class="literal">&quot;done&quot;</span>^^<a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/prolog.html#atom">prolog:atom</a>) <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/prolog.html#nb_setval">prolog:nb_setval</a> <span class="keyword">true</span>}
+				) <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/prolog.html#disjunction">prolog:disjunction</a> <span class="keyword">true</span>
+			}
+		) <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/prolog.html#if_then_else">prolog:if_then_else</a> <span class="keyword">true</span>.
+		((<a class="qname" href="http://eulersharp.sourceforge.net/2006/02swap/fcm.html#pi">fcm:pi</a> <span class="var">?A</span> <span class="var">?B</span> <span class="var">?U</span>)^<a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/prolog.html#univ">prolog:univ</a>) <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/prolog.html#call">prolog:call</a> <span class="keyword">true</span>.
+		(	{<span class="var">?SCOPE</span> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/log-rules.html#closure">e:closure</a> {(<span class="var">?A</span> <span class="var">?B</span>) <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/fl-rules.html#pi">fl:pi</a> <span class="var">?V</span>}}
+			{<span class="var">?C</span> <a class="qname" href="http://www.w3.org/2000/10/swap/log">log:equalTo</a> <span class="var">?V</span>}
+			{<span class="var">?C</span> <a class="qname" href="http://www.w3.org/2000/10/swap/log">log:equalTo</a> <span class="var">?U</span>}
+		) <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/prolog.html#if_then_else">prolog:if_then_else</a> <span class="keyword">true</span>.
+	}
+}.
+		</pre>
+	</div>
+	</body>
+</html>

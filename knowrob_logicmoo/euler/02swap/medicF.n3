@@ -1,0 +1,6 @@
+# PxButton | cwm   | bash .cwm medic.n3 --think --filter=medicF.n3
+# PxButton | euler | bash .euler5 http://localhost/.euler+--prolog+--nope+euler%2Fmedic.n3+--filter+euler%2FmedicF.n3
+
+@prefix : <http://eulersharp.sourceforge.net/2006/02swap/med#>.
+
+{?W :isPrescribed ?M} => {?W :isPrescribed ?M}.

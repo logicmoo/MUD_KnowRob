@@ -1,0 +1,653 @@
+@prefix con: <http://www.w3.org/2000/10/swap/pim/contact#>.
+@prefix dce: <http://purl.org/dc/elements/1.1/>.
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix unicore: <http://purl.uniprot.org/core/>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix fos: <http://eulersharp.sourceforge.net/2003/03swap/foster#>.
+@prefix event: <http://eulersharp.sourceforge.net/2003/03swap/event#>.
+@prefix physical: <http://eulersharp.sourceforge.net/2003/03swap/physicalResource#>.
+@prefix quant: <http://eulersharp.sourceforge.net/2003/03swap/quantities#>.
+@prefix agent: <http://eulersharp.sourceforge.net/2003/03swap/agent#>.
+@prefix organism: <http://eulersharp.sourceforge.net/2003/03swap/organism#>.
+@prefix clinskosch: <http://www.agfa.com/w3c/2009/clinicalSKOSSchemes#>.
+@prefix doc: <http://eulersharp.sourceforge.net/2003/03swap/document#>.
+@prefix humanbody: <http://eulersharp.sourceforge.net/2003/03swap/humanBody#>.
+@prefix human: <http://eulersharp.sourceforge.net/2003/03swap/human#>.
+
+<http://eulersharp.sourceforge.net/2003/03swap/human>
+	a owl:Ontology;
+	dce:title """Human"""@en;
+	dce:creator """Hans Cools, MD, Agfa Healthcare/Belgium"""@en;
+	dce:contributor """"Until 2010: Pieterjan De Potter, Pedro Debevere, Ghent University - IBBT/ELIS - Multimedia Lab/Belgium"""@en;
+	dce:publisher """Agfa Healthcare/Belgium"""@en;
+	dce:description """Formal general description of human."""@en;
+	dce:format """OWL Full"""@en.
+
+#
+# CLASSES
+#
+
+# foaf:Person rdfs:subClassOf foaf:Agent, geo:SpatialThing, con:Person; owl:disjointWith foaf:Organization.
+# con:Person rdfs:subClassOf con:SocialEntity.
+
+human:Human
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/human#>;
+	rdfs:label """human"""@en;
+	skos:definition """Member of the subspecies Homo sapiens sapiens."""@en;
+	#rdfs:subClassOf organism:Eukaryote,
+	rdfs:subClassOf [
+		a owl:Restriction; owl:onProperty physical:hasComplexity; owl:someValuesFrom humanbody:Body], [
+		a owl:Restriction; owl:onProperty organism:hasParent; owl:allValuesFrom human:BiologicalParent], [
+		a owl:Restriction; owl:onProperty organism:hasTaxon; owl:allValuesFrom human:SubspeciesHomoSapiensSapiens];
+	skos:exactMatch [
+		a skos:Concept; skos:inScheme clinskosch:sct20080731; skos:notation "337915000"^^clinskosch:sct20080731DT].
+
+human:SubspeciesHomoSapiensSapiens
+	a rdfs:Class, unicore:Taxon;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/human#>;
+	unicore:scientificName """Homo sapiens sapiens"""@en;
+	unicore:rank unicore:Subspecies;
+	rdfs:subClassOf <http://purl.uniprot.org/taxonomy/9606>. # species Homo sapiens
+
+human:Fetus 
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/human#>;
+	rdfs:label """human fetus"""@en;
+	skos:definition """Immature human in the uterus after the end of the second month of gestation."""@en;
+	rdfs:subClassOf human:Human;
+	skos:exactMatch [
+		a skos:Concept; skos:inScheme clinskosch:sct20080731; skos:notation "410599005"^^clinskosch:sct20080731DT].
+
+human:Newborn
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/human#>;
+	rdfs:label """newborn"""@en;
+	skos:definition """A newborn infant."""@en; # especially one less than four weeks old
+	rdfs:subClassOf human:Human, [
+		a owl:Restriction; owl:onProperty human:weighs; owl:someValuesFrom humanbody:BirthWeight].
+
+human:BiologicalGender
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/human#>;
+	rdfs:label """biological gender"""@en;
+	skos:definition """Biological gender of a human."""@en;
+	owl:oneOf (human:male human:female human:intersexual).
+
+human:male
+	a rdfs:Class, human:BiologicalGender;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/human#>;
+	rdfs:label """humanly male"""@en;
+	skos:definition """Being of a human male gender."""@en; # In adulthood producing spermatozoa for fertilizing female ova
+	owl:disjointWith organism:Pregnant;
+	skos:exactMatch [a skos:Concept; skos:inScheme clinskosch:sct20080731; skos:notation "248153007"^^clinskosch:sct20080731DT].
+
+human:female
+	a rdfs:Class, human:BiologicalGender;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/human#>;
+	rdfs:label """humanly female"""@en;
+	skos:definition """Being of a human female gender."""@en;
+	skos:exactMatch [a skos:Concept; skos:inScheme clinskosch:sct20080731; skos:notation "248152002"^^clinskosch:sct20080731DT].
+	
+human:intersexual
+	a rdfs:Class, human:BiologicalGender;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/human#>;
+	rdfs:label """human intersexual"""@en;
+	skos:definition """Being of a gender that is neither male or female, with biological characteristics of both."""@en;
+	owl:disjointWith organism:Pregnant.
+
+human:Female
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/human#>;
+	rdfs:label """human female"""@en;
+	skos:definition """Human of the female biological gender."""@en;
+	rdfs:subClassOf human:Human, [
+		a owl:Restriction; owl:onProperty human:hasBiologicalGender; owl:someValuesFrom human:female].
+
+human:Male
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/human#>;
+	rdfs:label """human male"""@en;
+	skos:definition """Human of the male biological gender."""@en;
+	rdfs:subClassOf human:Human, [
+		a owl:Restriction; owl:onProperty human:hasBiologicalGender; owl:someValuesFrom human:male].
+
+human:Intersexual
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/human#>;
+	rdfs:label """intersexual"""@en;
+	skos:definition """Human of the intersexual biological gender."""@en;
+	rdfs:subClassOf human:Human, [
+		a owl:Restriction; owl:onProperty human:hasBiologicalGender; owl:someValuesFrom human:intersexual].
+
+human:AdministrativeGender
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/human#>;
+	rdfs:label """administrative gender"""@en;
+	skos:definition """Officially registered gender of a human."""@en;
+	owl:oneOf (human:AdministrativeMale human:AdministrativeFemale).
+
+human:AdministrativeMale
+	a rdfs:Class, human:AdministrativeGender;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/human#>;
+	rdfs:label """administrative male"""@en;
+	skos:definition """Being officially registered as male."""@en;
+	skos:note """Can differ from the biological gender."""@en.
+	
+human:AdministrativeFemale
+	a rdfs:Class, human:AdministrativeGender;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/human#>;
+	rdfs:label """administrative female"""@en;
+	skos:definition """Being officially registered as female."""@en;
+	skos:note """Can differ from the biological gender."""@en.
+
+human:Life
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/human#>;
+	rdfs:label """human life"""@en;
+	skos:definition """Life of a human."""@en;
+	skos:note """No satisfying description of onset of a human life."""@en; 
+	rdfs:subClassOf organism:Life.
+		
+human:Person
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/human#>;
+	rdfs:label """person"""@en;
+	skos:definition """A living born human."""@en;
+	rdfs:comment """human:Human members live and are not necessarily born; foaf:Person members are dead or alive, but born. External conflict: foaf:Person rdfs:subClassOf wordnet:person and wordnet:person wordnet:hyponymOf wordnet:organism, and wordnet:organism wordnet:hyponymOf wordnet:livingThing, but not 'hard coded' since wordnet:hyponymOf used instead of rdfs:subClassOf."""@en;
+	skos:note """A fetus is not considered as a person, who can have e.g. a health record. The fetus is mentioned in the health record of the mother. The moment the fetus becomes a newborn the fetus part of the record becomes the record of the newborn."""@en;
+	owl:intersectionOf (human:Human foaf:Person).
+
+human:PersonLife
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/human#>;
+	rdfs:label """person life"""@en;
+	skos:definition """Life of a person."""@en;
+	rdfs:subClassOf human:Life,organism:IndividualLife.
+
+human:ImmatureHuman
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/human#>;
+	rdfs:label """immature human"""@en;
+	skos:definition """Biologically not full-grown person."""@en;
+	rdfs:subClassOf human:Person,
+		organism:ImmatureOrganism;
+	skos:exactMatch [
+		a skos:Concept; skos:inScheme clinskosch:sct20080731; skos:notation "410599005"^^clinskosch:sct20080731DT].
+
+# human:Baby
+
+human:BiologicalAdult
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/human#>;
+	rdfs:label """biologically adult human"""@en;
+	skos:definition """Person having attained reproductive ability or evidencing secondary sex characteristics."""@en;
+	rdfs:subClassOf human:Person, organism:MatureOrganism, [
+		a owl:Restriction; owl:onProperty organism:hasChild; owl:allValuesFrom human:Person];
+	skos:exactMatch [
+		a skos:Concept;	skos:inScheme clinskosch:sct20080731; skos:notation "133936004"^^clinskosch:sct20080731DT].
+
+human:LegalAdult
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/human#>;
+	rdfs:label """legally adult human"""@en;
+	skos:definition """Person being adult as stated by law."""@en;
+	skos:Note """Further restriction to be given along specific law."""@en;
+	rdfs:subClassOf human:Person.
+
+human:Woman
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/human#>;
+	rdfs:label """woman"""@en;
+	skos:definition """Adult human female."""@en;
+	rdfs:subClassOf human:Female, human:BiologicalAdult;
+	skos:exactMatch [
+		a skos:Concept; skos:inScheme clinskosch:sct20080731; skos:notation "224526002"^^clinskosch:sct20080731DT].
+
+human:Women
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/human#>;
+	rdfs:label """women"""@en;
+	skos:definition """Group of which a woman is a member."""@en;
+	owl:disjointWith human:Men;
+	rdfs:subClassOf agent:Group, [
+		a owl:Restriction; owl:onProperty foaf:member; owl:allValuesFrom human:Woman].
+	
+human:PregnantWoman
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/human#>;
+	rdfs:label """pregnant woman"""@en;
+	skos:definition """Woman with offspring developing in her body."""@en;
+	rdfs:subClassOf human:Woman, organism:PregnantOrganism;
+	rdfs:subClassOf [
+		a owl:Restriction; owl:onProperty organism:hasGravidity; owl:someValuesFrom organism:Pregnant];
+	skos:exactMatch [
+		a skos:Concept; skos:inScheme clinskosch:sct20080731; skos:notation "255409004"^^clinskosch:sct20080731DT].
+
+human:Man
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/human#>;
+	rdfs:label """man"""@en;
+	skos:definition """Adult human male."""@en;
+	rdfs:subClassOf human:Male, human:BiologicalAdult;
+	skos:exactMatch [
+		a skos:Concept; skos:inScheme clinskosch:sct20080731; skos:notation "339947000"^^clinskosch:sct20080731DT].
+
+human:Men
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/human#>;
+	rdfs:label """men"""@en;
+	skos:definition """Group of which a man is a member."""@en;
+	rdfs:subClassOf agent:Group, [
+		a owl:Restriction; owl:onProperty foaf:member; owl:allValuesFrom human:Man].
+
+human:BiologicalParent
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/human#>;
+	rdfs:label """biological human parent"""@en;
+	skos:definition """First grade living ascendant of a human."""@en;
+	rdfs:subClassOf organism:Parent, human:BiologicalAdult;
+	skos:exactMatch [
+		a skos:Concept; skos:inScheme clinskosch:sct20080731; skos:notation "13646006"^^clinskosch:sct20080731DT].
+
+human:LegalParent
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/human#>;
+	rdfs:label """legal human parent"""@en;
+	skos:definition """Parent of a human as stated by law."""@en.
+
+human:Spouse
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/human#>.
+
+human:BiologicalFather
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/human#>;
+	rdfs:subClassOf human:BiologicalParent, human:Man.
+
+human:LegalFather
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/human#>.
+
+human:Husband
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/human#>.
+
+human:BiologicalMother
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/human#>;
+	rdfs:subClassOf human:BiologicalParent, human:Woman.
+
+human:LegalMother
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/human#>.
+
+human:Partner
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/human#>.
+
+human:Role
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/human#>;
+	rdfs:label """human role"""@en;
+	skos:definition """A role a human can play."""@en;
+	rdfs:subClassOf [
+		a owl:Restriction; owl:onProperty agent:rolePlayedBy; owl:allValuesFrom human:Human].
+
+human:PersonRole
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/human#>;
+	rdfs:label """person role"""@en;
+	skos:definition """A role a person can play as a social entity."""@en;
+	owl:intersectionOf (human:Role con:Person), [
+		a owl:Restriction; owl:onProperty agent:rolePlayedBy; owl:allValuesFrom human:Person].
+
+human:Occupation
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/human#>;
+	rdfs:label """human occupation"""@en;
+	skos:definition """Human action serving as one's regular source of livelihood."""@en;
+	rdfs:subClassOf event:Action.
+
+human:OccupationRole
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/human#>;
+	rdfs:label """occupation role"""@en;
+	skos:definition """Role of a person with an occupation."""@en;
+	rdfs:subClassOf human:PersonRole;
+	skos:exactMatch [
+		a skos:Concept; skos:inScheme clinskosch:sct20080731; skos:notation "14679004"^^clinskosch:sct20080731DT].
+
+human:OccupationalStatus
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/human#>;
+	rdfs:label """occupational status"""@en;
+	skos:definition """State of a person's occupation."""@en;
+	rdfs:subClassOf event:State.
+
+human:ContactPerson
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/human#>;
+	rdfs:label """contact person role"""@en;
+	skos:definition """Person that can be contacted about something."""@en;
+	rdfs:subClassOf human:PersonRole;
+	skos:exactMatch [a skos:Concept; skos:inScheme clinskosch:sct20080731; skos:notation "70862002"^^clinskosch:sct20080731DT].
+
+human:LanguageExpressing
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/human#>;
+	rdfs:label """language expressing"""@en;
+	skos:definition """Human expressing a language."""@en;
+	rdfs:subClassOf event:Action;
+	rdfs:subClassOf [a owl:Restriction; owl:onProperty agent:hasAgent; owl:someValuesFrom human:Person].
+
+human:LanguageExpression
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/human#>;
+	rdfs:label """language expression"""@en;
+	skos:definition """Human expression in a language."""@en;
+	rdfs:subClassOf [a owl:Restriction; owl:onProperty event:outputOf; owl:someValuesFrom human:LanguageExpressing].
+
+human:LinguisticSkill
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/human#>;
+	rdfs:label """linguistic skill"""@en;
+	skos:definition """Person's skill concerning a language."""@en;
+	rdfs:subClassOf agent:Ability, [
+		a owl:Restriction; owl:onProperty agent:abilityOf; owl:someValuesFrom human:Person], [
+		a owl:Restriction; owl:onProperty event:hasObject; owl:someValuesFrom fos:Language], [
+		a owl:Restriction; owl:onProperty fos:hasLevel; owl:someValuesFrom human:LinguisticSkillLevel].
+
+human:LanguageUnderstandingSkill
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/human#>;
+	rdfs:label """language understanding skill"""@en;
+	skos:definition """Skilled to understand a language."""@en;
+	rdfs:subClassOf human:LinguisticSkill.
+
+human:LanguageExpressionSkill
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/human#>;
+	rdfs:label """language expression skill"""@en;
+	skos:definition """Skilled to express in a language."""@en;
+	rdfs:subClassOf human:LinguisticSkill.
+
+human:LanguageSpeakingSkill
+	a rdfs:Class, human:LanguageExpressionSkill;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/human#>;
+	rdfs:label """language speaking skill"""@en;
+	skos:definition """Skilled to speak a language."""@en.
+
+human:LanguageWritingSkill
+	a rdfs:Class, human:LanguageExpressionSkill;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/human#>;
+	rdfs:label """language writing skill"""@en;
+	skos:definition """Skilled to write in a language."""@en.
+
+human:LanguageSigningSkill
+	a rdfs:Class, human:LanguageExpressionSkill;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/human#>;
+	rdfs:label """language signing skill"""@en;
+	skos:definition """Skilled to sign in a language."""@en.
+
+human:LinguisticSkillLevel
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/human#>;
+	rdfs:label """linguistic skill level"""@en;
+	skos:definition """Person's skill level concerning a language."""@en;
+	rdfs:subClassOf fos:Level;
+	owl:oneOf(human:NativeLinguisticSkill human:FluentLinguisticSkill human:GoodLinguisticSkill human:AverageLinguisticSkill human:PoorLinguisticSkill human:NoticesLinguisticSkill human:NoLinguisticSkill).
+
+human:NativeLinguisticSkill
+	a rdfs:Class, human:LinguisticSkillLevel;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/human#>;
+	rdfs:label """native linguistic skill"""@en;
+	skos:definition """Linguistic skill level of a person raised in that language."""@en.
+
+human:FluentLinguisticSkill
+	a rdfs:Class, human:LinguisticSkillLevel;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/human#>;
+	rdfs:label """fluent linguistic skill"""@en;
+	skos:definition """Fluent linguistic skill level of a person."""@en.
+	
+human:GoodLinguisticSkill
+	a rdfs:Class, human:LinguisticSkillLevel;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/human#>;
+	rdfs:label """good linguistic skill"""@en;
+	skos:definition """Good linguistic skill level of a person."""@en.
+
+human:AverageLinguisticSkill
+	a rdfs:Class, human:LinguisticSkillLevel;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/human#>;
+	rdfs:label """average linguistic skill"""@en;
+	skos:definition """Average linguistic skill level of a person."""@en.
+
+human:PoorLinguisticSkill
+	a rdfs:Class, human:LinguisticSkillLevel;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/human#>;
+	rdfs:label """poor linguistic skill"""@en;
+	skos:definition """Poor linguistic skill level of a person."""@en.
+	
+human:NoticesLinguisticSkill
+	a rdfs:Class, human:LinguisticSkillLevel;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/human#>;
+	rdfs:label """notices linguistic skill"""@en;
+	skos:definition """Linguistic skill level of a person having only notices of a language."""@en.
+
+human:NoLinguisticSkill
+	a rdfs:Class, human:LinguisticSkillLevel;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/human#>;
+	rdfs:label """no linguistic skill"""@en;
+	skos:definition """Linguistic skill level of a person having no knowledge of a language."""@en.
+
+human:AdvanceDirectivesReport
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/human#>;
+	rdfs:label """advance directives report"""@en;
+	skos:definition """Report with a person's advance directives about treatment and who can decide in place in case the person cannot decide anymore."""@en;
+	rdfs:subClassOf doc:Report;
+	skos:exactMatch [a skos:Concept; skos:inScheme clinskosch:sct20080731; skos:notation "371538006"^^clinskosch:sct20080731DT].
+
+human:InformedConsent
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/human#>;
+	rdfs:label """informed consent"""@en;
+	skos:definition """."""@en.
+	# rdfs:subClassOf doc:Report
+
+human:SpokenLanguageUnderstandingSkill
+	a rdfs:Class, human:LanguageUnderstandingSkill;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/human#>;
+	rdfs:label """spoken language understanding skill"""@en;
+	skos:definition """Skilled to understand spoken language."""@en.
+
+human:WrittenLanguageUnderstandingSkill
+	a rdfs:Class, human:LanguageUnderstandingSkill;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/human#>;
+	rdfs:label """written language understanding skill"""@en;
+	skos:definition """Skilled to understand written language."""@en.
+
+human:SignedLanguageUnderstandingSkill
+	a rdfs:Class, human:LanguageUnderstandingSkill;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/human#>;
+	rdfs:label """signed language understanding skill"""@en;
+	skos:definition """Skilled to understand signed language."""@en.
+
+human:NativeLinguisticSkill
+	a rdfs:Class, human:LinguisticSkillLevel;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/human#>;
+	rdfs:label """native linguistic skill"""@en;
+	skos:definition """Linguistic skill level of a person raised in that language."""@en.
+
+human:FluentLinguisticSkill
+	a rdfs:Class, human:LinguisticSkillLevel;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/human#>;
+	rdfs:label """fluent linguistic skill"""@en;
+	skos:definition """Fluent linguistic skill level of a person."""@en.
+	
+human:GoodLinguisticSkill
+	a rdfs:Class, human:LinguisticSkillLevel;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/human#>;
+	rdfs:label """good linguistic skill"""@en;
+	skos:definition """Good linguistic skill level of a person."""@en.
+
+human:AverageLinguisticSkill
+	a rdfs:Class, human:LinguisticSkillLevel;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/human#>;
+	rdfs:label """average linguistic skill"""@en;
+	skos:definition """Average linguistic skill level of a person."""@en.
+
+human:PoorLinguisticSkill
+	a rdfs:Class, human:LinguisticSkillLevel;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/human#>;
+	rdfs:label """poor linguistic skill"""@en;
+	skos:definition """Poor linguistic skill level of a person."""@en.
+	
+human:NoticesLinguisticSkill
+	a rdfs:Class, human:LinguisticSkillLevel;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/human#>;
+	rdfs:label """notices linguistic skill"""@en;
+	skos:definition """Linguistic skill level of a person having only notices of a language."""@en.
+
+human:NoLinguisticSkill
+	a rdfs:Class, human:LinguisticSkillLevel;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/human#>;
+	rdfs:label """no linguistic skill"""@en;
+	skos:definition """Linguistic skill level of a person having no knowledge of a language."""@en.
+
+human:Working
+	a rdfs:Class, human:OccupationalStatus;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/human#>;
+	rdfs:label """working"""@en;
+	skos:definition """Occupational status of having a job."""@en.
+
+human:Retired
+	a rdfs:Class, human:OccupationalStatus;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/human#>;
+	rdfs:label """retired"""@en;
+	skos:definition """Occupational status of having stopped working."""@en.
+
+human:OnSickLeave
+	a rdfs:Class, human:OccupationalStatus;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/human#>;
+	rdfs:label """on sick leave"""@en;
+	skos:definition """Occupational status of having stopped working due to a health disorder."""@en.
+
+#
+# PROPERTIES
+#
+
+human:hasBiologicalGender
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/human#>;
+	skos:definition """Specifying the biological gender of a human."""@en;
+	rdfs:domain human:Human;
+	rdfs:range human:BiologicalGender.
+
+human:hasAdministrativeGender
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/human#>;
+	skos:definition """Specifying the officially registered gender of a person."""@en;
+	rdfs:subPropertyOf foaf:gender;
+	rdfs:domain human:Person;
+	rdfs:range human:AdministrativeGender.
+
+human:weighs
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/human#>;
+	skos:definition """Specifying a human's weight measurement."""@en;
+	owl:propertyChainAxiom (physical:hasComplexity humanbody:hasWeight quant:hasMeasurement);
+	rdfs:domain human:Human;
+	rdfs:range humanbody:WeightMeasurement.
+
+human:weighsAtBirth
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/human#>;
+	skos:definition """Specifying a human's birth weight measurement."""@en;
+	owl:propertyChainAxiom (physical:hasComplexity humanbody:hasBirthWeight quant:hasMeasurement);
+	rdfs:domain human:Person;
+	rdfs:range humanbody:WeightMeasurement.
+
+human:hasLength
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/human#>;
+	skos:definition """Specifying a human's length measurement."""@en;
+	owl:propertyChainAxiom (physical:hasComplexity humanbody:hasLength quant:hasMeasurement);
+	rdfs:domain human:Human;
+	rdfs:range humanbody:LengthMeasurement.
+
+human:hasSurfaceArea
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/human#>;
+	skos:definition """Specifying a human's surface area measurement."""@en;
+	owl:propertyChainAxiom (physical:hasComplexity humanbody:hasSurfaceArea quant:hasMeasurement);
+	rdfs:domain human:Human;
+	rdfs:range humanbody:SurfaceAreaMeasurement.
+
+human:hasBodyMassIndex
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/human#>;
+	skos:definition """Specifying an adult human's body mass index measurement."""@en;
+	owl:propertyChainAxiom (physical:hasComplexity humanbody:hasBodyMassIndex quant:hasMeasurement);
+	rdfs:domain human:Human;
+	rdfs:range humanbody:AdultBodyMassIndexMeasurement.
+
+human:hasWeightStatus
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/human#>;
+	skos:definition """Specifying a body weight status of a human."""@en;
+	owl:propertyChainAxiom (physical:hasComplexity humanbody:hasWeightStatus);
+	rdfs:domain human:Human;
+	rdfs:range humanbody:WeightStatus.
+
+human:hasOccupationalStatus
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/human#>;
+	skos:definition """Specifying a status of a person's occupation."""@en;
+	rdfs:domain human:Person;
+	rdfs:range human:OccupationalStatus.
+
+human:hasContactPerson
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/human#>;
+	skos:definition """Specifying a contact person of another person."""@en;
+	rdfs:domain human:Person;
+	rdfs:range [a owl:Restriction; owl:onProperty agent:playsRole; owl:someValuesFrom human:ContactPerson].
+
+human:contactPersonOf
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/human#>;
+	skos:definition """Specifying a person having a contact person."""@en;
+	rdfs:domain [a owl:Restriction; owl:onProperty agent:playsRole; owl:someValuesFrom human:ContactPerson];
+	rdfs:range human:Person.
+
+human:forWhichIsContactPerson
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/human#>;
+	skos:definition """Specifying a person that can be contacted about something."""@en;
+	rdfs:domain rdfs:Resource;
+	rdfs:range [a owl:Restriction; owl:onProperty agent:playsRole; owl:someValuesFrom human:ContactPerson].
+
+human:contactPersonFor
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/human#>;
+	skos:definition """Specifying something a person can be contacted about."""@en;
+	rdfs:domain [a owl:Restriction; owl:onProperty agent:playsRole; owl:someValuesFrom human:ContactPerson];
+	rdfs:range rdfs:Resource.
+
+human:hasInformedConsent
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/human#>;
+	skos:definition """Specifying an informed consent of a legally adult human."""@en;
+	rdfs:domain human:LegalAdult;
+	rdfs:range human:InformedConsent.
+
+human:informedlyConsentsTo
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/human#>;
+	skos:definition """Specifying an action a legally adult human informedly consents to."""@en;
+	rdfs:domain human:LegalAdult;
+	rdfs:range event:Action.

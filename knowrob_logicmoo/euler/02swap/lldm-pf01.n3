@@ -1,0 +1,1044 @@
+#Processed by $Id: eyes.pl 3238 2009-12-23 13:54:34Z josd $
+
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix math: <http://www.w3.org/2000/10/swap/math#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix : <http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#>.
+@prefix var: <http://localhost/var#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix r: <http://www.w3.org/2000/10/swap/reason#>.
+@prefix n3: <http://www.w3.org/2004/06/rei#>.
+
+[ a r:Proof, r:Conjunction;
+ r:component [ a r:Inference; r:gives {:meas47 a :LLDAlarm}; r:evidence (
+  [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+  [ a r:Inference; r:gives {:meas47 a :LLDAlarm}; r:evidence (
+   [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+   [ a r:Inference; r:gives {:meas47 :dCm -1.9082339805375}; r:evidence (
+    [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+    [ a r:Inference; r:gives {:meas47 :d53Cm 21.5489004646173}; r:evidence (
+     [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+     [ a r:Inference; r:gives {:meas47 :ssd53Cm2 464.355111233982}; r:evidence (
+      [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+      [ a r:Inference; r:gives {:meas47 :sdx53Cm2 1.82745620436193}; r:evidence (
+       [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+       [ a r:Inference; r:gives {:meas47 :dx53Cm -1.35183438496064}; r:evidence (
+        [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+        [ a r:Inference; r:gives {:meas47 :p5xCm 2.24816561503936}; r:evidence (
+         [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+         [ a r:Inference; r:gives {:meas47 :ddy13Cm -35.9075844155844}; r:evidence (
+          [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+          [ a r:Inference; r:gives {:meas47 :dd13Cm -57.9075844155844}; r:evidence (
+           [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+           [ a r:Inference; r:gives {:meas47 :pL1x1Cm -0.634857142857143}; r:evidence (
+            [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+            [ a r:Inference; r:gives {:meas47 :cL1 -0.0628571428571429}; r:evidence (
+             [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+             [ a r:Inference; r:gives {:meas47 :dy12Cm 2.2}; r:evidence (
+              [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+              [ a r:Extraction; r:gives {:meas47 :p1yCm 7.8}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+              [ a r:Extraction; r:gives {:meas47 :p2yCm 5.6}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+              [ a r:Fact; r:gives {(7.8 5.6) math:difference 2.2}]);
+              r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+              r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo 7.8];
+              r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo 5.6];
+              r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo 2.2];
+              r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3. {var:x0 a :Measurement. var:x0 :p1yCm var:x1. var:x0 :p2yCm var:x2. (var:x1 var:x2) math:difference var:x3} => {var:x0 :dy12Cm var:x3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+             [ a r:Inference; r:gives {:meas47 :dx12Cm -35.0}; r:evidence (
+              [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+              [ a r:Extraction; r:gives {:meas47 :p1xCm 10.1}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+              [ a r:Extraction; r:gives {:meas47 :p2xCm 45.1}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+              [ a r:Fact; r:gives {(10.1 45.1) math:difference -35.0}]);
+              r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+              r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo 10.1];
+              r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo 45.1];
+              r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo -35.0];
+              r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3. {var:x0 a :Measurement. var:x0 :p1xCm var:x1. var:x0 :p2xCm var:x2. (var:x1 var:x2) math:difference var:x3} => {var:x0 :dx12Cm var:x3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+             [ a r:Fact; r:gives {(2.2 -35.0) math:quotient -0.0628571428571429}]);
+             r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+             r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo 2.2];
+             r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo -35.0];
+             r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo -0.0628571428571429];
+             r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3. {var:x0 a :Measurement. var:x0 :dy12Cm var:x1. var:x0 :dx12Cm var:x2. (var:x1 var:x2) math:quotient var:x3} => {var:x0 :cL1 var:x3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+            [ a r:Extraction; r:gives {:meas47 :p1xCm 10.1}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+            [ a r:Fact; r:gives {(-0.0628571428571429 10.1) math:product -0.634857142857143}]);
+            r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+            r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo -0.0628571428571429];
+            r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo 10.1];
+            r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo -0.634857142857143];
+            r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3. {var:x0 a :Measurement. var:x0 :cL1 var:x1. var:x0 :p1xCm var:x2. (var:x1 var:x2) math:product var:x3} => {var:x0 :pL1x1Cm var:x3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+           [ a r:Inference; r:gives {:meas47 :pL3x3Cm 57.2727272727273}; r:evidence (
+            [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+            [ a r:Inference; r:gives {:meas47 :cL3 15.9090909090909}; r:evidence (
+             [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+             [ a r:Inference; r:gives {:meas47 :dL3m -15.9090909090909}; r:evidence (
+              [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+              [ a r:Inference; r:gives {:meas47 :cL1 -0.0628571428571429}; r:evidence (
+               [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+               [ a r:Inference; r:gives {:meas47 :dy12Cm 2.2}; r:evidence (
+                [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+                [ a r:Extraction; r:gives {:meas47 :p1yCm 7.8}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+                [ a r:Extraction; r:gives {:meas47 :p2yCm 5.6}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+                [ a r:Fact; r:gives {(7.8 5.6) math:difference 2.2}]);
+                r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+                r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo 7.8];
+                r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo 5.6];
+                r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo 2.2];
+                r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3. {var:x0 a :Measurement. var:x0 :p1yCm var:x1. var:x0 :p2yCm var:x2. (var:x1 var:x2) math:difference var:x3} => {var:x0 :dy12Cm var:x3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+               [ a r:Inference; r:gives {:meas47 :dx12Cm -35.0}; r:evidence (
+                [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+                [ a r:Extraction; r:gives {:meas47 :p1xCm 10.1}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+                [ a r:Extraction; r:gives {:meas47 :p2xCm 45.1}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+                [ a r:Fact; r:gives {(10.1 45.1) math:difference -35.0}]);
+                r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+                r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo 10.1];
+                r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo 45.1];
+                r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo -35.0];
+                r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3. {var:x0 a :Measurement. var:x0 :p1xCm var:x1. var:x0 :p2xCm var:x2. (var:x1 var:x2) math:difference var:x3} => {var:x0 :dx12Cm var:x3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+               [ a r:Fact; r:gives {(2.2 -35.0) math:quotient -0.0628571428571429}]);
+               r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+               r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo 2.2];
+               r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo -35.0];
+               r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo -0.0628571428571429];
+               r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3. {var:x0 a :Measurement. var:x0 :dy12Cm var:x1. var:x0 :dx12Cm var:x2. (var:x1 var:x2) math:quotient var:x3} => {var:x0 :cL1 var:x3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+              [ a r:Fact; r:gives {(1 -0.0628571428571429) math:quotient -15.9090909090909}]);
+              r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+              r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo -0.0628571428571429];
+              r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo -15.9090909090909];
+              r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2. {var:x0 a :Measurement. var:x0 :cL1 var:x1. (1 var:x1) math:quotient var:x2} => {var:x0 :dL3m var:x2}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+             [ a r:Fact; r:gives {(0 -15.9090909090909) math:difference 15.9090909090909}]);
+             r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+             r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo -15.9090909090909];
+             r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo 15.9090909090909];
+             r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2. {var:x0 a :Measurement. var:x0 :dL3m var:x1. (0 var:x1) math:difference var:x2} => {var:x0 :cL3 var:x2}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+            [ a r:Extraction; r:gives {:meas47 :p3xCm 3.6}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+            [ a r:Fact; r:gives {(15.9090909090909 3.6) math:product 57.2727272727273}]);
+            r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+            r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo 15.9090909090909];
+            r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo 3.6];
+            r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo 57.2727272727273];
+            r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3. {var:x0 a :Measurement. var:x0 :cL3 var:x1. var:x0 :p3xCm var:x2. (var:x1 var:x2) math:product var:x3} => {var:x0 :pL3x3Cm var:x3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+           [ a r:Fact; r:gives {(-0.634857142857143 57.2727272727273) math:difference -57.9075844155844}]);
+           r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+           r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo -0.634857142857143];
+           r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo 57.2727272727273];
+           r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo -57.9075844155844];
+           r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3. {var:x0 a :Measurement. var:x0 :pL1x1Cm var:x1. var:x0 :pL3x3Cm var:x2. (var:x1 var:x2) math:difference var:x3} => {var:x0 :dd13Cm var:x3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+          [ a r:Inference; r:gives {:meas47 :dy13Cm -22.0}; r:evidence (
+           [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+           [ a r:Extraction; r:gives {:meas47 :p1yCm 7.8}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+           [ a r:Extraction; r:gives {:meas47 :p3yCm 29.8}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+           [ a r:Fact; r:gives {(7.8 29.8) math:difference -22.0}]);
+           r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+           r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo 7.8];
+           r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo 29.8];
+           r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo -22.0];
+           r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3. {var:x0 a :Measurement. var:x0 :p1yCm var:x1. var:x0 :p3yCm var:x2. (var:x1 var:x2) math:difference var:x3} => {var:x0 :dy13Cm var:x3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+          [ a r:Fact; r:gives {(-57.9075844155844 -22.0) math:difference -35.9075844155844}]);
+          r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+          r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo -57.9075844155844];
+          r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo -22.0];
+          r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo -35.9075844155844];
+          r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3. {var:x0 a :Measurement. var:x0 :dd13Cm var:x1. var:x0 :dy13Cm var:x2. (var:x1 var:x2) math:difference var:x3} => {var:x0 :ddy13Cm var:x3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+         [ a r:Inference; r:gives {:meas47 :ddL13 -15.9719480519481}; r:evidence (
+          [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+          [ a r:Inference; r:gives {:meas47 :cL1 -0.0628571428571429}; r:evidence (
+           [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+           [ a r:Inference; r:gives {:meas47 :dy12Cm 2.2}; r:evidence (
+            [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+            [ a r:Extraction; r:gives {:meas47 :p1yCm 7.8}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+            [ a r:Extraction; r:gives {:meas47 :p2yCm 5.6}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+            [ a r:Fact; r:gives {(7.8 5.6) math:difference 2.2}]);
+            r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+            r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo 7.8];
+            r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo 5.6];
+            r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo 2.2];
+            r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3. {var:x0 a :Measurement. var:x0 :p1yCm var:x1. var:x0 :p2yCm var:x2. (var:x1 var:x2) math:difference var:x3} => {var:x0 :dy12Cm var:x3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+           [ a r:Inference; r:gives {:meas47 :dx12Cm -35.0}; r:evidence (
+            [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+            [ a r:Extraction; r:gives {:meas47 :p1xCm 10.1}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+            [ a r:Extraction; r:gives {:meas47 :p2xCm 45.1}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+            [ a r:Fact; r:gives {(10.1 45.1) math:difference -35.0}]);
+            r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+            r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo 10.1];
+            r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo 45.1];
+            r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo -35.0];
+            r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3. {var:x0 a :Measurement. var:x0 :p1xCm var:x1. var:x0 :p2xCm var:x2. (var:x1 var:x2) math:difference var:x3} => {var:x0 :dx12Cm var:x3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+           [ a r:Fact; r:gives {(2.2 -35.0) math:quotient -0.0628571428571429}]);
+           r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+           r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo 2.2];
+           r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo -35.0];
+           r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo -0.0628571428571429];
+           r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3. {var:x0 a :Measurement. var:x0 :dy12Cm var:x1. var:x0 :dx12Cm var:x2. (var:x1 var:x2) math:quotient var:x3} => {var:x0 :cL1 var:x3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+          [ a r:Inference; r:gives {:meas47 :cL3 15.9090909090909}; r:evidence (
+           [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+           [ a r:Inference; r:gives {:meas47 :dL3m -15.9090909090909}; r:evidence (
+            [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+            [ a r:Inference; r:gives {:meas47 :cL1 -0.0628571428571429}; r:evidence (
+             [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+             [ a r:Inference; r:gives {:meas47 :dy12Cm 2.2}; r:evidence (
+              [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+              [ a r:Extraction; r:gives {:meas47 :p1yCm 7.8}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+              [ a r:Extraction; r:gives {:meas47 :p2yCm 5.6}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+              [ a r:Fact; r:gives {(7.8 5.6) math:difference 2.2}]);
+              r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+              r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo 7.8];
+              r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo 5.6];
+              r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo 2.2];
+              r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3. {var:x0 a :Measurement. var:x0 :p1yCm var:x1. var:x0 :p2yCm var:x2. (var:x1 var:x2) math:difference var:x3} => {var:x0 :dy12Cm var:x3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+             [ a r:Inference; r:gives {:meas47 :dx12Cm -35.0}; r:evidence (
+              [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+              [ a r:Extraction; r:gives {:meas47 :p1xCm 10.1}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+              [ a r:Extraction; r:gives {:meas47 :p2xCm 45.1}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+              [ a r:Fact; r:gives {(10.1 45.1) math:difference -35.0}]);
+              r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+              r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo 10.1];
+              r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo 45.1];
+              r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo -35.0];
+              r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3. {var:x0 a :Measurement. var:x0 :p1xCm var:x1. var:x0 :p2xCm var:x2. (var:x1 var:x2) math:difference var:x3} => {var:x0 :dx12Cm var:x3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+             [ a r:Fact; r:gives {(2.2 -35.0) math:quotient -0.0628571428571429}]);
+             r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+             r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo 2.2];
+             r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo -35.0];
+             r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo -0.0628571428571429];
+             r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3. {var:x0 a :Measurement. var:x0 :dy12Cm var:x1. var:x0 :dx12Cm var:x2. (var:x1 var:x2) math:quotient var:x3} => {var:x0 :cL1 var:x3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+            [ a r:Fact; r:gives {(1 -0.0628571428571429) math:quotient -15.9090909090909}]);
+            r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+            r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo -0.0628571428571429];
+            r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo -15.9090909090909];
+            r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2. {var:x0 a :Measurement. var:x0 :cL1 var:x1. (1 var:x1) math:quotient var:x2} => {var:x0 :dL3m var:x2}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+           [ a r:Fact; r:gives {(0 -15.9090909090909) math:difference 15.9090909090909}]);
+           r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+           r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo -15.9090909090909];
+           r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo 15.9090909090909];
+           r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2. {var:x0 a :Measurement. var:x0 :dL3m var:x1. (0 var:x1) math:difference var:x2} => {var:x0 :cL3 var:x2}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+          [ a r:Fact; r:gives {(-0.0628571428571429 15.9090909090909) math:difference -15.9719480519481}]);
+          r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+          r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo -0.0628571428571429];
+          r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo 15.9090909090909];
+          r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo -15.9719480519481];
+          r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3. {var:x0 a :Measurement. var:x0 :cL1 var:x1. var:x0 :cL3 var:x2. (var:x1 var:x2) math:difference var:x3} => {var:x0 :ddL13 var:x3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+         [ a r:Fact; r:gives {(-35.9075844155844 -15.9719480519481) math:quotient 2.24816561503936}]);
+         r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+         r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo -35.9075844155844];
+         r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo -15.9719480519481];
+         r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo 2.24816561503936];
+         r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3. {var:x0 a :Measurement. var:x0 :ddy13Cm var:x1. var:x0 :ddL13 var:x2. (var:x1 var:x2) math:quotient var:x3} => {var:x0 :p5xCm var:x3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+        [ a r:Extraction; r:gives {:meas47 :p3xCm 3.6}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+        [ a r:Fact; r:gives {(2.24816561503936 3.6) math:difference -1.35183438496064}]);
+        r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+        r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo 2.24816561503936];
+        r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo 3.6];
+        r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo -1.35183438496064];
+        r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3. {var:x0 a :Measurement. var:x0 :p5xCm var:x1. var:x0 :p3xCm var:x2. (var:x1 var:x2) math:difference var:x3} => {var:x0 :dx53Cm var:x3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+       [ a r:Fact; r:gives {(-1.35183438496064 2) math:exponentiation 1.82745620436193}]);
+       r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+       r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo -1.35183438496064];
+       r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo 1.82745620436193];
+       r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2. {var:x0 a :Measurement. var:x0 :dx53Cm var:x1. (var:x1 2) math:exponentiation var:x2} => {var:x0 :sdx53Cm2 var:x2}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+      [ a r:Inference; r:gives {:meas47 :sdy53Cm2 462.52765502962}; r:evidence (
+       [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+       [ a r:Inference; r:gives {:meas47 :dy53Cm -21.5064561243739}; r:evidence (
+        [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+        [ a r:Inference; r:gives {:meas47 :p5yCm 8.2935438756261}; r:evidence (
+         [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+         [ a r:Inference; r:gives {:meas47 :pL1dx51Cm 0.493543875626098}; r:evidence (
+          [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+          [ a r:Inference; r:gives {:meas47 :cL1 -0.0628571428571429}; r:evidence (
+           [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+           [ a r:Inference; r:gives {:meas47 :dy12Cm 2.2}; r:evidence (
+            [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+            [ a r:Extraction; r:gives {:meas47 :p1yCm 7.8}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+            [ a r:Extraction; r:gives {:meas47 :p2yCm 5.6}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+            [ a r:Fact; r:gives {(7.8 5.6) math:difference 2.2}]);
+            r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+            r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo 7.8];
+            r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo 5.6];
+            r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo 2.2];
+            r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3. {var:x0 a :Measurement. var:x0 :p1yCm var:x1. var:x0 :p2yCm var:x2. (var:x1 var:x2) math:difference var:x3} => {var:x0 :dy12Cm var:x3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+           [ a r:Inference; r:gives {:meas47 :dx12Cm -35.0}; r:evidence (
+            [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+            [ a r:Extraction; r:gives {:meas47 :p1xCm 10.1}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+            [ a r:Extraction; r:gives {:meas47 :p2xCm 45.1}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+            [ a r:Fact; r:gives {(10.1 45.1) math:difference -35.0}]);
+            r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+            r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo 10.1];
+            r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo 45.1];
+            r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo -35.0];
+            r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3. {var:x0 a :Measurement. var:x0 :p1xCm var:x1. var:x0 :p2xCm var:x2. (var:x1 var:x2) math:difference var:x3} => {var:x0 :dx12Cm var:x3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+           [ a r:Fact; r:gives {(2.2 -35.0) math:quotient -0.0628571428571429}]);
+           r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+           r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo 2.2];
+           r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo -35.0];
+           r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo -0.0628571428571429];
+           r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3. {var:x0 a :Measurement. var:x0 :dy12Cm var:x1. var:x0 :dx12Cm var:x2. (var:x1 var:x2) math:quotient var:x3} => {var:x0 :cL1 var:x3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+          [ a r:Inference; r:gives {:meas47 :dx51Cm -7.85183438496064}; r:evidence (
+           [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+           [ a r:Inference; r:gives {:meas47 :p5xCm 2.24816561503936}; r:evidence (
+            [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+            [ a r:Inference; r:gives {:meas47 :ddy13Cm -35.9075844155844}; r:evidence (
+             [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+             [ a r:Inference; r:gives {:meas47 :dd13Cm -57.9075844155844}; r:evidence (
+              [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+              [ a r:Inference; r:gives {:meas47 :pL1x1Cm -0.634857142857143}; r:evidence (
+               [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+               [ a r:Inference; r:gives {:meas47 :cL1 -0.0628571428571429}; r:evidence (
+                [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+                [ a r:Inference; r:gives {:meas47 :dy12Cm 2.2}; r:evidence (
+                 [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+                 [ a r:Extraction; r:gives {:meas47 :p1yCm 7.8}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+                 [ a r:Extraction; r:gives {:meas47 :p2yCm 5.6}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+                 [ a r:Fact; r:gives {(7.8 5.6) math:difference 2.2}]);
+                 r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+                 r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo 7.8];
+                 r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo 5.6];
+                 r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo 2.2];
+                 r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3. {var:x0 a :Measurement. var:x0 :p1yCm var:x1. var:x0 :p2yCm var:x2. (var:x1 var:x2) math:difference var:x3} => {var:x0 :dy12Cm var:x3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+                [ a r:Inference; r:gives {:meas47 :dx12Cm -35.0}; r:evidence (
+                 [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+                 [ a r:Extraction; r:gives {:meas47 :p1xCm 10.1}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+                 [ a r:Extraction; r:gives {:meas47 :p2xCm 45.1}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+                 [ a r:Fact; r:gives {(10.1 45.1) math:difference -35.0}]);
+                 r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+                 r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo 10.1];
+                 r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo 45.1];
+                 r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo -35.0];
+                 r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3. {var:x0 a :Measurement. var:x0 :p1xCm var:x1. var:x0 :p2xCm var:x2. (var:x1 var:x2) math:difference var:x3} => {var:x0 :dx12Cm var:x3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+                [ a r:Fact; r:gives {(2.2 -35.0) math:quotient -0.0628571428571429}]);
+                r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+                r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo 2.2];
+                r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo -35.0];
+                r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo -0.0628571428571429];
+                r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3. {var:x0 a :Measurement. var:x0 :dy12Cm var:x1. var:x0 :dx12Cm var:x2. (var:x1 var:x2) math:quotient var:x3} => {var:x0 :cL1 var:x3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+               [ a r:Extraction; r:gives {:meas47 :p1xCm 10.1}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+               [ a r:Fact; r:gives {(-0.0628571428571429 10.1) math:product -0.634857142857143}]);
+               r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+               r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo -0.0628571428571429];
+               r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo 10.1];
+               r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo -0.634857142857143];
+               r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3. {var:x0 a :Measurement. var:x0 :cL1 var:x1. var:x0 :p1xCm var:x2. (var:x1 var:x2) math:product var:x3} => {var:x0 :pL1x1Cm var:x3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+              [ a r:Inference; r:gives {:meas47 :pL3x3Cm 57.2727272727273}; r:evidence (
+               [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+               [ a r:Inference; r:gives {:meas47 :cL3 15.9090909090909}; r:evidence (
+                [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+                [ a r:Inference; r:gives {:meas47 :dL3m -15.9090909090909}; r:evidence (
+                 [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+                 [ a r:Inference; r:gives {:meas47 :cL1 -0.0628571428571429}; r:evidence (
+                  [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+                  [ a r:Inference; r:gives {:meas47 :dy12Cm 2.2}; r:evidence (
+                   [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+                   [ a r:Extraction; r:gives {:meas47 :p1yCm 7.8}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+                   [ a r:Extraction; r:gives {:meas47 :p2yCm 5.6}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+                   [ a r:Fact; r:gives {(7.8 5.6) math:difference 2.2}]);
+                   r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+                   r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo 7.8];
+                   r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo 5.6];
+                   r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo 2.2];
+                   r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3. {var:x0 a :Measurement. var:x0 :p1yCm var:x1. var:x0 :p2yCm var:x2. (var:x1 var:x2) math:difference var:x3} => {var:x0 :dy12Cm var:x3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+                  [ a r:Inference; r:gives {:meas47 :dx12Cm -35.0}; r:evidence (
+                   [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+                   [ a r:Extraction; r:gives {:meas47 :p1xCm 10.1}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+                   [ a r:Extraction; r:gives {:meas47 :p2xCm 45.1}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+                   [ a r:Fact; r:gives {(10.1 45.1) math:difference -35.0}]);
+                   r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+                   r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo 10.1];
+                   r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo 45.1];
+                   r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo -35.0];
+                   r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3. {var:x0 a :Measurement. var:x0 :p1xCm var:x1. var:x0 :p2xCm var:x2. (var:x1 var:x2) math:difference var:x3} => {var:x0 :dx12Cm var:x3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+                  [ a r:Fact; r:gives {(2.2 -35.0) math:quotient -0.0628571428571429}]);
+                  r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+                  r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo 2.2];
+                  r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo -35.0];
+                  r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo -0.0628571428571429];
+                  r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3. {var:x0 a :Measurement. var:x0 :dy12Cm var:x1. var:x0 :dx12Cm var:x2. (var:x1 var:x2) math:quotient var:x3} => {var:x0 :cL1 var:x3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+                 [ a r:Fact; r:gives {(1 -0.0628571428571429) math:quotient -15.9090909090909}]);
+                 r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+                 r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo -0.0628571428571429];
+                 r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo -15.9090909090909];
+                 r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2. {var:x0 a :Measurement. var:x0 :cL1 var:x1. (1 var:x1) math:quotient var:x2} => {var:x0 :dL3m var:x2}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+                [ a r:Fact; r:gives {(0 -15.9090909090909) math:difference 15.9090909090909}]);
+                r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+                r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo -15.9090909090909];
+                r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo 15.9090909090909];
+                r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2. {var:x0 a :Measurement. var:x0 :dL3m var:x1. (0 var:x1) math:difference var:x2} => {var:x0 :cL3 var:x2}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+               [ a r:Extraction; r:gives {:meas47 :p3xCm 3.6}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+               [ a r:Fact; r:gives {(15.9090909090909 3.6) math:product 57.2727272727273}]);
+               r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+               r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo 15.9090909090909];
+               r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo 3.6];
+               r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo 57.2727272727273];
+               r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3. {var:x0 a :Measurement. var:x0 :cL3 var:x1. var:x0 :p3xCm var:x2. (var:x1 var:x2) math:product var:x3} => {var:x0 :pL3x3Cm var:x3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+              [ a r:Fact; r:gives {(-0.634857142857143 57.2727272727273) math:difference -57.9075844155844}]);
+              r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+              r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo -0.634857142857143];
+              r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo 57.2727272727273];
+              r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo -57.9075844155844];
+              r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3. {var:x0 a :Measurement. var:x0 :pL1x1Cm var:x1. var:x0 :pL3x3Cm var:x2. (var:x1 var:x2) math:difference var:x3} => {var:x0 :dd13Cm var:x3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+             [ a r:Inference; r:gives {:meas47 :dy13Cm -22.0}; r:evidence (
+              [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+              [ a r:Extraction; r:gives {:meas47 :p1yCm 7.8}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+              [ a r:Extraction; r:gives {:meas47 :p3yCm 29.8}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+              [ a r:Fact; r:gives {(7.8 29.8) math:difference -22.0}]);
+              r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+              r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo 7.8];
+              r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo 29.8];
+              r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo -22.0];
+              r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3. {var:x0 a :Measurement. var:x0 :p1yCm var:x1. var:x0 :p3yCm var:x2. (var:x1 var:x2) math:difference var:x3} => {var:x0 :dy13Cm var:x3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+             [ a r:Fact; r:gives {(-57.9075844155844 -22.0) math:difference -35.9075844155844}]);
+             r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+             r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo -57.9075844155844];
+             r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo -22.0];
+             r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo -35.9075844155844];
+             r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3. {var:x0 a :Measurement. var:x0 :dd13Cm var:x1. var:x0 :dy13Cm var:x2. (var:x1 var:x2) math:difference var:x3} => {var:x0 :ddy13Cm var:x3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+            [ a r:Inference; r:gives {:meas47 :ddL13 -15.9719480519481}; r:evidence (
+             [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+             [ a r:Inference; r:gives {:meas47 :cL1 -0.0628571428571429}; r:evidence (
+              [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+              [ a r:Inference; r:gives {:meas47 :dy12Cm 2.2}; r:evidence (
+               [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+               [ a r:Extraction; r:gives {:meas47 :p1yCm 7.8}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+               [ a r:Extraction; r:gives {:meas47 :p2yCm 5.6}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+               [ a r:Fact; r:gives {(7.8 5.6) math:difference 2.2}]);
+               r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+               r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo 7.8];
+               r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo 5.6];
+               r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo 2.2];
+               r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3. {var:x0 a :Measurement. var:x0 :p1yCm var:x1. var:x0 :p2yCm var:x2. (var:x1 var:x2) math:difference var:x3} => {var:x0 :dy12Cm var:x3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+              [ a r:Inference; r:gives {:meas47 :dx12Cm -35.0}; r:evidence (
+               [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+               [ a r:Extraction; r:gives {:meas47 :p1xCm 10.1}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+               [ a r:Extraction; r:gives {:meas47 :p2xCm 45.1}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+               [ a r:Fact; r:gives {(10.1 45.1) math:difference -35.0}]);
+               r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+               r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo 10.1];
+               r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo 45.1];
+               r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo -35.0];
+               r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3. {var:x0 a :Measurement. var:x0 :p1xCm var:x1. var:x0 :p2xCm var:x2. (var:x1 var:x2) math:difference var:x3} => {var:x0 :dx12Cm var:x3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+              [ a r:Fact; r:gives {(2.2 -35.0) math:quotient -0.0628571428571429}]);
+              r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+              r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo 2.2];
+              r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo -35.0];
+              r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo -0.0628571428571429];
+              r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3. {var:x0 a :Measurement. var:x0 :dy12Cm var:x1. var:x0 :dx12Cm var:x2. (var:x1 var:x2) math:quotient var:x3} => {var:x0 :cL1 var:x3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+             [ a r:Inference; r:gives {:meas47 :cL3 15.9090909090909}; r:evidence (
+              [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+              [ a r:Inference; r:gives {:meas47 :dL3m -15.9090909090909}; r:evidence (
+               [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+               [ a r:Inference; r:gives {:meas47 :cL1 -0.0628571428571429}; r:evidence (
+                [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+                [ a r:Inference; r:gives {:meas47 :dy12Cm 2.2}; r:evidence (
+                 [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+                 [ a r:Extraction; r:gives {:meas47 :p1yCm 7.8}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+                 [ a r:Extraction; r:gives {:meas47 :p2yCm 5.6}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+                 [ a r:Fact; r:gives {(7.8 5.6) math:difference 2.2}]);
+                 r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+                 r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo 7.8];
+                 r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo 5.6];
+                 r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo 2.2];
+                 r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3. {var:x0 a :Measurement. var:x0 :p1yCm var:x1. var:x0 :p2yCm var:x2. (var:x1 var:x2) math:difference var:x3} => {var:x0 :dy12Cm var:x3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+                [ a r:Inference; r:gives {:meas47 :dx12Cm -35.0}; r:evidence (
+                 [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+                 [ a r:Extraction; r:gives {:meas47 :p1xCm 10.1}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+                 [ a r:Extraction; r:gives {:meas47 :p2xCm 45.1}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+                 [ a r:Fact; r:gives {(10.1 45.1) math:difference -35.0}]);
+                 r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+                 r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo 10.1];
+                 r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo 45.1];
+                 r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo -35.0];
+                 r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3. {var:x0 a :Measurement. var:x0 :p1xCm var:x1. var:x0 :p2xCm var:x2. (var:x1 var:x2) math:difference var:x3} => {var:x0 :dx12Cm var:x3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+                [ a r:Fact; r:gives {(2.2 -35.0) math:quotient -0.0628571428571429}]);
+                r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+                r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo 2.2];
+                r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo -35.0];
+                r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo -0.0628571428571429];
+                r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3. {var:x0 a :Measurement. var:x0 :dy12Cm var:x1. var:x0 :dx12Cm var:x2. (var:x1 var:x2) math:quotient var:x3} => {var:x0 :cL1 var:x3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+               [ a r:Fact; r:gives {(1 -0.0628571428571429) math:quotient -15.9090909090909}]);
+               r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+               r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo -0.0628571428571429];
+               r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo -15.9090909090909];
+               r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2. {var:x0 a :Measurement. var:x0 :cL1 var:x1. (1 var:x1) math:quotient var:x2} => {var:x0 :dL3m var:x2}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+              [ a r:Fact; r:gives {(0 -15.9090909090909) math:difference 15.9090909090909}]);
+              r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+              r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo -15.9090909090909];
+              r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo 15.9090909090909];
+              r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2. {var:x0 a :Measurement. var:x0 :dL3m var:x1. (0 var:x1) math:difference var:x2} => {var:x0 :cL3 var:x2}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+             [ a r:Fact; r:gives {(-0.0628571428571429 15.9090909090909) math:difference -15.9719480519481}]);
+             r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+             r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo -0.0628571428571429];
+             r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo 15.9090909090909];
+             r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo -15.9719480519481];
+             r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3. {var:x0 a :Measurement. var:x0 :cL1 var:x1. var:x0 :cL3 var:x2. (var:x1 var:x2) math:difference var:x3} => {var:x0 :ddL13 var:x3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+            [ a r:Fact; r:gives {(-35.9075844155844 -15.9719480519481) math:quotient 2.24816561503936}]);
+            r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+            r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo -35.9075844155844];
+            r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo -15.9719480519481];
+            r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo 2.24816561503936];
+            r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3. {var:x0 a :Measurement. var:x0 :ddy13Cm var:x1. var:x0 :ddL13 var:x2. (var:x1 var:x2) math:quotient var:x3} => {var:x0 :p5xCm var:x3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+           [ a r:Extraction; r:gives {:meas47 :p1xCm 10.1}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+           [ a r:Fact; r:gives {(2.24816561503936 10.1) math:difference -7.85183438496064}]);
+           r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+           r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo 2.24816561503936];
+           r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo 10.1];
+           r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo -7.85183438496064];
+           r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3. {var:x0 a :Measurement. var:x0 :p5xCm var:x1. var:x0 :p1xCm var:x2. (var:x1 var:x2) math:difference var:x3} => {var:x0 :dx51Cm var:x3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+          [ a r:Fact; r:gives {(-0.0628571428571429 -7.85183438496064) math:product 0.493543875626098}]);
+          r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+          r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo -0.0628571428571429];
+          r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo -7.85183438496064];
+          r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo 0.493543875626098];
+          r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3. {var:x0 a :Measurement. var:x0 :cL1 var:x1. var:x0 :dx51Cm var:x2. (var:x1 var:x2) math:product var:x3} => {var:x0 :pL1dx51Cm var:x3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+         [ a r:Extraction; r:gives {:meas47 :p1yCm 7.8}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+         [ a r:Fact; r:gives {(0.493543875626098 7.8) math:sum 8.2935438756261}]);
+         r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+         r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo 0.493543875626098];
+         r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo 7.8];
+         r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo 8.2935438756261];
+         r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3. {var:x0 a :Measurement. var:x0 :pL1dx51Cm var:x1. var:x0 :p1yCm var:x2. (var:x1 var:x2) math:sum var:x3} => {var:x0 :p5yCm var:x3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+        [ a r:Extraction; r:gives {:meas47 :p3yCm 29.8}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+        [ a r:Fact; r:gives {(8.2935438756261 29.8) math:difference -21.5064561243739}]);
+        r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+        r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo 8.2935438756261];
+        r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo 29.8];
+        r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo -21.5064561243739];
+        r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3. {var:x0 a :Measurement. var:x0 :p5yCm var:x1. var:x0 :p3yCm var:x2. (var:x1 var:x2) math:difference var:x3} => {var:x0 :dy53Cm var:x3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+       [ a r:Fact; r:gives {(-21.5064561243739 2) math:exponentiation 462.52765502962}]);
+       r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+       r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo -21.5064561243739];
+       r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo 462.52765502962];
+       r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2. {var:x0 a :Measurement. var:x0 :dy53Cm var:x1. (var:x1 2) math:exponentiation var:x2} => {var:x0 :sdy53Cm2 var:x2}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+      [ a r:Fact; r:gives {(1.82745620436193 462.52765502962) math:sum 464.355111233982}]);
+      r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+      r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo 1.82745620436193];
+      r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo 462.52765502962];
+      r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo 464.355111233982];
+      r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3. {var:x0 a :Measurement. var:x0 :sdx53Cm2 var:x1. var:x0 :sdy53Cm2 var:x2. (var:x1 var:x2) math:sum var:x3} => {var:x0 :ssd53Cm2 var:x3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+     [ a r:Fact; r:gives {(464.355111233982 0.5) math:exponentiation 21.5489004646173}]);
+     r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+     r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo 464.355111233982];
+     r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo 21.5489004646173];
+     r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2. {var:x0 a :Measurement. var:x0 :ssd53Cm2 var:x1. (var:x1 0.5) math:exponentiation var:x2} => {var:x0 :d53Cm var:x2}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+    [ a r:Inference; r:gives {:meas47 :d64Cm 23.4571344451548}; r:evidence (
+     [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+     [ a r:Inference; r:gives {:meas47 :ssd64Cm2 550.237156378065}; r:evidence (
+      [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+      [ a r:Inference; r:gives {:meas47 :sdx64Cm2 2.1654425265643}; r:evidence (
+       [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+       [ a r:Inference; r:gives {:meas47 :dx64Cm -1.47154426592077}; r:evidence (
+        [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+        [ a r:Inference; r:gives {:meas47 :p6xCm 53.2284557340792}; r:evidence (
+         [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+         [ a r:Inference; r:gives {:meas47 :ddy24Cm -850.16212987013}; r:evidence (
+          [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+          [ a r:Inference; r:gives {:meas47 :dd24Cm -873.06212987013}; r:evidence (
+           [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+           [ a r:Inference; r:gives {:meas47 :pL1x2Cm -2.83485714285714}; r:evidence (
+            [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+            [ a r:Inference; r:gives {:meas47 :cL1 -0.0628571428571429}; r:evidence (
+             [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+             [ a r:Inference; r:gives {:meas47 :dy12Cm 2.2}; r:evidence (
+              [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+              [ a r:Extraction; r:gives {:meas47 :p1yCm 7.8}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+              [ a r:Extraction; r:gives {:meas47 :p2yCm 5.6}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+              [ a r:Fact; r:gives {(7.8 5.6) math:difference 2.2}]);
+              r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+              r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo 7.8];
+              r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo 5.6];
+              r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo 2.2];
+              r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3. {var:x0 a :Measurement. var:x0 :p1yCm var:x1. var:x0 :p2yCm var:x2. (var:x1 var:x2) math:difference var:x3} => {var:x0 :dy12Cm var:x3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+             [ a r:Inference; r:gives {:meas47 :dx12Cm -35.0}; r:evidence (
+              [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+              [ a r:Extraction; r:gives {:meas47 :p1xCm 10.1}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+              [ a r:Extraction; r:gives {:meas47 :p2xCm 45.1}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+              [ a r:Fact; r:gives {(10.1 45.1) math:difference -35.0}]);
+              r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+              r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo 10.1];
+              r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo 45.1];
+              r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo -35.0];
+              r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3. {var:x0 a :Measurement. var:x0 :p1xCm var:x1. var:x0 :p2xCm var:x2. (var:x1 var:x2) math:difference var:x3} => {var:x0 :dx12Cm var:x3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+             [ a r:Fact; r:gives {(2.2 -35.0) math:quotient -0.0628571428571429}]);
+             r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+             r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo 2.2];
+             r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo -35.0];
+             r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo -0.0628571428571429];
+             r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3. {var:x0 a :Measurement. var:x0 :dy12Cm var:x1. var:x0 :dx12Cm var:x2. (var:x1 var:x2) math:quotient var:x3} => {var:x0 :cL1 var:x3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+            [ a r:Extraction; r:gives {:meas47 :p2xCm 45.1}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+            [ a r:Fact; r:gives {(-0.0628571428571429 45.1) math:product -2.83485714285714}]);
+            r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+            r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo -0.0628571428571429];
+            r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo 45.1];
+            r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo -2.83485714285714];
+            r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3. {var:x0 a :Measurement. var:x0 :cL1 var:x1. var:x0 :p2xCm var:x2. (var:x1 var:x2) math:product var:x3} => {var:x0 :pL1x2Cm var:x3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+           [ a r:Inference; r:gives {:meas47 :pL3x4Cm 870.227272727273}; r:evidence (
+            [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+            [ a r:Inference; r:gives {:meas47 :cL3 15.9090909090909}; r:evidence (
+             [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+             [ a r:Inference; r:gives {:meas47 :dL3m -15.9090909090909}; r:evidence (
+              [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+              [ a r:Inference; r:gives {:meas47 :cL1 -0.0628571428571429}; r:evidence (
+               [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+               [ a r:Inference; r:gives {:meas47 :dy12Cm 2.2}; r:evidence (
+                [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+                [ a r:Extraction; r:gives {:meas47 :p1yCm 7.8}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+                [ a r:Extraction; r:gives {:meas47 :p2yCm 5.6}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+                [ a r:Fact; r:gives {(7.8 5.6) math:difference 2.2}]);
+                r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+                r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo 7.8];
+                r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo 5.6];
+                r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo 2.2];
+                r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3. {var:x0 a :Measurement. var:x0 :p1yCm var:x1. var:x0 :p2yCm var:x2. (var:x1 var:x2) math:difference var:x3} => {var:x0 :dy12Cm var:x3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+               [ a r:Inference; r:gives {:meas47 :dx12Cm -35.0}; r:evidence (
+                [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+                [ a r:Extraction; r:gives {:meas47 :p1xCm 10.1}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+                [ a r:Extraction; r:gives {:meas47 :p2xCm 45.1}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+                [ a r:Fact; r:gives {(10.1 45.1) math:difference -35.0}]);
+                r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+                r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo 10.1];
+                r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo 45.1];
+                r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo -35.0];
+                r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3. {var:x0 a :Measurement. var:x0 :p1xCm var:x1. var:x0 :p2xCm var:x2. (var:x1 var:x2) math:difference var:x3} => {var:x0 :dx12Cm var:x3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+               [ a r:Fact; r:gives {(2.2 -35.0) math:quotient -0.0628571428571429}]);
+               r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+               r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo 2.2];
+               r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo -35.0];
+               r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo -0.0628571428571429];
+               r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3. {var:x0 a :Measurement. var:x0 :dy12Cm var:x1. var:x0 :dx12Cm var:x2. (var:x1 var:x2) math:quotient var:x3} => {var:x0 :cL1 var:x3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+              [ a r:Fact; r:gives {(1 -0.0628571428571429) math:quotient -15.9090909090909}]);
+              r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+              r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo -0.0628571428571429];
+              r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo -15.9090909090909];
+              r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2. {var:x0 a :Measurement. var:x0 :cL1 var:x1. (1 var:x1) math:quotient var:x2} => {var:x0 :dL3m var:x2}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+             [ a r:Fact; r:gives {(0 -15.9090909090909) math:difference 15.9090909090909}]);
+             r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+             r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo -15.9090909090909];
+             r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo 15.9090909090909];
+             r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2. {var:x0 a :Measurement. var:x0 :dL3m var:x1. (0 var:x1) math:difference var:x2} => {var:x0 :cL3 var:x2}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+            [ a r:Extraction; r:gives {:meas47 :p4xCm 54.7}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+            [ a r:Fact; r:gives {(15.9090909090909 54.7) math:product 870.227272727273}]);
+            r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+            r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo 15.9090909090909];
+            r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo 54.7];
+            r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo 870.227272727273];
+            r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3. {var:x0 a :Measurement. var:x0 :cL3 var:x1. var:x0 :p4xCm var:x2. (var:x1 var:x2) math:product var:x3} => {var:x0 :pL3x4Cm var:x3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+           [ a r:Fact; r:gives {(-2.83485714285714 870.227272727273) math:difference -873.06212987013}]);
+           r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+           r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo -2.83485714285714];
+           r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo 870.227272727273];
+           r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo -873.06212987013];
+           r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3. {var:x0 a :Measurement. var:x0 :pL1x2Cm var:x1. var:x0 :pL3x4Cm var:x2. (var:x1 var:x2) math:difference var:x3} => {var:x0 :dd24Cm var:x3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+          [ a r:Inference; r:gives {:meas47 :dy24Cm -22.9}; r:evidence (
+           [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+           [ a r:Extraction; r:gives {:meas47 :p2yCm 5.6}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+           [ a r:Extraction; r:gives {:meas47 :p4yCm 28.5}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+           [ a r:Fact; r:gives {(5.6 28.5) math:difference -22.9}]);
+           r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+           r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo 5.6];
+           r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo 28.5];
+           r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo -22.9];
+           r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3. {var:x0 a :Measurement. var:x0 :p2yCm var:x1. var:x0 :p4yCm var:x2. (var:x1 var:x2) math:difference var:x3} => {var:x0 :dy24Cm var:x3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+          [ a r:Fact; r:gives {(-873.06212987013 -22.9) math:difference -850.16212987013}]);
+          r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+          r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo -873.06212987013];
+          r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo -22.9];
+          r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo -850.16212987013];
+          r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3. {var:x0 a :Measurement. var:x0 :dd24Cm var:x1. var:x0 :dy24Cm var:x2. (var:x1 var:x2) math:difference var:x3} => {var:x0 :ddy24Cm var:x3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+         [ a r:Inference; r:gives {:meas47 :ddL13 -15.9719480519481}; r:evidence (
+          [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+          [ a r:Inference; r:gives {:meas47 :cL1 -0.0628571428571429}; r:evidence (
+           [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+           [ a r:Inference; r:gives {:meas47 :dy12Cm 2.2}; r:evidence (
+            [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+            [ a r:Extraction; r:gives {:meas47 :p1yCm 7.8}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+            [ a r:Extraction; r:gives {:meas47 :p2yCm 5.6}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+            [ a r:Fact; r:gives {(7.8 5.6) math:difference 2.2}]);
+            r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+            r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo 7.8];
+            r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo 5.6];
+            r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo 2.2];
+            r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3. {var:x0 a :Measurement. var:x0 :p1yCm var:x1. var:x0 :p2yCm var:x2. (var:x1 var:x2) math:difference var:x3} => {var:x0 :dy12Cm var:x3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+           [ a r:Inference; r:gives {:meas47 :dx12Cm -35.0}; r:evidence (
+            [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+            [ a r:Extraction; r:gives {:meas47 :p1xCm 10.1}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+            [ a r:Extraction; r:gives {:meas47 :p2xCm 45.1}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+            [ a r:Fact; r:gives {(10.1 45.1) math:difference -35.0}]);
+            r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+            r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo 10.1];
+            r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo 45.1];
+            r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo -35.0];
+            r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3. {var:x0 a :Measurement. var:x0 :p1xCm var:x1. var:x0 :p2xCm var:x2. (var:x1 var:x2) math:difference var:x3} => {var:x0 :dx12Cm var:x3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+           [ a r:Fact; r:gives {(2.2 -35.0) math:quotient -0.0628571428571429}]);
+           r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+           r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo 2.2];
+           r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo -35.0];
+           r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo -0.0628571428571429];
+           r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3. {var:x0 a :Measurement. var:x0 :dy12Cm var:x1. var:x0 :dx12Cm var:x2. (var:x1 var:x2) math:quotient var:x3} => {var:x0 :cL1 var:x3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+          [ a r:Inference; r:gives {:meas47 :cL3 15.9090909090909}; r:evidence (
+           [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+           [ a r:Inference; r:gives {:meas47 :dL3m -15.9090909090909}; r:evidence (
+            [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+            [ a r:Inference; r:gives {:meas47 :cL1 -0.0628571428571429}; r:evidence (
+             [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+             [ a r:Inference; r:gives {:meas47 :dy12Cm 2.2}; r:evidence (
+              [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+              [ a r:Extraction; r:gives {:meas47 :p1yCm 7.8}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+              [ a r:Extraction; r:gives {:meas47 :p2yCm 5.6}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+              [ a r:Fact; r:gives {(7.8 5.6) math:difference 2.2}]);
+              r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+              r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo 7.8];
+              r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo 5.6];
+              r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo 2.2];
+              r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3. {var:x0 a :Measurement. var:x0 :p1yCm var:x1. var:x0 :p2yCm var:x2. (var:x1 var:x2) math:difference var:x3} => {var:x0 :dy12Cm var:x3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+             [ a r:Inference; r:gives {:meas47 :dx12Cm -35.0}; r:evidence (
+              [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+              [ a r:Extraction; r:gives {:meas47 :p1xCm 10.1}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+              [ a r:Extraction; r:gives {:meas47 :p2xCm 45.1}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+              [ a r:Fact; r:gives {(10.1 45.1) math:difference -35.0}]);
+              r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+              r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo 10.1];
+              r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo 45.1];
+              r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo -35.0];
+              r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3. {var:x0 a :Measurement. var:x0 :p1xCm var:x1. var:x0 :p2xCm var:x2. (var:x1 var:x2) math:difference var:x3} => {var:x0 :dx12Cm var:x3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+             [ a r:Fact; r:gives {(2.2 -35.0) math:quotient -0.0628571428571429}]);
+             r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+             r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo 2.2];
+             r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo -35.0];
+             r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo -0.0628571428571429];
+             r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3. {var:x0 a :Measurement. var:x0 :dy12Cm var:x1. var:x0 :dx12Cm var:x2. (var:x1 var:x2) math:quotient var:x3} => {var:x0 :cL1 var:x3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+            [ a r:Fact; r:gives {(1 -0.0628571428571429) math:quotient -15.9090909090909}]);
+            r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+            r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo -0.0628571428571429];
+            r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo -15.9090909090909];
+            r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2. {var:x0 a :Measurement. var:x0 :cL1 var:x1. (1 var:x1) math:quotient var:x2} => {var:x0 :dL3m var:x2}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+           [ a r:Fact; r:gives {(0 -15.9090909090909) math:difference 15.9090909090909}]);
+           r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+           r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo -15.9090909090909];
+           r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo 15.9090909090909];
+           r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2. {var:x0 a :Measurement. var:x0 :dL3m var:x1. (0 var:x1) math:difference var:x2} => {var:x0 :cL3 var:x2}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+          [ a r:Fact; r:gives {(-0.0628571428571429 15.9090909090909) math:difference -15.9719480519481}]);
+          r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+          r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo -0.0628571428571429];
+          r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo 15.9090909090909];
+          r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo -15.9719480519481];
+          r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3. {var:x0 a :Measurement. var:x0 :cL1 var:x1. var:x0 :cL3 var:x2. (var:x1 var:x2) math:difference var:x3} => {var:x0 :ddL13 var:x3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+         [ a r:Fact; r:gives {(-850.16212987013 -15.9719480519481) math:quotient 53.2284557340792}]);
+         r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+         r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo -850.16212987013];
+         r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo -15.9719480519481];
+         r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo 53.2284557340792];
+         r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3. {var:x0 a :Measurement. var:x0 :ddy24Cm var:x1. var:x0 :ddL13 var:x2. (var:x1 var:x2) math:quotient var:x3} => {var:x0 :p6xCm var:x3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+        [ a r:Extraction; r:gives {:meas47 :p4xCm 54.7}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+        [ a r:Fact; r:gives {(53.2284557340792 54.7) math:difference -1.47154426592077}]);
+        r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+        r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo 53.2284557340792];
+        r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo 54.7];
+        r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo -1.47154426592077];
+        r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3. {var:x0 a :Measurement. var:x0 :p6xCm var:x1. var:x0 :p4xCm var:x2. (var:x1 var:x2) math:difference var:x3} => {var:x0 :dx64Cm var:x3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+       [ a r:Fact; r:gives {(-1.47154426592077 2) math:exponentiation 2.1654425265643}]);
+       r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+       r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo -1.47154426592077];
+       r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo 2.1654425265643];
+       r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2. {var:x0 a :Measurement. var:x0 :dx64Cm var:x1. (var:x1 2) math:exponentiation var:x2} => {var:x0 :sdx64Cm2 var:x2}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+      [ a r:Inference; r:gives {:meas47 :sdy64Cm2 548.071713851501}; r:evidence (
+       [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+       [ a r:Inference; r:gives {:meas47 :dy64Cm -23.410931503285}; r:evidence (
+        [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+        [ a r:Inference; r:gives {:meas47 :p6yCm 5.08906849671502}; r:evidence (
+         [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+         [ a r:Inference; r:gives {:meas47 :pL1dx62Cm -0.51093150328498}; r:evidence (
+          [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+          [ a r:Inference; r:gives {:meas47 :cL1 -0.0628571428571429}; r:evidence (
+           [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+           [ a r:Inference; r:gives {:meas47 :dy12Cm 2.2}; r:evidence (
+            [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+            [ a r:Extraction; r:gives {:meas47 :p1yCm 7.8}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+            [ a r:Extraction; r:gives {:meas47 :p2yCm 5.6}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+            [ a r:Fact; r:gives {(7.8 5.6) math:difference 2.2}]);
+            r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+            r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo 7.8];
+            r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo 5.6];
+            r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo 2.2];
+            r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3. {var:x0 a :Measurement. var:x0 :p1yCm var:x1. var:x0 :p2yCm var:x2. (var:x1 var:x2) math:difference var:x3} => {var:x0 :dy12Cm var:x3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+           [ a r:Inference; r:gives {:meas47 :dx12Cm -35.0}; r:evidence (
+            [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+            [ a r:Extraction; r:gives {:meas47 :p1xCm 10.1}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+            [ a r:Extraction; r:gives {:meas47 :p2xCm 45.1}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+            [ a r:Fact; r:gives {(10.1 45.1) math:difference -35.0}]);
+            r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+            r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo 10.1];
+            r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo 45.1];
+            r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo -35.0];
+            r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3. {var:x0 a :Measurement. var:x0 :p1xCm var:x1. var:x0 :p2xCm var:x2. (var:x1 var:x2) math:difference var:x3} => {var:x0 :dx12Cm var:x3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+           [ a r:Fact; r:gives {(2.2 -35.0) math:quotient -0.0628571428571429}]);
+           r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+           r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo 2.2];
+           r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo -35.0];
+           r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo -0.0628571428571429];
+           r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3. {var:x0 a :Measurement. var:x0 :dy12Cm var:x1. var:x0 :dx12Cm var:x2. (var:x1 var:x2) math:quotient var:x3} => {var:x0 :cL1 var:x3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+          [ a r:Inference; r:gives {:meas47 :dx62Cm 8.12845573407923}; r:evidence (
+           [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+           [ a r:Inference; r:gives {:meas47 :p6xCm 53.2284557340792}; r:evidence (
+            [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+            [ a r:Inference; r:gives {:meas47 :ddy24Cm -850.16212987013}; r:evidence (
+             [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+             [ a r:Inference; r:gives {:meas47 :dd24Cm -873.06212987013}; r:evidence (
+              [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+              [ a r:Inference; r:gives {:meas47 :pL1x2Cm -2.83485714285714}; r:evidence (
+               [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+               [ a r:Inference; r:gives {:meas47 :cL1 -0.0628571428571429}; r:evidence (
+                [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+                [ a r:Inference; r:gives {:meas47 :dy12Cm 2.2}; r:evidence (
+                 [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+                 [ a r:Extraction; r:gives {:meas47 :p1yCm 7.8}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+                 [ a r:Extraction; r:gives {:meas47 :p2yCm 5.6}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+                 [ a r:Fact; r:gives {(7.8 5.6) math:difference 2.2}]);
+                 r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+                 r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo 7.8];
+                 r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo 5.6];
+                 r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo 2.2];
+                 r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3. {var:x0 a :Measurement. var:x0 :p1yCm var:x1. var:x0 :p2yCm var:x2. (var:x1 var:x2) math:difference var:x3} => {var:x0 :dy12Cm var:x3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+                [ a r:Inference; r:gives {:meas47 :dx12Cm -35.0}; r:evidence (
+                 [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+                 [ a r:Extraction; r:gives {:meas47 :p1xCm 10.1}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+                 [ a r:Extraction; r:gives {:meas47 :p2xCm 45.1}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+                 [ a r:Fact; r:gives {(10.1 45.1) math:difference -35.0}]);
+                 r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+                 r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo 10.1];
+                 r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo 45.1];
+                 r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo -35.0];
+                 r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3. {var:x0 a :Measurement. var:x0 :p1xCm var:x1. var:x0 :p2xCm var:x2. (var:x1 var:x2) math:difference var:x3} => {var:x0 :dx12Cm var:x3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+                [ a r:Fact; r:gives {(2.2 -35.0) math:quotient -0.0628571428571429}]);
+                r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+                r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo 2.2];
+                r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo -35.0];
+                r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo -0.0628571428571429];
+                r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3. {var:x0 a :Measurement. var:x0 :dy12Cm var:x1. var:x0 :dx12Cm var:x2. (var:x1 var:x2) math:quotient var:x3} => {var:x0 :cL1 var:x3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+               [ a r:Extraction; r:gives {:meas47 :p2xCm 45.1}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+               [ a r:Fact; r:gives {(-0.0628571428571429 45.1) math:product -2.83485714285714}]);
+               r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+               r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo -0.0628571428571429];
+               r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo 45.1];
+               r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo -2.83485714285714];
+               r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3. {var:x0 a :Measurement. var:x0 :cL1 var:x1. var:x0 :p2xCm var:x2. (var:x1 var:x2) math:product var:x3} => {var:x0 :pL1x2Cm var:x3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+              [ a r:Inference; r:gives {:meas47 :pL3x4Cm 870.227272727273}; r:evidence (
+               [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+               [ a r:Inference; r:gives {:meas47 :cL3 15.9090909090909}; r:evidence (
+                [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+                [ a r:Inference; r:gives {:meas47 :dL3m -15.9090909090909}; r:evidence (
+                 [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+                 [ a r:Inference; r:gives {:meas47 :cL1 -0.0628571428571429}; r:evidence (
+                  [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+                  [ a r:Inference; r:gives {:meas47 :dy12Cm 2.2}; r:evidence (
+                   [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+                   [ a r:Extraction; r:gives {:meas47 :p1yCm 7.8}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+                   [ a r:Extraction; r:gives {:meas47 :p2yCm 5.6}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+                   [ a r:Fact; r:gives {(7.8 5.6) math:difference 2.2}]);
+                   r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+                   r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo 7.8];
+                   r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo 5.6];
+                   r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo 2.2];
+                   r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3. {var:x0 a :Measurement. var:x0 :p1yCm var:x1. var:x0 :p2yCm var:x2. (var:x1 var:x2) math:difference var:x3} => {var:x0 :dy12Cm var:x3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+                  [ a r:Inference; r:gives {:meas47 :dx12Cm -35.0}; r:evidence (
+                   [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+                   [ a r:Extraction; r:gives {:meas47 :p1xCm 10.1}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+                   [ a r:Extraction; r:gives {:meas47 :p2xCm 45.1}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+                   [ a r:Fact; r:gives {(10.1 45.1) math:difference -35.0}]);
+                   r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+                   r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo 10.1];
+                   r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo 45.1];
+                   r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo -35.0];
+                   r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3. {var:x0 a :Measurement. var:x0 :p1xCm var:x1. var:x0 :p2xCm var:x2. (var:x1 var:x2) math:difference var:x3} => {var:x0 :dx12Cm var:x3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+                  [ a r:Fact; r:gives {(2.2 -35.0) math:quotient -0.0628571428571429}]);
+                  r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+                  r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo 2.2];
+                  r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo -35.0];
+                  r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo -0.0628571428571429];
+                  r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3. {var:x0 a :Measurement. var:x0 :dy12Cm var:x1. var:x0 :dx12Cm var:x2. (var:x1 var:x2) math:quotient var:x3} => {var:x0 :cL1 var:x3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+                 [ a r:Fact; r:gives {(1 -0.0628571428571429) math:quotient -15.9090909090909}]);
+                 r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+                 r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo -0.0628571428571429];
+                 r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo -15.9090909090909];
+                 r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2. {var:x0 a :Measurement. var:x0 :cL1 var:x1. (1 var:x1) math:quotient var:x2} => {var:x0 :dL3m var:x2}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+                [ a r:Fact; r:gives {(0 -15.9090909090909) math:difference 15.9090909090909}]);
+                r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+                r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo -15.9090909090909];
+                r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo 15.9090909090909];
+                r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2. {var:x0 a :Measurement. var:x0 :dL3m var:x1. (0 var:x1) math:difference var:x2} => {var:x0 :cL3 var:x2}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+               [ a r:Extraction; r:gives {:meas47 :p4xCm 54.7}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+               [ a r:Fact; r:gives {(15.9090909090909 54.7) math:product 870.227272727273}]);
+               r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+               r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo 15.9090909090909];
+               r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo 54.7];
+               r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo 870.227272727273];
+               r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3. {var:x0 a :Measurement. var:x0 :cL3 var:x1. var:x0 :p4xCm var:x2. (var:x1 var:x2) math:product var:x3} => {var:x0 :pL3x4Cm var:x3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+              [ a r:Fact; r:gives {(-2.83485714285714 870.227272727273) math:difference -873.06212987013}]);
+              r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+              r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo -2.83485714285714];
+              r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo 870.227272727273];
+              r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo -873.06212987013];
+              r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3. {var:x0 a :Measurement. var:x0 :pL1x2Cm var:x1. var:x0 :pL3x4Cm var:x2. (var:x1 var:x2) math:difference var:x3} => {var:x0 :dd24Cm var:x3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+             [ a r:Inference; r:gives {:meas47 :dy24Cm -22.9}; r:evidence (
+              [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+              [ a r:Extraction; r:gives {:meas47 :p2yCm 5.6}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+              [ a r:Extraction; r:gives {:meas47 :p4yCm 28.5}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+              [ a r:Fact; r:gives {(5.6 28.5) math:difference -22.9}]);
+              r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+              r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo 5.6];
+              r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo 28.5];
+              r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo -22.9];
+              r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3. {var:x0 a :Measurement. var:x0 :p2yCm var:x1. var:x0 :p4yCm var:x2. (var:x1 var:x2) math:difference var:x3} => {var:x0 :dy24Cm var:x3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+             [ a r:Fact; r:gives {(-873.06212987013 -22.9) math:difference -850.16212987013}]);
+             r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+             r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo -873.06212987013];
+             r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo -22.9];
+             r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo -850.16212987013];
+             r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3. {var:x0 a :Measurement. var:x0 :dd24Cm var:x1. var:x0 :dy24Cm var:x2. (var:x1 var:x2) math:difference var:x3} => {var:x0 :ddy24Cm var:x3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+            [ a r:Inference; r:gives {:meas47 :ddL13 -15.9719480519481}; r:evidence (
+             [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+             [ a r:Inference; r:gives {:meas47 :cL1 -0.0628571428571429}; r:evidence (
+              [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+              [ a r:Inference; r:gives {:meas47 :dy12Cm 2.2}; r:evidence (
+               [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+               [ a r:Extraction; r:gives {:meas47 :p1yCm 7.8}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+               [ a r:Extraction; r:gives {:meas47 :p2yCm 5.6}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+               [ a r:Fact; r:gives {(7.8 5.6) math:difference 2.2}]);
+               r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+               r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo 7.8];
+               r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo 5.6];
+               r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo 2.2];
+               r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3. {var:x0 a :Measurement. var:x0 :p1yCm var:x1. var:x0 :p2yCm var:x2. (var:x1 var:x2) math:difference var:x3} => {var:x0 :dy12Cm var:x3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+              [ a r:Inference; r:gives {:meas47 :dx12Cm -35.0}; r:evidence (
+               [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+               [ a r:Extraction; r:gives {:meas47 :p1xCm 10.1}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+               [ a r:Extraction; r:gives {:meas47 :p2xCm 45.1}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+               [ a r:Fact; r:gives {(10.1 45.1) math:difference -35.0}]);
+               r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+               r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo 10.1];
+               r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo 45.1];
+               r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo -35.0];
+               r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3. {var:x0 a :Measurement. var:x0 :p1xCm var:x1. var:x0 :p2xCm var:x2. (var:x1 var:x2) math:difference var:x3} => {var:x0 :dx12Cm var:x3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+              [ a r:Fact; r:gives {(2.2 -35.0) math:quotient -0.0628571428571429}]);
+              r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+              r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo 2.2];
+              r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo -35.0];
+              r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo -0.0628571428571429];
+              r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3. {var:x0 a :Measurement. var:x0 :dy12Cm var:x1. var:x0 :dx12Cm var:x2. (var:x1 var:x2) math:quotient var:x3} => {var:x0 :cL1 var:x3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+             [ a r:Inference; r:gives {:meas47 :cL3 15.9090909090909}; r:evidence (
+              [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+              [ a r:Inference; r:gives {:meas47 :dL3m -15.9090909090909}; r:evidence (
+               [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+               [ a r:Inference; r:gives {:meas47 :cL1 -0.0628571428571429}; r:evidence (
+                [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+                [ a r:Inference; r:gives {:meas47 :dy12Cm 2.2}; r:evidence (
+                 [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+                 [ a r:Extraction; r:gives {:meas47 :p1yCm 7.8}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+                 [ a r:Extraction; r:gives {:meas47 :p2yCm 5.6}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+                 [ a r:Fact; r:gives {(7.8 5.6) math:difference 2.2}]);
+                 r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+                 r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo 7.8];
+                 r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo 5.6];
+                 r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo 2.2];
+                 r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3. {var:x0 a :Measurement. var:x0 :p1yCm var:x1. var:x0 :p2yCm var:x2. (var:x1 var:x2) math:difference var:x3} => {var:x0 :dy12Cm var:x3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+                [ a r:Inference; r:gives {:meas47 :dx12Cm -35.0}; r:evidence (
+                 [ a r:Extraction; r:gives {:meas47 a :Measurement}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+                 [ a r:Extraction; r:gives {:meas47 :p1xCm 10.1}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+                 [ a r:Extraction; r:gives {:meas47 :p2xCm 45.1}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+                 [ a r:Fact; r:gives {(10.1 45.1) math:difference -35.0}]);
+                 r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+                 r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo 10.1];
+                 r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo 45.1];
+                 r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo -35.0];
+                 r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3. {var:x0 a :Measurement. var:x0 :p1xCm var:x1. var:x0 :p2xCm var:x2. (var:x1 var:x2) math:difference var:x3} => {var:x0 :dx12Cm var:x3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+                [ a r:Fact; r:gives {(2.2 -35.0) math:quotient -0.0628571428571429}]);
+                r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+                r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo 2.2];
+                r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo -35.0];
+                r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo -0.0628571428571429];
+                r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3. {var:x0 a :Measurement. var:x0 :dy12Cm var:x1. var:x0 :dx12Cm var:x2. (var:x1 var:x2) math:quotient var:x3} => {var:x0 :cL1 var:x3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+               [ a r:Fact; r:gives {(1 -0.0628571428571429) math:quotient -15.9090909090909}]);
+               r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+               r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo -0.0628571428571429];
+               r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo -15.9090909090909];
+               r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2. {var:x0 a :Measurement. var:x0 :cL1 var:x1. (1 var:x1) math:quotient var:x2} => {var:x0 :dL3m var:x2}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+              [ a r:Fact; r:gives {(0 -15.9090909090909) math:difference 15.9090909090909}]);
+              r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+              r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo -15.9090909090909];
+              r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo 15.9090909090909];
+              r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2. {var:x0 a :Measurement. var:x0 :dL3m var:x1. (0 var:x1) math:difference var:x2} => {var:x0 :cL3 var:x2}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+             [ a r:Fact; r:gives {(-0.0628571428571429 15.9090909090909) math:difference -15.9719480519481}]);
+             r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+             r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo -0.0628571428571429];
+             r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo 15.9090909090909];
+             r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo -15.9719480519481];
+             r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3. {var:x0 a :Measurement. var:x0 :cL1 var:x1. var:x0 :cL3 var:x2. (var:x1 var:x2) math:difference var:x3} => {var:x0 :ddL13 var:x3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+            [ a r:Fact; r:gives {(-850.16212987013 -15.9719480519481) math:quotient 53.2284557340792}]);
+            r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+            r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo -850.16212987013];
+            r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo -15.9719480519481];
+            r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo 53.2284557340792];
+            r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3. {var:x0 a :Measurement. var:x0 :ddy24Cm var:x1. var:x0 :ddL13 var:x2. (var:x1 var:x2) math:quotient var:x3} => {var:x0 :p6xCm var:x3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+           [ a r:Extraction; r:gives {:meas47 :p2xCm 45.1}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+           [ a r:Fact; r:gives {(53.2284557340792 45.1) math:difference 8.12845573407923}]);
+           r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+           r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo 53.2284557340792];
+           r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo 45.1];
+           r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo 8.12845573407923];
+           r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3. {var:x0 a :Measurement. var:x0 :p6xCm var:x1. var:x0 :p2xCm var:x2. (var:x1 var:x2) math:difference var:x3} => {var:x0 :dx62Cm var:x3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+          [ a r:Fact; r:gives {(-0.0628571428571429 8.12845573407923) math:product -0.51093150328498}]);
+          r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+          r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo -0.0628571428571429];
+          r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo 8.12845573407923];
+          r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo -0.51093150328498];
+          r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3. {var:x0 a :Measurement. var:x0 :cL1 var:x1. var:x0 :dx62Cm var:x2. (var:x1 var:x2) math:product var:x3} => {var:x0 :pL1dx62Cm var:x3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+         [ a r:Extraction; r:gives {:meas47 :p2yCm 5.6}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+         [ a r:Fact; r:gives {(-0.51093150328498 5.6) math:sum 5.08906849671502}]);
+         r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+         r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo -0.51093150328498];
+         r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo 5.6];
+         r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo 5.08906849671502];
+         r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3. {var:x0 a :Measurement. var:x0 :pL1dx62Cm var:x1. var:x0 :p2yCm var:x2. (var:x1 var:x2) math:sum var:x3} => {var:x0 :p6yCm var:x3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+        [ a r:Extraction; r:gives {:meas47 :p4yCm 28.5}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3>]]
+        [ a r:Fact; r:gives {(5.08906849671502 28.5) math:difference -23.410931503285}]);
+        r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+        r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo 5.08906849671502];
+        r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo 28.5];
+        r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo -23.410931503285];
+        r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3. {var:x0 a :Measurement. var:x0 :p6yCm var:x1. var:x0 :p4yCm var:x2. (var:x1 var:x2) math:difference var:x3} => {var:x0 :dy64Cm var:x3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+       [ a r:Fact; r:gives {(-23.410931503285 2) math:exponentiation 548.071713851501}]);
+       r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+       r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo -23.410931503285];
+       r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo 548.071713851501];
+       r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2. {var:x0 a :Measurement. var:x0 :dy64Cm var:x1. (var:x1 2) math:exponentiation var:x2} => {var:x0 :sdy64Cm2 var:x2}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+      [ a r:Fact; r:gives {(2.1654425265643 548.071713851501) math:sum 550.237156378065}]);
+      r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+      r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo 2.1654425265643];
+      r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo 548.071713851501];
+      r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo 550.237156378065];
+      r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3. {var:x0 a :Measurement. var:x0 :sdx64Cm2 var:x1. var:x0 :sdy64Cm2 var:x2. (var:x1 var:x2) math:sum var:x3} => {var:x0 :ssd64Cm2 var:x3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+     [ a r:Fact; r:gives {(550.237156378065 0.5) math:exponentiation 23.4571344451548}]);
+     r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+     r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo 550.237156378065];
+     r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo 23.4571344451548];
+     r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2. {var:x0 a :Measurement. var:x0 :ssd64Cm2 var:x1. (var:x1 0.5) math:exponentiation var:x2} => {var:x0 :d64Cm var:x2}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+    [ a r:Fact; r:gives {(21.5489004646173 23.4571344451548) math:difference -1.9082339805375}]);
+    r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+    r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo 21.5489004646173];
+    r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo 23.4571344451548];
+    r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo -1.9082339805375];
+    r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3. {var:x0 a :Measurement. var:x0 :d53Cm var:x1. var:x0 :d64Cm var:x2. (var:x1 var:x2) math:difference var:x3} => {var:x0 :dCm var:x3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]
+   [ a r:Fact; r:gives {-1.9082339805375 math:lessThan -1.25}]);
+   r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+   r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo -1.9082339805375];
+   r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1. {var:x0 a :Measurement. var:x0 :dCm var:x1. var:x1 math:lessThan -1.25} => {var:x0 a :LLDAlarm}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3>]]]);
+  r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#meas47"]];
+  r:rule [ a r:Extraction; r:gives {@forAll var:x0. {var:x0 a :Measurement. var:x0 a :LLDAlarm} => {var:x0 a :LLDAlarm}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2003/03swap/lldmF.n3>]]];
+
+ r:gives {
+  :meas47 a :LLDAlarm.
+ }].
+
+#ENDS 30 msec
+#Trunk : 42/166 = 25.3012048192771 %
+#Branch: 1/40 = 2.5 %
+

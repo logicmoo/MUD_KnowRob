@@ -1,0 +1,199 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix dce: <http://purl.org/dc/elements/1.1/>.
+@prefix owl:  <http://www.w3.org/2002/07/owl#>.
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix event: <http://eulersharp.sourceforge.net/2003/03swap/event#>.
+@prefix agent: <http://eulersharp.sourceforge.net/2003/03swap/agent#>.
+@prefix fos: <http://eulersharp.sourceforge.net/2003/03swap/foster#>.
+@prefix workflow: <http://eulersharp.sourceforge.net/2003/03swap/workflow#>.
+@prefix computer: <http://eulersharp.sourceforge.net/2003/03swap/computer#>.
+@prefix doc: <http://eulersharp.sourceforge.net/2003/03swap/document#>.
+@prefix digital: <http://eulersharp.sourceforge.net/2003/03swap/digitalProcedure#>.
+
+<http://eulersharp.sourceforge.net/2003/03swap/digitalProcedure>
+	a owl:Ontology;
+	dce:title """Digital Procedure"""@en;
+	dce:creator """Hans Cools, MD; Agfa Healthcare, Belgium"""@nl;
+	dce:contributor """Kristof Depraetere, Boris De Vloed, Giovanni Mels; Agfa Healthcare, Belgium"""@nl;
+	dce:publisher """Agfa Healthcare, Belgium"""@en;
+	dce:description """Formal description of digital procedure."""@en;
+	dce:format """OWL Full"""@en.
+
+#
+# CLASSES
+#
+
+digital:Procedure
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/digitalProcedure#>;
+	rdfs:label """digital computer procedure"""@en;
+	skos:definition """Procedure performed on a digital computer."""@en;
+	rdfs:subClassOf event:Procedure, [
+		a owl:Restriction; owl:onProperty agent:hasAgent; owl:someValuesFrom computer:Software].
+
+digital:Input
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/digitalProcedure#>;
+	rdfs:label """digital computer input"""@en;
+	skos:definition """Input of a digital computer procedure."""@en;
+	rdfs:subClassOf event:Input, [
+		a owl:Restriction; owl:onProperty event:inputOf; owl:someValuesFrom digital:Procedure].
+
+digital:Output
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/digitalProcedure#>;
+	rdfs:label """digital computer output"""@en;
+	skos:definition """Output of a digital computer procedure."""@en;
+	rdfs:subClassOf event:Output, [
+		a owl:Restriction; owl:onProperty event:outputOf; owl:someValuesFrom digital:Procedure].
+
+digital:LoggingIn
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/digitalProcedure#>;
+	rdfs:label """logging in"""@en;
+	skos:definition """Accessing a multiuser computer system by controlled input of username and password."""@en;
+	rdfs:subClassOf digital:Procedure, [
+		#a owl:Restriction; owl:onProperty agent:hasPlayedRole; owl:someValuesFrom agent:User], [
+		a owl:Restriction; owl:onProperty event:hasInput; owl:someValuesFrom agent:UserCredential].
+
+digital:Request
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/digitalProcedure#>;
+	rdfs:label """digital computer request"""@en;
+	skos:definition """Request as digital computer input."""@en;
+	rdfs:subClassOf digital:Input, event:Request.
+
+digital:SearchRequest
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/digitalProcedure#>;
+	rdfs:label """digital search request"""@en;
+	skos:definition """Request for digital searching."""@en;
+	rdfs:subClassOf digital:Request, [
+		a owl:Restriction; owl:onProperty event:hasInput; owl:someValuesFrom digital:Searching].
+
+digital:Searching
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/digitalProcedure#>;
+	rdfs:label """digital searching"""@en;
+	skos:definition """Searching of digital data."""@en;
+	rdfs:subClassOf digital:Procedure, [
+		a owl:Restriction; owl:onProperty event:hasInput; owl:someValuesFrom digital:SearchRequest], [
+		a owl:Restriction; owl:onProperty agent:hasAgent; owl:someValuesFrom computer:SearchEngine], [
+		a owl:Restriction; owl:onProperty event:hasOutput; owl:someValuesFrom digital:SearchResult].
+
+digital:SearchResult
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/digitalProcedure#>;
+	rdfs:label """digital search result"""@en;
+	skos:definition """Output of digital searching."""@en;
+	rdfs:subClassOf [
+		a owl:Restriction; owl:onProperty event:hasOutput; owl:someValuesFrom digital:Searching].
+
+digital:QueryLanguage
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/digitalProcedure#>;
+	rdfs:label """digital query language"""@en;
+	skos:definition """Language to formulate a digital computer query."""@en;
+	rdfs:subClassOf fos:Language.
+
+digital:Querying
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/digitalProcedure#>;
+	rdfs:label """digital querying"""@en;
+	skos:definition """Executing a query on a digital computer."""@en;
+	rdfs:subClassOf digital:Procedure, [
+		a owl:Restriction; owl:onProperty event:hasInput; owl:someValuesFrom digital:Query], [
+		a owl:Restriction; owl:onProperty event:hasOutput; owl:someValuesFrom digital:Result].
+
+digital:Query
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/digitalProcedure#>;
+	rdfs:label """digital query"""@en;
+	skos:definition """Input of digital querying."""@en;
+	rdfs:subClassOf digital:Input.
+
+digital:QueryPlan
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/digitalProcedure#>;
+	rdfs:label """query plan"""@en;
+	skos:definition """Plan describing algorithms to be used for executing a query."""@en;
+	rdfs:subClassOf event:Plan.
+
+digital:Template
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/digitalProcedure#>;
+	rdfs:label """digital template"""@en;
+	skos:definition """Standardized file used by computer software as a pre-formatted example on which to base other files."""@en.
+
+digital:Result
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/digitalProcedure#>;
+	rdfs:label """digital result"""@en;
+	skos:definition """Output of digital querying."""@en;
+	rdfs:subClassOf digital:Output, [
+		a owl:Restriction; owl:onProperty event:hasOutput; owl:someValuesFrom digital:Querying].
+
+#
+# PROPERTIES
+#
+
+digital:searchingDuring
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/digitalProcedure#>;
+	rdfs:label """searching during"""@en;
+	skos:definition """Specifying a period wherein is searched digitally."""@en;
+	rdfs:domain digital:Searching;
+	rdfs:range event:Event.
+
+digital:hasSearchingPeriod
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/digitalProcedure#>;
+	rdfs:label """has searching period"""@en;
+	skos:definition """Specifying a list with beginning an end of a period wherein is searched digitally."""@en;
+	rdfs:domain digital:Searching;
+	rdfs:range rdf:List.
+
+digital:hasSearchingDateTime
+	a owl:DatatypeProperty, owl:FunctionalProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/digitalProcedure#>;
+	rdfs:label """has searching date time"""@en;
+	skos:definition """Specifying a date time on which is searched."""@en;
+	rdfs:domain digital:Searching;
+	rdfs:range xsd:dateTime.
+
+digital:hasResult
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/digitalProcedure#>;
+	skos:definition """Specifying a digital result for a digital query."""@en;
+	rdfs:domain digital:Query;
+	rdfs:range digital:Result.
+
+digital:resultOf
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/digitalProcedure#>;
+	skos:definition """Specifying a digital query of a digital result."""@en;
+	owl:inverseOf digital:hasResult;
+	rdfs:domain digital:Result;
+	rdfs:range digital:Query.
+
+digital:hasSelected
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/digitalProcedure#>;
+	skos:definition """Specifying a list of (universal and existential) bound variables in the conclusion of an N3 rule or the answer of an N3 query."""@en;
+	rdfs:domain digital:Result;
+	rdfs:range rdf:List.
+
+digital:matchesExpression
+	a rdf:Property;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/digitalProcedure#>;
+	skos:definition """Specifying terms in an expression matched in a digital content."""@en;
+	rdfs:comment """Used in builtin; expression syntax in the triple quoted literal:
+		* "term1 term2": phrase of terms
+		* term3 term4 : implicit AND of two terms
+		* term3 OR term4 : explicit OR of two terms
+		* -term5 : excluding the term
+		* AND has higher precedence than OR."""@en;
+	rdfs:domain doc:DigitalContent;
+	rdfs:range rdfs:Literal.

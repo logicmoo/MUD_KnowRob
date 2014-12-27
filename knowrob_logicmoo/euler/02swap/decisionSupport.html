@@ -1,0 +1,166 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>
+		<meta name="generator" content="AGFA HealthCare N3 to HTML convertor"/>
+		<link rel="alternate" type="text/n3" title="RDF Representation" href="http://eulersharp.sourceforge.net/2003/03swap/decisionSupport"/>
+		<title>decisionSupport</title>
+		<style type="text/css">
+			a[href]:link { text-decoration:none; }
+			a[href]:visited { text-decoration:none; }
+			a[href]:active { text-decoration:underline; }
+			a:hover { background:#ffa; }
+			.keyword { font-weight: bold; }
+			.literal { color: blue }
+			.uri { color: darkblue }
+			.qname { color: black }
+			.var { color: gray }
+			.comment { font-style:italic; color: darkgreen }
+		</style>
+	</head>
+	<body>
+	<div>
+		<pre>
+<span class="keyword">@prefix</span> log: <a class="uri" href="http://www.w3.org/2000/10/swap/log">&lt;http://www.w3.org/2000/10/swap/log#&gt;</a>.
+<span class="keyword">@prefix</span> owl: <a class="uri" href="http://www.w3.org/2002/07/owl">&lt;http://www.w3.org/2002/07/owl#&gt;</a>.
+<span class="keyword">@prefix</span> rdfs: <a class="uri" href="http://www.w3.org/2000/01/rdf-schema">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</a>.
+<span class="keyword">@prefix</span> xsd: <a class="uri" href="http://www.w3.org/2001/XMLSchema">&lt;http://www.w3.org/2001/XMLSchema#&gt;</a>.
+<span class="keyword">@prefix</span> dce: <a class="uri" href="http://purl.org/dc/elements/1.1/">&lt;http://purl.org/dc/elements/1.1/&gt;</a>.
+<span class="keyword">@prefix</span> skos: <a class="uri" href="http://www.w3.org/2004/02/skos/core.html#">&lt;http://www.w3.org/2004/02/skos/core#&gt;</a>.
+<span class="keyword">@prefix</span> event: <a class="uri" href="http://eulersharp.sourceforge.net/2003/03swap/event.html#">&lt;http://eulersharp.sourceforge.net/2003/03swap/event#&gt;</a>.
+<span class="keyword">@prefix</span> clinobs: <a class="uri" href="http://www.agfa.com/w3c/2009/clinicalObservation.html#">&lt;http://www.agfa.com/w3c/2009/clinicalObservation#&gt;</a>.
+<span class="keyword">@prefix</span> computer: <a class="uri" href="http://eulersharp.sourceforge.net/2003/03swap/computer.html#">&lt;http://eulersharp.sourceforge.net/2003/03swap/computer#&gt;</a>.
+<span class="keyword">@prefix</span> digproc: <a class="uri" href="http://eulersharp.sourceforge.net/2003/03swap/digitalProcedure.html#">&lt;http://eulersharp.sourceforge.net/2003/03swap/digitalProcedure#&gt;</a>.
+<span class="keyword">@prefix</span> quant: <a class="uri" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#">&lt;http://eulersharp.sourceforge.net/2003/03swap/quantities#&gt;</a>.
+<span class="keyword">@prefix</span> decisionsupport: <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/decisionSupport#&gt;</a>.
+
+<a class="uri" href="http://eulersharp.sourceforge.net/2003/03swap/decisionSupport.html">&lt;http://eulersharp.sourceforge.net/2003/03swap/decisionSupport&gt;</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Ontology</a>;
+	<a class="qname" href="http://purl.org/dc/elements/1.1">dce:title</a> <span class="literal">&quot;&quot;&quot;Decision Support&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://purl.org/dc/elements/1.1">dce:creator</a> <span class="literal">&quot;&quot;&quot;Hans Cools, MD; Agfa Healthcare, Belgium&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://purl.org/dc/elements/1.1">dce:contributor</a> <span class="literal">&quot;&quot;&quot;Kristof Depraetere; Agfa Healthcare, Belgium&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://purl.org/dc/elements/1.1">dce:publisher</a> <span class="literal">&quot;&quot;&quot;Agfa Healthcare, Belgium&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://purl.org/dc/elements/1.1">dce:description</a> <span class="literal">&quot;&quot;&quot;Formal description of decision support.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://purl.org/dc/elements/1.1">dce:format</a> <span class="literal">&quot;&quot;&quot;OWL Full&quot;&quot;&quot;</span>@en.
+
+<span class="comment">#</span>
+<span class="comment"># CLASSES</span>
+<span class="comment">#</span>
+
+<a class="qname" name="Request">decisionsupport:Request</a>	<span class="comment"># TBD</span>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/decisionSupport#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;decision support request&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/digitalProcedure.html#Request">digproc:Request</a>.			
+
+<a class="qname" name="ClinicalRequest">decisionsupport:ClinicalRequest</a> <span class="comment"># TBD</span>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/decisionSupport#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;clinical decision support request&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="#Request">decisionsupport:Request</a>, [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="#hasObservablesResultFormula">decisionsupport:hasObservablesResultFormula</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="#ClinicalObservablesResultFormula">decisionsupport:ClinicalObservablesResultFormula</a>].
+
+<a class="qname" name="ResultFormula">decisionsupport:ResultFormula</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/decisionSupport#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;decision support result formula&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Formula related to its literal form expressing patient state in triples, as input for clinical decision support.&quot;&quot;&quot;</span>@en;	
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="http://www.w3.org/2000/10/swap/log">log:Formula</a>.
+
+<a class="qname" name="ObservablesResultFormula">decisionsupport:ObservablesResultFormula</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/decisionSupport#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;decision support observables result formula&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Formula related to its literal form expressing findings in boolean (nested) triples, as input for decision support.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="http://www.w3.org/2000/10/swap/log">log:Formula</a>, [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://www.w3.org/2000/10/swap/log">log:n3String</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="http://www.w3.org/2000/10/swap/log">log:String</a>], [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/event.html#hasObject">event:hasObject</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/event.html#Finding">event:Finding</a>].
+
+<a class="qname" name="ClinicalObservablesResultFormula">decisionsupport:ClinicalObservablesResultFormula</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/decisionSupport#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;clinical decision support observables result formula&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Formula related to its literal form expressing clinical findings in boolean (nested) triples, as input for clinical decision support.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="#ObservablesResultFormula">decisionsupport:ObservablesResultFormula</a>, [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://www.w3.org/2000/10/swap/log">log:n3String</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="http://www.w3.org/2000/10/swap/log">log:String</a>], [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/event.html#hasObject">event:hasObject</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="http://www.agfa.com/w3c/2009/clinicalObservation.html#Finding">clinobs:Finding</a>].
+
+<a class="qname" name="StateResultFormula">decisionsupport:StateResultFormula</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/decisionSupport#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;decision support state result formula&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Formula related to its literal form expressing state of something in triples, as object of a clinical decision support request.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="http://www.w3.org/2000/10/swap/log">log:Formula</a>.
+
+<a class="qname" name="PatientStateResultFormula">decisionsupport:PatientStateResultFormula</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/decisionSupport#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;decision support patient state result formula&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Formula related to its literal form expressing patient state in triples, as input for clinical decision support.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="#StateResultFormula">decisionsupport:StateResultFormula</a>.
+
+<a class="qname" name="Belief">decisionsupport:Belief</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/decisionSupport#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;belief probability&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Calculated probability of a belief in something.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#Probability">quant:Probability</a>, [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#hasMeasurement">quant:hasMeasurement</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> [
+			<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#hasValue">quant:hasValue</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="http://www.w3.org/2001/XMLSchema">xsd:double</a>]].
+
+<span class="comment"># TherapyTheory, DiagnosisTheory</span>
+
+<span class="comment"># evidence, hypothesis</span>
+<span class="comment"># MD: date, author, quality rank</span>
+
+<span class="comment">#</span>
+<span class="comment"># PROPERTIES</span>
+<span class="comment">#</span>
+
+<span class="comment"># decisionsupport:hasStrategy</span>
+<span class="comment">#	a owl:ObjectProperty;</span>
+<span class="comment">#	rdfs:isDefinedBy &lt;http://eulersharp.sourceforge.net/2003/03swap/decisionSupport#&gt;;</span>
+<span class="comment">#	skos:definition &quot;&quot;&quot;Specifying a strategy for a decision support request.&quot;&quot;&quot;@en;</span>
+<span class="comment">#	rdfs:domain decisionsupport:Request;</span>
+<span class="comment">#	rdfs:range decisionsupport:Strategy.</span>
+
+<a class="qname" name="hasObservablesResultFormula">decisionsupport:hasObservablesResultFormula</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:ObjectProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/decisionSupport#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Specifying an observables result formula for a decision support request.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="#Request">decisionsupport:Request</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="#ObservablesResultFormula">decisionsupport:ObservablesResultFormula</a>.
+
+<a class="qname" name="hasPatientStateResultFormula">decisionsupport:hasPatientStateResultFormula</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:ObjectProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/decisionSupport#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Specifying a patient state result formula for a clinical decision support request.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="#ClinicalRequest">decisionsupport:ClinicalRequest</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="#PatientStateResultFormula">decisionsupport:PatientStateResultFormula</a>.
+
+<a class="qname" name="hasResultFormula">decisionsupport:hasResultFormula</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:ObjectProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/decisionSupport#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Specifying a result formula for a decision support request.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="#Request">decisionsupport:Request</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="#ResultFormula">decisionsupport:ResultFormula</a>.
+
+<a class="qname" name="beliefIn">decisionsupport:beliefIn</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:ObjectProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/decisionSupport#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Specifying something that has a belief probability, e.g. a clinical therapy that is believed to be performed with a certain chance of being successful.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="#Belief">decisionsupport:Belief</a>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#note">skos:note</a> <span class="literal">&quot;&quot;&quot;rdfs:range not specified, because it can be virtually anything; e.g. http://www.agfa.com/w3c/2009/therapy#Therapy (clinical therapy).&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;&quot;&quot;E.g. ([quant:hasValue 9.660533530762310e-001]) decisionsupport:beliefIn i:Lomefloxacin_400mg_PO_UID_3D.&quot;&quot;&quot;</span>@en.
+
+<a class="qname" name="hasBelief">decisionsupport:hasBelief</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:ObjectProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/decisionSupport#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Specifying a belief probability of something, e.g. a clinical therapy.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="#Belief">decisionsupport:Belief</a>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#note">skos:note</a> <span class="literal">&quot;&quot;&quot;rdfs:domain not specified, because it can be virtually anything; e.g. http://www.agfa.com/w3c/2009/therapy#Therapy (clinical therapy).&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2002/07/owl">owl:inverseOf</a> <a class="qname" href="#beliefIn">decisionsupport:beliefIn</a>.
+		</pre>
+	</div>
+	</body>
+</html>

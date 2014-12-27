@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>RGB</title>
+    <link rel="stylesheet" type="text/css" href="http://www.w3.org/StyleSheets/base.css">
+    <style type="text/css">a:hover {background:#ffa;}</style>
+    <style type="text/css">img {vertical-align:text-top;}</style>
+</head>
+
+<body>
+<h1><img src="http://eulersharp.sourceforge.net/2003/03swap/eye.png" alt="EYE" height="37" width="37"/> RGB</h1><pre>
+RGB stands for the red, green and blue layers of the Semantic
+Web <a href="http://www.w3.org/DesignIssues/diagrams/sweb-stack/2006a.png">layer cake</a> i.e. Linked Data, Unifying Logic and Proof.
+
+Given Linked Data <a href="http://eulersharp.sourceforge.net/2006/02swap/eye-note.txt">EYE</a> is trying to realize the full potential
+of EULER i.e. EYE = Unifying Logic + Explainable Reasoning.
+
+
+Designissues
+------------
+
+o <a href="http://www.w3.org/2000/10/swap/reason.n3"
+     style="background: #c4efff; color: #000000">Proof construction using the proof vocabulary</a><span style="background: #c4efff">             </span>
+o <a href="http://eulersharp.sourceforge.net/2007/07test/witchE.html"
+     style="background: #c4efff; color: #000000">Proof without @ keywords and without bindings</a><span style="background: #c4efff">             </span>
+
+o <a href="http://www.w3.org/2000/10/swap/doc/CwmBuiltins"
+     style="background: #cefcb4; color: #000000">Cwm Built-in functions</a><span style="background: #cefcb4">                                    </span>
+o <a href="http://eulersharp.sourceforge.net/2003/03swap/log-rules.html"
+     style="background: #cefcb4; color: #000000">Logic Framework Extension builtins</a><span style="background: #cefcb4">                        </span>
+o <a href="http://www.w3.org/TR/rif-dtb/"
+     style="background: #cefcb4; color: #000000">RIF Datatypes and Built-Ins</a><span style="background: #cefcb4">                               </span>
+o <a href="http://eulersharp.sourceforge.net/2003/03swap/prolog.html"
+     style="background: #cefcb4; color: #000000">Prolog builtins</a><span style="background: #cefcb4">                                           </span>
+
+o <a href="http://www.w3.org/TR/turtle/"
+     style="background: #fda390; color: #000000">Turtle without @ keywords</a><span style="background: #fda390">                                 </span>
+o <a href="http://www.w3.org/TeamSubmission/n3/#Quoting"
+     style="background: #fda390; color: #000000">Notation 3 graph literals</a><span style="background: #fda390">                                 </span>
+</pre>
+</body>
+</html>

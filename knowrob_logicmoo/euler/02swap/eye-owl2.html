@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>EYE and OWL 2</title>
+    <link rel="stylesheet" href="style.css" type="text/css"/>
+    <style type="text/css">a:hover {background:#ffa;}</style>
+</head>
+
+<body xml:lang="en" lang="en">
+
+<h1>EYE and OWL 2</h1>
+
+<h2>EYE - Euler Yet another proof Engine</h2>
+<p>
+    EYE is an inference engine supporting logic based proofs.
+    It is a backward-forward-backward chaining reasoner enhanced with Euler path detection.<br/>
+    The backward-forward-backward chaining is realized via an underlying Prolog
+    backward chaining, a forward meta-level reasoning and a backward proof construction.
+</p>
+
+<p>
+    EYE is looking throuh <a href="http://www.w3.org/TeamSubmission/n3/">N3</a> glasses and
+    doing inferencing in <a href="http://www.w3.org/DesignIssues/N3Logic">N3Logic</a>.
+    Internally EYE is using PCL (Prolog Coherent Logic) intermediate code. Every FOL (First Order Logic)
+    theory has a conservative extension that is equivalent to a PCL theory, a result that goes back
+    to Thoralf Skolem who developed Coherent Logic to obtain metamathematical results in
+    lattice theory and projective geometry [1][2].
+</p>
+
+<p>
+    EYE strongly benefits from the demand driven indexing of <a href="http://www.dcc.fc.up.pt/~vsc/Yap/">YAP-Prolog</a>
+    and when EYE is also driven by demand driven theory selection, the performance issues can be engineered in a scalable way.
+    For instance a case with 300000 PCL subsumption clauses takes EYE 4 sec whereas it takes EyeS
+    (same engine on top of SWI-Prolog) 10 hours and EyeJ (same engine on top of JLog) 68 hours.
+</p>
+
+<p>
+    <a href="http://eulersharp.sourceforge.net/README">README</a>,
+    <a href="http://eulersharp.sourceforge.net/GUIDE">GUIDE</a>,
+    <a href="http://eulersharp.sourceforge.net/DONE">DONE</a> and
+    <a href="http://eulersharp.sourceforge.net/LICENSE">LICENSE</a><br/>
+</p>
+
+<p>
+[1] <a href="http://www.ii.uib.no/acl/description.pdf">Research Proposal: Automating Coherent Logic</a> Marc Bezem, Thierry Coquand, Arild Waaler June 1, 2006<br/>
+
+[2] Thoralf Skolem, <i>Logisch-kombinatorische Untersuchungen &#252;ber die Erf&#252;llbarkeit und Beweisbarkeit mathematischen S&#228;tze nebst einem Theoreme &#252;ber dichte Mengen.</i>
+    Videnskabsakademiet i Kristiania, Skrifter I, No. 4, 1919, 1-36.
+</p>
+
+
+<h2>OWL 2 implementation</h2>
+<p>
+    EYE is answering queries given RDF data and a selected set of theories from
+</p>
+
+<ul>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/owl-AllDisjointClasses.html">owl-AllDisjointClasses</a></li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/owl-AllDisjointProperties.html">owl-AllDisjointProperties</a></li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/owl-allValuesFrom.html">owl-allValuesFrom</a></li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/owl-AsymmetricProperty.html">owl-AsymmetricProperty</a></li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/owl-complementOf.html">owl-complementOf</a></li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/owl-differentFrom.html">owl-differentFrom</a></li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/owl-disjointWith.html">owl-disjointWith</a></li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/owl-distinctMembers.html">owl-distinctMembers</a></li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/owl-equivalentClass.html">owl-equivalentClass</a></li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/owl-equivalentProperty.html">owl-equivalentProperty</a></li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/owl-FunctionalProperty.html">owl-FunctionalProperty</a></li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/owl-hasKey.html">owl-hasKey</a></li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/owl-hasValue.html">owl-hasValue</a></li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/owl-intersectionOf.html">owl-intersectionOf</a></li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/owl-InverseFunctionalProperty.html">owl-InverseFunctionalProperty</a></li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/owl-inverseOf.html">owl-inverseOf</a></li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/owl-IrreflexiveProperty.html">owl-IrreflexiveProperty</a></li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/owl-maxCardinality.html">owl-maxCardinality</a></li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/owl-maxQualifiedCardinality.html">owl-maxQualifiedCardinality</a></li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/owl-oneOf.html">owl-oneOf</a></li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/owl-propertyChainAxiom.html">owl-propertyChainAxiom</a></li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/owl-propertyDisjointWith.html">owl-propertyDisjointWith</a></li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/owl-sameAs.html">owl-sameAs</a></li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/owl-someValuesFrom.html">owl-someValuesFrom</a></li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/owl-SymmetricProperty.html">owl-SymmetricProperty</a></li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/owl-TransitiveProperty.html">owl-TransitiveProperty</a></li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/owl-unionOf.html">owl-unionOf</a></li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/rdfs-domain.html">rdfs-domain</a></li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/rdfs-range.html">rdfs-range</a></li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/rdfs-subClassOf.html">rdfs-subClassOf</a></li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/rdfs-subPropertyOf.html">rdfs-subPropertyOf</a></li>
+</ul>
+
+<hr/>
+<address>
+    <a href="http://www.agfa.com/w3c/jdroo/">Jos De Roo</a><br/>
+</address>
+
+</body>
+</html>

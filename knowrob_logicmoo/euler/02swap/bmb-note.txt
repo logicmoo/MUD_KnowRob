@@ -1,0 +1,25 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><head><meta charset="UTF-8"/><title>Basic MONADIC Benchmark</title></head><body><pre>
+=======================
+Basic MONADIC Benchmark [1]
+=======================
+
+    triples |         <a href="http://www.w3.org/2000/10/swap/doc/cwm">cwm</a>         <a href="http://eulersharp.sourceforge.net/README">eye</a>        <a href="http://jena.apache.org">jena</a>        <a href="http://support.sas.com/documentation/onlinedoc/lasrserver/">lasr</a>      <a href="http://www.ibm.com/smarterplanet/us/en/ibmwatson/">watson</a>
+            |       [sec]       [sec]       [sec]       [sec]       [sec]
+------------|------------------------------------------------------------
+      10000 |      22.300       0.361      14.910  (ToBeDone)  (ToBeDone)
+     100000 |     294.260       2.043      15.240
+    1000000 |   20939.000      20.387     284.800
+   10000000 |   (17 days)     226.436    4432.000
+  100000000 |                2690.164   53320.000
+ 1000000000 |               29080.998  (OutOfMem)
+
+Test environment:
+	Linux 2.6.32-431.20.3.0.1.el6.centos.plus.x86_64 x86_64
+	processor	: 0 .. 15
+	model name	: Intel(R) Xeon(R) CPU E5-2665 0 @ 2.40GHz
+	MemTotal:       264532948 kB
+
+
+[1] <a href="https://github.com/josd/eyebmb">https://github.com/josd/eyebmb</a>
+</pre></body></html>

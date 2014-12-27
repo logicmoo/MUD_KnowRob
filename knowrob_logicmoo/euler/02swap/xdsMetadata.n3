@@ -1,0 +1,211 @@
+#
+# Prefixes
+#
+
+@prefix dce: <http://purl.org/dc/elements/1.1/>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+
+@prefix agent: <http://eulersharp.sourceforge.net/2003/03swap/agent#>.
+@prefix doc: <http://eulersharp.sourceforge.net/2003/03swap/document#>.
+@prefix fos: <http://eulersharp.sourceforge.net/2003/03swap/foster#>.
+@prefix unex: <http://eulersharp.sourceforge.net/2003/03swap/unitsExtension#>.
+
+@prefix heca: <http://www.agfa.com/w3c/2009/healthCare#>.
+
+@prefix xdsm: <http://eulersharp.sourceforge.net/2003/03swap/xdsMetadata#>.
+
+xdsm:
+	a owl:Ontology;
+	dce:title """XDS Metadata"""@en;
+	dce:creator """Hans Cools, Pieterjan De Potter, Pedro Debevere"""@en;
+	dce:publisher """Agfa Healthcare/Belgium, IBBT/Belgium, Multimedia Lab/Ghent University/Belgium"""@en;
+	dce:description """Formal description of xdm metadata."""@en;
+	dce:format """OWL Full"""@en;
+	dce:identifier """xdsm"""@en;
+	dce:language """English"""@en.
+
+#
+# Classes
+#
+
+xdsm:AvailabilityStatus
+	rdfs:subClassOf fos:AvailabilityStatus;
+	owl:oneOf ("""Approved""" """Depricated""");
+	skos:definition """Possible values for availability status for an XDS document."""@en.
+
+#xdsm:ConfidentialityCode rdfs:subClassOf gen:ConfidentialityCode;
+#	owl:oneOf ("""Confidential"""^^xsd:string """Not confidential"""^^xsd:string).
+	
+xdsm:XDSDocument
+	rdfs:subClassOf doc:ElectronicDocument;
+	rdfs:subClassOf [
+		a owl:Restriction;
+		owl:onProperty xdsm:availabilityStatus;
+		owl:cardinality """1"""^^xsd:nonNegativeInteger
+	];
+	rdfs:subClassOf [
+		a owl:Restriction;
+		owl:onProperty xdsm:confidentialityCode;
+		owl:cardinality """1"""^^xsd:nonNegativeInteger
+	];
+	rdfs:subClassOf [
+		a owl:Restriction;
+		owl:onProperty fos:creationTime;
+		owl:cardinality """1"""^^xsd:nonNegativeInteger
+	];
+	rdfs:subClassOf [
+		a owl:Restriction;
+		owl:onProperty fos:code;
+			# fos:code codeSystem entry_UUID
+		owl:cardinality """1"""^^xsd:nonNegativeInteger
+	];
+	rdfs:subClassOf [
+		a owl:Restriction;
+		owl:onProperty doc:formatCode;
+		owl:cardinality """1"""^^xsd:nonNegativeInteger
+	];
+	rdfs:subClassOf [
+		a owl:Restriction;
+		owl:onProperty doc:sha1Hash;
+		owl:cardinality """1"""^^xsd:nonNegativeInteger
+	];
+	rdfs:subClassOf [
+		a owl:Restriction;
+		owl:onProperty heca:healthcareFacilityType;
+		owl:cardinality """1"""^^xsd:nonNegativeInteger
+	];
+	rdfs:subClassOf [
+		a owl:Restriction;
+		owl:onProperty heca:healthcareFacilityType;
+		owl:allValuesFrom xdsm:XDSHealthcareFacilityType
+	];
+	rdfs:subClassOf [
+		a owl:Restriction;
+		owl:onProperty agent:language;
+		owl:cardinality """1"""^^xsd:nonNegativeInteger
+	];
+	rdfs:subClassOf [
+		a owl:Restriction;
+		owl:onProperty doc:mimeType;
+		owl:cardinality """1"""^^xsd:nonNegativeInteger
+	];
+	rdfs:subClassOf [
+		a owl:Restriction;
+		owl:onProperty doc:parentDocumentId;
+		owl:minCardinality """1"""^^xsd:nonNegativeInteger
+	];
+#	rdfs:subClassOf [
+#		a owl:Restriction;
+#		owl:onProperty doc:parentDocumentLink;
+#		owl:minCardinality """1"""^^xsd:nonNegativeInteger
+#	];
+#	rdfs:subClassOf [
+#		a owl:Restriction;
+#		owl:onProperty gen:parentDocumentLink;
+#		owl:allValuesFrom xdsm:XDSParentDocumentLink
+#	];
+#	rdfs:subClassOf [
+#		a owl:Restriction;
+#		owl:onProperty heca:patientId;
+#		owl:cardinality """1"""^^xsd:nonNegativeInteger
+#	];
+#	rdfs:subClassOf [
+#		a owl:Restriction;
+#		owl:onProperty heca:patientId;
+#		owl:allValuesFrom xdsm:XDSPatientId
+#	];
+#	rdfs:subClassOf [
+#		a owl:Restriction;
+#		owl:onProperty gen:practiceSettingType;
+#		owl:minCardinality """1"""^^xsd:nonNegativeInteger
+#	];
+#	rdfs:subClassOf [
+#		a owl:Restriction;
+#		owl:onProperty gen:practiceSettingType;
+#		owl:allValuesFrom xdsm:XDSPracticeSettingType
+#	];
+	rdfs:subClassOf [
+		a owl:Restriction;
+		owl:onProperty unex:DigitalSize;
+		owl:cardinality """1"""^^xsd:nonNegativeInteger
+	];
+#	rdfs:subClassOf [
+#		a owl:Restriction;
+#		owl:onProperty heca:sourcePatientId;
+#		owl:cardinality """1"""^^xsd:nonNegativeInteger
+#	];
+#	rdfs:subClassOf [
+#		a owl:Restriction;
+#		owl:onProperty heca:sourcePatientId;
+#		owl:allValuesFrom xdsm:XDSSourcePatientId
+#	];
+	rdfs:subClassOf [
+		a owl:Restriction;
+		owl:onProperty heca:sourcePatientInfo;
+		owl:cardinality """1"""^^xsd:nonNegativeInteger
+	].
+#	rdfs:subClassOf [
+#		a owl:Restriction;
+#		owl:onProperty xdsm:uniqueId;
+#		owl:cardinality """1"""^^xsd:nonNegativeInteger # cf :uniqueIdentifier
+#	];
+#	rdfs:subClassOf [
+#		a owl:Restriction;
+#		owl:onProperty xdsm:URI;		# :documentLocation
+#		owl:cardinality """1"""^^xsd:nonNegativeInteger # cf :URI
+#	].
+#
+#
+
+#xdsm:XDSParentDocumentLink rdfs:subClassOf doc:ParentDocumentLink;
+#	rdfs:subClassOf [
+#		a owl:Restriction;
+#		owl:onProperty gen:parentDocument_ID;
+#		owl:cardinality """1"""^^xsd:nonNegativeInteger
+#	];
+#	rdfs:subClassOf [
+#		a owl:Restriction;
+#		owl:onProperty xdsm:XDSParentDocumentRelationship;
+#		owl:cardinality """1"""^^xsd:nonNegativeInteger
+#	].
+
+# use fos:code with fos:codeSystem """XDSEntryUUID"""
+#xdsm:entry_UUID rdfs:subPropertyOf gen:uniqueIdentifier;
+#	rdfs:domain xdsm:Document;
+#	rdfs:range rdfs:Literal.
+
+# use fos:code with fos:codeSystem """XDSUniqueId""";
+#	rdfs:domain xdsm:Document;
+#	rdfs:range rdfs:Literal.
+
+#
+# Properties
+#
+
+#-----------------------------------------------------------------------------------
+# subproperties for XDS documents
+
+xdsm:healthcareFacilityType
+	a owl:ObjectProperty;
+	rdfs:domain doc:Document;
+	rdfs:range heca:Organization.
+
+xdsm:sourcePatientInfo
+	a owl:ObjectProperty;
+	rdfs:domain doc:Document;
+	rdfs:range heca:Patient.
+
+#xdsm:availabilityStatus	# no need; fos:availabilityState sufficient
+#	rdfs:subPropertyOf fos:availabilityStatus;
+#	skos:definition """Availability status of an XDS document in the XDS Repository."""@en;
+#	rdfs:domain xdsm:XDSDocument;
+#	rdfs:range xdsm:AvailabilityStatus.
+
+#xdsm:confidentialityCode	# no need; fos:confidentialityCode sufficient
+#	rdfs:subPropertyOf fos:confidentialityCode;
+#	skos:definition """Represents confideniality of an XDS Document."""@en;
+#	rdfs:domain xdsm:XDSDocument;
+#	rdfs:range xdsm:ConfidentialityCode.

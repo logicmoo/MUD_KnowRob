@@ -1,0 +1,3 @@
+wget -q -O- $1 | yap -s 10000 -l /cygdrive/c/sfcvs/2006/02swap/euler.yap -z main. --
+# yap -s 10000 -l /cygdrive/c/sfcvs/2006/02swap/euler.yap -z main,halt. -- web $1
+# wget -q -O- $1 | pl -f /sfcvs/2006/02swap/euler.yap -t time(main).

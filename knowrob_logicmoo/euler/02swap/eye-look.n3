@@ -1,0 +1,58 @@
+@prefix : <http://eulersharp.sourceforge.net/2003/03swap/try#>.
+
+### start looking
+:eye :start_looking """<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>eye-cube</title>
+    <link rel="stylesheet" href="style.css" type="text/css"/>
+    <style type="text/css">a:hover {background:#ffa;}</style>
+</head>
+
+<body xml:lang="en" lang="en">
+""".
+
+### left looking
+:eye :left_looking """
+<pre>
+
+        <span style="background: #86ba0c"><font color="#ffffff"><b>       </b></font></span>
+      <span style="background: #86ba0c"><font color="#ffffff"><b>        </b></font></span>
+    <span style="background: #86ba0c"><font color="#ffffff">         </font></span>  EYE
+
+  <span style="background: #ef7c00"><font color="#ffffff"><b>       </b></font></span>  <span style="background: #bd1789"><font color="#ffffff"><b>       </b></font></span>
+  <span style="background: #ef7c00"><font color="#ffffff"><b>       </b></font></span>  <span style="background: #bd1789"><font color="#ffffff"><b>       </b></font></span>
+  <span style="background: #ef7c00"><font color="#ffffff">       </font></span>  <span style="background: #bd1789"><font color="#ffffff">       </font></span>
+      <span style="background: #ef7c00">   </span>  <span style="background: #bd1789">   </span>
+
+</pre>
+""".
+
+### right looking
+:eye :right_looking """
+<pre>
+
+     <span style="background: #86ba0c"><font color="#ffffff"><b>       </b></font></span>
+      <span style="background: #86ba0c"><font color="#ffffff"><b>        </b></font></span>
+  EYE  <span style="background: #86ba0c"><font color="#ffffff">         </font></span>
+
+  <span style="background: #bd1789"><font color="#ffffff"><b>       </b></font></span>  <span style="background: #ef7c00"><font color="#ffffff"><b>       </b></font></span>
+  <span style="background: #bd1789"><font color="#ffffff"><b>       </b></font></span>  <span style="background: #ef7c00"><font color="#ffffff"><b>       </b></font></span>
+  <span style="background: #bd1789"><font color="#ffffff">       </font></span>  <span style="background: #ef7c00"><font color="#ffffff">       </font></span>
+      <span style="background: #bd1789">   </span>  <span style="background: #ef7c00">   </span>
+
+</pre>
+""".
+
+### stop looking
+:eye :stop_looking """
+<address>
+    <a href="http://www.agfa.com/w3c/jdroo/">Jos De Roo</a><br/>
+</address>
+
+</body>
+</html>
+""".
+

@@ -1,0 +1,40 @@
+// $Id: socrates.json 1295 2007-05-11 16:52:51Z josd $
+// PxButton | test | yap -l euler.yap -z main,halt. -- web http://localhost/sfcvs/2006/02swap/socrates.json
+
+{
+  "prefixes": [
+
+    [ "math:", "<http://www.w3.org/2000/10/swap/math#>" ],
+    [ "log:", "<http://www.w3.org/2000/10/swap/log#>" ],
+    [ "xsd:", "<http://www.w3.org/2001/XMLSchema#>"],
+    [ "rdfs:", "<http://www.w3.org/2000/01/rdf-schema#>" ],
+    [ "rdf:", "<http://www.w3.org/1999/02/22-rdf-syntax-ns#>" ],
+    [ ":", "<http://www.agfa.com/w3c/euler/socrates#>" ]
+  ],
+
+  "triples": [
+
+    [ ":Socrates", "rdfs:comment", "\"an ancient Greek\"^^xsd:string" ],
+    [ ":Socrates", "a", "_:man" ],
+    [ ":Socrates", ":yearBorn", -470 ],
+    [ ":Socrates", ":yearDied", -399 ],
+    [ "_:man", "rdfs:subClassOf", ":Mortal" ],
+
+    [ [ [ "?A", "rdfs:subClassOf", "?B" ],
+        [ "?S", "a", "?A"] ],
+      "=>",
+      [ [ "?S", "a", "?B" ] ] ],
+
+    [ [ [ "?A", ":yearBorn", "?B" ],
+        [ "?A", ":yearDied", "?C" ],
+        [ [ "?C", "?B" ], "math:difference", "?D" ] ],
+      "=>",
+      [ [ "?A", ":yearsLived", "?D" ] ] ]
+  ],
+
+  "query": [
+
+    [ "?WHO", "a", "?WHAT"],
+    [ "?WHO", ":yearsLived", "?X"]
+  ]
+}

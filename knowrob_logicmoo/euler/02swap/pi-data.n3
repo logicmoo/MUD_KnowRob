@@ -1,0 +1,13 @@
+# $Id: pi-data.n3 1295 2007-05-11 16:52:51Z josd $
+
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix str: <http://www.w3.org/2000/10/swap/string#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix d: <http://eulersharp.sourceforge.net/2003/03swap/pi-data#>.
+@prefix : <http://eulersharp.sourceforge.net/2003/03swap/pi-calc#>.
+
+(d:process1) :identifies ((d:p1 d:p2)!:summation (d:p3 (d:p4 d:p5)!:summation)!:summation)!:summation.
+(d:process2) :identifies (((d:p4 d:p2)!:summation d:p1)!:summation (d:p3 d:p5)!:summation)!:summation.

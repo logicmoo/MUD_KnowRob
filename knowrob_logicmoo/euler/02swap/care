@@ -1,0 +1,56 @@
+@prefix dce: <http://purl.org/dc/elements/1.1/>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix event: <http://eulersharp.sourceforge.net/2003/03swap/event#>.
+@prefix env: <http://eulersharp.sourceforge.net/2003/03swap/environment#>.
+@prefix human: <http://eulersharp.sourceforge.net/2003/03swap/human#>.
+@prefix clisko: <http://www.agfa.com/w3c/2009/clinicalSKOSSchemes#>.
+@prefix care: <http://eulersharp.sourceforge.net/2003/03swap/care#>.
+
+<http://eulersharp.sourceforge.net/2003/03swap/care>
+	a owl:Ontology;
+	dce:title """Care"""@en;
+	dce:creator """Hans Cools, MD; Agfa Healthcare/Belgium"""@en;
+	dce:contributor """Until 2010: Pieterjan De Potter; Ghent University - IBBT/ELIS - Multimedia Lab/Belgium"""@en;
+	dce:publisher """Agfa Healthcare/Belgium"""@en;
+	dce:description """Formal general description of human care."""@en;
+	dce:format """OWL-Full"""@en.
+
+#
+# CLASSES
+#
+
+care:Caring
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/care#>;
+	rdfs:label """caring"""@en;
+	skos:definition """Caring for a human."""@en;
+	rdfs:subClassOf event:Action.
+
+care:Environment
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/care#>;
+	rdfs:label """care environment"""@en;
+	skos:definition """Environment wherein a human is cared for."""@en;
+	rdfs:subClassOf env:HumanCommunityEnvironment.
+
+care:ElderlyHome
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/care#>;
+	rdfs:label """home for the elderly"""@en;
+	skos:definition """Environment wherein elderly are cared for."""@en;
+	rdfs:subClassOf care:Environment;
+	skos:exactMatch [
+		a skos:Concept; skos:inScheme clisko:sct20080731; skos:notation "257652008"^^clisko:sct20080731DT].
+
+#
+# PROPERTIES
+#
+
+care:caresFor
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/care#>;
+	skos:definition """Specifying a human a person cares for."""@en;
+	rdfs:domain human:Person;
+	rdfs:range human:Human.

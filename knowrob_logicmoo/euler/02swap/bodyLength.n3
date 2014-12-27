@@ -1,0 +1,94 @@
+#
+# Prefixes
+#
+
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix dce: <http://purl.org/dc/elements/1.1/>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix snomedct: <http://www.ihtsdo.org/>.
+@prefix space: <http://sweet.jpl.nasa.gov/2.0/space.owl#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+
+@prefix fos: <http://eulersharp.sourceforge.net/2003/03swap/foster#>.
+@prefix event: <http://eulersharp.sourceforge.net/2003/03swap/event#>.
+@prefix quex: <http://eulersharp.sourceforge.net/2003/03swap/quantitiesExtension#>.
+
+@prefix clineva: <http://www.agfa.com/w3c/2009/clinicalEvaluation#>.
+@prefix clinskosch: <http://www.agfa.com/w3c/2009/clinicalSKOSSchemes#>.
+@prefix human: <http://eulersharp.sourceforge.net/2003/03swap/human#>.
+@prefix humanbody: <http://eulersharp.sourceforge.net/2003/03swap/humanBody#>.
+
+@prefix bole: <http://eulersharp.sourceforge.net/2003/03swap/bodyLength#>.
+
+bole:
+	a owl:Ontology;
+	dce:title """Body Length"""@en;
+	dce:creator """Hans Cools, MD; Pieterjan De Potter"""@en;
+	dce:publisher """Agfa Healthcare/Belgium, IBBT/Belgium, Multimedia Lab/Ghent University/Belgium"""@en;
+	dce:description """Formal description of the body length."""@en;
+	dce:format """OWL Full"""@en;
+	dce:identifier """bole"""@en;
+	dce:language """English"""@en.
+
+#
+# Classes
+#
+
+bole:BodyLength
+	a rdfs:Class;
+	rdfs:isDefinedBy bole:;
+	rdfs:label """human body length"""@en;
+	skos:definition """Human body length measured from the vertex to the sole of the foot in upright position."""@en;
+	rdfs:subClassOf space:Length;
+	rdfs:subClassOf event:Observable;
+	rdfs:subClassOf [
+		a owl:Restriction;
+		owl:onProperty quex:hasValue;
+		owl:allValuesFrom xsd:decimal
+	];
+	rdfs:subClassOf [
+		a owl:Restriction;
+		owl:onProperty quex:hasUnit;
+		owl:allValuesFrom [
+			a owl:Restriction;
+			owl:onProperty quex:unitOf;
+			owl:hasValue space:Length
+		]
+	];
+	rdfs:subClassOf snomedct:SCTID_248334005;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme clinskosch:sct20080731;
+		skos:notation "248334005"^^clinskosch:sct20080731DT
+	].
+
+bole:MeasuringLength
+	a rdfs:Class;
+	rdfs:isDefinedBy bole:;
+	rdfs:label """measuring a human body length"""@en;
+	skos:definition """Measurement of the length of a human body."""@en;
+	rdfs:subClassOf clineva:Evaluation;
+	rdfs:subClassOf [
+		a owl:Restriction;
+		owl:onProperty fos:hasObject;
+		owl:allValuesFrom humanbody:Body
+	];
+	rdfs:subClassOf [
+		a owl:Restriction;
+		owl:onProperty event:hasOutput;
+		owl:allValuesFrom bole:BodyLength
+	].
+
+#
+# Properties
+#
+
+bole:hasLength
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy bole:;
+	skos:definition """Specifying a person's body length expressed in meters."""@en;
+	skos:note """Used in N3 rules."""@en;
+	rdfs:domain human:Person;
+	rdfs:range [quex:hasValue xsd:decimal; quex:hasUnit [quex:unitOf space:Length]]. # -> rdf:List?

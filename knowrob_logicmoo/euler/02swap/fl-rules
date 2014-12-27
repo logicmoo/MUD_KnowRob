@@ -1,0 +1,80 @@
+### Fuzzy Logic theory -- Jos De Roo
+
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix math: <http://www.w3.org/2000/10/swap/math#>.
+@prefix list: <http://www.w3.org/2000/10/swap/list#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix fl: <http://eulersharp.sourceforge.net/2003/03swap/fl-rules#>.
+
+
+### classes
+fl:Lower a rdfs:Class;
+	rdfs:comment "class of things that are the first element of e:valuation object".
+
+fl:Upper a rdfs:Class;
+	rdfs:comment "class of things that are the last element of e:valuation object".
+
+
+### properties
+fl:mu a rdf:Property;
+	rdfs:domain rdf:List;
+	rdfs:range xsd:decimal;
+	rdfs:comment "to express fuzzy set membership e.g. (:x :C) fl:mu 0.8 says that :x a :C to a degree of 0.8".
+
+fl:sigma a rdf:Property;
+	rdfs:domain rdf:List;
+	rdfs:range xsd:decimal;
+	rdfs:comment "to express fuzzy subsethood e.g. (:C :D) fl:sigma 0.9 says that :C rdfs:subClassOf :D to a degree of 0.9".
+
+fl:pi a rdf:Property, e:Builtin;
+	rdfs:domain rdf:List;
+	rdfs:range xsd:decimal;
+	rdfs:comment "builtin to calculate fuzzy set membership according to Elpiniki Papageorgiou method".
+
+
+### conjunction according to Lukasiewicz
+{?C owl:intersectionOf ?E. ?E e:distinct [ list:first ?A; list:rest ?B].
+ (?X ?A) fl:pi ?I. ?D owl:intersectionOf ?B. (?X ?D) fl:pi ?J. (?I ?J -1.0) math:sum ?K. (0.0 ?K) e:max ?M} => {(?X ?C) fl:pi ?M}.
+
+### disjunction according to Lukasiewicz
+{?C owl:unionOf ?E. ?E e:distinct [ list:first ?A; list:rest ?B].
+ (?X ?A) fl:pi ?I. ?D owl:unionOf ?B. (?X ?D) fl:pi ?J. (?I ?J) math:sum ?K. (1.0 ?K) e:min ?M} => {(?X ?C) fl:pi ?M}.
+
+### negation according to Lukasiewicz
+{?C owl:complementOf ?A. (?X ?A) fl:pi ?I. (1.0 ?I) math:difference ?M} => {(?X ?C) fl:pi ?M}.
+
+### implication
+{?A rdfs:subClassOf ?B} => {(?A ?B) fl:sigma 1.0}.
+{(?B ?A) fl:sigma ?I} => {(?A ?A) fl:sigma 1.0}.
+{?C owl:complementOf ?A. (?B ?A) fl:sigma ?I. (1.0 ?I) math:difference ?M} => {(?B ?C) fl:sigma ?M}.
+
+
+### Fuzzy Description Logic to Fuzzy Cognitive Map translation theory
+{{?P a ?Q} e:valuation (?L ?U)} => {(?P (?Q fl:Lower)) fl:mu ?L}.
+{{?P a ?Q} e:valuation (?L ?U)} => {(?P (?Q fl:Upper)) fl:mu ?U}.
+
+{{?X rdfs:subClassOf ?Y} e:valuation (?L ?U)} => {((?X fl:Lower) (?Y fl:Lower)) fl:sigma ?L}.
+{{?X rdfs:subClassOf ?Y} e:valuation (?L ?U)} => {((?X fl:Upper) (?Y fl:Upper)) fl:sigma ?U}.
+
+{{?X!owl:complementOf rdfs:subClassOf ?Y} e:valuation (?L ?U). (1.0 ?L) math:difference ?M} => {((?Y fl:Lower) (?X fl:Lower)) fl:sigma ?M}.
+{{?X!owl:complementOf rdfs:subClassOf ?Y} e:valuation (?L ?U). (1.0 ?U) math:difference ?M} => {((?Y fl:Upper) (?X fl:Upper)) fl:sigma ?M}.
+
+{(?P (?C fl:Lower)) fl:pi ?X. (?P (?C fl:Upper)) fl:pi ?Y.
+ ?Z e:optional {?X math:notGreaterThan ?Y. ?S log:equalTo (?X ?Y)}, {?X math:greaterThan ?Y. ?S log:equalTo (?Y ?X)}}
+ =>
+ {{?P a ?C} e:valuation ?S}.
+
+
+### support
+owl:Thing owl:intersectionOf ().
+owl:Nothing owl:unionOf ().
+
+{?C owl:intersectionOf [ list:rest ?B]} => {_:D owl:intersectionOf ?B}.
+{?C owl:unionOf [ list:rest ?B]} => {_:D owl:unionOf ?B}.
+
+{(?X ?A) fl:mu ?I} => {(?X owl:Thing) fl:mu 1.0}.
+{(?X ?A) fl:mu ?I} => {(?X owl:Nothing) fl:mu 0.0}.

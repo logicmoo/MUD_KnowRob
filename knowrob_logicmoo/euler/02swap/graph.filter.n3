@@ -1,0 +1,10 @@
+# $Id: graph.filter.n3,v 1.2 2006/08/05 11:38:49 amdus Exp $
+
+# PxButton | test   | java euler.EulerRunner --think graph.axiom.n3 rpo-rules.n3 --filter graph.filter.n3
+# PxButton | test#  | Euler --think graph.axiom.n3 rpo-rules.n3 --filter graph.filter.n3
+# PxButton | euler5 | bash .euler5 http://localhost/.euler+--prolog+euler/graph.axiom.n3+euler/rpo-rules.n3+--filter+euler/graph.filter.n3
+
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix : <http://www.agfa.com/w3c/euler/graph.axiom#>.
+
+{:paris :path :nantes} => {:paris :path :nantes}.

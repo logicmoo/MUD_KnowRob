@@ -1,0 +1,131 @@
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix : <http://eulersharp.sourceforge.net/2003/03swap/pi-calc#>.
+
+
+### Pi-Calculus
+#
+# see http://www.lfcs.inf.ed.ac.uk/reports/89/ECS-LFCS-89-85/ECS-LFCS-89-85.ps
+#     http://www.lfcs.inf.ed.ac.uk/reports/89/ECS-LFCS-89-86/ECS-LFCS-89-86.ps
+#
+# We presuppose an infinite set N of names, and let u, v, w, x, y, z range over names.
+# We also presuppose a set K of agent identifiers, each with an arity an integer >= 0.
+# We let A, B, C, ... range over agent identifiers. We now let P, Q, R, ... range
+# over the agents or process expressions, which are of six kinds as follows:
+
+:Process a rdfs:Class.
+:Port a rdfs:Class.
+:empty a :Process.
+
+
+# 1. A summation
+# --------------
+# sum_i Pi where the index set I is finite.
+# This agent behaves like one or other of the Pi. We write 0 for the empty
+# summation, and call it inaction; this is the agent which can do nothing.
+# Henceforward, in defining the calculus, we confine ourselves just to 0 and
+# binary summation, written P1 + P2 .
+# e.g. (eg:process1 eg:process2) :summation eg:process.
+
+:summation a owl:FunctionalProperty; rdfs:domain rdf:List; rdfs:range :Process.
+
+
+# 2. A prefix form -yx.P , y(x).P or tau.P
+# ----------------------------------------
+# '-yx.' is called a negative prefix. y may be thought of as an output port of
+# an agent which contains it; -yx.P outputs the name x at port y and then
+# behaves like P .
+# e.g. (eg:port1 (?name1 ?name2) eg:process1) :output eg:process.
+
+:output a owl:FunctionalProperty; rdfs:domain rdf:List; rdfs:range :Process.
+
+
+# 'y(x).' is called a positive prefix. A name y may be thought of as an input 
+# port of an agent; y(x).P inputs an arbitrary name z at port y and then 
+# behaves like P{z/x} (see the definition of substitution below). The name x 
+# is bound by the positive prefix 'y(x).' (Note that a negative prefix does 
+# not bind a name)
+# e.g. (eg:port1 (?name1 ?name2) eg:process1) :input eg:process.
+
+:input a owl:FunctionalProperty; rdfs:domain rdf:List; rdfs:range :Process.
+
+
+# 'tau.' is called a silent prefix. tau.P performs the silent action tau and then 
+# behaves like P.
+# e.g. (eg:action1 eg:process1) :silent eg:process.
+
+:silent a owl:FunctionalProperty; rdfs:domain rdf:List; rdfs:range :Process.
+
+
+# 3. A composition P1 | P2
+# ------------------------
+# This agent consists of P1 and P2 acting in parallel. The components may
+# act independently; also, an output action of P1 (resp. P2) at any output
+# port x may synchronize with an input action of P2 (resp. P1) at x, to create
+# a silent (tau) action of the composite agent P1 | P2 .
+# e.g. (eg:process1 eg:process2) :composition eg:process.
+
+:composition a owl:FunctionalProperty; rdfs:domain rdf:List; rdfs:range :Process.
+
+
+# 4. A restriction (x)P
+# ---------------------
+# This agent behaves like P except that actions at ports -x and x are prohibited
+# (but communication between components of P along the link x are not
+# prohibited, since they have become tau actions as explained above).
+# e.g. (?name1 eg:process1) :restriction eg:process.
+
+:restriction a owl:FunctionalProperty; rdfs:domain rdf:List; rdfs:range :Process.
+
+
+# 5. A match [x = y]P
+# -------------------
+# This agent behaves like P if the names x and y are identical, and otherwise
+# like 0.
+# e.g. ((?name1 ?name2) d:process1) :match eg:process.
+
+:match a owl:FunctionalProperty; rdfs:domain rdf:List; rdfs:range :Process.
+
+
+# 6. A defined agent A(y1, ..., yn)
+# ---------------------------------
+# For any agent identifier A (with arity n) used thus, there must be a unique 
+# defining equation A(x1, ..., xn) == P, where the names x1, ..., xn are distinct
+# and are the only names which may occur free in P . Then A(y1, ..., yn) behaves
+# like P{y1/x1, ..., yn/xn} (see below for the definition of substitution).
+# Defining equations provide recursion, since P may contain any agent
+# identifier, even A itself.
+# e.g. (eg:process1 eg:name1 eg:name2 eg:name3) :identifies eg:process.
+
+:identifies a owl:FunctionalProperty; rdfs:domain rdf:List; rdfs:range :Process.
+
+
+### axiomatic semantics
+
+:reduction a rdf:Property; rdfs:domain :Process; rdfs:range :Process.
+:congruent a rdf:Property; rdfs:domain :Process; rdfs:range :Process.
+
+{} => {(?P1 ?P2)!:summation :congruent (?P1 ?P2)!:summation}.
+{} => {(?P1 ?P2)!:summation :congruent (?P2 ?P1)!:summation}.
+{} => {(?P1 (?P2 ?P3)!:summation)!:summation :congruent ((?P1 ?P2)!:summation ?P3)!:summation}.
+{?P1 :congruent ?P2} => {(?P1 ?P3)!:summation :congruent (?P2 ?P3)!:summation}.
+
+{} => {(?P1 ?P2)!:composition :congruent (?P1 ?P2)!:composition}.
+{} => {(?P1 ?P2)!:composition :congruent (?P2 ?P1)!:composition}.
+{} => {(?P1 (?P2 ?P3)!:composition)!:composition :congruent ((?P1 ?P2)!:composition ?P3)!:composition}.
+{?P1 :congruent ?P2} => {(?P1 ?P3)!:composition :congruent (?P2 ?P3)!:composition}.
+
+{?P1 :congruent ?P2. ?P2 :congruent ?P3} => {?P1 :congruent ?P3}.
+
+{} => {(?N :empty)!:restriction :congruent :empty}.
+{} => {(?N (?M ?P)!:restriction)!:restriction :congruent (?M (?N ?P)!:restriction)!:restriction}.
+{} => {((?N ?P1)!:restriction ?P2)!:composition :congruent (?N (?P1 ?P2)!:composition)!:restriction}.
+
+{?P1 :congruent (?P3 (?X ?Y ?P5)!:input)!:summation. ?P2 :congruent (?P4 (?X ?Y ?P6)!:output)!:summation} => {(?P1 ?P2)!:composition :reduction (?P5 ?P6)!:composition}.
+
+{?P1 :reduction ?P3} => {(?P1 ?P2)!:composition :reduction (?P3 ?P2)!:composition}.
+{?P1 :reduction ?P3} => {(?X ?P1)!:restriction :reduction (?X ?P3)!:restriction}.
+{?P1 :congruent ?P2. ?P2 :reduction ?P3. ?P3 :congruent ?P4} => {?P1 :reduction ?P4}.

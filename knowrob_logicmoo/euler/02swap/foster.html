@@ -1,0 +1,326 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>
+		<meta name="generator" content="AGFA HealthCare N3 to HTML convertor"/>
+		<link rel="alternate" type="text/n3" title="RDF Representation" href="http://eulersharp.sourceforge.net/2003/03swap/foster"/>
+		<title>foster</title>
+		<style type="text/css">
+			a[href]:link { text-decoration:none; }
+			a[href]:visited { text-decoration:none; }
+			a[href]:active { text-decoration:underline; }
+			a:hover { background:#ffa; }
+			.keyword { font-weight: bold; }
+			.literal { color: blue }
+			.uri { color: darkblue }
+			.qname { color: black }
+			.var { color: gray }
+			.comment { font-style:italic; color: darkgreen }
+		</style>
+	</head>
+	<body>
+	<div>
+		<pre>
+<span class="keyword">@prefix</span> rdf: <a class="uri" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</a>.
+<span class="keyword">@prefix</span> rdfs: <a class="uri" href="http://www.w3.org/2000/01/rdf-schema">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</a>.
+<span class="keyword">@prefix</span> owl: <a class="uri" href="http://www.w3.org/2002/07/owl">&lt;http://www.w3.org/2002/07/owl#&gt;</a>.
+<span class="keyword">@prefix</span> xsd: <a class="uri" href="http://www.w3.org/2001/XMLSchema">&lt;http://www.w3.org/2001/XMLSchema#&gt;</a>.
+<span class="keyword">@prefix</span> dce: <a class="uri" href="http://purl.org/dc/elements/1.1/">&lt;http://purl.org/dc/elements/1.1/&gt;</a>.
+<span class="keyword">@prefix</span> dct: <a class="uri" href="http://purl.org/dc/terms/">&lt;http://purl.org/dc/terms/&gt;</a>.
+<span class="keyword">@prefix</span> skos: <a class="uri" href="http://www.w3.org/2004/02/skos/core.html#">&lt;http://www.w3.org/2004/02/skos/core#&gt;</a>.
+<span class="keyword">@prefix</span> geo: <a class="uri" href="http://www.w3.org/2003/01/geo/wgs84_pos">&lt;http://www.w3.org/2003/01/geo/wgs84_pos#&gt;</a>.
+<span class="keyword">@prefix</span> foaf: <a class="uri" href="http://xmlns.com/foaf/0.1/">&lt;http://xmlns.com/foaf/0.1/&gt;</a>.
+<span class="keyword">@prefix</span> irw: <a class="uri" href="http://www.ontologydesignpatterns.org/ont/web/irw.html#">&lt;http://www.ontologydesignpatterns.org/ont/web/irw.owl#&gt;</a>.
+<span class="keyword">@prefix</span> jur: <a class="uri" href="http://sweet.jpl.nasa.gov/2.3/humanJurisdiction.owl">&lt;http://sweet.jpl.nasa.gov/2.3/humanJurisdiction.owl#&gt;</a>.
+<span class="keyword">@prefix</span> event: <a class="uri" href="http://eulersharp.sourceforge.net/2003/03swap/event.html#">&lt;http://eulersharp.sourceforge.net/2003/03swap/event#&gt;</a>.
+<span class="keyword">@prefix</span> space: <a class="uri" href="http://eulersharp.sourceforge.net/2003/03swap/space.html#">&lt;http://eulersharp.sourceforge.net/2003/03swap/space#&gt;</a>.
+<span class="keyword">@prefix</span> clisko: <a class="uri" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#">&lt;http://www.agfa.com/w3c/2009/clinicalSKOSSchemes#&gt;</a>.
+<span class="keyword">@prefix</span> fos: <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/foster#&gt;</a>.
+
+<a class="uri" href="http://eulersharp.sourceforge.net/2003/03swap/foster.html">&lt;http://eulersharp.sourceforge.net/2003/03swap/foster&gt;</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Ontology</a>;
+	<a class="qname" href="http://purl.org/dc/elements/1.1">dce:title</a> <span class="literal">&quot;&quot;&quot;FOSTER or Friends Of Semantic Web Technology Resource&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://purl.org/dc/elements/1.1">dce:creator</a> <span class="literal">&quot;&quot;&quot;Hans Cools, MD; Agfa Healthcare/Belgium&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://purl.org/dc/elements/1.1">dce:contributor</a> <span class="literal">&quot;&quot;&quot;Jos De Roo; Agfa Healthcare/Belgium. Until 2010: Pieterjan De Potter, Pedro Debevere; Ghent University - IBBT/ELIS - Multimedia Lab/Belgium.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://purl.org/dc/elements/1.1">dce:publisher</a> <span class="literal">&quot;&quot;&quot;Agfa Healthcare/Belgium&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://purl.org/dc/elements/1.1">dce:description</a> <span class="literal">&quot;&quot;&quot;Formal description of general concepts.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://purl.org/dc/elements/1.1">dce:format</a> <span class="literal">&quot;&quot;&quot;OWL Full&quot;&quot;&quot;</span>@en.
+
+<span class="comment">#</span>
+<span class="comment"># CLASSES</span>
+<span class="comment">#</span>
+
+<a class="qname" name="Group">fos:Group</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/foster#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;group&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Collection of things alike.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="#hasMember">fos:hasMember</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:minCardinality</a> <span class="literal">&quot;2&quot;</span>^^<a class="qname" href="http://www.w3.org/2001/XMLSchema">xsd:nonNegativeInteger</a>].
+
+<a class="qname" name="Level">fos:Level</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/foster#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;level&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Degree of something.&quot;&quot;&quot;</span>@en.
+
+<a class="qname" name="Language">fos:Language</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/foster#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;A dynamic set of sensory signs, including sounds and gestures, of communication and the semantic, pragmatic, and grammar elements or rules used to manipulate them.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/event.html#Observable">event:Observable</a>, <a class="qname" href="http://purl.org/dc/terms">dct:LinguisticSystem</a>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#exactMatch">skos:exactMatch</a> [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#Concept">skos:Concept</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#inScheme">skos:inScheme</a> <a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731">clisko:sct20080731</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#notation">skos:notation</a> <span class="literal">&quot;61909002&quot;</span>^^<a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731DT">clisko:sct20080731DT</a>].
+
+<a class="qname" name="Nationality">fos:Nationality</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/foster#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;nationality&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Belonging administratively to a certain nation.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/event.html#Observable">event:Observable</a>.
+
+<span class="comment">#fos:Quality # redundant: made explicit by rdf:Property</span>
+<span class="comment">#	a rdfs:Class;</span>
+<span class="comment">#	rdfs:isDefinedBy &lt;http://eulersharp.sourceforge.net/2003/03swap/foster#&gt;;</span>
+<span class="comment">#	rdfs:label &quot;&quot;&quot;quality&quot;&quot;&quot;@en;</span>
+<span class="comment">#	skos:definition &quot;&quot;&quot;Characteristic by which something can be described.&quot;&quot;&quot;@en;</span>
+<span class="comment">#	#skos:note &quot;&quot;&quot;Class of properties.&quot;&quot;&quot;@en.</span>
+
+<a class="qname" name="Compound">fos:Compound</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:DeprecatedClass</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;&quot;&quot;Declared in &lt;http://eulersharp.sourceforge.net/2003/03swap/physicalResource&gt;&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/foster#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;compound&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Composed of more than 1 type of substance.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#note">skos:note</a> <span class="literal">&quot;&quot;&quot;This can be anything, and is not meant in the sense of chemical compound containing more than 1 elementary substance or 'chemical element'. Chemical compound though is a subclass.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="http://purl.org/dc/terms">dct:PhysicalResource</a>.
+
+<a class="qname" name="Product">fos:Product</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:DeprecatedClass</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;&quot;&quot;Declared in &lt;http://eulersharp.sourceforge.net/2003/03swap/physicalResource&gt;&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/foster#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;product&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Result of a production process.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="http://purl.org/dc/terms">dct:PhysicalResource</a>.
+
+<a class="qname" name="Device">fos:Device</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:DeprecatedClass</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;&quot;&quot;Declared in &lt;http://eulersharp.sourceforge.net/2003/03swap/physicalResource&gt;&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/foster#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;device&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Something serving a particular purpose.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="http://purl.org/dc/terms">dct:PhysicalResource</a>, <a class="qname" href="http://xmlns.com/foaf/0.1">foaf:Agent</a>, <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/space.html#SpatialResource">space:SpatialResource</a>.
+
+<a class="qname" name="Specimen">fos:Specimen</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:DeprecatedClass</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;&quot;&quot;Declared in &lt;http://eulersharp.sourceforge.net/2003/03swap/physicalResource&gt;&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/foster#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;specimen&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Sample containing a substance for examination.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="http://purl.org/dc/terms">dct:PhysicalResource</a>.
+
+<a class="qname" name="Code">fos:Code</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:DeprecatedClass</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/foster#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;code&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Applied or converted form of information wherein one thing(s) is(are) replaced by another thing(s).&quot;&quot;&quot;</span>@en.
+
+<a class="qname" name="ConfidentialityCode">fos:ConfidentialityCode</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:DeprecatedClass</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/foster#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;confidentiality code&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Code applied to something to protect its confidentiality.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="#Code">fos:Code</a>.
+
+<a class="qname" name="Summary">fos:Summary</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:DeprecatedClass</a>;
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/foster#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;The essentials of something.&quot;&quot;&quot;</span>@en.
+
+<span class="comment">#</span>
+<span class="comment"># PROPERTIES</span>
+<span class="comment">#</span>
+
+<a class="qname" name="hasMember">fos:hasMember</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:ObjectProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/foster#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Specifying a member of a group.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="#Group">fos:Group</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Resource</a>.
+
+<span class="comment"># foaf:member rdfs:subPropertyOf fos:hasMember.</span>
+
+<a class="qname" name="memberOf">fos:memberOf</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:ObjectProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/foster#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Specifying a group something is a member of.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2002/07/owl">owl:inverseOf</a> <a class="qname" href="#hasMember">fos:hasMember</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Resource</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="#Group">fos:Group</a>.
+
+<a class="qname" name="hasLevel">fos:hasLevel</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:ObjectProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/foster#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Specifying a level of something.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Resource</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="#Level">fos:Level</a>.
+
+<a class="qname" name="refersTo">fos:refersTo</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:ObjectProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/foster#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Specifying something that is referred to by something else.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Resource</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Resource</a>.
+
+<a class="qname" name="hasLanguage">fos:hasLanguage</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:ObjectProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/foster#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Specifying a language related to something.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subPropertyOf</a> <a class="qname" href="http://purl.org/dc/terms">dct:language</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Resource</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="#Language">fos:Language</a>.
+
+<a class="qname" name="hasNationality">fos:hasNationality</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:ObjectProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/foster#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Specifying the nationality of a resource. A resource can have more than 1 nationality. It doesn't need to be the one of the country of origin nor the one of the country the resource is mostly present.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Resource</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="#Nationality">fos:Nationality</a>.
+
+<a class="qname" name="hasCountry">fos:hasCountry</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:ObjectProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/foster#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Specifying the country a nationality is linked to.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="#Nationality">fos:Nationality</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/humanJurisdiction.owl">jur:Country</a>.
+
+<a class="qname" name="hasBrandName">fos:hasBrandName</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">rdf:Property</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/foster#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;brand name&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Specifying a name of a brand of something.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subPropertyOf</a> <a class="qname" href="http://xmlns.com/foaf/0.1">foaf:name</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Resource</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Literal</a>.
+
+<a class="qname" name="hasCode">fos:hasCode</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:DeprecatedProperty</a>, <a class="qname" href="http://www.w3.org/2002/07/owl">owl:ObjectProperty</a>, <a class="qname" href="http://www.w3.org/2002/07/owl">owl:InverseFunctionalProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;&quot;&quot;Declared in &lt;http://eulersharp.sourceforge.net/2003/03swap/coding&gt;&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/foster#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Specifying a code for something.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Resource</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="#Code">fos:Code</a>.
+
+<a class="qname" name="hasSKOSCode">fos:hasSKOSCode</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:DeprecatedProperty</a>, <a class="qname" href="http://www.w3.org/2002/07/owl">owl:DatatypeProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;&quot;&quot;Declared in &lt;http://eulersharp.sourceforge.net/2003/03swap/coding&gt;&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/foster#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Specifying for an instance a code of a SKOS concept, within a SKOS scheme, matching exactly a class the instance is member of.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2002/07/owl">owl:propertyChainAxiom</a> (<a class="qname" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">rdf:type</a> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#exactMatch">skos:exactMatch</a> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#notation">skos:notation</a>).
+
+<a class="qname" name="hasBroaderCode">fos:hasBroaderCode</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:DeprecatedProperty</a>, <a class="qname" href="http://www.w3.org/2002/07/owl">owl:DatatypeProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;&quot;&quot;Declared in &lt;http://eulersharp.sourceforge.net/2003/03swap/coding&gt;&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/foster#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Specifying for an instance a code of a SKOS concept, within a SKOS scheme, matching broader a class the instance is member of.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2002/07/owl">owl:propertyChainAxiom</a> (<a class="qname" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">rdf:type</a> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#broadMatch">skos:broadMatch</a> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#notation">skos:notation</a>).
+
+<a class="qname" name="codes">fos:codes</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:DeprecatedProperty</a>, <a class="qname" href="http://www.w3.org/2002/07/owl">owl:ObjectProperty</a>, <a class="qname" href="http://www.w3.org/2002/07/owl">owl:FunctionalProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;&quot;&quot;Declared in &lt;http://eulersharp.sourceforge.net/2003/03swap/coding&gt;&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/foster#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Specifying something that has a code.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2002/07/owl">owl:inverseOf</a> <a class="qname" href="#hasCode">fos:hasCode</a>.
+
+<a class="qname" name="hasCodeSystem">fos:hasCodeSystem</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:DeprecatedProperty</a>, <a class="qname" href="http://www.w3.org/2002/07/owl">owl:FunctionalProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;&quot;&quot;Declared in &lt;http://eulersharp.sourceforge.net/2003/03swap/coding&gt;&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/foster#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Specifying a name of a code system device serial number.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="#Code">fos:Code</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Literal</a>.
+
+<a class="qname" name="hasCodeVersion">fos:hasCodeVersion</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:DeprecatedProperty</a>, <a class="qname" href="http://www.w3.org/2002/07/owl">owl:FunctionalProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;&quot;&quot;Declared in &lt;http://eulersharp.sourceforge.net/2003/03swap/coding&gt;&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/foster#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Specifying a version of a code system.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="#Code">fos:Code</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Literal</a>.
+
+<a class="qname" name="hasCodeValue">fos:hasCodeValue</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:DeprecatedProperty</a>, <a class="qname" href="http://www.w3.org/2002/07/owl">owl:InverseFunctionalProperty</a>, <a class="qname" href="http://www.w3.org/2002/07/owl">owl:FunctionalProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;&quot;&quot;Declared in &lt;http://eulersharp.sourceforge.net/2003/03swap/coding&gt;&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/foster#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Specifying a code value.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="#Code">fos:Code</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Literal</a>.
+
+<a class="qname" name="hasCodeAuthority">fos:hasCodeAuthority</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:DeprecatedProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;&quot;&quot;Declared in &lt;http://eulersharp.sourceforge.net/2003/03swap/coding&gt;&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/foster#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Specifying an organization governing the code system, e.g. a government for a social security number.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="#Code">fos:Code</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Literal</a>.
+
+<a class="qname" name="hasCodeExpirationDateTime">fos:hasCodeExpirationDateTime</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:DeprecatedProperty</a>, <a class="qname" href="http://www.w3.org/2002/07/owl">owl:DatatypeProperty</a>, <a class="qname" href="http://www.w3.org/2002/07/owl">owl:FunctionalProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;&quot;&quot;Declared in &lt;http://eulersharp.sourceforge.net/2003/03swap/coding&gt;&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/foster#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Specifying the date on which a code stops to be valid.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subPropertyOf</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/event.html#expires">event:expires</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="#Code">fos:Code</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://www.w3.org/2001/XMLSchema">xsd:dateTime</a>.
+
+<a class="qname" name="hasConfidentialityCode">fos:hasConfidentialityCode</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:DeprecatedProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;&quot;&quot;Declared in &lt;http://eulersharp.sourceforge.net/2003/03swap/coding&gt;&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/foster#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Specifying a confidentiality code for something.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subPropertyOf</a> <a class="qname" href="#hasCode">fos:hasCode</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Resource</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="#ConfidentialityCode">fos:ConfidentialityCode</a>.
+
+<a class="qname" name="contains">fos:contains</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:DeprecatedProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;&quot;&quot;Declared in &lt;http://eulersharp.sourceforge.net/2003/03swap/space&gt;&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/foster#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Specifying something physically contained by something else.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2002/07/owl">owl:propertyChainAxiom</a> (<a class="qname" href="#contains">fos:contains</a> <a class="qname" href="http://xmlns.com/foaf/0.1">foaf:member</a>);
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://purl.org/dc/terms">dct:PhysicalResource</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://purl.org/dc/terms">dct:PhysicalResource</a>.
+
+<a class="qname" name="containedBy">fos:containedBy</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:DeprecatedProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;&quot;&quot;Declared in &lt;http://eulersharp.sourceforge.net/2003/03swap/space&gt;&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/foster#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Specifying something physically containing something else.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2002/07/owl">owl:inverseOf</a> <a class="qname" href="#contains">fos:contains</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://purl.org/dc/terms">dct:PhysicalResource</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://purl.org/dc/terms">dct:PhysicalResource</a>.
+
+<a class="qname" name="hasComplexity">fos:hasComplexity</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:DeprecatedProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;&quot;&quot;Declared in &lt;http://eulersharp.sourceforge.net/2003/03swap/physicalResource&gt;&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/foster#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Specifying a physical organizational structure complexity of something.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Resource</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://purl.org/dc/terms">dct:PhysicalResource</a>.
+
+<a class="qname" name="complexityOf">fos:complexityOf</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:DeprecatedProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;&quot;&quot;Declared in &lt;http://eulersharp.sourceforge.net/2003/03swap/physicalResource&gt;&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/foster#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Specifying something with a physical organizational structure complexity.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2002/07/owl">owl:inverseOf</a> <a class="qname" href="#hasComplexity">fos:hasComplexity</a>.
+
+<a class="qname" name="summaryOf">fos:summaryOf</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:DeprecatedProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/foster#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="#Summary">fos:Summary</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Resource</a>.		</pre>
+	</div>
+	</body>
+</html>

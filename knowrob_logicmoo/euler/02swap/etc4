@@ -1,0 +1,20 @@
+# $Id: etc4 1400 2007-07-20 20:08:38Z josd $
+
+echo \# +++++++++++++++++++++++++++++++++
+echo \# testing euler4 proof on localhost
+echo \# +++++++++++++++++++++++++++++++++
+echo
+echo \# =============
+echo \# etc4 Socrates
+echo \# =============
+wget -nv -O- http://localhost/.json+http%3A%2F%2Flocalhost%2F.euler4%2Bhttp%253A%252F%252Flocalhost%252F.euler%252B--json%252Bhttp%25253A%25252F%25252Fwww.agfa.com%25252Fw3c%25252Feuler%25252Fsocrates.n3%252B--query%252Bhttp%25253A%25252F%25252Fwww.agfa.com%25252Fw3c%25252Feuler%25252FsocratesF.n3
+
+echo \# ============================
+echo \# etc4 Medication prescription
+echo \# ============================
+wget -nv -O- http://localhost/.json+http%3A%2F%2Flocalhost%2F.euler4%2Bhttp%253A%252F%252Flocalhost%252F.euler%252B--json%252Bhttp%25253A%25252F%25252Fwww.agfa.com%25252Fw3c%25252Feuler%25252Fmedmio.n3%252B--query%252Bhttp%25253A%25252F%25252Fwww.agfa.com%25252Fw3c%25252Feuler%25252FmedmioF.n3
+
+echo \# =======================================
+echo \# etc4 Leg Length Discrepancy Measurement
+echo \# =======================================
+wget -nv -O- http://localhost/.json+http%3A%2F%2Flocalhost%2F.euler4%2Bhttp%253A%252F%252Flocalhost%252F.euler%252B--json%252Bhttp%25253A%25252F%25252Fwww.agfa.com%25252Fw3c%25252F2002%25252F10%25252Fmedicad%25252Fop%25252FlldmD.n3%252Bhttp%25253A%25252F%25252Fwww.agfa.com%25252Fw3c%25252F2002%25252F10%25252Fmedicad%25252Fop%25252FlldmP.n3%252B-query%252Bhttp%25253A%25252F%25252Fwww.agfa.com%25252Fw3c%25252F2002%25252F10%25252Fmedicad%25252Fop%25252FlldmF.n3

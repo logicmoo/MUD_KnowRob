@@ -1,0 +1,670 @@
+#Processed by Id: euler.yap,v 1.116 2006/11/12 00:17:11 josd Exp 
+
+@prefix math: <http://www.w3.org/2000/10/swap/math#>.
+@prefix p0: <http://eulersharp.sourceforge.net/2003/03swap/rpo-rules#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix list: <http://www.w3.org/2000/10/swap/list#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix gc: <http://www.daml.org/2001/01/gedcom/gedcom#>.
+@prefix r: <http://www.w3.org/2000/10/swap/reason#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix fn: <http://www.w3.org/2006/xpath-functions#>.
+@prefix time: <http://www.w3.org/2000/10/swap/time#>.
+@prefix : <http://www.agfa.com/w3c/euler/gedcom-facts#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix var: <http://localhost/var#>.
+@prefix str: <http://www.w3.org/2000/10/swap/string#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix n3: <http://www.w3.org/2004/06/rei#>.
+
+[ a r:Proof, r:Conjunction;
+  r:component [ a r:Inference; r:gives {:Jos :testRelationship :Bart}; r:evidence (
+    [ a r:Extraction; r:gives {:Jos gc:mother :Maria}; r:because [ a r:Inference; r:gives {:Jos gc:mother :Maria}; r:evidence (
+      [ a r:Extraction; r:gives {:Jos gc:parent :Maria}; r:because [ a r:Inference; r:gives {:Jos gc:parent :Maria}; r:evidence (
+        [ a r:Extraction; r:gives {:Jos gc:childIn :dp}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-facts.n3>]]
+        [ a r:Extraction; r:gives {:Maria gc:spouseIn :dp}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-facts.n3>]]);
+        r:binding [ r:variable [ n3:uri "http://localhost/var#C"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Jos"]]; 
+        r:binding [ r:variable [ n3:uri "http://localhost/var#F"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#dp"]]; 
+        r:binding [ r:variable [ n3:uri "http://localhost/var#P"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Maria"]]; 
+        r:rule [ a r:Extraction; r:gives {@forAll var:C,var:F,var:P. {var:C gc:childIn var:F. var:P gc:spouseIn var:F} => {var:C gc:parent var:P}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-relations.n3>]]]]
+      [ a r:Extraction; r:gives {:Maria gc:sex gc:Female}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-facts.n3>]]);
+      r:binding [ r:variable [ n3:uri "http://localhost/var#C"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Jos"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#P"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Maria"]]; 
+      r:rule [ a r:Extraction; r:gives {@forAll var:C,var:P. {var:C gc:parent var:P. var:P gc:sex gc:Female} => {var:C gc:mother var:P}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-relations.n3>]]]]
+    [ a r:Extraction; r:gives {:Maria gc:daughter :Rita}; r:because [ a r:Inference; r:gives {:Maria gc:daughter :Rita}; r:evidence (
+      [ a r:Extraction; r:gives {:Rita gc:parent :Maria}; r:because [ a r:Inference; r:gives {:Rita gc:parent :Maria}; r:evidence (
+        [ a r:Extraction; r:gives {:Rita gc:childIn :dp}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-facts.n3>]]
+        [ a r:Extraction; r:gives {:Maria gc:spouseIn :dp}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-facts.n3>]]);
+        r:binding [ r:variable [ n3:uri "http://localhost/var#C"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Rita"]]; 
+        r:binding [ r:variable [ n3:uri "http://localhost/var#F"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#dp"]]; 
+        r:binding [ r:variable [ n3:uri "http://localhost/var#P"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Maria"]]; 
+        r:rule [ a r:Extraction; r:gives {@forAll var:C,var:F,var:P. {var:C gc:childIn var:F. var:P gc:spouseIn var:F} => {var:C gc:parent var:P}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-relations.n3>]]]]
+      [ a r:Extraction; r:gives {:Rita gc:sex gc:Female}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-facts.n3>]]);
+      r:binding [ r:variable [ n3:uri "http://localhost/var#C"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Rita"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#P"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Maria"]]; 
+      r:rule [ a r:Extraction; r:gives {@forAll var:C,var:P. {var:C gc:parent var:P. var:C gc:sex gc:Female} => {var:P gc:daughter var:C}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-relations.n3>]]]]
+    [ a r:Extraction; r:gives {:Rita gc:son :Bart}; r:because [ a r:Inference; r:gives {:Rita gc:son :Bart}; r:evidence (
+      [ a r:Extraction; r:gives {:Bart gc:parent :Rita}; r:because [ a r:Inference; r:gives {:Bart gc:parent :Rita}; r:evidence (
+        [ a r:Extraction; r:gives {:Bart gc:childIn :gd}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-facts.n3>]]
+        [ a r:Extraction; r:gives {:Rita gc:spouseIn :gd}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-facts.n3>]]);
+        r:binding [ r:variable [ n3:uri "http://localhost/var#C"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Bart"]]; 
+        r:binding [ r:variable [ n3:uri "http://localhost/var#F"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#gd"]]; 
+        r:binding [ r:variable [ n3:uri "http://localhost/var#P"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Rita"]]; 
+        r:rule [ a r:Extraction; r:gives {@forAll var:C,var:F,var:P. {var:C gc:childIn var:F. var:P gc:spouseIn var:F} => {var:C gc:parent var:P}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-relations.n3>]]]]
+      [ a r:Extraction; r:gives {:Bart gc:sex gc:Male}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-facts.n3>]]);
+      r:binding [ r:variable [ n3:uri "http://localhost/var#C"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Bart"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#P"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Rita"]]; 
+      r:rule [ a r:Extraction; r:gives {@forAll var:C,var:P. {var:C gc:parent var:P. var:C gc:sex gc:Male} => {var:P gc:son var:C}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-relations.n3>]]]]
+    [ a r:Extraction; r:gives {:Bart gc:uncle :Jos}; r:because [ a r:Inference; r:gives {:Bart gc:uncle :Jos}; r:evidence (
+      [ a r:Extraction; r:gives {:Bart gc:parent :Rita}; r:because [ a r:Inference; r:gives {:Bart gc:parent :Rita}; r:evidence (
+        [ a r:Extraction; r:gives {:Bart gc:childIn :gd}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-facts.n3>]]
+        [ a r:Extraction; r:gives {:Rita gc:spouseIn :gd}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-facts.n3>]]);
+        r:binding [ r:variable [ n3:uri "http://localhost/var#C"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Bart"]]; 
+        r:binding [ r:variable [ n3:uri "http://localhost/var#F"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#gd"]]; 
+        r:binding [ r:variable [ n3:uri "http://localhost/var#P"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Rita"]]; 
+        r:rule [ a r:Extraction; r:gives {@forAll var:C,var:F,var:P. {var:C gc:childIn var:F. var:P gc:spouseIn var:F} => {var:C gc:parent var:P}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-relations.n3>]]]]
+      [ a r:Extraction; r:gives {:Rita gc:brother :Jos}; r:because [ a r:Inference; r:gives {:Rita gc:brother :Jos}; r:evidence (
+        [ a r:Extraction; r:gives {:Rita gc:sibling :Jos}; r:because [ a r:Inference; r:gives {:Rita gc:sibling :Jos}; r:evidence (
+          [ a r:Extraction; r:gives {gc:sibling rdf:type owl:SymmetricProperty}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-relations.n3>]]
+          [ a r:Extraction; r:gives {:Jos gc:sibling :Rita}; r:because [ a r:Inference; r:gives {:Jos gc:sibling :Rita}; r:evidence (
+            [ a r:Extraction; r:gives {:Jos gc:childIn :dp}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-facts.n3>]]
+            [ a r:Extraction; r:gives {:Rita gc:childIn :dp}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-facts.n3>]]
+            [ a r:Extraction; r:gives {:Jos owl:differentFrom :Rita}; r:because [ a r:Inference; r:gives {:Jos owl:differentFrom :Rita}; r:evidence (
+              [ a r:Extraction; r:gives {:dp owl:distinctMembers (:Jos :Rita :Geert :Caroline :Dirk :Greta)}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-facts.n3>]]
+              [ a r:Extraction; r:gives {(:Jos :Rita :Geert :Caroline :Dirk :Greta) p0:subListOf (:Jos :Rita :Geert :Caroline :Dirk :Greta)}; r:because [ a r:Inference; r:gives {(:Jos :Rita :Geert :Caroline :Dirk :Greta) p0:subListOf (:Jos :Rita :Geert :Caroline :Dirk :Greta)}; r:evidence (
+                [ a r:Extraction; r:gives {(:Jos :Rita :Geert :Caroline :Dirk :Greta) rdf:type rdf:List}; r:because [ a r:Inference; r:gives {(:Jos :Rita :Geert :Caroline :Dirk :Greta) rdf:type rdf:List}; r:evidence (
+                  [ a r:Extraction; r:gives {owl:distinctMembers rdfs:range rdf:List}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/rpo-rules.n3>]]
+                  [ a r:Extraction; r:gives {:dp owl:distinctMembers (:Jos :Rita :Geert :Caroline :Dirk :Greta)}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-facts.n3>]]);
+                  r:binding [ r:variable [ n3:uri "http://localhost/var#P"]; r:boundTo [ n3:uri "http://www.w3.org/2002/07/owl#distinctMembers"]]; 
+                  r:binding [ r:variable [ n3:uri "http://localhost/var#C"]; r:boundTo [ n3:uri "http://www.w3.org/1999/02/22-rdf-syntax-ns#List"]]; 
+                  r:binding [ r:variable [ n3:uri "http://localhost/var#S"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#dp"]]; 
+                  r:binding [ r:variable [ n3:uri "http://localhost/var#O"]; r:boundTo (:Jos :Rita :Geert :Caroline :Dirk :Greta)]; 
+                  r:rule [ a r:Extraction; r:gives {@forAll var:P,var:C,var:S,var:O. {var:P rdfs:range var:C. var:S var:P var:O} => {var:O a var:C}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/rpo-rules.n3>]]]]);
+                r:binding [ r:variable [ n3:uri "http://localhost/var#L"]; r:boundTo (:Jos :Rita :Geert :Caroline :Dirk :Greta)]; 
+                r:rule [ a r:Extraction; r:gives {@forAll var:L. {var:L a rdf:List} => {var:L p0:subListOf var:L}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/rpo-rules.n3>]]]]
+              [ a r:Fact; r:gives {(:Jos :Rita :Geert :Caroline :Dirk :Greta) rdf:first :Jos}]
+              [ a r:Fact; r:gives {(:Jos :Rita :Geert :Caroline :Dirk :Greta) rdf:rest (:Rita :Geert :Caroline :Dirk :Greta)}]
+              [ a r:Fact; r:gives {:Rita list:in (:Rita :Geert :Caroline :Dirk :Greta)}]);
+              r:binding [ r:variable [ n3:uri "http://localhost/var#A"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#dp"]]; 
+              r:binding [ r:variable [ n3:uri "http://localhost/var#D"]; r:boundTo (:Jos :Rita :Geert :Caroline :Dirk :Greta)]; 
+              r:binding [ r:variable [ n3:uri "http://localhost/var#L"]; r:boundTo (:Jos :Rita :Geert :Caroline :Dirk :Greta)]; 
+              r:binding [ r:variable [ n3:uri "http://localhost/var#X"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Jos"]]; 
+              r:binding [ r:variable [ n3:uri "http://localhost/var#R"]; r:boundTo (:Rita :Geert :Caroline :Dirk :Greta)]; 
+              r:binding [ r:variable [ n3:uri "http://localhost/var#Y"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Rita"]]; 
+              r:rule [ a r:Extraction; r:gives {@forAll var:A,var:D,var:L,var:X,var:R,var:Y. {var:A owl:distinctMembers var:D. var:L p0:subListOf var:D. var:L rdf:first var:X. var:L rdf:rest var:R. var:Y list:in var:R} => {var:X owl:differentFrom var:Y}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/rpo-rules.n3>]]]]);
+            r:binding [ r:variable [ n3:uri "http://localhost/var#C"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Jos"]]; 
+            r:binding [ r:variable [ n3:uri "http://localhost/var#F"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#dp"]]; 
+            r:binding [ r:variable [ n3:uri "http://localhost/var#C2"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Rita"]]; 
+            r:rule [ a r:Extraction; r:gives {@forAll var:C,var:F,var:C2. {var:C gc:childIn var:F. var:C2 gc:childIn var:F. var:C owl:differentFrom var:C2} => {var:C gc:sibling var:C2}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-relations.n3>]]]]);
+          r:binding [ r:variable [ n3:uri "http://localhost/var#P"]; r:boundTo [ n3:uri "http://www.daml.org/2001/01/gedcom/gedcom#sibling"]]; 
+          r:binding [ r:variable [ n3:uri "http://localhost/var#S"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Jos"]]; 
+          r:binding [ r:variable [ n3:uri "http://localhost/var#O"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Rita"]]; 
+          r:rule [ a r:Extraction; r:gives {@forAll var:P,var:S,var:O. {var:P a owl:SymmetricProperty. var:S var:P var:O} => {var:O var:P var:S}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/rpo-rules.n3>]]]]
+        [ a r:Extraction; r:gives {:Jos gc:sex gc:Male}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-facts.n3>]]);
+        r:binding [ r:variable [ n3:uri "http://localhost/var#C"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Rita"]]; 
+        r:binding [ r:variable [ n3:uri "http://localhost/var#S"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Jos"]]; 
+        r:rule [ a r:Extraction; r:gives {@forAll var:C,var:S. {var:C gc:sibling var:S. var:S gc:sex gc:Male} => {var:C gc:brother var:S}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-relations.n3>]]]]);
+      r:binding [ r:variable [ n3:uri "http://localhost/var#C"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Bart"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#P"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Rita"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#U"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Jos"]]; 
+      r:rule [ a r:Extraction; r:gives {@forAll var:C,var:P,var:U. {var:C gc:parent var:P. var:P gc:brother var:U} => {var:C gc:uncle var:U}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-relations.n3>]]]]);
+    r:binding [ r:variable [ n3:uri "http://localhost/var#A"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Jos"]]; 
+    r:binding [ r:variable [ n3:uri "http://localhost/var#M"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Maria"]]; 
+    r:binding [ r:variable [ n3:uri "http://localhost/var#D"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Rita"]]; 
+    r:binding [ r:variable [ n3:uri "http://localhost/var#S"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Bart"]]; 
+    r:rule [ a r:Extraction; r:gives {@forAll var:A,var:M,var:D,var:S. {var:A gc:mother var:M. var:M gc:daughter var:D. var:D gc:son var:S. var:S gc:uncle var:A} => {var:A :testRelationship var:S}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-filter.n3>]]];
+  r:component [ a r:Inference; r:gives {:Jos :testRelationship :Tom}; r:evidence (
+    [ a r:Extraction; r:gives {:Jos gc:mother :Maria}; r:because [ a r:Inference; r:gives {:Jos gc:mother :Maria}; r:evidence (
+      [ a r:Extraction; r:gives {:Jos gc:parent :Maria}; r:because [ a r:Inference; r:gives {:Jos gc:parent :Maria}; r:evidence (
+        [ a r:Extraction; r:gives {:Jos gc:childIn :dp}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-facts.n3>]]
+        [ a r:Extraction; r:gives {:Maria gc:spouseIn :dp}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-facts.n3>]]);
+        r:binding [ r:variable [ n3:uri "http://localhost/var#C"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Jos"]]; 
+        r:binding [ r:variable [ n3:uri "http://localhost/var#F"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#dp"]]; 
+        r:binding [ r:variable [ n3:uri "http://localhost/var#P"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Maria"]]; 
+        r:rule [ a r:Extraction; r:gives {@forAll var:C,var:F,var:P. {var:C gc:childIn var:F. var:P gc:spouseIn var:F} => {var:C gc:parent var:P}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-relations.n3>]]]]
+      [ a r:Extraction; r:gives {:Maria gc:sex gc:Female}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-facts.n3>]]);
+      r:binding [ r:variable [ n3:uri "http://localhost/var#C"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Jos"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#P"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Maria"]]; 
+      r:rule [ a r:Extraction; r:gives {@forAll var:C,var:P. {var:C gc:parent var:P. var:P gc:sex gc:Female} => {var:C gc:mother var:P}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-relations.n3>]]]]
+    [ a r:Extraction; r:gives {:Maria gc:daughter :Greta}; r:because [ a r:Inference; r:gives {:Maria gc:daughter :Greta}; r:evidence (
+      [ a r:Extraction; r:gives {:Greta gc:parent :Maria}; r:because [ a r:Inference; r:gives {:Greta gc:parent :Maria}; r:evidence (
+        [ a r:Extraction; r:gives {:Greta gc:childIn :dp}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-facts.n3>]]
+        [ a r:Extraction; r:gives {:Maria gc:spouseIn :dp}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-facts.n3>]]);
+        r:binding [ r:variable [ n3:uri "http://localhost/var#C"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Greta"]]; 
+        r:binding [ r:variable [ n3:uri "http://localhost/var#F"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#dp"]]; 
+        r:binding [ r:variable [ n3:uri "http://localhost/var#P"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Maria"]]; 
+        r:rule [ a r:Extraction; r:gives {@forAll var:C,var:F,var:P. {var:C gc:childIn var:F. var:P gc:spouseIn var:F} => {var:C gc:parent var:P}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-relations.n3>]]]]
+      [ a r:Extraction; r:gives {:Greta gc:sex gc:Female}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-facts.n3>]]);
+      r:binding [ r:variable [ n3:uri "http://localhost/var#C"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Greta"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#P"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Maria"]]; 
+      r:rule [ a r:Extraction; r:gives {@forAll var:C,var:P. {var:C gc:parent var:P. var:C gc:sex gc:Female} => {var:P gc:daughter var:C}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-relations.n3>]]]]
+    [ a r:Extraction; r:gives {:Greta gc:son :Tom}; r:because [ a r:Inference; r:gives {:Greta gc:son :Tom}; r:evidence (
+      [ a r:Extraction; r:gives {:Tom gc:parent :Greta}; r:because [ a r:Inference; r:gives {:Tom gc:parent :Greta}; r:evidence (
+        [ a r:Extraction; r:gives {:Tom gc:childIn :sd}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-facts.n3>]]
+        [ a r:Extraction; r:gives {:Greta gc:spouseIn :sd}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-facts.n3>]]);
+        r:binding [ r:variable [ n3:uri "http://localhost/var#C"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Tom"]]; 
+        r:binding [ r:variable [ n3:uri "http://localhost/var#F"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#sd"]]; 
+        r:binding [ r:variable [ n3:uri "http://localhost/var#P"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Greta"]]; 
+        r:rule [ a r:Extraction; r:gives {@forAll var:C,var:F,var:P. {var:C gc:childIn var:F. var:P gc:spouseIn var:F} => {var:C gc:parent var:P}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-relations.n3>]]]]
+      [ a r:Extraction; r:gives {:Tom gc:sex gc:Male}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-facts.n3>]]);
+      r:binding [ r:variable [ n3:uri "http://localhost/var#C"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Tom"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#P"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Greta"]]; 
+      r:rule [ a r:Extraction; r:gives {@forAll var:C,var:P. {var:C gc:parent var:P. var:C gc:sex gc:Male} => {var:P gc:son var:C}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-relations.n3>]]]]
+    [ a r:Extraction; r:gives {:Tom gc:uncle :Jos}; r:because [ a r:Inference; r:gives {:Tom gc:uncle :Jos}; r:evidence (
+      [ a r:Extraction; r:gives {:Tom gc:parent :Greta}; r:because [ a r:Inference; r:gives {:Tom gc:parent :Greta}; r:evidence (
+        [ a r:Extraction; r:gives {:Tom gc:childIn :sd}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-facts.n3>]]
+        [ a r:Extraction; r:gives {:Greta gc:spouseIn :sd}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-facts.n3>]]);
+        r:binding [ r:variable [ n3:uri "http://localhost/var#C"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Tom"]]; 
+        r:binding [ r:variable [ n3:uri "http://localhost/var#F"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#sd"]]; 
+        r:binding [ r:variable [ n3:uri "http://localhost/var#P"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Greta"]]; 
+        r:rule [ a r:Extraction; r:gives {@forAll var:C,var:F,var:P. {var:C gc:childIn var:F. var:P gc:spouseIn var:F} => {var:C gc:parent var:P}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-relations.n3>]]]]
+      [ a r:Extraction; r:gives {:Greta gc:brother :Jos}; r:because [ a r:Inference; r:gives {:Greta gc:brother :Jos}; r:evidence (
+        [ a r:Extraction; r:gives {:Greta gc:sibling :Jos}; r:because [ a r:Inference; r:gives {:Greta gc:sibling :Jos}; r:evidence (
+          [ a r:Extraction; r:gives {gc:sibling rdf:type owl:SymmetricProperty}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-relations.n3>]]
+          [ a r:Extraction; r:gives {:Jos gc:sibling :Greta}; r:because [ a r:Inference; r:gives {:Jos gc:sibling :Greta}; r:evidence (
+            [ a r:Extraction; r:gives {:Jos gc:childIn :dp}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-facts.n3>]]
+            [ a r:Extraction; r:gives {:Greta gc:childIn :dp}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-facts.n3>]]
+            [ a r:Extraction; r:gives {:Jos owl:differentFrom :Greta}; r:because [ a r:Inference; r:gives {:Jos owl:differentFrom :Greta}; r:evidence (
+              [ a r:Extraction; r:gives {:dp owl:distinctMembers (:Jos :Rita :Geert :Caroline :Dirk :Greta)}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-facts.n3>]]
+              [ a r:Extraction; r:gives {(:Jos :Rita :Geert :Caroline :Dirk :Greta) p0:subListOf (:Jos :Rita :Geert :Caroline :Dirk :Greta)}; r:because [ a r:Inference; r:gives {(:Jos :Rita :Geert :Caroline :Dirk :Greta) p0:subListOf (:Jos :Rita :Geert :Caroline :Dirk :Greta)}; r:evidence (
+                [ a r:Extraction; r:gives {(:Jos :Rita :Geert :Caroline :Dirk :Greta) rdf:type rdf:List}; r:because [ a r:Inference; r:gives {(:Jos :Rita :Geert :Caroline :Dirk :Greta) rdf:type rdf:List}; r:evidence (
+                  [ a r:Extraction; r:gives {owl:distinctMembers rdfs:range rdf:List}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/rpo-rules.n3>]]
+                  [ a r:Extraction; r:gives {:dp owl:distinctMembers (:Jos :Rita :Geert :Caroline :Dirk :Greta)}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-facts.n3>]]);
+                  r:binding [ r:variable [ n3:uri "http://localhost/var#P"]; r:boundTo [ n3:uri "http://www.w3.org/2002/07/owl#distinctMembers"]]; 
+                  r:binding [ r:variable [ n3:uri "http://localhost/var#C"]; r:boundTo [ n3:uri "http://www.w3.org/1999/02/22-rdf-syntax-ns#List"]]; 
+                  r:binding [ r:variable [ n3:uri "http://localhost/var#S"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#dp"]]; 
+                  r:binding [ r:variable [ n3:uri "http://localhost/var#O"]; r:boundTo (:Jos :Rita :Geert :Caroline :Dirk :Greta)]; 
+                  r:rule [ a r:Extraction; r:gives {@forAll var:P,var:C,var:S,var:O. {var:P rdfs:range var:C. var:S var:P var:O} => {var:O a var:C}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/rpo-rules.n3>]]]]);
+                r:binding [ r:variable [ n3:uri "http://localhost/var#L"]; r:boundTo (:Jos :Rita :Geert :Caroline :Dirk :Greta)]; 
+                r:rule [ a r:Extraction; r:gives {@forAll var:L. {var:L a rdf:List} => {var:L p0:subListOf var:L}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/rpo-rules.n3>]]]]
+              [ a r:Fact; r:gives {(:Jos :Rita :Geert :Caroline :Dirk :Greta) rdf:first :Jos}]
+              [ a r:Fact; r:gives {(:Jos :Rita :Geert :Caroline :Dirk :Greta) rdf:rest (:Rita :Geert :Caroline :Dirk :Greta)}]
+              [ a r:Fact; r:gives {:Greta list:in (:Rita :Geert :Caroline :Dirk :Greta)}]);
+              r:binding [ r:variable [ n3:uri "http://localhost/var#A"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#dp"]]; 
+              r:binding [ r:variable [ n3:uri "http://localhost/var#D"]; r:boundTo (:Jos :Rita :Geert :Caroline :Dirk :Greta)]; 
+              r:binding [ r:variable [ n3:uri "http://localhost/var#L"]; r:boundTo (:Jos :Rita :Geert :Caroline :Dirk :Greta)]; 
+              r:binding [ r:variable [ n3:uri "http://localhost/var#X"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Jos"]]; 
+              r:binding [ r:variable [ n3:uri "http://localhost/var#R"]; r:boundTo (:Rita :Geert :Caroline :Dirk :Greta)]; 
+              r:binding [ r:variable [ n3:uri "http://localhost/var#Y"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Greta"]]; 
+              r:rule [ a r:Extraction; r:gives {@forAll var:A,var:D,var:L,var:X,var:R,var:Y. {var:A owl:distinctMembers var:D. var:L p0:subListOf var:D. var:L rdf:first var:X. var:L rdf:rest var:R. var:Y list:in var:R} => {var:X owl:differentFrom var:Y}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/rpo-rules.n3>]]]]);
+            r:binding [ r:variable [ n3:uri "http://localhost/var#C"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Jos"]]; 
+            r:binding [ r:variable [ n3:uri "http://localhost/var#F"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#dp"]]; 
+            r:binding [ r:variable [ n3:uri "http://localhost/var#C2"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Greta"]]; 
+            r:rule [ a r:Extraction; r:gives {@forAll var:C,var:F,var:C2. {var:C gc:childIn var:F. var:C2 gc:childIn var:F. var:C owl:differentFrom var:C2} => {var:C gc:sibling var:C2}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-relations.n3>]]]]);
+          r:binding [ r:variable [ n3:uri "http://localhost/var#P"]; r:boundTo [ n3:uri "http://www.daml.org/2001/01/gedcom/gedcom#sibling"]]; 
+          r:binding [ r:variable [ n3:uri "http://localhost/var#S"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Jos"]]; 
+          r:binding [ r:variable [ n3:uri "http://localhost/var#O"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Greta"]]; 
+          r:rule [ a r:Extraction; r:gives {@forAll var:P,var:S,var:O. {var:P a owl:SymmetricProperty. var:S var:P var:O} => {var:O var:P var:S}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/rpo-rules.n3>]]]]
+        [ a r:Extraction; r:gives {:Jos gc:sex gc:Male}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-facts.n3>]]);
+        r:binding [ r:variable [ n3:uri "http://localhost/var#C"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Greta"]]; 
+        r:binding [ r:variable [ n3:uri "http://localhost/var#S"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Jos"]]; 
+        r:rule [ a r:Extraction; r:gives {@forAll var:C,var:S. {var:C gc:sibling var:S. var:S gc:sex gc:Male} => {var:C gc:brother var:S}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-relations.n3>]]]]);
+      r:binding [ r:variable [ n3:uri "http://localhost/var#C"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Tom"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#P"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Greta"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#U"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Jos"]]; 
+      r:rule [ a r:Extraction; r:gives {@forAll var:C,var:P,var:U. {var:C gc:parent var:P. var:P gc:brother var:U} => {var:C gc:uncle var:U}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-relations.n3>]]]]);
+    r:binding [ r:variable [ n3:uri "http://localhost/var#A"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Jos"]]; 
+    r:binding [ r:variable [ n3:uri "http://localhost/var#M"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Maria"]]; 
+    r:binding [ r:variable [ n3:uri "http://localhost/var#D"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Greta"]]; 
+    r:binding [ r:variable [ n3:uri "http://localhost/var#S"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Tom"]]; 
+    r:rule [ a r:Extraction; r:gives {@forAll var:A,var:M,var:D,var:S. {var:A gc:mother var:M. var:M gc:daughter var:D. var:D gc:son var:S. var:S gc:uncle var:A} => {var:A :testRelationship var:S}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-filter.n3>]]];
+  r:component [ a r:Inference; r:gives {:Geert :testRelationship :Bart}; r:evidence (
+    [ a r:Extraction; r:gives {:Geert gc:mother :Maria}; r:because [ a r:Inference; r:gives {:Geert gc:mother :Maria}; r:evidence (
+      [ a r:Extraction; r:gives {:Geert gc:parent :Maria}; r:because [ a r:Inference; r:gives {:Geert gc:parent :Maria}; r:evidence (
+        [ a r:Extraction; r:gives {:Geert gc:childIn :dp}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-facts.n3>]]
+        [ a r:Extraction; r:gives {:Maria gc:spouseIn :dp}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-facts.n3>]]);
+        r:binding [ r:variable [ n3:uri "http://localhost/var#C"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Geert"]]; 
+        r:binding [ r:variable [ n3:uri "http://localhost/var#F"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#dp"]]; 
+        r:binding [ r:variable [ n3:uri "http://localhost/var#P"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Maria"]]; 
+        r:rule [ a r:Extraction; r:gives {@forAll var:C,var:F,var:P. {var:C gc:childIn var:F. var:P gc:spouseIn var:F} => {var:C gc:parent var:P}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-relations.n3>]]]]
+      [ a r:Extraction; r:gives {:Maria gc:sex gc:Female}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-facts.n3>]]);
+      r:binding [ r:variable [ n3:uri "http://localhost/var#C"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Geert"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#P"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Maria"]]; 
+      r:rule [ a r:Extraction; r:gives {@forAll var:C,var:P. {var:C gc:parent var:P. var:P gc:sex gc:Female} => {var:C gc:mother var:P}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-relations.n3>]]]]
+    [ a r:Extraction; r:gives {:Maria gc:daughter :Rita}; r:because [ a r:Inference; r:gives {:Maria gc:daughter :Rita}; r:evidence (
+      [ a r:Extraction; r:gives {:Rita gc:parent :Maria}; r:because [ a r:Inference; r:gives {:Rita gc:parent :Maria}; r:evidence (
+        [ a r:Extraction; r:gives {:Rita gc:childIn :dp}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-facts.n3>]]
+        [ a r:Extraction; r:gives {:Maria gc:spouseIn :dp}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-facts.n3>]]);
+        r:binding [ r:variable [ n3:uri "http://localhost/var#C"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Rita"]]; 
+        r:binding [ r:variable [ n3:uri "http://localhost/var#F"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#dp"]]; 
+        r:binding [ r:variable [ n3:uri "http://localhost/var#P"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Maria"]]; 
+        r:rule [ a r:Extraction; r:gives {@forAll var:C,var:F,var:P. {var:C gc:childIn var:F. var:P gc:spouseIn var:F} => {var:C gc:parent var:P}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-relations.n3>]]]]
+      [ a r:Extraction; r:gives {:Rita gc:sex gc:Female}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-facts.n3>]]);
+      r:binding [ r:variable [ n3:uri "http://localhost/var#C"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Rita"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#P"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Maria"]]; 
+      r:rule [ a r:Extraction; r:gives {@forAll var:C,var:P. {var:C gc:parent var:P. var:C gc:sex gc:Female} => {var:P gc:daughter var:C}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-relations.n3>]]]]
+    [ a r:Extraction; r:gives {:Rita gc:son :Bart}; r:because [ a r:Inference; r:gives {:Rita gc:son :Bart}; r:evidence (
+      [ a r:Extraction; r:gives {:Bart gc:parent :Rita}; r:because [ a r:Inference; r:gives {:Bart gc:parent :Rita}; r:evidence (
+        [ a r:Extraction; r:gives {:Bart gc:childIn :gd}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-facts.n3>]]
+        [ a r:Extraction; r:gives {:Rita gc:spouseIn :gd}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-facts.n3>]]);
+        r:binding [ r:variable [ n3:uri "http://localhost/var#C"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Bart"]]; 
+        r:binding [ r:variable [ n3:uri "http://localhost/var#F"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#gd"]]; 
+        r:binding [ r:variable [ n3:uri "http://localhost/var#P"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Rita"]]; 
+        r:rule [ a r:Extraction; r:gives {@forAll var:C,var:F,var:P. {var:C gc:childIn var:F. var:P gc:spouseIn var:F} => {var:C gc:parent var:P}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-relations.n3>]]]]
+      [ a r:Extraction; r:gives {:Bart gc:sex gc:Male}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-facts.n3>]]);
+      r:binding [ r:variable [ n3:uri "http://localhost/var#C"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Bart"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#P"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Rita"]]; 
+      r:rule [ a r:Extraction; r:gives {@forAll var:C,var:P. {var:C gc:parent var:P. var:C gc:sex gc:Male} => {var:P gc:son var:C}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-relations.n3>]]]]
+    [ a r:Extraction; r:gives {:Bart gc:uncle :Geert}; r:because [ a r:Inference; r:gives {:Bart gc:uncle :Geert}; r:evidence (
+      [ a r:Extraction; r:gives {:Bart gc:parent :Rita}; r:because [ a r:Inference; r:gives {:Bart gc:parent :Rita}; r:evidence (
+        [ a r:Extraction; r:gives {:Bart gc:childIn :gd}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-facts.n3>]]
+        [ a r:Extraction; r:gives {:Rita gc:spouseIn :gd}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-facts.n3>]]);
+        r:binding [ r:variable [ n3:uri "http://localhost/var#C"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Bart"]]; 
+        r:binding [ r:variable [ n3:uri "http://localhost/var#F"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#gd"]]; 
+        r:binding [ r:variable [ n3:uri "http://localhost/var#P"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Rita"]]; 
+        r:rule [ a r:Extraction; r:gives {@forAll var:C,var:F,var:P. {var:C gc:childIn var:F. var:P gc:spouseIn var:F} => {var:C gc:parent var:P}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-relations.n3>]]]]
+      [ a r:Extraction; r:gives {:Rita gc:brother :Geert}; r:because [ a r:Inference; r:gives {:Rita gc:brother :Geert}; r:evidence (
+        [ a r:Extraction; r:gives {:Rita gc:sibling :Geert}; r:because [ a r:Inference; r:gives {:Rita gc:sibling :Geert}; r:evidence (
+          [ a r:Extraction; r:gives {:Rita gc:childIn :dp}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-facts.n3>]]
+          [ a r:Extraction; r:gives {:Geert gc:childIn :dp}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-facts.n3>]]
+          [ a r:Extraction; r:gives {:Rita owl:differentFrom :Geert}; r:because [ a r:Inference; r:gives {:Rita owl:differentFrom :Geert}; r:evidence (
+            [ a r:Extraction; r:gives {:dp owl:distinctMembers (:Jos :Rita :Geert :Caroline :Dirk :Greta)}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-facts.n3>]]
+            [ a r:Extraction; r:gives {(:Rita :Geert :Caroline :Dirk :Greta) p0:subListOf (:Jos :Rita :Geert :Caroline :Dirk :Greta)}; r:because [ a r:Inference; r:gives {(:Rita :Geert :Caroline :Dirk :Greta) p0:subListOf (:Jos :Rita :Geert :Caroline :Dirk :Greta)}; r:evidence (
+              [ a r:Fact; r:gives {(:Jos :Rita :Geert :Caroline :Dirk :Greta) rdf:rest (:Rita :Geert :Caroline :Dirk :Greta)}]
+              [ a r:Extraction; r:gives {(:Jos :Rita :Geert :Caroline :Dirk :Greta) rdf:type rdf:List}; r:because [ a r:Inference; r:gives {(:Jos :Rita :Geert :Caroline :Dirk :Greta) rdf:type rdf:List}; r:evidence (
+                [ a r:Extraction; r:gives {owl:distinctMembers rdfs:range rdf:List}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/rpo-rules.n3>]]
+                [ a r:Extraction; r:gives {:dp owl:distinctMembers (:Jos :Rita :Geert :Caroline :Dirk :Greta)}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-facts.n3>]]);
+                r:binding [ r:variable [ n3:uri "http://localhost/var#P"]; r:boundTo [ n3:uri "http://www.w3.org/2002/07/owl#distinctMembers"]]; 
+                r:binding [ r:variable [ n3:uri "http://localhost/var#C"]; r:boundTo [ n3:uri "http://www.w3.org/1999/02/22-rdf-syntax-ns#List"]]; 
+                r:binding [ r:variable [ n3:uri "http://localhost/var#S"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#dp"]]; 
+                r:binding [ r:variable [ n3:uri "http://localhost/var#O"]; r:boundTo (:Jos :Rita :Geert :Caroline :Dirk :Greta)]; 
+                r:rule [ a r:Extraction; r:gives {@forAll var:P,var:C,var:S,var:O. {var:P rdfs:range var:C. var:S var:P var:O} => {var:O a var:C}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/rpo-rules.n3>]]]]
+              [ a r:Extraction; r:gives {(:Rita :Geert :Caroline :Dirk :Greta) p0:subListOf (:Rita :Geert :Caroline :Dirk :Greta)}; r:because [ a r:Inference; r:gives {(:Rita :Geert :Caroline :Dirk :Greta) p0:subListOf (:Rita :Geert :Caroline :Dirk :Greta)}; r:evidence (
+                [ a r:Extraction; r:gives {(:Rita :Geert :Caroline :Dirk :Greta) rdf:type rdf:List}; r:because [ a r:Inference; r:gives {(:Rita :Geert :Caroline :Dirk :Greta) rdf:type rdf:List}; r:evidence (
+                  [ a r:Extraction; r:gives {rdf:rest rdfs:range rdf:List}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/rpo-rules.n3>]]
+                  [ a r:Fact; r:gives {(:Jos :Rita :Geert :Caroline :Dirk :Greta) rdf:rest (:Rita :Geert :Caroline :Dirk :Greta)}]);
+                  r:binding [ r:variable [ n3:uri "http://localhost/var#P"]; r:boundTo [ n3:uri "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest"]]; 
+                  r:binding [ r:variable [ n3:uri "http://localhost/var#C"]; r:boundTo [ n3:uri "http://www.w3.org/1999/02/22-rdf-syntax-ns#List"]]; 
+                  r:binding [ r:variable [ n3:uri "http://localhost/var#S"]; r:boundTo (:Jos :Rita :Geert :Caroline :Dirk :Greta)]; 
+                  r:binding [ r:variable [ n3:uri "http://localhost/var#O"]; r:boundTo (:Rita :Geert :Caroline :Dirk :Greta)]; 
+                  r:rule [ a r:Extraction; r:gives {@forAll var:P,var:C,var:S,var:O. {var:P rdfs:range var:C. var:S var:P var:O} => {var:O a var:C}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/rpo-rules.n3>]]]]);
+                r:binding [ r:variable [ n3:uri "http://localhost/var#L"]; r:boundTo (:Rita :Geert :Caroline :Dirk :Greta)]; 
+                r:rule [ a r:Extraction; r:gives {@forAll var:L. {var:L a rdf:List} => {var:L p0:subListOf var:L}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/rpo-rules.n3>]]]]);
+              r:binding [ r:variable [ n3:uri "http://localhost/var#L"]; r:boundTo (:Jos :Rita :Geert :Caroline :Dirk :Greta)]; 
+              r:binding [ r:variable [ n3:uri "http://localhost/var#R"]; r:boundTo (:Rita :Geert :Caroline :Dirk :Greta)]; 
+              r:binding [ r:variable [ n3:uri "http://localhost/var#X"]; r:boundTo (:Rita :Geert :Caroline :Dirk :Greta)]; 
+              r:rule [ a r:Extraction; r:gives {@forAll var:L,var:R,var:X. {var:L rdf:rest var:R. var:L a rdf:List. var:X p0:subListOf var:R} => {var:X p0:subListOf var:L}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/rpo-rules.n3>]]]]
+            [ a r:Fact; r:gives {(:Rita :Geert :Caroline :Dirk :Greta) rdf:first :Rita}]
+            [ a r:Fact; r:gives {(:Rita :Geert :Caroline :Dirk :Greta) rdf:rest (:Geert :Caroline :Dirk :Greta)}]
+            [ a r:Fact; r:gives {:Geert list:in (:Geert :Caroline :Dirk :Greta)}]);
+            r:binding [ r:variable [ n3:uri "http://localhost/var#A"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#dp"]]; 
+            r:binding [ r:variable [ n3:uri "http://localhost/var#D"]; r:boundTo (:Jos :Rita :Geert :Caroline :Dirk :Greta)]; 
+            r:binding [ r:variable [ n3:uri "http://localhost/var#L"]; r:boundTo (:Rita :Geert :Caroline :Dirk :Greta)]; 
+            r:binding [ r:variable [ n3:uri "http://localhost/var#X"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Rita"]]; 
+            r:binding [ r:variable [ n3:uri "http://localhost/var#R"]; r:boundTo (:Geert :Caroline :Dirk :Greta)]; 
+            r:binding [ r:variable [ n3:uri "http://localhost/var#Y"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Geert"]]; 
+            r:rule [ a r:Extraction; r:gives {@forAll var:A,var:D,var:L,var:X,var:R,var:Y. {var:A owl:distinctMembers var:D. var:L p0:subListOf var:D. var:L rdf:first var:X. var:L rdf:rest var:R. var:Y list:in var:R} => {var:X owl:differentFrom var:Y}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/rpo-rules.n3>]]]]);
+          r:binding [ r:variable [ n3:uri "http://localhost/var#C"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Rita"]]; 
+          r:binding [ r:variable [ n3:uri "http://localhost/var#F"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#dp"]]; 
+          r:binding [ r:variable [ n3:uri "http://localhost/var#C2"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Geert"]]; 
+          r:rule [ a r:Extraction; r:gives {@forAll var:C,var:F,var:C2. {var:C gc:childIn var:F. var:C2 gc:childIn var:F. var:C owl:differentFrom var:C2} => {var:C gc:sibling var:C2}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-relations.n3>]]]]
+        [ a r:Extraction; r:gives {:Geert gc:sex gc:Male}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-facts.n3>]]);
+        r:binding [ r:variable [ n3:uri "http://localhost/var#C"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Rita"]]; 
+        r:binding [ r:variable [ n3:uri "http://localhost/var#S"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Geert"]]; 
+        r:rule [ a r:Extraction; r:gives {@forAll var:C,var:S. {var:C gc:sibling var:S. var:S gc:sex gc:Male} => {var:C gc:brother var:S}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-relations.n3>]]]]);
+      r:binding [ r:variable [ n3:uri "http://localhost/var#C"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Bart"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#P"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Rita"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#U"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Geert"]]; 
+      r:rule [ a r:Extraction; r:gives {@forAll var:C,var:P,var:U. {var:C gc:parent var:P. var:P gc:brother var:U} => {var:C gc:uncle var:U}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-relations.n3>]]]]);
+    r:binding [ r:variable [ n3:uri "http://localhost/var#A"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Geert"]]; 
+    r:binding [ r:variable [ n3:uri "http://localhost/var#M"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Maria"]]; 
+    r:binding [ r:variable [ n3:uri "http://localhost/var#D"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Rita"]]; 
+    r:binding [ r:variable [ n3:uri "http://localhost/var#S"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Bart"]]; 
+    r:rule [ a r:Extraction; r:gives {@forAll var:A,var:M,var:D,var:S. {var:A gc:mother var:M. var:M gc:daughter var:D. var:D gc:son var:S. var:S gc:uncle var:A} => {var:A :testRelationship var:S}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-filter.n3>]]];
+  r:component [ a r:Inference; r:gives {:Dirk :testRelationship :Bart}; r:evidence (
+    [ a r:Extraction; r:gives {:Dirk gc:mother :Maria}; r:because [ a r:Inference; r:gives {:Dirk gc:mother :Maria}; r:evidence (
+      [ a r:Extraction; r:gives {:Dirk gc:parent :Maria}; r:because [ a r:Inference; r:gives {:Dirk gc:parent :Maria}; r:evidence (
+        [ a r:Extraction; r:gives {:Dirk gc:childIn :dp}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-facts.n3>]]
+        [ a r:Extraction; r:gives {:Maria gc:spouseIn :dp}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-facts.n3>]]);
+        r:binding [ r:variable [ n3:uri "http://localhost/var#C"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Dirk"]]; 
+        r:binding [ r:variable [ n3:uri "http://localhost/var#F"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#dp"]]; 
+        r:binding [ r:variable [ n3:uri "http://localhost/var#P"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Maria"]]; 
+        r:rule [ a r:Extraction; r:gives {@forAll var:C,var:F,var:P. {var:C gc:childIn var:F. var:P gc:spouseIn var:F} => {var:C gc:parent var:P}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-relations.n3>]]]]
+      [ a r:Extraction; r:gives {:Maria gc:sex gc:Female}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-facts.n3>]]);
+      r:binding [ r:variable [ n3:uri "http://localhost/var#C"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Dirk"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#P"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Maria"]]; 
+      r:rule [ a r:Extraction; r:gives {@forAll var:C,var:P. {var:C gc:parent var:P. var:P gc:sex gc:Female} => {var:C gc:mother var:P}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-relations.n3>]]]]
+    [ a r:Extraction; r:gives {:Maria gc:daughter :Rita}; r:because [ a r:Inference; r:gives {:Maria gc:daughter :Rita}; r:evidence (
+      [ a r:Extraction; r:gives {:Rita gc:parent :Maria}; r:because [ a r:Inference; r:gives {:Rita gc:parent :Maria}; r:evidence (
+        [ a r:Extraction; r:gives {:Rita gc:childIn :dp}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-facts.n3>]]
+        [ a r:Extraction; r:gives {:Maria gc:spouseIn :dp}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-facts.n3>]]);
+        r:binding [ r:variable [ n3:uri "http://localhost/var#C"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Rita"]]; 
+        r:binding [ r:variable [ n3:uri "http://localhost/var#F"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#dp"]]; 
+        r:binding [ r:variable [ n3:uri "http://localhost/var#P"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Maria"]]; 
+        r:rule [ a r:Extraction; r:gives {@forAll var:C,var:F,var:P. {var:C gc:childIn var:F. var:P gc:spouseIn var:F} => {var:C gc:parent var:P}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-relations.n3>]]]]
+      [ a r:Extraction; r:gives {:Rita gc:sex gc:Female}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-facts.n3>]]);
+      r:binding [ r:variable [ n3:uri "http://localhost/var#C"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Rita"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#P"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Maria"]]; 
+      r:rule [ a r:Extraction; r:gives {@forAll var:C,var:P. {var:C gc:parent var:P. var:C gc:sex gc:Female} => {var:P gc:daughter var:C}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-relations.n3>]]]]
+    [ a r:Extraction; r:gives {:Rita gc:son :Bart}; r:because [ a r:Inference; r:gives {:Rita gc:son :Bart}; r:evidence (
+      [ a r:Extraction; r:gives {:Bart gc:parent :Rita}; r:because [ a r:Inference; r:gives {:Bart gc:parent :Rita}; r:evidence (
+        [ a r:Extraction; r:gives {:Bart gc:childIn :gd}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-facts.n3>]]
+        [ a r:Extraction; r:gives {:Rita gc:spouseIn :gd}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-facts.n3>]]);
+        r:binding [ r:variable [ n3:uri "http://localhost/var#C"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Bart"]]; 
+        r:binding [ r:variable [ n3:uri "http://localhost/var#F"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#gd"]]; 
+        r:binding [ r:variable [ n3:uri "http://localhost/var#P"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Rita"]]; 
+        r:rule [ a r:Extraction; r:gives {@forAll var:C,var:F,var:P. {var:C gc:childIn var:F. var:P gc:spouseIn var:F} => {var:C gc:parent var:P}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-relations.n3>]]]]
+      [ a r:Extraction; r:gives {:Bart gc:sex gc:Male}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-facts.n3>]]);
+      r:binding [ r:variable [ n3:uri "http://localhost/var#C"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Bart"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#P"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Rita"]]; 
+      r:rule [ a r:Extraction; r:gives {@forAll var:C,var:P. {var:C gc:parent var:P. var:C gc:sex gc:Male} => {var:P gc:son var:C}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-relations.n3>]]]]
+    [ a r:Extraction; r:gives {:Bart gc:uncle :Dirk}; r:because [ a r:Inference; r:gives {:Bart gc:uncle :Dirk}; r:evidence (
+      [ a r:Extraction; r:gives {:Bart gc:parent :Rita}; r:because [ a r:Inference; r:gives {:Bart gc:parent :Rita}; r:evidence (
+        [ a r:Extraction; r:gives {:Bart gc:childIn :gd}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-facts.n3>]]
+        [ a r:Extraction; r:gives {:Rita gc:spouseIn :gd}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-facts.n3>]]);
+        r:binding [ r:variable [ n3:uri "http://localhost/var#C"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Bart"]]; 
+        r:binding [ r:variable [ n3:uri "http://localhost/var#F"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#gd"]]; 
+        r:binding [ r:variable [ n3:uri "http://localhost/var#P"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Rita"]]; 
+        r:rule [ a r:Extraction; r:gives {@forAll var:C,var:F,var:P. {var:C gc:childIn var:F. var:P gc:spouseIn var:F} => {var:C gc:parent var:P}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-relations.n3>]]]]
+      [ a r:Extraction; r:gives {:Rita gc:brother :Dirk}; r:because [ a r:Inference; r:gives {:Rita gc:brother :Dirk}; r:evidence (
+        [ a r:Extraction; r:gives {:Rita gc:sibling :Dirk}; r:because [ a r:Inference; r:gives {:Rita gc:sibling :Dirk}; r:evidence (
+          [ a r:Extraction; r:gives {:Rita gc:childIn :dp}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-facts.n3>]]
+          [ a r:Extraction; r:gives {:Dirk gc:childIn :dp}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-facts.n3>]]
+          [ a r:Extraction; r:gives {:Rita owl:differentFrom :Dirk}; r:because [ a r:Inference; r:gives {:Rita owl:differentFrom :Dirk}; r:evidence (
+            [ a r:Extraction; r:gives {:dp owl:distinctMembers (:Jos :Rita :Geert :Caroline :Dirk :Greta)}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-facts.n3>]]
+            [ a r:Extraction; r:gives {(:Rita :Geert :Caroline :Dirk :Greta) p0:subListOf (:Jos :Rita :Geert :Caroline :Dirk :Greta)}; r:because [ a r:Inference; r:gives {(:Rita :Geert :Caroline :Dirk :Greta) p0:subListOf (:Jos :Rita :Geert :Caroline :Dirk :Greta)}; r:evidence (
+              [ a r:Fact; r:gives {(:Jos :Rita :Geert :Caroline :Dirk :Greta) rdf:rest (:Rita :Geert :Caroline :Dirk :Greta)}]
+              [ a r:Extraction; r:gives {(:Jos :Rita :Geert :Caroline :Dirk :Greta) rdf:type rdf:List}; r:because [ a r:Inference; r:gives {(:Jos :Rita :Geert :Caroline :Dirk :Greta) rdf:type rdf:List}; r:evidence (
+                [ a r:Extraction; r:gives {owl:distinctMembers rdfs:range rdf:List}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/rpo-rules.n3>]]
+                [ a r:Extraction; r:gives {:dp owl:distinctMembers (:Jos :Rita :Geert :Caroline :Dirk :Greta)}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-facts.n3>]]);
+                r:binding [ r:variable [ n3:uri "http://localhost/var#P"]; r:boundTo [ n3:uri "http://www.w3.org/2002/07/owl#distinctMembers"]]; 
+                r:binding [ r:variable [ n3:uri "http://localhost/var#C"]; r:boundTo [ n3:uri "http://www.w3.org/1999/02/22-rdf-syntax-ns#List"]]; 
+                r:binding [ r:variable [ n3:uri "http://localhost/var#S"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#dp"]]; 
+                r:binding [ r:variable [ n3:uri "http://localhost/var#O"]; r:boundTo (:Jos :Rita :Geert :Caroline :Dirk :Greta)]; 
+                r:rule [ a r:Extraction; r:gives {@forAll var:P,var:C,var:S,var:O. {var:P rdfs:range var:C. var:S var:P var:O} => {var:O a var:C}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/rpo-rules.n3>]]]]
+              [ a r:Extraction; r:gives {(:Rita :Geert :Caroline :Dirk :Greta) p0:subListOf (:Rita :Geert :Caroline :Dirk :Greta)}; r:because [ a r:Inference; r:gives {(:Rita :Geert :Caroline :Dirk :Greta) p0:subListOf (:Rita :Geert :Caroline :Dirk :Greta)}; r:evidence (
+                [ a r:Extraction; r:gives {(:Rita :Geert :Caroline :Dirk :Greta) rdf:type rdf:List}; r:because [ a r:Inference; r:gives {(:Rita :Geert :Caroline :Dirk :Greta) rdf:type rdf:List}; r:evidence (
+                  [ a r:Extraction; r:gives {rdf:rest rdfs:range rdf:List}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/rpo-rules.n3>]]
+                  [ a r:Fact; r:gives {(:Jos :Rita :Geert :Caroline :Dirk :Greta) rdf:rest (:Rita :Geert :Caroline :Dirk :Greta)}]);
+                  r:binding [ r:variable [ n3:uri "http://localhost/var#P"]; r:boundTo [ n3:uri "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest"]]; 
+                  r:binding [ r:variable [ n3:uri "http://localhost/var#C"]; r:boundTo [ n3:uri "http://www.w3.org/1999/02/22-rdf-syntax-ns#List"]]; 
+                  r:binding [ r:variable [ n3:uri "http://localhost/var#S"]; r:boundTo (:Jos :Rita :Geert :Caroline :Dirk :Greta)]; 
+                  r:binding [ r:variable [ n3:uri "http://localhost/var#O"]; r:boundTo (:Rita :Geert :Caroline :Dirk :Greta)]; 
+                  r:rule [ a r:Extraction; r:gives {@forAll var:P,var:C,var:S,var:O. {var:P rdfs:range var:C. var:S var:P var:O} => {var:O a var:C}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/rpo-rules.n3>]]]]);
+                r:binding [ r:variable [ n3:uri "http://localhost/var#L"]; r:boundTo (:Rita :Geert :Caroline :Dirk :Greta)]; 
+                r:rule [ a r:Extraction; r:gives {@forAll var:L. {var:L a rdf:List} => {var:L p0:subListOf var:L}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/rpo-rules.n3>]]]]);
+              r:binding [ r:variable [ n3:uri "http://localhost/var#L"]; r:boundTo (:Jos :Rita :Geert :Caroline :Dirk :Greta)]; 
+              r:binding [ r:variable [ n3:uri "http://localhost/var#R"]; r:boundTo (:Rita :Geert :Caroline :Dirk :Greta)]; 
+              r:binding [ r:variable [ n3:uri "http://localhost/var#X"]; r:boundTo (:Rita :Geert :Caroline :Dirk :Greta)]; 
+              r:rule [ a r:Extraction; r:gives {@forAll var:L,var:R,var:X. {var:L rdf:rest var:R. var:L a rdf:List. var:X p0:subListOf var:R} => {var:X p0:subListOf var:L}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/rpo-rules.n3>]]]]
+            [ a r:Fact; r:gives {(:Rita :Geert :Caroline :Dirk :Greta) rdf:first :Rita}]
+            [ a r:Fact; r:gives {(:Rita :Geert :Caroline :Dirk :Greta) rdf:rest (:Geert :Caroline :Dirk :Greta)}]
+            [ a r:Fact; r:gives {:Dirk list:in (:Geert :Caroline :Dirk :Greta)}]);
+            r:binding [ r:variable [ n3:uri "http://localhost/var#A"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#dp"]]; 
+            r:binding [ r:variable [ n3:uri "http://localhost/var#D"]; r:boundTo (:Jos :Rita :Geert :Caroline :Dirk :Greta)]; 
+            r:binding [ r:variable [ n3:uri "http://localhost/var#L"]; r:boundTo (:Rita :Geert :Caroline :Dirk :Greta)]; 
+            r:binding [ r:variable [ n3:uri "http://localhost/var#X"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Rita"]]; 
+            r:binding [ r:variable [ n3:uri "http://localhost/var#R"]; r:boundTo (:Geert :Caroline :Dirk :Greta)]; 
+            r:binding [ r:variable [ n3:uri "http://localhost/var#Y"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Dirk"]]; 
+            r:rule [ a r:Extraction; r:gives {@forAll var:A,var:D,var:L,var:X,var:R,var:Y. {var:A owl:distinctMembers var:D. var:L p0:subListOf var:D. var:L rdf:first var:X. var:L rdf:rest var:R. var:Y list:in var:R} => {var:X owl:differentFrom var:Y}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/rpo-rules.n3>]]]]);
+          r:binding [ r:variable [ n3:uri "http://localhost/var#C"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Rita"]]; 
+          r:binding [ r:variable [ n3:uri "http://localhost/var#F"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#dp"]]; 
+          r:binding [ r:variable [ n3:uri "http://localhost/var#C2"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Dirk"]]; 
+          r:rule [ a r:Extraction; r:gives {@forAll var:C,var:F,var:C2. {var:C gc:childIn var:F. var:C2 gc:childIn var:F. var:C owl:differentFrom var:C2} => {var:C gc:sibling var:C2}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-relations.n3>]]]]
+        [ a r:Extraction; r:gives {:Dirk gc:sex gc:Male}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-facts.n3>]]);
+        r:binding [ r:variable [ n3:uri "http://localhost/var#C"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Rita"]]; 
+        r:binding [ r:variable [ n3:uri "http://localhost/var#S"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Dirk"]]; 
+        r:rule [ a r:Extraction; r:gives {@forAll var:C,var:S. {var:C gc:sibling var:S. var:S gc:sex gc:Male} => {var:C gc:brother var:S}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-relations.n3>]]]]);
+      r:binding [ r:variable [ n3:uri "http://localhost/var#C"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Bart"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#P"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Rita"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#U"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Dirk"]]; 
+      r:rule [ a r:Extraction; r:gives {@forAll var:C,var:P,var:U. {var:C gc:parent var:P. var:P gc:brother var:U} => {var:C gc:uncle var:U}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-relations.n3>]]]]);
+    r:binding [ r:variable [ n3:uri "http://localhost/var#A"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Dirk"]]; 
+    r:binding [ r:variable [ n3:uri "http://localhost/var#M"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Maria"]]; 
+    r:binding [ r:variable [ n3:uri "http://localhost/var#D"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Rita"]]; 
+    r:binding [ r:variable [ n3:uri "http://localhost/var#S"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Bart"]]; 
+    r:rule [ a r:Extraction; r:gives {@forAll var:A,var:M,var:D,var:S. {var:A gc:mother var:M. var:M gc:daughter var:D. var:D gc:son var:S. var:S gc:uncle var:A} => {var:A :testRelationship var:S}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-filter.n3>]]];
+  r:component [ a r:Inference; r:gives {:Geert :testRelationship :Tom}; r:evidence (
+    [ a r:Extraction; r:gives {:Geert gc:mother :Maria}; r:because [ a r:Inference; r:gives {:Geert gc:mother :Maria}; r:evidence (
+      [ a r:Extraction; r:gives {:Geert gc:parent :Maria}; r:because [ a r:Inference; r:gives {:Geert gc:parent :Maria}; r:evidence (
+        [ a r:Extraction; r:gives {:Geert gc:childIn :dp}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-facts.n3>]]
+        [ a r:Extraction; r:gives {:Maria gc:spouseIn :dp}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-facts.n3>]]);
+        r:binding [ r:variable [ n3:uri "http://localhost/var#C"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Geert"]]; 
+        r:binding [ r:variable [ n3:uri "http://localhost/var#F"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#dp"]]; 
+        r:binding [ r:variable [ n3:uri "http://localhost/var#P"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Maria"]]; 
+        r:rule [ a r:Extraction; r:gives {@forAll var:C,var:F,var:P. {var:C gc:childIn var:F. var:P gc:spouseIn var:F} => {var:C gc:parent var:P}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-relations.n3>]]]]
+      [ a r:Extraction; r:gives {:Maria gc:sex gc:Female}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-facts.n3>]]);
+      r:binding [ r:variable [ n3:uri "http://localhost/var#C"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Geert"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#P"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Maria"]]; 
+      r:rule [ a r:Extraction; r:gives {@forAll var:C,var:P. {var:C gc:parent var:P. var:P gc:sex gc:Female} => {var:C gc:mother var:P}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-relations.n3>]]]]
+    [ a r:Extraction; r:gives {:Maria gc:daughter :Greta}; r:because [ a r:Inference; r:gives {:Maria gc:daughter :Greta}; r:evidence (
+      [ a r:Extraction; r:gives {:Greta gc:parent :Maria}; r:because [ a r:Inference; r:gives {:Greta gc:parent :Maria}; r:evidence (
+        [ a r:Extraction; r:gives {:Greta gc:childIn :dp}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-facts.n3>]]
+        [ a r:Extraction; r:gives {:Maria gc:spouseIn :dp}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-facts.n3>]]);
+        r:binding [ r:variable [ n3:uri "http://localhost/var#C"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Greta"]]; 
+        r:binding [ r:variable [ n3:uri "http://localhost/var#F"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#dp"]]; 
+        r:binding [ r:variable [ n3:uri "http://localhost/var#P"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Maria"]]; 
+        r:rule [ a r:Extraction; r:gives {@forAll var:C,var:F,var:P. {var:C gc:childIn var:F. var:P gc:spouseIn var:F} => {var:C gc:parent var:P}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-relations.n3>]]]]
+      [ a r:Extraction; r:gives {:Greta gc:sex gc:Female}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-facts.n3>]]);
+      r:binding [ r:variable [ n3:uri "http://localhost/var#C"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Greta"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#P"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Maria"]]; 
+      r:rule [ a r:Extraction; r:gives {@forAll var:C,var:P. {var:C gc:parent var:P. var:C gc:sex gc:Female} => {var:P gc:daughter var:C}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-relations.n3>]]]]
+    [ a r:Extraction; r:gives {:Greta gc:son :Tom}; r:because [ a r:Inference; r:gives {:Greta gc:son :Tom}; r:evidence (
+      [ a r:Extraction; r:gives {:Tom gc:parent :Greta}; r:because [ a r:Inference; r:gives {:Tom gc:parent :Greta}; r:evidence (
+        [ a r:Extraction; r:gives {:Tom gc:childIn :sd}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-facts.n3>]]
+        [ a r:Extraction; r:gives {:Greta gc:spouseIn :sd}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-facts.n3>]]);
+        r:binding [ r:variable [ n3:uri "http://localhost/var#C"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Tom"]]; 
+        r:binding [ r:variable [ n3:uri "http://localhost/var#F"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#sd"]]; 
+        r:binding [ r:variable [ n3:uri "http://localhost/var#P"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Greta"]]; 
+        r:rule [ a r:Extraction; r:gives {@forAll var:C,var:F,var:P. {var:C gc:childIn var:F. var:P gc:spouseIn var:F} => {var:C gc:parent var:P}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-relations.n3>]]]]
+      [ a r:Extraction; r:gives {:Tom gc:sex gc:Male}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-facts.n3>]]);
+      r:binding [ r:variable [ n3:uri "http://localhost/var#C"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Tom"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#P"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Greta"]]; 
+      r:rule [ a r:Extraction; r:gives {@forAll var:C,var:P. {var:C gc:parent var:P. var:C gc:sex gc:Male} => {var:P gc:son var:C}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-relations.n3>]]]]
+    [ a r:Extraction; r:gives {:Tom gc:uncle :Geert}; r:because [ a r:Inference; r:gives {:Tom gc:uncle :Geert}; r:evidence (
+      [ a r:Extraction; r:gives {:Tom gc:parent :Greta}; r:because [ a r:Inference; r:gives {:Tom gc:parent :Greta}; r:evidence (
+        [ a r:Extraction; r:gives {:Tom gc:childIn :sd}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-facts.n3>]]
+        [ a r:Extraction; r:gives {:Greta gc:spouseIn :sd}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-facts.n3>]]);
+        r:binding [ r:variable [ n3:uri "http://localhost/var#C"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Tom"]]; 
+        r:binding [ r:variable [ n3:uri "http://localhost/var#F"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#sd"]]; 
+        r:binding [ r:variable [ n3:uri "http://localhost/var#P"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Greta"]]; 
+        r:rule [ a r:Extraction; r:gives {@forAll var:C,var:F,var:P. {var:C gc:childIn var:F. var:P gc:spouseIn var:F} => {var:C gc:parent var:P}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-relations.n3>]]]]
+      [ a r:Extraction; r:gives {:Greta gc:brother :Geert}; r:because [ a r:Inference; r:gives {:Greta gc:brother :Geert}; r:evidence (
+        [ a r:Extraction; r:gives {:Greta gc:sibling :Geert}; r:because [ a r:Inference; r:gives {:Greta gc:sibling :Geert}; r:evidence (
+          [ a r:Extraction; r:gives {gc:sibling rdf:type owl:SymmetricProperty}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-relations.n3>]]
+          [ a r:Extraction; r:gives {:Geert gc:sibling :Greta}; r:because [ a r:Inference; r:gives {:Geert gc:sibling :Greta}; r:evidence (
+            [ a r:Extraction; r:gives {:Geert gc:childIn :dp}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-facts.n3>]]
+            [ a r:Extraction; r:gives {:Greta gc:childIn :dp}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-facts.n3>]]
+            [ a r:Extraction; r:gives {:Geert owl:differentFrom :Greta}; r:because [ a r:Inference; r:gives {:Geert owl:differentFrom :Greta}; r:evidence (
+              [ a r:Extraction; r:gives {:dp owl:distinctMembers (:Rita :Geert :Caroline :Dirk :Greta)}; r:because [ a r:Inference; r:gives {:dp owl:distinctMembers (:Rita :Geert :Caroline :Dirk :Greta)}; r:evidence (
+                [ a r:Extraction; r:gives {:dp owl:distinctMembers (:Jos :Rita :Geert :Caroline :Dirk :Greta)}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-facts.n3>]]
+                [ a r:Fact; r:gives {(:Jos :Rita :Geert :Caroline :Dirk :Greta) rdf:rest (:Rita :Geert :Caroline :Dirk :Greta)}]);
+                r:binding [ r:variable [ n3:uri "http://localhost/var#A"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#dp"]]; 
+                r:binding [ r:variable [ n3:uri "http://localhost/var#D"]; r:boundTo (:Jos :Rita :Geert :Caroline :Dirk :Greta)]; 
+                r:binding [ r:variable [ n3:uri "http://localhost/var#R"]; r:boundTo (:Rita :Geert :Caroline :Dirk :Greta)]; 
+                r:rule [ a r:Extraction; r:gives {@forAll var:A,var:D,var:R. {var:A owl:distinctMembers var:D. var:D rdf:rest var:R} => {var:A owl:distinctMembers var:R}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/rpo-rules.n3>]]]]
+              [ a r:Extraction; r:gives {(:Geert :Caroline :Dirk :Greta) p0:subListOf (:Rita :Geert :Caroline :Dirk :Greta)}; r:because [ a r:Inference; r:gives {(:Geert :Caroline :Dirk :Greta) p0:subListOf (:Rita :Geert :Caroline :Dirk :Greta)}; r:evidence (
+                [ a r:Fact; r:gives {(:Rita :Geert :Caroline :Dirk :Greta) rdf:rest (:Geert :Caroline :Dirk :Greta)}]
+                [ a r:Extraction; r:gives {(:Rita :Geert :Caroline :Dirk :Greta) rdf:type rdf:List}; r:because [ a r:Inference; r:gives {(:Rita :Geert :Caroline :Dirk :Greta) rdf:type rdf:List}; r:evidence (
+                  [ a r:Extraction; r:gives {rdf:rest rdfs:range rdf:List}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/rpo-rules.n3>]]
+                  [ a r:Fact; r:gives {(:Jos :Rita :Geert :Caroline :Dirk :Greta) rdf:rest (:Rita :Geert :Caroline :Dirk :Greta)}]);
+                  r:binding [ r:variable [ n3:uri "http://localhost/var#P"]; r:boundTo [ n3:uri "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest"]]; 
+                  r:binding [ r:variable [ n3:uri "http://localhost/var#C"]; r:boundTo [ n3:uri "http://www.w3.org/1999/02/22-rdf-syntax-ns#List"]]; 
+                  r:binding [ r:variable [ n3:uri "http://localhost/var#S"]; r:boundTo (:Jos :Rita :Geert :Caroline :Dirk :Greta)]; 
+                  r:binding [ r:variable [ n3:uri "http://localhost/var#O"]; r:boundTo (:Rita :Geert :Caroline :Dirk :Greta)]; 
+                  r:rule [ a r:Extraction; r:gives {@forAll var:P,var:C,var:S,var:O. {var:P rdfs:range var:C. var:S var:P var:O} => {var:O a var:C}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/rpo-rules.n3>]]]]
+                [ a r:Extraction; r:gives {(:Geert :Caroline :Dirk :Greta) p0:subListOf (:Geert :Caroline :Dirk :Greta)}; r:because [ a r:Inference; r:gives {(:Geert :Caroline :Dirk :Greta) p0:subListOf (:Geert :Caroline :Dirk :Greta)}; r:evidence (
+                  [ a r:Extraction; r:gives {(:Geert :Caroline :Dirk :Greta) rdf:type rdf:List}; r:because [ a r:Inference; r:gives {(:Geert :Caroline :Dirk :Greta) rdf:type rdf:List}; r:evidence (
+                    [ a r:Extraction; r:gives {rdf:rest rdfs:range rdf:List}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/rpo-rules.n3>]]
+                    [ a r:Fact; r:gives {(:Rita :Geert :Caroline :Dirk :Greta) rdf:rest (:Geert :Caroline :Dirk :Greta)}]);
+                    r:binding [ r:variable [ n3:uri "http://localhost/var#P"]; r:boundTo [ n3:uri "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest"]]; 
+                    r:binding [ r:variable [ n3:uri "http://localhost/var#C"]; r:boundTo [ n3:uri "http://www.w3.org/1999/02/22-rdf-syntax-ns#List"]]; 
+                    r:binding [ r:variable [ n3:uri "http://localhost/var#S"]; r:boundTo (:Rita :Geert :Caroline :Dirk :Greta)]; 
+                    r:binding [ r:variable [ n3:uri "http://localhost/var#O"]; r:boundTo (:Geert :Caroline :Dirk :Greta)]; 
+                    r:rule [ a r:Extraction; r:gives {@forAll var:P,var:C,var:S,var:O. {var:P rdfs:range var:C. var:S var:P var:O} => {var:O a var:C}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/rpo-rules.n3>]]]]);
+                  r:binding [ r:variable [ n3:uri "http://localhost/var#L"]; r:boundTo (:Geert :Caroline :Dirk :Greta)]; 
+                  r:rule [ a r:Extraction; r:gives {@forAll var:L. {var:L a rdf:List} => {var:L p0:subListOf var:L}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/rpo-rules.n3>]]]]);
+                r:binding [ r:variable [ n3:uri "http://localhost/var#L"]; r:boundTo (:Rita :Geert :Caroline :Dirk :Greta)]; 
+                r:binding [ r:variable [ n3:uri "http://localhost/var#R"]; r:boundTo (:Geert :Caroline :Dirk :Greta)]; 
+                r:binding [ r:variable [ n3:uri "http://localhost/var#X"]; r:boundTo (:Geert :Caroline :Dirk :Greta)]; 
+                r:rule [ a r:Extraction; r:gives {@forAll var:L,var:R,var:X. {var:L rdf:rest var:R. var:L a rdf:List. var:X p0:subListOf var:R} => {var:X p0:subListOf var:L}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/rpo-rules.n3>]]]]
+              [ a r:Fact; r:gives {(:Geert :Caroline :Dirk :Greta) rdf:first :Geert}]
+              [ a r:Fact; r:gives {(:Geert :Caroline :Dirk :Greta) rdf:rest (:Caroline :Dirk :Greta)}]
+              [ a r:Fact; r:gives {:Greta list:in (:Caroline :Dirk :Greta)}]);
+              r:binding [ r:variable [ n3:uri "http://localhost/var#A"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#dp"]]; 
+              r:binding [ r:variable [ n3:uri "http://localhost/var#D"]; r:boundTo (:Rita :Geert :Caroline :Dirk :Greta)]; 
+              r:binding [ r:variable [ n3:uri "http://localhost/var#L"]; r:boundTo (:Geert :Caroline :Dirk :Greta)]; 
+              r:binding [ r:variable [ n3:uri "http://localhost/var#X"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Geert"]]; 
+              r:binding [ r:variable [ n3:uri "http://localhost/var#R"]; r:boundTo (:Caroline :Dirk :Greta)]; 
+              r:binding [ r:variable [ n3:uri "http://localhost/var#Y"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Greta"]]; 
+              r:rule [ a r:Extraction; r:gives {@forAll var:A,var:D,var:L,var:X,var:R,var:Y. {var:A owl:distinctMembers var:D. var:L p0:subListOf var:D. var:L rdf:first var:X. var:L rdf:rest var:R. var:Y list:in var:R} => {var:X owl:differentFrom var:Y}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/rpo-rules.n3>]]]]);
+            r:binding [ r:variable [ n3:uri "http://localhost/var#C"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Geert"]]; 
+            r:binding [ r:variable [ n3:uri "http://localhost/var#F"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#dp"]]; 
+            r:binding [ r:variable [ n3:uri "http://localhost/var#C2"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Greta"]]; 
+            r:rule [ a r:Extraction; r:gives {@forAll var:C,var:F,var:C2. {var:C gc:childIn var:F. var:C2 gc:childIn var:F. var:C owl:differentFrom var:C2} => {var:C gc:sibling var:C2}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-relations.n3>]]]]);
+          r:binding [ r:variable [ n3:uri "http://localhost/var#P"]; r:boundTo [ n3:uri "http://www.daml.org/2001/01/gedcom/gedcom#sibling"]]; 
+          r:binding [ r:variable [ n3:uri "http://localhost/var#S"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Geert"]]; 
+          r:binding [ r:variable [ n3:uri "http://localhost/var#O"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Greta"]]; 
+          r:rule [ a r:Extraction; r:gives {@forAll var:P,var:S,var:O. {var:P a owl:SymmetricProperty. var:S var:P var:O} => {var:O var:P var:S}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/rpo-rules.n3>]]]]
+        [ a r:Extraction; r:gives {:Geert gc:sex gc:Male}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-facts.n3>]]);
+        r:binding [ r:variable [ n3:uri "http://localhost/var#C"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Greta"]]; 
+        r:binding [ r:variable [ n3:uri "http://localhost/var#S"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Geert"]]; 
+        r:rule [ a r:Extraction; r:gives {@forAll var:C,var:S. {var:C gc:sibling var:S. var:S gc:sex gc:Male} => {var:C gc:brother var:S}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-relations.n3>]]]]);
+      r:binding [ r:variable [ n3:uri "http://localhost/var#C"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Tom"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#P"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Greta"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#U"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Geert"]]; 
+      r:rule [ a r:Extraction; r:gives {@forAll var:C,var:P,var:U. {var:C gc:parent var:P. var:P gc:brother var:U} => {var:C gc:uncle var:U}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-relations.n3>]]]]);
+    r:binding [ r:variable [ n3:uri "http://localhost/var#A"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Geert"]]; 
+    r:binding [ r:variable [ n3:uri "http://localhost/var#M"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Maria"]]; 
+    r:binding [ r:variable [ n3:uri "http://localhost/var#D"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Greta"]]; 
+    r:binding [ r:variable [ n3:uri "http://localhost/var#S"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Tom"]]; 
+    r:rule [ a r:Extraction; r:gives {@forAll var:A,var:M,var:D,var:S. {var:A gc:mother var:M. var:M gc:daughter var:D. var:D gc:son var:S. var:S gc:uncle var:A} => {var:A :testRelationship var:S}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-filter.n3>]]];
+  r:component [ a r:Inference; r:gives {:Dirk :testRelationship :Tom}; r:evidence (
+    [ a r:Extraction; r:gives {:Dirk gc:mother :Maria}; r:because [ a r:Inference; r:gives {:Dirk gc:mother :Maria}; r:evidence (
+      [ a r:Extraction; r:gives {:Dirk gc:parent :Maria}; r:because [ a r:Inference; r:gives {:Dirk gc:parent :Maria}; r:evidence (
+        [ a r:Extraction; r:gives {:Dirk gc:childIn :dp}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-facts.n3>]]
+        [ a r:Extraction; r:gives {:Maria gc:spouseIn :dp}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-facts.n3>]]);
+        r:binding [ r:variable [ n3:uri "http://localhost/var#C"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Dirk"]]; 
+        r:binding [ r:variable [ n3:uri "http://localhost/var#F"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#dp"]]; 
+        r:binding [ r:variable [ n3:uri "http://localhost/var#P"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Maria"]]; 
+        r:rule [ a r:Extraction; r:gives {@forAll var:C,var:F,var:P. {var:C gc:childIn var:F. var:P gc:spouseIn var:F} => {var:C gc:parent var:P}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-relations.n3>]]]]
+      [ a r:Extraction; r:gives {:Maria gc:sex gc:Female}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-facts.n3>]]);
+      r:binding [ r:variable [ n3:uri "http://localhost/var#C"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Dirk"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#P"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Maria"]]; 
+      r:rule [ a r:Extraction; r:gives {@forAll var:C,var:P. {var:C gc:parent var:P. var:P gc:sex gc:Female} => {var:C gc:mother var:P}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-relations.n3>]]]]
+    [ a r:Extraction; r:gives {:Maria gc:daughter :Greta}; r:because [ a r:Inference; r:gives {:Maria gc:daughter :Greta}; r:evidence (
+      [ a r:Extraction; r:gives {:Greta gc:parent :Maria}; r:because [ a r:Inference; r:gives {:Greta gc:parent :Maria}; r:evidence (
+        [ a r:Extraction; r:gives {:Greta gc:childIn :dp}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-facts.n3>]]
+        [ a r:Extraction; r:gives {:Maria gc:spouseIn :dp}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-facts.n3>]]);
+        r:binding [ r:variable [ n3:uri "http://localhost/var#C"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Greta"]]; 
+        r:binding [ r:variable [ n3:uri "http://localhost/var#F"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#dp"]]; 
+        r:binding [ r:variable [ n3:uri "http://localhost/var#P"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Maria"]]; 
+        r:rule [ a r:Extraction; r:gives {@forAll var:C,var:F,var:P. {var:C gc:childIn var:F. var:P gc:spouseIn var:F} => {var:C gc:parent var:P}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-relations.n3>]]]]
+      [ a r:Extraction; r:gives {:Greta gc:sex gc:Female}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-facts.n3>]]);
+      r:binding [ r:variable [ n3:uri "http://localhost/var#C"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Greta"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#P"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Maria"]]; 
+      r:rule [ a r:Extraction; r:gives {@forAll var:C,var:P. {var:C gc:parent var:P. var:C gc:sex gc:Female} => {var:P gc:daughter var:C}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-relations.n3>]]]]
+    [ a r:Extraction; r:gives {:Greta gc:son :Tom}; r:because [ a r:Inference; r:gives {:Greta gc:son :Tom}; r:evidence (
+      [ a r:Extraction; r:gives {:Tom gc:parent :Greta}; r:because [ a r:Inference; r:gives {:Tom gc:parent :Greta}; r:evidence (
+        [ a r:Extraction; r:gives {:Tom gc:childIn :sd}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-facts.n3>]]
+        [ a r:Extraction; r:gives {:Greta gc:spouseIn :sd}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-facts.n3>]]);
+        r:binding [ r:variable [ n3:uri "http://localhost/var#C"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Tom"]]; 
+        r:binding [ r:variable [ n3:uri "http://localhost/var#F"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#sd"]]; 
+        r:binding [ r:variable [ n3:uri "http://localhost/var#P"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Greta"]]; 
+        r:rule [ a r:Extraction; r:gives {@forAll var:C,var:F,var:P. {var:C gc:childIn var:F. var:P gc:spouseIn var:F} => {var:C gc:parent var:P}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-relations.n3>]]]]
+      [ a r:Extraction; r:gives {:Tom gc:sex gc:Male}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-facts.n3>]]);
+      r:binding [ r:variable [ n3:uri "http://localhost/var#C"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Tom"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#P"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Greta"]]; 
+      r:rule [ a r:Extraction; r:gives {@forAll var:C,var:P. {var:C gc:parent var:P. var:C gc:sex gc:Male} => {var:P gc:son var:C}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-relations.n3>]]]]
+    [ a r:Extraction; r:gives {:Tom gc:uncle :Dirk}; r:because [ a r:Inference; r:gives {:Tom gc:uncle :Dirk}; r:evidence (
+      [ a r:Extraction; r:gives {:Tom gc:parent :Greta}; r:because [ a r:Inference; r:gives {:Tom gc:parent :Greta}; r:evidence (
+        [ a r:Extraction; r:gives {:Tom gc:childIn :sd}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-facts.n3>]]
+        [ a r:Extraction; r:gives {:Greta gc:spouseIn :sd}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-facts.n3>]]);
+        r:binding [ r:variable [ n3:uri "http://localhost/var#C"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Tom"]]; 
+        r:binding [ r:variable [ n3:uri "http://localhost/var#F"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#sd"]]; 
+        r:binding [ r:variable [ n3:uri "http://localhost/var#P"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Greta"]]; 
+        r:rule [ a r:Extraction; r:gives {@forAll var:C,var:F,var:P. {var:C gc:childIn var:F. var:P gc:spouseIn var:F} => {var:C gc:parent var:P}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-relations.n3>]]]]
+      [ a r:Extraction; r:gives {:Greta gc:brother :Dirk}; r:because [ a r:Inference; r:gives {:Greta gc:brother :Dirk}; r:evidence (
+        [ a r:Extraction; r:gives {:Greta gc:sibling :Dirk}; r:because [ a r:Inference; r:gives {:Greta gc:sibling :Dirk}; r:evidence (
+          [ a r:Extraction; r:gives {gc:sibling rdf:type owl:SymmetricProperty}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-relations.n3>]]
+          [ a r:Extraction; r:gives {:Dirk gc:sibling :Greta}; r:because [ a r:Inference; r:gives {:Dirk gc:sibling :Greta}; r:evidence (
+            [ a r:Extraction; r:gives {:Dirk gc:childIn :dp}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-facts.n3>]]
+            [ a r:Extraction; r:gives {:Greta gc:childIn :dp}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-facts.n3>]]
+            [ a r:Extraction; r:gives {:Dirk owl:differentFrom :Greta}; r:because [ a r:Inference; r:gives {:Dirk owl:differentFrom :Greta}; r:evidence (
+              [ a r:Extraction; r:gives {:dp owl:distinctMembers (:Caroline :Dirk :Greta)}; r:because [ a r:Inference; r:gives {:dp owl:distinctMembers (:Caroline :Dirk :Greta)}; r:evidence (
+                [ a r:Extraction; r:gives {:dp owl:distinctMembers (:Geert :Caroline :Dirk :Greta)}; r:because [ a r:Inference; r:gives {:dp owl:distinctMembers (:Geert :Caroline :Dirk :Greta)}; r:evidence (
+                  [ a r:Extraction; r:gives {:dp owl:distinctMembers (:Rita :Geert :Caroline :Dirk :Greta)}; r:because [ a r:Inference; r:gives {:dp owl:distinctMembers (:Rita :Geert :Caroline :Dirk :Greta)}; r:evidence (
+                    [ a r:Extraction; r:gives {:dp owl:distinctMembers (:Jos :Rita :Geert :Caroline :Dirk :Greta)}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-facts.n3>]]
+                    [ a r:Fact; r:gives {(:Jos :Rita :Geert :Caroline :Dirk :Greta) rdf:rest (:Rita :Geert :Caroline :Dirk :Greta)}]);
+                    r:binding [ r:variable [ n3:uri "http://localhost/var#A"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#dp"]]; 
+                    r:binding [ r:variable [ n3:uri "http://localhost/var#D"]; r:boundTo (:Jos :Rita :Geert :Caroline :Dirk :Greta)]; 
+                    r:binding [ r:variable [ n3:uri "http://localhost/var#R"]; r:boundTo (:Rita :Geert :Caroline :Dirk :Greta)]; 
+                    r:rule [ a r:Extraction; r:gives {@forAll var:A,var:D,var:R. {var:A owl:distinctMembers var:D. var:D rdf:rest var:R} => {var:A owl:distinctMembers var:R}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/rpo-rules.n3>]]]]
+                  [ a r:Fact; r:gives {(:Rita :Geert :Caroline :Dirk :Greta) rdf:rest (:Geert :Caroline :Dirk :Greta)}]);
+                  r:binding [ r:variable [ n3:uri "http://localhost/var#A"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#dp"]]; 
+                  r:binding [ r:variable [ n3:uri "http://localhost/var#D"]; r:boundTo (:Rita :Geert :Caroline :Dirk :Greta)]; 
+                  r:binding [ r:variable [ n3:uri "http://localhost/var#R"]; r:boundTo (:Geert :Caroline :Dirk :Greta)]; 
+                  r:rule [ a r:Extraction; r:gives {@forAll var:A,var:D,var:R. {var:A owl:distinctMembers var:D. var:D rdf:rest var:R} => {var:A owl:distinctMembers var:R}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/rpo-rules.n3>]]]]
+                [ a r:Fact; r:gives {(:Geert :Caroline :Dirk :Greta) rdf:rest (:Caroline :Dirk :Greta)}]);
+                r:binding [ r:variable [ n3:uri "http://localhost/var#A"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#dp"]]; 
+                r:binding [ r:variable [ n3:uri "http://localhost/var#D"]; r:boundTo (:Geert :Caroline :Dirk :Greta)]; 
+                r:binding [ r:variable [ n3:uri "http://localhost/var#R"]; r:boundTo (:Caroline :Dirk :Greta)]; 
+                r:rule [ a r:Extraction; r:gives {@forAll var:A,var:D,var:R. {var:A owl:distinctMembers var:D. var:D rdf:rest var:R} => {var:A owl:distinctMembers var:R}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/rpo-rules.n3>]]]]
+              [ a r:Extraction; r:gives {(:Dirk :Greta) p0:subListOf (:Caroline :Dirk :Greta)}; r:because [ a r:Inference; r:gives {(:Dirk :Greta) p0:subListOf (:Caroline :Dirk :Greta)}; r:evidence (
+                [ a r:Fact; r:gives {(:Caroline :Dirk :Greta) rdf:rest (:Dirk :Greta)}]
+                [ a r:Extraction; r:gives {(:Caroline :Dirk :Greta) rdf:type rdf:List}; r:because [ a r:Inference; r:gives {(:Caroline :Dirk :Greta) rdf:type rdf:List}; r:evidence (
+                  [ a r:Extraction; r:gives {rdf:rest rdfs:range rdf:List}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/rpo-rules.n3>]]
+                  [ a r:Fact; r:gives {(:Geert :Caroline :Dirk :Greta) rdf:rest (:Caroline :Dirk :Greta)}]);
+                  r:binding [ r:variable [ n3:uri "http://localhost/var#P"]; r:boundTo [ n3:uri "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest"]]; 
+                  r:binding [ r:variable [ n3:uri "http://localhost/var#C"]; r:boundTo [ n3:uri "http://www.w3.org/1999/02/22-rdf-syntax-ns#List"]]; 
+                  r:binding [ r:variable [ n3:uri "http://localhost/var#S"]; r:boundTo (:Geert :Caroline :Dirk :Greta)]; 
+                  r:binding [ r:variable [ n3:uri "http://localhost/var#O"]; r:boundTo (:Caroline :Dirk :Greta)]; 
+                  r:rule [ a r:Extraction; r:gives {@forAll var:P,var:C,var:S,var:O. {var:P rdfs:range var:C. var:S var:P var:O} => {var:O a var:C}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/rpo-rules.n3>]]]]
+                [ a r:Extraction; r:gives {(:Dirk :Greta) p0:subListOf (:Dirk :Greta)}; r:because [ a r:Inference; r:gives {(:Dirk :Greta) p0:subListOf (:Dirk :Greta)}; r:evidence (
+                  [ a r:Extraction; r:gives {(:Dirk :Greta) rdf:type rdf:List}; r:because [ a r:Inference; r:gives {(:Dirk :Greta) rdf:type rdf:List}; r:evidence (
+                    [ a r:Extraction; r:gives {rdf:rest rdfs:range rdf:List}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/rpo-rules.n3>]]
+                    [ a r:Fact; r:gives {(:Caroline :Dirk :Greta) rdf:rest (:Dirk :Greta)}]);
+                    r:binding [ r:variable [ n3:uri "http://localhost/var#P"]; r:boundTo [ n3:uri "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest"]]; 
+                    r:binding [ r:variable [ n3:uri "http://localhost/var#C"]; r:boundTo [ n3:uri "http://www.w3.org/1999/02/22-rdf-syntax-ns#List"]]; 
+                    r:binding [ r:variable [ n3:uri "http://localhost/var#S"]; r:boundTo (:Caroline :Dirk :Greta)]; 
+                    r:binding [ r:variable [ n3:uri "http://localhost/var#O"]; r:boundTo (:Dirk :Greta)]; 
+                    r:rule [ a r:Extraction; r:gives {@forAll var:P,var:C,var:S,var:O. {var:P rdfs:range var:C. var:S var:P var:O} => {var:O a var:C}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/rpo-rules.n3>]]]]);
+                  r:binding [ r:variable [ n3:uri "http://localhost/var#L"]; r:boundTo (:Dirk :Greta)]; 
+                  r:rule [ a r:Extraction; r:gives {@forAll var:L. {var:L a rdf:List} => {var:L p0:subListOf var:L}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/rpo-rules.n3>]]]]);
+                r:binding [ r:variable [ n3:uri "http://localhost/var#L"]; r:boundTo (:Caroline :Dirk :Greta)]; 
+                r:binding [ r:variable [ n3:uri "http://localhost/var#R"]; r:boundTo (:Dirk :Greta)]; 
+                r:binding [ r:variable [ n3:uri "http://localhost/var#X"]; r:boundTo (:Dirk :Greta)]; 
+                r:rule [ a r:Extraction; r:gives {@forAll var:L,var:R,var:X. {var:L rdf:rest var:R. var:L a rdf:List. var:X p0:subListOf var:R} => {var:X p0:subListOf var:L}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/rpo-rules.n3>]]]]
+              [ a r:Fact; r:gives {(:Dirk :Greta) rdf:first :Dirk}]
+              [ a r:Fact; r:gives {(:Dirk :Greta) rdf:rest (:Greta)}]
+              [ a r:Fact; r:gives {:Greta list:in (:Greta)}]);
+              r:binding [ r:variable [ n3:uri "http://localhost/var#A"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#dp"]]; 
+              r:binding [ r:variable [ n3:uri "http://localhost/var#D"]; r:boundTo (:Caroline :Dirk :Greta)]; 
+              r:binding [ r:variable [ n3:uri "http://localhost/var#L"]; r:boundTo (:Dirk :Greta)]; 
+              r:binding [ r:variable [ n3:uri "http://localhost/var#X"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Dirk"]]; 
+              r:binding [ r:variable [ n3:uri "http://localhost/var#R"]; r:boundTo (:Greta)]; 
+              r:binding [ r:variable [ n3:uri "http://localhost/var#Y"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Greta"]]; 
+              r:rule [ a r:Extraction; r:gives {@forAll var:A,var:D,var:L,var:X,var:R,var:Y. {var:A owl:distinctMembers var:D. var:L p0:subListOf var:D. var:L rdf:first var:X. var:L rdf:rest var:R. var:Y list:in var:R} => {var:X owl:differentFrom var:Y}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/rpo-rules.n3>]]]]);
+            r:binding [ r:variable [ n3:uri "http://localhost/var#C"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Dirk"]]; 
+            r:binding [ r:variable [ n3:uri "http://localhost/var#F"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#dp"]]; 
+            r:binding [ r:variable [ n3:uri "http://localhost/var#C2"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Greta"]]; 
+            r:rule [ a r:Extraction; r:gives {@forAll var:C,var:F,var:C2. {var:C gc:childIn var:F. var:C2 gc:childIn var:F. var:C owl:differentFrom var:C2} => {var:C gc:sibling var:C2}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-relations.n3>]]]]);
+          r:binding [ r:variable [ n3:uri "http://localhost/var#P"]; r:boundTo [ n3:uri "http://www.daml.org/2001/01/gedcom/gedcom#sibling"]]; 
+          r:binding [ r:variable [ n3:uri "http://localhost/var#S"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Dirk"]]; 
+          r:binding [ r:variable [ n3:uri "http://localhost/var#O"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Greta"]]; 
+          r:rule [ a r:Extraction; r:gives {@forAll var:P,var:S,var:O. {var:P a owl:SymmetricProperty. var:S var:P var:O} => {var:O var:P var:S}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/rpo-rules.n3>]]]]
+        [ a r:Extraction; r:gives {:Dirk gc:sex gc:Male}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-facts.n3>]]);
+        r:binding [ r:variable [ n3:uri "http://localhost/var#C"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Greta"]]; 
+        r:binding [ r:variable [ n3:uri "http://localhost/var#S"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Dirk"]]; 
+        r:rule [ a r:Extraction; r:gives {@forAll var:C,var:S. {var:C gc:sibling var:S. var:S gc:sex gc:Male} => {var:C gc:brother var:S}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-relations.n3>]]]]);
+      r:binding [ r:variable [ n3:uri "http://localhost/var#C"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Tom"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#P"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Greta"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#U"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Dirk"]]; 
+      r:rule [ a r:Extraction; r:gives {@forAll var:C,var:P,var:U. {var:C gc:parent var:P. var:P gc:brother var:U} => {var:C gc:uncle var:U}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-relations.n3>]]]]);
+    r:binding [ r:variable [ n3:uri "http://localhost/var#A"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Dirk"]]; 
+    r:binding [ r:variable [ n3:uri "http://localhost/var#M"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Maria"]]; 
+    r:binding [ r:variable [ n3:uri "http://localhost/var#D"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Greta"]]; 
+    r:binding [ r:variable [ n3:uri "http://localhost/var#S"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/gedcom-facts#Tom"]]; 
+    r:rule [ a r:Extraction; r:gives {@forAll var:A,var:M,var:D,var:S. {var:A gc:mother var:M. var:M gc:daughter var:D. var:D gc:son var:S. var:S gc:uncle var:A} => {var:A :testRelationship var:S}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/gedcom-filter.n3>]]];
+  r:gives {
+    :Jos :testRelationship :Bart.
+    :Jos :testRelationship :Tom.
+    :Geert :testRelationship :Bart.
+    :Dirk :testRelationship :Bart.
+    :Geert :testRelationship :Tom.
+    :Dirk :testRelationship :Tom.}].
+
+#ENDS 431 msec.
+

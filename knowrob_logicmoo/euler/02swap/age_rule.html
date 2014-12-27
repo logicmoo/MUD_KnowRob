@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>
+		<meta name="generator" content="AGFA HealthCare N3 to HTML convertor"/>
+		<link rel="alternate" type="text/n3" title="RDF Representation" href="http://eulersharp.sourceforge.net/2003/03swap/age_rule"/>
+		<title>age_rule</title>
+		<style type="text/css">
+			a[href]:link { text-decoration:none; }
+			a[href]:visited { text-decoration:none; }
+			a[href]:active { text-decoration:underline; }
+			a:hover { background:#ffa; }
+			.keyword { font-weight: bold; }
+			.literal { color: blue }
+			.uri { color: darkblue }
+			.qname { color: black }
+			.var { color: gray }
+			.comment { font-style:italic; color: darkgreen }
+		</style>
+	</head>
+	<body>
+	<div>
+		<pre>
+<span class="keyword">@prefix</span> event: <a class="uri" href="http://eulersharp.sourceforge.net/2003/03swap/event.html#">&lt;http://eulersharp.sourceforge.net/2003/03swap/event#&gt;</a>.
+<span class="keyword">@prefix</span> math: <a class="uri" href="http://www.w3.org/2000/10/swap/math">&lt;http://www.w3.org/2000/10/swap/math#&gt;</a>.
+<span class="keyword">@prefix</span> xsd: <a class="uri" href="http://www.w3.org/2001/XMLSchema">&lt;http://www.w3.org/2001/XMLSchema#&gt;</a>.
+<span class="keyword">@prefix</span> dce: <a class="uri" href="http://purl.org/dc/elements/1.1/">&lt;http://purl.org/dc/elements/1.1/&gt;</a>.
+<span class="keyword">@prefix</span> dct: <a class="uri" href="http://purl.org/dc/terms/">&lt;http://purl.org/dc/terms/&gt;</a>.
+<span class="keyword">@prefix</span> agerule: <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/age_rule#&gt;</a>.
+
+<a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/age_rule#&gt;</a>
+	<a class="qname" href="http://purl.org/dc/elements/1.1">dce:title</a> <span class="literal">&quot;&quot;&quot;Age rule&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://purl.org/dc/elements/1.1">dce:creator</a> <span class="literal">&quot;&quot;&quot;Hans Cools&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://purl.org/dc/elements/1.1">dce:publisher</a> <span class="literal">&quot;&quot;&quot;Agfa Healthcare/Belgium&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://purl.org/dc/elements/1.1">dce:description</a> <span class="literal">&quot;&quot;&quot;Rule to calculate an age in years of a being from its origination date time and/or beginning date time of its existence.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://purl.org/dc/elements/1.1">dce:language</a> <span class="literal">&quot;&quot;&quot;English&quot;&quot;&quot;</span>@en.
+
+
+<span class="comment"># CALCULATION OF AN AGE IN YEARS OF SOMETHING - STARTING FROM ORIGINATION DATE TIME (year-month-day-hour-minute-second)</span>
+<span class="comment"># Age not restricted to a duration of life</span>
+
+<span class="comment"># INTEGRITY CONSTRAINT: ORIGINATION DATE OF SOMETHING HAS TO BE EARLIER THAN REFERENCE TIME POINT</span>
+{	<span class="var">?being</span> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/event.html#hasOriginationDateTime">event:hasOriginationDateTime</a> <span class="var">?originationDateTime</span>.
+	[<a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/event.html#hasSnapshotDateTime">event:hasSnapshotDateTime</a> <span class="var">?snapshotDateTime</span>].
+	<span class="var">?originationDateTime</span> <a class="qname" href="http://www.w3.org/2000/10/swap/math">math:notLessThan</a> <span class="var">?snapshotDateTime</span>} =&gt; <span class="keyword">false</span>.
+
+{	[<a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/event.html#hasSnapshotDateTime">event:hasSnapshotDateTime</a> <span class="var">?snapshotDateTime</span>].
+	<span class="var">?being</span> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/event.html#hasOriginationDateTime">event:hasOriginationDateTime</a> <span class="var">?originationDateTime</span>.
+	(<span class="var">?snapshotDateTime</span> <span class="var">?originationDateTime</span>) <a class="qname" href="http://www.w3.org/2000/10/swap/math">math:difference</a> <span class="var">?sec</span>.
+	(<span class="var">?sec</span> <span class="literal">&quot;P1Y&quot;</span>^^<a class="qname" href="http://www.w3.org/2001/XMLSchema">xsd:duration</a>) <a class="qname" href="http://www.w3.org/2000/10/swap/math">math:integerQuotient</a> <span class="var">?years</span>.
+	<span class="var">?years</span> <a class="qname" href="http://www.w3.org/2000/10/swap/math">math:notLessThan</a> <span class="literal">1</span>}
+=&gt;
+{	<span class="var">?being</span> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/event.html#hasAge">event:hasAge</a> <span class="var">?years</span>}.
+
+
+<span class="comment"># CALCULATION OF AN AGE IN YEARS OF SOMETHING - STARTING FROM BEGINNING DATE OF ITS EXISTENCE (year-month-day-hour-minute-second)</span>
+
+<span class="comment"># INTEGRITY CONSTRAINT: ORIGINATION DATE OF SOMETHING HAS TO BE EARLIER THAN REFERENCE TIME POINT</span>
+{	<span class="var">?event</span> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/event.html#begins">event:begins</a> <span class="var">?beginning</span>.
+	[<a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/event.html#hasSnapshotDateTime">event:hasSnapshotDateTime</a> <span class="var">?snapshotDateTime</span>].
+	<span class="var">?beginning</span> <a class="qname" href="http://www.w3.org/2000/10/swap/math">math:notLessThan</a> <span class="var">?snapshotDateTime</span>} =&gt; <span class="keyword">false</span>.
+
+{	[<a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/event.html#hasSnapshotDateTime">event:hasSnapshotDateTime</a> <span class="var">?snapshotDateTime</span>].
+	<span class="var">?being</span> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/event.html#exists">event:exists</a> <span class="var">?existence</span>.
+	<span class="var">?existence</span> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/event.html#begins">event:begins</a> <span class="var">?beginning</span>.
+	(<span class="var">?snapshotDateTime</span> <span class="var">?beginning</span>) <a class="qname" href="http://www.w3.org/2000/10/swap/math">math:difference</a> <span class="var">?sec</span>.
+	(<span class="var">?sec</span> <span class="literal">&quot;P1Y&quot;</span>^^<a class="qname" href="http://www.w3.org/2001/XMLSchema">xsd:duration</a>) <a class="qname" href="http://www.w3.org/2000/10/swap/math">math:integerQuotient</a> <span class="var">?years</span>.
+	<span class="var">?years</span> <a class="qname" href="http://www.w3.org/2000/10/swap/math">math:notLessThan</a> <span class="literal">1</span>}
+=&gt;
+{	<span class="var">?being</span> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/event.html#hasAge">event:hasAge</a> <span class="var">?years</span>}.
+		</pre>
+	</div>
+	</body>
+</html>

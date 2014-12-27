@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Euler Yet another proof Engine</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <style type="text/css">a:hover {background:#ffa;}</style>
+    <style type="text/css">img {vertical-align:text-top;}</style>
+</head>
+
+<body>
+<p>
+    <a href="http://sourceforge.net/projects/eulersharp/">EulerSharp</a> |
+    <a href="http://sourceforge.net/p/eulersharp/code/">SVN repository</a> |
+    <a href="http://eulersharp.sourceforge.net/2004/04test/">Test cases 04test</a> -
+    <a href="http://eulersharp.sourceforge.net/2006/02swap/">02swap</a> -
+    <a href="http://eulersharp.sourceforge.net/2007/07test/">07test</a> -
+    <a href="http://eulersharp.sourceforge.net/2010/05smml/">05smml</a> |
+    <a href="https://sourceforge.net/projects/eulersharp/files/eulersharp/">Download</a>
+</p>
+
+<h1><img src="http://eulersharp.sourceforge.net/2003/03swap/eye.png" alt="EYE" height="37" width="37"/> Euler Yet another proof Engine</h1>
+
+<p>
+    <a href="http://eulersharp.sourceforge.net/2006/02swap/eye-note.txt">EYE</a> is a reasoning engine supporting the
+    <a href="http://eulersharp.sourceforge.net/2006/02swap/rgb-note.txt">RGB</a> semantic web layers.<br/>
+    It is a semibackward reasoner enhanced with <a href="http://mathworld.wolfram.com/KoenigsbergBridgeProblem.html">Euler path</a> detection.<br/>
+    Via <a href="http://www.w3.org/TeamSubmission/n3/">N3</a> it is interoperable with <a href="http://www.w3.org/2000/10/swap/doc/cwm">Cwm</a>.
+</p>
+
+<p>
+    See
+    <a href="http://eulersharp.sourceforge.net/DONE">DONE</a>,
+    <a href="http://eulersharp.sourceforge.net/README">README</a>,
+    <a href="http://eulersharp.sourceforge.net/README.Linux">README.Linux</a>
+    <a href="http://eulersharp.sourceforge.net/README.Windows">.Windows</a>
+    <a href="http://eulersharp.sourceforge.net/README.MacOSX">.MacOSX</a>,
+    <a href="http://eulersharp.sourceforge.net/FAQ">FAQ</a> and
+    <a href="http://eulersharp.sourceforge.net/LICENSE">LICENSE</a>.<br/>
+    Things are described in
+    <a href="http://www.w3.org/TeamSubmission/n3/">N3</a> thanks to
+    <a href="http://www.w3.org/People/Berners-Lee/">Tim Berners-Lee</a> and
+    <a href="http://www.w3.org/People/Connolly/">Dan Connolly</a>.<br/>
+    <a href="http://eulersharp.sourceforge.net/2006/02swap/eye-note.txt">EYE</a> is made by
+    <a href="http://www.agfa.com/w3c/jdroo/">Jos De Roo</a> and the
+    <a href="http://n3.restdesc.org/">course</a> is authored by
+    <a href="http://ruben.verborgh.org/">Ruben Verborgh</a>.
+</p>
+
+<h2 id="seeAlso">See Also</h2>
+<ul>
+    <li><a href="http://www.w3.org/DesignIssues/Architecture#Semantic">Semantic Web: the pieces</a>,
+        <a href="http://www.w3.org/DesignIssues/Semantic">road map</a> and
+        <a href="http://www.w3.org/DesignIssues/diagrams/sweb-stack/2006a.png">layer cake</a></li>
+    <li><a href="http://www.w3.org/2000/10/swap/">SWAP</a>,
+        <a href="http://www.w3.org/2000/10/swap/doc/cwm">Cwm</a> and
+        <a href="http://www.w3.org/2000/10/swap/doc/">Semantic Web Tutorial using N3</a></li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/reasoning.html">Reasoning is grounded in First Order Logic - What is Logic?</a></li>
+</ul>
+<ul>
+    <li><a href="http://reasoning.restdesc.org/">Bringing reasoning to the Web</a></li>
+    <li><a href="http://restdesc.org/about/concept">RESTdesc: Concept</a>,
+        <a href="http://restdesc.org/about/descriptions">Descriptions</a> and
+        <a href="http://restdesc.org/about/discovery">Discovery</a></li>
+    <li><a href="http://n3.restdesc.org/">Semantic Web Reasoning With EYE</a></li>
+</ul>
+<ul>
+    <li><a href="http://eulersharp.sourceforge.net/2006/02swap/eye-note.txt">EYE Note</a> and
+        <a href="http://eulersharp.sourceforge.net/Talks/2012/04swig/">EYE Talk</a></li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/eye-owl2.html">EYE and OWL 2</a></li>
+    <li><a href="http://eulersharp.sourceforge.net/2004/01swap/docs/java/javadoc/euler/ProofEngine.html">EYE Java API</a></li>
+</ul>
+<ul>
+    <li><a href="http://www.agfa.com/w3c/euler/">Euler Proof Mechanism</a></li>
+    <li><a href="http://sourceforge.net/projects/eulergui/">Euler GUI</a> and
+        <a href="http://sourceforge.net/projects/deductions/">Deductions</a></li>
+    <li><a href="http://sourceforge.net/projects/eulermoz/">EulerMoz</a>,
+        <a href="http://eulersharp.sourceforge.net/2004/02swap/RDFEngine/RDFEngine.html">RDFEngine</a> and
+        <a href="http://eulersharp.sourceforge.net/2004/02swap/OWLLogic/owllogic.html">OWLLogic</a></li>
+</ul>
+
+<h2 id="ontologies">Ontologies</h2>
+<ul>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/agent.html">agent</a> - general description of agents and the roles they can play</li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/bioSKOSSchemes.html">bioSKOSSchemes</a> - formal description of SKOS Schemes of biological terminologies/coding systems and their datatypes</li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/care.html">care</a> - general description of human care (onset)</li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/coding.html">coding</a> - formal general description of coding</li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/computer.html">computer</a> - formal description of digital computer</li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/countries.html">countries</a> - description of country codes as standardized in ISO 3166-1 version 2006</li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/decisionSupport.html">decisionSupport</a> - description of decision support</li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/digitalProcedure.html">digitalProcedure</a> - description of a digital procedure</li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/document.html">document</a> - general description of document</li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/environment.html">environment</a> - general description of environment</li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/event.html">event</a> - formal general description of events, actions, their time and other relations</li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/foster.html">foster</a> - description of general concepts</li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/genomeAbnormality.html">genomeAbnormality</a> - general description of genome abnormality</li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/human.html">human</a> - general description of human</li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/humanBody.html">humanBody</a> - general description of human body</li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/languages.html">languages</a> - description of language codes as standardized in ISO 639</li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/organism.html">organism</a> - general description of organism</li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/organization.html">organization</a> - general description of organization and the roles it can play</li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/physicalResource.html">physicalResource</a> - formal general description of physical resource</li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html">quantities</a> - description of quantities, as an extension of the NASA 'SWEET' ontologies</li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/space.html">space</a> - formal description of space</li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/sparql.html">sparql</a> - general description of SPARQL domain</li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/sparqlAnalysis.html">sparqlAnalysis</a> - description of RDF data analysis using SPARQL</li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/sparqlAnalysisTemplate.html">sparqlAnalysisTemplate</a> - description of SPARQL query templates for RDF data analysis</li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/substanceForms.html">substanceForms</a> - high level description of substance forms (onset)</li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/time.html">time</a> - for formal temporal reasoning,using the Unix Epoch time</li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/units.html">units</a> - description of units, as an extension of NASA's sciUnits ontology</li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/weekScheme.html">weekScheme</a> - general description of a working week scheme</li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/workflow.html">workflow</a> - description of how work in a organization or other system is planned and executed</li>
+</ul>
+
+<h2 id="theories">Theories</h2>
+<ul>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/rdfs-domain.html">rdfs-domain</a></li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/rdfs-range.html">rdfs-range</a></li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/rdfs-subClassOf.html">rdfs-subClassOf</a></li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/rdfs-subPropertyOf.html">rdfs-subPropertyOf</a></li>
+</ul>
+<ul>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/owl-AllDifferent.html">owl-AllDifferent</a></li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/owl-AllDisjointClasses.html">owl-AllDisjointClasses</a></li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/owl-AllDisjointProperties.html">owl-AllDisjointProperties</a></li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/owl-allValuesFrom.html">owl-allValuesFrom</a></li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/owl-AsymmetricProperty.html">owl-AsymmetricProperty</a></li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/owl-complementOf.html">owl-complementOf</a></li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/owl-differentFrom.html">owl-differentFrom</a></li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/owl-disjointWith.html">owl-disjointWith</a></li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/owl-disjointUnionOf.html">owl-disjointUnionOf</a></li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/owl-distinctMembers.html">owl-distinctMembers</a></li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/owl-equivalentClass.html">owl-equivalentClass</a></li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/owl-equivalentProperty.html">owl-equivalentProperty</a></li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/owl-FunctionalProperty.html">owl-FunctionalProperty</a></li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/owl-hasKey.html">owl-hasKey</a></li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/owl-hasValue.html">owl-hasValue</a></li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/owl-intersectionOf.html">owl-intersectionOf</a></li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/owl-InverseFunctionalProperty.html">owl-InverseFunctionalProperty</a></li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/owl-inverseOf.html">owl-inverseOf</a></li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/owl-IrreflexiveProperty.html">owl-IrreflexiveProperty</a></li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/owl-maxCardinality.html">owl-maxCardinality</a></li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/owl-maxQualifiedCardinality.html">owl-maxQualifiedCardinality</a></li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/owl-NegativePropertyAssertion.html">owl-NegativePropertyAssertion</a></li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/owl-Nothing.html">owl-Nothing</a></li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/owl-oneOf.html">owl-oneOf</a></li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/owl-propertyChainAxiom.html">owl-propertyChainAxiom</a></li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/owl-propertyDisjointWith.html">owl-propertyDisjointWith</a></li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/owl-sameAs.html">owl-sameAs</a></li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/owl-sameAs-ext.html">owl-sameAs-ext</a></li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/owl-someValuesFrom.html">owl-someValuesFrom</a></li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/owl-SymmetricProperty.html">owl-SymmetricProperty</a></li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/owl-TransitiveProperty.html">owl-TransitiveProperty</a></li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/owl-unionOf.html">owl-unionOf</a></li>
+</ul>
+<ul>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/age_rules.html">age_rules</a></li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/age_rules_backward.html">age_rules_backward</a></li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/bmi_rules.html">bmi_rules</a></li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/ch-rules.html">ch-rules</a></li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/eventTime_rules.html">eventTime_rules</a></li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/eye-builtins.html">eye-builtins</a></li>
+    <li><a href="http://eulersharp.sourceforge.net/2006/02swap/fcm-plugin.html">fcm-plugin</a></li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/fdl-bbn.html">fdl-bbn</a></li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/fl-rules.html">fl-rules</a></li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/log-rules.html">log-rules</a></li>
+    <li><a href="http://eulersharp.sourceforge.net/2006/02swap/nbbn-plugin.html">nbbn-plugin</a></li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/pi-calc.html">pi-calc</a></li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/pi-rules.html">pi-rules</a></li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/prolog.html">prolog</a></li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/rpo-rules.html">rpo-rules</a></li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/skos-rules.html">skos-rules</a></li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/skos-extra-rules.html">skos-extra-rules</a></li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/skos-mapping-validation-rules.html">skos-mapping-validation-rules</a></li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/weightStatus_rules.html">weightStatus_rules</a></li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/xsd-rules.html">xsd-rules</a></li>
+</ul>
+
+<h2 id="testCases">Test Cases</h2>
+<ul>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/etc1.n3">RDFCore test cases</a> and
+        <a href="http://eulersharp.sourceforge.net/2004/01swap/docs/java/testResults/etc1-results-java.n3">results</a></li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/etc2.n3">OWL test cases</a> and
+        <a href="http://eulersharp.sourceforge.net/2004/01swap/docs/java/testResults/etc2-results-java.n3">results</a></li>
+</ul>
+<ul>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/etc3.n3">Euler1-2 test cases</a> and
+        <a href="http://eulersharp.sourceforge.net/2004/01swap/docs/java/testResults/etc3-results-java.n3">results</a></li>
+    <li><a href="http://eulersharp.sourceforge.net/2006/02swap/etc3">Euler3 test cases</a> and
+        <a href="http://eulersharp.sourceforge.net/2006/02swap/etc3.ref">results</a></li>
+    <li><a href="http://eulersharp.sourceforge.net/2006/02swap/etc4">Euler4 test cases</a> and
+        <a href="http://eulersharp.sourceforge.net/2006/02swap/etc4.ref">results</a></li>
+    <li><a href="http://eulersharp.sourceforge.net/2006/02swap/etc5">Euler5 test cases</a> and
+        <a href="http://eulersharp.sourceforge.net/2006/02swap/etc5.ref">results</a></li>
+    <li><a href="http://eulersharp.sourceforge.net/2006/02swap/etc5a">Euler5 backchain only test cases</a> and
+        <a href="http://eulersharp.sourceforge.net/2006/02swap/etc5a.ref">results</a></li>
+</ul>
+<ul>
+    <li><a href="http://eulersharp.sourceforge.net/2006/02swap/etc.sh">EYE test cases</a> and
+        <a href="http://eulersharp.sourceforge.net/2006/02swap/etc.n3">results</a></li>
+</ul>
+
+<h4 id="benchmarks">Benchmarks</h4>
+<ul>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/dtb-note.txt">Deep Taxonomy Benchmark</a></li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/rcb-note.txt">RESTdesc Composition Benchmark</a></li>
+    <li><a href="http://eulersharp.sourceforge.net/2003/03swap/bmb-note.txt">Basic MONADIC Benchmark</a></li>
+</ul>
+
+<h4 id="tc">Test Cases SHOULD</h4>
+<ul>
+    <li>have a THIS part and a THAT part such that assuming the THIS part implies the THAT part</li>
+    <li>have explicit assumptions because assumptions should be checked</li>
+    <li>make issues observable (both issues w.r.t. requirements and designissues)</li>
+    <li>lead to test results which are one of passing, failing, undecided or no-data</li>
+    <li>be in the following state: proposed, approved, extra-credit or obsoleted</li>
+</ul>
+
+<h2 id="conclusions">Conclusions</h2>
+<ul>
+    <li>first support simple and then more complex systems</li>
+    <li>RDF and OWL enable optimal reuse of data in networked environment</li>
+    <li>a bit like going from cpu/memory/network/IOhardware to engines/triples/webservices/IOsoftware</li>
+    <li>or from avoid-hardware-wiring to avoid-software-wiring...</li>
+    <li>and promising for automatic software component generation</li>
+</ul>
+
+<hr/>
+<address>
+    <a href="http://www.agfa.com/w3c/jdroo/">Jos De Roo</a><br/>
+</address>
+
+</body>
+</html>

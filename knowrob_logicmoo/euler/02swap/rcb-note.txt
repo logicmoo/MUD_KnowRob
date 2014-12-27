@@ -1,0 +1,28 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><head><meta charset="UTF-8"/><title>RESTdesc Composition Benchmark</title></head><body><pre>
+==============================
+RESTdesc Composition Benchmark [1]
+==============================
+
+     length |         <a href="http://www.w3.org/2000/10/swap/doc/cwm">cwm</a>         <a href="http://eulersharp.sourceforge.net/README">eye</a>        <a href="https://code.google.com/p/fuxi/wiki/FuXi">fuxi</a>
+            |       [sec]       [sec]       [sec]
+------------|------------------------------------
+          2 |       0.188       0.029  (ToBeDone)
+          4 |       0.371       0.032
+          8 |       1.004       0.038
+         16 |       3.504       0.053
+         32 |      13.968       0.085
+         64 |      58.689       0.157
+        128 |     251.361       0.344
+        256 |    1081.179       0.936
+        512 | (MaxRecurs)       2.894
+       1024 |                   9.764
+
+Test environment:
+	Linux 2.6.32-431.20.3.0.1.el6.centos.plus.x86_64 x86_64
+	processor	: 0 .. 15
+	model name	: Intel(R) Xeon(R) CPU E5-2665 0 @ 2.40GHz
+	MemTotal:       264532948 kB
+
+[1] <a href="https://github.com/RubenVerborgh/RESTdesc-Composition-Benchmark">https://github.com/RubenVerborgh/RESTdesc-Composition-Benchmark</a>
+</pre></body></html>

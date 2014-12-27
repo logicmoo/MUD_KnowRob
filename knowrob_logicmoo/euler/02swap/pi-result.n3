@@ -1,0 +1,210 @@
+# Generated with http://eulersharp.sourceforge.net/ version 1.5.32 on 3 Sep 2006 13:01:30 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://eulersharp.sourceforge.net/2003/03swap/pi-data.n3>!log:semantics
+ <http://eulersharp.sourceforge.net/2003/03swap/pi-calc.n3>!log:semantics
+ <http://eulersharp.sourceforge.net/2003/03swap/pi-query.n3>!log:semantics)!log:conjunction =>
+{
+@prefix str: <http://www.w3.org/2000/10/swap/string#>.
+@prefix var: <http://localhost/var#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix pi: <http://eulersharp.sourceforge.net/2003/03swap/pi-query.n3#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix : <http://eulersharp.sourceforge.net/2003/03swap/pi-calc#>.
+@prefix time: <http://www.w3.org/2000/10/swap/time#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix n3: <http://www.w3.org/2004/06/rei#>.
+@prefix d: <http://eulersharp.sourceforge.net/2003/03swap/pi-data#>.
+@prefix math: <http://www.w3.org/2000/10/swap/math#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix r: <http://www.w3.org/2000/10/swap/reason#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.5.32 on 3 Sep 2006 13:01:30 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://eulersharp.sourceforge.net/2003/03swap/pi-data.n3>!log:semantics
+ <http://eulersharp.sourceforge.net/2003/03swap/pi-calc.n3>!log:semantics
+ <http://eulersharp.sourceforge.net/2003/03swap/pi-query.n3>!log:semantics)!log:conjunction =>
+{
+@prefix str: <http://www.w3.org/2000/10/swap/string#>.
+@prefix var: <http://localhost/var#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix pi: <http://eulersharp.sourceforge.net/2003/03swap/pi-query.n3#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix : <http://eulersharp.sourceforge.net/2003/03swap/pi-calc#>.
+@prefix time: <http://www.w3.org/2000/10/swap/time#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix n3: <http://www.w3.org/2004/06/rei#>.
+@prefix d: <http://eulersharp.sourceforge.net/2003/03swap/pi-data#>.
+@prefix math: <http://www.w3.org/2000/10/swap/math#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix r: <http://www.w3.org/2000/10/swap/reason#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{{{(d:p1 (d:p2 d:p3)!:composition)!:composition :congruent ((d:p2 d:p3)!:composition d:p1)!:composition} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/pi-calc.n3#_125>. 
+  {{{(d:p2 d:p3)!:composition :congruent (d:p3 d:p2)!:composition} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/pi-calc.n3#_125>} => {
+   {((d:p2 d:p3)!:composition d:p1)!:composition :congruent ((d:p3 d:p2)!:composition d:p1)!:composition} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/pi-calc.n3#_127>}. 
+   {{((d:p3 d:p2)!:composition d:p1)!:composition :congruent (d:p1 (d:p3 d:p2)!:composition)!:composition} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/pi-calc.n3#_125>. 
+    {{(d:p1 (d:p3 d:p2)!:composition)!:composition :congruent ((d:p1 d:p3)!:composition d:p2)!:composition} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/pi-calc.n3#_126>. 
+     {{(d:p1 d:p3)!:composition :congruent (d:p3 d:p1)!:composition} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/pi-calc.n3#_125>} => {
+     {((d:p1 d:p3)!:composition d:p2)!:composition :congruent ((d:p3 d:p1)!:composition d:p2)!:composition} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/pi-calc.n3#_127>}} => {
+    {(d:p1 (d:p3 d:p2)!:composition)!:composition :congruent ((d:p3 d:p1)!:composition d:p2)!:composition} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/pi-calc.n3#_129>}} => {
+   {((d:p3 d:p2)!:composition d:p1)!:composition :congruent ((d:p3 d:p1)!:composition d:p2)!:composition} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/pi-calc.n3#_129>}} => {
+  {((d:p2 d:p3)!:composition d:p1)!:composition :congruent ((d:p3 d:p1)!:composition d:p2)!:composition} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/pi-calc.n3#_129>}} => {
+ {(d:p1 (d:p2 d:p3)!:composition)!:composition :congruent ((d:p3 d:p1)!:composition d:p2)!:composition} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/pi-calc.n3#_129>}} => {
+{d:compositionTest1 d:result ((d:p3 d:p1)!:composition d:p2)!:composition} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/log-rules#kb>}. 
+
+# Proof found in 161 steps (1006 steps/sec) using 1 engine (66 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.5.32 on 3 Sep 2006 13:01:30 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://eulersharp.sourceforge.net/2003/03swap/pi-data.n3>!log:semantics
+ <http://eulersharp.sourceforge.net/2003/03swap/pi-calc.n3>!log:semantics
+ <http://eulersharp.sourceforge.net/2003/03swap/pi-query.n3>!log:semantics)!log:conjunction =>
+{
+@prefix str: <http://www.w3.org/2000/10/swap/string#>.
+@prefix var: <http://localhost/var#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix pi: <http://eulersharp.sourceforge.net/2003/03swap/pi-query.n3#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix : <http://eulersharp.sourceforge.net/2003/03swap/pi-calc#>.
+@prefix time: <http://www.w3.org/2000/10/swap/time#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix n3: <http://www.w3.org/2004/06/rei#>.
+@prefix d: <http://eulersharp.sourceforge.net/2003/03swap/pi-data#>.
+@prefix math: <http://www.w3.org/2000/10/swap/math#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix r: <http://www.w3.org/2000/10/swap/reason#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{{(d:process1) :identifies ((d:p1 d:p2)!:summation (d:p3 (d:p4 d:p5)!:summation)!:summation)!:summation} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/pi-data.n3#_12>. 
+ {(d:process2) :identifies (((d:p4 d:p2)!:summation d:p1)!:summation (d:p3 d:p5)!:summation)!:summation} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/pi-data.n3#_13>. 
+ {{((d:p1 d:p2)!:summation (d:p3 (d:p4 d:p5)!:summation)!:summation)!:summation :congruent ((d:p3 (d:p4 d:p5)!:summation)!:summation (d:p1 d:p2)!:summation)!:summation} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/pi-calc.n3#_120>. 
+  {{((d:p3 (d:p4 d:p5)!:summation)!:summation (d:p1 d:p2)!:summation)!:summation :congruent (((d:p3 (d:p4 d:p5)!:summation)!:summation d:p1)!:summation d:p2)!:summation} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/pi-calc.n3#_121>. 
+   {{(((d:p3 (d:p4 d:p5)!:summation)!:summation d:p1)!:summation d:p2)!:summation :congruent (d:p2 ((d:p3 (d:p4 d:p5)!:summation)!:summation d:p1)!:summation)!:summation} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/pi-calc.n3#_120>. 
+    {{(d:p2 ((d:p3 (d:p4 d:p5)!:summation)!:summation d:p1)!:summation)!:summation :congruent ((d:p2 (d:p3 (d:p4 d:p5)!:summation)!:summation)!:summation d:p1)!:summation} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/pi-calc.n3#_121>. 
+     {{{(d:p2 (d:p3 (d:p4 d:p5)!:summation)!:summation)!:summation :congruent ((d:p3 (d:p4 d:p5)!:summation)!:summation d:p2)!:summation} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/pi-calc.n3#_120>} => {
+      {((d:p2 (d:p3 (d:p4 d:p5)!:summation)!:summation)!:summation d:p1)!:summation :congruent (((d:p3 (d:p4 d:p5)!:summation)!:summation d:p2)!:summation d:p1)!:summation} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/pi-calc.n3#_122>}. 
+      {{(((d:p3 (d:p4 d:p5)!:summation)!:summation d:p2)!:summation d:p1)!:summation :congruent (d:p1 ((d:p3 (d:p4 d:p5)!:summation)!:summation d:p2)!:summation)!:summation} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/pi-calc.n3#_120>. 
+       {{(d:p1 ((d:p3 (d:p4 d:p5)!:summation)!:summation d:p2)!:summation)!:summation :congruent ((d:p1 (d:p3 (d:p4 d:p5)!:summation)!:summation)!:summation d:p2)!:summation} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/pi-calc.n3#_121>. 
+        {{((d:p1 (d:p3 (d:p4 d:p5)!:summation)!:summation)!:summation d:p2)!:summation :congruent (d:p2 (d:p1 (d:p3 (d:p4 d:p5)!:summation)!:summation)!:summation)!:summation} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/pi-calc.n3#_120>. 
+         {{(d:p2 (d:p1 (d:p3 (d:p4 d:p5)!:summation)!:summation)!:summation)!:summation :congruent ((d:p2 d:p1)!:summation (d:p3 (d:p4 d:p5)!:summation)!:summation)!:summation} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/pi-calc.n3#_121>. 
+          {{((d:p2 d:p1)!:summation (d:p3 (d:p4 d:p5)!:summation)!:summation)!:summation :congruent ((d:p3 (d:p4 d:p5)!:summation)!:summation (d:p2 d:p1)!:summation)!:summation} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/pi-calc.n3#_120>. 
+           {{{(d:p3 (d:p4 d:p5)!:summation)!:summation :congruent ((d:p4 d:p5)!:summation d:p3)!:summation} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/pi-calc.n3#_120>} => {
+            {((d:p3 (d:p4 d:p5)!:summation)!:summation (d:p2 d:p1)!:summation)!:summation :congruent (((d:p4 d:p5)!:summation d:p3)!:summation (d:p2 d:p1)!:summation)!:summation} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/pi-calc.n3#_122>}. 
+            {{(((d:p4 d:p5)!:summation d:p3)!:summation (d:p2 d:p1)!:summation)!:summation :congruent ((d:p2 d:p1)!:summation ((d:p4 d:p5)!:summation d:p3)!:summation)!:summation} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/pi-calc.n3#_120>. 
+             {{((d:p2 d:p1)!:summation ((d:p4 d:p5)!:summation d:p3)!:summation)!:summation :congruent (((d:p2 d:p1)!:summation (d:p4 d:p5)!:summation)!:summation d:p3)!:summation} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/pi-calc.n3#_121>. 
+              {{(((d:p2 d:p1)!:summation (d:p4 d:p5)!:summation)!:summation d:p3)!:summation :congruent (d:p3 ((d:p2 d:p1)!:summation (d:p4 d:p5)!:summation)!:summation)!:summation} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/pi-calc.n3#_120>. 
+               {{(d:p3 ((d:p2 d:p1)!:summation (d:p4 d:p5)!:summation)!:summation)!:summation :congruent ((d:p3 (d:p2 d:p1)!:summation)!:summation (d:p4 d:p5)!:summation)!:summation} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/pi-calc.n3#_121>. 
+                {{((d:p3 (d:p2 d:p1)!:summation)!:summation (d:p4 d:p5)!:summation)!:summation :congruent ((d:p4 d:p5)!:summation (d:p3 (d:p2 d:p1)!:summation)!:summation)!:summation} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/pi-calc.n3#_120>. 
+                 {{{(d:p4 d:p5)!:summation :congruent (d:p5 d:p4)!:summation} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/pi-calc.n3#_120>} => {
+                  {((d:p4 d:p5)!:summation (d:p3 (d:p2 d:p1)!:summation)!:summation)!:summation :congruent ((d:p5 d:p4)!:summation (d:p3 (d:p2 d:p1)!:summation)!:summation)!:summation} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/pi-calc.n3#_122>}. 
+                  {{((d:p5 d:p4)!:summation (d:p3 (d:p2 d:p1)!:summation)!:summation)!:summation :congruent ((d:p3 (d:p2 d:p1)!:summation)!:summation (d:p5 d:p4)!:summation)!:summation} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/pi-calc.n3#_120>. 
+                   {{((d:p3 (d:p2 d:p1)!:summation)!:summation (d:p5 d:p4)!:summation)!:summation :congruent (((d:p3 (d:p2 d:p1)!:summation)!:summation d:p5)!:summation d:p4)!:summation} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/pi-calc.n3#_121>. 
+                    {{(((d:p3 (d:p2 d:p1)!:summation)!:summation d:p5)!:summation d:p4)!:summation :congruent (d:p4 ((d:p3 (d:p2 d:p1)!:summation)!:summation d:p5)!:summation)!:summation} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/pi-calc.n3#_120>. 
+                     {{(d:p4 ((d:p3 (d:p2 d:p1)!:summation)!:summation d:p5)!:summation)!:summation :congruent ((d:p4 (d:p3 (d:p2 d:p1)!:summation)!:summation)!:summation d:p5)!:summation} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/pi-calc.n3#_121>. 
+                      {{{(d:p4 (d:p3 (d:p2 d:p1)!:summation)!:summation)!:summation :congruent ((d:p3 (d:p2 d:p1)!:summation)!:summation d:p4)!:summation} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/pi-calc.n3#_120>} => {
+                       {((d:p4 (d:p3 (d:p2 d:p1)!:summation)!:summation)!:summation d:p5)!:summation :congruent (((d:p3 (d:p2 d:p1)!:summation)!:summation d:p4)!:summation d:p5)!:summation} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/pi-calc.n3#_122>}. 
+                       {{(((d:p3 (d:p2 d:p1)!:summation)!:summation d:p4)!:summation d:p5)!:summation :congruent (d:p5 ((d:p3 (d:p2 d:p1)!:summation)!:summation d:p4)!:summation)!:summation} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/pi-calc.n3#_120>. 
+                        {{(d:p5 ((d:p3 (d:p2 d:p1)!:summation)!:summation d:p4)!:summation)!:summation :congruent ((d:p5 (d:p3 (d:p2 d:p1)!:summation)!:summation)!:summation d:p4)!:summation} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/pi-calc.n3#_121>. 
+                         {{{(d:p5 (d:p3 (d:p2 d:p1)!:summation)!:summation)!:summation :congruent ((d:p5 d:p3)!:summation (d:p2 d:p1)!:summation)!:summation} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/pi-calc.n3#_121>} => {
+                          {((d:p5 (d:p3 (d:p2 d:p1)!:summation)!:summation)!:summation d:p4)!:summation :congruent (((d:p5 d:p3)!:summation (d:p2 d:p1)!:summation)!:summation d:p4)!:summation} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/pi-calc.n3#_122>}. 
+                          {{(((d:p5 d:p3)!:summation (d:p2 d:p1)!:summation)!:summation d:p4)!:summation :congruent (d:p4 ((d:p5 d:p3)!:summation (d:p2 d:p1)!:summation)!:summation)!:summation} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/pi-calc.n3#_120>. 
+                           {{(d:p4 ((d:p5 d:p3)!:summation (d:p2 d:p1)!:summation)!:summation)!:summation :congruent ((d:p4 (d:p5 d:p3)!:summation)!:summation (d:p2 d:p1)!:summation)!:summation} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/pi-calc.n3#_121>. 
+                            {{((d:p4 (d:p5 d:p3)!:summation)!:summation (d:p2 d:p1)!:summation)!:summation :congruent ((d:p2 d:p1)!:summation (d:p4 (d:p5 d:p3)!:summation)!:summation)!:summation} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/pi-calc.n3#_120>. 
+                             {{((d:p2 d:p1)!:summation (d:p4 (d:p5 d:p3)!:summation)!:summation)!:summation :congruent (((d:p2 d:p1)!:summation d:p4)!:summation (d:p5 d:p3)!:summation)!:summation} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/pi-calc.n3#_121>. 
+                              {{(((d:p2 d:p1)!:summation d:p4)!:summation (d:p5 d:p3)!:summation)!:summation :congruent ((d:p5 d:p3)!:summation ((d:p2 d:p1)!:summation d:p4)!:summation)!:summation} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/pi-calc.n3#_120>. 
+                               {{{(d:p5 d:p3)!:summation :congruent (d:p3 d:p5)!:summation} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/pi-calc.n3#_120>} => {
+                                {((d:p5 d:p3)!:summation ((d:p2 d:p1)!:summation d:p4)!:summation)!:summation :congruent ((d:p3 d:p5)!:summation ((d:p2 d:p1)!:summation d:p4)!:summation)!:summation} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/pi-calc.n3#_122>}. 
+                                {{((d:p3 d:p5)!:summation ((d:p2 d:p1)!:summation d:p4)!:summation)!:summation :congruent (((d:p2 d:p1)!:summation d:p4)!:summation (d:p3 d:p5)!:summation)!:summation} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/pi-calc.n3#_120>. 
+                                 {{{((d:p2 d:p1)!:summation d:p4)!:summation :congruent (d:p4 (d:p2 d:p1)!:summation)!:summation} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/pi-calc.n3#_120>. 
+                                   {(d:p4 (d:p2 d:p1)!:summation)!:summation :congruent ((d:p4 d:p2)!:summation d:p1)!:summation} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/pi-calc.n3#_121>} => {
+                                  {((d:p2 d:p1)!:summation d:p4)!:summation :congruent ((d:p4 d:p2)!:summation d:p1)!:summation} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/pi-calc.n3#_129>}} => {
+                                 {(((d:p2 d:p1)!:summation d:p4)!:summation (d:p3 d:p5)!:summation)!:summation :congruent (((d:p4 d:p2)!:summation d:p1)!:summation (d:p3 d:p5)!:summation)!:summation} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/pi-calc.n3#_122>}} => {
+                                {((d:p3 d:p5)!:summation ((d:p2 d:p1)!:summation d:p4)!:summation)!:summation :congruent (((d:p4 d:p2)!:summation d:p1)!:summation (d:p3 d:p5)!:summation)!:summation} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/pi-calc.n3#_129>}} => {
+                               {((d:p5 d:p3)!:summation ((d:p2 d:p1)!:summation d:p4)!:summation)!:summation :congruent (((d:p4 d:p2)!:summation d:p1)!:summation (d:p3 d:p5)!:summation)!:summation} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/pi-calc.n3#_129>}} => {
+                              {(((d:p2 d:p1)!:summation d:p4)!:summation (d:p5 d:p3)!:summation)!:summation :congruent (((d:p4 d:p2)!:summation d:p1)!:summation (d:p3 d:p5)!:summation)!:summation} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/pi-calc.n3#_129>}} => {
+                             {((d:p2 d:p1)!:summation (d:p4 (d:p5 d:p3)!:summation)!:summation)!:summation :congruent (((d:p4 d:p2)!:summation d:p1)!:summation (d:p3 d:p5)!:summation)!:summation} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/pi-calc.n3#_129>}} => {
+                            {((d:p4 (d:p5 d:p3)!:summation)!:summation (d:p2 d:p1)!:summation)!:summation :congruent (((d:p4 d:p2)!:summation d:p1)!:summation (d:p3 d:p5)!:summation)!:summation} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/pi-calc.n3#_129>}} => {
+                           {(d:p4 ((d:p5 d:p3)!:summation (d:p2 d:p1)!:summation)!:summation)!:summation :congruent (((d:p4 d:p2)!:summation d:p1)!:summation (d:p3 d:p5)!:summation)!:summation} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/pi-calc.n3#_129>}} => {
+                          {(((d:p5 d:p3)!:summation (d:p2 d:p1)!:summation)!:summation d:p4)!:summation :congruent (((d:p4 d:p2)!:summation d:p1)!:summation (d:p3 d:p5)!:summation)!:summation} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/pi-calc.n3#_129>}} => {
+                         {((d:p5 (d:p3 (d:p2 d:p1)!:summation)!:summation)!:summation d:p4)!:summation :congruent (((d:p4 d:p2)!:summation d:p1)!:summation (d:p3 d:p5)!:summation)!:summation} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/pi-calc.n3#_129>}} => {
+                        {(d:p5 ((d:p3 (d:p2 d:p1)!:summation)!:summation d:p4)!:summation)!:summation :congruent (((d:p4 d:p2)!:summation d:p1)!:summation (d:p3 d:p5)!:summation)!:summation} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/pi-calc.n3#_129>}} => {
+                       {(((d:p3 (d:p2 d:p1)!:summation)!:summation d:p4)!:summation d:p5)!:summation :congruent (((d:p4 d:p2)!:summation d:p1)!:summation (d:p3 d:p5)!:summation)!:summation} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/pi-calc.n3#_129>}} => {
+                      {((d:p4 (d:p3 (d:p2 d:p1)!:summation)!:summation)!:summation d:p5)!:summation :congruent (((d:p4 d:p2)!:summation d:p1)!:summation (d:p3 d:p5)!:summation)!:summation} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/pi-calc.n3#_129>}} => {
+                     {(d:p4 ((d:p3 (d:p2 d:p1)!:summation)!:summation d:p5)!:summation)!:summation :congruent (((d:p4 d:p2)!:summation d:p1)!:summation (d:p3 d:p5)!:summation)!:summation} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/pi-calc.n3#_129>}} => {
+                    {(((d:p3 (d:p2 d:p1)!:summation)!:summation d:p5)!:summation d:p4)!:summation :congruent (((d:p4 d:p2)!:summation d:p1)!:summation (d:p3 d:p5)!:summation)!:summation} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/pi-calc.n3#_129>}} => {
+                   {((d:p3 (d:p2 d:p1)!:summation)!:summation (d:p5 d:p4)!:summation)!:summation :congruent (((d:p4 d:p2)!:summation d:p1)!:summation (d:p3 d:p5)!:summation)!:summation} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/pi-calc.n3#_129>}} => {
+                  {((d:p5 d:p4)!:summation (d:p3 (d:p2 d:p1)!:summation)!:summation)!:summation :congruent (((d:p4 d:p2)!:summation d:p1)!:summation (d:p3 d:p5)!:summation)!:summation} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/pi-calc.n3#_129>}} => {
+                 {((d:p4 d:p5)!:summation (d:p3 (d:p2 d:p1)!:summation)!:summation)!:summation :congruent (((d:p4 d:p2)!:summation d:p1)!:summation (d:p3 d:p5)!:summation)!:summation} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/pi-calc.n3#_129>}} => {
+                {((d:p3 (d:p2 d:p1)!:summation)!:summation (d:p4 d:p5)!:summation)!:summation :congruent (((d:p4 d:p2)!:summation d:p1)!:summation (d:p3 d:p5)!:summation)!:summation} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/pi-calc.n3#_129>}} => {
+               {(d:p3 ((d:p2 d:p1)!:summation (d:p4 d:p5)!:summation)!:summation)!:summation :congruent (((d:p4 d:p2)!:summation d:p1)!:summation (d:p3 d:p5)!:summation)!:summation} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/pi-calc.n3#_129>}} => {
+              {(((d:p2 d:p1)!:summation (d:p4 d:p5)!:summation)!:summation d:p3)!:summation :congruent (((d:p4 d:p2)!:summation d:p1)!:summation (d:p3 d:p5)!:summation)!:summation} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/pi-calc.n3#_129>}} => {
+             {((d:p2 d:p1)!:summation ((d:p4 d:p5)!:summation d:p3)!:summation)!:summation :congruent (((d:p4 d:p2)!:summation d:p1)!:summation (d:p3 d:p5)!:summation)!:summation} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/pi-calc.n3#_129>}} => {
+            {(((d:p4 d:p5)!:summation d:p3)!:summation (d:p2 d:p1)!:summation)!:summation :congruent (((d:p4 d:p2)!:summation d:p1)!:summation (d:p3 d:p5)!:summation)!:summation} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/pi-calc.n3#_129>}} => {
+           {((d:p3 (d:p4 d:p5)!:summation)!:summation (d:p2 d:p1)!:summation)!:summation :congruent (((d:p4 d:p2)!:summation d:p1)!:summation (d:p3 d:p5)!:summation)!:summation} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/pi-calc.n3#_129>}} => {
+          {((d:p2 d:p1)!:summation (d:p3 (d:p4 d:p5)!:summation)!:summation)!:summation :congruent (((d:p4 d:p2)!:summation d:p1)!:summation (d:p3 d:p5)!:summation)!:summation} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/pi-calc.n3#_129>}} => {
+         {(d:p2 (d:p1 (d:p3 (d:p4 d:p5)!:summation)!:summation)!:summation)!:summation :congruent (((d:p4 d:p2)!:summation d:p1)!:summation (d:p3 d:p5)!:summation)!:summation} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/pi-calc.n3#_129>}} => {
+        {((d:p1 (d:p3 (d:p4 d:p5)!:summation)!:summation)!:summation d:p2)!:summation :congruent (((d:p4 d:p2)!:summation d:p1)!:summation (d:p3 d:p5)!:summation)!:summation} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/pi-calc.n3#_129>}} => {
+       {(d:p1 ((d:p3 (d:p4 d:p5)!:summation)!:summation d:p2)!:summation)!:summation :congruent (((d:p4 d:p2)!:summation d:p1)!:summation (d:p3 d:p5)!:summation)!:summation} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/pi-calc.n3#_129>}} => {
+      {(((d:p3 (d:p4 d:p5)!:summation)!:summation d:p2)!:summation d:p1)!:summation :congruent (((d:p4 d:p2)!:summation d:p1)!:summation (d:p3 d:p5)!:summation)!:summation} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/pi-calc.n3#_129>}} => {
+     {((d:p2 (d:p3 (d:p4 d:p5)!:summation)!:summation)!:summation d:p1)!:summation :congruent (((d:p4 d:p2)!:summation d:p1)!:summation (d:p3 d:p5)!:summation)!:summation} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/pi-calc.n3#_129>}} => {
+    {(d:p2 ((d:p3 (d:p4 d:p5)!:summation)!:summation d:p1)!:summation)!:summation :congruent (((d:p4 d:p2)!:summation d:p1)!:summation (d:p3 d:p5)!:summation)!:summation} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/pi-calc.n3#_129>}} => {
+   {(((d:p3 (d:p4 d:p5)!:summation)!:summation d:p1)!:summation d:p2)!:summation :congruent (((d:p4 d:p2)!:summation d:p1)!:summation (d:p3 d:p5)!:summation)!:summation} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/pi-calc.n3#_129>}} => {
+  {((d:p3 (d:p4 d:p5)!:summation)!:summation (d:p1 d:p2)!:summation)!:summation :congruent (((d:p4 d:p2)!:summation d:p1)!:summation (d:p3 d:p5)!:summation)!:summation} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/pi-calc.n3#_129>}} => {
+ {((d:p1 d:p2)!:summation (d:p3 (d:p4 d:p5)!:summation)!:summation)!:summation :congruent (((d:p4 d:p2)!:summation d:p1)!:summation (d:p3 d:p5)!:summation)!:summation} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/pi-calc.n3#_129>}} => {
+{d:summationTest1 d:result (d:process1 d:process2)} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/log-rules#kb>}. 
+
+# Proof found in 1297 steps (18265 steps/sec) using 1 engine (66 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.5.32 on 3 Sep 2006 13:01:30 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://eulersharp.sourceforge.net/2003/03swap/pi-data.n3>!log:semantics
+ <http://eulersharp.sourceforge.net/2003/03swap/pi-calc.n3>!log:semantics
+ <http://eulersharp.sourceforge.net/2003/03swap/pi-query.n3>!log:semantics)!log:conjunction =>
+{
+@prefix str: <http://www.w3.org/2000/10/swap/string#>.
+@prefix var: <http://localhost/var#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix pi: <http://eulersharp.sourceforge.net/2003/03swap/pi-query.n3#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix : <http://eulersharp.sourceforge.net/2003/03swap/pi-calc#>.
+@prefix time: <http://www.w3.org/2000/10/swap/time#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix n3: <http://www.w3.org/2004/06/rei#>.
+@prefix d: <http://eulersharp.sourceforge.net/2003/03swap/pi-data#>.
+@prefix math: <http://www.w3.org/2000/10/swap/math#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix r: <http://www.w3.org/2000/10/swap/reason#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{{{(d:p1 (d:x (?U ?Y) (?U (d:v d:w) pi:empty)!:output)!:input)!:summation :congruent (d:p1 (d:x (?U ?Y) (?U (d:v d:w) pi:empty)!:output)!:input)!:summation} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/pi-calc.n3#_119>. 
+  {((d:x (d:y d:z) pi:empty)!:output d:p2)!:summation :congruent (d:p2 (d:x (d:y d:z) pi:empty)!:output)!:summation} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/pi-calc.n3#_120>} => {
+ {((d:p1 (d:x (d:y d:z) (d:y (d:v d:w) pi:empty)!:output)!:input)!:summation ((d:x (d:y d:z) pi:empty)!:output d:p2)!:summation)!:composition :reduction ((d:y (d:v d:w) pi:empty)!:output pi:empty)!:composition} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/pi-calc.n3#_135>}} => {
+{d:reductionTest1 d:result ((d:y (d:v d:w) pi:empty)!:output pi:empty)!:composition} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/log-rules#kb>}. 
+
+# Proof found in 5 steps (500000 steps/sec) using 1 engine (66 triples)
+}.
+
+
+# Proof found in 1466 steps (3324 steps/sec) using 1 engine (66 triples)
+}.
+

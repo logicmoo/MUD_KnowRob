@@ -1,0 +1,203 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE>GUIDE</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 2.4  (Linux)">
+	<META NAME="CREATED" CONTENT="20071016;10332200">
+	<STYLE TYPE="text/css">a:hover {background:#ffa;}</STYLE>
+</HEAD>
+<BODY LANG="en-US" DIR="LTR">
+<H1><FONT SIZE=4 STYLE="font-size: 16pt">Euler Proof Mechanism</FONT></H1>
+<PRE>Euler is an inference engine supporting logic based proofs.
+It is a backward-forward-backward chaining reasoner enhanced with
+Euler path detection.
+
+The backward-forward-backward chaining is realized via an underlying
+Prolog backward chaining, a forward meta-level reasoning and a
+backward proof construction.
+
+The Euler path detection is roughly &quot;don't step in your own steps&quot;
+to avoid vicious circles so to speak and in that respect there is a
+similarity with what Leonhard Euler discovered in 1736 for the
+<A HREF="http://mathworld.wolfram.com/KoenigsbergBridgeProblem.html">Königsberg Bridge Problem</A>.
+   
+Via <A HREF="http://www.w3.org/TeamSubmission/n3/">N3</A> the reasoner is interoperable with W3C <A HREF="http://www.w3.org/2000/10/swap/doc/cwm">Cwm</A>.
+
+See also <A HREF="http://eulersharp.sourceforge.net/README">README</A> and the software is maintained at <A HREF="http://sourceforge.net/projects/eulersharp">EulerSharp</A>.</PRE>
+<H1 STYLE="page-break-before: always"><FONT SIZE=4 STYLE="font-size: 16pt">Euler Abstract Machine (EAM)</FONT></H1>
+<PRE>The notation that is used is <A HREF="http://www.w3.org/TeamSubmission/n3/">N3</A> and the logic is <A HREF="http://www.w3.org/DesignIssues/N3Logic">N3Logic</A>.
+N3 builtins are described in <A HREF="http://www.w3.org/2000/10/swap/doc/CwmBuiltins">CwmBuiltins</A> and <A HREF="http://eulersharp.sourceforge.net/2003/03swap/log-rules.n3">log-rules</A>.
+
+Internally EAM is using Notation 3 P-code (N3P) which is an intermediate code:
+
+
+        N3 data/proof output
+
+                /\
+               /||\
+                ||
+
+        N3 P-code (N3P)
+
+                /\
+               /||\
+                ||
+
+        N3 data/rules input
+
+
+Some <A HREF="http://eulersharp.sourceforge.net/2006/02swap/etc">test cases</A> and <A HREF="http://eulersharp.sourceforge.net/2006/02swap/etc.ref">results</A></PRE><H1 STYLE="page-break-before: always">
+<FONT SIZE=4 STYLE="font-size: 16pt">Euler under the hood</FONT></H1>
+<PRE>
+Things are layered and cascaded as follows:
+
+                     .------------------.
+        .------------|- - -   <SPAN STYLE="background: #ffff00">N3S</SPAN>       |
+        |       <SPAN STYLE="background: #ffff00">N3P</SPAN>  |-----'------------|
+        |------------|- - -'  <SPAN STYLE="background: #ffff00">EAM</SPAN>       |
+        |       PVM  |-----'------------|
+        |------------|- - -'  WAM       |
+        |       ASM  |-----'------------|
+        '------------|- - -'  CPU       |
+                     '------------------'
+
+	Legend
+	------
+		N3S	= Notation 3 Socket
+		N3P	= Notation 3 P-code
+		EAM	= Euler Abstract Machine
+		PVM	= Prolog Virtual Machine code
+		WAM	= Warren Abstract Machine
+		ASM	= Assembly code
+		CPU	= Central Processing Unit
+
+
+For proof tactics the main idea is to annotate the original N3
+formulae instead of tampering with them. That way proof tactics
+can even be derived on the fly using N3 rules.
+
+
+Euler is making use of builtins to support the eam/n engines:
+
+
+                          \/  \  <SPAN STYLE="background: #ffff00">o</SPAN> answers
+                         \/    \/
+          eam/3 engine    \  <SPAN STYLE="background: #ffff00">o</SPAN> /
+                           \/ /      ||
+                            \/      \||/
+                            ||       \/
+          eam/1 engine      ||
+                            ||
+        --------------------||----- data -----
+                            /\
+          builtins         /  \
+                              /\</PRE><H1 STYLE="page-break-before: always">
+<FONT SIZE=4 STYLE="font-size: 16pt">N3 P-code (N3P)</FONT></H1>
+<PRE>N3 formulae are translated in N3 P-code input clauses of the form
+
+    <SPAN STYLE="background: #ffff00">implies(&lt;conjunction&gt;,&lt;disjunction&gt;,&lt;src&gt;).</SPAN>
+
+All the variables used in &lt;conjunction&gt; are universally quantified
+and all the other variables are existentially quantified.
+
+Variables start with an upper case letter or the '_' character.
+The conjunction operator is ',' and the disjunction operator is ';'.
+Comments start with '%' and end with the next end of line.
+
+
+Proof tactics can be declared in N3LOGIC with the binary predicate
+
+    <SPAN STYLE="background: #ffff00">{&lt;conjunction&gt; =&gt; &lt;disjunction&gt;} e:tactic (&lt;guard&gt; &lt;new_guard&gt;).</SPAN>
+
+The subject of e:tactic is an instance of &lt;conjunction&gt; =&gt; &lt;disjunction&gt;
+and the object of e:tactic is a list containing &lt;guard&gt; and &lt;new_guard&gt;.
+For every reasoning step there is a &lt;current_guard&gt; which is initially
+the empty list. Input clauses that have an e:tactic are only selected
+when their &lt;guard&gt; unifies with the &lt;current_guard&gt; and when the input
+clause can be satisfied &lt;current_guard&gt; becomes &lt;new_guard&gt;.</PRE><H1 STYLE="page-break-before: always">
+<FONT SIZE=4 STYLE="font-size: 16pt">Using SQL</FONT></H1>
+<PRE>To cope with large amounts of triples, one can use euler --sql
+to translate triples into SQL and after adding e.g.
+
+dbname.driver               = org.sqlite.JDBC
+dbname.uri                  = jdbc:sqlite:tripleStore/dbname
+
+to <A HREF="http://eulersharp.sourceforge.net/2004/01swap/codd.properties">codd.properties</A> one can get e.g.
+
+<U>http://host.domain/dbname?SQL=sql</U> where sql is an urlencoding of e.g.
+
+<SPAN STYLE="color: #0000ff">SELECT '@prefix ', prefix, ' ', namespace, '.' FROM pfx;</SPAN>
+<SPAN STYLE="color: #0000ff">SELECT '';</SPAN>
+<SPAN STYLE="color: #0000ff">SELECT subject, ' ', predicate, ' ', object, '.' FROM rdf</SPAN>
+<SPAN STYLE="color: #0000ff">  WHERE predicate == 'rdfs:subClassOf' AND object == ':Event';</SPAN>
+
+
+Similar queries can be used to get triples out of the huge amount
+of existing relational data. For instance, given a database table
+tbl1 with columns one and two the following query result is a set
+of RDF/N3 triples
+
+<SPAN STYLE="color: #0000ff">SELECT '@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt;.';</SPAN>
+<SPAN STYLE="color: #0000ff">SELECT '@prefix : &lt;http://www.agfa.com/w3c/euler/dtP#&gt;.';</SPAN>
+<SPAN STYLE="color: #0000ff">SELECT '';</SPAN>
+<SPAN STYLE="color: #0000ff">SELECT '&quot;', one, '&quot; :birthday &quot;', two, '&quot;^^xsd:gYear.' FROM tbl1</SPAN>
+<SPAN STYLE="color: #0000ff">  WHERE two == 1956;</SPAN></PRE><H1 STYLE="page-break-before: always">
+<FONT SIZE=4 STYLE="font-size: 16pt">Belief calculus model theory</FONT></H1>
+<PRE>Given truth-value function t and boolean decision/support variables X and Y
+
+<SPAN STYLE="background: #ffff00">t(X,Y) = t(X|Y)*t(Y)</SPAN>                               [A1] [conjunction]
+
+<SPAN STYLE="background: #ffff00">t(X,Y) = t(Y,X)</SPAN>                                    [A2] [commutativity]
+
+<SPAN STYLE="background: #ffff00">t(X;Y) = t(X)+t(Y)-t(X,Y)</SPAN>                          [A3] [disjunction]
+
+<SPAN STYLE="background: #ffff00">t(X;~X) = 1</SPAN>                                        [A4] [complement]
+
+<SPAN STYLE="background: #ffff00">t(~X) = 1-t(X)</SPAN>                                     [A5] [negation]
+
+
+t(X|Y) = t(Y,X)/t(Y)
+       = <SPAN STYLE="background: #e6e6e6">t(Y|X)</SPAN>*t(X)/t(Y)                          [T1] [Bayes theorem]
+
+t(X|Y) = (<SPAN STYLE="background: #e6e6e6">t(~Y;X)</SPAN>-t(~Y))/t(Y)
+         is undefined when Y is the empty set F    [T2] [no &quot;ex falso quodlibet&quot;]
+
+t(X) = t(X,Y)+t(X,~Y)                              [T3] [total belief theorem]
+
+t(~X,~Y) = t(~(X;Y))                               [T4] [De Morgan theorem 1]
+
+t(~X;~Y) = t(~(X,Y))                               [T5] [De Morgan theorem 2]
+
+
+Additional semantic constraints are:
+
+        IF                     | THEN
+        -----------------------|---------------
+        X independent from Y   | t(X|Y) = t(X)
+            Y universal set T  | t(X|T) = t(X)
+        X dependent from Y     | t(X|Y) != t(X)
+            Y subset of X      | t(X|Y) = 1
+            Y disjoint from X  | t(X|Y) = 0
+
+
+For the graph
+
+         p = t(X) .---. s = t(Y|X)  .---. q = t(Y)
+        ---------&gt;| X |------------&gt;| Y |&lt;---------
+                  '---' a = t(Y|~X) '---'
+
+it is the case that
+
+        q = p*s+(1-p)*a
+
+        a = (q-p*s)/(1-p)
+
+        s = (q-(1-p)*a)/p
+
+        p = (q-a)/(s-a)</PRE><H1 STYLE="page-break-before: always">
+<FONT SIZE=4 STYLE="font-size: 16pt">End</FONT></H1>
+<PRE><A HREF="http://www.agfa.com/w3c/jdroo/"><I>Jos De Roo</I></A>
+<I>$Id: GUIDE 6259 2013-05-14 20:21:23Z josd $</I></PRE>
+</BODY>
+</HTML>

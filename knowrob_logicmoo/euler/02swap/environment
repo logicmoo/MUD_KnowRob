@@ -1,0 +1,78 @@
+@prefix con: <http://www.w3.org/2000/10/swap/pim/contact#>.
+@prefix dce: <http://purl.org/dc/elements/1.1/>.
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+@prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix clinskosch: <http://www.agfa.com/w3c/2009/clinicalSKOSSchemes#>.
+@prefix space: <http://eulersharp.sourceforge.net/2003/03swap/space#>.
+@prefix env: <http://eulersharp.sourceforge.net/2003/03swap/environment#>.
+
+<http://eulersharp.sourceforge.net/2003/03swap/environment>
+	a owl:Ontology;
+	dce:title """Environment"""@en;
+	dce:creator """Hans Cools, MD; Agfa Healthcare/Belgium"""@en;
+	dce:contributor """Until 2010: Pieterjan De Potter; Ghent University - IBBT/ELIS - Multimedia Lab/Belgium"""@en;
+	dce:publisher """Agfa Healthcare/Belgium"""@en;
+	dce:description """Formal general description of environment."""@en;
+	dce:format """OWL-Full"""@en;.
+
+#
+# CLASSES
+#
+
+env:Environment
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/environment#>;
+	rdfs:label """environment"""@en;
+	skos:definition """Surroundings as aggregate of things, conditions, and influences."""@en;
+	rdfs:subClassOf space:SpatialResource;
+	skos:exactMatch [
+		a skos:Concept; skos:inScheme clinskosch:sct20080731; skos:notation "276339004"^^clinskosch:sct20080731DT].
+
+env:CommunityEnvironment
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/environment#>;
+	rdfs:label """community environment"""@en;
+	skos:definition """Environment of a community of any kind."""@en;
+	rdfs:subClassOf env:Environment;
+	rdfs:comment """E.g. the human colon as an environment for bacteria."""@en.
+
+env:HumanCommunityEnvironment
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/environment#>;
+	rdfs:label """human community environment"""@en;
+	skos:definition """Man-made surroundings that provide the setting for human activity, ranging from the large-scale civic surroundings to the personal places."""@en;
+	rdfs:subClassOf env:CommunityEnvironment;
+	skos:exactMatch [
+		a skos:Concept; skos:inScheme clinskosch:sct20080731; skos:notation "285202004"^^clinskosch:sct20080731DT].
+
+env:Home
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/environment#>;
+	rdfs:label """home"""@en;
+	skos:definition """human principal residence"""@en;
+	rdfs:subClassOf env:HumanCommunityEnvironment, foaf:Organization;
+	skos:exactMatch [
+		a skos:Concept; skos:inScheme clinskosch:sct20080731; skos:notation "264362003"^^clinskosch:sct20080731DT].
+
+#
+# PROPERTIES
+#
+
+env:hasEnvironment
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/environment#>;
+	skos:definition """Specifying an environment containing something."""@en;
+	rdfs:subPropertyOf geo:location;
+	rdfs:domain rdfs:Resource; # e.g. con:ContactLocation
+	rdfs:range env:Environment.
+
+env:environmentOf
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/environment#>;
+	skos:definition """Specifying something contained by an environment."""@en;
+	owl:inverseOf env:hasEnvironment;
+	rdfs:domain env:Environment;
+	rdfs:range rdfs:Resource.

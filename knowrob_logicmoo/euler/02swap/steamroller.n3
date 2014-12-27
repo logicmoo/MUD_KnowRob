@@ -1,0 +1,35 @@
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix : <http://eulersharp.sourceforge.net/2006/02swap/steamroller#>.
+
+:wolf_1 a :Wolf.
+:fox_1 a :Fox.
+:bird_1 a :Bird.
+:snail_1 a :Snail.
+:caterpillar_1 a :Caterpillar.
+:grain_1 a :Grain.
+
+{?X a :Wolf} => {?X a :Animal}.
+{?X a :Fox} => {?X a :Animal}.
+{?X a :Bird} => {?X a :Animal}.
+{?X a :Snail} => {?X a :Animal}.
+{?X a :Caterpillar} => {?X a :Animal}.
+
+{?X a :Grain} => {?X a :Plant}.
+{?X a :Snail} => {(:snail_food_of ?X) a :Plant}.
+{?X a :Caterpillar} => {(:caterpillar_food_of ?X) a :Plant}.
+
+{?X a :Caterpillar. ?Y a :Bird} => {?X :smaller ?Y}.
+{?X a :Snail. ?Y a :Bird} => {?X :smaller ?Y}.
+{?X a :Bird. ?Y a :Fox} => {?X :smaller ?Y}.
+{?X a :Fox. ?Y a :Wolf} => {?X :smaller ?Y}.
+
+{?X a :Wolf. ?Y a :Fox} => {?X :dislikes ?Y}.
+{?X a :Wolf. ?Y a :Grain} => {?X :dislikes ?Y}.
+{?X a :Bird. ?Y a :Snail} => {?X :dislikes ?Y}.
+
+{?X a :Bird. ?Y a :Caterpillar} => {?X :likes ?Y}.
+{?X a :Snail} => {?X :likes (:snail_food_of ?X)}.
+{?X a :Caterpillar} => {?X :likes (:caterpillar_food_of ?X)}.
+{?X a :Animal. ?Y a :Animal. ?Y :smaller ?X. (?U 1) e:findall (?X {?X :dislikes ?Y} ()). ?W a :Plant. ?Y :likes ?W. ?Z a :Plant. (?U 1) e:findall (?X {?X :dislikes ?Z} ())} => {?X :likes ?Y}.
+{?X a :Animal. ?Y a :Animal. ?Y :smaller ?X. (?U 1) e:findall (?X {?X :dislikes ?Y} ()). ?W a :Plant. ?Y :likes ?W. ?Z a :Plant. (?U 1) e:findall (?X {?X :dislikes ?Z} ())} => {?X :likes ?Z}.

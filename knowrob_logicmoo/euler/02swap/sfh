@@ -1,0 +1,95 @@
+#!/bin/bash
+pushd ~/eyesvn/2003/03swap
+nh --web-cache "http://eulersharp.sourceforge.net/2003/03swap/agent agent.n3" http://eulersharp.sourceforge.net/2003/03swap/agent
+nh --web-cache "http://eulersharp.sourceforge.net/2003/03swap/bioSKOSSchemes bioSKOSSchemes.n3" http://eulersharp.sourceforge.net/2003/03swap/bioSKOSSchemes
+nh --web-cache "http://eulersharp.sourceforge.net/2003/03swap/care care.n3" http://eulersharp.sourceforge.net/2003/03swap/care
+nh --web-cache "http://eulersharp.sourceforge.net/2003/03swap/coding coding.n3" http://eulersharp.sourceforge.net/2003/03swap/coding
+nh --web-cache "http://eulersharp.sourceforge.net/2003/03swap/computer computer.n3" http://eulersharp.sourceforge.net/2003/03swap/computer
+nh --web-cache "http://eulersharp.sourceforge.net/2003/03swap/countries countries.n3" http://eulersharp.sourceforge.net/2003/03swap/countries
+nh --web-cache "http://eulersharp.sourceforge.net/2003/03swap/decisionSupport decisionSupport.n3" http://eulersharp.sourceforge.net/2003/03swap/decisionSupport
+nh --web-cache "http://eulersharp.sourceforge.net/2003/03swap/digitalProcedure digitalProcedure.n3" http://eulersharp.sourceforge.net/2003/03swap/digitalProcedure
+nh --web-cache "http://eulersharp.sourceforge.net/2003/03swap/document document.n3" http://eulersharp.sourceforge.net/2003/03swap/document
+nh --web-cache "http://eulersharp.sourceforge.net/2003/03swap/environment environment.n3" http://eulersharp.sourceforge.net/2003/03swap/environment
+nh --web-cache "http://eulersharp.sourceforge.net/2003/03swap/event event.n3" http://eulersharp.sourceforge.net/2003/03swap/event
+nh --web-cache "http://eulersharp.sourceforge.net/2003/03swap/foster foster.n3" http://eulersharp.sourceforge.net/2003/03swap/foster
+nh --web-cache "http://eulersharp.sourceforge.net/2003/03swap/genomeAbnormality genomeAbnormality.n3" http://eulersharp.sourceforge.net/2003/03swap/genomeAbnormality
+nh --web-cache "http://eulersharp.sourceforge.net/2003/03swap/human human.n3" http://eulersharp.sourceforge.net/2003/03swap/human
+nh --web-cache "http://eulersharp.sourceforge.net/2003/03swap/humanBody humanBody.n3" http://eulersharp.sourceforge.net/2003/03swap/humanBody
+nh --web-cache "http://eulersharp.sourceforge.net/2003/03swap/languages languages.n3" http://eulersharp.sourceforge.net/2003/03swap/languages
+nh --web-cache "http://eulersharp.sourceforge.net/2003/03swap/organism organism.n3" http://eulersharp.sourceforge.net/2003/03swap/organism
+nh --web-cache "http://eulersharp.sourceforge.net/2003/03swap/organization organization.n3" http://eulersharp.sourceforge.net/2003/03swap/organization
+nh --web-cache "http://eulersharp.sourceforge.net/2003/03swap/physicalResource physicalResource.n3" http://eulersharp.sourceforge.net/2003/03swap/physicalResource
+nh --web-cache "http://eulersharp.sourceforge.net/2003/03swap/quantities quantities.n3" http://eulersharp.sourceforge.net/2003/03swap/quantities
+nh --web-cache "http://eulersharp.sourceforge.net/2003/03swap/space space.n3" http://eulersharp.sourceforge.net/2003/03swap/space
+nh --web-cache "http://eulersharp.sourceforge.net/2003/03swap/sparql sparql.n3" http://eulersharp.sourceforge.net/2003/03swap/sparql
+nh --web-cache "http://eulersharp.sourceforge.net/2003/03swap/sparqlAnalysis sparqlAnalysis.n3" http://eulersharp.sourceforge.net/2003/03swap/sparqlAnalysis
+nh --web-cache "http://eulersharp.sourceforge.net/2003/03swap/sparqlAnalysisTemplate sparqlAnalysisTemplate.n3" http://eulersharp.sourceforge.net/2003/03swap/sparqlAnalysisTemplate
+nh --web-cache "http://eulersharp.sourceforge.net/2003/03swap/substanceForms substanceForms.n3" http://eulersharp.sourceforge.net/2003/03swap/substanceForms
+nh --web-cache "http://eulersharp.sourceforge.net/2003/03swap/time time.n3" http://eulersharp.sourceforge.net/2003/03swap/time
+nh --web-cache "http://eulersharp.sourceforge.net/2003/03swap/units units.n3" http://eulersharp.sourceforge.net/2003/03swap/units
+nh --web-cache "http://eulersharp.sourceforge.net/2003/03swap/unitsExtension unitsExtension.n3" http://eulersharp.sourceforge.net/2003/03swap/unitsExtension
+nh --web-cache "http://eulersharp.sourceforge.net/2003/03swap/quantitiesExtension quantitiesExtension.n3" http://eulersharp.sourceforge.net/2003/03swap/quantitiesExtension
+nh --web-cache "http://eulersharp.sourceforge.net/2003/03swap/weekScheme weekScheme.n3" http://eulersharp.sourceforge.net/2003/03swap/weekScheme
+nh --web-cache "http://eulersharp.sourceforge.net/2003/03swap/workflow workflow.n3" http://eulersharp.sourceforge.net/2003/03swap/workflow
+
+nh --web-cache "http://eulersharp.sourceforge.net/2003/03swap/age_rule age_rule.n3" http://eulersharp.sourceforge.net/2003/03swap/age_rule
+nh --web-cache "http://eulersharp.sourceforge.net/2003/03swap/age_rules age_rules.n3" http://eulersharp.sourceforge.net/2003/03swap/age_rules
+nh --web-cache "http://eulersharp.sourceforge.net/2003/03swap/age_rules_backward age_rules_backward.n3" http://eulersharp.sourceforge.net/2003/03swap/age_rules_backward
+nh --web-cache "http://eulersharp.sourceforge.net/2003/03swap/bmi_rules bmi_rules.n3" http://eulersharp.sourceforge.net/2003/03swap/bmi_rules
+nh --web-cache "http://eulersharp.sourceforge.net/2003/03swap/ch-rules ch-rules.n3" http://eulersharp.sourceforge.net/2003/03swap/ch-rules
+nh --web-cache "http://eulersharp.sourceforge.net/2003/03swap/dayAge_rule dayAge_rule.n3" http://eulersharp.sourceforge.net/2003/03swap/dayAge_rule
+nh --web-cache "http://eulersharp.sourceforge.net/2003/03swap/eventTime_rules eventTime_rules.n3" http://eulersharp.sourceforge.net/2003/03swap/eventTime_rules
+nh --web-cache "http://eulersharp.sourceforge.net/2003/03swap/eye-builtins eye-builtins.n3" http://eulersharp.sourceforge.net/2003/03swap/eye-builtins
+nh -d ../../2006/02swap --web-cache "http://eulersharp.sourceforge.net/2006/02swap/fcm-plugin ../../2006/02swap/fcm-plugin.n3" http://eulersharp.sourceforge.net/2006/02swap/fcm-plugin
+nh --web-cache "http://eulersharp.sourceforge.net/2003/03swap/fdl-bbn fdl-bbn.n3" http://eulersharp.sourceforge.net/2003/03swap/fdl-bbn
+nh --web-cache "http://eulersharp.sourceforge.net/2003/03swap/fl-rules fl-rules.n3" http://eulersharp.sourceforge.net/2003/03swap/fl-rules
+nh --web-cache "http://eulersharp.sourceforge.net/2003/03swap/log-rules log-rules.n3" http://eulersharp.sourceforge.net/2003/03swap/log-rules
+nh -d ../../2006/02swap --web-cache "http://eulersharp.sourceforge.net/2006/02swap/nbbn-plugin ../../2006/02swap/nbbn-plugin.n3" http://eulersharp.sourceforge.net/2006/02swap/nbbn-plugin
+nh --web-cache "http://eulersharp.sourceforge.net/2003/03swap/pi-calc pi-calc.n3" http://eulersharp.sourceforge.net/2003/03swap/pi-calc
+nh --web-cache "http://eulersharp.sourceforge.net/2003/03swap/pi-rules pi-rules.n3" http://eulersharp.sourceforge.net/2003/03swap/pi-rules
+nh --web-cache "http://eulersharp.sourceforge.net/2003/03swap/prolog prolog.n3" http://eulersharp.sourceforge.net/2003/03swap/prolog
+nh --web-cache "http://eulersharp.sourceforge.net/2003/03swap/rpo-rules rpo-rules.n3" http://eulersharp.sourceforge.net/2003/03swap/rpo-rules
+nh --web-cache "http://eulersharp.sourceforge.net/2003/03swap/skos-rules skos-rules.n3" http://eulersharp.sourceforge.net/2003/03swap/skos-rules
+nh --web-cache "http://eulersharp.sourceforge.net/2003/03swap/skos-extra-rules skos-extra-rules.n3" http://eulersharp.sourceforge.net/2003/03swap/skos-extra-rules
+nh --web-cache "http://eulersharp.sourceforge.net/2003/03swap/skos-mapping-validation-rules skos-mapping-validation-rules.n3" http://eulersharp.sourceforge.net/2003/03swap/skos-mapping-validation-rules
+nh --web-cache "http://eulersharp.sourceforge.net/2003/03swap/weightStatus_rules weightStatus_rules.n3" http://eulersharp.sourceforge.net/2003/03swap/weightStatus_rules
+nh --web-cache "http://eulersharp.sourceforge.net/2003/03swap/xsd-rules xsd-rules.n3" http://eulersharp.sourceforge.net/2003/03swap/xsd-rules
+
+nh --web-cache "http://eulersharp.sourceforge.net/2003/03swap/rdfs-domain rdfs-domain.n3" http://eulersharp.sourceforge.net/2003/03swap/rdfs-domain
+nh --web-cache "http://eulersharp.sourceforge.net/2003/03swap/rdfs-range rdfs-range.n3" http://eulersharp.sourceforge.net/2003/03swap/rdfs-range
+nh --web-cache "http://eulersharp.sourceforge.net/2003/03swap/rdfs-subClassOf rdfs-subClassOf.n3" http://eulersharp.sourceforge.net/2003/03swap/rdfs-subClassOf
+nh --web-cache "http://eulersharp.sourceforge.net/2003/03swap/rdfs-subPropertyOf rdfs-subPropertyOf.n3" http://eulersharp.sourceforge.net/2003/03swap/rdfs-subPropertyOf
+
+nh --web-cache "http://eulersharp.sourceforge.net/2003/03swap/owl-AllDifferent owl-AllDifferent.n3" http://eulersharp.sourceforge.net/2003/03swap/owl-AllDifferent
+nh --web-cache "http://eulersharp.sourceforge.net/2003/03swap/owl-AllDisjointClasses owl-AllDisjointClasses.n3" http://eulersharp.sourceforge.net/2003/03swap/owl-AllDisjointClasses
+nh --web-cache "http://eulersharp.sourceforge.net/2003/03swap/owl-AllDisjointProperties owl-AllDisjointProperties.n3" http://eulersharp.sourceforge.net/2003/03swap/owl-AllDisjointProperties
+nh --web-cache "http://eulersharp.sourceforge.net/2003/03swap/owl-allValuesFrom owl-allValuesFrom.n3" http://eulersharp.sourceforge.net/2003/03swap/owl-allValuesFrom
+nh --web-cache "http://eulersharp.sourceforge.net/2003/03swap/owl-AsymmetricProperty owl-AsymmetricProperty.n3" http://eulersharp.sourceforge.net/2003/03swap/owl-AsymmetricProperty
+nh --web-cache "http://eulersharp.sourceforge.net/2003/03swap/owl-complementOf owl-complementOf.n3" http://eulersharp.sourceforge.net/2003/03swap/owl-complementOf
+nh --web-cache "http://eulersharp.sourceforge.net/2003/03swap/owl-differentFrom owl-differentFrom.n3" http://eulersharp.sourceforge.net/2003/03swap/owl-differentFrom
+nh --web-cache "http://eulersharp.sourceforge.net/2003/03swap/owl-disjointWith owl-disjointWith.n3" http://eulersharp.sourceforge.net/2003/03swap/owl-disjointWith
+nh --web-cache "http://eulersharp.sourceforge.net/2003/03swap/owl-disjointUnionOf owl-disjointUnionOf.n3" http://eulersharp.sourceforge.net/2003/03swap/owl-disjointUnionOf
+nh --web-cache "http://eulersharp.sourceforge.net/2003/03swap/owl-distinctMembers owl-distinctMembers.n3" http://eulersharp.sourceforge.net/2003/03swap/owl-distinctMembers
+nh --web-cache "http://eulersharp.sourceforge.net/2003/03swap/owl-equivalentClass owl-equivalentClass.n3" http://eulersharp.sourceforge.net/2003/03swap/owl-equivalentClass
+nh --web-cache "http://eulersharp.sourceforge.net/2003/03swap/owl-equivalentProperty owl-equivalentProperty.n3" http://eulersharp.sourceforge.net/2003/03swap/owl-equivalentProperty
+nh --web-cache "http://eulersharp.sourceforge.net/2003/03swap/owl-FunctionalProperty owl-FunctionalProperty.n3" http://eulersharp.sourceforge.net/2003/03swap/owl-FunctionalProperty
+nh --web-cache "http://eulersharp.sourceforge.net/2003/03swap/owl-hasKey owl-hasKey.n3" http://eulersharp.sourceforge.net/2003/03swap/owl-hasKey
+nh --web-cache "http://eulersharp.sourceforge.net/2003/03swap/owl-hasValue owl-hasValue.n3" http://eulersharp.sourceforge.net/2003/03swap/owl-hasValue
+nh --web-cache "http://eulersharp.sourceforge.net/2003/03swap/owl-intersectionOf owl-intersectionOf.n3" http://eulersharp.sourceforge.net/2003/03swap/owl-intersectionOf
+nh --web-cache "http://eulersharp.sourceforge.net/2003/03swap/owl-InverseFunctionalProperty owl-InverseFunctionalProperty.n3" http://eulersharp.sourceforge.net/2003/03swap/owl-InverseFunctionalProperty
+nh --web-cache "http://eulersharp.sourceforge.net/2003/03swap/owl-inverseOf owl-inverseOf.n3" http://eulersharp.sourceforge.net/2003/03swap/owl-inverseOf
+nh --web-cache "http://eulersharp.sourceforge.net/2003/03swap/owl-IrreflexiveProperty owl-IrreflexiveProperty.n3" http://eulersharp.sourceforge.net/2003/03swap/owl-IrreflexiveProperty
+nh --web-cache "http://eulersharp.sourceforge.net/2003/03swap/owl-maxCardinality owl-maxCardinality.n3" http://eulersharp.sourceforge.net/2003/03swap/owl-maxCardinality
+nh --web-cache "http://eulersharp.sourceforge.net/2003/03swap/owl-maxQualifiedCardinality owl-maxQualifiedCardinality.n3" http://eulersharp.sourceforge.net/2003/03swap/owl-maxQualifiedCardinality
+nh --web-cache "http://eulersharp.sourceforge.net/2003/03swap/owl-NegativePropertyAssertion owl-NegativePropertyAssertion.n3" http://eulersharp.sourceforge.net/2003/03swap/owl-NegativePropertyAssertion
+nh --web-cache "http://eulersharp.sourceforge.net/2003/03swap/owl-Nothing owl-Nothing.n3" http://eulersharp.sourceforge.net/2003/03swap/owl-Nothing
+nh --web-cache "http://eulersharp.sourceforge.net/2003/03swap/owl-oneOf owl-oneOf.n3" http://eulersharp.sourceforge.net/2003/03swap/owl-oneOf
+nh --web-cache "http://eulersharp.sourceforge.net/2003/03swap/owl-propertyChainAxiom owl-propertyChainAxiom.n3" http://eulersharp.sourceforge.net/2003/03swap/owl-propertyChainAxiom
+nh --web-cache "http://eulersharp.sourceforge.net/2003/03swap/owl-propertyDisjointWith owl-propertyDisjointWith.n3" http://eulersharp.sourceforge.net/2003/03swap/owl-propertyDisjointWith
+nh --web-cache "http://eulersharp.sourceforge.net/2003/03swap/owl-sameAs owl-sameAs.n3" http://eulersharp.sourceforge.net/2003/03swap/owl-sameAs
+nh --web-cache "http://eulersharp.sourceforge.net/2003/03swap/owl-sameAs-ext owl-sameAs-ext.n3" http://eulersharp.sourceforge.net/2003/03swap/owl-sameAs-ext
+nh --web-cache "http://eulersharp.sourceforge.net/2003/03swap/owl-someValuesFrom owl-someValuesFrom.n3" http://eulersharp.sourceforge.net/2003/03swap/owl-someValuesFrom
+nh --web-cache "http://eulersharp.sourceforge.net/2003/03swap/owl-SymmetricProperty owl-SymmetricProperty.n3" http://eulersharp.sourceforge.net/2003/03swap/owl-SymmetricProperty
+nh --web-cache "http://eulersharp.sourceforge.net/2003/03swap/owl-TransitiveProperty owl-TransitiveProperty.n3" http://eulersharp.sourceforge.net/2003/03swap/owl-TransitiveProperty
+nh --web-cache "http://eulersharp.sourceforge.net/2003/03swap/owl-unionOf owl-unionOf.n3" http://eulersharp.sourceforge.net/2003/03swap/owl-unionOf
+popd

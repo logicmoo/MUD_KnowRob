@@ -1,0 +1,334 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>
+		<meta name="generator" content="AGFA HealthCare N3 to HTML convertor"/>
+		<link rel="alternate" type="text/n3" title="RDF Representation" href="http://eulersharp.sourceforge.net/2003/03swap/skos-mapping-validation-rules"/>
+		<title>skos-mapping-validation-rules</title>
+		<style type="text/css">
+			a[href]:link { text-decoration:none; }
+			a[href]:visited { text-decoration:none; }
+			a[href]:active { text-decoration:underline; }
+			a:hover { background:#ffa; }
+			.keyword { font-weight: bold; }
+			.literal { color: blue }
+			.uri { color: darkblue }
+			.qname { color: black }
+			.var { color: gray }
+			.comment { font-style:italic; color: darkgreen }
+		</style>
+	</head>
+	<body>
+	<div>
+		<pre>
+<span class="keyword">@prefix</span> skos: <a class="uri" href="http://www.w3.org/2004/02/skos/core.html#">&lt;http://www.w3.org/2004/02/skos/core#&gt;</a>.
+<span class="keyword">@prefix</span> dce: <a class="uri" href="http://purl.org/dc/elements/1.1/">&lt;http://purl.org/dc/elements/1.1/&gt;</a>.
+<span class="keyword">@prefix</span> rdfs: <a class="uri" href="http://www.w3.org/2000/01/rdf-schema">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</a>.
+<span class="keyword">@prefix</span> validation: <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/skos-mapping-validation-rules#&gt;</a>.
+<span class="keyword">@prefix</span> e: <a class="uri" href="http://eulersharp.sourceforge.net/2003/03swap/log-rules.html#">&lt;http://eulersharp.sourceforge.net/2003/03swap/log-rules#&gt;</a>.
+<span class="keyword">@prefix</span> log: <a class="uri" href="http://www.w3.org/2000/10/swap/log">&lt;http://www.w3.org/2000/10/swap/log#&gt;</a>.
+
+
+<a class="uri" href="http://eulersharp.sourceforge.net/2003/03swap/skos-mapping-validation-rules.html">&lt;http://eulersharp.sourceforge.net/2003/03swap/skos-mapping-validation-rules&gt;</a>
+	<a class="qname" href="http://purl.org/dc/elements/1.1">dce:title</a> <span class="literal">&quot;SKOS Mapping Validation Rules&quot;</span>@en;
+	<a class="qname" href="http://purl.org/dc/elements/1.1">dce:creator</a> <span class="literal">&quot;Hong Sun&quot;</span>@en;
+	<a class="qname" href="http://purl.org/dc/elements/1.1">dce:contributor</a> <span class="literal">&quot;Jos De Roo, Giovanni Mels, Boris De Vloed&quot;</span>@en;
+	<a class="qname" href="http://purl.org/dc/elements/1.1">dce:publisher</a> <span class="literal">&quot;Agfa Healthcare/Belgium&quot;</span>@en;
+	<a class="qname" href="http://purl.org/dc/elements/1.1">dce:description</a> <span class="literal">&quot;Rules for SKOS constraint check&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#note">skos:note</a> <span class="literal">&quot;Rules to check SKOS mappings which may bring in non-consisitent pattern or vocabulary hijacking.&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#note">skos:note</a> <span class="literal">&quot;A document which further explains these rules can be found at: http://arxiv.org/ftp/arxiv/papers/1310/1310.4156.pdf&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:seeAlso</a> <a class="uri" href="http://eulersharp.sourceforge.net/2003/03swap/skos-rules">&lt;http://eulersharp.sourceforge.net/2003/03swap/skos-rules&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:seeAlso</a> <a class="uri" href="http://eulersharp.sourceforge.net/2003/03swap/skos-extra-rules">&lt;http://eulersharp.sourceforge.net/2003/03swap/skos-extra-rules&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:seeAlso</a> <a class="uri" href="http://arxiv.org/ftp/arxiv/papers/1310/1310.4156.pdf">&lt;http://arxiv.org/ftp/arxiv/papers/1310/1310.4156.pdf&gt;</a>.
+
+<span class="comment">#CLASSES</span>
+	
+<span class="comment"># Classes, the classes below lists the false/suspicious patterns listed in the associated document.</span>
+<a class="qname" name="Pattern1NonConsistentWithSKOSExtraRules">validation:Pattern1NonConsistentWithSKOSExtraRules</a> 
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;The inferred skos:broaderTransitive relation via skos:broadMatch mapping consists a cycle the with existing skos:braoderTransitive relation&quot;</span>.
+	
+<a class="qname" name="Pattern1VocabularyHijacking">validation:Pattern1VocabularyHijacking</a> 
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;The inferred skos:broaderTransitive relation via skos:broadMatch mapping is considered as vocabulary hijacking to the original vocabulary&quot;</span>.
+	
+<a class="qname" name="Pattern1NonConsistentWithSKOSRules">validation:Pattern1NonConsistentWithSKOSRules</a> 
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;The inferred skos:broaderTransitive relation via skos:broadMatch mapping is considered as contradictory with the existing skos:related relation&quot;</span>.	
+
+<a class="qname" name="Pattern2NonConsistentWithSKOSExtraRules">validation:Pattern2NonConsistentWithSKOSExtraRules</a> 
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;The inferred skos:exactMatch relation via skos:exactMatch mapping is considered as contradictory with the existing skos:braoderTransitive relation&quot;</span>.
+
+<a class="qname" name="Pattern2VocabularyHijacking">validation:Pattern2VocabularyHijacking</a> 
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;The inferred skos:exactMatch relation via skos:exactMatch mapping is considered as vocabulary hijacking to the original vocabulary&quot;</span>.
+
+<a class="qname" name="Pattern3NonConsistentWithSKOSRules">validation:Pattern3NonConsistentWithSKOSRules</a> 
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;The inferred skos:broaderTransitive relation via skos:broadMatch mapping and skos:broaderTransitive relation is considered as contradictory with the skos:relatedMatch mapping&quot;</span>.
+
+<a class="qname" name="Pattern3NonConsistentWithSKOSExtraRules">validation:Pattern3NonConsistentWithSKOSExtraRules</a> 
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;The inferred skos:broaderTransitive relation via skos:broadMatch mapping and skos:broaderTransitive relation is considered as contradictory with the skos:exactMatch mapping&quot;</span>.
+
+<a class="qname" name="Pattern4NonConsistentWithSKOSRules">validation:Pattern4NonConsistentWithSKOSRules</a> 
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;The inferred skos:broaderTransitive relation via skos:broadMatch mapping and skos:broaderTransitive relation is considered as contradictory with the skos:relatedMatch mapping, reverse direction of validation:Pattern3NonConsistentWithSKOSRules&quot;</span>.
+
+<a class="qname" name="Pattern4NonConsistentWithSKOSExtraRules">validation:Pattern4NonConsistentWithSKOSExtraRules</a> 
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;The inferred skos:broaderTransitive relation via skos:broadMatch mapping and skos:broaderTransitive relation is considered as contradictory with the skos:exactMatch mapping, reverse direction of validation:Pattern3NonConsistentWithSKOSExtraRules&quot;</span>.
+
+<a class="qname" name="Pattern5NonConsistentWithSKOSExtraRules">validation:Pattern5NonConsistentWithSKOSExtraRules</a> 
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;The inferred skos:broaderTransitive relation via skos:broadMatch mappings and skos:broaderTransitive relation is considered as contradictory with the existing skos:braoderTransitive relation&quot;</span>.
+
+<a class="qname" name="Pattern5NonConsistentWithSKOSRules">validation:Pattern5NonConsistentWithSKOSRules</a> 
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;The inferred skos:broaderTransitive relation via skos:broadMatch mappings and skos:broaderTransitive relation is considered as contradictory with the existing skos:related relation&quot;</span>.	
+	
+<a class="qname" name="Pattern5VocabularyHijacking">validation:Pattern5VocabularyHijacking</a> 
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;The inferred skos:broaderTransitive relation via skos:broadMatch mappings and skos:broaderTransitive relation is considered as vocabulary hijacking to the original vocabulary&quot;</span>.
+
+<a class="qname" name="Pattern6NonConsistentWithSKOSRules">validation:Pattern6NonConsistentWithSKOSRules</a> 
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;The inferred skos:broaderTransitive relation via skos:broadMatch mapping and skos:broaderTransitive relations is considered as contradictory with the skos:relatedMatch mapping&quot;</span>.
+
+<a class="qname" name="Pattern6NonConsistentWithSKOSExtraRules">validation:Pattern6NonConsistentWithSKOSExtraRules</a> 
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;The inferred skos:broaderTransitive relation via skos:broadMatch mapping and skos:broaderTransitive relations is considered as contradictory with the skos:exactMatch mapping&quot;</span>.
+
+<a class="qname" name="Pattern7CounterIntuitive">validation:Pattern7CounterIntuitive</a> 
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;The paired mappings creats a cycle on skos:broaderTransitive, indirectly. Therefore this pattern is also considered as suspicious.&quot;</span>.
+
+	
+<span class="comment"># Class relations </span>
+<a class="qname" href="#Pattern1NonConsistentWithSKOSExtraRules">validation:Pattern1NonConsistentWithSKOSExtraRules</a>
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="#Pattern1VocabularyHijacking">validation:Pattern1VocabularyHijacking</a>.
+	
+<a class="qname" href="#Pattern1NonConsistentWithSKOSRules">validation:Pattern1NonConsistentWithSKOSRules</a>
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="#Pattern1VocabularyHijacking">validation:Pattern1VocabularyHijacking</a>.	
+	
+<a class="qname" href="#Pattern2NonConsistentWithSKOSExtraRules">validation:Pattern2NonConsistentWithSKOSExtraRules</a>
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="#Pattern2VocabularyHijacking">validation:Pattern2VocabularyHijacking</a>.	
+	
+<a class="qname" href="#Pattern5NonConsistentWithSKOSExtraRules">validation:Pattern5NonConsistentWithSKOSExtraRules</a>	
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="#Pattern5VocabularyHijacking">validation:Pattern5VocabularyHijacking</a>.
+	
+<a class="qname" href="#Pattern5NonConsistentWithSKOSRules">validation:Pattern5NonConsistentWithSKOSRules</a>	
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="#Pattern5VocabularyHijacking">validation:Pattern5VocabularyHijacking</a>.	
+	
+
+<span class="comment">#MINIMAL INFERENCE</span>
+	
+<span class="comment">#inference on mapping relations</span>
+{ <span class="var">?x</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#exactMatch">skos:exactMatch</a> <span class="var">?y</span> } =&gt; { <span class="var">?y</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#exactMatch">skos:exactMatch</a> <span class="var">?x</span> }.
+{ <span class="var">?x</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#narrowMatch">skos:narrowMatch</a> <span class="var">?y</span> } =&gt; { <span class="var">?y</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#broadMatch">skos:broadMatch</a> <span class="var">?x</span> }.
+{ <span class="var">?x</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#relatedMatch">skos:relatedMatch</a> <span class="var">?y</span> } =&gt; { <span class="var">?y</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#relatedMatch">skos:relatedMatch</a> <span class="var">?x</span> }.
+
+<span class="comment">#inference on semantic relations</span>
+{ <span class="var">?x</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#narrower">skos:narrower</a> <span class="var">?y</span> } =&gt; { <span class="var">?y</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#broader">skos:broader</a> <span class="var">?x</span> }.
+{ <span class="var">?x</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#related">skos:related</a> <span class="var">?y</span> } =&gt; { <span class="var">?y</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#related">skos:related</a> <span class="var">?x</span> }.
+{ <span class="var">?x</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#broader">skos:broader</a> <span class="var">?y</span> } =&gt; { <span class="var">?x</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#broaderTransitive">skos:broaderTransitive</a> <span class="var">?y</span> }.
+{ <span class="var">?x</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#broaderTransitive">skos:broaderTransitive</a> <span class="var">?y</span>. <span class="var">?y</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#broaderTransitive">skos:broaderTransitive</a> <span class="var">?z</span> } =&gt; { <span class="var">?x</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#broaderTransitive">skos:broaderTransitive</a> <span class="var">?z</span> }.
+	
+	
+<span class="comment">#PATTERN DETECTION</span>
+
+<span class="comment">#Pattern1VocabularyHijacking</span>
+{
+	<span class="var">?A1</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#broadMatch">skos:broadMatch</a> <span class="var">?B1</span>.
+	<span class="var">?B1</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#broadMatch">skos:broadMatch</a> <span class="var">?A2</span>.
+	<span class="var">?SCOPE</span> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/log-rules.html#findall">e:findall</a> ( <span class="var">?A1</span> { <span class="var">?A1</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#broaderTransitive">skos:broaderTransitive</a> <span class="var">?A2</span>. } () ).
+	{ 	<span class="var">?A1</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#broadMatch">skos:broadMatch</a> <span class="var">?B1</span>.
+		<span class="var">?B1</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#broadMatch">skos:broadMatch</a> <span class="var">?A2</span>. } <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/log-rules.html#graphCopy">e:graphCopy</a> <span class="var">?pattern</span>.
+} =&gt; {
+	<span class="var">?pattern</span> <span class="keyword">a</span> <a class="qname" href="#Pattern1VocabularyHijacking">validation:Pattern1VocabularyHijacking</a>.
+}.	
+
+<span class="comment">#Pattern1NonConsistentWithSKOSExtraRules</span>
+{
+	<span class="var">?A1</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#broadMatch">skos:broadMatch</a> <span class="var">?B1</span>.
+	<span class="var">?B1</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#broadMatch">skos:broadMatch</a> <span class="var">?A2</span>.
+	<span class="var">?A2</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#broaderTransitive">skos:broaderTransitive</a> <span class="var">?A1</span>.
+	{	<span class="var">?A1</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#broadMatch">skos:broadMatch</a> <span class="var">?B1</span>.
+		<span class="var">?B1</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#broadMatch">skos:broadMatch</a> <span class="var">?A2</span>.
+		<span class="var">?A2</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#broaderTransitive">skos:broaderTransitive</a> <span class="var">?A1</span>. } <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/log-rules.html#graphCopy">e:graphCopy</a> <span class="var">?pattern</span>.
+} =&gt; {
+	<span class="var">?pattern</span> <span class="keyword">a</span> <a class="qname" href="#Pattern1NonConsistentWithSKOSExtraRules">validation:Pattern1NonConsistentWithSKOSExtraRules</a>.
+}.
+
+<span class="comment">#Pattern1NonConsistentWithSKOSRules</span>
+{
+	<span class="var">?A1</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#broadMatch">skos:broadMatch</a> <span class="var">?B1</span>.
+	<span class="var">?B1</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#broadMatch">skos:broadMatch</a> <span class="var">?A2</span>.
+	<span class="var">?A1</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#related">skos:related</a> <span class="var">?A2</span>.
+	{	<span class="var">?A1</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#broadMatch">skos:broadMatch</a> <span class="var">?B1</span>.
+		<span class="var">?B1</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#broadMatch">skos:broadMatch</a> <span class="var">?A2</span>.
+		<span class="var">?A1</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#related">skos:related</a> <span class="var">?A2</span>. } <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/log-rules.html#graphCopy">e:graphCopy</a> <span class="var">?pattern</span>.
+} =&gt; {
+	<span class="var">?pattern</span> <span class="keyword">a</span> <a class="qname" href="#Pattern1NonConsistentWithSKOSRules">validation:Pattern1NonConsistentWithSKOSRules</a>.
+}.
+
+<span class="comment">#Pattern2VocabularyHijacking</span>
+{
+	<span class="var">?A1</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#exactMatch">skos:exactMatch</a> <span class="var">?B1</span>.
+	<span class="var">?B1</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#exactMatch">skos:exactMatch</a> <span class="var">?A2</span>.
+	<span class="var">?A1</span> <a class="qname" href="http://www.w3.org/2000/10/swap/log">log:notEqualTo</a> <span class="var">?A2</span>.
+	{ 	<span class="var">?A1</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#exactMatch">skos:exactMatch</a> <span class="var">?B1</span>.
+		<span class="var">?B1</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#exactMatch">skos:exactMatch</a> <span class="var">?A2</span>. } <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/log-rules.html#graphCopy">e:graphCopy</a> <span class="var">?pattern</span>.
+} =&gt; {
+	<span class="var">?pattern</span> <span class="keyword">a</span> <a class="qname" href="#Pattern2VocabularyHijacking">validation:Pattern2VocabularyHijacking</a>.
+}.
+
+<span class="comment">#Pattern2NonConsistentWithSKOSExtraRules</span>
+{
+	<span class="var">?A1</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#exactMatch">skos:exactMatch</a> <span class="var">?B1</span>.
+	<span class="var">?B1</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#exactMatch">skos:exactMatch</a> <span class="var">?A2</span>.
+	<span class="var">?A1</span> <a class="qname" href="http://www.w3.org/2000/10/swap/log">log:notEqualTo</a> <span class="var">?A2</span>.
+	<span class="var">?A2</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#broaderTransitive">skos:broaderTransitive</a> <span class="var">?A1</span>.
+	{ 	<span class="var">?A1</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#exactMatch">skos:exactMatch</a> <span class="var">?B1</span>.
+		<span class="var">?B1</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#exactMatch">skos:exactMatch</a> <span class="var">?A2</span>.
+		<span class="var">?A2</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#broaderTransitive">skos:broaderTransitive</a> <span class="var">?A1</span>. } <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/log-rules.html#graphCopy">e:graphCopy</a> <span class="var">?pattern</span>.
+} =&gt; {
+	<span class="var">?pattern</span> <span class="keyword">a</span> <a class="qname" href="#Pattern2NonConsistentWithSKOSExtraRules">validation:Pattern2NonConsistentWithSKOSExtraRules</a>.
+}.
+
+<span class="comment">#Pattern3NonConsistentWithSKOSExtraRules</span>
+{
+	<span class="var">?A2</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#broaderTransitive">skos:broaderTransitive</a> <span class="var">?A1</span>.
+	<span class="var">?A1</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#broadMatch">skos:broadMatch</a> <span class="var">?B1</span>.
+	<span class="var">?B1</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#exactMatch">skos:exactMatch</a> <span class="var">?A2</span>.
+	{	<span class="var">?A2</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#broaderTransitive">skos:broaderTransitive</a> <span class="var">?A1</span>.
+		<span class="var">?A1</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#broadMatch">skos:broadMatch</a> <span class="var">?B1</span>.
+		<span class="var">?B1</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#exactMatch">skos:exactMatch</a> <span class="var">?A2</span>. } <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/log-rules.html#graphCopy">e:graphCopy</a> <span class="var">?pattern</span>.
+} =&gt; {
+	<span class="var">?pattern</span> <span class="keyword">a</span> <a class="qname" href="#Pattern3NonConsistentWithSKOSExtraRules">validation:Pattern3NonConsistentWithSKOSExtraRules</a>.
+}.
+
+<span class="comment">#Pattern3NonConsistentWithSKOSRules</span>
+{
+	<span class="var">?A2</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#broaderTransitive">skos:broaderTransitive</a> <span class="var">?A1</span>.
+	<span class="var">?A1</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#broadMatch">skos:broadMatch</a> <span class="var">?B1</span>.
+	<span class="var">?B1</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#relatedMatch">skos:relatedMatch</a> <span class="var">?A2</span>.
+	{  	<span class="var">?A2</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#broaderTransitive">skos:broaderTransitive</a> <span class="var">?A1</span>.
+		<span class="var">?A1</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#broadMatch">skos:broadMatch</a> <span class="var">?B1</span>.
+		<span class="var">?B1</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#relatedMatch">skos:relatedMatch</a> <span class="var">?A2</span>. } <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/log-rules.html#graphCopy">e:graphCopy</a> <span class="var">?pattern</span>.
+} =&gt; {
+	<span class="var">?pattern</span> <span class="keyword">a</span> <a class="qname" href="#Pattern3NonConsistentWithSKOSRules">validation:Pattern3NonConsistentWithSKOSRules</a>.
+}.
+
+<span class="comment">#Pattern4NonConsistentWithSKOSExtraRules</span>
+{
+	<span class="var">?A1</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#broaderTransitive">skos:broaderTransitive</a> <span class="var">?A2</span>.
+	<span class="var">?B1</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#broadMatch">skos:broadMatch</a> <span class="var">?A1</span>.
+	<span class="var">?A2</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#exactMatch">skos:exactMatch</a> <span class="var">?B1</span>.
+	{	<span class="var">?A1</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#broaderTransitive">skos:broaderTransitive</a> <span class="var">?A2</span>.
+		<span class="var">?B1</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#broadMatch">skos:broadMatch</a> <span class="var">?A1</span>.
+		<span class="var">?A2</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#exactMatch">skos:exactMatch</a> <span class="var">?B1</span>. } <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/log-rules.html#graphCopy">e:graphCopy</a> <span class="var">?pattern</span>.
+} =&gt; {
+	<span class="var">?pattern</span> <span class="keyword">a</span> <a class="qname" href="#Pattern4NonConsistentWithSKOSExtraRules">validation:Pattern4NonConsistentWithSKOSExtraRules</a>.
+}.
+
+<span class="comment">#Pattern4NonConsistentWithSKOSRules</span>
+{
+	<span class="var">?A1</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#broaderTransitive">skos:broaderTransitive</a> <span class="var">?A2</span>.
+	<span class="var">?B1</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#broadMatch">skos:broadMatch</a> <span class="var">?A1</span>.
+	<span class="var">?A2</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#relatedMatch">skos:relatedMatch</a> <span class="var">?B1</span>.
+	{	<span class="var">?A1</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#broaderTransitive">skos:broaderTransitive</a> <span class="var">?A2</span>.
+		<span class="var">?B1</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#broadMatch">skos:broadMatch</a> <span class="var">?A1</span>.
+		<span class="var">?A2</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#relatedMatch">skos:relatedMatch</a> <span class="var">?B1</span>. } <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/log-rules.html#graphCopy">e:graphCopy</a> <span class="var">?pattern</span>.
+} =&gt; {
+	<span class="var">?pattern</span> <span class="keyword">a</span> <a class="qname" href="#Pattern4NonConsistentWithSKOSRules">validation:Pattern4NonConsistentWithSKOSRules</a>.
+}.
+
+<span class="comment">#Pattern5VocabularyHijacking</span>
+{
+	<span class="var">?A1</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#broadMatch">skos:broadMatch</a> <span class="var">?B1</span>.
+	<span class="var">?B1</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#broaderTransitive">skos:broaderTransitive</a> <span class="var">?B2</span>.
+	<span class="var">?B2</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#broadMatch">skos:broadMatch</a> <span class="var">?A2</span>.
+	<span class="var">?A1</span> <a class="qname" href="http://www.w3.org/2000/10/swap/log">log:notEqualTo</a> <span class="var">?A2</span>.
+	<span class="var">?SCOPE</span> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/log-rules.html#findall">e:findall</a> ( <span class="var">?A1</span> { <span class="var">?A1</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#broaderTransitive">skos:broaderTransitive</a> <span class="var">?A2</span>. } () ).
+	{	<span class="var">?A1</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#broadMatch">skos:broadMatch</a> <span class="var">?B1</span>.
+		<span class="var">?B1</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#broaderTransitive">skos:broaderTransitive</a> <span class="var">?B2</span>.
+		<span class="var">?B2</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#broadMatch">skos:broadMatch</a> <span class="var">?A2</span>. } <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/log-rules.html#graphCopy">e:graphCopy</a> <span class="var">?pattern</span>.
+} =&gt; {
+	<span class="var">?pattern</span> <span class="keyword">a</span> <a class="qname" href="#Pattern5VocabularyHijacking">validation:Pattern5VocabularyHijacking</a>.
+}.
+
+<span class="comment">#Pattern5NonConsistentWithSKOSExtraRules</span>
+{
+	<span class="var">?A1</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#broadMatch">skos:broadMatch</a> <span class="var">?B1</span>.
+	<span class="var">?B1</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#broaderTransitive">skos:broaderTransitive</a> <span class="var">?B2</span>.
+	<span class="var">?B2</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#broadMatch">skos:broadMatch</a> <span class="var">?A2</span>.
+	<span class="var">?A2</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#broaderTransitive">skos:broaderTransitive</a> <span class="var">?A1</span>.
+	{	<span class="var">?A1</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#broadMatch">skos:broadMatch</a> <span class="var">?B1</span>.
+		<span class="var">?B1</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#broaderTransitive">skos:broaderTransitive</a> <span class="var">?B2</span>.
+		<span class="var">?B2</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#broadMatch">skos:broadMatch</a> <span class="var">?A2</span>.
+		<span class="var">?A2</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#broaderTransitive">skos:broaderTransitive</a> <span class="var">?A1</span>. } <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/log-rules.html#graphCopy">e:graphCopy</a> <span class="var">?pattern</span>.
+} =&gt; {
+	<span class="var">?pattern</span> <span class="keyword">a</span> <a class="qname" href="#Pattern5NonConsistentWithSKOSExtraRules">validation:Pattern5NonConsistentWithSKOSExtraRules</a>.
+}.
+
+<span class="comment">#Pattern5NonConsistentWithSKOSRules</span>
+{
+	<span class="var">?A1</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#broadMatch">skos:broadMatch</a> <span class="var">?B1</span>.
+	<span class="var">?B1</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#broaderTransitive">skos:broaderTransitive</a> <span class="var">?B2</span>.
+	<span class="var">?B2</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#broadMatch">skos:broadMatch</a> <span class="var">?A2</span>.
+	<span class="var">?A2</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#related">skos:related</a> <span class="var">?A1</span>.
+	{	<span class="var">?A1</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#broadMatch">skos:broadMatch</a> <span class="var">?B1</span>.
+		<span class="var">?B1</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#broaderTransitive">skos:broaderTransitive</a> <span class="var">?B2</span>.
+		<span class="var">?B2</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#broadMatch">skos:broadMatch</a> <span class="var">?A2</span>.
+		<span class="var">?A2</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#related">skos:related</a> <span class="var">?A1</span>. } <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/log-rules.html#graphCopy">e:graphCopy</a> <span class="var">?pattern</span>.
+} =&gt; {
+	<span class="var">?pattern</span> <span class="keyword">a</span> <a class="qname" href="#Pattern5NonConsistentWithSKOSRules">validation:Pattern5NonConsistentWithSKOSRules</a>.
+}.
+
+
+<span class="comment">#Pattern6NonConsistentWithSKOSExtraRules</span>
+{
+	<span class="var">?A2</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#broaderTransitive">skos:broaderTransitive</a> <span class="var">?A1</span>.
+	<span class="var">?A1</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#broadMatch">skos:broadMatch</a> <span class="var">?B1</span>.
+	<span class="var">?B1</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#broaderTransitive">skos:broaderTransitive</a> <span class="var">?B2</span>.
+	<span class="var">?B2</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#exactMatch">skos:exactMatch</a> <span class="var">?A2</span>.
+	{	<span class="var">?A2</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#broaderTransitive">skos:broaderTransitive</a> <span class="var">?A1</span>.
+		<span class="var">?A1</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#broadMatch">skos:broadMatch</a> <span class="var">?B1</span>.
+		<span class="var">?B1</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#broaderTransitive">skos:broaderTransitive</a> <span class="var">?B2</span>.
+		<span class="var">?B2</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#exactMatch">skos:exactMatch</a> <span class="var">?A2</span>. } <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/log-rules.html#graphCopy">e:graphCopy</a> <span class="var">?pattern</span>.
+} =&gt; {
+	<span class="var">?pattern</span> <span class="keyword">a</span> <a class="qname" href="#Pattern6NonConsistentWithSKOSExtraRules">validation:Pattern6NonConsistentWithSKOSExtraRules</a>.
+}.
+
+<span class="comment">#Pattern6NonConsistentWithSKOSRules</span>
+{
+	<span class="var">?A2</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#broaderTransitive">skos:broaderTransitive</a> <span class="var">?A1</span>.
+	<span class="var">?A1</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#broadMatch">skos:broadMatch</a> <span class="var">?B1</span>.
+	<span class="var">?B1</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#broaderTransitive">skos:broaderTransitive</a> <span class="var">?B2</span>.
+	<span class="var">?B2</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#relatedMatch">skos:relatedMatch</a> <span class="var">?A2</span>.
+	{	<span class="var">?A2</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#broaderTransitive">skos:broaderTransitive</a> <span class="var">?A1</span>.
+		<span class="var">?A1</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#broadMatch">skos:broadMatch</a> <span class="var">?B1</span>.
+		<span class="var">?B1</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#broaderTransitive">skos:broaderTransitive</a> <span class="var">?B2</span>.
+		<span class="var">?B2</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#relatedMatch">skos:relatedMatch</a> <span class="var">?A2</span>. } <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/log-rules.html#graphCopy">e:graphCopy</a> <span class="var">?pattern</span>.
+} =&gt; {
+	<span class="var">?pattern</span> <span class="keyword">a</span> <a class="qname" href="#Pattern6NonConsistentWithSKOSRules">validation:Pattern6NonConsistentWithSKOSRules</a>.
+}.
+
+<span class="comment">#Pattern7CounterIntuitive</span>
+{
+	<span class="var">?A2</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#broaderTransitive">skos:broaderTransitive</a> <span class="var">?A1</span>.
+	<span class="var">?A1</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#exactMatch">skos:exactMatch</a> <span class="var">?B1</span>.
+	<span class="var">?B1</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#broaderTransitive">skos:broaderTransitive</a> <span class="var">?B2</span>.
+	<span class="var">?B2</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#exactMatch">skos:exactMatch</a> <span class="var">?A2</span>.
+	{	<span class="var">?A2</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#broaderTransitive">skos:broaderTransitive</a> <span class="var">?A1</span>.
+		<span class="var">?A1</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#exactMatch">skos:exactMatch</a> <span class="var">?B1</span>.
+		<span class="var">?B1</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#broaderTransitive">skos:broaderTransitive</a> <span class="var">?B2</span>.
+		<span class="var">?B2</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#exactMatch">skos:exactMatch</a> <span class="var">?A2</span>. } <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/log-rules.html#graphCopy">e:graphCopy</a> <span class="var">?pattern</span>.
+} =&gt; {
+	<span class="var">?pattern</span> <span class="keyword">a</span> <a class="qname" href="#Pattern7CounterIntuitive">validation:Pattern7CounterIntuitive</a>.
+}.		</pre>
+	</div>
+	</body>
+</html>

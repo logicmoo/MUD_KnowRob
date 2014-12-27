@@ -1,0 +1,12 @@
+#Processed by Id: euler.yap 7602 2014-12-10 20:26:19Z josd
+#eye http://eulersharp.sourceforge.net/2003/03swap/socrates.n3 --query http://eulersharp.sourceforge.net/2003/03swap/socratesF.n3
+
+PREFIX log: <http://www.w3.org/2000/10/swap/log#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX : <http://www.agfa.com/w3c/euler/socrates#>
+PREFIX q: <http://www.w3.org/2004/ql#>
+PREFIX r: <http://www.w3.org/2000/10/swap/reason#>
+
+<#Socrates> <#beliefs> { <#Socrates> a <#Mortal> . }.
+

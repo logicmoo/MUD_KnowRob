@@ -1,0 +1,9 @@
+# PxButton | cwm   | bash .cwm einsteinP.n3 --think --filter=einsteinQ.n3
+# PxButton | euler | bash .euler einsteinP.n3 --think --query einsteinQ.n3
+# PxButton | pass  | bash .euler --pass einsteinP.n3 --query einsteinQ.n3 > einsteinT.n3
+# PxButton | test  | bash .euler3 einsteinT.n3
+
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix : <http://eulersharp.sourceforge.net/2005/11swap/einstein#>.
+
+{?WHO :eats :fish} => {?WHO :eats :fish}.

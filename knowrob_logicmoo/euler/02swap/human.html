@@ -1,0 +1,680 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>
+		<meta name="generator" content="AGFA HealthCare N3 to HTML convertor"/>
+		<link rel="alternate" type="text/n3" title="RDF Representation" href="http://eulersharp.sourceforge.net/2003/03swap/human"/>
+		<title>human</title>
+		<style type="text/css">
+			a[href]:link { text-decoration:none; }
+			a[href]:visited { text-decoration:none; }
+			a[href]:active { text-decoration:underline; }
+			a:hover { background:#ffa; }
+			.keyword { font-weight: bold; }
+			.literal { color: blue }
+			.uri { color: darkblue }
+			.qname { color: black }
+			.var { color: gray }
+			.comment { font-style:italic; color: darkgreen }
+		</style>
+	</head>
+	<body>
+	<div>
+		<pre>
+<span class="keyword">@prefix</span> con: <a class="uri" href="http://www.w3.org/2000/10/swap/pim/contact">&lt;http://www.w3.org/2000/10/swap/pim/contact#&gt;</a>.
+<span class="keyword">@prefix</span> dce: <a class="uri" href="http://purl.org/dc/elements/1.1/">&lt;http://purl.org/dc/elements/1.1/&gt;</a>.
+<span class="keyword">@prefix</span> foaf: <a class="uri" href="http://xmlns.com/foaf/0.1/">&lt;http://xmlns.com/foaf/0.1/&gt;</a>.
+<span class="keyword">@prefix</span> owl: <a class="uri" href="http://www.w3.org/2002/07/owl">&lt;http://www.w3.org/2002/07/owl#&gt;</a>.
+<span class="keyword">@prefix</span> rdfs: <a class="uri" href="http://www.w3.org/2000/01/rdf-schema">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</a>.
+<span class="keyword">@prefix</span> skos: <a class="uri" href="http://www.w3.org/2004/02/skos/core.html#">&lt;http://www.w3.org/2004/02/skos/core#&gt;</a>.
+<span class="keyword">@prefix</span> unicore: <a class="uri" href="http://purl.uniprot.org/core/">&lt;http://purl.uniprot.org/core/&gt;</a>.
+<span class="keyword">@prefix</span> xsd: <a class="uri" href="http://www.w3.org/2001/XMLSchema">&lt;http://www.w3.org/2001/XMLSchema#&gt;</a>.
+<span class="keyword">@prefix</span> fos: <a class="uri" href="http://eulersharp.sourceforge.net/2003/03swap/foster.html#">&lt;http://eulersharp.sourceforge.net/2003/03swap/foster#&gt;</a>.
+<span class="keyword">@prefix</span> event: <a class="uri" href="http://eulersharp.sourceforge.net/2003/03swap/event.html#">&lt;http://eulersharp.sourceforge.net/2003/03swap/event#&gt;</a>.
+<span class="keyword">@prefix</span> physical: <a class="uri" href="http://eulersharp.sourceforge.net/2003/03swap/physicalResource.html#">&lt;http://eulersharp.sourceforge.net/2003/03swap/physicalResource#&gt;</a>.
+<span class="keyword">@prefix</span> quant: <a class="uri" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#">&lt;http://eulersharp.sourceforge.net/2003/03swap/quantities#&gt;</a>.
+<span class="keyword">@prefix</span> agent: <a class="uri" href="http://eulersharp.sourceforge.net/2003/03swap/agent.html#">&lt;http://eulersharp.sourceforge.net/2003/03swap/agent#&gt;</a>.
+<span class="keyword">@prefix</span> organism: <a class="uri" href="http://eulersharp.sourceforge.net/2003/03swap/organism.html#">&lt;http://eulersharp.sourceforge.net/2003/03swap/organism#&gt;</a>.
+<span class="keyword">@prefix</span> clinskosch: <a class="uri" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#">&lt;http://www.agfa.com/w3c/2009/clinicalSKOSSchemes#&gt;</a>.
+<span class="keyword">@prefix</span> doc: <a class="uri" href="http://eulersharp.sourceforge.net/2003/03swap/document.html#">&lt;http://eulersharp.sourceforge.net/2003/03swap/document#&gt;</a>.
+<span class="keyword">@prefix</span> humanbody: <a class="uri" href="http://eulersharp.sourceforge.net/2003/03swap/humanBody.html#">&lt;http://eulersharp.sourceforge.net/2003/03swap/humanBody#&gt;</a>.
+<span class="keyword">@prefix</span> human: <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/human#&gt;</a>.
+
+<a class="uri" href="http://eulersharp.sourceforge.net/2003/03swap/human.html">&lt;http://eulersharp.sourceforge.net/2003/03swap/human&gt;</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Ontology</a>;
+	<a class="qname" href="http://purl.org/dc/elements/1.1">dce:title</a> <span class="literal">&quot;&quot;&quot;Human&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://purl.org/dc/elements/1.1">dce:creator</a> <span class="literal">&quot;&quot;&quot;Hans Cools, MD, Agfa Healthcare/Belgium&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://purl.org/dc/elements/1.1">dce:contributor</a> <span class="literal">&quot;&quot;&quot;&quot;Until 2010: Pieterjan De Potter, Pedro Debevere, Ghent University - IBBT/ELIS - Multimedia Lab/Belgium&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://purl.org/dc/elements/1.1">dce:publisher</a> <span class="literal">&quot;&quot;&quot;Agfa Healthcare/Belgium&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://purl.org/dc/elements/1.1">dce:description</a> <span class="literal">&quot;&quot;&quot;Formal general description of human.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://purl.org/dc/elements/1.1">dce:format</a> <span class="literal">&quot;&quot;&quot;OWL Full&quot;&quot;&quot;</span>@en.
+
+<span class="comment">#</span>
+<span class="comment"># CLASSES</span>
+<span class="comment">#</span>
+
+<span class="comment"># foaf:Person rdfs:subClassOf foaf:Agent, geo:SpatialThing, con:Person; owl:disjointWith foaf:Organization.</span>
+<span class="comment"># con:Person rdfs:subClassOf con:SocialEntity.</span>
+
+<a class="qname" name="Human">human:Human</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/human#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;human&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Member of the subspecies Homo sapiens sapiens.&quot;&quot;&quot;</span>@en;
+	<span class="comment">#rdfs:subClassOf organism:Eukaryote,</span>
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/physicalResource.html#hasComplexity">physical:hasComplexity</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/humanBody.html#Body">humanbody:Body</a>], [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/organism.html#hasParent">organism:hasParent</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:allValuesFrom</a> <a class="qname" href="#BiologicalParent">human:BiologicalParent</a>], [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/organism.html#hasTaxon">organism:hasTaxon</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:allValuesFrom</a> <a class="qname" href="#SubspeciesHomoSapiensSapiens">human:SubspeciesHomoSapiensSapiens</a>];
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#exactMatch">skos:exactMatch</a> [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#Concept">skos:Concept</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#inScheme">skos:inScheme</a> <a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731">clinskosch:sct20080731</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#notation">skos:notation</a> <span class="literal">&quot;337915000&quot;</span>^^<a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731DT">clinskosch:sct20080731DT</a>].
+
+<a class="qname" name="SubspeciesHomoSapiensSapiens">human:SubspeciesHomoSapiensSapiens</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>, <a class="qname" href="http://purl.uniprot.org/core.html#Taxon">unicore:Taxon</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/human#&gt;</a>;
+	<a class="qname" href="http://purl.uniprot.org/core.html#scientificName">unicore:scientificName</a> <span class="literal">&quot;&quot;&quot;Homo sapiens sapiens&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://purl.uniprot.org/core.html#rank">unicore:rank</a> <a class="qname" href="http://purl.uniprot.org/core.html#Subspecies">unicore:Subspecies</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="uri" href="http://purl.uniprot.org/taxonomy/9606">&lt;http://purl.uniprot.org/taxonomy/9606&gt;</a>. <span class="comment"># species Homo sapiens</span>
+
+<a class="qname" name="Fetus">human:Fetus</a> 
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/human#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;human fetus&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Immature human in the uterus after the end of the second month of gestation.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="#Human">human:Human</a>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#exactMatch">skos:exactMatch</a> [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#Concept">skos:Concept</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#inScheme">skos:inScheme</a> <a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731">clinskosch:sct20080731</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#notation">skos:notation</a> <span class="literal">&quot;410599005&quot;</span>^^<a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731DT">clinskosch:sct20080731DT</a>].
+
+<a class="qname" name="Newborn">human:Newborn</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/human#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;newborn&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;A newborn infant.&quot;&quot;&quot;</span>@en; <span class="comment"># especially one less than four weeks old</span>
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="#Human">human:Human</a>, [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="#weighs">human:weighs</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/humanBody.html#BirthWeight">humanbody:BirthWeight</a>].
+
+<a class="qname" name="BiologicalGender">human:BiologicalGender</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/human#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;biological gender&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Biological gender of a human.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2002/07/owl">owl:oneOf</a> (<a class="qname" href="#male">human:male</a> <a class="qname" href="#female">human:female</a> <a class="qname" href="#intersexual">human:intersexual</a>).
+
+<a class="qname" name="male">human:male</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>, <a class="qname" href="#BiologicalGender">human:BiologicalGender</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/human#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;humanly male&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Being of a human male gender.&quot;&quot;&quot;</span>@en; <span class="comment"># In adulthood producing spermatozoa for fertilizing female ova</span>
+	<a class="qname" href="http://www.w3.org/2002/07/owl">owl:disjointWith</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/organism.html#Pregnant">organism:Pregnant</a>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#exactMatch">skos:exactMatch</a> [<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#Concept">skos:Concept</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#inScheme">skos:inScheme</a> <a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731">clinskosch:sct20080731</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#notation">skos:notation</a> <span class="literal">&quot;248153007&quot;</span>^^<a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731DT">clinskosch:sct20080731DT</a>].
+
+<a class="qname" name="female">human:female</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>, <a class="qname" href="#BiologicalGender">human:BiologicalGender</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/human#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;humanly female&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Being of a human female gender.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#exactMatch">skos:exactMatch</a> [<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#Concept">skos:Concept</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#inScheme">skos:inScheme</a> <a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731">clinskosch:sct20080731</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#notation">skos:notation</a> <span class="literal">&quot;248152002&quot;</span>^^<a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731DT">clinskosch:sct20080731DT</a>].
+	
+<a class="qname" name="intersexual">human:intersexual</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>, <a class="qname" href="#BiologicalGender">human:BiologicalGender</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/human#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;human intersexual&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Being of a gender that is neither male or female, with biological characteristics of both.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2002/07/owl">owl:disjointWith</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/organism.html#Pregnant">organism:Pregnant</a>.
+
+<a class="qname" name="Female">human:Female</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/human#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;human female&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Human of the female biological gender.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="#Human">human:Human</a>, [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="#hasBiologicalGender">human:hasBiologicalGender</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="#female">human:female</a>].
+
+<a class="qname" name="Male">human:Male</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/human#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;human male&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Human of the male biological gender.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="#Human">human:Human</a>, [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="#hasBiologicalGender">human:hasBiologicalGender</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="#male">human:male</a>].
+
+<a class="qname" name="Intersexual">human:Intersexual</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/human#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;intersexual&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Human of the intersexual biological gender.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="#Human">human:Human</a>, [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="#hasBiologicalGender">human:hasBiologicalGender</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="#intersexual">human:intersexual</a>].
+
+<a class="qname" name="AdministrativeGender">human:AdministrativeGender</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/human#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;administrative gender&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Officially registered gender of a human.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2002/07/owl">owl:oneOf</a> (<a class="qname" href="#AdministrativeMale">human:AdministrativeMale</a> <a class="qname" href="#AdministrativeFemale">human:AdministrativeFemale</a>).
+
+<a class="qname" name="AdministrativeMale">human:AdministrativeMale</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>, <a class="qname" href="#AdministrativeGender">human:AdministrativeGender</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/human#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;administrative male&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Being officially registered as male.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#note">skos:note</a> <span class="literal">&quot;&quot;&quot;Can differ from the biological gender.&quot;&quot;&quot;</span>@en.
+	
+<a class="qname" name="AdministrativeFemale">human:AdministrativeFemale</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>, <a class="qname" href="#AdministrativeGender">human:AdministrativeGender</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/human#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;administrative female&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Being officially registered as female.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#note">skos:note</a> <span class="literal">&quot;&quot;&quot;Can differ from the biological gender.&quot;&quot;&quot;</span>@en.
+
+<a class="qname" name="Life">human:Life</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/human#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;human life&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Life of a human.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#note">skos:note</a> <span class="literal">&quot;&quot;&quot;No satisfying description of onset of a human life.&quot;&quot;&quot;</span>@en; 
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/organism.html#Life">organism:Life</a>.
+		
+<a class="qname" name="Person">human:Person</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/human#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;person&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;A living born human.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;&quot;&quot;human:Human members live and are not necessarily born; foaf:Person members are dead or alive, but born. External conflict: foaf:Person rdfs:subClassOf wordnet:person and wordnet:person wordnet:hyponymOf wordnet:organism, and wordnet:organism wordnet:hyponymOf wordnet:livingThing, but not 'hard coded' since wordnet:hyponymOf used instead of rdfs:subClassOf.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#note">skos:note</a> <span class="literal">&quot;&quot;&quot;A fetus is not considered as a person, who can have e.g. a health record. The fetus is mentioned in the health record of the mother. The moment the fetus becomes a newborn the fetus part of the record becomes the record of the newborn.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2002/07/owl">owl:intersectionOf</a> (<a class="qname" href="#Human">human:Human</a> <a class="qname" href="http://xmlns.com/foaf/0.1">foaf:Person</a>).
+
+<a class="qname" name="PersonLife">human:PersonLife</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/human#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;person life&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Life of a person.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="#Life">human:Life</a>,<a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/organism.html#IndividualLife">organism:IndividualLife</a>.
+
+<a class="qname" name="ImmatureHuman">human:ImmatureHuman</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/human#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;immature human&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Biologically not full-grown person.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="#Person">human:Person</a>,
+		<a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/organism.html#ImmatureOrganism">organism:ImmatureOrganism</a>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#exactMatch">skos:exactMatch</a> [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#Concept">skos:Concept</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#inScheme">skos:inScheme</a> <a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731">clinskosch:sct20080731</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#notation">skos:notation</a> <span class="literal">&quot;410599005&quot;</span>^^<a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731DT">clinskosch:sct20080731DT</a>].
+
+<span class="comment"># human:Baby</span>
+
+<a class="qname" name="BiologicalAdult">human:BiologicalAdult</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/human#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;biologically adult human&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Person having attained reproductive ability or evidencing secondary sex characteristics.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="#Person">human:Person</a>, <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/organism.html#MatureOrganism">organism:MatureOrganism</a>, [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/organism.html#hasChild">organism:hasChild</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:allValuesFrom</a> <a class="qname" href="#Person">human:Person</a>];
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#exactMatch">skos:exactMatch</a> [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#Concept">skos:Concept</a>;	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#inScheme">skos:inScheme</a> <a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731">clinskosch:sct20080731</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#notation">skos:notation</a> <span class="literal">&quot;133936004&quot;</span>^^<a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731DT">clinskosch:sct20080731DT</a>].
+
+<a class="qname" name="LegalAdult">human:LegalAdult</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/human#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;legally adult human&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Person being adult as stated by law.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#Note">skos:Note</a> <span class="literal">&quot;&quot;&quot;Further restriction to be given along specific law.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="#Person">human:Person</a>.
+
+<a class="qname" name="Woman">human:Woman</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/human#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;woman&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Adult human female.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="#Female">human:Female</a>, <a class="qname" href="#BiologicalAdult">human:BiologicalAdult</a>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#exactMatch">skos:exactMatch</a> [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#Concept">skos:Concept</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#inScheme">skos:inScheme</a> <a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731">clinskosch:sct20080731</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#notation">skos:notation</a> <span class="literal">&quot;224526002&quot;</span>^^<a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731DT">clinskosch:sct20080731DT</a>].
+
+<a class="qname" name="Women">human:Women</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/human#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;women&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Group of which a woman is a member.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2002/07/owl">owl:disjointWith</a> <a class="qname" href="#Men">human:Men</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/agent.html#Group">agent:Group</a>, [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://xmlns.com/foaf/0.1">foaf:member</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:allValuesFrom</a> <a class="qname" href="#Woman">human:Woman</a>].
+	
+<a class="qname" name="PregnantWoman">human:PregnantWoman</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/human#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;pregnant woman&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Woman with offspring developing in her body.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="#Woman">human:Woman</a>, <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/organism.html#PregnantOrganism">organism:PregnantOrganism</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/organism.html#hasGravidity">organism:hasGravidity</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/organism.html#Pregnant">organism:Pregnant</a>];
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#exactMatch">skos:exactMatch</a> [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#Concept">skos:Concept</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#inScheme">skos:inScheme</a> <a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731">clinskosch:sct20080731</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#notation">skos:notation</a> <span class="literal">&quot;255409004&quot;</span>^^<a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731DT">clinskosch:sct20080731DT</a>].
+
+<a class="qname" name="Man">human:Man</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/human#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;man&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Adult human male.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="#Male">human:Male</a>, <a class="qname" href="#BiologicalAdult">human:BiologicalAdult</a>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#exactMatch">skos:exactMatch</a> [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#Concept">skos:Concept</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#inScheme">skos:inScheme</a> <a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731">clinskosch:sct20080731</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#notation">skos:notation</a> <span class="literal">&quot;339947000&quot;</span>^^<a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731DT">clinskosch:sct20080731DT</a>].
+
+<a class="qname" name="Men">human:Men</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/human#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;men&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Group of which a man is a member.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/agent.html#Group">agent:Group</a>, [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://xmlns.com/foaf/0.1">foaf:member</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:allValuesFrom</a> <a class="qname" href="#Man">human:Man</a>].
+
+<a class="qname" name="BiologicalParent">human:BiologicalParent</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/human#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;biological human parent&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;First grade living ascendant of a human.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/organism.html#Parent">organism:Parent</a>, <a class="qname" href="#BiologicalAdult">human:BiologicalAdult</a>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#exactMatch">skos:exactMatch</a> [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#Concept">skos:Concept</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#inScheme">skos:inScheme</a> <a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731">clinskosch:sct20080731</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#notation">skos:notation</a> <span class="literal">&quot;13646006&quot;</span>^^<a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731DT">clinskosch:sct20080731DT</a>].
+
+<a class="qname" name="LegalParent">human:LegalParent</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/human#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;legal human parent&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Parent of a human as stated by law.&quot;&quot;&quot;</span>@en.
+
+<a class="qname" name="Spouse">human:Spouse</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/human#&gt;</a>.
+
+<a class="qname" name="BiologicalFather">human:BiologicalFather</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/human#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="#BiologicalParent">human:BiologicalParent</a>, <a class="qname" href="#Man">human:Man</a>.
+
+<a class="qname" name="LegalFather">human:LegalFather</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/human#&gt;</a>.
+
+<a class="qname" name="Husband">human:Husband</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/human#&gt;</a>.
+
+<a class="qname" name="BiologicalMother">human:BiologicalMother</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/human#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="#BiologicalParent">human:BiologicalParent</a>, <a class="qname" href="#Woman">human:Woman</a>.
+
+<a class="qname" name="LegalMother">human:LegalMother</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/human#&gt;</a>.
+
+<a class="qname" name="Partner">human:Partner</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/human#&gt;</a>.
+
+<a class="qname" name="Role">human:Role</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/human#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;human role&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;A role a human can play.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/agent.html#rolePlayedBy">agent:rolePlayedBy</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:allValuesFrom</a> <a class="qname" href="#Human">human:Human</a>].
+
+<a class="qname" name="PersonRole">human:PersonRole</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/human#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;person role&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;A role a person can play as a social entity.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2002/07/owl">owl:intersectionOf</a> (<a class="qname" href="#Role">human:Role</a> <a class="qname" href="http://www.w3.org/2000/10/swap/pim/contact">con:Person</a>), [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/agent.html#rolePlayedBy">agent:rolePlayedBy</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:allValuesFrom</a> <a class="qname" href="#Person">human:Person</a>].
+
+<a class="qname" name="Occupation">human:Occupation</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/human#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;human occupation&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Human action serving as one's regular source of livelihood.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/event.html#Action">event:Action</a>.
+
+<a class="qname" name="OccupationRole">human:OccupationRole</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/human#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;occupation role&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Role of a person with an occupation.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="#PersonRole">human:PersonRole</a>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#exactMatch">skos:exactMatch</a> [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#Concept">skos:Concept</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#inScheme">skos:inScheme</a> <a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731">clinskosch:sct20080731</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#notation">skos:notation</a> <span class="literal">&quot;14679004&quot;</span>^^<a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731DT">clinskosch:sct20080731DT</a>].
+
+<a class="qname" name="OccupationalStatus">human:OccupationalStatus</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/human#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;occupational status&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;State of a person's occupation.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/event.html#State">event:State</a>.
+
+<a class="qname" name="ContactPerson">human:ContactPerson</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/human#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;contact person role&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Person that can be contacted about something.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="#PersonRole">human:PersonRole</a>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#exactMatch">skos:exactMatch</a> [<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#Concept">skos:Concept</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#inScheme">skos:inScheme</a> <a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731">clinskosch:sct20080731</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#notation">skos:notation</a> <span class="literal">&quot;70862002&quot;</span>^^<a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731DT">clinskosch:sct20080731DT</a>].
+
+<a class="qname" name="LanguageExpressing">human:LanguageExpressing</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/human#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;language expressing&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Human expressing a language.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/event.html#Action">event:Action</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> [<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/agent.html#hasAgent">agent:hasAgent</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="#Person">human:Person</a>].
+
+<a class="qname" name="LanguageExpression">human:LanguageExpression</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/human#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;language expression&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Human expression in a language.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> [<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/event.html#outputOf">event:outputOf</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="#LanguageExpressing">human:LanguageExpressing</a>].
+
+<a class="qname" name="LinguisticSkill">human:LinguisticSkill</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/human#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;linguistic skill&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Person's skill concerning a language.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/agent.html#Ability">agent:Ability</a>, [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/agent.html#abilityOf">agent:abilityOf</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="#Person">human:Person</a>], [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/event.html#hasObject">event:hasObject</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/foster.html#Language">fos:Language</a>], [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/foster.html#hasLevel">fos:hasLevel</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="#LinguisticSkillLevel">human:LinguisticSkillLevel</a>].
+
+<a class="qname" name="LanguageUnderstandingSkill">human:LanguageUnderstandingSkill</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/human#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;language understanding skill&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Skilled to understand a language.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="#LinguisticSkill">human:LinguisticSkill</a>.
+
+<a class="qname" name="LanguageExpressionSkill">human:LanguageExpressionSkill</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/human#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;language expression skill&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Skilled to express in a language.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="#LinguisticSkill">human:LinguisticSkill</a>.
+
+<a class="qname" name="LanguageSpeakingSkill">human:LanguageSpeakingSkill</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>, <a class="qname" href="#LanguageExpressionSkill">human:LanguageExpressionSkill</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/human#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;language speaking skill&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Skilled to speak a language.&quot;&quot;&quot;</span>@en.
+
+<a class="qname" name="LanguageWritingSkill">human:LanguageWritingSkill</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>, <a class="qname" href="#LanguageExpressionSkill">human:LanguageExpressionSkill</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/human#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;language writing skill&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Skilled to write in a language.&quot;&quot;&quot;</span>@en.
+
+<a class="qname" name="LanguageSigningSkill">human:LanguageSigningSkill</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>, <a class="qname" href="#LanguageExpressionSkill">human:LanguageExpressionSkill</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/human#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;language signing skill&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Skilled to sign in a language.&quot;&quot;&quot;</span>@en.
+
+<a class="qname" name="LinguisticSkillLevel">human:LinguisticSkillLevel</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/human#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;linguistic skill level&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Person's skill level concerning a language.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/foster.html#Level">fos:Level</a>;
+	<a class="qname" href="http://www.w3.org/2002/07/owl">owl:oneOf</a>(<a class="qname" href="#NativeLinguisticSkill">human:NativeLinguisticSkill</a> <a class="qname" href="#FluentLinguisticSkill">human:FluentLinguisticSkill</a> <a class="qname" href="#GoodLinguisticSkill">human:GoodLinguisticSkill</a> <a class="qname" href="#AverageLinguisticSkill">human:AverageLinguisticSkill</a> <a class="qname" href="#PoorLinguisticSkill">human:PoorLinguisticSkill</a> <a class="qname" href="#NoticesLinguisticSkill">human:NoticesLinguisticSkill</a> <a class="qname" href="#NoLinguisticSkill">human:NoLinguisticSkill</a>).
+
+<a class="qname" name="NativeLinguisticSkill">human:NativeLinguisticSkill</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>, <a class="qname" href="#LinguisticSkillLevel">human:LinguisticSkillLevel</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/human#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;native linguistic skill&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Linguistic skill level of a person raised in that language.&quot;&quot;&quot;</span>@en.
+
+<a class="qname" name="FluentLinguisticSkill">human:FluentLinguisticSkill</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>, <a class="qname" href="#LinguisticSkillLevel">human:LinguisticSkillLevel</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/human#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;fluent linguistic skill&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Fluent linguistic skill level of a person.&quot;&quot;&quot;</span>@en.
+	
+<a class="qname" name="GoodLinguisticSkill">human:GoodLinguisticSkill</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>, <a class="qname" href="#LinguisticSkillLevel">human:LinguisticSkillLevel</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/human#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;good linguistic skill&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Good linguistic skill level of a person.&quot;&quot;&quot;</span>@en.
+
+<a class="qname" name="AverageLinguisticSkill">human:AverageLinguisticSkill</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>, <a class="qname" href="#LinguisticSkillLevel">human:LinguisticSkillLevel</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/human#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;average linguistic skill&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Average linguistic skill level of a person.&quot;&quot;&quot;</span>@en.
+
+<a class="qname" name="PoorLinguisticSkill">human:PoorLinguisticSkill</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>, <a class="qname" href="#LinguisticSkillLevel">human:LinguisticSkillLevel</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/human#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;poor linguistic skill&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Poor linguistic skill level of a person.&quot;&quot;&quot;</span>@en.
+	
+<a class="qname" name="NoticesLinguisticSkill">human:NoticesLinguisticSkill</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>, <a class="qname" href="#LinguisticSkillLevel">human:LinguisticSkillLevel</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/human#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;notices linguistic skill&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Linguistic skill level of a person having only notices of a language.&quot;&quot;&quot;</span>@en.
+
+<a class="qname" name="NoLinguisticSkill">human:NoLinguisticSkill</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>, <a class="qname" href="#LinguisticSkillLevel">human:LinguisticSkillLevel</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/human#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;no linguistic skill&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Linguistic skill level of a person having no knowledge of a language.&quot;&quot;&quot;</span>@en.
+
+<a class="qname" name="AdvanceDirectivesReport">human:AdvanceDirectivesReport</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/human#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;advance directives report&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Report with a person's advance directives about treatment and who can decide in place in case the person cannot decide anymore.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/document.html#Report">doc:Report</a>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#exactMatch">skos:exactMatch</a> [<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#Concept">skos:Concept</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#inScheme">skos:inScheme</a> <a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731">clinskosch:sct20080731</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#notation">skos:notation</a> <span class="literal">&quot;371538006&quot;</span>^^<a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731DT">clinskosch:sct20080731DT</a>].
+
+<a class="qname" name="InformedConsent">human:InformedConsent</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/human#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;informed consent&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;.&quot;&quot;&quot;</span>@en.
+	<span class="comment"># rdfs:subClassOf doc:Report</span>
+
+<a class="qname" name="SpokenLanguageUnderstandingSkill">human:SpokenLanguageUnderstandingSkill</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>, <a class="qname" href="#LanguageUnderstandingSkill">human:LanguageUnderstandingSkill</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/human#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;spoken language understanding skill&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Skilled to understand spoken language.&quot;&quot;&quot;</span>@en.
+
+<a class="qname" name="WrittenLanguageUnderstandingSkill">human:WrittenLanguageUnderstandingSkill</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>, <a class="qname" href="#LanguageUnderstandingSkill">human:LanguageUnderstandingSkill</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/human#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;written language understanding skill&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Skilled to understand written language.&quot;&quot;&quot;</span>@en.
+
+<a class="qname" name="SignedLanguageUnderstandingSkill">human:SignedLanguageUnderstandingSkill</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>, <a class="qname" href="#LanguageUnderstandingSkill">human:LanguageUnderstandingSkill</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/human#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;signed language understanding skill&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Skilled to understand signed language.&quot;&quot;&quot;</span>@en.
+
+<a class="qname" href="#NativeLinguisticSkill">human:NativeLinguisticSkill</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>, <a class="qname" href="#LinguisticSkillLevel">human:LinguisticSkillLevel</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/human#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;native linguistic skill&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Linguistic skill level of a person raised in that language.&quot;&quot;&quot;</span>@en.
+
+<a class="qname" href="#FluentLinguisticSkill">human:FluentLinguisticSkill</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>, <a class="qname" href="#LinguisticSkillLevel">human:LinguisticSkillLevel</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/human#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;fluent linguistic skill&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Fluent linguistic skill level of a person.&quot;&quot;&quot;</span>@en.
+	
+<a class="qname" href="#GoodLinguisticSkill">human:GoodLinguisticSkill</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>, <a class="qname" href="#LinguisticSkillLevel">human:LinguisticSkillLevel</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/human#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;good linguistic skill&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Good linguistic skill level of a person.&quot;&quot;&quot;</span>@en.
+
+<a class="qname" href="#AverageLinguisticSkill">human:AverageLinguisticSkill</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>, <a class="qname" href="#LinguisticSkillLevel">human:LinguisticSkillLevel</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/human#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;average linguistic skill&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Average linguistic skill level of a person.&quot;&quot;&quot;</span>@en.
+
+<a class="qname" href="#PoorLinguisticSkill">human:PoorLinguisticSkill</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>, <a class="qname" href="#LinguisticSkillLevel">human:LinguisticSkillLevel</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/human#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;poor linguistic skill&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Poor linguistic skill level of a person.&quot;&quot;&quot;</span>@en.
+	
+<a class="qname" href="#NoticesLinguisticSkill">human:NoticesLinguisticSkill</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>, <a class="qname" href="#LinguisticSkillLevel">human:LinguisticSkillLevel</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/human#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;notices linguistic skill&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Linguistic skill level of a person having only notices of a language.&quot;&quot;&quot;</span>@en.
+
+<a class="qname" href="#NoLinguisticSkill">human:NoLinguisticSkill</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>, <a class="qname" href="#LinguisticSkillLevel">human:LinguisticSkillLevel</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/human#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;no linguistic skill&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Linguistic skill level of a person having no knowledge of a language.&quot;&quot;&quot;</span>@en.
+
+<a class="qname" name="Working">human:Working</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>, <a class="qname" href="#OccupationalStatus">human:OccupationalStatus</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/human#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;working&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Occupational status of having a job.&quot;&quot;&quot;</span>@en.
+
+<a class="qname" name="Retired">human:Retired</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>, <a class="qname" href="#OccupationalStatus">human:OccupationalStatus</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/human#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;retired&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Occupational status of having stopped working.&quot;&quot;&quot;</span>@en.
+
+<a class="qname" name="OnSickLeave">human:OnSickLeave</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>, <a class="qname" href="#OccupationalStatus">human:OccupationalStatus</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/human#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;on sick leave&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Occupational status of having stopped working due to a health disorder.&quot;&quot;&quot;</span>@en.
+
+<span class="comment">#</span>
+<span class="comment"># PROPERTIES</span>
+<span class="comment">#</span>
+
+<a class="qname" name="hasBiologicalGender">human:hasBiologicalGender</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:ObjectProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/human#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Specifying the biological gender of a human.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="#Human">human:Human</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="#BiologicalGender">human:BiologicalGender</a>.
+
+<a class="qname" name="hasAdministrativeGender">human:hasAdministrativeGender</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:ObjectProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/human#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Specifying the officially registered gender of a person.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subPropertyOf</a> <a class="qname" href="http://xmlns.com/foaf/0.1">foaf:gender</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="#Person">human:Person</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="#AdministrativeGender">human:AdministrativeGender</a>.
+
+<a class="qname" name="weighs">human:weighs</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:ObjectProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/human#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Specifying a human's weight measurement.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2002/07/owl">owl:propertyChainAxiom</a> (<a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/physicalResource.html#hasComplexity">physical:hasComplexity</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/humanBody.html#hasWeight">humanbody:hasWeight</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#hasMeasurement">quant:hasMeasurement</a>);
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="#Human">human:Human</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/humanBody.html#WeightMeasurement">humanbody:WeightMeasurement</a>.
+
+<a class="qname" name="weighsAtBirth">human:weighsAtBirth</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:ObjectProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/human#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Specifying a human's birth weight measurement.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2002/07/owl">owl:propertyChainAxiom</a> (<a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/physicalResource.html#hasComplexity">physical:hasComplexity</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/humanBody.html#hasBirthWeight">humanbody:hasBirthWeight</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#hasMeasurement">quant:hasMeasurement</a>);
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="#Person">human:Person</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/humanBody.html#WeightMeasurement">humanbody:WeightMeasurement</a>.
+
+<a class="qname" name="hasLength">human:hasLength</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:ObjectProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/human#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Specifying a human's length measurement.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2002/07/owl">owl:propertyChainAxiom</a> (<a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/physicalResource.html#hasComplexity">physical:hasComplexity</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/humanBody.html#hasLength">humanbody:hasLength</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#hasMeasurement">quant:hasMeasurement</a>);
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="#Human">human:Human</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/humanBody.html#LengthMeasurement">humanbody:LengthMeasurement</a>.
+
+<a class="qname" name="hasSurfaceArea">human:hasSurfaceArea</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:ObjectProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/human#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Specifying a human's surface area measurement.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2002/07/owl">owl:propertyChainAxiom</a> (<a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/physicalResource.html#hasComplexity">physical:hasComplexity</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/humanBody.html#hasSurfaceArea">humanbody:hasSurfaceArea</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#hasMeasurement">quant:hasMeasurement</a>);
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="#Human">human:Human</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/humanBody.html#SurfaceAreaMeasurement">humanbody:SurfaceAreaMeasurement</a>.
+
+<a class="qname" name="hasBodyMassIndex">human:hasBodyMassIndex</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:ObjectProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/human#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Specifying an adult human's body mass index measurement.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2002/07/owl">owl:propertyChainAxiom</a> (<a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/physicalResource.html#hasComplexity">physical:hasComplexity</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/humanBody.html#hasBodyMassIndex">humanbody:hasBodyMassIndex</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#hasMeasurement">quant:hasMeasurement</a>);
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="#Human">human:Human</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/humanBody.html#AdultBodyMassIndexMeasurement">humanbody:AdultBodyMassIndexMeasurement</a>.
+
+<a class="qname" name="hasWeightStatus">human:hasWeightStatus</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:ObjectProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/human#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Specifying a body weight status of a human.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2002/07/owl">owl:propertyChainAxiom</a> (<a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/physicalResource.html#hasComplexity">physical:hasComplexity</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/humanBody.html#hasWeightStatus">humanbody:hasWeightStatus</a>);
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="#Human">human:Human</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/humanBody.html#WeightStatus">humanbody:WeightStatus</a>.
+
+<a class="qname" name="hasOccupationalStatus">human:hasOccupationalStatus</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:ObjectProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/human#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Specifying a status of a person's occupation.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="#Person">human:Person</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="#OccupationalStatus">human:OccupationalStatus</a>.
+
+<a class="qname" name="hasContactPerson">human:hasContactPerson</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:ObjectProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/human#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Specifying a contact person of another person.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="#Person">human:Person</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> [<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/agent.html#playsRole">agent:playsRole</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="#ContactPerson">human:ContactPerson</a>].
+
+<a class="qname" name="contactPersonOf">human:contactPersonOf</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:ObjectProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/human#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Specifying a person having a contact person.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> [<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/agent.html#playsRole">agent:playsRole</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="#ContactPerson">human:ContactPerson</a>];
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="#Person">human:Person</a>.
+
+<a class="qname" name="forWhichIsContactPerson">human:forWhichIsContactPerson</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:ObjectProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/human#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Specifying a person that can be contacted about something.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Resource</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> [<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/agent.html#playsRole">agent:playsRole</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="#ContactPerson">human:ContactPerson</a>].
+
+<a class="qname" name="contactPersonFor">human:contactPersonFor</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:ObjectProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/human#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Specifying something a person can be contacted about.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> [<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/agent.html#playsRole">agent:playsRole</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="#ContactPerson">human:ContactPerson</a>];
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Resource</a>.
+
+<a class="qname" name="hasInformedConsent">human:hasInformedConsent</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:ObjectProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/human#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Specifying an informed consent of a legally adult human.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="#LegalAdult">human:LegalAdult</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="#InformedConsent">human:InformedConsent</a>.
+
+<a class="qname" name="informedlyConsentsTo">human:informedlyConsentsTo</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:ObjectProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/human#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Specifying an action a legally adult human informedly consents to.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="#LegalAdult">human:LegalAdult</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/event.html#Action">event:Action</a>.
+		</pre>
+	</div>
+	</body>
+</html>

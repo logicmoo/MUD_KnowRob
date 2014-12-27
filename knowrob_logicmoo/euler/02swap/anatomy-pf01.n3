@@ -1,0 +1,489 @@
+#Processed by $Id: eyes.pl 3238 2009-12-23 13:54:34Z josd $
+
+@prefix math: <http://www.w3.org/2000/10/swap/math#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix : <http://idm.univ-rennes1.fr/~obierlai/anatomy#>.
+@prefix var: <http://localhost/var#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix r: <http://www.w3.org/2000/10/swap/reason#>.
+@prefix n3: <http://www.w3.org/2004/06/rei#>.
+
+[ a r:Proof, r:Conjunction;
+ r:component [ a r:Inference; r:gives {:MAE1 :isMaterialAnatomicalEntityConnectedTo :MAE2}; r:evidence (
+  [ a r:Extraction; r:gives {:MAE1 a :MaterialAnatomicalEntity}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-facts.n3>]]
+  [ a r:Extraction; r:gives {:MAE1 :isMaterialAnatomicalEntityConnectedTo :MAE2}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-facts.n3>]]);
+  r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://idm.univ-rennes1.fr/~obierlai/anatomy#MAE1"]];
+  r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo [ n3:uri "http://idm.univ-rennes1.fr/~obierlai/anatomy#MAE2"]];
+  r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1. {var:x0 a :MaterialAnatomicalEntity. var:x0 :isMaterialAnatomicalEntityConnectedTo var:x1} => {var:x0 :isMaterialAnatomicalEntityConnectedTo var:x1}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-filter.n3>]]];
+
+ r:component [ a r:Inference; r:gives {:MAE2 :isMaterialAnatomicalEntityConnectedTo :MAE1}; r:evidence (
+  [ a r:Extraction; r:gives {:MAE2 a :MaterialAnatomicalEntity}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-facts.n3>]]
+  [ a r:Inference; r:gives {:MAE2 :isMaterialAnatomicalEntityConnectedTo :MAE1}; r:evidence (
+   [ a r:Extraction; r:gives {:isMaterialAnatomicalEntityConnectedTo a owl:SymmetricProperty}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-rules.n3>]]
+   [ a r:Extraction; r:gives {:MAE1 :isMaterialAnatomicalEntityConnectedTo :MAE2}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-facts.n3>]]);
+   r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://idm.univ-rennes1.fr/~obierlai/anatomy#isMaterialAnatomicalEntityConnectedTo"]];
+   r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo [ n3:uri "http://idm.univ-rennes1.fr/~obierlai/anatomy#MAE1"]];
+   r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo [ n3:uri "http://idm.univ-rennes1.fr/~obierlai/anatomy#MAE2"]];
+   r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2. {var:x0 a owl:SymmetricProperty. var:x1 var:x0 var:x2} => {var:x2 var:x0 var:x1}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-rules.n3>]]]);
+  r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://idm.univ-rennes1.fr/~obierlai/anatomy#MAE2"]];
+  r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo [ n3:uri "http://idm.univ-rennes1.fr/~obierlai/anatomy#MAE1"]];
+  r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1. {var:x0 a :MaterialAnatomicalEntity. var:x0 :isMaterialAnatomicalEntityConnectedTo var:x1} => {var:x0 :isMaterialAnatomicalEntityConnectedTo var:x1}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-filter.n3>]]];
+
+ r:component [ a r:Inference; r:gives {:MAE2 :hasNoCommonPart :MAE3}; r:evidence (
+  [ a r:Inference; r:gives {:MAE2 :hasNoCommonPart :MAE3}; r:evidence (
+   [ a r:Extraction; r:gives {:MAE2 :hasAnatomicalPartList ()}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-facts.n3>]]
+   [ a r:Extraction; r:gives {:MAE3 :hasAnatomicalPartList (:MAE5 :MAE6 :MAE4)}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-facts.n3>]]
+   [ a r:Inference; r:gives {() :hasNoAnatomicalPartInList (:MAE5 :MAE6 :MAE4)}; r:evidence (
+    [ a r:Inference; r:gives {(:MAE5 :MAE6 :MAE4) a rdf:List}; r:evidence (
+     [ a r:Extraction; r:gives {:MAE3 :hasAnatomicalPartList (:MAE5 :MAE6 :MAE4)}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-facts.n3>]]);
+     r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://idm.univ-rennes1.fr/~obierlai/anatomy#MAE3"]];
+     r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo (:MAE5 :MAE6 :MAE4)];
+     r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1. {var:x0 :hasAnatomicalPartList var:x1} => {var:x1 a rdf:List}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-rules.n3>]]]);
+    r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo (:MAE5 :MAE6 :MAE4)];
+    r:rule [ a r:Extraction; r:gives {@forAll var:x0. {var:x0 a rdf:List} => {() :hasNoAnatomicalPartInList var:x0}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-rules.n3>]]]
+   [ a r:Extraction; r:gives {:MAE2 a :MaterialAnatomicalEntity}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-facts.n3>]]
+   [ a r:Extraction; r:gives {:MAE3 a :MaterialAnatomicalEntity}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-facts.n3>]]);
+   r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://idm.univ-rennes1.fr/~obierlai/anatomy#MAE2"]];
+   r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo ()];
+   r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo [ n3:uri "http://idm.univ-rennes1.fr/~obierlai/anatomy#MAE3"]];
+   r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo (:MAE5 :MAE6 :MAE4)];
+   r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3. {var:x0 :hasAnatomicalPartList var:x1. var:x2 :hasAnatomicalPartList var:x3. var:x1 :hasNoAnatomicalPartInList var:x3. var:x0 a :MaterialAnatomicalEntity. var:x2 a :MaterialAnatomicalEntity} => {var:x0 :hasNoCommonPart var:x2}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-rules.n3>]]]);
+  r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://idm.univ-rennes1.fr/~obierlai/anatomy#MAE2"]];
+  r:rule [ a r:Extraction; r:gives {@forAll var:x0. {var:x0 :hasNoCommonPart :MAE3} => {var:x0 :hasNoCommonPart :MAE3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-filter.n3>]]];
+
+ r:component [ a r:Inference; r:gives {:MAE4 :hasNoCommonPart :MAE3}; r:evidence (
+  [ a r:Inference; r:gives {:MAE4 :hasNoCommonPart :MAE3}; r:evidence (
+   [ a r:Extraction; r:gives {:MAE4 :hasAnatomicalPartList ()}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-facts.n3>]]
+   [ a r:Extraction; r:gives {:MAE3 :hasAnatomicalPartList (:MAE5 :MAE6 :MAE4)}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-facts.n3>]]
+   [ a r:Inference; r:gives {() :hasNoAnatomicalPartInList (:MAE5 :MAE6 :MAE4)}; r:evidence (
+    [ a r:Inference; r:gives {(:MAE5 :MAE6 :MAE4) a rdf:List}; r:evidence (
+     [ a r:Extraction; r:gives {:MAE3 :hasAnatomicalPartList (:MAE5 :MAE6 :MAE4)}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-facts.n3>]]);
+     r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://idm.univ-rennes1.fr/~obierlai/anatomy#MAE3"]];
+     r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo (:MAE5 :MAE6 :MAE4)];
+     r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1. {var:x0 :hasAnatomicalPartList var:x1} => {var:x1 a rdf:List}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-rules.n3>]]]);
+    r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo (:MAE5 :MAE6 :MAE4)];
+    r:rule [ a r:Extraction; r:gives {@forAll var:x0. {var:x0 a rdf:List} => {() :hasNoAnatomicalPartInList var:x0}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-rules.n3>]]]
+   [ a r:Extraction; r:gives {:MAE4 a :MaterialAnatomicalEntity}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-facts.n3>]]
+   [ a r:Extraction; r:gives {:MAE3 a :MaterialAnatomicalEntity}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-facts.n3>]]);
+   r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://idm.univ-rennes1.fr/~obierlai/anatomy#MAE4"]];
+   r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo ()];
+   r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo [ n3:uri "http://idm.univ-rennes1.fr/~obierlai/anatomy#MAE3"]];
+   r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo (:MAE5 :MAE6 :MAE4)];
+   r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3. {var:x0 :hasAnatomicalPartList var:x1. var:x2 :hasAnatomicalPartList var:x3. var:x1 :hasNoAnatomicalPartInList var:x3. var:x0 a :MaterialAnatomicalEntity. var:x2 a :MaterialAnatomicalEntity} => {var:x0 :hasNoCommonPart var:x2}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-rules.n3>]]]);
+  r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://idm.univ-rennes1.fr/~obierlai/anatomy#MAE4"]];
+  r:rule [ a r:Extraction; r:gives {@forAll var:x0. {var:x0 :hasNoCommonPart :MAE3} => {var:x0 :hasNoCommonPart :MAE3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-filter.n3>]]];
+
+ r:component [ a r:Inference; r:gives {:MAE5 :hasNoCommonPart :MAE3}; r:evidence (
+  [ a r:Inference; r:gives {:MAE5 :hasNoCommonPart :MAE3}; r:evidence (
+   [ a r:Extraction; r:gives {:MAE5 :hasAnatomicalPartList ()}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-facts.n3>]]
+   [ a r:Extraction; r:gives {:MAE3 :hasAnatomicalPartList (:MAE5 :MAE6 :MAE4)}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-facts.n3>]]
+   [ a r:Inference; r:gives {() :hasNoAnatomicalPartInList (:MAE5 :MAE6 :MAE4)}; r:evidence (
+    [ a r:Inference; r:gives {(:MAE5 :MAE6 :MAE4) a rdf:List}; r:evidence (
+     [ a r:Extraction; r:gives {:MAE3 :hasAnatomicalPartList (:MAE5 :MAE6 :MAE4)}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-facts.n3>]]);
+     r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://idm.univ-rennes1.fr/~obierlai/anatomy#MAE3"]];
+     r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo (:MAE5 :MAE6 :MAE4)];
+     r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1. {var:x0 :hasAnatomicalPartList var:x1} => {var:x1 a rdf:List}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-rules.n3>]]]);
+    r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo (:MAE5 :MAE6 :MAE4)];
+    r:rule [ a r:Extraction; r:gives {@forAll var:x0. {var:x0 a rdf:List} => {() :hasNoAnatomicalPartInList var:x0}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-rules.n3>]]]
+   [ a r:Extraction; r:gives {:MAE5 a :MaterialAnatomicalEntity}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-facts.n3>]]
+   [ a r:Extraction; r:gives {:MAE3 a :MaterialAnatomicalEntity}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-facts.n3>]]);
+   r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://idm.univ-rennes1.fr/~obierlai/anatomy#MAE5"]];
+   r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo ()];
+   r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo [ n3:uri "http://idm.univ-rennes1.fr/~obierlai/anatomy#MAE3"]];
+   r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo (:MAE5 :MAE6 :MAE4)];
+   r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3. {var:x0 :hasAnatomicalPartList var:x1. var:x2 :hasAnatomicalPartList var:x3. var:x1 :hasNoAnatomicalPartInList var:x3. var:x0 a :MaterialAnatomicalEntity. var:x2 a :MaterialAnatomicalEntity} => {var:x0 :hasNoCommonPart var:x2}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-rules.n3>]]]);
+  r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://idm.univ-rennes1.fr/~obierlai/anatomy#MAE5"]];
+  r:rule [ a r:Extraction; r:gives {@forAll var:x0. {var:x0 :hasNoCommonPart :MAE3} => {var:x0 :hasNoCommonPart :MAE3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-filter.n3>]]];
+
+ r:component [ a r:Inference; r:gives {:MAE6 :hasNoCommonPart :MAE3}; r:evidence (
+  [ a r:Inference; r:gives {:MAE6 :hasNoCommonPart :MAE3}; r:evidence (
+   [ a r:Extraction; r:gives {:MAE6 :hasAnatomicalPartList ()}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-facts.n3>]]
+   [ a r:Extraction; r:gives {:MAE3 :hasAnatomicalPartList (:MAE5 :MAE6 :MAE4)}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-facts.n3>]]
+   [ a r:Inference; r:gives {() :hasNoAnatomicalPartInList (:MAE5 :MAE6 :MAE4)}; r:evidence (
+    [ a r:Inference; r:gives {(:MAE5 :MAE6 :MAE4) a rdf:List}; r:evidence (
+     [ a r:Extraction; r:gives {:MAE3 :hasAnatomicalPartList (:MAE5 :MAE6 :MAE4)}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-facts.n3>]]);
+     r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://idm.univ-rennes1.fr/~obierlai/anatomy#MAE3"]];
+     r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo (:MAE5 :MAE6 :MAE4)];
+     r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1. {var:x0 :hasAnatomicalPartList var:x1} => {var:x1 a rdf:List}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-rules.n3>]]]);
+    r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo (:MAE5 :MAE6 :MAE4)];
+    r:rule [ a r:Extraction; r:gives {@forAll var:x0. {var:x0 a rdf:List} => {() :hasNoAnatomicalPartInList var:x0}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-rules.n3>]]]
+   [ a r:Extraction; r:gives {:MAE6 a :MaterialAnatomicalEntity}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-facts.n3>]]
+   [ a r:Extraction; r:gives {:MAE3 a :MaterialAnatomicalEntity}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-facts.n3>]]);
+   r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://idm.univ-rennes1.fr/~obierlai/anatomy#MAE6"]];
+   r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo ()];
+   r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo [ n3:uri "http://idm.univ-rennes1.fr/~obierlai/anatomy#MAE3"]];
+   r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo (:MAE5 :MAE6 :MAE4)];
+   r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3. {var:x0 :hasAnatomicalPartList var:x1. var:x2 :hasAnatomicalPartList var:x3. var:x1 :hasNoAnatomicalPartInList var:x3. var:x0 a :MaterialAnatomicalEntity. var:x2 a :MaterialAnatomicalEntity} => {var:x0 :hasNoCommonPart var:x2}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-rules.n3>]]]);
+  r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://idm.univ-rennes1.fr/~obierlai/anatomy#MAE6"]];
+  r:rule [ a r:Extraction; r:gives {@forAll var:x0. {var:x0 :hasNoCommonPart :MAE3} => {var:x0 :hasNoCommonPart :MAE3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-filter.n3>]]];
+
+ r:component [ a r:Inference; r:gives {:MAE8 :hasNoCommonPart :MAE3}; r:evidence (
+  [ a r:Inference; r:gives {:MAE8 :hasNoCommonPart :MAE3}; r:evidence (
+   [ a r:Extraction; r:gives {:MAE8 :hasAnatomicalPartList ()}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-facts.n3>]]
+   [ a r:Extraction; r:gives {:MAE3 :hasAnatomicalPartList (:MAE5 :MAE6 :MAE4)}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-facts.n3>]]
+   [ a r:Inference; r:gives {() :hasNoAnatomicalPartInList (:MAE5 :MAE6 :MAE4)}; r:evidence (
+    [ a r:Inference; r:gives {(:MAE5 :MAE6 :MAE4) a rdf:List}; r:evidence (
+     [ a r:Extraction; r:gives {:MAE3 :hasAnatomicalPartList (:MAE5 :MAE6 :MAE4)}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-facts.n3>]]);
+     r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://idm.univ-rennes1.fr/~obierlai/anatomy#MAE3"]];
+     r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo (:MAE5 :MAE6 :MAE4)];
+     r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1. {var:x0 :hasAnatomicalPartList var:x1} => {var:x1 a rdf:List}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-rules.n3>]]]);
+    r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo (:MAE5 :MAE6 :MAE4)];
+    r:rule [ a r:Extraction; r:gives {@forAll var:x0. {var:x0 a rdf:List} => {() :hasNoAnatomicalPartInList var:x0}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-rules.n3>]]]
+   [ a r:Extraction; r:gives {:MAE8 a :MaterialAnatomicalEntity}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-facts.n3>]]
+   [ a r:Extraction; r:gives {:MAE3 a :MaterialAnatomicalEntity}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-facts.n3>]]);
+   r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://idm.univ-rennes1.fr/~obierlai/anatomy#MAE8"]];
+   r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo ()];
+   r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo [ n3:uri "http://idm.univ-rennes1.fr/~obierlai/anatomy#MAE3"]];
+   r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo (:MAE5 :MAE6 :MAE4)];
+   r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3. {var:x0 :hasAnatomicalPartList var:x1. var:x2 :hasAnatomicalPartList var:x3. var:x1 :hasNoAnatomicalPartInList var:x3. var:x0 a :MaterialAnatomicalEntity. var:x2 a :MaterialAnatomicalEntity} => {var:x0 :hasNoCommonPart var:x2}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-rules.n3>]]]);
+  r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://idm.univ-rennes1.fr/~obierlai/anatomy#MAE8"]];
+  r:rule [ a r:Extraction; r:gives {@forAll var:x0. {var:x0 :hasNoCommonPart :MAE3} => {var:x0 :hasNoCommonPart :MAE3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-filter.n3>]]];
+
+ r:component [ a r:Inference; r:gives {:MAE9 :hasNoCommonPart :MAE3}; r:evidence (
+  [ a r:Inference; r:gives {:MAE9 :hasNoCommonPart :MAE3}; r:evidence (
+   [ a r:Extraction; r:gives {:MAE9 :hasAnatomicalPartList ()}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-facts.n3>]]
+   [ a r:Extraction; r:gives {:MAE3 :hasAnatomicalPartList (:MAE5 :MAE6 :MAE4)}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-facts.n3>]]
+   [ a r:Inference; r:gives {() :hasNoAnatomicalPartInList (:MAE5 :MAE6 :MAE4)}; r:evidence (
+    [ a r:Inference; r:gives {(:MAE5 :MAE6 :MAE4) a rdf:List}; r:evidence (
+     [ a r:Extraction; r:gives {:MAE3 :hasAnatomicalPartList (:MAE5 :MAE6 :MAE4)}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-facts.n3>]]);
+     r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://idm.univ-rennes1.fr/~obierlai/anatomy#MAE3"]];
+     r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo (:MAE5 :MAE6 :MAE4)];
+     r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1. {var:x0 :hasAnatomicalPartList var:x1} => {var:x1 a rdf:List}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-rules.n3>]]]);
+    r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo (:MAE5 :MAE6 :MAE4)];
+    r:rule [ a r:Extraction; r:gives {@forAll var:x0. {var:x0 a rdf:List} => {() :hasNoAnatomicalPartInList var:x0}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-rules.n3>]]]
+   [ a r:Extraction; r:gives {:MAE9 a :MaterialAnatomicalEntity}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-facts.n3>]]
+   [ a r:Extraction; r:gives {:MAE3 a :MaterialAnatomicalEntity}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-facts.n3>]]);
+   r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://idm.univ-rennes1.fr/~obierlai/anatomy#MAE9"]];
+   r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo ()];
+   r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo [ n3:uri "http://idm.univ-rennes1.fr/~obierlai/anatomy#MAE3"]];
+   r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo (:MAE5 :MAE6 :MAE4)];
+   r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3. {var:x0 :hasAnatomicalPartList var:x1. var:x2 :hasAnatomicalPartList var:x3. var:x1 :hasNoAnatomicalPartInList var:x3. var:x0 a :MaterialAnatomicalEntity. var:x2 a :MaterialAnatomicalEntity} => {var:x0 :hasNoCommonPart var:x2}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-rules.n3>]]]);
+  r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://idm.univ-rennes1.fr/~obierlai/anatomy#MAE9"]];
+  r:rule [ a r:Extraction; r:gives {@forAll var:x0. {var:x0 :hasNoCommonPart :MAE3} => {var:x0 :hasNoCommonPart :MAE3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-filter.n3>]]];
+
+ r:component [ a r:Inference; r:gives {:MAE7 :hasNoCommonPart :MAE3}; r:evidence (
+  [ a r:Inference; r:gives {:MAE7 :hasNoCommonPart :MAE3}; r:evidence (
+   [ a r:Extraction; r:gives {:MAE7 :hasAnatomicalPartList (:MAE8 :MAE9)}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-facts.n3>]]
+   [ a r:Extraction; r:gives {:MAE3 :hasAnatomicalPartList (:MAE5 :MAE6 :MAE4)}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-facts.n3>]]
+   [ a r:Inference; r:gives {(:MAE8 :MAE9) :hasNoAnatomicalPartInList (:MAE5 :MAE6 :MAE4)}; r:evidence (
+    [ a r:Fact; r:gives {(:MAE8 :MAE9) rdf:first :MAE8}]
+    [ a r:Inference; r:gives {(:MAE8 :MAE9) a rdf:List}; r:evidence (
+     [ a r:Extraction; r:gives {:MAE7 :hasAnatomicalPartList (:MAE8 :MAE9)}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-facts.n3>]]);
+     r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://idm.univ-rennes1.fr/~obierlai/anatomy#MAE7"]];
+     r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo (:MAE8 :MAE9)];
+     r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1. {var:x0 :hasAnatomicalPartList var:x1} => {var:x1 a rdf:List}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-rules.n3>]]]
+    [ a r:Extraction; r:gives {:MAE8 :hasAnatomicalPartList ()}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-facts.n3>]]
+    [ a r:Inference; r:gives {() :hasNoAnatomicalPartInList (:MAE5 :MAE6 :MAE4)}; r:evidence (
+     [ a r:Inference; r:gives {(:MAE5 :MAE6 :MAE4) a rdf:List}; r:evidence (
+      [ a r:Extraction; r:gives {:MAE3 :hasAnatomicalPartList (:MAE5 :MAE6 :MAE4)}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-facts.n3>]]);
+      r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://idm.univ-rennes1.fr/~obierlai/anatomy#MAE3"]];
+      r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo (:MAE5 :MAE6 :MAE4)];
+      r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1. {var:x0 :hasAnatomicalPartList var:x1} => {var:x1 a rdf:List}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-rules.n3>]]]);
+     r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo (:MAE5 :MAE6 :MAE4)];
+     r:rule [ a r:Extraction; r:gives {@forAll var:x0. {var:x0 a rdf:List} => {() :hasNoAnatomicalPartInList var:x0}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-rules.n3>]]]
+    [ a r:Inference; r:gives {(:MAE5 :MAE6 :MAE4) :hasNoAnatomicalPart :MAE8}; r:evidence (
+     [ a r:Fact; r:gives {(:MAE5 :MAE6 :MAE4) rdf:first :MAE5}]
+     [ a r:Inference; r:gives {(:MAE5 :MAE6 :MAE4) a rdf:List}; r:evidence (
+      [ a r:Extraction; r:gives {:MAE3 :hasAnatomicalPartList (:MAE5 :MAE6 :MAE4)}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-facts.n3>]]);
+      r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://idm.univ-rennes1.fr/~obierlai/anatomy#MAE3"]];
+      r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo (:MAE5 :MAE6 :MAE4)];
+      r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1. {var:x0 :hasAnatomicalPartList var:x1} => {var:x1 a rdf:List}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-rules.n3>]]]
+     [ a r:Extraction; r:gives {:MAE5 :hasAnatomicalPartList ()}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-facts.n3>]]
+     [ a r:Inference; r:gives {() :hasNoAnatomicalPart :MAE8}; r:evidence (
+      [ a r:Extraction; r:gives {:MAE8 a :MaterialAnatomicalEntity}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-facts.n3>]]);
+      r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://idm.univ-rennes1.fr/~obierlai/anatomy#MAE8"]];
+      r:rule [ a r:Extraction; r:gives {@forAll var:x0. {var:x0 a :MaterialAnatomicalEntity} => {() :hasNoAnatomicalPart var:x0}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-rules.n3>]]]
+     [ a r:Extraction; r:gives {:MAE5 owl:differentFrom :MAE8}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-facts.n3>]]
+     [ a r:Fact; r:gives {(:MAE5 :MAE6 :MAE4) rdf:rest (:MAE6 :MAE4)}]
+     [ a r:Inference; r:gives {(:MAE5 :MAE6 :MAE4) a rdf:List}; r:evidence (
+      [ a r:Extraction; r:gives {:MAE3 :hasAnatomicalPartList (:MAE5 :MAE6 :MAE4)}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-facts.n3>]]);
+      r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://idm.univ-rennes1.fr/~obierlai/anatomy#MAE3"]];
+      r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo (:MAE5 :MAE6 :MAE4)];
+      r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1. {var:x0 :hasAnatomicalPartList var:x1} => {var:x1 a rdf:List}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-rules.n3>]]]
+     [ a r:Inference; r:gives {(:MAE6 :MAE4) :hasNoAnatomicalPart :MAE8}; r:evidence (
+      [ a r:Fact; r:gives {(:MAE6 :MAE4) rdf:first :MAE6}]
+      [ a r:Inference; r:gives {(:MAE6 :MAE4) a rdf:List}; r:evidence (
+       [ a r:Fact; r:gives {(:MAE5 :MAE6 :MAE4) rdf:rest (:MAE6 :MAE4)}]
+       [ a r:Inference; r:gives {(:MAE5 :MAE6 :MAE4) a rdf:List}; r:evidence (
+        [ a r:Extraction; r:gives {:MAE3 :hasAnatomicalPartList (:MAE5 :MAE6 :MAE4)}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-facts.n3>]]);
+        r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://idm.univ-rennes1.fr/~obierlai/anatomy#MAE3"]];
+        r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo (:MAE5 :MAE6 :MAE4)];
+        r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1. {var:x0 :hasAnatomicalPartList var:x1} => {var:x1 a rdf:List}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-rules.n3>]]]);
+       r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo (:MAE5 :MAE6 :MAE4)];
+       r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo (:MAE6 :MAE4)];
+       r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1. {var:x0 rdf:rest var:x1. var:x0 a rdf:List} => {var:x1 a rdf:List}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-rules.n3>]]]
+      [ a r:Extraction; r:gives {:MAE6 :hasAnatomicalPartList ()}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-facts.n3>]]
+      [ a r:Inference; r:gives {() :hasNoAnatomicalPart :MAE8}; r:evidence (
+       [ a r:Extraction; r:gives {:MAE8 a :MaterialAnatomicalEntity}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-facts.n3>]]);
+       r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://idm.univ-rennes1.fr/~obierlai/anatomy#MAE8"]];
+       r:rule [ a r:Extraction; r:gives {@forAll var:x0. {var:x0 a :MaterialAnatomicalEntity} => {() :hasNoAnatomicalPart var:x0}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-rules.n3>]]]
+      [ a r:Extraction; r:gives {:MAE6 owl:differentFrom :MAE8}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-facts.n3>]]
+      [ a r:Fact; r:gives {(:MAE6 :MAE4) rdf:rest (:MAE4)}]
+      [ a r:Inference; r:gives {(:MAE6 :MAE4) a rdf:List}; r:evidence (
+       [ a r:Fact; r:gives {(:MAE5 :MAE6 :MAE4) rdf:rest (:MAE6 :MAE4)}]
+       [ a r:Inference; r:gives {(:MAE5 :MAE6 :MAE4) a rdf:List}; r:evidence (
+        [ a r:Extraction; r:gives {:MAE3 :hasAnatomicalPartList (:MAE5 :MAE6 :MAE4)}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-facts.n3>]]);
+        r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://idm.univ-rennes1.fr/~obierlai/anatomy#MAE3"]];
+        r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo (:MAE5 :MAE6 :MAE4)];
+        r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1. {var:x0 :hasAnatomicalPartList var:x1} => {var:x1 a rdf:List}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-rules.n3>]]]);
+       r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo (:MAE5 :MAE6 :MAE4)];
+       r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo (:MAE6 :MAE4)];
+       r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1. {var:x0 rdf:rest var:x1. var:x0 a rdf:List} => {var:x1 a rdf:List}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-rules.n3>]]]
+      [ a r:Inference; r:gives {(:MAE4) :hasNoAnatomicalPart :MAE8}; r:evidence (
+       [ a r:Fact; r:gives {(:MAE4) rdf:first :MAE4}]
+       [ a r:Inference; r:gives {(:MAE4) a rdf:List}; r:evidence (
+        [ a r:Fact; r:gives {(:MAE3 :MAE4) rdf:rest (:MAE4)}]
+        [ a r:Inference; r:gives {(:MAE3 :MAE4) a rdf:List}; r:evidence (
+         [ a r:Fact; r:gives {(:MAE2 :MAE3 :MAE4) rdf:rest (:MAE3 :MAE4)}]
+         [ a r:Inference; r:gives {(:MAE2 :MAE3 :MAE4) a rdf:List}; r:evidence (
+          [ a r:Extraction; r:gives {:MAE1 :hasAnatomicalPartList (:MAE2 :MAE3 :MAE4)}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-facts.n3>]]);
+          r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://idm.univ-rennes1.fr/~obierlai/anatomy#MAE1"]];
+          r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo (:MAE2 :MAE3 :MAE4)];
+          r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1. {var:x0 :hasAnatomicalPartList var:x1} => {var:x1 a rdf:List}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-rules.n3>]]]);
+         r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo (:MAE2 :MAE3 :MAE4)];
+         r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo (:MAE3 :MAE4)];
+         r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1. {var:x0 rdf:rest var:x1. var:x0 a rdf:List} => {var:x1 a rdf:List}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-rules.n3>]]]);
+        r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo (:MAE3 :MAE4)];
+        r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo (:MAE4)];
+        r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1. {var:x0 rdf:rest var:x1. var:x0 a rdf:List} => {var:x1 a rdf:List}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-rules.n3>]]]
+       [ a r:Extraction; r:gives {:MAE4 :hasAnatomicalPartList ()}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-facts.n3>]]
+       [ a r:Inference; r:gives {() :hasNoAnatomicalPart :MAE8}; r:evidence (
+        [ a r:Extraction; r:gives {:MAE8 a :MaterialAnatomicalEntity}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-facts.n3>]]);
+        r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://idm.univ-rennes1.fr/~obierlai/anatomy#MAE8"]];
+        r:rule [ a r:Extraction; r:gives {@forAll var:x0. {var:x0 a :MaterialAnatomicalEntity} => {() :hasNoAnatomicalPart var:x0}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-rules.n3>]]]
+       [ a r:Extraction; r:gives {:MAE4 owl:differentFrom :MAE8}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-facts.n3>]]
+       [ a r:Fact; r:gives {(:MAE4) rdf:rest ()}]
+       [ a r:Inference; r:gives {(:MAE4) a rdf:List}; r:evidence (
+        [ a r:Fact; r:gives {(:MAE3 :MAE4) rdf:rest (:MAE4)}]
+        [ a r:Inference; r:gives {(:MAE3 :MAE4) a rdf:List}; r:evidence (
+         [ a r:Fact; r:gives {(:MAE2 :MAE3 :MAE4) rdf:rest (:MAE3 :MAE4)}]
+         [ a r:Inference; r:gives {(:MAE2 :MAE3 :MAE4) a rdf:List}; r:evidence (
+          [ a r:Extraction; r:gives {:MAE1 :hasAnatomicalPartList (:MAE2 :MAE3 :MAE4)}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-facts.n3>]]);
+          r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://idm.univ-rennes1.fr/~obierlai/anatomy#MAE1"]];
+          r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo (:MAE2 :MAE3 :MAE4)];
+          r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1. {var:x0 :hasAnatomicalPartList var:x1} => {var:x1 a rdf:List}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-rules.n3>]]]);
+         r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo (:MAE2 :MAE3 :MAE4)];
+         r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo (:MAE3 :MAE4)];
+         r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1. {var:x0 rdf:rest var:x1. var:x0 a rdf:List} => {var:x1 a rdf:List}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-rules.n3>]]]);
+        r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo (:MAE3 :MAE4)];
+        r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo (:MAE4)];
+        r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1. {var:x0 rdf:rest var:x1. var:x0 a rdf:List} => {var:x1 a rdf:List}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-rules.n3>]]]
+       [ a r:Inference; r:gives {() :hasNoAnatomicalPart :MAE8}; r:evidence (
+        [ a r:Extraction; r:gives {:MAE8 a :MaterialAnatomicalEntity}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-facts.n3>]]);
+        r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://idm.univ-rennes1.fr/~obierlai/anatomy#MAE8"]];
+        r:rule [ a r:Extraction; r:gives {@forAll var:x0. {var:x0 a :MaterialAnatomicalEntity} => {() :hasNoAnatomicalPart var:x0}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-rules.n3>]]]);
+       r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo (:MAE4)];
+       r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo [ n3:uri "http://idm.univ-rennes1.fr/~obierlai/anatomy#MAE4"]];
+       r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo ()];
+       r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo [ n3:uri "http://idm.univ-rennes1.fr/~obierlai/anatomy#MAE8"]];
+       r:binding [ r:variable [ n3:uri "http://localhost/var#x4"]; r:boundTo ()];
+       r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3, var:x4. {var:x0 rdf:first var:x1. var:x0 a rdf:List. var:x1 :hasAnatomicalPartList var:x2. var:x2 :hasNoAnatomicalPart var:x3. var:x1 owl:differentFrom var:x3. var:x0 rdf:rest var:x4. var:x0 a rdf:List. var:x4 :hasNoAnatomicalPart var:x3} => {var:x0 :hasNoAnatomicalPart var:x3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-rules.n3>]]]);
+      r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo (:MAE6 :MAE4)];
+      r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo [ n3:uri "http://idm.univ-rennes1.fr/~obierlai/anatomy#MAE6"]];
+      r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo ()];
+      r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo [ n3:uri "http://idm.univ-rennes1.fr/~obierlai/anatomy#MAE8"]];
+      r:binding [ r:variable [ n3:uri "http://localhost/var#x4"]; r:boundTo (:MAE4)];
+      r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3, var:x4. {var:x0 rdf:first var:x1. var:x0 a rdf:List. var:x1 :hasAnatomicalPartList var:x2. var:x2 :hasNoAnatomicalPart var:x3. var:x1 owl:differentFrom var:x3. var:x0 rdf:rest var:x4. var:x0 a rdf:List. var:x4 :hasNoAnatomicalPart var:x3} => {var:x0 :hasNoAnatomicalPart var:x3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-rules.n3>]]]);
+     r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo (:MAE5 :MAE6 :MAE4)];
+     r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo [ n3:uri "http://idm.univ-rennes1.fr/~obierlai/anatomy#MAE5"]];
+     r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo ()];
+     r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo [ n3:uri "http://idm.univ-rennes1.fr/~obierlai/anatomy#MAE8"]];
+     r:binding [ r:variable [ n3:uri "http://localhost/var#x4"]; r:boundTo (:MAE6 :MAE4)];
+     r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3, var:x4. {var:x0 rdf:first var:x1. var:x0 a rdf:List. var:x1 :hasAnatomicalPartList var:x2. var:x2 :hasNoAnatomicalPart var:x3. var:x1 owl:differentFrom var:x3. var:x0 rdf:rest var:x4. var:x0 a rdf:List. var:x4 :hasNoAnatomicalPart var:x3} => {var:x0 :hasNoAnatomicalPart var:x3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-rules.n3>]]]
+    [ a r:Fact; r:gives {(:MAE8 :MAE9) rdf:rest (:MAE9)}]
+    [ a r:Inference; r:gives {(:MAE8 :MAE9) a rdf:List}; r:evidence (
+     [ a r:Extraction; r:gives {:MAE7 :hasAnatomicalPartList (:MAE8 :MAE9)}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-facts.n3>]]);
+     r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://idm.univ-rennes1.fr/~obierlai/anatomy#MAE7"]];
+     r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo (:MAE8 :MAE9)];
+     r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1. {var:x0 :hasAnatomicalPartList var:x1} => {var:x1 a rdf:List}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-rules.n3>]]]
+    [ a r:Inference; r:gives {(:MAE9) :hasNoAnatomicalPartInList (:MAE5 :MAE6 :MAE4)}; r:evidence (
+     [ a r:Fact; r:gives {(:MAE9) rdf:first :MAE9}]
+     [ a r:Inference; r:gives {(:MAE9) a rdf:List}; r:evidence (
+      [ a r:Fact; r:gives {(:MAE8 :MAE9) rdf:rest (:MAE9)}]
+      [ a r:Inference; r:gives {(:MAE8 :MAE9) a rdf:List}; r:evidence (
+       [ a r:Extraction; r:gives {:MAE7 :hasAnatomicalPartList (:MAE8 :MAE9)}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-facts.n3>]]);
+       r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://idm.univ-rennes1.fr/~obierlai/anatomy#MAE7"]];
+       r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo (:MAE8 :MAE9)];
+       r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1. {var:x0 :hasAnatomicalPartList var:x1} => {var:x1 a rdf:List}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-rules.n3>]]]);
+      r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo (:MAE8 :MAE9)];
+      r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo (:MAE9)];
+      r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1. {var:x0 rdf:rest var:x1. var:x0 a rdf:List} => {var:x1 a rdf:List}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-rules.n3>]]]
+     [ a r:Extraction; r:gives {:MAE9 :hasAnatomicalPartList ()}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-facts.n3>]]
+     [ a r:Inference; r:gives {() :hasNoAnatomicalPartInList (:MAE5 :MAE6 :MAE4)}; r:evidence (
+      [ a r:Inference; r:gives {(:MAE5 :MAE6 :MAE4) a rdf:List}; r:evidence (
+       [ a r:Extraction; r:gives {:MAE3 :hasAnatomicalPartList (:MAE5 :MAE6 :MAE4)}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-facts.n3>]]);
+       r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://idm.univ-rennes1.fr/~obierlai/anatomy#MAE3"]];
+       r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo (:MAE5 :MAE6 :MAE4)];
+       r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1. {var:x0 :hasAnatomicalPartList var:x1} => {var:x1 a rdf:List}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-rules.n3>]]]);
+      r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo (:MAE5 :MAE6 :MAE4)];
+      r:rule [ a r:Extraction; r:gives {@forAll var:x0. {var:x0 a rdf:List} => {() :hasNoAnatomicalPartInList var:x0}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-rules.n3>]]]
+     [ a r:Inference; r:gives {(:MAE5 :MAE6 :MAE4) :hasNoAnatomicalPart :MAE9}; r:evidence (
+      [ a r:Fact; r:gives {(:MAE5 :MAE6 :MAE4) rdf:first :MAE5}]
+      [ a r:Inference; r:gives {(:MAE5 :MAE6 :MAE4) a rdf:List}; r:evidence (
+       [ a r:Extraction; r:gives {:MAE3 :hasAnatomicalPartList (:MAE5 :MAE6 :MAE4)}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-facts.n3>]]);
+       r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://idm.univ-rennes1.fr/~obierlai/anatomy#MAE3"]];
+       r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo (:MAE5 :MAE6 :MAE4)];
+       r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1. {var:x0 :hasAnatomicalPartList var:x1} => {var:x1 a rdf:List}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-rules.n3>]]]
+      [ a r:Extraction; r:gives {:MAE5 :hasAnatomicalPartList ()}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-facts.n3>]]
+      [ a r:Inference; r:gives {() :hasNoAnatomicalPart :MAE9}; r:evidence (
+       [ a r:Extraction; r:gives {:MAE9 a :MaterialAnatomicalEntity}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-facts.n3>]]);
+       r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://idm.univ-rennes1.fr/~obierlai/anatomy#MAE9"]];
+       r:rule [ a r:Extraction; r:gives {@forAll var:x0. {var:x0 a :MaterialAnatomicalEntity} => {() :hasNoAnatomicalPart var:x0}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-rules.n3>]]]
+      [ a r:Extraction; r:gives {:MAE5 owl:differentFrom :MAE9}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-facts.n3>]]
+      [ a r:Fact; r:gives {(:MAE5 :MAE6 :MAE4) rdf:rest (:MAE6 :MAE4)}]
+      [ a r:Inference; r:gives {(:MAE5 :MAE6 :MAE4) a rdf:List}; r:evidence (
+       [ a r:Extraction; r:gives {:MAE3 :hasAnatomicalPartList (:MAE5 :MAE6 :MAE4)}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-facts.n3>]]);
+       r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://idm.univ-rennes1.fr/~obierlai/anatomy#MAE3"]];
+       r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo (:MAE5 :MAE6 :MAE4)];
+       r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1. {var:x0 :hasAnatomicalPartList var:x1} => {var:x1 a rdf:List}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-rules.n3>]]]
+      [ a r:Inference; r:gives {(:MAE6 :MAE4) :hasNoAnatomicalPart :MAE9}; r:evidence (
+       [ a r:Fact; r:gives {(:MAE6 :MAE4) rdf:first :MAE6}]
+       [ a r:Inference; r:gives {(:MAE6 :MAE4) a rdf:List}; r:evidence (
+        [ a r:Fact; r:gives {(:MAE5 :MAE6 :MAE4) rdf:rest (:MAE6 :MAE4)}]
+        [ a r:Inference; r:gives {(:MAE5 :MAE6 :MAE4) a rdf:List}; r:evidence (
+         [ a r:Extraction; r:gives {:MAE3 :hasAnatomicalPartList (:MAE5 :MAE6 :MAE4)}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-facts.n3>]]);
+         r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://idm.univ-rennes1.fr/~obierlai/anatomy#MAE3"]];
+         r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo (:MAE5 :MAE6 :MAE4)];
+         r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1. {var:x0 :hasAnatomicalPartList var:x1} => {var:x1 a rdf:List}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-rules.n3>]]]);
+        r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo (:MAE5 :MAE6 :MAE4)];
+        r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo (:MAE6 :MAE4)];
+        r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1. {var:x0 rdf:rest var:x1. var:x0 a rdf:List} => {var:x1 a rdf:List}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-rules.n3>]]]
+       [ a r:Extraction; r:gives {:MAE6 :hasAnatomicalPartList ()}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-facts.n3>]]
+       [ a r:Inference; r:gives {() :hasNoAnatomicalPart :MAE9}; r:evidence (
+        [ a r:Extraction; r:gives {:MAE9 a :MaterialAnatomicalEntity}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-facts.n3>]]);
+        r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://idm.univ-rennes1.fr/~obierlai/anatomy#MAE9"]];
+        r:rule [ a r:Extraction; r:gives {@forAll var:x0. {var:x0 a :MaterialAnatomicalEntity} => {() :hasNoAnatomicalPart var:x0}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-rules.n3>]]]
+       [ a r:Extraction; r:gives {:MAE6 owl:differentFrom :MAE9}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-facts.n3>]]
+       [ a r:Fact; r:gives {(:MAE6 :MAE4) rdf:rest (:MAE4)}]
+       [ a r:Inference; r:gives {(:MAE6 :MAE4) a rdf:List}; r:evidence (
+        [ a r:Fact; r:gives {(:MAE5 :MAE6 :MAE4) rdf:rest (:MAE6 :MAE4)}]
+        [ a r:Inference; r:gives {(:MAE5 :MAE6 :MAE4) a rdf:List}; r:evidence (
+         [ a r:Extraction; r:gives {:MAE3 :hasAnatomicalPartList (:MAE5 :MAE6 :MAE4)}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-facts.n3>]]);
+         r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://idm.univ-rennes1.fr/~obierlai/anatomy#MAE3"]];
+         r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo (:MAE5 :MAE6 :MAE4)];
+         r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1. {var:x0 :hasAnatomicalPartList var:x1} => {var:x1 a rdf:List}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-rules.n3>]]]);
+        r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo (:MAE5 :MAE6 :MAE4)];
+        r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo (:MAE6 :MAE4)];
+        r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1. {var:x0 rdf:rest var:x1. var:x0 a rdf:List} => {var:x1 a rdf:List}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-rules.n3>]]]
+       [ a r:Inference; r:gives {(:MAE4) :hasNoAnatomicalPart :MAE9}; r:evidence (
+        [ a r:Fact; r:gives {(:MAE4) rdf:first :MAE4}]
+        [ a r:Inference; r:gives {(:MAE4) a rdf:List}; r:evidence (
+         [ a r:Fact; r:gives {(:MAE3 :MAE4) rdf:rest (:MAE4)}]
+         [ a r:Inference; r:gives {(:MAE3 :MAE4) a rdf:List}; r:evidence (
+          [ a r:Fact; r:gives {(:MAE2 :MAE3 :MAE4) rdf:rest (:MAE3 :MAE4)}]
+          [ a r:Inference; r:gives {(:MAE2 :MAE3 :MAE4) a rdf:List}; r:evidence (
+           [ a r:Extraction; r:gives {:MAE1 :hasAnatomicalPartList (:MAE2 :MAE3 :MAE4)}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-facts.n3>]]);
+           r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://idm.univ-rennes1.fr/~obierlai/anatomy#MAE1"]];
+           r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo (:MAE2 :MAE3 :MAE4)];
+           r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1. {var:x0 :hasAnatomicalPartList var:x1} => {var:x1 a rdf:List}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-rules.n3>]]]);
+          r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo (:MAE2 :MAE3 :MAE4)];
+          r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo (:MAE3 :MAE4)];
+          r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1. {var:x0 rdf:rest var:x1. var:x0 a rdf:List} => {var:x1 a rdf:List}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-rules.n3>]]]);
+         r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo (:MAE3 :MAE4)];
+         r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo (:MAE4)];
+         r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1. {var:x0 rdf:rest var:x1. var:x0 a rdf:List} => {var:x1 a rdf:List}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-rules.n3>]]]
+        [ a r:Extraction; r:gives {:MAE4 :hasAnatomicalPartList ()}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-facts.n3>]]
+        [ a r:Inference; r:gives {() :hasNoAnatomicalPart :MAE9}; r:evidence (
+         [ a r:Extraction; r:gives {:MAE9 a :MaterialAnatomicalEntity}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-facts.n3>]]);
+         r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://idm.univ-rennes1.fr/~obierlai/anatomy#MAE9"]];
+         r:rule [ a r:Extraction; r:gives {@forAll var:x0. {var:x0 a :MaterialAnatomicalEntity} => {() :hasNoAnatomicalPart var:x0}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-rules.n3>]]]
+        [ a r:Extraction; r:gives {:MAE4 owl:differentFrom :MAE9}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-facts.n3>]]
+        [ a r:Fact; r:gives {(:MAE4) rdf:rest ()}]
+        [ a r:Inference; r:gives {(:MAE4) a rdf:List}; r:evidence (
+         [ a r:Fact; r:gives {(:MAE3 :MAE4) rdf:rest (:MAE4)}]
+         [ a r:Inference; r:gives {(:MAE3 :MAE4) a rdf:List}; r:evidence (
+          [ a r:Fact; r:gives {(:MAE2 :MAE3 :MAE4) rdf:rest (:MAE3 :MAE4)}]
+          [ a r:Inference; r:gives {(:MAE2 :MAE3 :MAE4) a rdf:List}; r:evidence (
+           [ a r:Extraction; r:gives {:MAE1 :hasAnatomicalPartList (:MAE2 :MAE3 :MAE4)}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-facts.n3>]]);
+           r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://idm.univ-rennes1.fr/~obierlai/anatomy#MAE1"]];
+           r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo (:MAE2 :MAE3 :MAE4)];
+           r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1. {var:x0 :hasAnatomicalPartList var:x1} => {var:x1 a rdf:List}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-rules.n3>]]]);
+          r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo (:MAE2 :MAE3 :MAE4)];
+          r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo (:MAE3 :MAE4)];
+          r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1. {var:x0 rdf:rest var:x1. var:x0 a rdf:List} => {var:x1 a rdf:List}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-rules.n3>]]]);
+         r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo (:MAE3 :MAE4)];
+         r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo (:MAE4)];
+         r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1. {var:x0 rdf:rest var:x1. var:x0 a rdf:List} => {var:x1 a rdf:List}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-rules.n3>]]]
+        [ a r:Inference; r:gives {() :hasNoAnatomicalPart :MAE9}; r:evidence (
+         [ a r:Extraction; r:gives {:MAE9 a :MaterialAnatomicalEntity}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-facts.n3>]]);
+         r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://idm.univ-rennes1.fr/~obierlai/anatomy#MAE9"]];
+         r:rule [ a r:Extraction; r:gives {@forAll var:x0. {var:x0 a :MaterialAnatomicalEntity} => {() :hasNoAnatomicalPart var:x0}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-rules.n3>]]]);
+        r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo (:MAE4)];
+        r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo [ n3:uri "http://idm.univ-rennes1.fr/~obierlai/anatomy#MAE4"]];
+        r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo ()];
+        r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo [ n3:uri "http://idm.univ-rennes1.fr/~obierlai/anatomy#MAE9"]];
+        r:binding [ r:variable [ n3:uri "http://localhost/var#x4"]; r:boundTo ()];
+        r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3, var:x4. {var:x0 rdf:first var:x1. var:x0 a rdf:List. var:x1 :hasAnatomicalPartList var:x2. var:x2 :hasNoAnatomicalPart var:x3. var:x1 owl:differentFrom var:x3. var:x0 rdf:rest var:x4. var:x0 a rdf:List. var:x4 :hasNoAnatomicalPart var:x3} => {var:x0 :hasNoAnatomicalPart var:x3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-rules.n3>]]]);
+       r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo (:MAE6 :MAE4)];
+       r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo [ n3:uri "http://idm.univ-rennes1.fr/~obierlai/anatomy#MAE6"]];
+       r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo ()];
+       r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo [ n3:uri "http://idm.univ-rennes1.fr/~obierlai/anatomy#MAE9"]];
+       r:binding [ r:variable [ n3:uri "http://localhost/var#x4"]; r:boundTo (:MAE4)];
+       r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3, var:x4. {var:x0 rdf:first var:x1. var:x0 a rdf:List. var:x1 :hasAnatomicalPartList var:x2. var:x2 :hasNoAnatomicalPart var:x3. var:x1 owl:differentFrom var:x3. var:x0 rdf:rest var:x4. var:x0 a rdf:List. var:x4 :hasNoAnatomicalPart var:x3} => {var:x0 :hasNoAnatomicalPart var:x3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-rules.n3>]]]);
+      r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo (:MAE5 :MAE6 :MAE4)];
+      r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo [ n3:uri "http://idm.univ-rennes1.fr/~obierlai/anatomy#MAE5"]];
+      r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo ()];
+      r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo [ n3:uri "http://idm.univ-rennes1.fr/~obierlai/anatomy#MAE9"]];
+      r:binding [ r:variable [ n3:uri "http://localhost/var#x4"]; r:boundTo (:MAE6 :MAE4)];
+      r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3, var:x4. {var:x0 rdf:first var:x1. var:x0 a rdf:List. var:x1 :hasAnatomicalPartList var:x2. var:x2 :hasNoAnatomicalPart var:x3. var:x1 owl:differentFrom var:x3. var:x0 rdf:rest var:x4. var:x0 a rdf:List. var:x4 :hasNoAnatomicalPart var:x3} => {var:x0 :hasNoAnatomicalPart var:x3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-rules.n3>]]]
+     [ a r:Fact; r:gives {(:MAE9) rdf:rest ()}]
+     [ a r:Inference; r:gives {(:MAE9) a rdf:List}; r:evidence (
+      [ a r:Fact; r:gives {(:MAE8 :MAE9) rdf:rest (:MAE9)}]
+      [ a r:Inference; r:gives {(:MAE8 :MAE9) a rdf:List}; r:evidence (
+       [ a r:Extraction; r:gives {:MAE7 :hasAnatomicalPartList (:MAE8 :MAE9)}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-facts.n3>]]);
+       r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://idm.univ-rennes1.fr/~obierlai/anatomy#MAE7"]];
+       r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo (:MAE8 :MAE9)];
+       r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1. {var:x0 :hasAnatomicalPartList var:x1} => {var:x1 a rdf:List}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-rules.n3>]]]);
+      r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo (:MAE8 :MAE9)];
+      r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo (:MAE9)];
+      r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1. {var:x0 rdf:rest var:x1. var:x0 a rdf:List} => {var:x1 a rdf:List}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-rules.n3>]]]
+     [ a r:Inference; r:gives {() :hasNoAnatomicalPartInList (:MAE5 :MAE6 :MAE4)}; r:evidence (
+      [ a r:Inference; r:gives {(:MAE5 :MAE6 :MAE4) a rdf:List}; r:evidence (
+       [ a r:Extraction; r:gives {:MAE3 :hasAnatomicalPartList (:MAE5 :MAE6 :MAE4)}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-facts.n3>]]);
+       r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://idm.univ-rennes1.fr/~obierlai/anatomy#MAE3"]];
+       r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo (:MAE5 :MAE6 :MAE4)];
+       r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1. {var:x0 :hasAnatomicalPartList var:x1} => {var:x1 a rdf:List}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-rules.n3>]]]);
+      r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo (:MAE5 :MAE6 :MAE4)];
+      r:rule [ a r:Extraction; r:gives {@forAll var:x0. {var:x0 a rdf:List} => {() :hasNoAnatomicalPartInList var:x0}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-rules.n3>]]]);
+     r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo (:MAE9)];
+     r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo [ n3:uri "http://idm.univ-rennes1.fr/~obierlai/anatomy#MAE9"]];
+     r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo ()];
+     r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo (:MAE5 :MAE6 :MAE4)];
+     r:binding [ r:variable [ n3:uri "http://localhost/var#x4"]; r:boundTo ()];
+     r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3, var:x4. {var:x0 rdf:first var:x1. var:x0 a rdf:List. var:x1 :hasAnatomicalPartList var:x2. var:x2 :hasNoAnatomicalPartInList var:x3. var:x3 :hasNoAnatomicalPart var:x1. var:x0 rdf:rest var:x4. var:x0 a rdf:List. var:x4 :hasNoAnatomicalPartInList var:x3} => {var:x0 :hasNoAnatomicalPartInList var:x3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-rules.n3>]]]);
+    r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo (:MAE8 :MAE9)];
+    r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo [ n3:uri "http://idm.univ-rennes1.fr/~obierlai/anatomy#MAE8"]];
+    r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo ()];
+    r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo (:MAE5 :MAE6 :MAE4)];
+    r:binding [ r:variable [ n3:uri "http://localhost/var#x4"]; r:boundTo (:MAE9)];
+    r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3, var:x4. {var:x0 rdf:first var:x1. var:x0 a rdf:List. var:x1 :hasAnatomicalPartList var:x2. var:x2 :hasNoAnatomicalPartInList var:x3. var:x3 :hasNoAnatomicalPart var:x1. var:x0 rdf:rest var:x4. var:x0 a rdf:List. var:x4 :hasNoAnatomicalPartInList var:x3} => {var:x0 :hasNoAnatomicalPartInList var:x3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-rules.n3>]]]
+   [ a r:Extraction; r:gives {:MAE7 a :MaterialAnatomicalEntity}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-facts.n3>]]
+   [ a r:Extraction; r:gives {:MAE3 a :MaterialAnatomicalEntity}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-facts.n3>]]);
+   r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://idm.univ-rennes1.fr/~obierlai/anatomy#MAE7"]];
+   r:binding [ r:variable [ n3:uri "http://localhost/var#x1"]; r:boundTo (:MAE8 :MAE9)];
+   r:binding [ r:variable [ n3:uri "http://localhost/var#x2"]; r:boundTo [ n3:uri "http://idm.univ-rennes1.fr/~obierlai/anatomy#MAE3"]];
+   r:binding [ r:variable [ n3:uri "http://localhost/var#x3"]; r:boundTo (:MAE5 :MAE6 :MAE4)];
+   r:rule [ a r:Extraction; r:gives {@forAll var:x0, var:x1, var:x2, var:x3. {var:x0 :hasAnatomicalPartList var:x1. var:x2 :hasAnatomicalPartList var:x3. var:x1 :hasNoAnatomicalPartInList var:x3. var:x0 a :MaterialAnatomicalEntity. var:x2 a :MaterialAnatomicalEntity} => {var:x0 :hasNoCommonPart var:x2}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-rules.n3>]]]);
+  r:binding [ r:variable [ n3:uri "http://localhost/var#x0"]; r:boundTo [ n3:uri "http://idm.univ-rennes1.fr/~obierlai/anatomy#MAE7"]];
+  r:rule [ a r:Extraction; r:gives {@forAll var:x0. {var:x0 :hasNoCommonPart :MAE3} => {var:x0 :hasNoCommonPart :MAE3}}; r:because [ a r:Parsing; r:source <http://eulersharp.sourceforge.net/2004/04test/anatomy-filter.n3>]]];
+
+ r:gives {
+  :MAE1 :isMaterialAnatomicalEntityConnectedTo :MAE2.
+  :MAE2 :isMaterialAnatomicalEntityConnectedTo :MAE1.
+  :MAE2 :hasNoCommonPart :MAE3.
+  :MAE4 :hasNoCommonPart :MAE3.
+  :MAE5 :hasNoCommonPart :MAE3.
+  :MAE6 :hasNoCommonPart :MAE3.
+  :MAE8 :hasNoCommonPart :MAE3.
+  :MAE9 :hasNoCommonPart :MAE3.
+  :MAE7 :hasNoCommonPart :MAE3.
+ }].
+
+#ENDS 50 msec
+#Trunk : 429/3992 = 10.7464929859719 %
+#Branch: 1/417 = 0.239808153477218 %
+

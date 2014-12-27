@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>EYE</title>
+    <link rel="stylesheet" type="text/css" href="http://www.w3.org/StyleSheets/base.css">
+    <style type="text/css">a:hover {background:#ffa;}</style>
+    <style type="text/css">img {vertical-align:text-top;}</style>
+</head>
+
+<body>
+<h1><img src="http://eulersharp.sourceforge.net/2003/03swap/eye.png" alt="EYE" height="37" width="37"/> EYE</h1><pre>
+EYE stands for "Euler Yet another proof Engine" and it is a further
+development of Euler which is an inference engine supporting logic
+based proofs. EYE is a semibackward reasoning engine enhanced with
+Euler path detection.
+
+The Euler path detection is roughly "don't step in your own steps"
+and in that respect there is a similarity with what Leonhard Euler
+discovered in 1736 for the Königsberg Bridge Problem [1].
+EYE sees the rule <span style="background: #ffff00">P =&gt; C</span> as <span style="background: #ffff00">P &amp; NOT(C) =&gt; C</span> so it follows so called
+PNC steps (PNC stands for "Premis and Not Conclusion").
+
+Semibackward reasoning is pure backward reasoning for backward rules
+(rules using &lt;= in N3) and backward-forward-backward reasoning for
+forward rules (rules using =&gt; in N3).
+
+The backward-forward-backward reasoning is realized via an underlying
+Prolog backward chaining, a forward meta-level reasoning and a
+backward proof construction.
+
+The reasoning that EYE is performing is grounded in FOL (First Order
+Logic). Keeping a language less powerful than FOL is quite reasonable
+within an application, but not for the Web [2].
+
+
+The detailed design of EYE comprises:
+
+1/ N3 [3] parser specified as Prolog DCG (Definite Clause Grammar)
+
+2/ N3Logic [4] to N3P (Notation 3 P-code) [5] compiler
+
+3/ EAM (Euler Abstract Machine) with Euler path detection to avoid loops
+   and with postponed brake mechanism to run at much increased speed
+
+4/ proof construction using the vocabulary for proofs [6]
+
+5/ builtins and support predicates for the above functionalities
+
+
+High performance is crucial and that is the main reason why EYE is
+depending on flexible indexing of Prolog clauses during runtime [7].
+Indexing Prolog clauses on demand during program execution, also called
+JITI (Just In Time Indexing) or DDI (Demand Driven Indexing) can really
+make a substantial difference and is in that respect very similar to
+indexing used for relational databases. Even a small percentage of
+badly indexed calls can end up dominating runtime.
+
+In the current design of EYE things are layered and cascaded as follows:
+
+                     .------------------.
+        .------------|- - -   GRE       |
+        |       N3P  |-----'------------|
+        |------------|- - -'  EAM       |
+        |       PVM  |-----'------------|
+        |------------|- - -'  WAM       |
+        |       ASM  |-----'------------|
+        '------------|- - -'  CPU       |
+                     '------------------'
+
+	Legend
+	------
+		GRE	= Generic Reasoning Engine
+		N3P	= Notation 3 P-code
+		EAM	= Euler Abstract Machine
+		PVM	= Prolog Virtual Machine code
+		WAM	= Warren/Wielemaker Abstract Machine
+		ASM	= Assembly code
+		CPU	= Central Processing Unit
+
+
+The EYE test cases [8] and their results [9] support the development of EYE.
+
+The usage of EYE via the command line is as follows:
+
+Usage: <span style="background: #ffff00">eye &lt;options&gt;* &lt;data&gt;* &lt;query&gt;*</span>
+eye
+	swipl -x eye.pvm --
+&lt;options&gt;
+	--nope			no proof explanation
+	--no-qnames		no qnames in output
+	--no-numerals		no numerals in output
+	--no-distinct		no distinct answers in output
+	--single-answer		give only one answer
+	--step &lt;count&gt;		set maximimum step count
+	--wcache &lt;uri&gt; &lt;file&gt;	to tell that uri is cached as file
+	--ignore-syntax-error	do not halt in case of syntax error
+	--n3p			output N3 P-code
+	--image &lt;file&gt;		output PVM code
+	--strings		output log:outputString objects
+	--warn			output warning info
+	--debug			output debug info
+	--debug-cnt		output debug info about counters
+	--debug-pvm		output debug info about PVM code
+	--rule-histogram	output rule histogram
+	--profile		output profile info
+	--statistics		output statistics info
+	--probe			output speedtest info
+	--traditional		traditional mode
+	--version		show version info
+	--license		show license info
+	--help			show help info
+&lt;data&gt;
+	&lt;n3_resource&gt;		N3 facts and rules
+	--turtle &lt;ttl_resource&gt;	Turtle data
+	--plugin &lt;n3p_resource&gt;	plugin N3 P-code
+&lt;query&gt;
+	--query &lt;n3_resource&gt;	output filtered with filter rules
+	--pass			output deductive closure
+	--pass-all		output deductive closure plus rules
+	--pass-only-new		output only the new derived triples
+
+
+References
+----------
+
+ [1] <a href="http://mathworld.wolfram.com/KoenigsbergBridgeProblem.html">http://mathworld.wolfram.com/KoenigsbergBridgeProblem.html</a>
+ [2] <a href="http://www.w3.org/DesignIssues/Logic">http://www.w3.org/DesignIssues/Logic</a>
+ [3] <a href="http://www.w3.org/TeamSubmission/n3/">http://www.w3.org/TeamSubmission/n3/</a>
+ [4] <a href="http://www.w3.org/DesignIssues/N3Logic">http://www.w3.org/DesignIssues/N3Logic</a>
+ [5] <a href="http://eulersharp.sourceforge.net/GUIDE">http://eulersharp.sourceforge.net/GUIDE</a>
+ [6] <a href="http://www.w3.org/2000/10/swap/reason.n3">http://www.w3.org/2000/10/swap/reason</a>
+ [7] <a href="http://user.it.uu.se/~kostis/Papers/iclp07.pdf">http://user.it.uu.se/~kostis/Papers/iclp07.pdf</a>
+ [8] <a href="http://eulersharp.sourceforge.net/2006/02swap/etc.sh">http://eulersharp.sourceforge.net/2006/02swap/etc.sh</a>
+ [9] <a href="http://eulersharp.sourceforge.net/2006/02swap/etc.n3">http://eulersharp.sourceforge.net/2006/02swap/etc.n3</a>
+</pre>
+</body>
+</html>

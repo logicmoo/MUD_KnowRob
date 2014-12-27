@@ -1,0 +1,188 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>
+		<meta name="generator" content="AGFA HealthCare N3 to HTML convertor"/>
+		<link rel="alternate" type="text/n3" title="RDF Representation" href="http://eulersharp.sourceforge.net/2003/03swap/bmi_rules"/>
+		<title>bmi_rules</title>
+		<style type="text/css">
+			a[href]:link { text-decoration:none; }
+			a[href]:visited { text-decoration:none; }
+			a[href]:active { text-decoration:underline; }
+			a:hover { background:#ffa; }
+			.keyword { font-weight: bold; }
+			.literal { color: blue }
+			.uri { color: darkblue }
+			.qname { color: black }
+			.var { color: gray }
+			.comment { font-style:italic; color: darkgreen }
+		</style>
+	</head>
+	<body>
+	<div>
+		<pre>
+<span class="keyword">@prefix</span> rdf: <a class="uri" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</a>.
+<span class="keyword">@prefix</span> rdfs: <a class="uri" href="http://www.w3.org/2000/01/rdf-schema">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</a>.
+<span class="keyword">@prefix</span> owl: <a class="uri" href="http://www.w3.org/2002/07/owl">&lt;http://www.w3.org/2002/07/owl#&gt;</a>.
+<span class="keyword">@prefix</span> xsd:  <a class="uri" href="http://www.w3.org/2001/XMLSchema">&lt;http://www.w3.org/2001/XMLSchema#&gt;</a> .
+<span class="keyword">@prefix</span> dce: <a class="uri" href="http://purl.org/dc/elements/1.1/">&lt;http://purl.org/dc/elements/1.1/&gt;</a>.
+<span class="keyword">@prefix</span> log: <a class="uri" href="http://www.w3.org/2000/10/swap/log">&lt;http://www.w3.org/2000/10/swap/log#&gt;</a>.
+<span class="keyword">@prefix</span> math: <a class="uri" href="http://www.w3.org/2000/10/swap/math">&lt;http://www.w3.org/2000/10/swap/math#&gt;</a>.
+<span class="keyword">@prefix</span> list: <a class="uri" href="http://www.w3.org/2000/10/swap/list">&lt;http://www.w3.org/2000/10/swap/list#&gt;</a>.
+<span class="keyword">@prefix</span> e: <a class="uri" href="http://eulersharp.sourceforge.net/2003/03swap/log-rules.html#">&lt;http://eulersharp.sourceforge.net/2003/03swap/log-rules#&gt;</a>.
+<span class="keyword">@prefix</span> event: <a class="uri" href="http://eulersharp.sourceforge.net/2003/03swap/event.html#">&lt;http://eulersharp.sourceforge.net/2003/03swap/event#&gt;</a>.
+<span class="keyword">@prefix</span> physical: <a class="uri" href="http://eulersharp.sourceforge.net/2003/03swap/physicalResource.html#">&lt;http://eulersharp.sourceforge.net/2003/03swap/physicalResource#&gt;</a>.
+<span class="keyword">@prefix</span> time: <a class="uri" href="http://eulersharp.sourceforge.net/2003/03swap/time.html#">&lt;http://eulersharp.sourceforge.net/2003/03swap/time#&gt;</a>.
+<span class="keyword">@prefix</span> quant: <a class="uri" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#">&lt;http://eulersharp.sourceforge.net/2003/03swap/quantities#&gt;</a>.
+<span class="keyword">@prefix</span> units: <a class="uri" href="http://eulersharp.sourceforge.net/2003/03swap/units.html#">&lt;http://eulersharp.sourceforge.net/2003/03swap/units#&gt;</a>.
+<span class="keyword">@prefix</span> human: <a class="uri" href="http://eulersharp.sourceforge.net/2003/03swap/human.html#">&lt;http://eulersharp.sourceforge.net/2003/03swap/human#&gt;</a>.
+<span class="keyword">@prefix</span> humanbody: <a class="uri" href="http://eulersharp.sourceforge.net/2003/03swap/humanBody.html#">&lt;http://eulersharp.sourceforge.net/2003/03swap/humanBody#&gt;</a>.
+
+<a class="uri" href="http://eulersharp.sourceforge.net/2003/03swap/bmi_rules.html">&lt;http://eulersharp.sourceforge.net/2003/03swap/bmi_rules&gt;</a>
+	<a class="qname" href="http://purl.org/dc/elements/1.1">dce:title</a> <span class="literal">&quot;&quot;&quot;Adult Body Mass Index rules&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://purl.org/dc/elements/1.1">dce:creator</a> <span class="literal">&quot;&quot;&quot;Hans Cools&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://purl.org/dc/elements/1.1">dce:publisher</a> <span class="literal">&quot;&quot;&quot;Agfa Healthcare/Belgium&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://purl.org/dc/elements/1.1">dce:description</a> <span class="literal">&quot;&quot;&quot;Rules to calculate an adult's body mass index (BMI) using formula: BMI = human body 'weight' (mass) (kg)/(human body length (m))².&quot;&quot;&quot;</span>@en.
+
+
+{	<span class="comment"># GETTING DATA:</span>
+	<span class="var">?adult</span> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/human.html#weighs">human:weighs</a> <span class="var">?weightMeasurement</span>. <span class="comment"># a human:BiologicalAdult</span>
+	<span class="var">?weightMeasurement</span>
+		<a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#hasUnit">quant:hasUnit</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/units.html#kilogram">units:kilogram</a>;
+		<a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#hasValue">quant:hasValue</a> <span class="var">?weightValue</span>;
+		<a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/time.html#hasDateTime">time:hasDateTime</a> <span class="var">?weightDateTime</span>.
+	[] <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/log-rules.html#optional">e:optional</a> {
+		<span class="var">?adult</span> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/human.html#hasLength">human:hasLength</a> <span class="var">?lengthMeasurement</span>.
+		<span class="var">?lengthMeasurement</span>
+			<a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#hasUnit">quant:hasUnit</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/units.html#meter">units:meter</a>;
+			<a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#hasValue">quant:hasValue</a> <span class="var">?lengthValue</span>;
+			<a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/time.html#hasDateTime">time:hasDateTime</a> <span class="var">?lengthDateTime</span>}, {
+		<span class="var">?adult</span> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/human.html#hasLength">human:hasLength</a> <span class="var">?lengthMeasurement</span>.
+		<span class="var">?lengthMeasurement</span>
+			<a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/time.html#hasDateTime">time:hasDateTime</a> <span class="var">?lengthDateTime</span>;
+			<a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#convertedTo">quant:convertedTo</a> [
+				<a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#hasUnit">quant:hasUnit</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/units.html#meter">units:meter</a>;
+				<a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#hasValue">quant:hasValue</a> <span class="var">?lengthValue</span>]}.
+
+	<span class="comment"># SETTING MAXIMUM TIME DIFFERENCE BETWEEN WEIGHT AND LENGTH MEASUREMENTS:</span>
+	<span class="comment"># Note: the smaller preset period, the smaller chance to get data</span>
+	(<span class="var">?weightDateTime</span> <span class="var">?lengthDateTime</span>) <a class="qname" href="http://www.w3.org/2000/10/swap/math">math:difference</a> <span class="var">?dif</span>.
+	<span class="var">?dif</span> <a class="qname" href="http://www.w3.org/2000/10/swap/math">math:notGreaterThan</a> <span class="literal">&quot;P0M&quot;</span>^^<a class="qname" href="http://www.w3.org/2001/XMLSchema">xsd:duration</a>; <a class="qname" href="http://www.w3.org/2000/10/swap/math">math:notLessThan</a> <span class="literal">&quot;-P0M&quot;</span>^^<a class="qname" href="http://www.w3.org/2001/XMLSchema">xsd:duration</a>.	
+	
+	<span class="comment"># TO ADD: e:findall -&gt; smallest dif</span>
+	
+	<span class="comment"># CALCULATING LATEST DATE TIME OF AN EXAMINATION:</span>
+	(<span class="var">?weightDateTime</span> <span class="var">?lengthDateTime</span>) <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/log-rules.html#max">e:max</a> <span class="var">?maxDateTimeNumeral</span>.
+	(<span class="var">?lexical</span> <a class="qname" href="http://www.w3.org/2001/XMLSchema">xsd:dateTime</a>) <a class="qname" href="http://www.w3.org/2000/10/swap/log">log:dtlit</a> <span class="var">?maxDateTimeNumeral</span>, <span class="var">?dateTime</span>.
+	
+	<span class="comment"># THIS DATE TIME IS USED TO CALCULATE AGE AND ALSO ASSIGNED TO FINAL RESULT</span>
+	
+	<span class="comment"># TRIGGERING BACKWARD RULE CALCULATING AGE AT MOMENT OF LATEST EXAMINATION:</span>
+	(<span class="var">?adult</span> <span class="var">?dateTime</span>) <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/time.html#calculatingAge">time:calculatingAge</a> <span class="var">?ageInYears</span>.
+	
+	<span class="comment"># CHECK ADULT AGE:</span>
+	<span class="var">?ageInYears</span> <a class="qname" href="http://www.w3.org/2000/10/swap/math">math:notLessThan</a> <span class="literal">15</span>.
+	
+	<span class="comment"># CALCULATION OF AN ADULT BODY MASS INDEX:</span>
+	(<span class="var">?weightValue</span> (<span class="var">?lengthValue</span> <span class="literal">2</span>)!<a class="qname" href="http://www.w3.org/2000/10/swap/math">math:exponentiation</a>) <a class="qname" href="http://www.w3.org/2000/10/swap/math">math:quotient</a> <span class="var">?bodyMassIndexValue</span>}
+=&gt;
+{	<span class="var">?adult</span>
+		<a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/human.html#hasBodyMassIndex">human:hasBodyMassIndex</a> [
+			<a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#hasUnit">quant:hasUnit</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/units.html#kilogramPerMeterSquare">units:kilogramPerMeterSquare</a>;
+			<a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#hasValue">quant:hasValue</a> <span class="var">?bodyMassIndexValue</span>;
+			<a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/time.html#hasDateTime">time:hasDateTime</a> <span class="var">?dateTime</span>;
+			<a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/event.html#basedOn">event:basedOn</a> <span class="var">?weightMeasurement</span>, <span class="var">?lengthMeasurement</span>]}.
+
+
+<span class="comment"># CALCULATION OF AN ADULT BODY MASS INDEX STARTING FROM BODY LENGTH AND WEIGHT MEASUREMENTS HAVING A DATE WITHOUT TIME:</span>
+<span class="comment"># Note: Body weight and length measurements are each placed in a period with margin of 1 day with epsilon subtracted from the end date time.</span>
+<span class="comment"># This is because the time of the measurement is unknown.</span>
+
+{	<span class="comment"># GETTING DATA</span>
+	<span class="var">?adult</span> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/human.html#weighs">human:weighs</a> <span class="var">?weightMeasurement</span>. <span class="comment"># a human:BiologicalAdult</span>
+	<span class="var">?weightMeasurement</span>
+		<a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#hasUnit">quant:hasUnit</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/units.html#kilogram">units:kilogram</a>;
+		<a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#hasValue">quant:hasValue</a> <span class="var">?weightValue</span>;
+		<a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/time.html#hasObtainingPeriodMargin">time:hasObtainingPeriodMargin</a> (<span class="var">?weightPeriodBeginning</span> <span class="var">?weightPeriodEnd</span>).
+	[] <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/log-rules.html#optional">e:optional</a> {
+		<span class="var">?adult</span> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/human.html#hasLength">human:hasLength</a> <span class="var">?lengthMeasurement</span>.
+		<span class="var">?lengthMeasurement</span>
+			<a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#hasUnit">quant:hasUnit</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/units.html#meter">units:meter</a>;
+			<a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#hasValue">quant:hasValue</a> <span class="var">?lengthValue</span>;
+			<a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/time.html#hasObtainingPeriodMargin">time:hasObtainingPeriodMargin</a> (<span class="var">?lengthPeriodBeginning</span> <span class="var">?lengthPeriodEnd</span>)}, {
+		<span class="var">?adult</span> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/human.html#hasLength">human:hasLength</a> <span class="var">?lengthMeasurement</span>.
+		<span class="var">?lengthMeasurement</span>
+			<a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/time.html#hasObtainingPeriodMargin">time:hasObtainingPeriodMargin</a> (<span class="var">?lengthPeriodBeginning</span> <span class="var">?lengthPeriodEnd</span>);
+			<a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#convertedTo">quant:convertedTo</a> [
+				<a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#hasUnit">quant:hasUnit</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/units.html#meter">units:meter</a>;
+				<a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#hasValue">quant:hasValue</a> <span class="var">?lengthValue</span>]}.
+
+	<span class="comment"># SETTING MAXIMUM TIME DIFFERENCE BETWEEN WEIGHT AND LENGTH MEASUREMENTS:</span>
+	<span class="comment"># Note: the smaller set time difference, the smaller chance to get data</span>
+	(<span class="var">?weightPeriodBeginning</span> <span class="var">?lengthPeriodEnd</span>) <a class="qname" href="http://www.w3.org/2000/10/swap/math">math:difference</a> <span class="var">?dif1</span>.
+	<span class="var">?dif1</span> <a class="qname" href="http://www.w3.org/2000/10/swap/math">math:notGreaterThan</a> <span class="literal">&quot;P0M&quot;</span>^^<a class="qname" href="http://www.w3.org/2001/XMLSchema">xsd:duration</a>.
+	(<span class="var">?lengthPeriodBeginning</span> <span class="var">?weightPeriodEnd</span>) <a class="qname" href="http://www.w3.org/2000/10/swap/math">math:difference</a> <span class="var">?dif2</span>.
+	<span class="var">?dif2</span> <a class="qname" href="http://www.w3.org/2000/10/swap/math">math:notGreaterThan</a> <span class="literal">&quot;P0M&quot;</span>^^<a class="qname" href="http://www.w3.org/2001/XMLSchema">xsd:duration</a>.
+	
+	<span class="comment"># CALCULATING LATEST DATE TIME OF AN EXAMINATION:</span>
+	(<span class="var">?weightPeriodEnd</span> <span class="var">?lengthPeriodEnd</span>) <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/log-rules.html#max">e:max</a> <span class="var">?maxDateTimeNumeral</span>.
+	(<span class="var">?lexical</span> <a class="qname" href="http://www.w3.org/2001/XMLSchema">xsd:dateTime</a>) <a class="qname" href="http://www.w3.org/2000/10/swap/log">log:dtlit</a> <span class="var">?maxDateTimeNumeral</span>, <span class="var">?dateTime</span>.
+	
+	<span class="comment"># THIS DATE TIME IS USED TO CALCULATE AGE AND ALSO ASSIGNED TO FINAL RESULT</span>
+	
+	<span class="comment"># TRIGGERING BACKWARD RULE CALCULATING AGE AT MOMENT OF LATEST EXAMINATION:</span>
+	(<span class="var">?adult</span> <span class="var">?dateTime</span>) <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/time.html#calculatingAge">time:calculatingAge</a> <span class="var">?ageInYears</span>.
+	
+	<span class="comment"># CHECK ADULT AGE:</span>
+	<span class="var">?ageInYears</span> <a class="qname" href="http://www.w3.org/2000/10/swap/math">math:notLessThan</a> <span class="literal">15</span>.
+	
+	<span class="comment"># CALCULATION OF AN ADULT BODY MASS INDEX:</span>
+	(<span class="var">?weightValue</span> (<span class="var">?lengthValue</span> <span class="literal">2</span>)!<a class="qname" href="http://www.w3.org/2000/10/swap/math">math:exponentiation</a>) <a class="qname" href="http://www.w3.org/2000/10/swap/math">math:quotient</a> <span class="var">?bodyMassIndexValue</span>}
+=&gt;
+{	<span class="var">?adult</span>
+		<a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/human.html#hasBodyMassIndex">human:hasBodyMassIndex</a> [
+			<a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#hasUnit">quant:hasUnit</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/units.html#kilogramPerMeterSquare">units:kilogramPerMeterSquare</a>;
+			<a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#hasValue">quant:hasValue</a> <span class="var">?bodyMassIndexValue</span>;
+			<a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/time.html#hasDateTime">time:hasDateTime</a> <span class="var">?dateTime</span>;
+			<a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/event.html#basedOn">event:basedOn</a> <span class="var">?weightMeasurement</span>, <span class="var">?lengthMeasurement</span>]}.
+
+
+<span class="comment"># CALCULATION OF AN ADULT BODY MASS INDEX INCLUDING DECLARATION OF A BODY:</span>
+
+{	<span class="var">?adult</span> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/physicalResource.html#hasComplexity">physical:hasComplexity</a> <span class="var">?body</span>. <span class="comment"># human:BiologicalAdult</span>
+	<span class="var">?body</span>
+		<span class="keyword">a</span> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/humanBody.html#Body">humanbody:Body</a>;
+		<a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/humanBody.html#hasLength">humanbody:hasLength</a> <span class="var">?length</span>;
+		<a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/humanBody.html#hasWeight">humanbody:hasWeight</a> <span class="var">?weight</span>.
+	<span class="var">?length</span>
+		<span class="keyword">a</span> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/humanBody.html#Length">humanbody:Length</a>;
+		<a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#hasMeasurement">quant:hasMeasurement</a> <span class="var">?lengthMeasurement</span>.
+	<span class="var">?lengthMeasurement</span>
+		<a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#hasUnit">quant:hasUnit</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/units.html#meter">units:meter</a>;
+		<a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#hasValue">quant:hasValue</a> <span class="var">?lengthValue</span>;
+		<a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/time.html#hasDateTime">time:hasDateTime</a> <span class="var">?lengthDateTime</span>.
+	<span class="var">?weight</span>
+		<span class="keyword">a</span> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/humanBody.html#Weight">humanbody:Weight</a>;
+		<a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#hasMeasurement">quant:hasMeasurement</a> <span class="var">?weightMeasurement</span>.
+	<span class="var">?weightMeasurement</span>
+		<a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#hasUnit">quant:hasUnit</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/units.html#kilogram">units:kilogram</a>;
+		<a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#hasValue">quant:hasValue</a> <span class="var">?weightValue</span>;
+		<a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/time.html#hasDateTime">time:hasDateTime</a> <span class="var">?weightDateTime</span>.
+	(<span class="var">?weightDateTime</span> <span class="var">?lengthDateTime</span>) <a class="qname" href="http://www.w3.org/2000/10/swap/math">math:difference</a> <span class="var">?dif</span>.
+	<span class="var">?dif</span> <a class="qname" href="http://www.w3.org/2000/10/swap/math">math:notGreaterThan</a> <span class="literal">&quot;P10Y&quot;</span>^^<a class="qname" href="http://www.w3.org/2001/XMLSchema">xsd:duration</a>; <a class="qname" href="http://www.w3.org/2000/10/swap/math">math:notLessThan</a> <span class="literal">&quot;-P7D&quot;</span>^^<a class="qname" href="http://www.w3.org/2001/XMLSchema">xsd:duration</a>.
+	(<span class="var">?weightDateTime</span> <span class="var">?lengthDateTime</span>) <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/log-rules.html#max">e:max</a> <span class="var">?maxDateTimeNumeral</span>.
+	(<span class="var">?lexical</span> <a class="qname" href="http://www.w3.org/2001/XMLSchema">xsd:dateTime</a>) <a class="qname" href="http://www.w3.org/2000/10/swap/log">log:dtlit</a> <span class="var">?maxDateTimeNumeral</span>, <span class="var">?dateTime</span>.
+	(<span class="var">?adult</span> <span class="var">?dateTime</span>) <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/time.html#calculatingAge">time:calculatingAge</a> <span class="var">?ageInYears</span>.
+	<span class="var">?ageInYears</span> <a class="qname" href="http://www.w3.org/2000/10/swap/math">math:notLessThan</a> <span class="literal">15</span>.
+	(<span class="var">?lengthValue</span> <span class="literal">2</span>) <a class="qname" href="http://www.w3.org/2000/10/swap/math">math:exponentiation</a> <span class="var">?lengthValue2</span>.
+	(<span class="var">?weightValue</span> <span class="var">?lengthValue2</span>) <a class="qname" href="http://www.w3.org/2000/10/swap/math">math:quotient</a> <span class="var">?bodyMassIndexValue</span>}
+=&gt;
+{	<span class="var">?adult</span>
+		<a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/human.html#hasBodyMassIndex">human:hasBodyMassIndex</a> [
+			<a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#hasUnit">quant:hasUnit</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/units.html#kilogramPerMeterSquare">units:kilogramPerMeterSquare</a>;
+			<a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#hasValue">quant:hasValue</a> <span class="var">?bodyMassIndexValue</span>;
+			<a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/time.html#hasDateTime">time:hasDateTime</a> <span class="var">?dateTime</span>;
+			<a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/event.html#basedOn">event:basedOn</a> <span class="var">?weightMeasurement</span>, <span class="var">?lengthMeasurement</span>]}.		</pre>
+	</div>
+	</body>
+</html>

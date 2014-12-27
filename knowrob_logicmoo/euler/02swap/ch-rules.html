@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>
+		<meta name="generator" content="AGFA HealthCare N3 to HTML convertor"/>
+		<link rel="alternate" type="text/n3" title="RDF Representation" href="http://eulersharp.sourceforge.net/2003/03swap/ch-rules"/>
+		<title>ch-rules</title>
+		<style type="text/css">
+			a[href]:link { text-decoration:none; }
+			a[href]:visited { text-decoration:none; }
+			a[href]:active { text-decoration:underline; }
+			a:hover { background:#ffa; }
+			.keyword { font-weight: bold; }
+			.literal { color: blue }
+			.uri { color: darkblue }
+			.qname { color: black }
+			.var { color: gray }
+			.comment { font-style:italic; color: darkgreen }
+		</style>
+	</head>
+	<body>
+	<div>
+		<pre>
+<span class="comment"># $Id: ch-rules.n3 1295 2007-05-11 16:52:51Z josd $</span>
+<span class="comment">#</span>
+<span class="comment"># see http://www.informatik.uni-ulm.de/pm/fileadmin/pm/home/fruehwirth/drafts/jlp-chr1.ps.gz</span>
+<span class="comment">#</span>
+<span class="comment"># PxButton | check with cwm | bash .cwm ch-rules.n3</span>
+
+<span class="keyword">@prefix</span> log: <a class="uri" href="http://www.w3.org/2000/10/swap/log">&lt;http://www.w3.org/2000/10/swap/log#&gt;</a>.
+<span class="keyword">@prefix</span> math: <a class="uri" href="http://www.w3.org/2000/10/swap/math">&lt;http://www.w3.org/2000/10/swap/math#&gt;</a>.
+<span class="keyword">@prefix</span> owl: <a class="uri" href="http://www.w3.org/2002/07/owl">&lt;http://www.w3.org/2002/07/owl#&gt;</a>.
+<span class="keyword">@prefix</span> xsd: <a class="uri" href="http://www.w3.org/2001/XMLSchema">&lt;http://www.w3.org/2001/XMLSchema#&gt;</a>.
+<span class="keyword">@prefix</span> rdfs: <a class="uri" href="http://www.w3.org/2000/01/rdf-schema">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</a>.
+<span class="keyword">@prefix</span> rdf: <a class="uri" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</a>.
+<span class="keyword">@prefix</span> : <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/ch-rules#&gt;</a>.
+
+
+<span class="comment">### Constraint Handling Rules</span>
+<span class="comment">#</span>
+<span class="comment"># CHR are essentially a committed-choice language consisting of guarded</span>
+<span class="comment"># rules that rewrite constraints into simpler ones until they are solved.</span>
+<span class="comment"># CHR define both simplification of and propagation over user constraints.</span>
+
+<a class="qname" name="simplification">:simplification</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">rdf:Property</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://www.w3.org/2000/10/swap/log">log:Formula</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://www.w3.org/2000/10/swap/log">log:Formula</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;simplification replaces constraints by simpler constraints while preserving logical equivalence&quot;</span>.
+
+<a class="qname" name="propagation">:propagation</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">rdf:Property</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://www.w3.org/2000/10/swap/log">log:Formula</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://www.w3.org/2000/10/swap/log">log:Formula</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;propagation adds new constraints which are logically redundant but may cause further simplification&quot;</span>.
+
+<a class="qname" name="commit">:commit</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">rdf:Property</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://www.w3.org/2000/10/swap/log">log:Formula</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://www.w3.org/2000/10/swap/log">log:Formula</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;the LHS builtin constraints are a precondition on the applicability of the rule&quot;</span>.
+
+<a class="qname" name="rewrite">:rewrite</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">rdf:Property</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://www.w3.org/2000/10/swap/log">log:Formula</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://www.w3.org/2000/10/swap/log">log:Formula</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;only rewrite RHS user constraints in a simplification rule&quot;</span>.
+		</pre>
+	</div>
+	</body>
+</html>

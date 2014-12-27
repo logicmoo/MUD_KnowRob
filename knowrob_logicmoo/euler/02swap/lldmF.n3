@@ -1,0 +1,19 @@
+# $Id: lldmC.n3,v 1.10 2005/05/03 20:20:39 amdus Exp $
+
+# PxButton | test   | bash .euler lldmD.n3 lldmP.n3 --query lldmF.n3
+# PxButton | test2  | bash .euler lldmD.n3 lldmP2.n3 --query lldmF.n3
+# PxButton | cwm    | bash .cwm lldmD.n3 lldmP.n3 --think --filter"=lldmF.n3"
+# PxButton | cwm2   | bash .cwm lldmD.n3 lldmP2.n3 --think --filter"=lldmF.n3"
+
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix math: <http://www.w3.org/2000/10/swap/math#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix : <http://www.agfa.com/w3c/2002/10/medicad/op/lldmP#>.
+
+
+## can following be derived?
+
+{?X a :Measurement; a :LLDAlarm} => {?X a :LLDAlarm}.

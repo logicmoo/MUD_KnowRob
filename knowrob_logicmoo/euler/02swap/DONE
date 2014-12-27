@@ -1,0 +1,1409 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>DONE</title>
+    <link rel="stylesheet" type="text/css" href="http://www.w3.org/StyleSheets/base.css">
+    <style type="text/css">a:hover {background:#ffa;}</style>
+    <style type="text/css">img {vertical-align:text-top;}</style>
+</head>
+
+<body>
+<h1><img src="http://eulersharp.sourceforge.net/2003/03swap/eye.png" alt="EYE" height="37" width="37"/> DONE</h1><pre>
+<span id="EYE-Winter15">[<a href="https://sourceforge.net/projects/eulersharp/files/eulersharp/EYE-Winter15/">EYE-Winter15</a>]</span>
+- tested and working with SWIPL 7.1.28 kernel
+
+<span id="EYE-2014-12">[<a href="https://sourceforge.net/projects/eulersharp/files/eulersharp/EYE-2014-12/">EYE-2014-12</a>]</span>
+- do not output rules with --pass but use --pass-all instead (obs from Dörthe Arndt)
+- fixing univar and exivar issues in the output of rules
+- fixing univar issue in the derivation of rules
+- supporting backward queries like <a href="https://raw.githubusercontent.com/josd/eyebmb/master/query.n3">https://raw.githubusercontent.com/josd/eyebmb/master/query.n3</a>
+- output timestamp, output triple count, inference count, elapsed time and inferences/sec speed
+- adjusting local and global stack limits
+- fixing proof explanation in the case of --plugin &lt;n3p_resource&gt;
+- adding <a href="http://eulersharp.sourceforge.net/2003/03swap/log-rules.html#csvTuple">e:csvTuple</a> to generate CSV output with --strings (test case <a href="http://eulersharp.sourceforge.net/2007/07test/select_test">select_test</a>)
+- adding <a href="http://eulersharp.sourceforge.net/2003/03swap/prolog.html#getrand">prolog:getrand</a> and <a href="http://eulersharp.sourceforge.net/2003/03swap/prolog.html#setrand">prolog:setrand</a> builtins
+- fixing <a href="http://eulersharp.sourceforge.net/2003/03swap/log-rules.html#closure">e:closure</a> builtin (obs from Gijs Muys)
+- fixing bnode labels with minus sign (obs from Ruben Verborgh)
+- adding --no-numerals command line switch to have no numerals in output (obs from Hong Sun)
+- adding builtin_redefinition exception
+- fixing log:outputString for queries (obs from Ruben Verborgh at <a href="https://github.com/RubenVerborgh/RestoProof/blob/master/step-count.n3">https://github.com/RubenVerborgh/RestoProof/blob/master/step-count.n3</a>)
+- getting rid of wrong e:trace side effect (obs from Hong Sun)
+- fixing <a href="http://eulersharp.sourceforge.net/2003/03swap/log-rules.html#labelvars">e:labelvars</a> builtin to have distinct blank node labels (obs from Hong Sun)
+- fixing rule and query generation (obs from Hong Sun)
+- fixing partial query answers (obs from Marc Twagirumukiza)
+- adding coroutining for e:tuple builtin (obs from Hong Sun)
+- fixing func:string-join RIF DTB builtin (obs from Giovanni Mels)
+- improving query performance via generic answer/8 predicate
+- fixing partial conclusions for RESTdesc (obs from Giovanni Mels)
+- reducing memory footprint for --turtle data
+- fixing redundancy issue in r:gives of proof output
+- dropping prolog:new_variables_in_term and prolog:variables_within_term builtins
+- supporting partial conclusions for premis with e:optional (obs from Dirk Colaert)
+
+<span id="EYE-2014-09">[<a href="https://sourceforge.net/projects/eulersharp/files/eulersharp/EYE-2014-09/">EYE-2014-09</a>]</span>
+- no premis reordering for backward rules
+- improving EYE invocation script (obs from Boris De Vloed)
+- restyling --nope output of graph literals
+- using --no-distinct switch to have no distinct answers in output
+- reimplementing --pass and --pass-all using query/2 (obs from Hong Sun)
+- fixing --pass for an EYE image that contains facts
+- fixing error with --image
+- correcting log:rawType builtin for the case of log:Other
+- using uniform measurement unit [triples/sec] in --probe (obs from Kristof Depraetere)
+- adding statement counter SC for --plugin data (obs from Kristof Depraetere)
+- allowing --pass-only-new together with any other query
+- fix <a href="http://eulersharp.sourceforge.net/2003/03swap/log-rules.html#relabel">e:relabel</a> for --pass-only-new
+- removing redundant triples in the output (obs from Hong Sun)
+- reimplementing --pass-only-new command line switch (obs from Hong Sun)
+- extending --statistics command line switch to output memory and process information
+- reducing memory footprint for query answers
+- improving strela (stretch relax) for graphs with literals
+- throwing syntax error for <a href="http://svn.code.sf.net/p/eulergui/code/trunk/eulergui/test/string_error.ttl">string_error.ttl</a> (obs from Jean-Marc Vanel)
+- adding --probe command line switch to output speedtest info
+- fixing and improving graph literal unifier (obs from <a href="https://github.com/josd/eyeglass">eyeglass</a>)
+
+<span id="EYE-2014-06">[<a href="https://sourceforge.net/projects/eulersharp/files/eulersharp/EYE-2014-06/">EYE-2014-06</a>]</span>
+- fixing bnode issue for queries with a variable as conclusion (obs from Hong Sun)
+- initial SRC (stretch relax cycle) supporting <a href="http://eulersharp.sourceforge.net/2006/02swap/rgb-note.txt">RGB</a>
+- fixing BASE and @base when base uri has no path (obs from Giovanni Mels)
+- deprecate --quick-answer and use --single-answer instead
+- deprecate --think because all proof paths can not be shown in the proof
+- simplified implementation of --quick-answer
+- adding strela (stretch relax) support for N3 triples to trigger JITI (obs from <a href="https://github.com/josd/eyestrela">eyestrela</a>)
+- improved JITI thanks to <a href="https://groups.google.com/forum/#!topic/swi-prolog/7lE5er8-AuE">SWI-Prolog 6.6.6</a>
+- having additional --rule-histogram command line option which was part of --profile before
+- removing e:alias builtin
+- not reordering rules with conjunction in their conclusion
+- fixing log:implies as builtin
+- repairing the deprecated fn: builtins (obs from Jean-Marc Vanel)
+- introducing --traditional command line switch
+- correcting xsd:boolean datatype
+- simplify inconsistency detection and throw inference_fuse exception
+
+<span id="EYE-2014-03">[<a href="https://sourceforge.net/projects/eulersharp/files/eulersharp/EYE-2014-03/">EYE-2014-03</a>]</span>
+- fixing flag/1 issue for the creation of pvm images
+- assuming --nope when there is no query
+- adjusting exit code for the case of exceptions (obs from Kristof Depraetere)
+- fixing string escape issue for prolog:atom literals
+- justifying --pass and --pass-all in proof output
+- improving n3socket/1 exception handling
+- improving EYE installation scripts (obs from Boris De Vloed)
+- adding e:alias builtin
+- creating a minimal EYE file release eye.zip (obs from Kristof Depraetere)
+- correcting -- - to read command line arguments from stdin (obs from Kristof Depraetere)
+- repairing --strings (obs from Jean-Marc Vanel)
+- correcting exit status code (obs from Kristof Depraetere)
+- using -- - to read command line arguments from stdin (obs from Kristof Depraetere)
+- improving performance of --plugin thanks to Jan Wielemaker
+- fixing issues with <a href="http://eulersharp.sourceforge.net/2003/03swap/log-rules.html#relabel">e:relabel</a> builtin
+- fixing <i>--wcache uri - --plugin uri</i> to take the data from stdin
+- using static initializer in euler.ProofEngine
+- showing total elapsed walltime for #ENDS
+- not running trunk engine eam/1 when there is no query
+- correcting <a href="http://eulersharp.sourceforge.net/2007/07test/turing_proof.n3">proof for Turing completeness</a>
+- removing redundant triples for --plugin
+- fixing error in Turtle grammar (obs from Eric Prud'hommeaux)
+- improving strela/2 for better --query performance (obs from Boris De Vloed)
+- fixing backward rules and showing them in --profile output
+- improving the output of --profile
+- improving JITI performance for prfstep/8 using term_index/2
+- fixing log:uri for blank nodes (obs from Giovanni Mels)
+- make sure that --quick-answer gives at most 1 answer (obs from Giovanni Mels)
+- correct throw of base_may_not_contain_hash exception (obs from Kristof Depraetere)
+- fixing issue with <a href="http://eulersharp.sourceforge.net/2003/03swap/prolog.html#conjunction">prolog:conjunction</a>
+- adding uri DCG production for N3 parser
+- <a href="http://eulersharp.sourceforge.net/2003/03swap/prolog.html">Prolog builtins</a> according to <a href="http://www.deransart.fr/prolog/bips.html#builtins">ISO standard</a>
+- disable branch engine for definite clause KB
+- support proof (blue) without @ keywords and without bindings like in <a href="http://eulersharp.sourceforge.net/2007/07test/witchE.html">witch example</a>
+- EYE supporting <a href="http://eulersharp.sourceforge.net/2006/02swap/rgb-note.txt">RGB</a>
+
+<span id="Euler-2013-12">[Euler-2013-12]</span>
+- adding --no-bindings switch to have no bindings in proof output
+- throw base_may_not_contain_hash exception (obs from Ruben Verborgh)
+- modified list cell functor from '$cons' to '[|]'
+- fixing log:semantics for issue with blank nodes
+
+<span id="Euler-2013-11">[Euler-2013-11]</span>
+- fixing escape_unicode/2 bug and <a href="https://github.com/RubenVerborgh/EyeEarl/blob/master/eye-earl-report.js">eye-earl-report.js</a> passed 291 out of 291 tests
+- fixing critical quantified variable issue in generated rules (obs from Hong Sun)
+- improve stretch/relax mechanism strela/2 for complex answer patterns
+- fixing regular expression implementation regex/3
+- adding regex ? metacharacter support (obs from Boris De Vloed)
+- improvements to run with SWIPL 7.1.0 kernel
+- support rules where the variable premis is a univar (obs from Dörthe Arndt)
+- adding <a href="http://eulersharp.sourceforge.net/2003/03swap/log-rules.html#relabel">e:relabel</a> support to relabel subject with object in the output of the reasoning run (obs from Kristof Depraetere)
+- correcting critical univar issue in N3 to N3P compiler
+- fixing issue with Unicode surrogate pairs
+- fixing e:wwwFormEncode bug (obs from Kristof Depraetere)
+- fixing bug with --plugin - to take the data from stdin
+- using SWIPL as default kernel for Euler.jar and for eye scripts
+
+<span id="Euler-2013-10">[Euler-2013-10]</span>
+- recovering the has keyword (obs from Jean-Marc Vanel)
+- fixing bug in rule generation from OWL (obs from Jean-Marc Vanel)
+- fixing bug with duplicate @forAll and @forSome declarations
+- fixing issues with @forAll and @forSome declaration and scope (obs from Dörthe Arndt)
+- fixing parser for --turtle switch
+- improving networking time for --swipl (obs from Sajjad Hussain)
+- reducing --think combinatorial complexity
+- fixing bug with log:implies (obs from Dörthe Arndt)
+- dropping cmod option for N3 to N3P compiler
+- fixing exception in log:implies (obs from Ruben Verborgh)
+- fixing bug with @forAll (obs from Dörthe Arndt)
+- implementing --think to generate all proof paths for branch engine eam/3
+- fixing issue with --think together with --nope
+- using --think to generate all proof paths (obs from Simon Mayer)
+- adding <a href="http://www.w3.org/2000/10/swap/doc/CwmBuiltins">log:rawType</a> builtin
+
+<span id="Euler-2013-09">[Euler-2013-09]</span>
+- adding e:graphCopy builtin to make a grounded copy of the subject graph
+- updated pointer in eye --license (obs from Boris De Vloed)
+- perfect run of swap wet experiment and paws approach with <a href="http://eulersharp.sourceforge.net/2007/07test/swet_cwm_test">swet_cwm_test</a> thanks to W3C Cwm
+- adding <a href="http://eulersharp.sourceforge.net/2003/03swap/skos-mapping-validation-rules">skos-mapping-validation-rules</a> thanks to Hong Sun
+- fixing critical bug in log:includes (obs from Ruben Verborgh)
+- adding <a href="http://eulersharp.sourceforge.net/2007/07test/de_test">disjunction elimination test case</a> using negation predicates
+- improving graphlit networking performance
+
+<span id="Euler-2013-08">[Euler-2013-08]</span>
+- tested with development SWIPL 6.5.2 kernel
+- improving exception handling for java -jar Euler.jar --no-install (obs from Giovanni Mels)
+- adding --turtle switch and now eye --swipl <a href="https://raw.github.com/RubenVerborgh/EyeEarl/earl/earl-report.ttl">passed 291 out of 291 tests</a>
+- adding big decimal support (obs from <a href="http://www.w3.org/2013/TurtleTests/">Tests for Turtle</a>)
+- correcting log:semantics and log:includes
+- moving from varpred/3 to exopred/3 to support <a href="http://www.w3.org/TR/turtle/#literals">RDF literals</a> and <a href="http://www.w3.org/TeamSubmission/n3/#Quoting">N3 formulae</a> in predicate position
+- correcting n3socket permission error
+- simplify wget exception handling (obs from Ruben Verborgh)
+
+<span id="Euler-2013-07">[Euler-2013-07]</span>
+- keeping track of scope value in multiple N3 P-code files
+- fixing unicode issue with log:semantics (obs from Ruben Verborgh)
+- setting scope value in N3 P-code files
+- tested with stable SWIPL 6.4.1 kernel
+- implementing term_expansion/2 for N3 P-code files
+- adding multifile/1 directives in N3 P-code files
+- refining <a href="http://eulersharp.sourceforge.net/2007/07test/swet-note.txt">SWAP wet experiment using graphlit reasoning</a>
+- correcting N3 parser according to <a href="http://www.w3.org/2013/TurtleTests/">Tests for Turtle</a>
+- N3 parser can now throw unexpected_dot exception and is more strict for declarations (obs from Kristof Depraetere)
+- make the N3 parser more robust for illegal tokens (obs from Ruben Verborgh)
+- adding --debug-cnt command line switch to output debug info about counters
+- reducing memory footprint thanks to Mustafa Yuksel
+- fixing --ances command line switch (obs from Sajjad Hussain)
+- recovering the --step &lt;count&gt; command line switch (obs from Sajjad Hussain)
+- fixing stack limits for SWIPL (obs from Hong Sun)
+- correcting xsd:decimal and xsd:double typed literals starting with a dot (obs from Kristof Depraetere)
+
+<span id="Euler-2013-06">[Euler-2013-06]</span>
+- fixing issue with N3P roundtripping
+- tested with SWIPL 6.3.18 and fixing output format of reasoning time
+- setting utf8 encoding for --plugin (obs from Hong Sun)
+- improving varpred/3 implementation
+- improving performance of log:dtlit
+- correct blank node labeling in lemma generator
+- fixing backward rule instrumentation
+- finetune N3 P-code with prfstep/6
+- make sure when graph literals can be sorted
+- fixing rules with variable graph literal conclusion
+- correcting lemma generator to show the original direction of rules
+- fixing lemma checker issue with variables in backward rules
+- deprecating e:F and e:T as classes as they are just identifiers for boolean false and boolean true
+- correcting parser in case of <a href="http://www.w3.org/TR/turtle/#abbrev">Abbreviating common datatypes</a> (obs from Pieterjan De Potter)
+
+<span id="Euler-2013-05">[Euler-2013-05]</span>
+- correcting the bindings in the lemmas for the case of disjunctive conclusions
+- correcting the bindings in the lemmas for the case of variable predicates
+- make cwm proofchecker happy with <a href="http://eulersharp.sourceforge.net/2007/07test/resto-proof.n3">resto-proof.n3</a> (obs from Ruben Verborgh)
+- improving lemma generation for query answers (obs from Ruben Verborgh)
+- adding string:replace builtin (contrib by Jean-Marc Vanel)
+- support lemmas with conjunction in r:gives
+- correcting problem with mixing [] blocks and rdf:List (obs from Jean-Marc Vanel)
+- extractions are now lemmas (obs from Ruben Verborgh)
+- can now point to a lemma
+- support --plugin - to take the data from stdin
+- correcting string:concatenation builtin (obs from Jean-Marc Vanel)
+- fix round trip issues with N3 P-code
+- move from PCL code to N3 P-code
+- adjust calculation of networking time
+- improve lemmaware networking speed for SWIPL
+
+<span id="Euler-2013-04">[Euler-2013-04]</span>
+- using e:gives in e:possibleModel and in e:falseModel explanations
+- supporting the dot inside names plus PERCENT and PN_LOCAL_ESC in local names (obs from <a href="http://www.w3.org/TR/turtle/#sec-grammar-grammar">Turtle W3C CR</a>)
+- relaxing base, keywords and prefix declarations such that the ending dot is optional
+- correcting base and prefix declarations occurring in nested graphs (obs from Giovanni Mels)
+- improving lemmaware performance for graphs with graph literals
+- correcting output when answer is a conjunction
+- support - as name for stdin input data
+- correcting statement counter SC for log:semantics
+- making integer, decimal and double values shorthand (obs from <a href="http://www.w3.org/TR/turtle/#abbrev">Turtle W3C CR</a>)
+- speeding up lemmata reasoning thanks to optimized getvars/2
+- making language tags case insensitive (obs from Hong Sun)
+
+<span id="Euler-2013-03">[Euler-2013-03]</span>
+- updated <a href="http://eulersharp.sourceforge.net/INSTALL">EYE installation guide</a>
+- handling SWIPL startup ERROR message under Windows Command Prompt
+- adding createProofEngine and executeProofEngine to <a href="http://eulersharp.sourceforge.net/2004/01swap/docs/java/javadoc/euler/ProofEngine.html">EYE Java API</a> (obs from Jean-Marc Vanel)
+- fixing euler.ProofEngine to create and use eye.pvm for SWIPL (obs from Boris De Vloed)
+- fixing --wcache for relative uris (obs from Ruben Verborgh)
+- fixing --strings for log:outputString in a query (obs from Olivier Morère)
+- improve euler.ProofEngine to create and use eye.pvm for SWIPL plus update eye and eye.cmd scripts
+- the #ENDS time is now the sum of starting, networking and reasoning cputime and is expressed in seconds
+- increase EYE global memory limit (obs from Boris De Vloed)
+- fixing --image &lt;image&gt; for MONADIC test cases
+
+<span id="Euler-2013-02">[Euler-2013-02]</span>
+- adding experimental --pvm &lt;spec&gt; option to output human readable PVM code
+- fixing list:first and list:rest for lists described via rdf:first and rdf:rest
+- correcting e:label builtin (obs from Jean-Marc Vanel)
+- adding <a href="http://eulersharp.sourceforge.net/2003/03swap/log-rules.html#tripleList">e:tripleList</a> builtin used for triple/list transformation
+- extending log:dtlit builtin for numeral object (obs from Jean-Marc Vanel)
+- adding <a href="http://eulersharp.sourceforge.net/2003/03swap/log-rules.html#labelvars">e:labelvars</a> builtin to ground the subject (obs from Jean-Marc Vanel)
+- improving performance for redundant lemmas (obs from SALUS EU FP7)
+- adding SPARQL style BASE and PREFIX directives (obs from <a href="http://www.w3.org/TR/turtle/">Turtle W3C CR</a>)
+- quoted literals with no datatype IRI and no language tag have datatype xsd:string (obs from <a href="http://www.w3.org/TR/turtle/">Turtle W3C CR</a>)
+- extending quoted literals (obs from <a href="http://www.w3.org/TR/turtle/">Turtle W3C CR</a>)
+- relaxing type and lang check of http://www.w3.org/2000/10/swap/string builtins (obs from Andrae Muys)
+- fixing --image &lt;image&gt; while testing sorted conclusion
+- switching from yasam/1 and yasam/3 to eam/1 and eam/3
+- deprecate --yabc &lt;image&gt; and use --image &lt;image&gt; to output <a href="http://eulersharp.sourceforge.net/2006/02swap/eye-note.txt">PVM code</a>
+- 30 percent speed increase for EYE using SWIPL as YAP
+
+<span id="Euler-2013-01">[Euler-2013-01]</span>
+- improving --yabc &lt;image&gt; option so that image has full capability of eye
+- adding log:notEqualTo and log:notIncludes unit tests in <a href="http://eulersharp.sourceforge.net/2007/07test/biP.n3">biP.n3</a>
+- adding --license command line switch to show license info
+- improving log:dtlit to accept numerals as lexical value (obs from Hong Sun)
+- extending --debug command line switch
+- correcting log:includes and log:semantics builtins
+- improving graph literal unification
+- EYE now supports N3 set syntax ($ $)
+- improving exception handling for n3socket/1
+- Turing completeness test case <a href="http://eulersharp.sourceforge.net/2007/07test/turing_test">http://eulersharp.sourceforge.net/2007/07test/turing_test</a>
+- removing redundant answers for conjunctive queries (obs from Hong Sun)
+
+<span id="Euler-2012-12">[Euler-2012-12]</span>
+- N3 extensive (Next) experiment <a href="http://eulersharp.sourceforge.net/2007/07test/swet_test">http://eulersharp.sourceforge.net/2007/07test/swet_test</a>
+- implementing eye --profile for --swipl
+- all tests passed with SWI-Prolog 6.3.7 and 6.2.5 kernels
+- aligning e:reason with log:conclusion
+- correcting e:optional to backtrack properly (obs from Mustafa Yuksel)
+- experimental implementation of log:conclusion
+
+<span id="Euler-2012-11">[Euler-2012-11]</span>
+- extending e:length for graph subjects
+- fixing user_output utf8 encoding
+- finetuning the use of triple/3
+- fixing e:max and e:min builtins (obs from Boris De Vloed)
+- supporting --query=&lt;n3_resource&gt; command line option
+- extending math:memberCount for graph subjects (obs from Cwm)
+- improving regular expression builtins
+- improving error message for wcached resources (obs from Kristof Depraetere)
+- correcting e:optional to work fine within e:findall (obs from Giovanni Mels)
+- extending regular expression builtins (obs from Boris De Vloed)
+- fixing parser for numerals (obs from Boris De Vloed)
+- critical correction of unify/2 for graph literals
+- initial <a href="http://eulersharp.sourceforge.net/2007/07test/proofcomputation_test">proof computation test case</a>
+- fixing resolve_uri/3 so that it can cope with ./ and ../
+
+<span id="Euler-2012-10">[Euler-2012-10]</span>
+- using proofs with lemmas for proof computation
+- fixing exec/2 bug (obs from Giovanni Mels)
+- updating <a href="http://eulersharp.sourceforge.net/2003/03swap/skos-rules.html">skos-rules</a> (obs from Giovanni Mels)
+- adding <a href="http://eulersharp.sourceforge.net/2003/03swap/log-rules.html#findall">e:findall</a> with difference list
+- critical bug correction in e:label builtin (obs from Suat Gönül)
+- fixing infinite loop in the output of RDF lists with variable rest
+- correcting yasam so that the necessary and sufficient triples are asserted
+- fixing graph literals in proof output
+- using prolog:univ to stretch fcm:pi in <a href="http://eulersharp.sourceforge.net/2006/02swap/fcm-plugin.n3">FCM plugin</a>
+- fix issue with french accent in input file name (obs from Jean-Marc Vanel)
+- implement and test EYE proofs with lemmas
+- fix invalid_document error detection
+
+<span id="Euler-2012-09">[Euler-2012-09]</span>
+- using stretch/relax mechanism for some, allv and avar
+- adding --yap option in euler.ProofEngine
+- fixing xsd:dateTime and xsd:date constructors (obs from Boris De Vloed)
+- fixing exec/2 (obs from Kristof Depraetere)
+- improving memory footprint of RDF literals and is stretch/relax of lexical value in literal/2
+- implementing prolog:new_variables_in_term for SWIPL
+- changing rule order now gives same results (obs from Giovanni Mels)
+- fix --no-install bug (obs from Kristof Depraetere)
+- stretch e:tuple to have the benefit of SWIPL just in time indexing
+- stretch/relax mechanism strela/2 and now SWIPL just in time indexing is just fine for all current test cases
+
+<span id="Euler-2012-08">[Euler-2012-08]</span>
+- improving SWIPL memory footprint of N3 to PCL compiler
+- retry wget in the case of 5xx Server Error
+- fixing e:graphDifference, e:graphIntersection, e:graphList and e:disjunction
+- parteval test case is now <a href="http://eulersharp.sourceforge.net/2007/07test/specialisation_test">specialisation test case</a>
+- improving declaration of dynamic predicates
+- fixing crash in inconsistency detection (obs from Ruset Zeno)
+- correcting absolute_uri/2 for local file names
+- fixing --yabc &lt;file&gt; switch for SWIPL
+
+<span id="Euler-2012-07">[Euler-2012-07]</span>
+- improving PCL code generation for SWIPL
+- fix e:reason for SWIPL on Windows
+- fix bug for local file names with spaces (obs from Boris De Vloed)
+- adding e:reason heavy builtin to invoke EYE
+- all tests succeed with SWI-Prolog 6.1.9 for Windows 64-bit edition
+- correcting e:notLabel, log:notEqualTo, log:notIncludes, string:notEqualIgnoringCase and string:notMatches (obs from Boris De Vloed)
+- fixing bug with variable graphs
+- fixing --wcache for urn's (obs from Kristof Depraetere)
+- correcting the implementation of N3 @base (obs from Ruben Verborgh)
+- adding <a href="http://eulersharp.sourceforge.net/2007/07test/parteval_test">parteval test case</a>
+
+<span id="Euler-2012-06">[Euler-2012-06]</span>
+- simplifying --quick-possible switch
+- fixing incompleteness issue of branch engine
+- having explicit empty possible model or empty counter model
+- correcting the entailment from all possible models (obs from <a href="http://eulersharp.sourceforge.net/2007/07test/scE.n3">splitting cyclic test case</a>)
+- making str:concatenation more tolerant in what it accepts (obs from Sajjad Hussain)
+- updated stable YAP 6.2.3 to fix bug in testing for groundness of very deep terms
+- supporting Turtle DECIMAL and DOUBLE
+- updated stable YAP 6.2.3 to fix saved state issues
+- fixing the P histogram output of --profile
+- fixing query with backward rule as conclusion
+- adding --tmp-file &lt;file&gt; switch for temporary file used by N3 Socket
+
+<span id="Euler-2012-05">[Euler-2012-05]</span>
+- adding --yabc &lt;file&gt; switch to output YABC code
+- fixing exception handling to close file before delete file
+- adding testcases for e: builtins in <a href="http://eulersharp.sourceforge.net/2007/07test/biP.n3">biP.n3</a>
+- introducing hyperstep predicate hstep/2
+- adding make_dynamic/1 to further improve memory footprint
+- improving varpred/3 to work around RESOURCE ERROR- not enough code space (obs from Gokce Banu Laleci Erturkmen)
+- repairing --no-blank switch (obs from Sajjad Hussain)
+- taking statistics out of --profile and show statistics using new switch --statistics
+- making prolog:if builtin as soft_cut/3
+- fixing exception with log:dtlit (obs from Hong Sun)
+
+<span id="Euler-2012-04">[Euler-2012-04]</span>
+- supporting variables_within_term/3 for SWI-Prolog
+- stricter creation of existentials in conclusion (obs from Boris De Vloed)
+- correcting issue with existentials in constructive dilemma test case eye <a href="http://eulersharp.sourceforge.net/2007/07test/cd.n3">http://eulersharp.sourceforge.net/2007/07test/cd.n3</a>
+- correcting identity of prolog: builtins
+- all RIF builtins are now in euler.yap
+- correcting RIF builtins func:intersect and func:except (obs from Hong Sun)
+- rules with a conclusion of the form {answer}^e:construct are treated as N3 queries
+- fixing <a href="http://eulersharp.sourceforge.net/2003/03swap/prolog.html#disjunction">prolog:disjunction</a> builtin
+- rules with equal premise and conclusion are no longer automatically treated as N3 queries
+- adding P histogram to --profile which tells how many times each rule premis is proven
+- improving exception handling of exec/2 (obs from Kristof Depraetere)
+- using EYE_HOME environment variable in eye install and command (obs from Kristof Depraetere)
+- using single within_scope/1
+
+<span id="Euler-2012-03">[Euler-2012-03]</span>
+- adding e:call to support scoped prolog: builtins
+- dropping prolog:not and using prolog:not_provable instead
+- repairing e:findall for span 0 (obs from Sajjad Hussain)
+- dropping trunk theory box for e:findall and e:optional
+- treating rule with equal premise and conclusion as N3 query
+- simplify proof of e:biconditional
+- dropping logical update semantics for e:findall and e:optional
+- repairing e:falseModel explanation (obs from Sajjad Hussain)
+- better cleaning up of temporary files in temporary directory
+- adding --no-install switch to skip EYE installation
+- improving n3_pcl compiler and now much better networking time
+- correcting bug with eye --nope --query <a href="http://notes.restdesc.org/2012/tmp/empty_query1.n3">http://notes.restdesc.org/2012/tmp/empty_query1.n3</a> (obs from Ruben Verborgh)
+- improving EYE exception handling
+- adding <a href="http://eulersharp.sourceforge.net/2003/03swap/prolog.html#integer_power">prolog:integer_power</a> builtin
+- improving MONADIC reasoning performance
+
+<span id="Euler-2012-02">[Euler-2012-02]</span>
+- create temporary files in temporary directory (obs from Giovanni Mels)
+- workaround for issue with unpacking of engine (obs from Giovanni Mels)
+- throwing invalid_prolog_builtin exception
+- initial <a href="http://eulersharp.sourceforge.net/2006/02swap/fcm-plugin.n3">FCM plugin</a> fully in N3
+- initial <a href="http://eulersharp.sourceforge.net/2006/02swap/nbbn-plugin.n3">Naive Bayes Belief Network plugin</a> fully in N3
+- using stable YAP 6.2.3 and stable SWI-Prolog 6.0.0
+- adding --header="Cache-Control: max-age=3600" for wget (obs from Giovanni Mels)
+- improving proof instrumentation for backward rules
+- improving varpred and backward rule performance (obs from Kristof Depraetere)
+- fixing <a href="http://www.w3.org/2000/10/swap/doc/CwmBuiltins">log:semantics</a> statement counter SC
+- fixing prolog_sym/3 for <a href="http://eulersharp.sourceforge.net/2003/03swap/prolog.html">prolog: builtins</a>
+
+<span id="Euler-2012-01">[Euler-2012-01]</span>
+- correcting coroutining for log:dtlit (obs from Giovanni Mels)
+- optimizing trunk engine so that TP (trunk premise counter) is up to 30 percent better (obs from Kristof Depraetere)
+- implementing coroutining for log:dtlit (obs from Hans Cools)
+- adding statistics/0 for --profile
+- adding statement counter SC (obs from Kristof Depraetere)
+- the N3 to PCL compiler is now doing a better job to remove duplicates (obs from Kristof Depraetere)
+- extending xsd:dateTime, xsd:date and xsd:time constructors to support timezone and correcting rif-plugin
+- improving varpred/3 to be on par with prolog:retract
+- fixing resolve_uri/3 while testing RESTdesc test cases
+- correcting and simplifying xsd:dateTime and xsd:date constructors
+- workaround for issue with unpacking of engine (obs from Giovanni Mels)
+- changing xsd:date constructor to involve timezone and correcting <a href="http://eulersharp.sourceforge.net/2006/02swap/rif-plugin.yap">rif-plugin</a>
+- fixing critical bug for log:outputString and --strings
+- using set_prolog_flag(float_format,'%.16g') to maintain precision (obs from Hans Cools)
+- throwing empty_quickvar_name exception
+- fixing parser for rdf lists
+- correcting the output for prolog:univ
+- adding <a href="http://eulersharp.sourceforge.net/2003/03swap/log-rules.html#Numeral">e:Numeral</a> class and <a href="http://eulersharp.sourceforge.net/2003/03swap/log-rules.html#numeral">e:numeral</a> builtin property
+- correcting the output of prolog:atom datatypes
+- improving PCL code for --quick-answer
+- fixing type_error for xsd:date (obs from Hans Cools)
+- adding text/n3 and text/turtle content types in euler.Codd (obs from Giovanni Mels)
+- improving exception handling for unresolvable_relative_uri (obs from Kristof Depraetere)
+
+<span id="Euler-2011-12">[Euler-2011-12]</span>
+- correcting networking and reasoning timing info
+- fixing issue permission_error(modify,static_procedure,true/0)
+- improving PCL code generation
+- fixing monotonicity issue
+- fixing proof instrumentation for backward rules
+- fixing read from library(url) on Windows (obs from Helen Chen)
+- fixing prolog:C builtin
+- fixing the usage of prolog: builtin functions
+- prolog:atom is now also a rdfs:Datatype
+- supporting prolog:if, prolog:if_then and prolog:if_then_else
+- fixing N3 to PCL compiler for N3plugins using prolog:when coroutining
+- extending euler.Codd to use additional HTTP request and reply headers (obs from Giovanni Mels)
+- support for some 400 <a href="http://eulersharp.sourceforge.net/2003/03swap/prolog.html">prolog: builtins</a>
+- improving log:outputString when the object is not a literal (obs from Dirk Colaert)
+- unit tests for prolog: builtins at <a href="http://eulersharp.sourceforge.net/2007/07test/biP.n3">biP.n3</a>
+- correcting e:evidentiality and introducing e:applicability (obs from Dirk Colaert)
+- initial support for N3plugins expressed as backward rules
+
+<span id="Euler-2011-11">[Euler-2011-11]</span>
+- critical change in e:sort so that duplicates are not removed (obs from Hans Cools)
+- improved exception handling in euler.Process (obs from Kristof Depraetere)
+- use --think switch to enable dynamic PCL code
+- fixing --plugin pcl_code
+- attaching the number of models to the subject of e:inductivity
+- switching from sem/1 and sem/3 to yasam/1 and yasam/3
+- some more proof tactics debug info
+- using e:tactic to support MONADIC reasoning
+- updated YAP-6.2.2 and big numbers are now indexed correctly
+- adding --no-span switch to disable span control in e:findall and e:optional
+
+[Euler-2011-10-28]
+- support logical update semantics for e:findall and e:optional
+- output warning info with --warn option
+- correcting bug with eye http.n3 (obs from Ruben Verborgh)
+- correcting proof generation for backward arrow rules
+- correcting variable binding in backward arrow rules (obs from Ruben Verborgh)
+- restore e:findall and e:optional like they were in Euler-2011-08-26
+- assert consequents of backward arrow rules (obs from Ruben Verborgh)
+
+[Euler-2011-09-30]
+- correcting that the intersection of all possible models is entailed except when e:tactic is used
+- improving parsing speed with factor 6 for large datasets
+- correcting that the intersection of all possible models is entailed except when there are counter models (obs from Ruben Verborgh)
+- removing shift_goal
+- some extra --profile output for networking time
+- simplifying YASAM and e:findall
+- correcting euler.Codd to return 404 Not Found for non existing action url (obs from Giovanni Mels)
+- correcting e:evidentiality as the ratio possibleModels/(possibleModels+counterModels+falseModels) (obs from Hong Sun)
+- correcting e:stringEscape builtin for language tagged and typed literals (obs from Boris De Vloed)
+
+[Euler-2011-08-26]
+- adding e:stringEscape builtin (obs from Boris De Vloed)
+- dropping the --step &lt;count&gt; command line option
+- improving speed and memory footprint of log:semantics and log:includes for large graphs
+- using stable YAP-6.2.2
+- the unbound subject of e:trace is now unified with an epoch timestamp
+- supporting log:outputString and --strings like in cwm
+- adding libreadline.so.5 to Euler.jar
+- adding some more error stream logging
+- the subject of e:optional is now explicitly the scope/span of the KB
+- improving log message for --wcache
+
+[Euler-2011-07-29]
+- improving YASAM via --quick-answer switch
+- position independence of option --wcache &lt;uri&gt; &lt;file&gt;
+- using improved stable YAP-6.2.1
+- fixing the output of backward arrow rules (obs from Kristof Depraetere)
+- using backward arrow rules for both forward and backward chaining (obs from Kristof Depraetere)
+- extending e:inductivity description with e:evidentiality (obs from Dirk Colaert)
+- improving exception handling for N3 to PCL compiler
+- fixing wrong answers based on backward arrow rules
+- fixing proofs based on backward arrow rules so that check.py is happy
+- adding e:epsilon to represent the difference between the float 1.0 and the first larger floating point number
+
+[Euler-2011-06-24]
+- fixing the crash of e:format (obs from Jean-Marc Vanel)
+- using backward arrow rules as a hint to do backward chaining only
+- adding --no-distinct switch to have no distinct triples asserted in KB
+- removing redundant triples (obs from Giovanni Mels)
+- refining YASAM to improve determinism
+- fixing string builtins bugs (obs from Boris De Vloed)
+
+[Euler-2011-05-27]
+- using a more fine granular copy_term to cope with large disjunctions
+- correcting e:graphList builtin
+- correcting list:first and rdf:first builtins
+- use the encoding option of open/4 (obs from Jan Wielemaker)
+- detect illegal_escape_sequence in RDF literals (obs from Kristof Depraetere)
+- various euler.yap source code improvements (obs from Paulo Moura)
+- support EYE for SWI-Prolog
+- improve xsd numeric datatape handling
+- improve determinism of EYE branch engine
+
+[Euler-2011-04-29]
+- correcting e:findall to use trunk theory box only
+- extending e:graphList builtin (obs from Ruben Verborgh)
+- adding --pcl switch to output PCL code (obs from Wannes Meert)
+- correcting the sorting of disjunctive pcl clauses to improve determinism of EYE branch engine sem/3
+- correcting list:append in the presence of rdf:first and rdf:rest (obs from Kristof Depraetere)
+- correcting e:findall infinite loop (obs from Kristof Depraetere)
+- fix bug in e:integrityConstraint object
+- adjust initial span limit from 0 to 1
+
+[Euler-2011-03-25]
+- refining temporary file naming
+- fixing utf8 in uris and qnames
+- correcting log:dtlit to strip the datatype (obs from Kristof Depraetere)
+- extending log:dtlit and fixing negative xsd:duration (obs from Hans Cools)
+- YAP OOOPS issue on Windows 7 now fixed thanks to Vitor
+- working around a YAP OOOPS via exception handling in euler.ProofEngine
+- correcting and improving exception handling in euler.Process (obs from Giovanni Mels)
+- simplifying log:implies builtin
+- correcting astep/5 to predict theories in --quick-possible mode
+- improving performance of log:includes for varpred unification (obs from Giovanni Mels)
+- produce correct qnames
+- unify xsd:boolean type
+
+[Euler-2011-02-25]
+- again with addShutdownHook needed for Windows (obs from Pieter Pauwels)
+- repairing MONADIC reasoning (obs from Pieter Pauwels)
+- correcting log:includes for varpred unification (obs from Giovanni Mels)
+- improving EYE error handling
+- output a space between the numeral in object position and the end-of-triple dot
+- <a href="https://eulergui.svn.sourceforge.net/svnroot/eulergui/trunk/eulergui/test/test-n3-literal.n3">test-n3-literal.n3</a> is now parsing fine (obs from Ruset Zeno)
+- improving euler.ProcessErr error handling
+- make the span in e:findall explicit and include span 0
+- critical correction of astep/5 (obs from Hans Cools)
+- improve trunk engine and correct TC (Trunk Conclusion) counter
+
+[Euler-2011-01-28]
+- EYE now can throw empty_false_model exception (obs from Kristof Depraetere)
+- correcting e:optional to give all solutions (obs from Giovanni Mels)
+- implementing crypto:md5 and crypto:sha in <a href="http://eulersharp.sourceforge.net/2006/02swap/crypto-plugin.yap">crypto-plugin</a>
+- the performance of remove duplicates should now be linear (obs from Pieter Pauwels)
+- remove duplicates in disjunctions
+- redesigned e:tuple builtin with improved speed and scalability (obs from Giovanni Mels)
+- more refined sorting of disjunctive pcl clauses to improve determinism of EYE branch engine sem/3
+
+[Euler-2010-12-31]
+- EYE now accepts file: URL's like CWM and FuXi (obs from Jean-Marc Vanel)
+- finding countermodels is actually also getting a speed boost
+- improving N3 parsing speed so that it now scales linearly too
+- speed boost to MONADIC reasoning: Pieter's color learning case now scales *linearly* (was quadratic)
+- taking away split/8 predicate in euler.yap
+- improving <a href="http://eulersharp.sourceforge.net/2006/02swap/fcm-plugin.yap">fcm-plugin</a> (obs from Nassim Douali)
+- improved N3 parser so that line numbers are always shown in case of ERROR
+- extra rules for fl:pi in <a href="http://eulersharp.sourceforge.net/2003/03swap/fl-rules.n3">fl-rules</a>
+
+[Euler-2010-12-03]
+- finetune the closing of Euler proof engine wrapper
+- fix --plugin exception handling
+- fix utf8 issue with Eye on Windows
+- dropping --ttl option in euler.ProofEngine
+- Eye errors are now really thrown as RuntimeException in euler.ProofEngine (obs from Giovanni Mels)
+- extended API <a href="http://eulersharp.sourceforge.net/2004/01swap/docs/java/javadoc/euler/ProofEngine.html">http://eulersharp.sourceforge.net/2004/01swap/docs/java/javadoc/euler/ProofEngine.html</a>
+- give an e:because explanation in e:falseModel for --quick-false switch
+- using resolve_slash/2 to fix Windows file names
+- critical change to have high performance euler path detection
+- no r:gives in e:falseModel for --quick-false switch
+
+[Euler-2010-11-12]
+- introduce --no-qnames to have no qnames in the output
+- repaired the output of rules (obs from Jean-Marc Vanel)
+- improved performance of log:includes
+- replace past_triples/1 with after_line/1 to support exception reporting
+- adjust --quick-possible switch to keep the position of the goal rule
+- repair bnode output
+- introduce --wcache &lt;uri&gt; &lt;file&gt; option to tell that uri is cached as file
+- correcting the output of e:disjunction
+- make sure that all @prefix declarations are in the output
+- using e:inductivity to express the ratio possibleModels/(possibleModels+counterModels)
+
+[Euler-2010-10-22]
+- e:tactic is not changing the ordering of disjunctive clauses
+- do not throw RuntimeException when --ignore-syntax-error (obs from Boris De Vloed)
+- correcting resolve_uri/3 for &lt;#&gt; uri
+- running with stable YAP 6.2.0
+- linear performance for large disjunctions (e.g. 500000 abducibles)
+- improve memory footprint for large disjunctions
+- resolving critical issue (segmentation fault) with large conjunctions and large disjunctions
+- improving e:findall performance when subject is explicit about span
+- correcting e:findall for "too many temporaries" error (obs from Hans Cools)
+- correcting e:optional to be within_span(1) (obs from Kristof Depraetere)
+- flushing stderr output
+- the intersection of all possible models is entailed except when there are counter models
+- Eye errors are now thrown as RuntimeException in euler.ProofEngine (obs from Giovanni Mels)
+- streaming to System.out is now optional in euler.ProofEngine (obs from Kristof Depraetere)
+- fix fl:pi issue on Windows (obs from Nassim Douali)
+- correction for induction of rules in that those rules really deduce triples in the r:gives
+
+[Euler-2010-10-01]
+- improving http://eulersharp.sourceforge.net/2006/02swap/fcm-plugin.yap (obs from Nassim Douali)
+- correction for induction of rules so that it is the same as abduction of log:implies triples
+- correcting the assertion and retraction of facts on the skolem split tapes
+- adding e:format builtin
+
+[Euler-2010-09-03]
+- update OWL 2 RL theories at http://eulersharp.sourceforge.net/#theories
+- adding sparqlAnalysis ontologies at http://eulersharp.sourceforge.net/#ontologies
+- deprecate --quick and use --quick-false instead
+- adding --ignore-syntax-error switch (obs from Kristof Depraetere)
+- halt proof engine when there are syntax errors (obs from Giovanni Mels)
+- addShutdownHook in ProofEngine.java plus streaming output for cli (obs from Giovanni Mels)
+- updating build.xml to get an executable jar file (obs from Kristof Depraetere)
+- better with extra switch --quick-possible instead of confusing --quick
+- the intersection of all possible models is now entailed (crucial improvement)
+- more systematic indentation for the output result
+- making str:concatenation more tolerant in what it accepts
+
+[Euler-2010-08-13]
+- using url library thanks to SWI/YAP portability
+- restore cut in unify/2 (obs from Jean-Marc Vanel)
+- using pl-tai for accurate temporal conversions thanks to SWI/YAP portability
+- improving log:equalTo and log:notEqualTo for the case of graph literals with variable predicates
+- correcting N3 tokenizer for the case of single quotes in uris (obs from Sajjad Hussain)
+- changing the implementation of free variables (obs from Boris De Vloed)
+- improving euler path detection in branch engine
+- fix utf8 issue with Eye on Windows
+- correcting euler.ProofEngine for Windows (obs from Olivier Rossel)
+- correcting bnode predicates in rule conclusions
+
+[Euler-2010-07-17]
+- supporting bnode predicates in rule conclusions
+- improving self contained Euler.jar
+- improving --ances and --no-branch
+
+[Euler-2010-07-07]
+- fully Yap based euler.ProofEngine
+- using brake/0 again in e:findall
+- using epsilon in nbbn-plugin.yap to be portable
+- testing Yap-6.0.6 with fewer -fomit-frame-pointer gcc compiler switch to avoid OOOPS on WinXP
+- critical correction for log:conjunction (obs from Hans Cools)
+- completing --no-qvars switch
+
+[Euler-2010-05-26]
+- fix the insignificance of the position of log:notEqualTo (obs from Jean-Marc Vanel)
+- generalizing --no-blank switch to --no-qvars and adding --pass-all switch
+- correcting formulae with e:disjunction
+- reducing the number of steps in the trunk engine sem/1
+- testing eye.yss
+
+[Euler-2010-04-25]
+- adding explicit set_prolog_flag(unknown,fail) (obs from Paulo Moura)
+- improving --no-blank in proof output and increasing --step default to 5000000
+- Eye is calling wget with --header="Accept: text/*" (obs from Giovanni Mels)
+- improving --quiet
+- correcting incorrect free variables against blank-nodes (obs from Sajjad Hussain)
+- correcting str:containsIgnoringCase and str:equalIgnoringCase
+- correcting list:in, list:last and list:member (obs from Jean-Marc Vanel)
+- bug fix for hyphens in quickvars (obs from Roberto Fraile)
+- making starting time close to zero using eye.yss which is obtained by yap -q -l euler.yap -g "save_program('eye.yss',main),halt"
+- adding --ances option to enable e:ancestorModel explanation
+- improving performance of e:allAncestors
+
+[Euler-2010-04-03]
+- showing cputime and walltime on stderr for starting, networking and reasoning
+- improving support for https uris
+- correcting output of free variables
+- correction in e:trace for attributed variables
+- simplified rdf:first and rdf:rest builtins
+- improving ancestor/2 predicate
+- extending e:falseModel explanation with e:assertedAncestors and e:inferredDescendents
+
+[Euler-2010-03-10]
+- eye using Yap-6.0.3
+- Euler.jar no longer has json classes and depends on a separate json.jar
+- simplified varpred unification
+- correcting eye N3 tokenizer for nested quotes
+- correcting e:distinct builtin (obs from Sajjad Hussain)
+
+[Euler-2010-02-27]
+- correcting dcg for decimal
+- correcting "is" "of" "," eye N3 parser issue
+- adding e:allAssertedAncestors and e:assertedTriple builtins
+- correcting nbbn plugin
+- resolving issue with mktime/2 (obs from Vitor Santos Costa)
+- adding e:cartesianProduct builtin
+- correcting rule derivation
+- extending e:falseModel explanation with e:maxResolveMinRemoveOrdering
+
+[Euler-2010-02-17]
+- use sem/1 trunk engine for derivation with existentials in conclusion
+- correcting nbbn plugin http://eulersharp.sourceforge.net/2006/02swap/nbbn-plugin.yap
+- starting and networking times are now msec walltime
+- extending e:falseModel explanation with e:inconsistentTriplesOrdering and e:closureInconsistentTriplesOrdering
+- sem/1 engine speed boost with --no-branch switch
+- removing duplicate triples in e:falseModel explanation
+- correcting RIF plugin issue with mktime/2
+- make sure that builtins can't be derived
+
+[Euler-2010-01-24]
+- updated ontologies and theories at http://eulersharp.sourceforge.net/
+- reset @keywords in Eye N3 to PCL compiler
+- correcting RIF plugin to cope with the fraction part of seconds
+- splitting owl-sameAs.n3 theory and having owl-sameAs-ext.n3
+- correcting argument quotation issue in Eye calling wget
+- critical @forSome and @forAll correction
+- improving proof output so that it passes W3C swap/check.py
+- correcting escape sequences in the output of literals
+
+[Euler-2009-12-18]
+- adding str:scrape and str:search builtins for Eye
+- correcting bnodes in proof output
+- correcting --query option
+- ignoring Byte Order Mark in Parser.java
+- improving determinism for sem split tape
+
+[Euler-2009-12-06]
+- correcting --pass option
+- fixing Eye4J parsing of nested formulae containing blank nodes
+- adding --step switch to Eye4J and that required a new builtin throw/1
+- simplifying N3 to PCL compiler
+
+[Euler-2009-11-21]
+- correcting math:exponentiation
+- removed --comprehension switch
+- added maximimum step count exception and default for --step is 500000
+- improved the writing of literals
+- extending and testing RIF plugin http://eulersharp.sourceforge.net/2006/02swap/rif-plugin.yap
+- split/8-left and split/8-right euler path detection
+
+[Euler-2009-10-23]
+- enhancing split/8 rule to avoid ever growing models
+- extending and testing RIF plugin http://eulersharp.sourceforge.net/2006/02swap/rif-plugin.yap
+- correcting fn: namespace to http://www.w3.org/2005/xpath-functions#
+
+[Euler-2009-10-02]
+- correcting e:trace for EyeJ
+- internal memotime/2 for Eye to improve mktime/2 performance
+- improve networking time for Eye with http://gitorious.org/yap-git/mainline/commit/218bc2e423e0d3fb5da646d5f57364968b3eb2e1
+
+[Euler-2009-08-25]
+- correcting RDF plain literal parsing and implementing initial RDF PlainLiteral Eye plugin
+- fixing bug in log:includes
+- adding Naive Bayes Belief Network plugin for Eye
+- creating Windows binary for Eye including Yap-6.0.0 and wget-1.11.4 and made with cygwin-1.7
+- initial Eye rif-plugin plus test cases at http://eulersharp.sourceforge.net/2007/07test/rifP.n3
+- application specific development of Eye plugins
+
+[Euler-2009-07-31]
+- Eye now using wget -q -O- options
+- correcting math:integerQuotient, math:remainder and math:rounded Eye builtins
+- correcting e:biconditional calculation for small numbers
+- adding euler.Eye --path &lt;yap path&gt; option
+- using maximum belief based conflict resolution in case of incomplete bayesian networks
+
+[Euler-2009-07-21]
+- throwing invalid_keyword_use error in Eye N3 parser
+- adding e:graphList builtin
+- reimplementation of Eye N3 to PCL compiler IO
+- correcting rdf:type in output
+- correcting parsing of var: qnames
+
+[Euler-2009-07-14]
+- adding --no-blank command line switch to have no blank nodes in output
+- adding eye --plugin &lt;yap_resource&gt; as Eye plugin mechanism for builtins
+- fixing various issues with the proof output of EyeJ at http://eulersharp.sourceforge.net/2006/02swap/etc02.ref
+- using rms based conflict resolution in case of incomplete bayesian networks
+- refining euler path so do not step in your own step
+- correcting fl:pi builtin
+
+[Euler-2009-07-07]
+- updated ontologies and theories at http://eulersharp.sourceforge.net/#theories
+- dropping "has" as an implicit keyword (only fixed for Eye and EyeS)
+- adding "Eye and OWL 2" page http://eulersharp.sourceforge.net/2003/03swap/eye-owl2.html
+- correcting e:allDescendents and e:falseDescendents and improving their performance
+- adjusting scope/span of fl:pi, e:allAncestors, e:allDescendents and e:biconditional builtins
+- using e:valuation instead of e:strength to express (lower upper) valuation of a formula
+
+[Euler-2009-06-29]
+- updated ontologies and theories at http://eulersharp.sourceforge.net/#theories
+- not writing qnames when there is a dot in the uri fragment identifier
+- correcting math:integerQuotient and math:remainder according to Knuth's floored division
+- fixing Eye and EyeS java wrapper
+- adding EyeJ test cases http://eulersharp.sourceforge.net/2006/02swap/etc02
+
+[Euler-2009-06-26]
+- adding --no-branch command line switch
+- value range of fl:sigma is now [0,1] and adjusted implementation of fl:pi builtin
+- improved eye proof output speed with factor 4 (average over 55 test cases)
+- correcting str:matches in eyes.pl
+- decrease memory impact during proof output
+- correcting list:append builtin so that the subject can be any list of lists
+
+[Euler-2009-06-18]
+- include the http://eulersharp.sourceforge.net/#theories resources in new file release
+- updated Testing Euler section in http://eulersharp.sourceforge.net/2006/02swap/MAKE
+- correcting divide by zero
+- correcting varpred issue in ancestor/2
+- updated ontologies and theories at http://eulersharp.sourceforge.net/#theories
+- correcting e:allAncestors and e:allDescendents builtins
+
+[Euler-2009-06-12]
+- README for Euler yap engine for SWI-Prolog (Eyes)
+- updated ontologies and theories at http://eulersharp.sourceforge.net/#theories
+- adding e:allAncestors and e:allDescendents builtins
+- correcting fl:pi implementation w.r.t. truth value intervals
+- adding test case performance chart http://eulersharp.sourceforge.net/2003/03swap/etc.html
+
+[Euler-2009-05-30]
+- correcting time measurement in euler.pl
+- improved speed of bayesian e:biconditional and fuzzy fl:pi inferencing
+- adding measure of skolem euler machine efficiency
+
+[Euler-2009-05-18]
+- improving speed for e:graphIntersection (in one case from 44 hours to 0.7 sec)
+- fixing nested bnodes i.e. when using bnodes within []
+- implementing e:consistentGives of a e:falseModel
+- adding euler.ProofEngine constructor to initialize an engine with rules and data which can be invoked with the queryProofEngine method
+- using regular sigmoid in fl:pi
+- adding ontologies agent.n3 countries.n3 document.n3 environment.n3 event.n3 foster.n3 languages.n3 unitsExtension.n3 xdsMetadata.n3
+- improving euler.Process overhead
+
+[Euler-2009-04-26]
+- running Eye with YAP version Yap-6.0.0
+- supporting log:dtlit builtin
+- improving euler.ProofEngine overall speed
+- correcting euler.Parser
+- improving euler.ProofEngine proof output
+
+[Euler-2009-03-28]
+- euler.ProofEngine replacing euler.Egg
+- relaxed parsing of qnames
+- fixing sem/1 Horn engine and drop e:reflexive builtin
+- fixing e:findall bug
+- adding euler.ProofEngine
+- initial Euler yap engine for SWI-Prolog (Eyes)
+- correcting str:concatenation so that the subject is a list of strings
+
+[Euler-2009-03-15]
+- Egg producing proofs that can be checked with cwm/check.py
+- fixing e:tuple blank node labeling
+- adding Egg i.e. Euler for GridGain
+- adding eye math:atan2, math:cosh, math:sinh and math:tanh builtins
+- adding eye --pass to pass-thru the N3
+- fixing issues with prolog =:= and running yap without -s thanks to Vitor for fixing
+- adding fl:pi builtin and testing http://eulersharp.sourceforge.net/2003/03swap/fl-rules.n3
+
+[Euler-2009-02-22]
+- adding --profile switch to euler.yap
+- tuning Yap parameters and yap -s 100000 euler.yap seems to be happy with all test cases
+- show qnames with empty local name in proof output
+- bug in N3 output corrected
+- adding e:propertyChainExtension builtin and running owl-rl test cases
+- builtin e:roc to simulate ROC curve
+- adding more --debug info
+
+[Euler-2009-02-10]
+- adding Eye.java as Euler Yap Engine wrapper
+- correcting datetime DCG
+- improving exception handling
+- checking for invalid langcode and checking for valid qname
+- adding more --debug info
+- added comprehension limit exception to euler.yap engine
+
+[Euler-2009-01-31]
+- adding e:nonLabel builtin plus testing http://eulersharp.sourceforge.net/2003/03swap/fl-rules.n3
+- adding eye --debug --version --help and using wget network utility
+- correcting euler --sql conversion
+- correcting @forSome in proof output
+- supporting inverse triple and inverse rule declaration
+- where possible blank nodes are now relabeled using the original label
+- the empty graph {} is always interpreted as true
+- correcting e:consistentGives graph
+- proof all e:conditional triples so that e:biconditional builtin has explicit assumptions
+
+[Euler-2009-01-22]
+- correcting empty graph representation issues
+- correcting log:uri builtin
+- correcting utf8 issues
+- improved N3 to PCL compiler
+- improved N3 parser error handling
+
+[Euler-2009-01-12]
+- initial release of EYE which is the euler.yap engine including an N3 to PCL compiler
+- adding fn:substring builtin
+- improving e:biconditional bayesian inferencing
+- correcting bnode handling in lists used in ontologies
+- simplified fn:resolve-uri implementation
+
+[Euler-2008-12-11]
+- SEM reasoner working with YAP
+- quick conditional qc/3 using log so that it can keep precision when there are e.g. 20000 nodes
+- updating http://eulersharp.sourceforge.net/GUIDE
+- correcting resolve urn plus adding flag(keywords)
+- e:tactic can be derived using N3 rules
+
+[Euler-2008-11-04]
+- SEMJ tested for 74 cases and the average speed is now 1.5 times slower than with SWI-Prolog
+- correcting an exception with varpred in proof output
+- reimplementation of log:conjuction to improve performance
+- added euler --quick switch for optimized runtime
+- correcting getnumber/2 for typed literals
+- tuning http://eulersharp.sourceforge.net/2007/07test/pd_hes_tactic.n3
+- introducing e:tactic to support N3 based proof tactics
+
+[Euler-2008-10-21]
+- simplify pcl intermediate code
+- using tactic/3 for proof tactics
+- correcting e:graphDifference builtin
+- added euler --quiet switch to give shorter explanation at improved speed
+- implementing euler --pass --trules to convert t-rules in e:conditional descriptions
+
+[Euler-2008-10-06]
+- SEMJ tested for 79 cases and the average speed is 2.8 times slower than with SWI-Prolog
+- added e:sigmoid builtin
+- SEMJ based on JLog
+
+[Euler-2008-09-20]
+- improving N3 to pcl compilation
+- fixed e:biconditional for a given that is inconsistent
+- adding e:label builtin to get the blank node label of the subject (this is a level breaker)
+- adding "Euler under the hood" and "Prolog Coherent Logic (PCL)" to GUIDE
+- fix resolving file: uris
+- reviewed bnode labeling
+- fix resolving http://localhost/.context+abc uris as if they were data:,abc uris
+- correcting euler.Codd.dir()
+
+[Euler-2008-08-31]
+- simplify euler --sql and tested with http://www.zentus.com/sqlitejdbc/ using codd JDBC connector
+- adding setPrintStream and getPrintStream methods to jTrolog.engine.Prolog to support concurrent reasoning
+- order of magnitude reduced SEMJ memory footprint
+- correcting the use of variables in proof output
+- using JDK regular expression utilities
+
+[Euler-2008-08-15]
+- correcting e:graphDifference builtin
+- adding r:gives in e:falseModel description
+- extending e:falseModel description with e:consistentGives using --think
+- adding e:graphIntersection builtin
+- adding e:graphDifference builtin
+- correcting empty graph output
+
+[Euler-2008-08-04]
+- simplify skolem machine tape chaining
+- fixing log: builtins to deal with empty graphs
+- adding del_step/4 in Skolem machine and correcting bug with varpred in proof output
+- elaborated e:falseModel explanation
+- new variable verb strategy plus correcting proof for facts provenance
+- correcting typed literal conversion
+- fix issues with concurrent SEM Codd services
+- correction for e:falseModel and introduction of e:possibleModel
+
+[Euler-2008-07-19]
+- finding all inconsistencies using e:falseModel {}
+- adding e:because to explanation of e:falseModel
+- correcting log:semantics and log:implies when subject or object is a variable
+- improved memory footprint during SEM proof output
+- resolving http://localhost/.context+abc uris as if they were data:,abc uris
+- false and "false"^^xsd:boolean are now fine in the conclusion of a rule
+- shorten proof output
+- correcting e:biconditional builtin and reviewed bnode labeling
+- implementing HTTP HEAD method in Codd.java and using text/n3 Content-Type for n3 content
+- improved SEM command line java euler.EulerRunner --sem --test [--nope] [--rules|--trules] uris --query|--tquery uri
+
+[Euler-2008-06-22]
+- SEM Skolem Euler Machine jTrolog v2.1 based
+- adding web/2 SEMLibrary builtin
+- correcting issues with blank nodes in rule/query conclusions
+- updated jtrolog.jar according to latest changes from Ivar in https://jtrolog.dev.java.net/svn/jtrolog/trunk
+- use e:disjunction and see also http://lists.w3.org/Archives/Public/public-cwm-talk/2008AprJun/att-0011/00-part
+- drop e:prune builtin
+
+[Euler-2008-06-11]
+- SEMJ which is jTrolog based is running http://eulersharp.sourceforge.net/2007/07test/semj_test.ref
+- correcting log:semantics for 404 Not Found
+- correcting fn:substring-after
+
+[Euler-2008-06-09]
+- initial SEMJ which is now jTrolog based (adapted jtrolog.jar included and much thanks to Ivar)
+- correcting temporal reasoning primitives
+
+[Euler-2008-05-31]
+- updating http://eulersharp.sourceforge.net/GUIDE
+- adding Codd application/sparql-query MIME Type
+- correcting e:biconditional builtin
+- correcting jDateTime for timezone
+
+[Euler-2008-05-25]
+- using modified JLog to have double precision arithmetic
+- fixing bnode issues for SEMJ and dropping --data switch
+- adding e:wwwFormEncode SEMJ builtin
+- remove duplicate answers for SEMJ --nope
+
+[Euler-2008-05-21]
+- initial SEMJ now JLog based
+
+[Euler-2008-05-15]
+- initial SEMJ tuProlog java based SEM reasoner
+- model inconsistency as rule with => false
+- correcting 9 year old bug in Euler toString()
+- correcting proof output for keywords and for 1-arities
+- correcting N3 proof output for conjunctions
+- correct e:falseModel and correct SEM --nope
+
+[Euler-2008-05-01]
+- SEM engine now produces N3 proof output and obsoletes sem_tape.pl
+- improve --test-as performance
+- new SEM engine with better determinism and speed
+- improve e:biconditional performance
+- adjust some default mime-types in Codd.java
+
+[Euler-2008-04-21]
+- correcting coroutining for builtins
+- simplifying e:biconditional
+- adding e:counterModel and e:falseModel triples in proof output
+
+[Euler-2008-04-11]
+- testing t-rules with SEM using --trules and --tquery
+- testing existentials in the head
+- adding e:biconditional builtin
+- improving N3 proof output with sem_tape.pl
+- correcting proof output using @keywords and correcting log:implies builtin
+
+[Euler-2008-03-25]
+- extend sem_tape.pl proof tester to return N3 proofs by default
+- builtin .SEM and .SEMI codd services
+- adding --horn command line switch used in sem.pl to have engine with horn logic only
+
+[Euler-2008-03-19]
+- adding optional --data and --rules command line arguments
+- adding e:sublist and e:pair builtins and tested with http://www.agfa.com/w3c/euler/einstein.n3
+- euler --sem to convert N3 input to sem.pl input and sem_tape.pl to check proof and return N3 answer
+- adding sem_tape proof output
+- adding builtin e:distinct to remove duplicate list items
+- prototype Skolem Euler Machine sem.pl tested with ./sem &lt; test011.in
+- correcting e:optional for --prolog-bchain
+- always output the e:delta triples for --prolog-bchain
+
+[Euler-2008-03-06]
+- correcting implementation of log:equalTo and log:notEqualTo
+- avoid catch in e:optional
+- adding step/3 in euler.pl to improve euler path detection
+
+[Euler-2008-02-25]
+- correcting e:true to model truth-value t(conclusion|premises)
+- correcting --sql conversion and e:max and e:min
+- implementing e:findall for --prolog-bchain reasoning
+- simplifying skeleton/2 predicate
+- correcting log:semantics for failure
+- adding e:optional builtin to call object formula and to succeed anyway
+- assert rdf:Property members using --prolog --think
+- correcting query with variable verb in conclusion
+- keep e:delta only when flag('e:pe')
+
+[Euler-2008-01-19]
+- translate jena message when your_file.n3 or your_file.rdf is not found
+- adding N3 parsing support for the &lt;= shorthand
+- using N3 shorthands in proof/result output
+- correcting renaming of variables for nested log:implies
+- correcting proof instrumentation for nested log:implies
+- make list:append a deterministic builtin
+- remove redundancy in proof output
+
+[Euler-2008-01-06]
+- updated http://eulersharp.sourceforge.net/GUIDE
+- correcting str:matches and adding e:tokenize for regular expressions
+- using e:delta measure in proof output
+
+[Euler-2007-12-22]
+- adding 404 Not Found reply in Codd.java
+- adding http://eulersharp.sourceforge.net/2007/07test/biP.n3 test cases
+- correcting math: builtins for plain literals
+- improved euler5s math: builtins to calculate with xsd:dateTime and xsd:duration
+- test to select between redundant models
+- added GUIDE appendix
+- added inconsistency checks plus preliminary explanation
+
+[Euler-2007-12-12]
+- full logical belief rules via belief(C|P) = belief(P,C)/belief(P)
+- using e:proofID and e:bayesRule in proof output
+
+[Euler-2007-12-06]
+- refining skeleton and no multiple choice anymore
+- no minimal model requirement anymore
+
+[Euler-2007-12-02]
+- adding e:skeleton and correcting for pure belief calculus in euler.pl
+- correcting graph source bug for euler lemma case
+- adding euler5s --profile option and tuning performance
+- adding euler5s exception handling
+- using MD5 hashes to abbreviate .context URI's
+- correcting .euler --sql service
+
+[Euler-2007-11-20]
+- adding euler5 SWI Prolog support
+- correcting plain literals with language tag
+- correcting math:quotient in euler52
+- adding .IPaddress codd service
+- correcting list:member and list:append
+- improved HTTP request header read with cleanup socket garbage
+
+[Euler-2007-11-07]
+- correcting Codd string clipping bug and improved HTTP request header read
+- updated http://eulersharp.sourceforge.net/GUIDE
+- added .euler51 Codd service and added --test-as euler command line option and updated README
+- improving time: builtins and adding e:T0 and e:timeWindow
+- adding fn:substring-after and fn:substring-before builtins
+
+[Euler-2007-10-25]
+- improving string processing with starts_with/2, ends_with/2, unquote/2 and concat/2
+- proof output speed 5 times faster with qname/3
+- correcting some list builtins
+- correcting .context service and correcting N3 serialization
+- why/4 with m3eb to resolve same model with same entropy
+
+[Euler-2007-10-23]
+- correcting bnodes for --nope and fixing e:findall in query
+- drop belief rule description and only have belief rule results
+- why/4 with m3e
+- adding N3 support for true and false keywords
+- EulerLib memo predicates
+- simplifying builtins (remove the assert fact)
+- simplifying step/10
+
+[Euler-2007-09-25]
+- removing step/3
+- correcting --nefq when object of e:true is a variable
+- adding positive/1 and using maximum positive belief for variants in why/4
+- correcting Codd localhost issue
+
+[Euler-2007-09-14]
+- http://eulersharp.sourceforge.net/2006/02swap/etc5a running in pure java
+- added --test to java euler.EulerRunner to output test run
+- supporting N3 @base
+- corrected missing dot in proof output
+
+[Euler-2007-09-09]
+- builtin .wget in Codd.java
+- slightly improved log:includes speed (up to 30%)
+- correcting write_proof/0 and step/3 for incompleteness
+- correcting log:semantics for euler52 and euler.yap
+- tuprolog workaround for Int.unify and Long.unify
+
+[Euler-2007-09-03]
+- initial euler52 backward-forward-backward chainer
+- optimized --nobe option
+- euler.pl is now embedded in EulerLibrary.java
+- initial EulerLibrary.java giving times 3 speed improvement for etc5a test run
+- tuprolog workaround for OneWayList transform(List list) stackoverflow and testing uid
+
+[Euler-2007-08-26]
+- initial tuprolog euler.pl version
+- correcting bug in proof output
+
+[Euler-2007-08-09]
+- euler.yap refactoring and 4 to 10 times speed improvement
+- adding 2007/07test/m3b test
+
+[Euler-2007-08-04]
+- removing e:Variant and adding e:premises
+- adding --nobe switch (no belief explanation)
+- correcting some --nefq issues
+- adding euler3, euler4 and euler5 entailment test cases
+- variants have same proof state but *different* belief and now 2007/07test/pt is 100 times faster
+
+[Euler-Antichthonidris-bidentatus 2007-07-08]
+- added euler --sql to translate triples into sql
+- added codd support for http://host.domain/dbname?SQL=sql services
+- using max values for variants (instead of avg or rms values)
+- using qname for e:source object
+- correcting Codd jdbc
+- correcting proof/4 and why/2 and why/1
+
+[Euler-Anoplolepis-nuptialis 2007-06-24]
+- extending proof output
+- adjusting why/5
+- adding some Expires: -1 http reply headers in Codd webizer
+- preliminary guide http://eulersharp.sourceforge.net/GUIDE
+
+[Euler-Aneuretus-simon 2007-06-16]
+- extra euler path lemma case in step/7 boosting speed several orders of magnitude
+- added euler --nefq (no ex falso quodlibet) switch and update euler --help
+- asserted triples are translated to rule/2 (using .euler --prolog-bchain)
+- refined proof/4
+
+[Euler-Anergates-atratulus 2007-06-10]
+- correcting step/7 and proof/4 to get deterministic proof results
+- use proof_state/4 to cache proof fragments
+- using step/4 for facts
+- using goal/2 to simplify things a bit more
+- additional description of reasoner results using e:conclusion, e:beliefValue, e:informationValue
+
+[Euler-Adetomyrma-venatrix 2007-05-26]
+- introduced why/7 to have desired mathematical properties for e:true
+- critical correction of euler path lemma case
+- simplified things for facts and builtins
+
+[Euler-Acanthomyops-murphii 2007-05-13]
+- svn repository at https://eulersharp.svn.sourceforge.net/svnroot/eulersharp/
+- using rule/2 instead of clause/2
+- added e:inverseEntropy as 1 - binaryEntropy
+
+[Euler-Acanthomyops-latipes 2007-05-05]
+- a bit more N3 for the --prolog-bchain proof output
+- keep proof state using proof/5
+- query as horn rule
+
+[Euler-1.5.45 2007-04-22]
+- reordering and correcting step/5 predicate
+- query is to deduce rules
+- conclusions with variable verb are a not_yet_implemented when bchain
+- added relationships to log-rules
+
+[Euler-1.5.44 2007-04-13]
+- now can also do backchain only inferencing (use .euler --prolog-bchain)
+- adding e:boolean and e:true predicates
+- correction of variable verb representation in proof output
+- speedup Parser.java
+- adding e:binaryEntropy builtin
+
+[Euler-1.5.43 2007-03-08]
+- Codd HTTP reply header always having Content-Type
+- added chatty flag for bayesian
+- exceeding process.ttl now returns a HTTP error code 500 Internal Server Error
+- scoped e:bayesian to have data sources in proof
+- improved e:bayesian performance using independency test
+- adding e:ruleOfThree builtin
+
+[Euler-1.5.41 2007-02-10]
+- fix e:tuple for Yap-5.1.2
+- improved e:bayesian performance using sorting and reordering
+- adding e:max and e:min builtins
+- improved e:bayesian performance using blackboard
+
+[Euler-1.5.40 2007-01-20]
+- make sure that every uri has a qname too
+- changed toPrologString for numerals
+- euler.Codd with --properties file plus fixing the service.* properties
+- adding e:sort, e:reverse and e:prune builtins
+- process.* properties in codd.properties ending with -- are with piped input
+- adding e:length builtin
+
+[Euler-1.5.38 2007-01-02]
+- initial euler5 json support
+- use mapping.* codd properties in euler1
+- added time:year, time:month and time:day builtins
+- fixing parsing of { ?X [ rdfs:range ?C ] ?Y } => { ?Y a ?C }.
+- e:findall least model
+- implement logarithm via math:exponentiation
+
+[Euler-1.5.37 2006-11-30]
+- correct e:bayesian result and speed improvement using memoization
+
+[Euler-1.5.36 2006-11-20]
+- correct e:bayesian for conditional inferencing
+- adding fn:resolve-uri and log:conjunction builtin and correcting log:uri
+
+[Euler-1.5.35 2006-11-09]
+- adding list:first, list:rest, list:last, list:in, list:member, list:append and log:uri builtins
+- correction in proof output; thanks to Dan Connolly
+- add http port number support
+- fix problem with tab
+- cache log:semantics and correct for nonxexistent resources
+- correct e:bayesian for conditional inferencing
+
+[Euler-1.5.34 2006-10-20]
+- updated README with "Just running Euler via RESTfull webservice"
+- added e:bayesian builtin and using e:depends to describe first order bayesian networks
+- added primitive mapping feature in Codd
+
+[Euler-1.5.33 2006-10-17]
+- simplified euler5 core engine
+- subject of math:sum and math:product can have more than 2 items
+- test with e:ScopedProperty
+- added math:memberCount builtin
+
+[Euler-1.5.32 2006-09-15]
+- support N3 @keywords and default names
+- drop e:no and use e:findall with empty answer instead
+- occurs check not needed for deduction over rational tree models
+- simplified pi-rules.n3 and moved original version to pi-calc.n3
+- implementing e:tuple and map functional terms to (fn x1 ... xi)
+- using var: in proof output
+
+[Euler-1.5.31 2006-08-19]
+- added lldm test case
+- improving euler5 core engine
+- added pi:Port and pi:Message in pi-rules.n3
+
+[Euler-1.5.30 2006-08-05]
+- using call in core engine
+- correcting for owl:sameAs
+- reshuffle dynamic declarations
+- correcting for instrument
+
+[Euler-1.5.28 2006-07-15]
+- added more @forSome in proof and check more proofs
+- use log:implies instead of ==> and improved lf inferencing
+- fix Codd HTTP reply headers
+- correcting N3 parser for verb repetition
+- correcting e:no and e:findall with done/0 and do/0
+- fix bnode in list
+
+[Euler-1.5.27 2006-07-01]
+- correcting e:no and e:findall
+- no empty result for e:findall
+- no proof explanation with -nope running 4 times faster
+- testing equality theory
+- fixing toProlog
+
+[Euler-1.5.26 2006-06-18]
+- correcting bnodes for check.py
+- added equality theory to rpo-rules.n3 and 'ignored' it in euler1 as it is builtin there
+- corrected e:trace
+
+[Euler-1.5.25 2006-06-11]
+- using r:Fact and r:source as suggested by Dan Connolly and test with check.py
+- fixing log:semantics
+- added e:findall and e:no (again)
+
+[Euler-1.5.24 2006-06-04]
+- using swap/reason for proofs
+- avoid the HTTP/1.0 504 Gateway Timeout
+- using e:scope and log:notIncludes
+
+[Euler-1.5.23 2006-05-28]
+- updated N3 &lt;-&gt; yap translation
+- using proof structure as: feedlist e:rpn3 proofstack
+- using kb Scoped Negation As Failure as: feedlist e:no triple
+
+[Euler-1.5.22 2006-05-26]
+- added euler5 flag('e:nope') when no proof explanation
+- added waitFor() in Process.java to avoid the "# No proof found: timeout"
+- direct euler5 fetching from euler1
+
+[Euler-1.5.20 2006-05-20]
+- N3 RPN proof style using e:enter, e:imply and e:prove
+- backchaining in proof engine
+- correcting some builtins and using coroutining
+
+[Euler-1.5.18 2006-05-14]
+- added euler1 switch --pterm to produce a prolog term needed for euler5 log:semantics
+- added "Exon query" and "Test builtins" test cases to etc5
+- corrected euler5 log:semantics
+- added euler5 log:includes and log:notIncludes
+- added euler5 string builtins
+- made bnode label generation thread safe in Codd.java
+- added extra destroy() in Process.java to avoid the "Too many open files" bug
+
+[Euler-1.5.16 2006-05-07]
+- euler5 variable predicates
+- euler5 log:semantics
+- euler5 N3 output
+
+[Euler-1.5.14 2006-04-30]
+- euler5 adding theorem explanations
+- README http://eulersharp.sourceforge.net/2006/02swap/README
+
+[Euler-1.5.12 2006-04-28]
+- further testing euler5 which is written in Prolog
+
+[Euler-1.5.10 2006-04-21]
+- preliminary euler5 which is written in Prolog
+
+</pre>
+</body>
+</html>

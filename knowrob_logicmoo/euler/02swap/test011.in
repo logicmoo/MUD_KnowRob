@@ -1,0 +1,20 @@
+:- op(1200,xfx,':=').
+:- op(1199,xfx,'=>').
+
+:- dynamic('e:conditional'/2).
+:- dynamic(answer/1).
+
+pfx('e:','<http://eulersharp.sourceforge.net/2003/03swap/log-rules#>').
+pfx(':','<http://eulersharp.sourceforge.net/2006/02swap/test011#>').
+
+[a1] := true => 'e:conditional'([lf(('e:boolean'(':A','e:T')))],0.06).
+
+[a2] := true => 'e:conditional'([lf(('e:boolean'(':B','e:T'))),lf(('e:boolean'(':A','e:T')))],0.98).
+[a3] := true => 'e:conditional'([lf(('e:boolean'(':B','e:T'))),lf(('e:boolean'(':A','e:F')))],0.04).
+[a4] := true => 'e:conditional'([lf(('e:boolean'(':C','e:T'))),lf(('e:boolean'(':A','e:T')))],0.55).
+[a5] := true => 'e:conditional'([lf(('e:boolean'(':C','e:T'))),lf(('e:boolean'(':A','e:F')))],0.16).
+
+[a6] := 'e:biconditional'([_X,lf(('e:boolean'(':B','e:T'))),lf(('e:boolean'(':C','e:F')))],_Y)
+	=> answer('e:biconditional'([_X,lf(('e:boolean'(':B','e:T'))),lf(('e:boolean'(':C','e:F')))],_Y)).
+
+[] := answer(_) => goal.

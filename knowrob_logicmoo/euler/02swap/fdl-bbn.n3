@@ -1,0 +1,53 @@
+### Fuzzy Description Logic to Bayesian Belief Network translation theory -- Jos De Roo
+
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix math: <http://www.w3.org/2000/10/swap/math#>.
+@prefix list: <http://www.w3.org/2000/10/swap/list#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix : <http://eulersharp.sourceforge.net/2003/03swap/fdl-bbn#>.
+
+
+### classes
+:Lower a rdfs:Class;
+	rdfs:comment "class of classes involved in e:valuation mapping".
+
+:Upper a rdfs:Class;
+	rdfs:comment "class of classes involved in e:valuation mapping".
+
+
+### properties
+:condition a rdf:Property;
+	rdfs:domain log:Formula;
+	rdfs:range rdf:List;
+	rdfs:comment "to relate a log:Formula with a list of e:boolean propositions".
+
+:map a rdf:Property;
+	rdfs:domain xsd:decimal;
+	rdfs:range rdfs:Class;
+	rdfs:comment "to map e.g decimal number 1.0 to class e:T".
+
+
+### rules
+{{?X rdfs:subClassOf ?Y} e:valuation (?L ?U)} => {({{?Y a :Lower} e:boolean e:T} {{?X a :Lower} e:boolean e:T}) e:conditional ?L}.
+{{?X rdfs:subClassOf ?Y} e:valuation (?L ?U)} => {({{?Y a :Upper} e:boolean e:T} {{?X a :Upper} e:boolean e:T}) e:conditional ?U}.
+
+{{?X!owl:complementOf rdfs:subClassOf ?Y} e:valuation (?L ?U)} => {({{?Y a :Lower} e:boolean e:T} {{?X a :Lower} e:boolean e:F}) e:conditional ?L}.
+{{?X!owl:complementOf rdfs:subClassOf ?Y} e:valuation (?L ?U)} => {({{?Y a :Upper} e:boolean e:T} {{?X a :Upper} e:boolean e:F}) e:conditional ?U}.
+
+{{?P a ?Q} e:valuation ?X. (?S 1) e:findall ({{?C a :Lower} e:boolean ?B} {{?P a ?C} e:valuation (?L ?U). ?L :map ?B} ?M)} => {{?P a :Lower} :condition ?M}.
+{{?P a ?Q} e:valuation ?X. (?S 1) e:findall ({{?C a :Upper} e:boolean ?B} {{?P a ?C} e:valuation (?L ?U). ?U :map ?B} ?M)} => {{?P a :Upper} :condition ?M}.
+
+0.0 :map e:F.
+1.0 :map e:T.
+
+{{?D rdfs:subClassOf ?C} e:valuation ?E.
+ {?P a :Lower} :condition ?M. (({{?C a :Lower} e:boolean e:T}) ?M) list:append ?A. ?A e:biconditional ?X.
+ {?P a :Upper} :condition ?N. (({{?C a :Upper} e:boolean e:T}) ?N) list:append ?B. ?B e:biconditional ?Y.
+ ?Z e:optional {?X math:notGreaterThan ?Y. ?S log:equalTo (?X ?Y)}, {?X math:greaterThan ?Y. ?S log:equalTo (?Y ?X)}}
+ =>
+ {{?P a ?C} e:valuation ?S}.
+

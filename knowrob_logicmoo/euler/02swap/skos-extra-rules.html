@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>
+		<meta name="generator" content="AGFA HealthCare N3 to HTML convertor"/>
+		<link rel="alternate" type="text/n3" title="RDF Representation" href="http://eulersharp.sourceforge.net/2003/03swap/skos-extra-rules"/>
+		<title>skos-extra-rules</title>
+		<style type="text/css">
+			a[href]:link { text-decoration:none; }
+			a[href]:visited { text-decoration:none; }
+			a[href]:active { text-decoration:underline; }
+			a:hover { background:#ffa; }
+			.keyword { font-weight: bold; }
+			.literal { color: blue }
+			.uri { color: darkblue }
+			.qname { color: black }
+			.var { color: gray }
+			.comment { font-style:italic; color: darkgreen }
+		</style>
+	</head>
+	<body>
+	<div>
+		<pre>
+<span class="keyword">@prefix</span> skos: <a class="uri" href="http://www.w3.org/2004/02/skos/core.html#">&lt;http://www.w3.org/2004/02/skos/core#&gt;</a>.
+<span class="keyword">@prefix</span> dce: <a class="uri" href="http://purl.org/dc/elements/1.1/">&lt;http://purl.org/dc/elements/1.1/&gt;</a>.
+<span class="keyword">@prefix</span> rdfs: <a class="uri" href="http://www.w3.org/2000/01/rdf-schema">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</a>.
+
+
+<a class="uri" href="http://eulersharp.sourceforge.net/2003/03swap/skos-extra-rules.html">&lt;http://eulersharp.sourceforge.net/2003/03swap/skos-extra-rules&gt;</a>
+	<a class="qname" href="http://purl.org/dc/elements/1.1">dce:title</a> <span class="literal">&quot;SKOS Extra Rules&quot;</span>@en;
+	<a class="qname" href="http://purl.org/dc/elements/1.1">dce:creator</a> <span class="literal">&quot;Hong Sun&quot;</span>@en;
+	<a class="qname" href="http://purl.org/dc/elements/1.1">dce:contributor</a> <span class="literal">&quot;Giovanni Mels, Jos De Roo&quot;</span>@en;
+	<a class="qname" href="http://purl.org/dc/elements/1.1">dce:publisher</a> <span class="literal">&quot;Agfa Healthcare/Belgium&quot;</span>@en;
+	<a class="qname" href="http://purl.org/dc/elements/1.1">dce:description</a> <span class="literal">&quot;Rules for extra SKOS constraint check&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#note">skos:note</a> <span class="literal">&quot;Rules to take constraint check for those patterns which are not explicitly stated as non-consistent in SKOS specification, but are considered as bad practice (according to SKOS).&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:seeAlso</a> <a class="uri" href="http://eulersharp.sourceforge.net/2003/03swap/skos-rules">&lt;http://eulersharp.sourceforge.net/2003/03swap/skos-rules&gt;</a>.
+	
+
+<span class="comment">#</span>
+<span class="comment"># SKOS Extra Integrity Constraints</span>
+<span class="comment">#</span>
+
+<span class="comment"># skos:exactMatch, skos:broaderTransitive are disjoint.</span>
+<span class="comment"># This constraint is added according to the decision made in http://www.w3.org/2006/07/SWD/track/issues/73</span>
+<span class="comment"># &quot;2008-07-01: [rrs] RESOLVED: issue-73 is resolved by skos:exactMatch is disjoint with skos:broaderTransitive and skos:related -- http://www.w3.org/2008/07/01-swd-minutes.html#item05&quot;</span>
+<span class="comment"># SKOS Specification considers skos:exactMatch, skos:broadMatch as disjoint, corresponding constraint check rule is contained in http://eulersharp.sourceforge.net/2003/03swap/skos-rules.</span>
+
+{ <span class="var">?x</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#exactMatch">skos:exactMatch</a> <span class="var">?y</span>. <span class="var">?x</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#broaderTransitive">skos:broaderTransitive</a> <span class="var">?y</span>. } =&gt; <span class="keyword">@false</span>.
+
+
+<span class="comment"># Detect the cycle in the hierarchical relation.</span>
+<span class="comment"># &quot;For many applications where knowledge organization systems are used, a cycle in the hierarchical relation represents a potential problem.&quot;</span>
+<span class="comment"># However, in SKOS specification, &quot;there is no condition requiring that skos:broaderTransitive be irreflexive. &quot;</span>
+<span class="comment"># Nevertheless, in the spec, it is suggested to use the form X skos:broaderTransitive X for finding cycles in the hierarchical relation.</span>
+<span class="comment"># see details in: http://www.w3.org/TR/skos-reference/#L2484</span>
+<span class="comment"># This rule is better use together with SKOS inference rule, e.g. http://eulersharp.sourceforge.net/2003/03swap/skos-rules</span>
+
+{ <span class="var">?x</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#broaderTransitive">skos:broaderTransitive</a> <span class="var">?x</span>. } =&gt; <span class="keyword">@false</span>.		</pre>
+	</div>
+	</body>
+</html>

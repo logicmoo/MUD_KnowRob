@@ -1,0 +1,35 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix dce: <http://purl.org/dc/elements/1.1/>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix bisko: <http://eulersharp.sourceforge.net/2003/03swap/bioSKOSSchemes#>.
+
+<http://eulersharp.sourceforge.net/2003/03swap/bioSKOSSchemes>
+	a owl:Ontology;
+	dce:title """Biological SKOS Schemes"""@en;
+	dce:creator """Hans Cools, MD; Agfa Healthcare/Belgium"""@en;
+	dce:publisher """Agfa Healthcare/Belgium"""@en;
+	dce:description """Formal description of SKOS Schemes of biological terminologies/coding systems and their datatypes."""@en;
+	rdfs:comment """SKOS: Simple Knowledge Organization System."""@en;
+	dce:format """OWL Full"""@en.
+
+
+#
+# CONCEPT SCHEMES
+#
+
+bisko:uniProtTaxonomy
+	a skos:ConceptScheme;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/bioSKOSSchemes#>;
+	rdfs:label """UniProt taxonomy"""@en;
+	rdfs:comment """Taxonomy in UniProt (universal protein resource) of a consortium comprising the European Bioinformatics Institute (EBI), the Swiss Institute of Bioinformatics (SIB), and the Protein Information Resource (PIR). Formerly known as 'New EBI Web Taxonomy (NEWT)'."""@en.
+
+
+#
+# DATATYPES
+#
+
+bisko:uniProtTaxonomyDT
+	a rdfs:Datatype;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/bioSKOSSchemes#>;
+	rdfs:label """UniProt taxonomy datatype"""@en.

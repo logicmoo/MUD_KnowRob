@@ -1,0 +1,73 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix dce: <http://purl.org/dc/elements/1.1/>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix math: <http://www.w3.org/2000/10/swap/math#>.
+@prefix event: <http://eulersharp.sourceforge.net/2003/03swap/event#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+<http://eulersharp.sourceforge.net/2003/03swap/age_rules>
+	dce:title """Age rules"""@en;
+	dce:creator """Hans Cools"""@en;
+	dce:publisher """Agfa Healthcare/Belgium"""@en;
+	dce:description """Rules to calculate an age of a being from its origination date time and/or beginning date time of its existence."""@en;
+	skos:note """These rules are not deprecated, but a newer method is using backward chained rules."""@en.
+
+
+# CALCULATION OF AN AGE OF SOMETHING STARTING FROM ITS ORIGINATION DATE TIME
+# Note: age not restricted to a duration of life
+
+## AGE EXPRESSED IN YEARS AND MONTHS
+
+{	?snapshot event:hasSnapshotDateTime ?snapshotDateTime.
+	?being event:hasOriginationDateTime ?originationDateTime.
+	(?snapshotDateTime ?originationDateTime) math:difference ?seconds.
+	?seconds math:greaterThan 0.
+	(?seconds "P1M"^^xsd:duration) math:integerQuotient ?monthsNumeral.
+	?monthsNumeral math:notLessThan 1.
+	(?lexical xsd:yearMonthDuration) log:dtlit ?monthsNumeral, ?yearMonthDuration}
+=>
+{	?being event:hasAge ?yearMonthDuration}.
+
+
+## AGE EXPRESSED IN DAYS AND TIME
+
+{	[event:hasSnapshotDateTime ?snapshotDateTime].
+	?being event:hasOriginationDateTime ?originationDateTime.
+	(?snapshotDateTime ?originationDateTime) math:difference ?seconds.
+	?seconds math:greaterThan 0.
+	(?seconds "P1M"^^xsd:duration) math:quotient ?monthsNumeral.
+	?monthsNumeral math:lessThan 1.
+	(?lexical xsd:dayTimeDuration) log:dtlit ?seconds, ?dayTimeDuration}
+=>
+{	?being event:hasAge ?dayTimeDuration}.
+
+
+# CALCULATION OF AN AGE OF SOMETHING STARTING FROM BEGINNING DATE TIME OF ITS EXISTENCE
+
+## AGE EXPRESSED IN YEARS AND MONTHS
+
+{	[event:hasSnapshotDateTime ?snapshotDateTime].
+	?being event:exists ?existence.
+	?existence event:begins ?beginning.
+	(?snapshotDateTime ?beginning) math:difference ?seconds.
+	?seconds math:greaterThan 0.
+	(?seconds "P1M"^^xsd:duration) math:integerQuotient ?monthsNumeral.
+	?monthsNumeral math:notLessThan 1.
+	(?lexical xsd:yearMonthDuration) log:dtlit ?monthsNumeral, ?yearMonthDuration}
+=>
+{	?being event:hasAge ?yearMonthDuration}.
+
+
+## AGE EXPRESSED IN DAYS AND TIME
+
+{	[event:hasSnapshotDateTime ?snapshotDateTime].
+	?being event:exists ?existence.
+	?existence event:begins ?beginning.
+	(?snapshotDateTime ?beginning) math:difference ?seconds.
+	?seconds math:greaterThan 0.
+	(?seconds "P1M"^^xsd:duration) math:quotient ?monthsNumeral.
+	?monthsNumeral math:lessThan 1.
+	(?lexical xsd:dayTimeDuration) log:dtlit ?seconds, ?dayTimeDuration}
+=>
+{	?being event:hasAge ?dayTimeDuration}.

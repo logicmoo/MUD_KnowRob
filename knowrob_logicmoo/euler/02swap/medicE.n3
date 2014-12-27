@@ -1,0 +1,65 @@
+#Processed by Id: euler.yap,v 1.132 2006/12/13 00:33:49 josd Exp 
+
+@prefix str: <http://www.w3.org/2000/10/swap/string#>.
+@prefix var: <http://localhost/var#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix list: <http://www.w3.org/2000/10/swap/list#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix fn: <http://www.w3.org/2006/xpath-functions#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix : <http://eulersharp.sourceforge.net/2006/02swap/med#>.
+@prefix rpo: <http://eulersharp.sourceforge.net/2003/03swap/rpo-rules#>.
+@prefix time: <http://www.w3.org/2000/10/swap/time#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix n3: <http://www.w3.org/2004/06/rei#>.
+@prefix math: <http://www.w3.org/2000/10/swap/math#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix r: <http://www.w3.org/2000/10/swap/reason#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+[ a r:Proof, r:Conjunction;
+  r:component [ a r:Inference; r:gives {:Joe :isPrescribed :aspirinLowDose}; r:evidence (
+    [ a r:Extraction; r:gives {:Joe :isPrescribed :aspirinLowDose}; r:because [ a r:Inference; r:gives {:Joe :isPrescribed :aspirinLowDose}; r:evidence (
+      [ a r:Extraction; r:gives {:aspirinLowDose :prescribedFor :AcuteMyocardialInfarction}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/medic.n3>]]
+      [ a r:Extraction; r:gives {(:Joe :AcuteMyocardialInfarction) rpo:mu 0.9}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/medic.n3>]]
+      [ a r:Fact; r:gives {0.9 math:greaterThan 0.7}]
+      [ a r:Fact; r:gives {((<http://www.agfa.com/w3c/euler/medic.n3>!log:semantics <http://www.agfa.com/w3c/euler/medicF.n3>!log:semantics)!log:conjunction!log:conclusion 1) e:findall (var:_985 {:aspirinLowDose :excludedFor var:_985} (:ActivePepticUlcerDisease :AllergyForAspirin))}]
+      [ a r:Fact; r:gives {((<http://www.agfa.com/w3c/euler/medic.n3>!log:semantics <http://www.agfa.com/w3c/euler/medicF.n3>!log:semantics)!log:conjunction!log:conclusion 1) e:findall (var:_985 {:aspirinLowDose :excludedFor var:_985. (:Joe var:_985) rpo:mu var:_1046. var:_1046 math:notGreaterThan 0.01} (:ActivePepticUlcerDisease :AllergyForAspirin))}]);
+      r:binding [ r:variable [ n3:uri "http://localhost/var#MEDICATION"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2006/02swap/med#aspirinLowDose"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#DIAGNOSIS"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2006/02swap/med#AcuteMyocardialInfarction"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#WHO"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2006/02swap/med#Joe"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#MEMBERSHIP"]; r:boundTo 0.9]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#SCOPE"]; r:boundTo (<http://www.agfa.com/w3c/euler/medic.n3>!log:semantics <http://www.agfa.com/w3c/euler/medicF.n3>!log:semantics)!log:conjunction!log:conclusion]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#EXCLUSION"]; r:boundTo var:_985]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#LIST"]; r:boundTo (:ActivePepticUlcerDisease :AllergyForAspirin)]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#VALUE"]; r:boundTo var:_1046]; 
+      r:rule [ a r:Extraction; r:gives {@forAll var:MEDICATION,var:DIAGNOSIS,var:WHO,var:MEMBERSHIP,var:SCOPE,var:EXCLUSION,var:LIST,var:VALUE. {var:MEDICATION :prescribedFor var:DIAGNOSIS. (var:WHO var:DIAGNOSIS) rpo:mu var:MEMBERSHIP. var:MEMBERSHIP math:greaterThan 0.7. (var:SCOPE 1) e:findall (var:EXCLUSION {var:MEDICATION :excludedFor var:EXCLUSION}  var:LIST). (var:SCOPE 1) e:findall (var:EXCLUSION {var:MEDICATION :excludedFor var:EXCLUSION}  var:LIST)} => {var:WHO :isPrescribed var:MEDICATION}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/medic.n3>]]]]);
+    r:binding [ r:variable [ n3:uri "http://localhost/var#W"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2006/02swap/med#Joe"]]; 
+    r:binding [ r:variable [ n3:uri "http://localhost/var#M"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2006/02swap/med#aspirinLowDose"]]; 
+    r:rule [ a r:Extraction; r:gives {@forAll var:W,var:M. {var:W :isPrescribed var:M} => {var:W :isPrescribed var:M}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/medicF.n3>]]];
+  r:component [ a r:Inference; r:gives {:Joe :isPrescribed :betaBlocker}; r:evidence (
+    [ a r:Extraction; r:gives {:Joe :isPrescribed :betaBlocker}; r:because [ a r:Inference; r:gives {:Joe :isPrescribed :betaBlocker}; r:evidence (
+      [ a r:Extraction; r:gives {:betaBlocker :prescribedFor :AcuteMyocardialInfarction}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/medic.n3>]]
+      [ a r:Extraction; r:gives {(:Joe :AcuteMyocardialInfarction) rpo:mu 0.9}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/medic.n3>]]
+      [ a r:Fact; r:gives {0.9 math:greaterThan 0.7}]
+      [ a r:Fact; r:gives {((<http://www.agfa.com/w3c/euler/medic.n3>!log:semantics <http://www.agfa.com/w3c/euler/medicF.n3>!log:semantics)!log:conjunction!log:conclusion 1) e:findall (var:_985 {:betaBlocker :excludedFor var:_985} (:SevereAsthma :ChronicObstructivePumonaryDisease))}]
+      [ a r:Fact; r:gives {((<http://www.agfa.com/w3c/euler/medic.n3>!log:semantics <http://www.agfa.com/w3c/euler/medicF.n3>!log:semantics)!log:conjunction!log:conclusion 1) e:findall (var:_985 {:betaBlocker :excludedFor var:_985. (:Joe var:_985) rpo:mu var:_1046. var:_1046 math:notGreaterThan 0.01} (:SevereAsthma :ChronicObstructivePumonaryDisease))}]);
+      r:binding [ r:variable [ n3:uri "http://localhost/var#MEDICATION"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2006/02swap/med#betaBlocker"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#DIAGNOSIS"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2006/02swap/med#AcuteMyocardialInfarction"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#WHO"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2006/02swap/med#Joe"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#MEMBERSHIP"]; r:boundTo 0.9]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#SCOPE"]; r:boundTo (<http://www.agfa.com/w3c/euler/medic.n3>!log:semantics <http://www.agfa.com/w3c/euler/medicF.n3>!log:semantics)!log:conjunction!log:conclusion]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#EXCLUSION"]; r:boundTo var:_985]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#LIST"]; r:boundTo (:SevereAsthma :ChronicObstructivePumonaryDisease)]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#VALUE"]; r:boundTo var:_1046]; 
+      r:rule [ a r:Extraction; r:gives {@forAll var:MEDICATION,var:DIAGNOSIS,var:WHO,var:MEMBERSHIP,var:SCOPE,var:EXCLUSION,var:LIST,var:VALUE. {var:MEDICATION :prescribedFor var:DIAGNOSIS. (var:WHO var:DIAGNOSIS) rpo:mu var:MEMBERSHIP. var:MEMBERSHIP math:greaterThan 0.7. (var:SCOPE 1) e:findall (var:EXCLUSION {var:MEDICATION :excludedFor var:EXCLUSION}  var:LIST). (var:SCOPE 1) e:findall (var:EXCLUSION {var:MEDICATION :excludedFor var:EXCLUSION}  var:LIST)} => {var:WHO :isPrescribed var:MEDICATION}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/medic.n3>]]]]);
+    r:binding [ r:variable [ n3:uri "http://localhost/var#W"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2006/02swap/med#Joe"]]; 
+    r:binding [ r:variable [ n3:uri "http://localhost/var#M"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2006/02swap/med#betaBlocker"]]; 
+    r:rule [ a r:Extraction; r:gives {@forAll var:W,var:M. {var:W :isPrescribed var:M} => {var:W :isPrescribed var:M}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/medicF.n3>]]];
+  r:gives {
+    :Joe :isPrescribed :aspirinLowDose.
+    :Joe :isPrescribed :betaBlocker.}].
+
+#ENDS 0 msec.
+

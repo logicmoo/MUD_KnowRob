@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+  <title>Logic Framework test case</title>
+  <link rel="stylesheet" href="dynamic.css" type="text/css" />
+  <script src="euler.js" type="text/javascript"></script>
+  <script src="builtins.js" type="text/javascript"></script>
+  <script src="json.js" type="text/javascript"></script>
+</head>
+
+<body>
+<!-- generated via euler -json
+{{?S1 :p1 :o1. :s2 :p2 :o2} :p3 ?O3. :s4 :p4 ?O4} :p5 {:s6 :p6 ?O6}.
+{{?S3 :p3 ?O3. ?S4 :p4 ?O4} :p5 ?O5} => {{?S4 :p7 ?O7. ?S3 :p8 ?O5} => ?O5}.
+
+-filter
+{?X => ?Y} => {?X => ?Y}.
+
+using euler4 and then json -> n3 it should give
+{:s4 :p7 ?O7. {?S1 :p1 :o1. :s2 :p2 :o2} :p8 {:s6 :p6 ?O6}} => {:s6 :p6 ?O6}.
+-->
+
+<script language=javascript>
+
+var cases = {
+  "GND":{
+    "e:":"http://eulersharp.sourceforge.net/2003/03swap/log-rules#",
+    "q:":"http://www.w3.org/2004/ql#",
+    "rdfs:":"http://www.w3.org/2000/01/rdf-schema#",
+    "log:":"http://www.w3.org/2000/10/swap/log#",
+    ":":"http://www.agfa.com/w3c/euler/test#",
+    "rdf:":"http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  },
+  "=>":[
+    {head:{pred:"=>", args:[{pred:"", args:[{pred:":p7", args:[{pred:"?S4", args:[]}, {pred:"?O7", args:[]}]}, {pred:":p8", args:[{pred:"?S3", args:[]}, {pred:"?O5", args:[]}]}]}, {pred:"?O5", args:[]}]}, body:[{pred:":p5", args:[{pred:"", args:[{pred:":p3", args:[{pred:"?S3", args:[]}, {pred:"?O3", args:[]}]}, {pred:":p4", args:[{pred:"?S4", args:[]}, {pred:"?O4", args:[]}]}]}, {pred:"?O5", args:[]}]}]}
+  ],
+  ":p5":[
+    {head:{pred:":p5", args:[{pred:"", args:[{pred:":p3", args:[{pred:"", args:[{pred:":p1", args:[{pred:"?S1", args:[]}, {pred:":o1", args:[]}]}, {pred:":p2", args:[{pred:":s2", args:[]}, {pred:":o2", args:[]}]}]}, {pred:"?O3", args:[]}]}, {pred:":p4", args:[{pred:":s4", args:[]}, {pred:"?O4", args:[]}]}]}, {pred:"", args:[{pred:":p6", args:[{pred:":s6", args:[]}, {pred:"?O6", args:[]}]}]}]}, body:[]}
+  ],
+  "":[
+    {head:{}, body:[{pred:"=>", args:[{pred:"?X", args:[]}, {pred:"?Y", args:[]}]}]}
+  ]
+}
+
+document.write('<pre>')
+var t = new Date()
+for (var i = 0; i < cases[""].length; i++) if (cases[""][i] != null) prove(cases[""][i], -1)
+for (var i in evidence) evidence["GND"] = cases["GND"]
+t = new Date() - t
+document.writeln('//' + version + '\n')
+document.writeln(JSON.stringify(evidence) + '\n')
+document.writeln('//ENDS [' + step + ' steps/' + t + ' msec]')
+document.write("</pre>")
+
+</script>
+</body>
+</html>

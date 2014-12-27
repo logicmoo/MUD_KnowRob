@@ -1,0 +1,3 @@
+#!/bin/bash
+swipl -q -f euler.yap -g main -- --version 2>&1 | grep josd > VERSION
+zip -9ur eye.zip euler.yap eye.sh eye.cmd install.sh install.cmd README* LICENSE VERSION

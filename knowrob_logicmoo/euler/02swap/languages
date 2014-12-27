@@ -1,0 +1,7311 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix dce: <http://purl.org/dc/elements/1.1/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix fos: <http://eulersharp.sourceforge.net/2003/03swap/foster#>.
+@prefix language: <http://eulersharp.sourceforge.net/2003/03swap/languages#>.
+
+<http://eulersharp.sourceforge.net/2003/03swap/languages#>
+	a owl:Ontology;
+	dce:title """Languages"""@en;
+	dce:creator """Pieterjan De Potter and Pedro Debevere, Ghent University - IBBT/ELIS - Multimedia Lab/Belgium"""@en;
+	dce:contributor """Hans Cools, MD, Agfa Healthcare/Belgium"""@en;
+	dce:publisher """Agfa Healthcare/Belgium"""@en;
+	dce:description """Formal description of languages and their codes as standardized in ISO 639."""@en;
+	dce:format """OWL-Full"""@en.
+
+#
+# SKOS SCHEME AND DATATYPE INSTANCES
+#
+
+language:iso639-1
+	a skos:ConceptScheme;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	rdfs:label """ISO639-1""";
+	dct:hasVersion """1""".
+
+language:iso639-1DT
+	a rdfs:Datatype.
+
+language:iso639-2
+	a skos:ConceptScheme;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	rdfs:label """ISO639-2""";
+	dct:hasVersion """2""".
+
+language:iso639-2DT
+	a rdfs:Datatype.
+
+#
+# INSTANCES
+#
+
+language:aar
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept; skos:inScheme language:iso639-1; skos:notation "aa"^^language:iso639-1DT], [
+		a skos:Concept; skos:inScheme language:iso639-2; skos:notation "aar"^^language:iso639-2DT];
+	foaf:name """Afar"""@en.
+
+language:abk
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "ab"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "abk"^^language:iso639-2DT
+	];
+	foaf:name """Abkhazian"""@en.
+
+language:ace
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "ace"^^language:iso639-2DT
+	];
+	foaf:name """Achinese"""@en.
+
+language:ach
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "ach"^^language:iso639-2DT
+	];
+	foaf:name """Acoli"""@en.
+
+language:ada
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "ada"^^language:iso639-2DT
+	];
+	foaf:name """Adangme"""@en.
+
+language:ady
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "ady"^^language:iso639-2DT
+	];
+	foaf:name """Adyghe; Adygei"""@en.
+
+language:afa
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "afa"^^language:iso639-2DT
+	];
+	foaf:name """Afro-Asiatic languages"""@en.
+
+language:afh
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "afh"^^language:iso639-2DT
+	];
+	foaf:name """Afrihili"""@en.
+
+language:afr
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "af"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "afr"^^language:iso639-2DT
+	];
+	foaf:name """Afrikaans"""@en.
+
+language:ain
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "ain"^^language:iso639-2DT
+	];
+	foaf:name """Ainu"""@en.
+
+language:aka
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "ak"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "aka"^^language:iso639-2DT
+	];
+	foaf:name """Akan"""@en.
+
+language:akk
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "akk"^^language:iso639-2DT
+	];
+	foaf:name """Akkadian"""@en.
+
+language:alb
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "sq"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "alb"^^language:iso639-2DT
+	];
+	foaf:name """Albanian"""@en.
+
+language:ale
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "ale"^^language:iso639-2DT
+	];
+	foaf:name """Aleut"""@en.
+
+language:alg
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "alg"^^language:iso639-2DT
+	];
+	foaf:name """Algonquian languages"""@en.
+
+language:alt
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "alt"^^language:iso639-2DT
+	];
+	foaf:name """Southern Altai"""@en.
+
+language:amh
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "am"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "amh"^^language:iso639-2DT
+	];
+	foaf:name """Amharic"""@en.
+
+language:ang
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "ang"^^language:iso639-2DT
+	];
+	foaf:name """English, Old (ca.450-1100)"""@en.
+
+language:anp
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "anp"^^language:iso639-2DT
+	];
+	foaf:name """Angika"""@en.
+
+language:apa
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "apa"^^language:iso639-2DT
+	];
+	foaf:name """Apache languages"""@en.
+
+language:ara
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "ar"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "ara"^^language:iso639-2DT
+	];
+	foaf:name """Arabic"""@en.
+
+language:arc
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "arc"^^language:iso639-2DT
+	];
+	foaf:name """Official Aramaic (700-300 BCE); Imperial Aramaic (700-300 BCE)"""@en.
+
+language:arg
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "an"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "arg"^^language:iso639-2DT
+	];
+	foaf:name """Aragonese"""@en.
+
+language:arm
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "hy"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "arm"^^language:iso639-2DT
+	];
+	foaf:name """Armenian"""@en.
+
+language:arn
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "arn"^^language:iso639-2DT
+	];
+	foaf:name """Mapudungun; Mapuche"""@en.
+
+language:arp
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "arp"^^language:iso639-2DT
+	];
+	foaf:name """Arapaho"""@en.
+
+language:art
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "art"^^language:iso639-2DT
+	];
+	foaf:name """Artificial languages"""@en.
+
+language:arw
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "arw"^^language:iso639-2DT
+	];
+	foaf:name """Arawak"""@en.
+
+language:asm
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "as"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "asm"^^language:iso639-2DT
+	];
+	foaf:name """Assamese"""@en.
+
+language:ast
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "ast"^^language:iso639-2DT
+	];
+	foaf:name """Asturian; Bable; Leonese; Asturleonese"""@en.
+
+language:ath
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "ath"^^language:iso639-2DT
+	];
+	foaf:name """Athapascan languages"""@en.
+
+language:aus
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "aus"^^language:iso639-2DT
+	];
+	foaf:name """Australian languages"""@en.
+
+language:ava
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "av"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "ava"^^language:iso639-2DT
+	];
+	foaf:name """Avaric"""@en.
+
+language:ave
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "ae"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "ave"^^language:iso639-2DT
+	];
+	foaf:name """Avestan"""@en.
+
+language:awa
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "awa"^^language:iso639-2DT
+	];
+	foaf:name """Awadhi"""@en.
+
+language:aym
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "ay"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "aym"^^language:iso639-2DT
+	];
+	foaf:name """Aymara"""@en.
+
+language:aze
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "az"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "aze"^^language:iso639-2DT
+	];
+	foaf:name """Azerbaijani"""@en.
+
+language:bad
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "bad"^^language:iso639-2DT
+	];
+	foaf:name """Banda languages"""@en.
+
+language:bai
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "bai"^^language:iso639-2DT
+	];
+	foaf:name """Bamileke languages"""@en.
+
+language:bak
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "ba"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "bak"^^language:iso639-2DT
+	];
+	foaf:name """Bashkir"""@en.
+
+language:bal
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "bal"^^language:iso639-2DT
+	];
+	foaf:name """Baluchi"""@en.
+
+language:bam
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "bm"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "bam"^^language:iso639-2DT
+	];
+	foaf:name """Bambara"""@en.
+
+language:ban
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "ban"^^language:iso639-2DT
+	];
+	foaf:name """Balinese"""@en.
+
+language:baq
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "eu"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "baq"^^language:iso639-2DT
+	];
+	foaf:name """Basque"""@en.
+
+language:bas
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "bas"^^language:iso639-2DT
+	];
+	foaf:name """Basa"""@en.
+
+language:bat
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "bat"^^language:iso639-2DT
+	];
+	foaf:name """Baltic languages"""@en.
+
+language:bej
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "bej"^^language:iso639-2DT
+	];
+	foaf:name """Beja; Bedawiyet"""@en.
+
+language:bel
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "be"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "bel"^^language:iso639-2DT
+	];
+	foaf:name """Belarusian"""@en.
+
+language:bem
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "bem"^^language:iso639-2DT
+	];
+	foaf:name """Bemba"""@en.
+
+language:ben
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "bn"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "ben"^^language:iso639-2DT
+	];
+	foaf:name """Bengali"""@en.
+
+language:ber
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "ber"^^language:iso639-2DT
+	];
+	foaf:name """Berber languages"""@en.
+
+language:bho
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "bho"^^language:iso639-2DT
+	];
+	foaf:name """Bhojpuri"""@en.
+
+language:bih
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "bh"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "bih"^^language:iso639-2DT
+	];
+	foaf:name """Bihari"""@en.
+
+language:bik
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "bik"^^language:iso639-2DT
+	];
+	foaf:name """Bikol"""@en.
+
+language:bin
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "bin"^^language:iso639-2DT
+	];
+	foaf:name """Bini; Edo"""@en.
+
+language:bis
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "bi"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "bis"^^language:iso639-2DT
+	];
+	foaf:name """Bislama"""@en.
+
+language:bla
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "bla"^^language:iso639-2DT
+	];
+	foaf:name """Siksika"""@en.
+
+language:bnt
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "bnt"^^language:iso639-2DT
+	];
+	foaf:name """Bantu (Other)"""@en.
+
+language:bos
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "bs"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "bos"^^language:iso639-2DT
+	];
+	foaf:name """Bosnian"""@en.
+
+language:bra
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "bra"^^language:iso639-2DT
+	];
+	foaf:name """Braj"""@en.
+
+language:bre
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "br"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "bre"^^language:iso639-2DT
+	];
+	foaf:name """Breton"""@en.
+
+language:btk
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "btk"^^language:iso639-2DT
+	];
+	foaf:name """Batak languages"""@en.
+
+language:bua
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "bua"^^language:iso639-2DT
+	];
+	foaf:name """Buriat"""@en.
+
+language:bug
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "bug"^^language:iso639-2DT
+	];
+	foaf:name """Buginese"""@en.
+
+language:bul
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "bg"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "bul"^^language:iso639-2DT
+	];
+	foaf:name """Bulgarian"""@en.
+
+language:bur
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "my"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "bur"^^language:iso639-2DT
+	];
+	foaf:name """Burmese"""@en.
+
+language:byn
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "byn"^^language:iso639-2DT
+	];
+	foaf:name """Blin; Bilin"""@en.
+
+language:cad
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "cad"^^language:iso639-2DT
+	];
+	foaf:name """Caddo"""@en.
+
+language:cai
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "cai"^^language:iso639-2DT
+	];
+	foaf:name """Central American Indian languages"""@en.
+
+language:car
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "car"^^language:iso639-2DT
+	];
+	foaf:name """Galibi Carib"""@en.
+
+language:cat
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "ca"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "cat"^^language:iso639-2DT
+	];
+	foaf:name """Catalan; Valencian"""@en.
+
+language:cau
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "cau"^^language:iso639-2DT
+	];
+	foaf:name """Caucasian languages"""@en.
+
+language:ceb
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "ceb"^^language:iso639-2DT
+	];
+	foaf:name """Cebuano"""@en.
+
+language:cel
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "cel"^^language:iso639-2DT
+	];
+	foaf:name """Celtic languages"""@en.
+
+language:cha
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "ch"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "cha"^^language:iso639-2DT
+	];
+	foaf:name """Chamorro"""@en.
+
+language:chb
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "chb"^^language:iso639-2DT
+	];
+	foaf:name """Chibcha"""@en.
+
+language:che
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "ce"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "che"^^language:iso639-2DT
+	];
+	foaf:name """Chechen"""@en.
+
+language:chg
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "chg"^^language:iso639-2DT
+	];
+	foaf:name """Chagatai"""@en.
+
+language:chi
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "zh"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "chi"^^language:iso639-2DT
+	];
+	foaf:name """Chinese"""@en.
+
+language:chk
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "chk"^^language:iso639-2DT
+	];
+	foaf:name """Chuukese"""@en.
+
+language:chm
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "chm"^^language:iso639-2DT
+	];
+	foaf:name """Mari"""@en.
+
+language:chn
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "chn"^^language:iso639-2DT
+	];
+	foaf:name """Chinook jargon"""@en.
+
+language:cho
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "cho"^^language:iso639-2DT
+	];
+	foaf:name """Choctaw"""@en.
+
+language:chp
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "chp"^^language:iso639-2DT
+	];
+	foaf:name """Chipewyan; Dene Suline"""@en.
+
+language:chr
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "chr"^^language:iso639-2DT
+	];
+	foaf:name """Cherokee"""@en.
+
+language:chu
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "cu"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "chu"^^language:iso639-2DT
+	];
+	foaf:name """Church Slavic; Old Slavonic; Church Slavonic; Old Bulgarian; Old Church Slavonic"""@en.
+
+language:chv
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "cv"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "chv"^^language:iso639-2DT
+	];
+	foaf:name """Chuvash"""@en.
+
+language:chy
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "chy"^^language:iso639-2DT
+	];
+	foaf:name """Cheyenne"""@en.
+
+language:cmc
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "cmc"^^language:iso639-2DT
+	];
+	foaf:name """Chamic languages"""@en.
+
+language:cop
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "cop"^^language:iso639-2DT
+	];
+	foaf:name """Coptic"""@en.
+
+language:cor
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "kw"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "cor"^^language:iso639-2DT
+	];
+	foaf:name """Cornish"""@en.
+
+language:cos
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "co"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "cos"^^language:iso639-2DT
+	];
+	foaf:name """Corsican"""@en.
+
+language:cpe
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "cpe"^^language:iso639-2DT
+	];
+	foaf:name """Creoles and pidgins, English based"""@en.
+
+language:cpf
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "cpf"^^language:iso639-2DT
+	];
+	foaf:name """Creoles and pidgins, French-based """@en.
+
+language:cpp
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "cpp"^^language:iso639-2DT
+	];
+	foaf:name """Creoles and pidgins, Portuguese-based """@en.
+
+language:cre
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "cr"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "cre"^^language:iso639-2DT
+	];
+	foaf:name """Cree"""@en.
+
+language:crh
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "crh"^^language:iso639-2DT
+	];
+	foaf:name """Crimean Tatar; Crimean Turkish"""@en.
+
+language:crp
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "crp"^^language:iso639-2DT
+	];
+	foaf:name """Creoles and pidgins """@en.
+
+language:csb
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "csb"^^language:iso639-2DT
+	];
+	foaf:name """Kashubian"""@en.
+
+language:cus
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "cus"^^language:iso639-2DT
+	];
+	foaf:name """Cushitic languages"""@en.
+
+language:cze
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "cs"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "cze"^^language:iso639-2DT
+	];
+	foaf:name """Czech"""@en.
+
+language:dak
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "dak"^^language:iso639-2DT
+	];
+	foaf:name """Dakota"""@en.
+
+language:dan
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "da"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "dan"^^language:iso639-2DT
+	];
+	foaf:name """Danish"""@en.
+
+language:dar
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "dar"^^language:iso639-2DT
+	];
+	foaf:name """Dargwa"""@en.
+
+language:day
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "day"^^language:iso639-2DT
+	];
+	foaf:name """Land Dayak languages"""@en.
+
+language:del
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "del"^^language:iso639-2DT
+	];
+	foaf:name """Delaware"""@en.
+
+language:den
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "den"^^language:iso639-2DT
+	];
+	foaf:name """Slave (Athapascan)"""@en.
+
+language:dgr
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "dgr"^^language:iso639-2DT
+	];
+	foaf:name """Dogrib"""@en.
+
+language:din
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "din"^^language:iso639-2DT
+	];
+	foaf:name """Dinka"""@en.
+
+language:div
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "dv"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "div"^^language:iso639-2DT
+	];
+	foaf:name """Divehi; Dhivehi; Maldivian"""@en.
+
+language:doi
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "doi"^^language:iso639-2DT
+	];
+	foaf:name """Dogri"""@en.
+
+language:dra
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "dra"^^language:iso639-2DT
+	];
+	foaf:name """Dravidian languages"""@en.
+
+language:dsb
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "dsb"^^language:iso639-2DT
+	];
+	foaf:name """Lower Sorbian"""@en.
+
+language:dua
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "dua"^^language:iso639-2DT
+	];
+	foaf:name """Duala"""@en.
+
+language:dum
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "dum"^^language:iso639-2DT
+	];
+	foaf:name """Dutch, Middle (ca.1050-1350)"""@en.
+
+language:dut
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "nl"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "dut"^^language:iso639-2DT
+	];
+	foaf:name """Dutch; Flemish"""@en.
+
+language:dyu
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "dyu"^^language:iso639-2DT
+	];
+	foaf:name """Dyula"""@en.
+
+language:dzo
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "dz"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "dzo"^^language:iso639-2DT
+	];
+	foaf:name """Dzongkha"""@en.
+
+language:efi
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "efi"^^language:iso639-2DT
+	];
+	foaf:name """Efik"""@en.
+
+language:egy
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "egy"^^language:iso639-2DT
+	];
+	foaf:name """Egyptian (Ancient)"""@en.
+
+language:eka
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "eka"^^language:iso639-2DT
+	];
+	foaf:name """Ekajuk"""@en.
+
+language:elx
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "elx"^^language:iso639-2DT
+	];
+	foaf:name """Elamite"""@en.
+
+language:eng
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "en"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "eng"^^language:iso639-2DT
+	];
+	foaf:name """English"""@en.
+
+language:enm
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "enm"^^language:iso639-2DT
+	];
+	foaf:name """English, Middle (1100-1500)"""@en.
+
+language:epo
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "eo"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "epo"^^language:iso639-2DT
+	];
+	foaf:name """Esperanto"""@en.
+
+language:est
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "et"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "est"^^language:iso639-2DT
+	];
+	foaf:name """Estonian"""@en.
+
+language:ewe
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "ee"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "ewe"^^language:iso639-2DT
+	];
+	foaf:name """Ewe"""@en.
+
+language:ewo
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "ewo"^^language:iso639-2DT
+	];
+	foaf:name """Ewondo"""@en.
+
+language:fan
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "fan"^^language:iso639-2DT
+	];
+	foaf:name """Fang"""@en.
+
+language:fao
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "fo"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "fao"^^language:iso639-2DT
+	];
+	foaf:name """Faroese"""@en.
+
+language:fat
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "fat"^^language:iso639-2DT
+	];
+	foaf:name """Fanti"""@en.
+
+language:fij
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "fj"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "fij"^^language:iso639-2DT
+	];
+	foaf:name """Fijian"""@en.
+
+language:fil
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "fil"^^language:iso639-2DT
+	];
+	foaf:name """Filipino; Pilipino"""@en.
+
+language:fin
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "fi"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "fin"^^language:iso639-2DT
+	];
+	foaf:name """Finnish"""@en.
+
+language:fiu
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "fiu"^^language:iso639-2DT
+	];
+	foaf:name """Finno-Ugrian languages"""@en.
+
+language:fon
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "fon"^^language:iso639-2DT
+	];
+	foaf:name """Fon"""@en.
+
+language:fre
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "fr"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "fre"^^language:iso639-2DT
+	];
+	foaf:name """French"""@en.
+
+language:frm
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "frm"^^language:iso639-2DT
+	];
+	foaf:name """French, Middle (ca.1400-1600)"""@en.
+
+language:fro
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "fro"^^language:iso639-2DT
+	];
+	foaf:name """French, Old (842-ca.1400)"""@en.
+
+language:frr
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "frr"^^language:iso639-2DT
+	];
+	foaf:name """Northern Frisian"""@en.
+
+language:frs
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "frs"^^language:iso639-2DT
+	];
+	foaf:name """Eastern Frisian"""@en.
+
+language:fry
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "fy"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "fry"^^language:iso639-2DT
+	];
+	foaf:name """Western Frisian"""@en.
+
+language:ful
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "ff"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "ful"^^language:iso639-2DT
+	];
+	foaf:name """Fulah"""@en.
+
+language:fur
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "fur"^^language:iso639-2DT
+	];
+	foaf:name """Friulian"""@en.
+
+language:gaa
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "gaa"^^language:iso639-2DT
+	];
+	foaf:name """Ga"""@en.
+
+language:gay
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "gay"^^language:iso639-2DT
+	];
+	foaf:name """Gayo"""@en.
+
+language:gba
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "gba"^^language:iso639-2DT
+	];
+	foaf:name """Gbaya"""@en.
+
+language:gem
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "gem"^^language:iso639-2DT
+	];
+	foaf:name """Germanic languages"""@en.
+
+language:geo
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "ka"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "geo"^^language:iso639-2DT
+	];
+	foaf:name """Georgian"""@en.
+
+language:ger
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "de"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "ger"^^language:iso639-2DT
+	];
+	foaf:name """German"""@en.
+
+language:gez
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "gez"^^language:iso639-2DT
+	];
+	foaf:name """Geez"""@en.
+
+language:gil
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "gil"^^language:iso639-2DT
+	];
+	foaf:name """Gilbertese"""@en.
+
+language:gla
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "gd"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "gla"^^language:iso639-2DT
+	];
+	foaf:name """Gaelic; Scottish Gaelic"""@en.
+
+language:gle
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "ga"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "gle"^^language:iso639-2DT
+	];
+	foaf:name """Irish"""@en.
+
+language:glg
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "gl"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "glg"^^language:iso639-2DT
+	];
+	foaf:name """Galician"""@en.
+
+language:glv
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "gv"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "glv"^^language:iso639-2DT
+	];
+	foaf:name """Manx"""@en.
+
+language:gmh
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "gmh"^^language:iso639-2DT
+	];
+	foaf:name """German, Middle High (ca.1050-1500)"""@en.
+
+language:goh
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "goh"^^language:iso639-2DT
+	];
+	foaf:name """German, Old High (ca.750-1050)"""@en.
+
+language:gon
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "gon"^^language:iso639-2DT
+	];
+	foaf:name """Gondi"""@en.
+
+language:gor
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "gor"^^language:iso639-2DT
+	];
+	foaf:name """Gorontalo"""@en.
+
+language:got
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "got"^^language:iso639-2DT
+	];
+	foaf:name """Gothic"""@en.
+
+language:grb
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "grb"^^language:iso639-2DT
+	];
+	foaf:name """Grebo"""@en.
+
+language:grc
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "grc"^^language:iso639-2DT
+	];
+	foaf:name """Greek, Ancient (to 1453)"""@en.
+
+language:gre
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "el"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "gre"^^language:iso639-2DT
+	];
+	foaf:name """Greek, Modern (1453-)"""@en.
+
+language:grn
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "gn"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "grn"^^language:iso639-2DT
+	];
+	foaf:name """Guarani"""@en.
+
+language:gsw
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "gsw"^^language:iso639-2DT
+	];
+	foaf:name """Swiss German; Alemannic; Alsatian"""@en.
+
+language:guj
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "gu"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "guj"^^language:iso639-2DT
+	];
+	foaf:name """Gujarati"""@en.
+
+language:gwi
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "gwi"^^language:iso639-2DT
+	];
+	foaf:name """Gwich'in"""@en.
+
+language:hai
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "hai"^^language:iso639-2DT
+	];
+	foaf:name """Haida"""@en.
+
+language:hat
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "ht"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "hat"^^language:iso639-2DT
+	];
+	foaf:name """Haitian; Haitian Creole"""@en.
+
+language:hau
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "ha"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "hau"^^language:iso639-2DT
+	];
+	foaf:name """Hausa"""@en.
+
+language:haw
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "haw"^^language:iso639-2DT
+	];
+	foaf:name """Hawaiian"""@en.
+
+language:heb
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "he"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "heb"^^language:iso639-2DT
+	];
+	foaf:name """Hebrew"""@en.
+
+language:her
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "hz"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "her"^^language:iso639-2DT
+	];
+	foaf:name """Herero"""@en.
+
+language:hil
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "hil"^^language:iso639-2DT
+	];
+	foaf:name """Hiligaynon"""@en.
+
+language:him
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "him"^^language:iso639-2DT
+	];
+	foaf:name """Himachali"""@en.
+
+language:hin
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "hi"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "hin"^^language:iso639-2DT
+	];
+	foaf:name """Hindi"""@en.
+
+language:hit
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "hit"^^language:iso639-2DT
+	];
+	foaf:name """Hittite"""@en.
+
+language:hmn
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "hmn"^^language:iso639-2DT
+	];
+	foaf:name """Hmong"""@en.
+
+language:hmo
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "ho"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "hmo"^^language:iso639-2DT
+	];
+	foaf:name """Hiri Motu"""@en.
+
+language:hrv
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "hr"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "hrv"^^language:iso639-2DT
+	];
+	foaf:name """Croatian"""@en.
+
+language:hsb
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "hsb"^^language:iso639-2DT
+	];
+	foaf:name """Upper Sorbian"""@en.
+
+language:hun
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "hu"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "hun"^^language:iso639-2DT
+	];
+	foaf:name """Hungarian"""@en.
+
+language:hup
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "hup"^^language:iso639-2DT
+	];
+	foaf:name """Hupa"""@en.
+
+language:iba
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "iba"^^language:iso639-2DT
+	];
+	foaf:name """Iban"""@en.
+
+language:ibo
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "ig"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "ibo"^^language:iso639-2DT
+	];
+	foaf:name """Igbo"""@en.
+
+language:ice
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "is"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "ice"^^language:iso639-2DT
+	];
+	foaf:name """Icelandic"""@en.
+
+language:ido
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "io"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "ido"^^language:iso639-2DT
+	];
+	foaf:name """Ido"""@en.
+
+language:iii
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "ii"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "iii"^^language:iso639-2DT
+	];
+	foaf:name """Sichuan Yi; Nuosu"""@en.
+
+language:ijo
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "ijo"^^language:iso639-2DT
+	];
+	foaf:name """Ijo languages"""@en.
+
+language:iku
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "iu"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "iku"^^language:iso639-2DT
+	];
+	foaf:name """Inuktitut"""@en.
+
+language:ile
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "ie"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "ile"^^language:iso639-2DT
+	];
+	foaf:name """Interlingue; Occidental"""@en.
+
+language:ilo
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "ilo"^^language:iso639-2DT
+	];
+	foaf:name """Iloko"""@en.
+
+language:ina
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "ia"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "ina"^^language:iso639-2DT
+	];
+	foaf:name """Interlingua (International Auxiliary Language Association)"""@en.
+
+language:inc
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "inc"^^language:iso639-2DT
+	];
+	foaf:name """Indic languages"""@en.
+
+language:ind
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "id"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "ind"^^language:iso639-2DT
+	];
+	foaf:name """Indonesian"""@en.
+
+language:ine
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "ine"^^language:iso639-2DT
+	];
+	foaf:name """Indo-European languages"""@en.
+
+language:inh
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "inh"^^language:iso639-2DT
+	];
+	foaf:name """Ingush"""@en.
+
+language:ipk
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "ik"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "ipk"^^language:iso639-2DT
+	];
+	foaf:name """Inupiaq"""@en.
+
+language:ira
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "ira"^^language:iso639-2DT
+	];
+	foaf:name """Iranian languages"""@en.
+
+language:iro
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "iro"^^language:iso639-2DT
+	];
+	foaf:name """Iroquoian languages"""@en.
+
+language:ita
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "it"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "ita"^^language:iso639-2DT
+	];
+	foaf:name """Italian"""@en.
+
+language:jav
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "jv"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "jav"^^language:iso639-2DT
+	];
+	foaf:name """Javanese"""@en.
+
+language:jbo
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "jbo"^^language:iso639-2DT
+	];
+	foaf:name """Lojban"""@en.
+
+language:jpn
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "ja"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "jpn"^^language:iso639-2DT
+	];
+	foaf:name """Japanese"""@en.
+
+language:jpr
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "jpr"^^language:iso639-2DT
+	];
+	foaf:name """Judeo-Persian"""@en.
+
+language:jrb
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "jrb"^^language:iso639-2DT
+	];
+	foaf:name """Judeo-Arabic"""@en.
+
+language:kaa
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "kaa"^^language:iso639-2DT
+	];
+	foaf:name """Kara-Kalpak"""@en.
+
+language:kab
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "kab"^^language:iso639-2DT
+	];
+	foaf:name """Kabyle"""@en.
+
+language:kac
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "kac"^^language:iso639-2DT
+	];
+	foaf:name """Kachin; Jingpho"""@en.
+
+language:kal
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "kl"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "kal"^^language:iso639-2DT
+	];
+	foaf:name """Kalaallisut; Greenlandic"""@en.
+
+language:kam
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "kam"^^language:iso639-2DT
+	];
+	foaf:name """Kamba"""@en.
+
+language:kan
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "kn"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "kan"^^language:iso639-2DT
+	];
+	foaf:name """Kannada"""@en.
+
+language:kar
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "kar"^^language:iso639-2DT
+	];
+	foaf:name """Karen languages"""@en.
+
+language:kas
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "ks"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "kas"^^language:iso639-2DT
+	];
+	foaf:name """Kashmiri"""@en.
+
+language:kau
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "kr"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "kau"^^language:iso639-2DT
+	];
+	foaf:name """Kanuri"""@en.
+
+language:kaw
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "kaw"^^language:iso639-2DT
+	];
+	foaf:name """Kawi"""@en.
+
+language:kaz
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "kk"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "kaz"^^language:iso639-2DT
+	];
+	foaf:name """Kazakh"""@en.
+
+language:kbd
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "kbd"^^language:iso639-2DT
+	];
+	foaf:name """Kabardian"""@en.
+
+language:kha
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "kha"^^language:iso639-2DT
+	];
+	foaf:name """Khasi"""@en.
+
+language:khi
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "khi"^^language:iso639-2DT
+	];
+	foaf:name """Khoisan languages"""@en.
+
+language:khm
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "km"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "khm"^^language:iso639-2DT
+	];
+	foaf:name """Central Khmer"""@en.
+
+language:kho
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "kho"^^language:iso639-2DT
+	];
+	foaf:name """Khotanese; Sakan"""@en.
+
+language:kik
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "ki"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "kik"^^language:iso639-2DT
+	];
+	foaf:name """Kikuyu; Gikuyu"""@en.
+
+language:kin
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "rw"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "kin"^^language:iso639-2DT
+	];
+	foaf:name """Kinyarwanda"""@en.
+
+language:kir
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "ky"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "kir"^^language:iso639-2DT
+	];
+	foaf:name """Kirghiz; Kyrgyz"""@en.
+
+language:kmb
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "kmb"^^language:iso639-2DT
+	];
+	foaf:name """Kimbundu"""@en.
+
+language:kok
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "kok"^^language:iso639-2DT
+	];
+	foaf:name """Konkani"""@en.
+
+language:kom
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "kv"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "kom"^^language:iso639-2DT
+	];
+	foaf:name """Komi"""@en.
+
+language:kon
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "kg"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "kon"^^language:iso639-2DT
+	];
+	foaf:name """Kongo"""@en.
+
+language:kor
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "ko"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "kor"^^language:iso639-2DT
+	];
+	foaf:name """Korean"""@en.
+
+language:kos
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "kos"^^language:iso639-2DT
+	];
+	foaf:name """Kosraean"""@en.
+
+language:kpe
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "kpe"^^language:iso639-2DT
+	];
+	foaf:name """Kpelle"""@en.
+
+language:krc
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "krc"^^language:iso639-2DT
+	];
+	foaf:name """Karachay-Balkar"""@en.
+
+language:krl
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "krl"^^language:iso639-2DT
+	];
+	foaf:name """Karelian"""@en.
+
+language:kro
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "kro"^^language:iso639-2DT
+	];
+	foaf:name """Kru languages"""@en.
+
+language:kru
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "kru"^^language:iso639-2DT
+	];
+	foaf:name """Kurukh"""@en.
+
+language:kua
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "kj"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "kua"^^language:iso639-2DT
+	];
+	foaf:name """Kuanyama; Kwanyama"""@en.
+
+language:kum
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "kum"^^language:iso639-2DT
+	];
+	foaf:name """Kumyk"""@en.
+
+language:kur
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "ku"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "kur"^^language:iso639-2DT
+	];
+	foaf:name """Kurdish"""@en.
+
+language:kut
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "kut"^^language:iso639-2DT
+	];
+	foaf:name """Kutenai"""@en.
+
+language:lad
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "lad"^^language:iso639-2DT
+	];
+	foaf:name """Ladino"""@en.
+
+language:lah
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "lah"^^language:iso639-2DT
+	];
+	foaf:name """Lahnda"""@en.
+
+language:lam
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "lam"^^language:iso639-2DT
+	];
+	foaf:name """Lamba"""@en.
+
+language:lao
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "lo"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "lao"^^language:iso639-2DT
+	];
+	foaf:name """Lao"""@en.
+
+language:lat
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "la"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "lat"^^language:iso639-2DT
+	];
+	foaf:name """Latin"""@en.
+
+language:lav
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "lv"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "lav"^^language:iso639-2DT
+	];
+	foaf:name """Latvian"""@en.
+
+language:lez
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "lez"^^language:iso639-2DT
+	];
+	foaf:name """Lezghian"""@en.
+
+language:lim
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "li"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "lim"^^language:iso639-2DT
+	];
+	foaf:name """Limburgan; Limburger; Limburgish"""@en.
+
+language:lin
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "ln"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "lin"^^language:iso639-2DT
+	];
+	foaf:name """Lingala"""@en.
+
+language:lit
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "lt"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "lit"^^language:iso639-2DT
+	];
+	foaf:name """Lithuanian"""@en.
+
+language:lol
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "lol"^^language:iso639-2DT
+	];
+	foaf:name """Mongo"""@en.
+
+language:loz
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "loz"^^language:iso639-2DT
+	];
+	foaf:name """Lozi"""@en.
+
+language:ltz
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "lb"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "ltz"^^language:iso639-2DT
+	];
+	foaf:name """Luxembourgish; Letzeburgesch"""@en.
+
+language:lua
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "lua"^^language:iso639-2DT
+	];
+	foaf:name """Luba-Lulua"""@en.
+
+language:lub
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "lu"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "lub"^^language:iso639-2DT
+	];
+	foaf:name """Luba-Katanga"""@en.
+
+language:lug
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "lg"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "lug"^^language:iso639-2DT
+	];
+	foaf:name """Ganda"""@en.
+
+language:lui
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "lui"^^language:iso639-2DT
+	];
+	foaf:name """Luiseno"""@en.
+
+language:lun
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "lun"^^language:iso639-2DT
+	];
+	foaf:name """Lunda"""@en.
+
+language:luo
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "luo"^^language:iso639-2DT
+	];
+	foaf:name """Luo (Kenya and Tanzania)"""@en.
+
+language:lus
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "lus"^^language:iso639-2DT
+	];
+	foaf:name """Lushai"""@en.
+
+language:mac
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "mk"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "mac"^^language:iso639-2DT
+	];
+	foaf:name """Macedonian"""@en.
+
+language:mad
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "mad"^^language:iso639-2DT
+	];
+	foaf:name """Madurese"""@en.
+
+language:mag
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "mag"^^language:iso639-2DT
+	];
+	foaf:name """Magahi"""@en.
+
+language:mah
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "mh"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "mah"^^language:iso639-2DT
+	];
+	foaf:name """Marshallese"""@en.
+
+language:mai
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "mai"^^language:iso639-2DT
+	];
+	foaf:name """Maithili"""@en.
+
+language:mak
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "mak"^^language:iso639-2DT
+	];
+	foaf:name """Makasar"""@en.
+
+language:mal
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "ml"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "mal"^^language:iso639-2DT
+	];
+	foaf:name """Malayalam"""@en.
+
+language:man
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "man"^^language:iso639-2DT
+	];
+	foaf:name """Mandingo"""@en.
+
+language:mao
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "mi"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "mao"^^language:iso639-2DT
+	];
+	foaf:name """Maori"""@en.
+
+language:map
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "map"^^language:iso639-2DT
+	];
+	foaf:name """Austronesian languages"""@en.
+
+language:mar
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "mr"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "mar"^^language:iso639-2DT
+	];
+	foaf:name """Marathi"""@en.
+
+language:mas
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "mas"^^language:iso639-2DT
+	];
+	foaf:name """Masai"""@en.
+
+language:may
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "ms"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "may"^^language:iso639-2DT
+	];
+	foaf:name """Malay"""@en.
+
+language:mdf
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "mdf"^^language:iso639-2DT
+	];
+	foaf:name """Moksha"""@en.
+
+language:mdr
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "mdr"^^language:iso639-2DT
+	];
+	foaf:name """Mandar"""@en.
+
+language:men
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "men"^^language:iso639-2DT
+	];
+	foaf:name """Mende"""@en.
+
+language:mga
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "mga"^^language:iso639-2DT
+	];
+	foaf:name """Irish, Middle (900-1200)"""@en.
+
+language:mic
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "mic"^^language:iso639-2DT
+	];
+	foaf:name """Mi'kmaq; Micmac"""@en.
+
+language:min
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "min"^^language:iso639-2DT
+	];
+	foaf:name """Minangkabau"""@en.
+
+language:mis
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "mis"^^language:iso639-2DT
+	];
+	foaf:name """Uncoded languages"""@en.
+
+language:mkh
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "mkh"^^language:iso639-2DT
+	];
+	foaf:name """Mon-Khmer languages"""@en.
+
+language:mlg
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "mg"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "mlg"^^language:iso639-2DT
+	];
+	foaf:name """Malagasy"""@en.
+
+language:mlt
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "mt"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "mlt"^^language:iso639-2DT
+	];
+	foaf:name """Maltese"""@en.
+
+language:mnc
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "mnc"^^language:iso639-2DT
+	];
+	foaf:name """Manchu"""@en.
+
+language:mni
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "mni"^^language:iso639-2DT
+	];
+	foaf:name """Manipuri"""@en.
+
+language:mno
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "mno"^^language:iso639-2DT
+	];
+	foaf:name """Manobo languages"""@en.
+
+language:moh
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "moh"^^language:iso639-2DT
+	];
+	foaf:name """Mohawk"""@en.
+
+language:mon
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "mn"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "mon"^^language:iso639-2DT
+	];
+	foaf:name """Mongolian"""@en.
+
+language:mos
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "mos"^^language:iso639-2DT
+	];
+	foaf:name """Mossi"""@en.
+
+language:mul
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "mul"^^language:iso639-2DT
+	];
+	foaf:name """Multiple languages"""@en.
+
+language:mun
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "mun"^^language:iso639-2DT
+	];
+	foaf:name """Munda languages"""@en.
+
+language:mus
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "mus"^^language:iso639-2DT
+	];
+	foaf:name """Creek"""@en.
+
+language:mwl
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "mwl"^^language:iso639-2DT
+	];
+	foaf:name """Mirandese"""@en.
+
+language:mwr
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "mwr"^^language:iso639-2DT
+	];
+	foaf:name """Marwari"""@en.
+
+language:myn
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "myn"^^language:iso639-2DT
+	];
+	foaf:name """Mayan languages"""@en.
+
+language:myv
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "myv"^^language:iso639-2DT
+	];
+	foaf:name """Erzya"""@en.
+
+language:nah
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "nah"^^language:iso639-2DT
+	];
+	foaf:name """Nahuatl languages"""@en.
+
+language:nai
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "nai"^^language:iso639-2DT
+	];
+	foaf:name """North American Indian languages"""@en.
+
+language:nap
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "nap"^^language:iso639-2DT
+	];
+	foaf:name """Neapolitan"""@en.
+
+language:nau
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "na"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "nau"^^language:iso639-2DT
+	];
+	foaf:name """Nauru"""@en.
+
+language:nav
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "nv"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "nav"^^language:iso639-2DT
+	];
+	foaf:name """Navajo; Navaho"""@en.
+
+language:nbl
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "nr"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "nbl"^^language:iso639-2DT
+	];
+	foaf:name """Ndebele, South; South Ndebele"""@en.
+
+language:nde
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "nd"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "nde"^^language:iso639-2DT
+	];
+	foaf:name """Ndebele, North; North Ndebele"""@en.
+
+language:ndo
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "ng"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "ndo"^^language:iso639-2DT
+	];
+	foaf:name """Ndonga"""@en.
+
+language:nds
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "nds"^^language:iso639-2DT
+	];
+	foaf:name """Low German; Low Saxon; German, Low; Saxon, Low"""@en.
+
+language:nep
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "ne"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "nep"^^language:iso639-2DT
+	];
+	foaf:name """Nepali"""@en.
+
+language:new
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "new"^^language:iso639-2DT
+	];
+	foaf:name """Nepal Bhasa; Newari"""@en.
+
+language:nia
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "nia"^^language:iso639-2DT
+	];
+	foaf:name """Nias"""@en.
+
+language:nic
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "nic"^^language:iso639-2DT
+	];
+	foaf:name """Niger-Kordofanian languages"""@en.
+
+language:niu
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "niu"^^language:iso639-2DT
+	];
+	foaf:name """Niuean"""@en.
+
+language:nno
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "nn"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "nno"^^language:iso639-2DT
+	];
+	foaf:name """Norwegian Nynorsk; Nynorsk, Norwegian"""@en.
+
+language:nob
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "nb"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "nob"^^language:iso639-2DT
+	];
+	foaf:name """Bokmål, Norwegian; Norwegian Bokmål"""@en.
+
+language:nog
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "nog"^^language:iso639-2DT
+	];
+	foaf:name """Nogai"""@en.
+
+language:non
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "non"^^language:iso639-2DT
+	];
+	foaf:name """Norse, Old"""@en.
+
+language:nor
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "no"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "nor"^^language:iso639-2DT
+	];
+	foaf:name """Norwegian"""@en.
+
+language:nqo
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "nqo"^^language:iso639-2DT
+	];
+	foaf:name """N'Ko"""@en.
+
+language:nso
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "nso"^^language:iso639-2DT
+	];
+	foaf:name """Pedi; Sepedi; Northern Sotho"""@en.
+
+language:nub
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "nub"^^language:iso639-2DT
+	];
+	foaf:name """Nubian languages"""@en.
+
+language:nwc
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "nwc"^^language:iso639-2DT
+	];
+	foaf:name """Classical Newari; Old Newari; Classical Nepal Bhasa"""@en.
+
+language:nya
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "ny"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "nya"^^language:iso639-2DT
+	];
+	foaf:name """Chichewa; Chewa; Nyanja"""@en.
+
+language:nym
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "nym"^^language:iso639-2DT
+	];
+	foaf:name """Nyamwezi"""@en.
+
+language:nyn
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "nyn"^^language:iso639-2DT
+	];
+	foaf:name """Nyankole"""@en.
+
+language:nyo
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "nyo"^^language:iso639-2DT
+	];
+	foaf:name """Nyoro"""@en.
+
+language:nzi
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "nzi"^^language:iso639-2DT
+	];
+	foaf:name """Nzima"""@en.
+
+language:oci
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "oc"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "oci"^^language:iso639-2DT
+	];
+	foaf:name """Occitan (post 1500); Provençal"""@en.
+
+language:oji
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "oj"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "oji"^^language:iso639-2DT
+	];
+	foaf:name """Ojibwa"""@en.
+
+language:ori
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "or"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "ori"^^language:iso639-2DT
+	];
+	foaf:name """Oriya"""@en.
+
+language:orm
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "om"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "orm"^^language:iso639-2DT
+	];
+	foaf:name """Oromo"""@en.
+
+language:osa
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "osa"^^language:iso639-2DT
+	];
+	foaf:name """Osage"""@en.
+
+language:oss
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "os"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "oss"^^language:iso639-2DT
+	];
+	foaf:name """Ossetian; Ossetic"""@en.
+
+language:ota
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "ota"^^language:iso639-2DT
+	];
+	foaf:name """Turkish, Ottoman (1500-1928)"""@en.
+
+language:oto
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "oto"^^language:iso639-2DT
+	];
+	foaf:name """Otomian languages"""@en.
+
+language:paa
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "paa"^^language:iso639-2DT
+	];
+	foaf:name """Papuan languages"""@en.
+
+language:pag
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "pag"^^language:iso639-2DT
+	];
+	foaf:name """Pangasinan"""@en.
+
+language:pal
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "pal"^^language:iso639-2DT
+	];
+	foaf:name """Pahlavi"""@en.
+
+language:pam
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "pam"^^language:iso639-2DT
+	];
+	foaf:name """Pampanga; Kapampangan"""@en.
+
+language:pan
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "pa"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "pan"^^language:iso639-2DT
+	];
+	foaf:name """Panjabi; Punjabi"""@en.
+
+language:pap
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "pap"^^language:iso639-2DT
+	];
+	foaf:name """Papiamento"""@en.
+
+language:pau
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "pau"^^language:iso639-2DT
+	];
+	foaf:name """Palauan"""@en.
+
+language:peo
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "peo"^^language:iso639-2DT
+	];
+	foaf:name """Persian, Old (ca.600-400 B.C.)"""@en.
+
+language:per
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "fa"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "per"^^language:iso639-2DT
+	];
+	foaf:name """Persian"""@en.
+
+language:phi
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "phi"^^language:iso639-2DT
+	];
+	foaf:name """Philippine languages"""@en.
+
+language:phn
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "phn"^^language:iso639-2DT
+	];
+	foaf:name """Phoenician"""@en.
+
+language:pli
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "pi"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "pli"^^language:iso639-2DT
+	];
+	foaf:name """Pali"""@en.
+
+language:pol
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "pl"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "pol"^^language:iso639-2DT
+	];
+	foaf:name """Polish"""@en.
+
+language:pon
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "pon"^^language:iso639-2DT
+	];
+	foaf:name """Pohnpeian"""@en.
+
+language:por
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "pt"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "por"^^language:iso639-2DT
+	];
+	foaf:name """Portuguese"""@en.
+
+language:pra
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "pra"^^language:iso639-2DT
+	];
+	foaf:name """Prakrit languages"""@en.
+
+language:pro
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "pro"^^language:iso639-2DT
+	];
+	foaf:name """Provençal, Old (to 1500)"""@en.
+
+language:pus
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "ps"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "pus"^^language:iso639-2DT
+	];
+	foaf:name """Pushto; Pashto"""@en.
+
+language:qaa-qtz
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "qaa-qtz"^^language:iso639-2DT
+	];
+	foaf:name """Reserved for local use"""@en.
+
+language:que
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "qu"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "que"^^language:iso639-2DT
+	];
+	foaf:name """Quechua"""@en.
+
+language:raj
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "raj"^^language:iso639-2DT
+	];
+	foaf:name """Rajasthani"""@en.
+
+language:rap
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "rap"^^language:iso639-2DT
+	];
+	foaf:name """Rapanui"""@en.
+
+language:rar
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "rar"^^language:iso639-2DT
+	];
+	foaf:name """Rarotongan; Cook Islands Maori"""@en.
+
+language:roa
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "roa"^^language:iso639-2DT
+	];
+	foaf:name """Romance languages"""@en.
+
+language:roh
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "rm"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "roh"^^language:iso639-2DT
+	];
+	foaf:name """Romansh"""@en.
+
+language:rom
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "rom"^^language:iso639-2DT
+	];
+	foaf:name """Romany"""@en.
+
+language:rum
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "ro"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "rum"^^language:iso639-2DT
+	];
+	foaf:name """Romanian; Moldavian; Moldovan"""@en.
+
+language:run
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "rn"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "run"^^language:iso639-2DT
+	];
+	foaf:name """Rundi"""@en.
+
+language:rup
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "rup"^^language:iso639-2DT
+	];
+	foaf:name """Aromanian; Arumanian; Macedo-Romanian"""@en.
+
+language:rus
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "ru"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "rus"^^language:iso639-2DT
+	];
+	foaf:name """Russian"""@en.
+
+language:sad
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "sad"^^language:iso639-2DT
+	];
+	foaf:name """Sandawe"""@en.
+
+language:sag
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "sg"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "sag"^^language:iso639-2DT
+	];
+	foaf:name """Sango"""@en.
+
+language:sah
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "sah"^^language:iso639-2DT
+	];
+	foaf:name """Yakut"""@en.
+
+language:sai
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "sai"^^language:iso639-2DT
+	];
+	foaf:name """South American Indian (Other)"""@en.
+
+language:sal
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "sal"^^language:iso639-2DT
+	];
+	foaf:name """Salishan languages"""@en.
+
+language:sam
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "sam"^^language:iso639-2DT
+	];
+	foaf:name """Samaritan Aramaic"""@en.
+
+language:san
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "sa"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "san"^^language:iso639-2DT
+	];
+	foaf:name """Sanskrit"""@en.
+
+language:sas
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "sas"^^language:iso639-2DT
+	];
+	foaf:name """Sasak"""@en.
+
+language:sat
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "sat"^^language:iso639-2DT
+	];
+	foaf:name """Santali"""@en.
+
+language:scn
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "scn"^^language:iso639-2DT
+	];
+	foaf:name """Sicilian"""@en.
+
+language:sco
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "sco"^^language:iso639-2DT
+	];
+	foaf:name """Scots"""@en.
+
+language:sel
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "sel"^^language:iso639-2DT
+	];
+	foaf:name """Selkup"""@en.
+
+language:sem
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "sem"^^language:iso639-2DT
+	];
+	foaf:name """Semitic languages"""@en.
+
+language:sga
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "sga"^^language:iso639-2DT
+	];
+	foaf:name """Irish, Old (to 900)"""@en.
+
+language:sgn
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "sgn"^^language:iso639-2DT
+	];
+	foaf:name """Sign Languages"""@en.
+
+language:shn
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "shn"^^language:iso639-2DT
+	];
+	foaf:name """Shan"""@en.
+
+language:sid
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "sid"^^language:iso639-2DT
+	];
+	foaf:name """Sidamo"""@en.
+
+language:sin
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "si"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "sin"^^language:iso639-2DT
+	];
+	foaf:name """Sinhala; Sinhalese"""@en.
+
+language:sio
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "sio"^^language:iso639-2DT
+	];
+	foaf:name """Siouan languages"""@en.
+
+language:sit
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "sit"^^language:iso639-2DT
+	];
+	foaf:name """Sino-Tibetan languages"""@en.
+
+language:sla
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "sla"^^language:iso639-2DT
+	];
+	foaf:name """Slavic languages"""@en.
+
+language:slo
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "sk"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "slo"^^language:iso639-2DT
+	];
+	foaf:name """Slovak"""@en.
+
+language:slv
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "sl"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "slv"^^language:iso639-2DT
+	];
+	foaf:name """Slovenian"""@en.
+
+language:sma
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "sma"^^language:iso639-2DT
+	];
+	foaf:name """Southern Sami"""@en.
+
+language:sme
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "se"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "sme"^^language:iso639-2DT
+	];
+	foaf:name """Northern Sami"""@en.
+
+language:smi
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "smi"^^language:iso639-2DT
+	];
+	foaf:name """Sami languages"""@en.
+
+language:smj
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "smj"^^language:iso639-2DT
+	];
+	foaf:name """Lule Sami"""@en.
+
+language:smn
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "smn"^^language:iso639-2DT
+	];
+	foaf:name """Inari Sami"""@en.
+
+language:smo
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "sm"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "smo"^^language:iso639-2DT
+	];
+	foaf:name """Samoan"""@en.
+
+language:sms
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "sms"^^language:iso639-2DT
+	];
+	foaf:name """Skolt Sami"""@en.
+
+language:sna
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "sn"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "sna"^^language:iso639-2DT
+	];
+	foaf:name """Shona"""@en.
+
+language:snd
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "sd"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "snd"^^language:iso639-2DT
+	];
+	foaf:name """Sindhi"""@en.
+
+language:snk
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "snk"^^language:iso639-2DT
+	];
+	foaf:name """Soninke"""@en.
+
+language:sog
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "sog"^^language:iso639-2DT
+	];
+	foaf:name """Sogdian"""@en.
+
+language:som
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "so"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "som"^^language:iso639-2DT
+	];
+	foaf:name """Somali"""@en.
+
+language:son
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "son"^^language:iso639-2DT
+	];
+	foaf:name """Songhai languages"""@en.
+
+language:sot
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "st"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "sot"^^language:iso639-2DT
+	];
+	foaf:name """Sotho, Southern"""@en.
+
+language:spa
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "es"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "spa"^^language:iso639-2DT
+	];
+	foaf:name """Spanish; Castilian"""@en.
+
+language:srd
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "sc"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "srd"^^language:iso639-2DT
+	];
+	foaf:name """Sardinian"""@en.
+
+language:srn
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "srn"^^language:iso639-2DT
+	];
+	foaf:name """Sranan Tongo"""@en.
+
+language:srp
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "sr"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "srp"^^language:iso639-2DT
+	];
+	foaf:name """Serbian"""@en.
+
+language:srr
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "srr"^^language:iso639-2DT
+	];
+	foaf:name """Serer"""@en.
+
+language:ssa
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "ssa"^^language:iso639-2DT
+	];
+	foaf:name """Nilo-Saharan languages"""@en.
+
+language:ssw
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "ss"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "ssw"^^language:iso639-2DT
+	];
+	foaf:name """Swati"""@en.
+
+language:suk
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "suk"^^language:iso639-2DT
+	];
+	foaf:name """Sukuma"""@en.
+
+language:sun
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "su"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "sun"^^language:iso639-2DT
+	];
+	foaf:name """Sundanese"""@en.
+
+language:sus
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "sus"^^language:iso639-2DT
+	];
+	foaf:name """Susu"""@en.
+
+language:sux
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "sux"^^language:iso639-2DT
+	];
+	foaf:name """Sumerian"""@en.
+
+language:swa
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "sw"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "swa"^^language:iso639-2DT
+	];
+	foaf:name """Swahili"""@en.
+
+language:swe
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "sv"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "swe"^^language:iso639-2DT
+	];
+	foaf:name """Swedish"""@en.
+
+language:syc
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "syc"^^language:iso639-2DT
+	];
+	foaf:name """Classical Syriac"""@en.
+
+language:syr
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "syr"^^language:iso639-2DT
+	];
+	foaf:name """Syriac"""@en.
+
+language:tah
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "ty"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "tah"^^language:iso639-2DT
+	];
+	foaf:name """Tahitian"""@en.
+
+language:tai
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "tai"^^language:iso639-2DT
+	];
+	foaf:name """Tai languages"""@en.
+
+language:tam
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "ta"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "tam"^^language:iso639-2DT
+	];
+	foaf:name """Tamil"""@en.
+
+language:tat
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "tt"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "tat"^^language:iso639-2DT
+	];
+	foaf:name """Tatar"""@en.
+
+language:tel
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "te"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "tel"^^language:iso639-2DT
+	];
+	foaf:name """Telugu"""@en.
+
+language:tem
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "tem"^^language:iso639-2DT
+	];
+	foaf:name """Timne"""@en.
+
+language:ter
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "ter"^^language:iso639-2DT
+	];
+	foaf:name """Tereno"""@en.
+
+language:tet
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "tet"^^language:iso639-2DT
+	];
+	foaf:name """Tetum"""@en.
+
+language:tgk
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "tg"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "tgk"^^language:iso639-2DT
+	];
+	foaf:name """Tajik"""@en.
+
+language:tgl
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "tl"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "tgl"^^language:iso639-2DT
+	];
+	foaf:name """Tagalog"""@en.
+
+language:tha
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "th"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "tha"^^language:iso639-2DT
+	];
+	foaf:name """Thai"""@en.
+
+language:tib
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "bo"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "tib"^^language:iso639-2DT
+	];
+	foaf:name """Tibetan"""@en.
+
+language:tig
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "tig"^^language:iso639-2DT
+	];
+	foaf:name """Tigre"""@en.
+
+language:tir
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "ti"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "tir"^^language:iso639-2DT
+	];
+	foaf:name """Tigrinya"""@en.
+
+language:tiv
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "tiv"^^language:iso639-2DT
+	];
+	foaf:name """Tiv"""@en.
+
+language:tkl
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "tkl"^^language:iso639-2DT
+	];
+	foaf:name """Tokelau"""@en.
+
+language:tlh
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "tlh"^^language:iso639-2DT
+	];
+	foaf:name """Klingon; tlhIngan-Hol"""@en.
+
+language:tli
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "tli"^^language:iso639-2DT
+	];
+	foaf:name """Tlingit"""@en.
+
+language:tmh
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "tmh"^^language:iso639-2DT
+	];
+	foaf:name """Tamashek"""@en.
+
+language:tog
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "tog"^^language:iso639-2DT
+	];
+	foaf:name """Tonga (Nyasa)"""@en.
+
+language:ton
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "to"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "ton"^^language:iso639-2DT
+	];
+	foaf:name """Tonga (Tonga Islands)"""@en.
+
+language:tpi
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "tpi"^^language:iso639-2DT
+	];
+	foaf:name """Tok Pisin"""@en.
+
+language:tsi
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "tsi"^^language:iso639-2DT
+	];
+	foaf:name """Tsimshian"""@en.
+
+language:tsn
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "tn"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "tsn"^^language:iso639-2DT
+	];
+	foaf:name """Tswana"""@en.
+
+language:tso
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "ts"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "tso"^^language:iso639-2DT
+	];
+	foaf:name """Tsonga"""@en.
+
+language:tuk
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "tk"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "tuk"^^language:iso639-2DT
+	];
+	foaf:name """Turkmen"""@en.
+
+language:tum
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "tum"^^language:iso639-2DT
+	];
+	foaf:name """Tumbuka"""@en.
+
+language:tup
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "tup"^^language:iso639-2DT
+	];
+	foaf:name """Tupi languages"""@en.
+
+language:tur
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "tr"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "tur"^^language:iso639-2DT
+	];
+	foaf:name """Turkish"""@en.
+
+language:tut
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "tut"^^language:iso639-2DT
+	];
+	foaf:name """Altaic languages"""@en.
+
+language:tvl
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "tvl"^^language:iso639-2DT
+	];
+	foaf:name """Tuvalu"""@en.
+
+language:twi
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "tw"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "twi"^^language:iso639-2DT
+	];
+	foaf:name """Twi"""@en.
+
+language:tyv
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "tyv"^^language:iso639-2DT
+	];
+	foaf:name """Tuvinian"""@en.
+
+language:udm
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "udm"^^language:iso639-2DT
+	];
+	foaf:name """Udmurt"""@en.
+
+language:uga
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "uga"^^language:iso639-2DT
+	];
+	foaf:name """Ugaritic"""@en.
+
+language:uig
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "ug"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "uig"^^language:iso639-2DT
+	];
+	foaf:name """Uighur; Uyghur"""@en.
+
+language:ukr
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "uk"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "ukr"^^language:iso639-2DT
+	];
+	foaf:name """Ukrainian"""@en.
+
+language:umb
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "umb"^^language:iso639-2DT
+	];
+	foaf:name """Umbundu"""@en.
+
+language:und
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "und"^^language:iso639-2DT
+	];
+	foaf:name """Undetermined"""@en.
+
+language:urd
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "ur"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "urd"^^language:iso639-2DT
+	];
+	foaf:name """Urdu"""@en.
+
+language:uzb
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "uz"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "uzb"^^language:iso639-2DT
+	];
+	foaf:name """Uzbek"""@en.
+
+language:vai
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "vai"^^language:iso639-2DT
+	];
+	foaf:name """Vai"""@en.
+
+language:ven
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "ve"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "ven"^^language:iso639-2DT
+	];
+	foaf:name """Venda"""@en.
+
+language:vie
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "vi"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "vie"^^language:iso639-2DT
+	];
+	foaf:name """Vietnamese"""@en.
+
+language:vol
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "vo"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "vol"^^language:iso639-2DT
+	];
+	foaf:name """Volapük"""@en.
+
+language:vot
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "vot"^^language:iso639-2DT
+	];
+	foaf:name """Votic"""@en.
+
+language:wak
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "wak"^^language:iso639-2DT
+	];
+	foaf:name """Wakashan languages"""@en.
+
+language:wal
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "wal"^^language:iso639-2DT
+	];
+	foaf:name """Walamo"""@en.
+
+language:war
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "war"^^language:iso639-2DT
+	];
+	foaf:name """Waray"""@en.
+
+language:was
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "was"^^language:iso639-2DT
+	];
+	foaf:name """Washo"""@en.
+
+language:wel
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "cy"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "wel"^^language:iso639-2DT
+	];
+	foaf:name """Welsh"""@en.
+
+language:wen
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "wen"^^language:iso639-2DT
+	];
+	foaf:name """Sorbian languages"""@en.
+
+language:wln
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "wa"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "wln"^^language:iso639-2DT
+	];
+	foaf:name """Walloon"""@en.
+
+language:wol
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "wo"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "wol"^^language:iso639-2DT
+	];
+	foaf:name """Wolof"""@en.
+
+language:xal
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "xal"^^language:iso639-2DT
+	];
+	foaf:name """Kalmyk; Oirat"""@en.
+
+language:xho
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "xh"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "xho"^^language:iso639-2DT
+	];
+	foaf:name """Xhosa"""@en.
+
+language:yao
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "yao"^^language:iso639-2DT
+	];
+	foaf:name """Yao"""@en.
+
+language:yap
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "yap"^^language:iso639-2DT
+	];
+	foaf:name """Yapese"""@en.
+
+language:yid
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "yi"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "yid"^^language:iso639-2DT
+	];
+	foaf:name """Yiddish"""@en.
+
+language:yor
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "yo"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "yor"^^language:iso639-2DT
+	];
+	foaf:name """Yoruba"""@en.
+
+language:ypk
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "ypk"^^language:iso639-2DT
+	];
+	foaf:name """Yupik languages"""@en.
+
+language:zap
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "zap"^^language:iso639-2DT
+	];
+	foaf:name """Zapotec"""@en.
+
+language:zbl
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "zbl"^^language:iso639-2DT
+	];
+	foaf:name """Blissymbols; Blissymbolics; Bliss"""@en.
+
+language:zen
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "zen"^^language:iso639-2DT
+	];
+	foaf:name """Zenaga"""@en.
+
+language:zha
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "za"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "zha"^^language:iso639-2DT
+	];
+	foaf:name """Zhuang; Chuang"""@en.
+
+language:znd
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "znd"^^language:iso639-2DT
+	];
+	foaf:name """Zande languages"""@en.
+
+language:zul
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation "zu"^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "zul"^^language:iso639-2DT
+	];
+	foaf:name """Zulu"""@en.
+
+language:zun
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "zun"^^language:iso639-2DT
+	];
+	foaf:name """Zuni"""@en.
+
+language:zxx
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "zxx"^^language:iso639-2DT
+	];
+	foaf:name """No linguistic content; Not applicable"""@en.
+
+language:zza
+	a fos:Language;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/languages#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-1;
+		skos:notation ""^^language:iso639-1DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme language:iso639-2;
+		skos:notation "zza"^^language:iso639-2DT
+	];
+	foaf:name """Zaza; Dimili; Dimli; Kirdki; Kirmanjki; Zazaki"""@en.

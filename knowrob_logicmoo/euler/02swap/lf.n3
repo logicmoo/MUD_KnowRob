@@ -1,0 +1,9 @@
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix : <http://eulersharp.sourceforge.net/2006/02swap/lf#>.
+
+{{?S1 :p1 :o1. :s2 :p2 :o2} :p3 ?O3. :s4 :p4 ?O4} :p5 {:s6 :p6 ?O6}.
+:s4 :p7 :o7.
+{:s1 :p1 :o1. :s2 :p2 :o2} :p8 {:s6 :p6 :o6}.
+{{?S3 :p3 ?O3. ?S4 :p4 ?O4} :p5 ?O5} => {{?S4 :p7 ?O7. ?S3 :p8 ?O5} => ?O5}.
+{?S5 :p6 ?O6} => ({{?S6 :p7 ?O7} => {?O7 :p9 ?S5}. :s9 :p9 :o9} {?O6 :p9 ?S5})!e:disjunction.

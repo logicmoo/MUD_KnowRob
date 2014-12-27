@@ -1,0 +1,12 @@
+@prefix math: <http://www.w3.org/2000/10/swap/math#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix : <http://eulersharp.sourceforge.net/2003/03swap/try#>.
+
+{?U :start_looking ?V} => {"alfa" log:outputString ?V}.
+
+{?X :look :left. ?U :left_looking ?V} => {"beta" log:outputString ?V}.
+{?X :look :right. ?U :right_looking ?V} => {"beta" log:outputString ?V}.
+
+{?U :stop_looking ?V} => {"gamma" log:outputString ?V}.
+

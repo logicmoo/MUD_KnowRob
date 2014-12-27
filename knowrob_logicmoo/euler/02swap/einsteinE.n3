@@ -1,0 +1,139 @@
+#Processed by Id: euler.yap,v 1.112 2006/11/09 21:07:09 josd Exp 
+
+@prefix str: <http://www.w3.org/2000/10/swap/string#>.
+@prefix var: <http://localhost/var#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix list: <http://www.w3.org/2000/10/swap/list#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix : <http://eulersharp.sourceforge.net/2005/11swap/einstein#>.
+@prefix time: <http://www.w3.org/2000/10/swap/time#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix n3: <http://www.w3.org/2004/06/rei#>.
+@prefix math: <http://www.w3.org/2000/10/swap/math#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix r: <http://www.w3.org/2000/10/swap/reason#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+[ a r:Proof, r:Conjunction;
+  r:component [ a r:Inference; r:gives {:german :eats :fish}; r:evidence (
+    [ a r:Extraction; r:gives {:german :eats :fish}; r:because [ a r:Inference; r:gives {:german :eats :fish}; r:evidence (
+      [ a r:Extraction; r:gives {((:norwegian :cat :dunhill :water :yellow) (:dane :horse :marlboro :tea :blue) (:brit :bird :pallmall :milk :red) (:german :fish :rothmans :coffee :green) (:swede :dog :winfield :beer :white)) :item (:dane :horse :marlboro :tea :blue)}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/einsteinP.n3>]]
+      [ a r:Extraction; r:gives {((:norwegian :cat :dunhill :water :yellow) (:dane :horse :marlboro :tea :blue) (:brit :bird :pallmall :milk :red) (:german :fish :rothmans :coffee :green) (:swede :dog :winfield :beer :white)) :item (:swede :dog :winfield :beer :white)}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/einsteinP.n3>]]
+      [ a r:Extraction; r:gives {((:norwegian :cat :dunhill :water :yellow) (:dane :horse :marlboro :tea :blue) (:brit :bird :pallmall :milk :red) (:german :fish :rothmans :coffee :green) (:swede :dog :winfield :beer :white)) :item (:brit :bird :pallmall :milk :red)}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/einsteinP.n3>]]
+      [ a r:Extraction; r:gives {((:norwegian :cat :dunhill :water :yellow) (:dane :horse :marlboro :tea :blue) (:brit :bird :pallmall :milk :red) (:german :fish :rothmans :coffee :green) (:swede :dog :winfield :beer :white)) :item (:german :fish :rothmans :coffee :green)}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/einsteinP.n3>]]
+      [ a r:Extraction; r:gives {((:norwegian :cat :dunhill :water :yellow) (:dane :horse :marlboro :tea :blue) (:brit :bird :pallmall :milk :red) (:german :fish :rothmans :coffee :green) (:swede :dog :winfield :beer :white)) :near ((:norwegian :cat :dunhill :water :yellow) (:dane :horse :marlboro :tea :blue))}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/einsteinP.n3>]]
+      [ a r:Extraction; r:gives {((:norwegian :cat :dunhill :water :yellow) (:dane :horse :marlboro :tea :blue) (:brit :bird :pallmall :milk :red) (:german :fish :rothmans :coffee :green) (:swede :dog :winfield :beer :white)) :item (:german :fish :rothmans :coffee :green)}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/einsteinP.n3>]]
+      [ a r:Extraction; r:gives {((:norwegian :cat :dunhill :water :yellow) (:dane :horse :marlboro :tea :blue) (:brit :bird :pallmall :milk :red) (:german :fish :rothmans :coffee :green) (:swede :dog :winfield :beer :white)) :next ((:german :fish :rothmans :coffee :green) (:swede :dog :winfield :beer :white))}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/einsteinP.n3>]]
+      [ a r:Extraction; r:gives {((:norwegian :cat :dunhill :water :yellow) (:dane :horse :marlboro :tea :blue) (:brit :bird :pallmall :milk :red) (:german :fish :rothmans :coffee :green) (:swede :dog :winfield :beer :white)) :item (:norwegian :cat :dunhill :water :yellow)}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/einsteinP.n3>]]
+      [ a r:Extraction; r:gives {((:norwegian :cat :dunhill :water :yellow) (:dane :horse :marlboro :tea :blue) (:brit :bird :pallmall :milk :red) (:german :fish :rothmans :coffee :green) (:swede :dog :winfield :beer :white)) :item (:brit :bird :pallmall :milk :red)}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/einsteinP.n3>]]
+      [ a r:Extraction; r:gives {((:norwegian :cat :dunhill :water :yellow) (:dane :horse :marlboro :tea :blue) (:brit :bird :pallmall :milk :red) (:german :fish :rothmans :coffee :green) (:swede :dog :winfield :beer :white)) :item (:swede :dog :winfield :beer :white)}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/einsteinP.n3>]]
+      [ a r:Extraction; r:gives {((:norwegian :cat :dunhill :water :yellow) (:dane :horse :marlboro :tea :blue) (:brit :bird :pallmall :milk :red) (:german :fish :rothmans :coffee :green) (:swede :dog :winfield :beer :white)) :near ((:dane :horse :marlboro :tea :blue) (:norwegian :cat :dunhill :water :yellow))}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/einsteinP.n3>]]
+      [ a r:Extraction; r:gives {((:norwegian :cat :dunhill :water :yellow) (:dane :horse :marlboro :tea :blue) (:brit :bird :pallmall :milk :red) (:german :fish :rothmans :coffee :green) (:swede :dog :winfield :beer :white)) :near ((:dane :horse :marlboro :tea :blue) (:norwegian :cat :dunhill :water :yellow))}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/einsteinP.n3>]]
+      [ a r:Extraction; r:gives {((:norwegian :cat :dunhill :water :yellow) (:dane :horse :marlboro :tea :blue) (:brit :bird :pallmall :milk :red) (:german :fish :rothmans :coffee :green) (:swede :dog :winfield :beer :white)) :near ((:norwegian :cat :dunhill :water :yellow) (:dane :horse :marlboro :tea :blue))}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/einsteinP.n3>]]
+      [ a r:Extraction; r:gives {((:norwegian :cat :dunhill :water :yellow) (:dane :horse :marlboro :tea :blue) (:brit :bird :pallmall :milk :red) (:german :fish :rothmans :coffee :green) (:swede :dog :winfield :beer :white)) :item (:brit :bird :pallmall :milk :red)}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/einsteinP.n3>]]
+      [ a r:Extraction; r:gives {((:norwegian :cat :dunhill :water :yellow) (:dane :horse :marlboro :tea :blue) (:brit :bird :pallmall :milk :red) (:german :fish :rothmans :coffee :green) (:swede :dog :winfield :beer :white)) :item (:german :fish :rothmans :coffee :green)}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/einsteinP.n3>]]);
+      r:binding [ r:variable [ n3:uri "http://localhost/var#P1"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2005/11swap/einstein#cat"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#S1"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2005/11swap/einstein#dunhill"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#D1"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2005/11swap/einstein#water"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#C1"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2005/11swap/einstein#yellow"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#N2"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2005/11swap/einstein#dane"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#P2"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2005/11swap/einstein#horse"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#S2"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2005/11swap/einstein#marlboro"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#D2"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2005/11swap/einstein#tea"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#C2"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2005/11swap/einstein#blue"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#N3"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2005/11swap/einstein#brit"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#P3"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2005/11swap/einstein#bird"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#S3"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2005/11swap/einstein#pallmall"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#C3"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2005/11swap/einstein#red"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#N4"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2005/11swap/einstein#german"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#P4"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2005/11swap/einstein#fish"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#S4"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2005/11swap/einstein#rothmans"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#D4"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2005/11swap/einstein#coffee"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#C4"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2005/11swap/einstein#green"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#N5"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2005/11swap/einstein#swede"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#P5"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2005/11swap/einstein#dog"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#S5"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2005/11swap/einstein#winfield"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#D5"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2005/11swap/einstein#beer"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#C5"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2005/11swap/einstein#white"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#PC"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2005/11swap/einstein#horse"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#SC"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2005/11swap/einstein#marlboro"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#CC"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2005/11swap/einstein#blue"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#SB"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2005/11swap/einstein#winfield"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#DB"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2005/11swap/einstein#beer"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#CB"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2005/11swap/einstein#white"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#PA"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2005/11swap/einstein#bird"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#SA"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2005/11swap/einstein#pallmall"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#DA"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2005/11swap/einstein#milk"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#PQ"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2005/11swap/einstein#fish"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#DQ"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2005/11swap/einstein#coffee"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#CQ"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2005/11swap/einstein#green"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#PR"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2005/11swap/einstein#cat"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#SR"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2005/11swap/einstein#dunhill"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#DR"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2005/11swap/einstein#water"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#CR"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2005/11swap/einstein#yellow"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#NS"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2005/11swap/einstein#dane"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#PS"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2005/11swap/einstein#horse"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#SS"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2005/11swap/einstein#marlboro"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#DS"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2005/11swap/einstein#tea"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#NF"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2005/11swap/einstein#german"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#PF"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2005/11swap/einstein#fish"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#SF"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2005/11swap/einstein#rothmans"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#ND"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2005/11swap/einstein#german"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#PD"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2005/11swap/einstein#fish"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#SD"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2005/11swap/einstein#rothmans"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#DD"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2005/11swap/einstein#coffee"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#NE"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2005/11swap/einstein#swede"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#PE"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2005/11swap/einstein#dog"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#SE"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2005/11swap/einstein#winfield"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#DE"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2005/11swap/einstein#beer"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#NH"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2005/11swap/einstein#norwegian"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#PH"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2005/11swap/einstein#cat"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#DH"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2005/11swap/einstein#water"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#NG"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2005/11swap/einstein#brit"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#DG"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2005/11swap/einstein#milk"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#CG"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2005/11swap/einstein#red"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#NP"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2005/11swap/einstein#swede"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#PP"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2005/11swap/einstein#dog"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#CP"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2005/11swap/einstein#white"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#NN"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2005/11swap/einstein#dane"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#PN"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2005/11swap/einstein#horse"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#DN"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2005/11swap/einstein#tea"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#CN"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2005/11swap/einstein#blue"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#NO"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2005/11swap/einstein#norwegian"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#PO"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2005/11swap/einstein#cat"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#SO"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2005/11swap/einstein#dunhill"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#CO"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2005/11swap/einstein#yellow"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#NL"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2005/11swap/einstein#dane"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#PL"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2005/11swap/einstein#horse"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#DL"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2005/11swap/einstein#tea"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#CL"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2005/11swap/einstein#blue"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#NM"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2005/11swap/einstein#norwegian"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#SM"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2005/11swap/einstein#dunhill"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#DM"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2005/11swap/einstein#water"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#CM"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2005/11swap/einstein#yellow"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#NI"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2005/11swap/einstein#norwegian"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#PI"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2005/11swap/einstein#cat"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#DI"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2005/11swap/einstein#water"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#CI"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2005/11swap/einstein#yellow"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#NJ"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2005/11swap/einstein#dane"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#SJ"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2005/11swap/einstein#marlboro"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#DJ"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2005/11swap/einstein#tea"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#CJ"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2005/11swap/einstein#blue"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#NK"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2005/11swap/einstein#brit"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#PK"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2005/11swap/einstein#bird"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#SK"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2005/11swap/einstein#pallmall"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#CK"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2005/11swap/einstein#red"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#NT"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2005/11swap/einstein#german"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#ST"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2005/11swap/einstein#rothmans"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#DT"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2005/11swap/einstein#coffee"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#CT"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2005/11swap/einstein#green"]]; 
+      r:rule [ a r:Extraction; r:gives {@forAll var:P1,var:S1,var:D1,var:C1,var:N2,var:P2,var:S2,var:D2,var:C2,var:N3,var:P3,var:S3,var:C3,var:N4,var:P4,var:S4,var:D4,var:C4,var:N5,var:P5,var:S5,var:D5,var:C5,var:PC,var:SC,var:CC,var:SB,var:DB,var:CB,var:PA,var:SA,var:DA,var:PQ,var:DQ,var:CQ,var:PR,var:SR,var:DR,var:CR,var:NS,var:PS,var:SS,var:DS,var:NF,var:PF,var:SF,var:ND,var:PD,var:SD,var:DD,var:NE,var:PE,var:SE,var:DE,var:NH,var:PH,var:DH,var:NG,var:DG,var:CG,var:NP,var:PP,var:CP,var:NN,var:PN,var:DN,var:CN,var:NO,var:PO,var:SO,var:CO,var:NL,var:PL,var:DL,var:CL,var:NM,var:SM,var:DM,var:CM,var:NI,var:PI,var:DI,var:CI,var:NJ,var:SJ,var:DJ,var:CJ,var:NK,var:PK,var:SK,var:CK,var:NT,var:ST,var:DT,var:CT. {((:norwegian var:P1 var:S1 var:D1 var:C1) (var:N2 var:P2 var:S2 var:D2 var:C2) (var:N3 var:P3 var:S3 :milk var:C3) (var:N4 var:P4 var:S4 var:D4 var:C4) (var:N5 var:P5 var:S5 var:D5 var:C5)) :item (:dane var:PC var:SC :tea var:CC). ((:norwegian var:P1 var:S1 var:D1 var:C1) (var:N2 var:P2 var:S2 var:D2 var:C2) (var:N3 var:P3 var:S3 :milk var:C3) (var:N4 var:P4 var:S4 var:D4 var:C4) (var:N5 var:P5 var:S5 var:D5 var:C5)) :item (:swede :dog var:SB var:DB var:CB). ((:norwegian var:P1 var:S1 var:D1 var:C1) (var:N2 var:P2 var:S2 var:D2 var:C2) (var:N3 var:P3 var:S3 :milk var:C3) (var:N4 var:P4 var:S4 var:D4 var:C4) (var:N5 var:P5 var:S5 var:D5 var:C5)) :item (:brit var:PA var:SA var:DA :red). ((:norwegian var:P1 var:S1 var:D1 var:C1) (var:N2 var:P2 var:S2 var:D2 var:C2) (var:N3 var:P3 var:S3 :milk var:C3) (var:N4 var:P4 var:S4 var:D4 var:C4) (var:N5 var:P5 var:S5 var:D5 var:C5)) :item (:german var:PQ :rothmans var:DQ var:CQ). ((:norwegian var:P1 var:S1 var:D1 var:C1) (var:N2 var:P2 var:S2 var:D2 var:C2) (var:N3 var:P3 var:S3 :milk var:C3) (var:N4 var:P4 var:S4 var:D4 var:C4) (var:N5 var:P5 var:S5 var:D5 var:C5)) :near ((:norwegian var:PR var:SR var:DR var:CR) (var:NS var:PS var:SS var:DS :blue)). ((:norwegian var:P1 var:S1 var:D1 var:C1) (var:N2 var:P2 var:S2 var:D2 var:C2) (var:N3 var:P3 var:S3 :milk var:C3) (var:N4 var:P4 var:S4 var:D4 var:C4) (var:N5 var:P5 var:S5 var:D5 var:C5)) :item (var:NF var:PF var:SF :coffee :green). ((:norwegian var:P1 var:S1 var:D1 var:C1) (var:N2 var:P2 var:S2 var:D2 var:C2) (var:N3 var:P3 var:S3 :milk var:C3) (var:N4 var:P4 var:S4 var:D4 var:C4) (var:N5 var:P5 var:S5 var:D5 var:C5)) :next ((var:ND var:PD var:SD var:DD :green) (var:NE var:PE var:SE var:DE :white)). ((:norwegian var:P1 var:S1 var:D1 var:C1) (var:N2 var:P2 var:S2 var:D2 var:C2) (var:N3 var:P3 var:S3 :milk var:C3) (var:N4 var:P4 var:S4 var:D4 var:C4) (var:N5 var:P5 var:S5 var:D5 var:C5)) :item (var:NH var:PH :dunhill var:DH :yellow). ((:norwegian var:P1 var:S1 var:D1 var:C1) (var:N2 var:P2 var:S2 var:D2 var:C2) (var:N3 var:P3 var:S3 :milk var:C3) (var:N4 var:P4 var:S4 var:D4 var:C4) (var:N5 var:P5 var:S5 var:D5 var:C5)) :item (var:NG :bird :pallmall var:DG var:CG). ((:norwegian var:P1 var:S1 var:D1 var:C1) (var:N2 var:P2 var:S2 var:D2 var:C2) (var:N3 var:P3 var:S3 :milk var:C3) (var:N4 var:P4 var:S4 var:D4 var:C4) (var:N5 var:P5 var:S5 var:D5 var:C5)) :item (var:NP var:PP :winfield :beer var:CP). ((:norwegian var:P1 var:S1 var:D1 var:C1) (var:N2 var:P2 var:S2 var:D2 var:C2) (var:N3 var:P3 var:S3 :milk var:C3) (var:N4 var:P4 var:S4 var:D4 var:C4) (var:N5 var:P5 var:S5 var:D5 var:C5)) :near ((var:NN var:PN :marlboro var:DN var:CN) (var:NO var:PO var:SO :water var:CO)). ((:norwegian var:P1 var:S1 var:D1 var:C1) (var:N2 var:P2 var:S2 var:D2 var:C2) (var:N3 var:P3 var:S3 :milk var:C3) (var:N4 var:P4 var:S4 var:D4 var:C4) (var:N5 var:P5 var:S5 var:D5 var:C5)) :near ((var:NL var:PL :marlboro var:DL var:CL) (var:NM :cat var:SM var:DM var:CM)). ((:norwegian var:P1 var:S1 var:D1 var:C1) (var:N2 var:P2 var:S2 var:D2 var:C2) (var:N3 var:P3 var:S3 :milk var:C3) (var:N4 var:P4 var:S4 var:D4 var:C4) (var:N5 var:P5 var:S5 var:D5 var:C5)) :near ((var:NI var:PI :dunhill var:DI var:CI) (var:NJ :horse var:SJ var:DJ var:CJ)). ((:norwegian var:P1 var:S1 var:D1 var:C1) (var:N2 var:P2 var:S2 var:D2 var:C2) (var:N3 var:P3 var:S3 :milk var:C3) (var:N4 var:P4 var:S4 var:D4 var:C4) (var:N5 var:P5 var:S5 var:D5 var:C5)) :item (var:NK var:PK var:SK :milk var:CK). ((:norwegian var:P1 var:S1 var:D1 var:C1) (var:N2 var:P2 var:S2 var:D2 var:C2) (var:N3 var:P3 var:S3 :milk var:C3) (var:N4 var:P4 var:S4 var:D4 var:C4) (var:N5 var:P5 var:S5 var:D5 var:C5)) :item (var:NT :fish var:ST var:DT var:CT)} => {var:NT :eats :fish}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/einsteinP.n3>]]]]);
+    r:binding [ r:variable [ n3:uri "http://localhost/var#WHO"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2005/11swap/einstein#german"]]; 
+    r:rule [ a r:Extraction; r:gives {@forAll var:WHO. {var:WHO :eats :fish} => {var:WHO :eats :fish}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/einsteinQ.n3>]]];
+  r:gives {
+    :german :eats :fish.}].
+
+#ENDS 0 msec.
+

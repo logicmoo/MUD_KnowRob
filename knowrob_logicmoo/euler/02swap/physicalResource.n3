@@ -1,0 +1,76 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix dce: <http://purl.org/dc/elements/1.1/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+@prefix irw: <http://www.ontologydesignpatterns.org/ont/web/irw.owl#>.
+@prefix space: <http://eulersharp.sourceforge.net/2003/03swap/space#>.
+@prefix physical: <http://eulersharp.sourceforge.net/2003/03swap/physicalResource#>.
+
+<http://eulersharp.sourceforge.net/2003/03swap/physicalResource>
+	a owl:Ontology;
+	dce:title """Physical Resource"""@en;
+	dce:creator """Hans Cools, MD; Agfa Healthcare/Belgium"""@en;
+	dce:publisher """Agfa Healthcare/Belgium"""@en;
+	dce:description """Formal general description of physical resource."""@en;
+	dce:format """OWL Full"""@en.
+
+#
+# CLASSES
+#
+
+physical:Resource
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/physicalResource#>;
+	rdfs:label """physical resource"""@en;
+	skos:definition """See definition of <http://www.ontologydesignpatterns.org/ont/web/irw.owl#PhysicalEntityResource>."""@en;
+	rdfs:subClassOf irw:PhysicalEntityResource, dct:PhysicalResource, space:SpatialResource.
+
+physical:Compound
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/physicalResource#>;
+	rdfs:label """compound"""@en;
+	skos:definition """Physical resource composed of more than 1 type of substance."""@en;
+	skos:note """This can be anything, e.g. chemical compound containing more than 1 elementary substance."""@en;
+	rdfs:subClassOf physical:Resource.
+
+physical:Product
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/physicalResource#>;
+	rdfs:label """product"""@en;
+	skos:definition """Physical resource as result of producing."""@en;
+	rdfs:subClassOf physical:Resource.
+
+physical:Device
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/physicalResource#>;
+	rdfs:label """device"""@en;
+	skos:definition """Physical resource serving a particular purpose."""@en;
+	rdfs:subClassOf physical:Resource, foaf:Agent.
+
+physical:Specimen
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/physicalResource#>;
+	rdfs:label """specimen"""@en;
+	skos:definition """Sample containing a substance for examination."""@en;
+	rdfs:subClassOf physical:Resource.
+
+#
+# PROPERTIES
+#
+
+physical:hasComplexity
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/physicalResource#>;
+	skos:definition """Specifying a physical organizational structure complexity of something."""@en;
+	rdfs:domain rdfs:Resource;
+	rdfs:range physical:Resource.
+
+physical:complexityOf
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/physicalResource#>;
+	skos:definition """Specifying something with a physical organizational structure complexity."""@en;
+	owl:inverseOf physical:hasComplexity;
+	rdfs:domain physical:Resource;
+	rdfs:range rdfs:Resource.

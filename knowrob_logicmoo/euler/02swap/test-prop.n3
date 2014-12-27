@@ -1,0 +1,15 @@
+## see introspector.readme
+@prefix : <http://eulersharp.sourceforge.net/2003/03swap/test#>.
+@prefix isfl: <http://purl.oclc.org/NET/introspector/2002/11/24/gcc/node_fields#> .
+@prefix isid: <http://purl.oclc.org/NET/introspector/2002/11/24/temp/node-ids#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dc: <http://dublin_core#>.
+
+isfl:size a rdf:Property.
+
+isid:id-5 isfl:size isid:id-6 .
+
+
+

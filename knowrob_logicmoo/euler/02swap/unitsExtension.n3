@@ -1,0 +1,1049 @@
+@prefix dce: <http://purl.org/dc/elements/1.1/>.
+@prefix math: <http://sweet.jpl.nasa.gov/2.0/math.owl#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix phys: <http://sweet.jpl.nasa.gov/2.0/phys.owl#>.
+@prefix physDynamics: <http://sweet.jpl.nasa.gov/2.0/physDynamics.owl#>.
+@prefix physThermo: <http://sweet.jpl.nasa.gov/2.0/physThermo.owl#>.
+@prefix pres: <http://sweet.jpl.nasa.gov/2.0/physPressure.owl>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix time: <http://sweet.jpl.nasa.gov/2.0/time.owl#>.
+@prefix units: <http://sweet.jpl.nasa.gov/2.0/sciUnits.owl#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix quex: <http://eulersharp.sourceforge.net/2003/03swap/quantitiesExtension#>.
+@prefix clisko: <http://www.agfa.com/w3c/2009/clinicalSKOSSchemes#>.
+@prefix unex: <http://eulersharp.sourceforge.net/2003/03swap/unitsExtension#>.
+
+<http://eulersharp.sourceforge.net/2003/03swap/unitsExtension#>
+
+	rdfs:comment """Deprecated in favour of <http://eulersharp.sourceforge.net/2003/03swap/units#>"""@en;
+	
+	a owl:Ontology;
+	dce:title """Units Extension"""@en;
+	dce:creator """Pieterjan De Potter, Pedro Debevere, Ghent University - IBBT/ELIS - Multimedia Lab/Belgium"""@en;
+	dce:contributor """Hans Cools, MD, Agfa Healthcare, Belgium"""@en;
+	dce:publisher """Agfa Healthcare, Belgium"""@en;
+	dce:description """Formal description of units, as an extension of NASA's sciUnits ontology."""@en;
+	dce:format """OWL Full"""@en.
+
+#
+#	PREFIX INSTANCES
+#
+
+unex:deci
+	a units:Prefix;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/unitsExtension#>;
+	units:hasSymbol """d""";
+	units:hasValue "1e-01"^^xsd:double.
+
+unex:pico
+	a units:Prefix;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/unitsExtension#>;
+	units:hasSymbol """p""";
+	units:hasValue "1e-12"^^xsd:double.
+
+unex:femto
+	a units:Prefix;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/unitsExtension#>;
+	units:hasSymbol """f""";
+	units:hasValue "1e-15"^^xsd:double.
+
+unex:atto
+	a units:Prefix;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/unitsExtension#>;
+	units:hasSymbol """a""";
+	units:hasValue "1e-18"^^xsd:double.
+
+unex:zepto
+	a units:Prefix;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/unitsExtension#>;
+	units:hasSymbol """z""";
+	units:hasValue "1e-21"^^xsd:double.
+
+unex:yocto
+	a units:Prefix;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/unitsExtension#>;
+	units:hasSymbol """y""";
+	units:hasValue "1e-24"^^xsd:double.
+
+#
+#	UNITS OF LENGTH MEASUREMENT
+#
+
+unex:meter
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/unitsExtension#>;
+	rdfs:label """meter"""@en;
+	skos:definition """The metre is the length of the path travelled by light in vacuum during a time interval of 1/299 792 458 of a second."""@en;
+	rdfs:subClassOf units:meter, [
+		a owl:Restriction; owl:onProperty quex:unitOf; owl:someValuesFrom [
+			a owl:Restriction; owl:onProperty quex:measurementOf; owl:someValuesFrom quex:Length]];
+	skos:exactMatch [
+		a skos:Concept; skos:inScheme clisko:sct20080731; skos:notation "258669008"^^clisko:sct20080731DT].
+
+unex:decimeter
+	a units:Unit;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/unitsExtension#>;
+	rdfs:label """decimeter"""@en;
+	a units:UnitDerivedByScaling;
+	units:derivedFromUnit unex:meter;
+	units:hasPrefix unex:deci;
+	units:hasSymbol """dm""";
+	rdfs:subClassOf [
+		a owl:Restriction; owl:onProperty quex:unitOf; owl:someValuesFrom [
+			a owl:Restriction; owl:onProperty quex:measurementOf; owl:someValuesFrom quex:Length]];
+	skos:exactMatch [
+		a skos:Concept; skos:inScheme clisko:sct20080731; skos:notation "258671008"^^clisko:sct20080731DT].
+
+unex:centimeter
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/unitsExtension#>;
+	rdfs:label """centimeter"""@en;
+	rdfs:subClassOf units:centimeter, [
+		a owl:Restriction; owl:onProperty quex:unitOf; owl:someValuesFrom [
+			a owl:Restriction; owl:onProperty quex:measurementOf; owl:someValuesFrom quex:Length]];
+	units:hasSymbol """cm""";
+	skos:exactMatch [
+		a skos:Concept; skos:inScheme clisko:sct20080731; skos:notation "258672001"^^clisko:sct20080731DT].
+
+unex:millimeter
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/unitsExtension#>;
+	rdfs:label """millimeter"""@en;
+	rdfs:subClassOf units:millimeter, [
+		a owl:Restriction; owl:onProperty quex:unitOf; owl:someValuesFrom [
+			a owl:Restriction; owl:onProperty quex:measurementOf; owl:someValuesFrom quex:Length]];
+	units:hasSymbol """mm""";
+	skos:exactMatch [
+		a skos:Concept; skos:inScheme clisko:sct20080731; skos:notation "258673006"^^clisko:sct20080731DT].
+
+unex:micrometer
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/unitsExtension#>;
+	rdfs:label """micrometer"""@en;
+	rdfs:subClassOf units:micrometer, [
+		a owl:Restriction; owl:onProperty quex:unitOf; owl:someValuesFrom [
+			a owl:Restriction; owl:onProperty quex:measurementOf; owl:someValuesFrom quex:Length]];
+	units:hasSymbol """µm""";
+	skos:exactMatch [
+		a skos:Concept; skos:inScheme clisko:sct20080731; skos:notation "258674000"^^clisko:sct20080731DT].
+
+unex:nanometer
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/unitsExtension#>;
+	rdfs:label """nanometer"""@en;
+	rdfs:subClassOf units:nanometer, [
+		a owl:Restriction; owl:onProperty quex:unitOf; owl:someValuesFrom [
+			a owl:Restriction; owl:onProperty quex:measurementOf; owl:someValuesFrom quex:Length]];
+	units:hasSymbol """nm""";
+	skos:exactMatch [
+		a skos:Concept; skos:inScheme clisko:sct20080731; skos:notation "258675004"^^clisko:sct20080731DT].
+
+unex:picometer
+	a units:UnitDerivedByScaling;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/unitsExtension#>;
+	units:derivedFromUnit unex:meter;
+	units:hasPrefix unex:pico;
+	rdfs:subClassOf [
+		a owl:Restriction; owl:onProperty quex:unitOf; owl:someValuesFrom [
+			a owl:Restriction; owl:onProperty quex:measurementOf; owl:someValuesFrom quex:Length]];
+	units:hasSymbol """pm""".
+
+#
+#	UNITS OF MASS MEASUREMENT
+#
+
+unex:kilogram
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/unitsExtension#>;
+	rdfs:label """kilogram"""@en;
+	skos:definition """The kilogram is the unit of mass; it is equal to the mass of the international prototype of the kilogram."""@en;
+	rdfs:subClassOf units:kilogram, [
+		a owl:Restriction; owl:onProperty quex:unitOf; owl:someValuesFrom [
+			a owl:Restriction; owl:onProperty quex:measurementOf; owl:someValuesFrom quex:Mass]];
+	skos:exactMatch [
+		a skos:Concept; skos:inScheme clisko:sct20080731; skos:notation "258683005"^^clisko:sct20080731DT].
+
+unex:gram
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/unitsExtension#>;
+	rdfs:label """gram"""@en;
+	a units:UnitDerivedByScaling;
+	units:derivedFromUnit unex:kilogram;
+	rdfs:subClassOf [
+		a owl:Restriction; owl:onProperty quex:unitOf; owl:someValuesFrom [
+			a owl:Restriction; owl:onProperty quex:measurementOf; owl:someValuesFrom quex:Mass]];
+	units:hasSymbol """g""";
+	skos:exactMatch [
+		a skos:Concept; skos:inScheme clisko:sct20080731; skos:notation "258682000"^^clisko:sct20080731DT].
+
+unex:milligram
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/unitsExtension#>;
+	rdfs:label """milligram"""@en;
+	a units:UnitDerivedByScaling;
+	units:derivedFromUnit unex:gram;
+	units:hasPrefix units:milli;
+	rdfs:subClassOf [
+		a owl:Restriction; owl:onProperty quex:unitOf; owl:someValuesFrom [
+			a owl:Restriction; owl:onProperty quex:measurementOf; owl:someValuesFrom quex:Mass]];
+	units:hasSymbol """mg""";
+	skos:exactMatch [
+		a skos:Concept; skos:inScheme clisko:sct20080731; skos:notation "258684004"^^clisko:sct20080731DT].
+
+unex:microgram
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/unitsExtension#>;
+	rdfs:label """microgram"""@en;
+	a units:UnitDerivedByScaling;
+	units:derivedFromUnit unex:gram;
+	units:hasPrefix units:micro;
+	rdfs:subClassOf [
+		a owl:Restriction; owl:onProperty quex:unitOf; owl:someValuesFrom [
+			a owl:Restriction; owl:onProperty quex:measurementOf; owl:someValuesFrom quex:Mass]];
+	units:hasSymbol """µg""";
+	skos:exactMatch [
+		a skos:Concept; skos:inScheme clisko:sct20080731; skos:notation "258685003"^^clisko:sct20080731DT].
+
+unex:nanogram
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/unitsExtension#>;
+	rdfs:label """nanogram"""@en;
+	a units:UnitDerivedByScaling;
+	units:derivedFromUnit unex:gram;
+	units:hasPrefix units:nano;
+	rdfs:subClassOf [
+		a owl:Restriction; owl:onProperty quex:unitOf; owl:someValuesFrom [
+			a owl:Restriction; owl:onProperty quex:measurementOf; owl:someValuesFrom quex:Mass]];
+	units:hasSymbol """ng""";
+	skos:exactMatch [
+		a skos:Concept; skos:inScheme clisko:sct20080731; skos:notation "258686002"^^clisko:sct20080731DT].
+
+unex:picogram
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/unitsExtension#>;
+	rdfs:label """picogram"""@en;
+	a units:UnitDerivedByScaling;
+	units:derivedFromUnit unex:gram;
+	units:hasPrefix unex:pico;
+	rdfs:subClassOf [
+		a owl:Restriction; owl:onProperty quex:unitOf; owl:someValuesFrom [
+			a owl:Restriction; owl:onProperty quex:measurementOf; owl:someValuesFrom quex:Mass]];
+	units:hasSymbol """pg""";
+	skos:exactMatch [
+		a skos:Concept; skos:inScheme clisko:sct20080731; skos:notation "258687006"^^clisko:sct20080731DT].
+
+#
+#	UNITS OF TIME MEASUREMENT
+#
+
+unex:second
+	rdfs:isDefinedBy <http://sweet.jpl.nasa.gov/2.0/sciUnits.owl#>;
+	rdfs:label """second"""@en;
+	skos:definition """Duration of 9 192 631 770 periods of the radiation corresponding to the transition between the two hyperfine levels of the ground state of the caesium 133 atom."""@en;
+	rdfs:subClassOf units:second, [
+		a owl:Restriction; owl:onProperty quex:unitOf; owl:someValuesFrom [
+			a owl:Restriction; owl:onProperty quex:measurementOf; owl:someValuesFrom quex:Time]];
+	skos:exactMatch [
+		a skos:Concept; skos:inScheme clisko:sct20080731; skos:notation "257997001"^^clisko:sct20080731DT].
+
+unex:millisecond
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/unitsExtension#>;
+	rdfs:label """millisecond"""@en;
+	a units:UnitDerivedByScaling;
+	units:derivedFromUnit unex:second;
+	units:hasPrefix units:milli;
+	rdfs:subClassOf [
+		a owl:Restriction; owl:onProperty quex:unitOf; owl:someValuesFrom [
+			a owl:Restriction; owl:onProperty quex:measurementOf; owl:someValuesFrom quex:Time]];
+	units:hasSymbol """ms""";
+	skos:exactMatch [
+		a skos:Concept; skos:inScheme clisko:sct20080731; skos:notation "258697002"^^clisko:sct20080731DT].
+
+unex:minute
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/unitsExtension#>;
+	rdfs:label """minute"""@en;
+	units:hasSymbol """min""";
+	rdfs:subClassOf units:minute, [
+		a owl:Restriction; owl:onProperty quex:unitOf; owl:someValuesFrom [
+			a owl:Restriction; owl:onProperty quex:measurementOf; owl:someValuesFrom quex:Time]];
+	skos:exactMatch [
+		a skos:Concept; skos:inScheme clisko:sct20080731; skos:notation "258701004"^^clisko:sct20080731DT].
+
+unex:hour
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/unitsExtension#>;
+	rdfs:label """hour"""@en;
+	units:hasSymbol """h""";
+	rdfs:subClassOf units:hour, [
+		a owl:Restriction; owl:onProperty quex:unitOf; owl:someValuesFrom [
+			a owl:Restriction; owl:onProperty quex:measurementOf; owl:someValuesFrom quex:Time]];
+	skos:exactMatch [
+		a skos:Concept; skos:inScheme clisko:sct20080731; skos:notation "258702006"^^clisko:sct20080731DT].
+
+unex:day
+	a units:UnitDerivedByScaling;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/unitsExtension#>;
+	rdfs:label """day"""@en;
+	units:derivedFromUnit unex:second;
+	units:hasScalingNumber "86400.0e+00"^^xsd:double;
+	rdfs:subClassOf [
+		a owl:Restriction; owl:onProperty quex:unitOf; owl:someValuesFrom [
+			a owl:Restriction; owl:onProperty quex:measurementOf; owl:someValuesFrom quex:Time]];
+	units:hasSymbol """d""";
+	skos:exactMatch [
+		a skos:Concept; skos:inScheme clisko:sct20080731; skos:notation "258703001"^^clisko:sct20080731DT].
+
+unex:week
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/unitsExtension#>;
+	rdfs:label """week"""@en;
+	rdfs:subClassOf units:week, [
+		a owl:Restriction; owl:onProperty quex:unitOf; owl:someValuesFrom [
+			a owl:Restriction; owl:onProperty quex:measurementOf; owl:someValuesFrom quex:Time]];
+	skos:exactMatch [
+		a skos:Concept; skos:inScheme clisko:sct20080731; skos:notation "258705008"^^clisko:sct20080731DT].
+
+unex:month
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/unitsExtension#>;
+	rdfs:label """month"""@en;
+	rdfs:subClassOf units:month, [
+		a owl:Restriction; owl:onProperty quex:unitOf; owl:someValuesFrom [
+			a owl:Restriction; owl:onProperty quex:measurementOf; owl:someValuesFrom quex:Time]];
+	units:hasSymbol """m""";
+	skos:exactMatch [
+		a skos:Concept; skos:inScheme clisko:sct20080731; skos:notation "258706009"^^clisko:sct20080731DT].
+
+unex:year
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/unitsExtension#>;
+	rdfs:label """year"""@en;
+	rdfs:subClassOf units:year, [
+		a owl:Restriction; owl:onProperty quex:unitOf; owl:someValuesFrom [
+			a owl:Restriction; owl:onProperty quex:measurementOf; owl:someValuesFrom quex:Time]];
+	units:hasSymbol """y""";
+	skos:exactMatch [
+		a skos:Concept; skos:inScheme clisko:sct20080731; skos:notation "258707000"^^clisko:sct20080731DT].
+
+unex:decade
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/unitsExtension#>;
+	rdfs:subClassOf units:decade, [
+		a owl:Restriction; owl:onProperty quex:unitOf; owl:someValuesFrom [
+			a owl:Restriction; owl:onProperty quex:measurementOf; owl:someValuesFrom quex:Time]].
+
+unex:century
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/unitsExtension#>;
+	rdfs:subClassOf units:century, [
+		a owl:Restriction; owl:onProperty quex:unitOf; owl:someValuesFrom [
+			a owl:Restriction; owl:onProperty quex:measurementOf; owl:someValuesFrom quex:Time]].
+
+#
+#	UNITS OF AMOUNT-OF-SUBSTANCE MEASUREMENT
+#
+
+unex:mole
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/unitsExtension#>;
+	rdfs:label """mole"""@en;
+	rdfs:subClassOf units:mole, [
+		a owl:Restriction; owl:onProperty quex:unitOf; owl:someValuesFrom [
+			a owl:Restriction; owl:onProperty quex:measurementOf; owl:someValuesFrom quex:AmountOfSubstance]];	
+	skos:definition """The mole is the amount of substance of a system which contains as many elementary entities as there are atoms in 0.012 kilogram of carbon 12; its symbol is â€œmolâ€?"""@en;
+	skos:exactMatch [
+		a skos:Concept; skos:inScheme clisko:sct20080731; skos:notation "258717005"^^clisko:sct20080731DT].
+
+unex:millimole
+	a units:UnitDerivedByScaling;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/unitsExtension#>;
+	rdfs:label """millimole"""@en;
+	units:derivedFromUnit unex:mole;
+	units:hasPrefix units:milli;
+	rdfs:subClassOf [
+		a owl:Restriction; owl:onProperty quex:unitOf; owl:someValuesFrom [
+			a owl:Restriction; owl:onProperty quex:measurementOf; owl:someValuesFrom quex:AmountOfSubstance]];
+	units:hasSymbol "mmol";
+	skos:exactMatch [
+		a skos:Concept; skos:inScheme clisko:sct20080731; skos:notation "258718000"^^clisko:sct20080731DT].
+
+unex:micromole
+	a units:UnitDerivedByScaling;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/unitsExtension#>;
+	rdfs:label """micromole"""@en;
+	units:derivedFromUnit unex:mole;
+	units:hasPrefix units:micro;
+	rdfs:subClassOf [
+		a owl:Restriction; owl:onProperty quex:unitOf; owl:someValuesFrom [
+			a owl:Restriction; owl:onProperty quex:measurementOf; owl:someValuesFrom quex:AmountOfSubstance]];
+	units:hasSymbol "µmol";
+	skos:exactMatch [
+		a skos:Concept; skos:inScheme clisko:sct20080731; skos:notation "258719008"^^clisko:sct20080731DT].
+
+#
+#	UNITS OF THERMODYNAMIC TEMPERATURE MEASUREMENT
+#
+
+unex:kelvin
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/unitsExtension#>;
+	rdfs:label """kelvin"""@en;
+	rdfs:subClassOf units:kelvin, [
+		a owl:Restriction; owl:onProperty quex:unitOf; owl:someValuesFrom [
+			a owl:Restriction; owl:onProperty quex:measurementOf; owl:someValuesFrom quex:Temperature]];
+	skos:exactMatch [
+		a skos:Concept; skos:inScheme clisko:sct20080731; skos:notation "258713009"^^clisko:sct20080731DT].
+
+unex:degreeC
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/unitsExtension#>;
+	rdfs:label """degree Celsius"""@en;
+	rdfs:subClassOf units:degreeC, [
+		a owl:Restriction; owl:onProperty quex:unitOf; owl:someValuesFrom [
+			a owl:Restriction; owl:onProperty quex:measurementOf; owl:someValuesFrom quex:Temperature]];
+	skos:exactMatch [
+		a skos:Concept; skos:inScheme clisko:sct20080731; skos:notation "258712007"^^clisko:sct20080731DT].
+
+unex:degreeF
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/unitsExtension#>;
+	rdfs:label """degree Fahrenheit"""@en;
+	rdfs:subClassOf units:degreeF, [
+		a owl:Restriction; owl:onProperty quex:unitOf; owl:someValuesFrom [
+			a owl:Restriction; owl:onProperty quex:measurementOf; owl:someValuesFrom quex:Temperature]];
+	skos:exactMatch [
+		a skos:Concept; skos:inScheme clisko:sct20080731; skos:notation "258712004"^^clisko:sct20080731DT].
+
+#
+#	UNITS OF VOLUME MEASUREMENT
+#
+
+unex:meterCubed
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/unitsExtension#>;
+	rdfs:label """cubic meter"""@en;
+	units:hasSymbol "m^3";
+	rdfs:subClassOf units:meterCubed, [
+		a owl:Restriction; owl:onProperty quex:unitOf; owl:someValuesFrom [
+			a owl:Restriction; owl:onProperty quex:measurementOf; owl:someValuesFrom quex:Volume]];
+	skos:exactMatch [
+		a skos:Concept; skos:inScheme clisko:sct20080731; skos:notation "396154006"^^clisko:sct20080731DT].
+
+unex:decimeterCubed
+	a units:UnitDerivedByRaisingToPower;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/unitsExtension#>;
+	rdfs:label """cubic decimeter"""@en;
+	units:derivedFromUnit unex:decimeter;
+	units:hasPower "3"^^xsd:double;
+	rdfs:subClassOf [
+		a owl:Restriction; owl:onProperty quex:unitOf; owl:someValuesFrom [
+			a owl:Restriction; owl:onProperty quex:measurementOf; owl:someValuesFrom quex:Volume]];
+	owl:equivalentClass unex:liter;
+	units:hasSymbol "dm^3";
+	skos:exactMatch [
+		a skos:Concept; skos:inScheme clisko:sct20080731; skos:notation "258770004"^^clisko:sct20080731DT].
+
+unex:centimeterCubed
+	a units:UnitDerivedByRaisingToPower;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/unitsExtension#>;
+	rdfs:label """cubic centimeter"""@en;
+	units:derivedFromUnit unex:centimeter;
+	units:hasPower "3"^^xsd:double;
+	rdfs:subClassOf [
+		a owl:Restriction; owl:onProperty quex:unitOf; owl:someValuesFrom [
+			a owl:Restriction; owl:onProperty quex:measurementOf; owl:someValuesFrom quex:Volume]];
+	units:hasSymbol "cm^3", "cc";
+	skos:exactMatch [
+		a skos:Concept; skos:inScheme clisko:sct20080731; skos:notation "258773002"^^clisko:sct20080731DT].
+
+unex:liter
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/unitsExtension#>;
+	rdfs:label """liter"""@en;
+	rdfs:subClassOf [
+		a owl:Restriction; owl:onProperty quex:unitOf; owl:someValuesFrom [
+			a owl:Restriction; owl:onProperty quex:measurementOf; owl:someValuesFrom quex:Volume]];
+	owl:equivalentClass unex:decimeterCubed;
+	units:hasSymbol "L";
+	skos:exactMatch [
+		a skos:Concept; skos:inScheme clisko:sct20080731; skos:notation "258770004"^^clisko:sct20080731DT].
+
+unex:deciliter
+	a units:UnitDerivedByScaling;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/unitsExtension#>;
+	rdfs:label """deciliter"""@en;
+	units:derivedFromUnit unex:liter;
+	units:hasPrefix unex:deci;
+	rdfs:subClassOf [
+		a owl:Restriction; owl:onProperty quex:unitOf; owl:someValuesFrom [
+			a owl:Restriction; owl:onProperty quex:measurementOf; owl:someValuesFrom quex:Volume]];
+	units:hasSymbol "dL";
+	skos:exactMatch [
+		a skos:Concept; skos:inScheme clisko:sct20080731; skos:notation "258771000"^^clisko:sct20080731DT].
+
+unex:centiliter
+	a units:UnitDerivedByScaling;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/unitsExtension#>;
+	rdfs:label """centiliter"""@en;
+	units:derivedFromUnit unex:liter;
+	units:hasPrefix units:centi;
+	rdfs:subClassOf [
+		a owl:Restriction; owl:onProperty quex:unitOf; owl:someValuesFrom [
+			a owl:Restriction; owl:onProperty quex:measurementOf; owl:someValuesFrom quex:Volume]];
+	units:hasSymbol "cL";
+	skos:exactMatch [
+		a skos:Concept; skos:inScheme clisko:sct20080731; skos:notation "258772007"^^clisko:sct20080731DT].
+
+unex:milliliter
+	a units:UnitDerivedByScaling;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/unitsExtension#>;
+	rdfs:label """milliliter"""@en;
+	units:derivedFromUnit unex:liter;
+	owl:equivalentClass unex:centimeterCubed;
+	units:hasPrefix units:milli;
+	units:hasSymbol "mL";
+	rdfs:subClassOf [
+		a owl:Restriction; owl:onProperty quex:unitOf; owl:someValuesFrom [
+			a owl:Restriction; owl:onProperty quex:measurementOf; owl:someValuesFrom quex:Volume]];
+	skos:exactMatch [
+		a skos:Concept; skos:inScheme clisko:sct20080731; skos:notation " 258773002"^^clisko:sct20080731DT].
+
+unex:femtoliter
+	a units:UnitDerivedByScaling;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/unitsExtension#>;
+	rdfs:label """femtoliter"""@en;
+	units:derivedFromUnit unex:liter;
+	units:hasPrefix unex:femto;
+	units:hasSymbol "fL";
+	rdfs:subClassOf [
+		a owl:Restriction; owl:onProperty quex:unitOf; owl:someValuesFrom [
+			a owl:Restriction; owl:onProperty quex:measurementOf; owl:someValuesFrom quex:Volume]].
+
+unex:teaspoon
+	a units:UnitDerivedByScaling;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/unitsExtension#>;
+	rdfs:label """teaspoon"""@en;
+	skos:definition """Content of a teaspoon as unit of volume."""@en;
+	rdfs:comment """Equals 5ml, e.g. of a clinical drug administration form sirup."""@en;
+	units:derivedFromUnit unex:milliliter;
+	rdfs:subClassOf [
+		a owl:Restriction; owl:onProperty quex:unitOf; owl:someValuesFrom [
+			a owl:Restriction; owl:onProperty quex:measurementOf; owl:someValuesFrom quex:Volume]];
+	units:hasSymbol "tsp".
+
+unex:tablespoon
+	a units:UnitDerivedByScaling;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/unitsExtension#>;
+	rdfs:label """tablespoon"""@en;
+	skos:definition """Content of a tablespoon as unit of volume."""@en;
+	rdfs:comment """Equals 15ml, e.g. of a clinical drug administration form sirup."""@en;
+	units:derivedFromUnit unex:milliliter;
+	rdfs:subClassOf [
+		a owl:Restriction; owl:onProperty quex:unitOf; owl:someValuesFrom [
+			a owl:Restriction; owl:onProperty quex:measurementOf; owl:someValuesFrom quex:Volume]];
+	units:hasSymbol "tbs".
+
+#
+#	UNITS OF PRESSURE MEASUREMENT
+#
+
+unex:pascal
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/unitsExtension#>;
+	rdfs:label """pascal"""@en;
+	rdfs:subClassOf units:pascal, [
+		a owl:Restriction; owl:onProperty quex:unitOf; owl:someValuesFrom [
+			a owl:Restriction; owl:onProperty quex:measurementOf; owl:someValuesFrom quex:Pressure]];
+	skos:exactMatch [
+		a skos:Concept; skos:inScheme clisko:sct20080731; skos:notation "259016002"^^clisko:sct20080731DT].
+
+unex:mmHg
+	a units:UnitDerivedByScaling;
+	rdfs:label """millimeter of mercury"""@en;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/unitsExtension#>;
+	rdfs:comment """760 mmHg corresponds with 101.325 kPa."""@en;
+	units:derivedFromUnit unex:pascal;
+	units:hasScalingNumber "133.322"^^xsd:double;
+	rdfs:subClassOf [
+		a owl:Restriction; owl:onProperty quex:unitOf; owl:someValuesFrom [
+			a owl:Restriction; owl:onProperty quex:measurementOf; owl:someValuesFrom quex:Pressure]];
+	units:hasSymbol "mmHg";
+	skos:exactMatch [
+		a skos:Concept; skos:inScheme clisko:sct20080731; skos:notation "259018001"^^clisko:sct20080731DT].
+
+#
+#	UNITS OF RATIO	MEASUREMENT		note: math:Ratio subclass of math:Division subclass of math:BinaryOperation subclass of math:Operation
+#
+
+unex:percent
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/unitsExtension#>;
+	rdfs:label """percent"""@en;
+	skos:definition """Unit of ratio with base (denominator) 100."""@en;
+	rdfs:subClassOf units:percent, [
+		a owl:Restriction; owl:onProperty quex:unitOf; owl:someValuesFrom [
+			a owl:Restriction; owl:onProperty quex:measurementOf; owl:someValuesFrom quex:Percentage]];
+	units:hasSymbol "%";
+	skos:exactMatch [
+		a skos:Concept; skos:inScheme clisko:sct20080731; skos:notation "118582008"^^clisko:sct20080731DT].
+ 
+#
+#	UNITS OF FREQUENCY MEASUREMENT
+#
+
+units:hertz
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/unitsExtension#>;
+	rdfs:label """hertz"""@en;
+	skos:definition """Number of cycles per second."""@en;
+	skos:note """SI unit of frequency."""@en;
+	units:derivedFromUnit units:second;
+	math:hasPower "-1.0e+00"^^xsd:double;
+	rdfs:subClassOf [
+		a owl:Restriction; owl:onProperty quex:unitOf; owl:someValuesFrom [
+			a owl:Restriction; owl:onProperty quex:measurementOf; owl:someValuesFrom quex:Frequency]];
+	units:hasSymbol "Hz";
+	skos:exactMatch [
+		a skos:Concept; skos:inScheme clisko:sct20080731; skos:notation "259025008"^^clisko:sct20080731DT].
+
+unex:perMinute
+	a units:UnitDerivedByRaisingToPower;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/unitsExtension#>;
+	rdfs:label """per minute"""@en;
+	skos:definition """Number of cycles per minute."""@en;
+	rdfs:comment """E.g. unit for the frequency of respiration cycle, heart pumping cycle."""@en;
+	rdfs:subClassOf [
+		a owl:Restriction; owl:onProperty units:derivedFromUnit; owl:someValuesFrom unex:minute;
+			math:hasPower "-1.0e+00"^^xsd:double;], [
+		a owl:Restriction; owl:onProperty units:derivedFromUnit; owl:someValuesFrom unex:hertz;
+			units:hasScalingNumber "60"^^xsd:double];
+	rdfs:subClassOf [
+		a owl:Restriction; owl:onProperty quex:unitOf; owl:someValuesFrom [
+			a owl:Restriction; owl:onProperty quex:measurementOf; owl:someValuesFrom quex:Frequency]];
+	units:hasSymbol "1/min";
+	skos:exactMatch [
+		a skos:Concept; skos:inScheme clisko:sct20080731; skos:notation "286549009"^^clisko:sct20080731DT].
+
+unex:perHour
+	a units:UnitDerivedByRaisingToPower;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/unitsExtension#>;
+	rdfs:label """per hour"""@en;
+	skos:definition """Number of cycles per hour."""@en;
+	rdfs:subClassOf [
+		a owl:Restriction; owl:onProperty units:derivedFromUnit; owl:someValuesFrom unex:hour;
+			math:hasPower "-1.0e+00"^^xsd:double;], [
+		a owl:Restriction; owl:onProperty units:derivedFromUnit; owl:someValuesFrom unex:perMinute;
+			units:hasScalingNumber "60"^^xsd:double], [
+		a owl:Restriction; owl:onProperty units:derivedFromUnit; owl:someValuesFrom unex:hertz;
+			units:hasScalingNumber "3600"^^xsd:double];
+	rdfs:subClassOf [
+		a owl:Restriction; owl:onProperty quex:unitOf; owl:someValuesFrom [
+			a owl:Restriction; owl:onProperty quex:measurementOf; owl:someValuesFrom quex:Frequency]];
+	units:hasSymbol "1/h".
+
+unex:perDay
+	a units:UnitDerivedByRaisingToPower;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/unitsExtension#>;
+	rdfs:label """per day"""@en;
+	skos:definition """Number of cycles per day."""@en;
+	rdfs:comment """E.g. unit for the frequency of clinical drug administration."""@en;
+	rdfs:subClassOf [
+		a owl:Restriction; owl:onProperty units:derivedFromUnit; owl:someValuesFrom unex:day;
+			math:hasPower "-1.0e+00"^^xsd:double;], [
+		a owl:Restriction; owl:onProperty units:derivedFromUnit; owl:someValuesFrom unex:hertz;
+			units:hasScalingNumber "86400"^^xsd:double];
+	rdfs:subClassOf [
+		a owl:Restriction; owl:onProperty quex:unitOf; owl:someValuesFrom [
+			a owl:Restriction; owl:onProperty quex:measurementOf; owl:someValuesFrom quex:Frequency]];
+	units:hasSymbol "1/day".
+
+unex:perYear
+	a units:UnitDerivedByRaisingToPower;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/unitsExtension#>;
+	rdfs:label """per year"""@en;
+	skos:definition """Number of cycles per year."""@en;
+	rdfs:comment """E.g. unit for the frequency of clinical vaccination."""@en;
+	rdfs:subClassOf [
+		a owl:Restriction; owl:onProperty quex:unitOf; owl:someValuesFrom [
+			a owl:Restriction; owl:onProperty quex:measurementOf; owl:someValuesFrom quex:Frequency]];
+	units:hasSymbol "1/year".
+
+#
+#	UNITS OF DIGITAL SIZE MEASUREMENT
+#
+
+unex:bit
+	a units:Unit;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/unitsExtension#>;
+	rdfs:subClassOf [
+		a owl:Restriction; owl:onProperty quex:unitOf; owl:someValuesFrom [
+			a owl:Restriction; owl:onProperty quex:measurementOf; owl:someValuesFrom quex:DigitalSize]];
+	units:hasSymbol "b";
+	skos:definition """Basic unit of information storage and communication in digital computing and digital information theory. A binary digit, takes a value of either 0 or 1."""@en.
+	
+unex:byte
+	a units:UnitDerivedByScaling;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/unitsExtension#>;
+	units:derivedFromUnit unex:bit;
+	units:hasScalingNumber "8"^^xsd:double;
+	rdfs:subClassOf [
+		a owl:Restriction; owl:onProperty quex:unitOf; owl:someValuesFrom [
+			a owl:Restriction; owl:onProperty quex:measurementOf; owl:someValuesFrom quex:DigitalSize]];
+	units:hasSymbol "B";
+	skos:definition """Eight bits"""@en.
+
+unex:kiloByte
+	a units:UnitDerivedByScaling;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/unitsExtension#>;
+	units:derivedFromUnit unex:byte;
+	units:hasPrefix unex:kilo;
+	rdfs:subClassOf [
+		a owl:Restriction; owl:onProperty quex:unitOf; owl:someValuesFrom [
+			a owl:Restriction; owl:onProperty quex:measurementOf; owl:someValuesFrom quex:DigitalSize]];
+	units:hasSymbol "KB".
+
+unex:megaByte
+	a units:UnitDerivedByScaling;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/unitsExtension#>;
+	units:derivedFromUnit unex:byte;
+	units:hasPrefix unex:mega;
+	rdfs:subClassOf [
+		a owl:Restriction; owl:onProperty quex:unitOf; owl:someValuesFrom [
+			a owl:Restriction; owl:onProperty quex:measurementOf; owl:someValuesFrom quex:DigitalSize]];
+	units:hasSymbol "MB".
+
+unex:gigaByte
+	a units:UnitDerivedByScaling;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/unitsExtension#>;
+	units:derivedFromUnit unex:byte;
+	units:hasPrefix unex:giga;
+	rdfs:subClassOf [
+		a owl:Restriction; owl:onProperty quex:unitOf; owl:someValuesFrom [
+			a owl:Restriction; owl:onProperty quex:measurementOf; owl:someValuesFrom quex:DigitalSize]];
+	units:hasSymbol "GB".
+
+unex:teraByte
+	a units:UnitDerivedByScaling;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/unitsExtension#>;
+	units:derivedFromUnit unex:byte;
+	units:hasPrefix unex:tera;
+	rdfs:subClassOf [
+		a owl:Restriction; owl:onProperty quex:unitOf; owl:someValuesFrom [
+			a owl:Restriction; owl:onProperty quex:measurementOf; owl:someValuesFrom quex:DigitalSize]];
+	units:hasSymbol "TB".
+
+#
+#	UNIT OF ELECTRICAL RESISTANCE MEASUREMENT
+#
+
+unex:ohm
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/unitsExtension#>;
+	rdfs:label """ohm"""@en;
+	skos:definition """1 ohm is the resistance between two points of a conductor when a constant potential difference of 1 volt, applied to these points, produces in the conductor a current of 1 ampere, the conductor not being the seat of any electromotive force."""@en;
+	rdfs:subClassOf [
+		a owl:Restriction; owl:onProperty quex:unitOf; owl:someValuesFrom [
+			a owl:Restriction; owl:onProperty quex:measurementOf; owl:someValuesFrom quex:ElectricalResistance]];
+	skos:exactMatch [
+		a skos:Concept; skos:inScheme clisko:sct20080731; skos:notation "282140003"^^clisko:sct20080731DT].
+
+#
+#	UNITS OF CONCENTRATION MEASUREMENT
+#
+
+unex:perLiter
+	a units:UnitDerivedByRaisingToPower;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/unitsExtension#>;
+	rdfs:label """per liter"""@en;
+	units:derivedFromUnit unex:liter;
+	units:hasPower "-1.0e+00"^^xsd:double;
+	units:hasSymbol """1/L""".
+
+unex:perDeciliter
+	a units:UnitDerivedByRaisingToPower;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/unitsExtension#>;
+	rdfs:label """per deciliter"""@en;
+	units:derivedFromUnit unex:deciliter;
+	units:hasPower "-1.0e+00"^^xsd:double;
+	units:hasSymbol """1/dL""".
+
+unex:perMilliliter
+	a units:UnitDerivedByRaisingToPower;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/unitsExtension#>;
+	rdfs:label """per milliliter"""@en;
+	units:derivedFromUnit unex:milliliter;
+	units:hasPower "-1.0e+00"^^xsd:double;
+	units:hasSymbol """1/mL""";
+	skos:exactMatch [
+		a skos:Concept; skos:inScheme clisko:sct20080731; skos:notation "259035002"^^clisko:sct20080731DT].
+
+unex:perTeaspoon
+	a units:UnitDerivedByRaisingToPower;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/unitsExtension#>;
+	rdfs:label """per teaspoon"""@en;
+	units:derivedFromUnit unex:teaspoon;
+	units:hasPower "-1.0e+00"^^xsd:double;
+	units:hasSymbol """1/tsp""".
+
+unex:perKilogram
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/unitsExtension#>;
+	rdfs:label """per kilogram"""@en;
+	rdfs:subClassOf units:perKilogram;
+	units:hasSymbol """1/g""".
+
+unex:perGram
+	a units:UnitDerivedByRaisingToPower;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/unitsExtension#>;
+	rdfs:label """per gram"""@en;
+	units:derivedFromUnit unex:gram;
+	units:hasPower "-1.0e+00"^^xsd:double;
+	units:hasSymbol """1/g""".
+
+# AMOUNT-OF-SUBSTANCE CONCENTRATION:
+# mole per cubic meter, mol/m3
+# mole per liter, mol/l
+# millimole per gram, mmol/g
+
+unex:unitsPerLiter
+	a units:ComplexUnit;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/unitsExtension#>;
+	rdfs:label """units per liter"""@en;
+#	rdfs:subClassOf [
+#		a owl:Restriction; owl:onProperty quex:unitOf; owl:someValuesFrom [
+#			a owl:Restriction; owl:onProperty quex:measurementOf; owl:someValuesFrom quex:Concentration]];
+#	units:productOf unex:units, unex:perLiter;
+	units:hasSymbol """U/L""";
+	skos:exactMatch [
+		a skos:Concept; skos:inScheme clisko:sct20080731; skos:notation "258947003"^^clisko:sct20080731DT].
+
+#  U/dL: SNOMEDCT 415783003
+
+unex:nanogramPerMilliliter
+	a units:ComplexUnit;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/unitsExtension#>;
+	rdfs:label """nanogram per milliliter"""@en;
+	rdfs:subClassOf [
+		a owl:Restriction; owl:onProperty quex:unitOf; owl:someValuesFrom [
+			a owl:Restriction; owl:onProperty quex:measurementOf; owl:someValuesFrom quex:MassConcentration]];
+	units:productOf unex:nanogram, unex:perMilliliter;
+	units:hasSymbol """ng/mL""";
+	skos:exactMatch [
+		a skos:Concept; skos:inScheme clisko:sct20080731; skos:notation "258806002"^^clisko:sct20080731DT].
+
+unex:microgramPerMilliliter
+	a units:ComplexUnit;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/unitsExtension#>;
+	rdfs:label """microgram per milliliter"""@en;
+	rdfs:subClassOf [
+		a owl:Restriction; owl:onProperty quex:unitOf; owl:someValuesFrom [
+			a owl:Restriction; owl:onProperty quex:measurementOf; owl:someValuesFrom quex:MassConcentration]];
+	units:productOf unex:microgram, unex:perMilliliter;
+	units:hasSymbol """µg/mL""";
+	skos:exactMatch [
+		a skos:Concept; skos:inScheme clisko:sct20080731; skos:notation "258801007"^^clisko:sct20080731DT].
+
+unex:milligramPerLiter
+	a units:ComplexUnit;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/unitsExtension#>;
+	rdfs:subClassOf [
+		a owl:Restriction; owl:onProperty quex:unitOf; owl:someValuesFrom [
+			a owl:Restriction; owl:onProperty quex:measurementOf; owl:someValuesFrom quex:MassConcentration]];
+	units:productOf unex:milligram, unex:perLiter;
+	units:hasSymbol """mg/L""".
+
+unex:milligramPerMilliliter
+	a units:ComplexUnit;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/unitsExtension#>;
+	rdfs:subClassOf [
+		a owl:Restriction; owl:onProperty quex:unitOf; owl:someValuesFrom [
+			a owl:Restriction; owl:onProperty quex:measurementOf; owl:someValuesFrom quex:MassConcentration]];
+	units:productOf unex:milligram, unex:perMilliliter;
+	units:hasSymbol """mg/mL""".
+
+unex:milligramPerDeciliter
+	a units:ComplexUnit;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/unitsExtension#>;
+	rdfs:label """milligram per deciliter"""@en;
+	rdfs:subClassOf [
+		a owl:Restriction; owl:onProperty quex:unitOf; owl:someValuesFrom [
+			a owl:Restriction; owl:onProperty quex:measurementOf; owl:someValuesFrom quex:MassConcentration]];
+	units:productOf unex:milligram, unex:perDeciliter;
+	units:hasSymbol """mg/dL""";
+	skos:exactMatch [
+		a skos:Concept; skos:inScheme clisko:sct20080731; skos:notation "258797006"^^clisko:sct20080731DT].
+
+unex:gramPerDeciliter
+	a units:ComplexUnit;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/unitsExtension#>;
+	rdfs:label """gram per deciliter"""@en;
+	rdfs:subClassOf [
+		a owl:Restriction; owl:onProperty quex:unitOf; owl:someValuesFrom [
+			a owl:Restriction; owl:onProperty quex:measurementOf; owl:someValuesFrom quex:MassConcentration]];
+	units:productOf unex:gram, unex:perDeciliter;
+	units:hasSymbol """g/dL""";
+	skos:exactMatch [
+		a skos:Concept; skos:inScheme clisko:sct20080731; skos:notation "258795003"^^clisko:sct20080731DT].
+
+unex:gramPerLiter
+	a units:ComplexUnit;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/unitsExtension#>;
+	rdfs:label """gram per liter"""@en;
+	rdfs:subClassOf [
+		a owl:Restriction; owl:onProperty quex:unitOf; owl:someValuesFrom [
+			a owl:Restriction; owl:onProperty quex:measurementOf; owl:someValuesFrom quex:MassConcentration]];
+	units:productOf unex:gram, unex:perLiter;
+	units:hasSymbol """g/L""";
+	skos:exactMatch [
+		a skos:Concept; skos:inScheme clisko:sct20080731; skos:notation "258794004"^^clisko:sct20080731DT].
+
+unex:micromolePerLiter
+	a units:ComplexUnit;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/unitsExtension#>;
+	rdfs:label """micromole per liter"""@en;
+#	rdfs:subClassOf [
+#		a owl:Restriction; owl:onProperty quex:unitOf; owl:someValuesFrom [
+#			a owl:Restriction; owl:onProperty quex:measurementOf; owl:someValuesFrom quex:Concentration]];
+	units:productOf unex:micromole, unex:perLiter;
+	units:hasSymbol """µmol/L""";
+	skos:exactMatch [
+		a skos:Concept; skos:inScheme clisko:sct20080731; skos:notation "258814008"^^clisko:sct20080731DT].
+
+unex:millimolePerLiter
+	a units:ComplexUnit;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/unitsExtension#>;
+	rdfs:label """millimole per liter"""@en;
+#	rdfs:subClassOf [
+#		a owl:Restriction; owl:onProperty quex:unitOf; owl:someValuesFrom [
+#			a owl:Restriction; owl:onProperty quex:measurementOf; owl:someValuesFrom quex:Concentration]];
+	units:productOf unex:millimole, unex:perLiter;
+	units:hasSymbol """mmol/L""";
+	skos:exactMatch [
+		a skos:Concept; skos:inScheme clisko:sct20080731; skos:notation "258813002"^^clisko:sct20080731DT].
+
+unex:unitsPerMilliliter
+	a units:ComplexUnit;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/unitsExtension#>;
+	rdfs:label """units per milliliter"""@en;
+#	rdfs:subClassOf [
+#		a owl:Restriction; owl:onProperty quex:unitOf; owl:someValuesFrom [
+#			a owl:Restriction; owl:onProperty quex:measurementOf; owl:someValuesFrom quex:Concentration]];
+	units:hasSymbol """U/ml""".
+
+unex:internationalUnitsPerMilliliter
+	a units:ComplexUnit;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/unitsExtension#>;
+	rdfs:label """international units per milliliter"""@en;
+#	rdfs:subClassOf [
+#		a owl:Restriction; owl:onProperty quex:unitOf; owl:someValuesFrom [
+#			a owl:Restriction; owl:onProperty quex:measurementOf; owl:someValuesFrom quex:Concentration]];
+	units:hasSymbol """IU/ml""".
+
+unex:microgramPerKilogram
+	a units:ComplexUnit;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/unitsExtension#>;
+	rdfs:label """microgram per kilogram"""@en;
+#	rdfs:subClassOf [
+#		a owl:Restriction; owl:onProperty quex:unitOf; owl:someValuesFrom [
+#			a owl:Restriction; owl:onProperty quex:measurementOf; owl:someValuesFrom quex:Concentration]];
+	units:productOf unex:microgram, units:perKilogram;
+	units:hasSymbol """µg/kg""";
+	skos:exactMatch [
+		a skos:Concept; skos:inScheme clisko:sct20080731; skos:notation "258803005"^^clisko:sct20080731DT].
+
+unex:milligramPerKilogram
+	a units:ComplexUnit;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/unitsExtension#>;
+	rdfs:label """milligram per kilogram"""@en;
+#	rdfs:subClassOf [
+#		a owl:Restriction; owl:onProperty quex:unitOf; owl:someValuesFrom [
+#			a owl:Restriction; owl:onProperty quex:measurementOf; owl:someValuesFrom quex:Concentration]];
+	units:productOf unex:milligram, units:perKilogram;
+	units:hasSymbol """mg/kg""";
+	skos:exactMatch [
+		a skos:Concept; skos:inScheme clisko:sct20080731; skos:notation "396163008"^^clisko:sct20080731DT].
+
+unex:milligramPerGram
+	a units:ComplexUnit;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/unitsExtension#>;
+	rdfs:label """milligram per gram"""@en;
+#	rdfs:subClassOf [
+#		a owl:Restriction; owl:onProperty quex:unitOf; owl:someValuesFrom [
+#			a owl:Restriction; owl:onProperty quex:measurementOf; owl:someValuesFrom quex:Concentration]];
+	units:productOf unex:milligram, unex:perGram;
+	units:hasSymbol """mg/g""".
+
+#
+#	UNITS OF VELOCITY MEASUREMENT
+#
+	
+unex:meterPerSecond
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/unitsExtension#>;
+	rdfs:label """meter per second"""@en;
+	rdfs:subClassOf units:meterPerSecond, [
+		a owl:Restriction; owl:onProperty quex:unitOf; owl:someValuesFrom [
+			a owl:Restriction; owl:onProperty quex:measurementOf; owl:someValuesFrom quex:Velocity]];
+	units:hasSymbol """m/s""";
+	skos:exactMatch [
+		a skos:Concept; skos:inScheme clisko:sct20080731; skos:notation "272090007"^^clisko:sct20080731DT].
+
+unex:centimeterPerSecond
+	a units:ComplexUnit;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/unitsExtension#>;
+	rdfs:label """centimeter per second"""@en;
+	units:productOf unex:centimeter, unex:perSecond;
+	rdfs:subClassOf [
+		a owl:Restriction; owl:onProperty quex:unitOf; owl:someValuesFrom [
+			a owl:Restriction; owl:onProperty quex:measurementOf; owl:someValuesFrom quex:Velocity]];
+	units:hasSymbol """cm/s""";
+	skos:exactMatch [
+		a skos:Concept; skos:inScheme clisko:sct20080731; skos:notation "258990002"^^clisko:sct20080731DT].
+
+#
+#	OTHER COMPLEX UNITS
+#
+
+unex:kilogramPerMeterSquare
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/unitsExtension#>;
+	rdfs:label """kilogram per square meter"""@en;
+	units:hasSymbol """kg/m2""";
+	skos:exactMatch [
+		a skos:Concept; skos:inScheme clisko:sct20080731; skos:notation "258896009"^^clisko:sct20080731DT].
+
+unex:microgramPerMinute
+	a units:ComplexUnit;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/unitsExtension#>;
+	rdfs:label """microgram per minute"""@en;
+	units:productOf unex:microgram, unex:perMinute;
+	units:hasSymbol """µg/min""";
+	skos:exactMatch [
+		a skos:Concept; skos:inScheme clisko:sct20080731; skos:notation "258837002"^^clisko:sct20080731DT].
+
+unex:milliliterPerMinute
+	a units:ComplexUnit;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/unitsExtension#>;
+	rdfs:label """milliliter per minute"""@en;
+	units:productOf unex:milliliter, unex:perMinute;
+	units:hasSymbol """mL/min""";
+	skos:exactMatch [
+		a skos:Concept; skos:inScheme clisko:sct20080731; skos:notation "258859000"^^clisko:sct20080731DT].
+
+unex:milligramPerHour
+	a units:ComplexUnit;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/unitsExtension#>;
+	rdfs:label """milligram per hour"""@en;
+	units:productOf unex:milligram, unex:perHour;
+	units:hasSymbol """mg/h""";
+	skos:exactMatch [
+		a skos:Concept; skos:inScheme clisko:sct20080731; skos:notation "258834009"^^clisko:sct20080731DT].
+
+unex:milliliterPerKilogramPerHour
+	a units:ComplexUnit;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/unitsExtension#>;
+	rdfs:label """milliliter per kilogram per hour"""@en;
+	units:productOf unex:milliliter, unex:perKilogram, unex:perHour;
+	units:hasSymbol """mL/kg/h""";
+	skos:exactMatch [
+		a skos:Concept; skos:inScheme clisko:sct20080731; skos:notation "414739003"^^clisko:sct20080731DT].
+
+unex:microgramPerKilogramPerMinute
+	a units:ComplexUnit;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/unitsExtension#>;
+	units:productOf unex:microgram, unex:perKilogram, unex:perMinute;
+	units:hasSymbol """µg/kg/min""".
+
+
+# units used in pharma, cf RXNORM
+#eq/l
+#meq/mg
+#meq/ml
+#mg/actuat
+#mg/mg
+#mg/ml
+#ml/ml
+#pnu/ml
+#unt/mg
+#IU
+#U
+#U FIP
+#U PE
+#U NF

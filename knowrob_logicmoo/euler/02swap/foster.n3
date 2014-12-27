@@ -1,0 +1,300 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix dce: <http://purl.org/dc/elements/1.1/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#>.
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+@prefix irw: <http://www.ontologydesignpatterns.org/ont/web/irw.owl#>.
+@prefix jur: <http://sweet.jpl.nasa.gov/2.3/humanJurisdiction.owl#>.
+@prefix event: <http://eulersharp.sourceforge.net/2003/03swap/event#>.
+@prefix space: <http://eulersharp.sourceforge.net/2003/03swap/space#>.
+@prefix clisko: <http://www.agfa.com/w3c/2009/clinicalSKOSSchemes#>.
+@prefix fos: <http://eulersharp.sourceforge.net/2003/03swap/foster#>.
+
+<http://eulersharp.sourceforge.net/2003/03swap/foster>
+	a owl:Ontology;
+	dce:title """FOSTER or Friends Of Semantic Web Technology Resource"""@en;
+	dce:creator """Hans Cools, MD; Agfa Healthcare/Belgium"""@en;
+	dce:contributor """Jos De Roo; Agfa Healthcare/Belgium. Until 2010: Pieterjan De Potter, Pedro Debevere; Ghent University - IBBT/ELIS - Multimedia Lab/Belgium."""@en;
+	dce:publisher """Agfa Healthcare/Belgium"""@en;
+	dce:description """Formal description of general concepts."""@en;
+	dce:format """OWL Full"""@en.
+
+#
+# CLASSES
+#
+
+fos:Group
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/foster#>;
+	rdfs:label """group"""@en;
+	skos:definition """Collection of things alike."""@en;
+	rdfs:subClassOf [
+		a owl:Restriction; owl:onProperty fos:hasMember; owl:minCardinality "2"^^xsd:nonNegativeInteger].
+
+fos:Level
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/foster#>;
+	rdfs:label """level"""@en;
+	skos:definition """Degree of something."""@en.
+
+fos:Language
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/foster#>;
+	skos:definition """A dynamic set of sensory signs, including sounds and gestures, of communication and the semantic, pragmatic, and grammar elements or rules used to manipulate them."""@en;
+	rdfs:subClassOf event:Observable, dct:LinguisticSystem;
+	skos:exactMatch [
+		a skos:Concept; skos:inScheme clisko:sct20080731; skos:notation "61909002"^^clisko:sct20080731DT].
+
+fos:Nationality
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/foster#>;
+	rdfs:label """nationality"""@en;
+	skos:definition """Belonging administratively to a certain nation."""@en;
+	rdfs:subClassOf event:Observable.
+
+#fos:Quality # redundant: made explicit by rdf:Property
+#	a rdfs:Class;
+#	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/foster#>;
+#	rdfs:label """quality"""@en;
+#	skos:definition """Characteristic by which something can be described."""@en;
+#	#skos:note """Class of properties."""@en.
+
+fos:Compound
+	a owl:DeprecatedClass;
+	rdfs:comment """Declared in <http://eulersharp.sourceforge.net/2003/03swap/physicalResource>"""@en;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/foster#>;
+	rdfs:label """compound"""@en;
+	skos:definition """Composed of more than 1 type of substance."""@en;
+	skos:note """This can be anything, and is not meant in the sense of chemical compound containing more than 1 elementary substance or 'chemical element'. Chemical compound though is a subclass."""@en;
+	rdfs:subClassOf dct:PhysicalResource.
+
+fos:Product
+	a owl:DeprecatedClass;
+	rdfs:comment """Declared in <http://eulersharp.sourceforge.net/2003/03swap/physicalResource>"""@en;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/foster#>;
+	rdfs:label """product"""@en;
+	skos:definition """Result of a production process."""@en;
+	rdfs:subClassOf dct:PhysicalResource.
+
+fos:Device
+	a owl:DeprecatedClass;
+	rdfs:comment """Declared in <http://eulersharp.sourceforge.net/2003/03swap/physicalResource>"""@en;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/foster#>;
+	rdfs:label """device"""@en;
+	skos:definition """Something serving a particular purpose."""@en;
+	rdfs:subClassOf dct:PhysicalResource, foaf:Agent, space:SpatialResource.
+
+fos:Specimen
+	a owl:DeprecatedClass;
+	rdfs:comment """Declared in <http://eulersharp.sourceforge.net/2003/03swap/physicalResource>"""@en;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/foster#>;
+	rdfs:label """specimen"""@en;
+	skos:definition """Sample containing a substance for examination."""@en;
+	rdfs:subClassOf dct:PhysicalResource.
+
+fos:Code
+	a owl:DeprecatedClass;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/foster#>;
+	rdfs:label """code"""@en;
+	skos:definition """Applied or converted form of information wherein one thing(s) is(are) replaced by another thing(s)."""@en.
+
+fos:ConfidentialityCode
+	a owl:DeprecatedClass;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/foster#>;
+	rdfs:label """confidentiality code"""@en;
+	skos:definition """Code applied to something to protect its confidentiality."""@en;
+	rdfs:subClassOf fos:Code.
+
+fos:Summary
+	a owl:DeprecatedClass;
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/foster#>;
+	skos:definition """The essentials of something."""@en.
+
+#
+# PROPERTIES
+#
+
+fos:hasMember
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/foster#>;
+	skos:definition """Specifying a member of a group."""@en;
+	rdfs:domain fos:Group;
+	rdfs:range rdfs:Resource.
+
+# foaf:member rdfs:subPropertyOf fos:hasMember.
+
+fos:memberOf
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/foster#>;
+	skos:definition """Specifying a group something is a member of."""@en;
+	owl:inverseOf fos:hasMember;
+	rdfs:domain rdfs:Resource;
+	rdfs:range fos:Group.
+
+fos:hasLevel
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/foster#>;
+	skos:definition """Specifying a level of something."""@en;
+	rdfs:domain rdfs:Resource;
+	rdfs:range fos:Level.
+
+fos:refersTo
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/foster#>;
+	skos:definition """Specifying something that is referred to by something else."""@en;
+	rdfs:domain rdfs:Resource;
+	rdfs:range rdfs:Resource.
+
+fos:hasLanguage
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/foster#>;
+	skos:definition """Specifying a language related to something."""@en;
+	rdfs:subPropertyOf dct:language;
+	rdfs:domain rdfs:Resource;
+	rdfs:range fos:Language.
+
+fos:hasNationality
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/foster#>;
+	skos:definition """Specifying the nationality of a resource. A resource can have more than 1 nationality. It doesn't need to be the one of the country of origin nor the one of the country the resource is mostly present."""@en;
+	rdfs:domain rdfs:Resource;
+	rdfs:range fos:Nationality.
+
+fos:hasCountry
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/foster#>;
+	skos:definition """Specifying the country a nationality is linked to."""@en;
+	rdfs:domain fos:Nationality;
+	rdfs:range jur:Country.
+
+fos:hasBrandName
+	a rdf:Property;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/foster#>;
+	rdfs:label """brand name"""@en;
+	skos:definition """Specifying a name of a brand of something."""@en;
+	rdfs:subPropertyOf foaf:name;
+	rdfs:domain rdfs:Resource;
+	rdfs:range rdfs:Literal.
+
+fos:hasCode
+	a owl:DeprecatedProperty, owl:ObjectProperty, owl:InverseFunctionalProperty;
+	rdfs:comment """Declared in <http://eulersharp.sourceforge.net/2003/03swap/coding>"""@en;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/foster#>;
+	skos:definition """Specifying a code for something."""@en;
+	rdfs:domain rdfs:Resource;
+	rdfs:range fos:Code.
+
+fos:hasSKOSCode
+	a owl:DeprecatedProperty, owl:DatatypeProperty;
+	rdfs:comment """Declared in <http://eulersharp.sourceforge.net/2003/03swap/coding>"""@en;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/foster#>;
+	skos:definition """Specifying for an instance a code of a SKOS concept, within a SKOS scheme, matching exactly a class the instance is member of."""@en;
+	owl:propertyChainAxiom (rdf:type skos:exactMatch skos:notation).
+
+fos:hasBroaderCode
+	a owl:DeprecatedProperty, owl:DatatypeProperty;
+	rdfs:comment """Declared in <http://eulersharp.sourceforge.net/2003/03swap/coding>"""@en;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/foster#>;
+	skos:definition """Specifying for an instance a code of a SKOS concept, within a SKOS scheme, matching broader a class the instance is member of."""@en;
+	owl:propertyChainAxiom (rdf:type skos:broadMatch skos:notation).
+
+fos:codes
+	a owl:DeprecatedProperty, owl:ObjectProperty, owl:FunctionalProperty;
+	rdfs:comment """Declared in <http://eulersharp.sourceforge.net/2003/03swap/coding>"""@en;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/foster#>;
+	skos:definition """Specifying something that has a code."""@en;
+	owl:inverseOf fos:hasCode.
+
+fos:hasCodeSystem
+	a owl:DeprecatedProperty, owl:FunctionalProperty;
+	rdfs:comment """Declared in <http://eulersharp.sourceforge.net/2003/03swap/coding>"""@en;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/foster#>;
+	skos:definition """Specifying a name of a code system device serial number."""@en;
+	rdfs:domain fos:Code;
+	rdfs:range rdfs:Literal.
+
+fos:hasCodeVersion
+	a owl:DeprecatedProperty, owl:FunctionalProperty;
+	rdfs:comment """Declared in <http://eulersharp.sourceforge.net/2003/03swap/coding>"""@en;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/foster#>;
+	skos:definition """Specifying a version of a code system."""@en;
+	rdfs:domain fos:Code;
+	rdfs:range rdfs:Literal.
+
+fos:hasCodeValue
+	a owl:DeprecatedProperty, owl:InverseFunctionalProperty, owl:FunctionalProperty;
+	rdfs:comment """Declared in <http://eulersharp.sourceforge.net/2003/03swap/coding>"""@en;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/foster#>;
+	skos:definition """Specifying a code value."""@en;
+	rdfs:domain fos:Code;
+	rdfs:range rdfs:Literal.
+
+fos:hasCodeAuthority
+	a owl:DeprecatedProperty;
+	rdfs:comment """Declared in <http://eulersharp.sourceforge.net/2003/03swap/coding>"""@en;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/foster#>;
+	skos:definition """Specifying an organization governing the code system, e.g. a government for a social security number."""@en;
+	rdfs:domain fos:Code;
+	rdfs:range rdfs:Literal.
+
+fos:hasCodeExpirationDateTime
+	a owl:DeprecatedProperty, owl:DatatypeProperty, owl:FunctionalProperty;
+	rdfs:comment """Declared in <http://eulersharp.sourceforge.net/2003/03swap/coding>"""@en;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/foster#>;
+	skos:definition """Specifying the date on which a code stops to be valid."""@en;
+	rdfs:subPropertyOf event:expires;
+	rdfs:domain fos:Code;
+	rdfs:range xsd:dateTime.
+
+fos:hasConfidentialityCode
+	a owl:DeprecatedProperty;
+	rdfs:comment """Declared in <http://eulersharp.sourceforge.net/2003/03swap/coding>"""@en;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/foster#>;
+	skos:definition """Specifying a confidentiality code for something."""@en;
+	rdfs:subPropertyOf fos:hasCode;
+	rdfs:domain rdfs:Resource;
+	rdfs:range fos:ConfidentialityCode.
+
+fos:contains
+	a owl:DeprecatedProperty;
+	rdfs:comment """Declared in <http://eulersharp.sourceforge.net/2003/03swap/space>"""@en;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/foster#>;
+	skos:definition """Specifying something physically contained by something else."""@en;
+	owl:propertyChainAxiom (fos:contains foaf:member);
+	rdfs:domain dct:PhysicalResource;
+	rdfs:range dct:PhysicalResource.
+
+fos:containedBy
+	a owl:DeprecatedProperty;
+	rdfs:comment """Declared in <http://eulersharp.sourceforge.net/2003/03swap/space>"""@en;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/foster#>;
+	skos:definition """Specifying something physically containing something else."""@en;
+	owl:inverseOf fos:contains;
+	rdfs:domain dct:PhysicalResource;
+	rdfs:range dct:PhysicalResource.
+
+fos:hasComplexity
+	a owl:DeprecatedProperty;
+	rdfs:comment """Declared in <http://eulersharp.sourceforge.net/2003/03swap/physicalResource>"""@en;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/foster#>;
+	skos:definition """Specifying a physical organizational structure complexity of something."""@en;
+	rdfs:domain rdfs:Resource;
+	rdfs:range dct:PhysicalResource.
+
+fos:complexityOf
+	a owl:DeprecatedProperty;
+	rdfs:comment """Declared in <http://eulersharp.sourceforge.net/2003/03swap/physicalResource>"""@en;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/foster#>;
+	skos:definition """Specifying something with a physical organizational structure complexity."""@en;
+	owl:inverseOf fos:hasComplexity.
+
+fos:summaryOf
+	a owl:DeprecatedProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/foster#>;
+	rdfs:domain fos:Summary;
+	rdfs:range rdfs:Resource.

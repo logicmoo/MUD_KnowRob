@@ -1,0 +1,8 @@
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{?C owl:allValuesFrom ?Y. ?C owl:onProperty ?P. ?U a ?C. ?U ?P ?V} => {?V a ?Y}.
+{?C owl:allValuesFrom ?Y. ?C owl:onProperty ?P. ?D owl:allValuesFrom ?Z. ?D owl:onProperty ?P. ?Y rdfs:subClassOf ?Z} => {?C rdfs:subClassOf ?D}.
+{?C owl:allValuesFrom ?Y. ?C owl:onProperty ?P. ?D owl:allValuesFrom ?Y. ?D owl:onProperty ?Q. ?P rdfs:subPropertyOf ?Q} => {?D rdfs:subClassOf ?C}.

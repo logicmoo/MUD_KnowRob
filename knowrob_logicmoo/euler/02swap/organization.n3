@@ -1,0 +1,77 @@
+@prefix con: <http://www.w3.org/2000/10/swap/pim/contact#>.
+@prefix dce: <http://purl.org/dc/elements/1.1/>.
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix agent: <http://eulersharp.sourceforge.net/2003/03swap/agent#>.
+@prefix space: <http://eulersharp.sourceforge.net/2003/03swap/space#>.
+
+@prefix organization: <http://eulersharp.sourceforge.net/2003/03swap/organization#>.
+
+<http://eulersharp.sourceforge.net/2003/03swap/organization#>
+	a owl:Ontology;
+	dce:title """Organization"""@en;
+	dce:creator """Hans Cools, MD; Agfa Healthcare/Belgium"""@en;
+	dce:contributor """Until 2010: Pieterjan De Potter; Ghent University - IBBT/ELIS - Multimedia Lab/Belgium"""@en;
+	dce:publisher """Agfa Healthcare/Belgium"""@en;
+	dce:description """Formal general description of organization and the roles it can play."""@en;
+	dce:format """OWL Full"""@en.
+
+#
+# CLASSES
+#
+
+#foaf:Organization subClassOf foaf:Agent
+
+organization:Department
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/organization#>;
+	rdfs:label """department"""@en;
+	skos:definition """A specialized division of an organization."""@en;
+	rdfs:subClassOf foaf:Organization;
+	rdfs:subClassOf [
+		a owl:Restriction; owl:onProperty space:containedBy; owl:someValuesFrom foaf:Organization].
+
+organization:LegalPerson
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/organization#>;
+	rdfs:label """legal person"""@en;
+	skos:definition """Role of an organization recognised as having legal personality to enter legal relations, being able to act as a natural person for limited purposes, most commonly lawsuits, property ownership, and contracts."""@en;
+	rdfs:subClassOf [
+		a owl:Restriction; owl:onProperty agent:rolePlayedBy; owl:someValuesFrom foaf:Organization].
+
+organization:Company
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/organization#>;
+	rdfs:label """company"""@en;
+	skos:definition """Organisation with persons united or incorporated for joint action."""@en;
+	rdfs:subClassOf foaf:Organization.
+
+organization:Enterprise
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/organization#>;
+	rdfs:label """enterprise"""@en;
+	skos:definition """Company organized for commercial purposes."""@en;
+	rdfs:subClassOf organization:Company.
+
+organization:University
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/organization#>;
+	rdfs:label """university"""@en;
+	skos:definition """."""@en;
+	rdfs:subClassOf foaf:Organization.
+
+#one-man business
+
+#
+# PROPERTIES
+#
+
+organization:hasSeat
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/organization#>;
+	skos:definition """Specifying a seat of an organization."""@en;
+	rdfs:subPropertyOf agent:hasResidence;
+	rdfs:domain foaf:Organization;
+	rdfs:range con:ContactLocation.

@@ -1,0 +1,62 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix dce: <http://purl.org/dc/elements/1.1/>.
+@prefix owl:  <http://www.w3.org/2002/07/owl#>.
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix event: <http://eulersharp.sourceforge.net/2003/03swap/event#>.
+@prefix agent: <http://eulersharp.sourceforge.net/2003/03swap/agent#>.
+@prefix physical: <http://eulersharp.sourceforge.net/2003/03swap/physicalResource#>.
+@prefix workflow: <http://eulersharp.sourceforge.net/2003/03swap/workflow#>.
+@prefix digproc: <http://eulersharp.sourceforge.net/2003/03swap/digitalProcedure#>.
+@prefix computer: <http://eulersharp.sourceforge.net/2003/03swap/computer#>.
+
+<http://eulersharp.sourceforge.net/2003/03swap/computer>
+	a owl:Ontology;
+	dce:title """Digital Computer"""@en;
+	dce:creator """Hans Cools, MD; Agfa Healthcare, Belgium"""@nl;
+	dce:publisher """Agfa Healthcare, Belgium"""@en;
+	dce:description """Formal description of digital computer."""@en;
+	dce:format """OWL Full"""@en.
+
+#
+# CLASSES
+#
+
+computer:Computer
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/computer#>;
+	rdfs:label """digital computer"""@en;
+	skos:definition """Programmable machine receiving input, storing and manipulating data, and providing output in a certain format."""@en;
+	rdfs:subClassOf agent:Machine, physical:Product.
+
+computer:Hardware
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/computer#>;
+	rdfs:label """digital computer hardware"""@en;
+	skos:definition """Hardware of a digital computer."""@en;
+	rdfs:subClassOf physical:Product.
+
+computer:Software
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/computer#>;
+	rdfs:label """digital computer software"""@en;
+	skos:definition """Instruction to operate digital computer hardware."""@en;
+	rdfs:subClassOf physical:Product, [
+		a owl:Restriction; owl:onProperty agent:actsIn; owl:allValuesFrom digproc:Procedure].
+
+# computer:Programme
+
+computer:Data
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/computer#>;
+	rdfs:label """digital computer data"""@en;
+	skos:definition """Digitally stored data in a computer."""@en;
+	rdfs:subClassOf physical:Product.
+
+computer:SearchEngine
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/computer#>;
+	rdfs:label """digital computer search engine"""@en;
+	skos:definition """Software for searching data on a digital computer."""@en;
+	rdfs:subClassOf computer:Software.

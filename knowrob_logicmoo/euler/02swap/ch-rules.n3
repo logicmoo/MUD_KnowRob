@@ -1,0 +1,44 @@
+# $Id: ch-rules.n3 1295 2007-05-11 16:52:51Z josd $
+#
+# see http://www.informatik.uni-ulm.de/pm/fileadmin/pm/home/fruehwirth/drafts/jlp-chr1.ps.gz
+#
+# PxButton | check with cwm | bash .cwm ch-rules.n3
+
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix math: <http://www.w3.org/2000/10/swap/math#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix : <http://eulersharp.sourceforge.net/2003/03swap/ch-rules#>.
+
+
+### Constraint Handling Rules
+#
+# CHR are essentially a committed-choice language consisting of guarded
+# rules that rewrite constraints into simpler ones until they are solved.
+# CHR define both simplification of and propagation over user constraints.
+
+:simplification
+	a rdf:Property;
+	rdfs:domain log:Formula;
+	rdfs:range log:Formula;
+	rdfs:comment "simplification replaces constraints by simpler constraints while preserving logical equivalence".
+
+:propagation
+	a rdf:Property;
+	rdfs:domain log:Formula;
+	rdfs:range log:Formula;
+	rdfs:comment "propagation adds new constraints which are logically redundant but may cause further simplification".
+
+:commit
+	a rdf:Property;
+	rdfs:domain log:Formula;
+	rdfs:range log:Formula;
+	rdfs:comment "the LHS builtin constraints are a precondition on the applicability of the rule".
+
+:rewrite
+	a rdf:Property;
+	rdfs:domain log:Formula;
+	rdfs:range log:Formula;
+	rdfs:comment "only rewrite RHS user constraints in a simplification rule".

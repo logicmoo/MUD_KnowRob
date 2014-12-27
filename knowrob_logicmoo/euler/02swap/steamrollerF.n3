@@ -1,0 +1,7 @@
+# PxButton | cwm   | bash .cwm steamroller.n3 --think --filter=steamrollerF.n3
+# PxButton | euler | bash .euler5 http://localhost/.euler+--prolog+--nope+euler%2Fsteamroller.n3+--filter+euler%2FsteamrollerF.n3
+
+@prefix : <http://eulersharp.sourceforge.net/2006/02swap/steamroller#>.
+
+{?X a :Animal. ?Y a :Animal. ?X :likes ?Y. ?Z a :Grain. ?Y :likes ?Z} => {{?X :likes ?Y} :steamroller {?Y :likes ?Z}}.
+

@@ -1,0 +1,487 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>
+		<meta name="generator" content="AGFA HealthCare N3 to HTML convertor"/>
+		<link rel="alternate" type="text/n3" title="RDF Representation" href="http://eulersharp.sourceforge.net/2003/03swap/log-rules"/>
+		<title>log-rules</title>
+		<style type="text/css">
+			a[href]:link { text-decoration:none; }
+			a[href]:visited { text-decoration:none; }
+			a[href]:active { text-decoration:underline; }
+			a:hover { background:#ffa; }
+			.keyword { font-weight: bold; }
+			.literal { color: blue }
+			.uri { color: darkblue }
+			.qname { color: black }
+			.var { color: gray }
+			.comment { font-style:italic; color: darkgreen }
+		</style>
+	</head>
+	<body>
+	<div>
+		<pre>
+<span class="comment">### Logic Framework Extension -- Jos De Roo</span>
+<span class="comment">### importing http://www.w3.org/2000/10/swap/log</span>
+
+<span class="keyword">@prefix</span> log: <a class="uri" href="http://www.w3.org/2000/10/swap/log">&lt;http://www.w3.org/2000/10/swap/log#&gt;</a>.
+<span class="keyword">@prefix</span> math: <a class="uri" href="http://www.w3.org/2000/10/swap/math">&lt;http://www.w3.org/2000/10/swap/math#&gt;</a>.
+<span class="keyword">@prefix</span> owl: <a class="uri" href="http://www.w3.org/2002/07/owl">&lt;http://www.w3.org/2002/07/owl#&gt;</a>.
+<span class="keyword">@prefix</span> rdfs: <a class="uri" href="http://www.w3.org/2000/01/rdf-schema">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</a>.
+<span class="keyword">@prefix</span> rdf: <a class="uri" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</a>.
+<span class="keyword">@prefix</span> xsd: <a class="uri" href="http://www.w3.org/2001/XMLSchema">&lt;http://www.w3.org/2001/XMLSchema#&gt;</a>.
+<span class="keyword">@prefix</span> prolog: <a class="uri" href="http://eulersharp.sourceforge.net/2003/03swap/prolog.html#">&lt;http://eulersharp.sourceforge.net/2003/03swap/prolog#&gt;</a>.
+<span class="keyword">@prefix</span> e: <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/log-rules#&gt;</a>.
+
+<a class="uri" href="http://eulersharp.sourceforge.net/2003/03swap/log-rules.html">&lt;&gt;</a> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:imports</a> <a class="uri" href="http://www.w3.org/2000/10/swap/log">&lt;http://www.w3.org/2000/10/swap/log&gt;</a>.
+
+<span class="comment">### classes</span>
+<a class="qname" name="Builtin">e:Builtin</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;class of builtins&quot;</span>.
+
+<a class="qname" name="Fact">e:Fact</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;class of facts&quot;</span>.
+
+<a class="qname" name="Lemma">e:Lemma</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;class of lemmas&quot;</span>.
+
+<a class="qname" name="Numeral">e:Numeral</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Literal</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;class of things that are numerals&quot;</span>.
+
+<a class="qname" name="T0">e:T0</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:DeprecatedClass</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;class of things that are time reference points&quot;</span>.
+
+
+<span class="comment">### constants</span>
+<a class="qname" name="epsilon">e:epsilon</a> <span class="keyword">a</span> <a class="qname" href="#Numeral">e:Numeral</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;the difference between the float 1.0 and the first larger floating point number&quot;</span>.
+
+<a class="qname" name="F">e:F</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Resource</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;identifier for boolean false&quot;</span>.
+
+<a class="qname" name="T">e:T</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Resource</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;identifier for boolean true&quot;</span>.
+
+
+<span class="comment">### properties</span>
+<a class="qname" name="allAncestors">e:allAncestors</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:DeprecatedProperty</a>, <a class="qname" href="#Builtin">e:Builtin</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;builtin to collect all ancestor triples of subject&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://www.w3.org/2000/10/swap/log">log:Formula</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://www.w3.org/2000/10/swap/log">log:Formula</a>.
+
+<a class="qname" name="allAssertedAncestors">e:allAssertedAncestors</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:DeprecatedProperty</a>, <a class="qname" href="#Builtin">e:Builtin</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;builtin to collect all ancestor asserted triples of subject&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://www.w3.org/2000/10/swap/log">log:Formula</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://www.w3.org/2000/10/swap/log">log:Formula</a>.
+
+<a class="qname" name="allDescendents">e:allDescendents</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:DeprecatedProperty</a>, <a class="qname" href="#Builtin">e:Builtin</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;builtin to collect all descendent triples of subject&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://www.w3.org/2000/10/swap/log">log:Formula</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://www.w3.org/2000/10/swap/log">log:Formula</a>.
+
+<a class="qname" name="allModels">e:allModels</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:DeprecatedProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;object is the number of possible, counter and false models&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Resource</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://www.w3.org/2001/XMLSchema">xsd:integer</a>.
+
+<a class="qname" name="ancestor">e:ancestor</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:DeprecatedProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;used in e:falseModel explanation&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Resource</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://www.w3.org/2000/10/swap/log">log:Formula</a>.
+
+<a class="qname" name="ancestorModel">e:ancestorModel</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:DeprecatedProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;object is a ancestor model&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Resource</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://www.w3.org/2000/10/swap/log">log:Formula</a>.
+
+<a class="qname" name="ancestors">e:ancestors</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:DeprecatedProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;used in e:ancestorModel explanation&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Resource</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://www.w3.org/2000/10/swap/log">log:Formula</a>.
+
+<a class="qname" name="answer">e:answer</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">rdf:Property</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;used to descibe an answer as a graph&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Resource</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://www.w3.org/2000/10/swap/log">log:Formula</a>.
+
+<a class="qname" name="applicability">e:applicability</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:DeprecatedProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;a property to express the ratio possibleModels/(possibleModels+counterModels+falseModels)&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Resource</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="#Numeral">e:Numeral</a>.
+
+<a class="qname" name="assertedAncestors">e:assertedAncestors</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:DeprecatedProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;used in e:falseModel explanation&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Resource</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://www.w3.org/2000/10/swap/log">log:Formula</a>.
+
+<a class="qname" name="assertedTriple">e:assertedTriple</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:DeprecatedProperty</a>, <a class="qname" href="#Builtin">e:Builtin</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;builtin to succeed when subject is an asserted triple&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://www.w3.org/2000/10/swap/log">log:Formula</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://www.w3.org/2000/10/swap/log">log:Formula</a>.
+
+<a class="qname" name="bayesRule">e:bayesRule</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:DeprecatedProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;Bayes Rule justification&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Resource</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">rdf:List</a>.
+
+<a class="qname" name="because">e:because</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:DeprecatedProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;proof of formula&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Resource</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Resource</a>.
+
+<a class="qname" name="biconditional">e:biconditional</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">rdf:Property</a>, <a class="qname" href="#Builtin">e:Builtin</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;builtin and object is conditional belief of first element of subject list given rest of subject list&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">rdf:List</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="#Numeral">e:Numeral</a>.
+
+<a class="qname" name="binaryEntropy">e:binaryEntropy</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">rdf:Property</a>, <a class="qname" href="#Builtin">e:Builtin</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;builtin to calculate binary entropy e.g. 0.25 e:binaryEntropy 0.8112781244591328.&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="#Numeral">e:Numeral</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="#Numeral">e:Numeral</a>.
+
+<a class="qname" name="boolean">e:boolean</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">rdf:Property</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;to model a logical proposition&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Resource</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> [ <a class="qname" href="http://www.w3.org/2002/07/owl">owl:oneOf</a> (<a class="qname" href="#F">e:F</a> <a class="qname" href="#T">e:T</a>)].
+
+<a class="qname" name="call">e:call</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">rdf:Property</a>, <a class="qname" href="#Builtin">e:Builtin</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;builtin to call the object formula; is within the subject scope of all asserted N3 formulae and their log:conclusion&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">rdf:List</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://www.w3.org/2000/10/swap/log">log:Formula</a>.
+
+<a class="qname" name="cartesianProduct">e:cartesianProduct</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">rdf:Property</a>, <a class="qname" href="#Builtin">e:Builtin</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;builtin (L1 L2 ... Ln) e:cartesianProduct L, where L is the n-ary cartesian product of the sets L1, L2, ...., Ln.&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">rdf:List</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">rdf:List</a>.
+
+<a class="qname" name="clashesWith">e:clashesWith</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">rdf:Property</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;to say that the graph is XSD-inconsistent or has a datatype clash&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Literal</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Datatype</a>.
+
+<a class="qname" name="closure">e:closure</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:DeprecatedProperty</a>, <a class="qname" href="#Builtin">e:Builtin</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;builtin to test the deductive closure; is within the subject scope of all asserted N3 formulae and their log:conclusion&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">rdf:List</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://www.w3.org/2000/10/swap/log">log:Formula</a>.
+
+<a class="qname" name="closureInconsistentTriplesOrdering">e:closureInconsistentTriplesOrdering</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:DeprecatedProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;used in e:falseModel explanation&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Resource</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://www.w3.org/2000/10/swap/log">log:Formula</a>.
+
+<a class="qname" name="columns">e:columns</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">rdf:Property</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;to list the webized relational database collumns&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">rdf:List</a>.
+
+<a class="qname" name="conditional">e:conditional</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">rdf:Property</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;object is conditional belief of first element of subject list given rest of subject list&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">rdf:List</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="#Numeral">e:Numeral</a>.
+
+<a class="qname" name="construct">e:construct</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">rdf:Property</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;connecting a resource to a formula&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Resource</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://www.w3.org/2000/10/swap/log">log:Formula</a>.
+
+<a class="qname" name="consistentGives">e:consistentGives</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:DeprecatedProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;used in e:falseModel explanation&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Resource</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://www.w3.org/2000/10/swap/log">log:Formula</a>.
+
+<a class="qname" name="counterModel">e:counterModel</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:DeprecatedProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;object is a counter model&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Resource</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://www.w3.org/2000/10/swap/log">log:Formula</a>.
+
+<a class="qname" name="counterModels">e:counterModels</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:DeprecatedProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;object is the number of counter models&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Resource</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://www.w3.org/2001/XMLSchema">xsd:integer</a>.
+
+<a class="qname" name="csvTuple">e:csvTuple</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">rdf:Property</a>, <a class="qname" href="#Builtin">e:Builtin</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;to generate CSV output with --strings&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Resource</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">rdf:List</a>.
+
+<a class="qname" name="delta">e:delta</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:DeprecatedProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;used in proof output to explain belief differences&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">rdf:List</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="#Numeral">e:Numeral</a>.
+
+<a class="qname" name="disjunction">e:disjunction</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:DeprecatedProperty</a>, <a class="qname" href="#Builtin">e:Builtin</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;similar to log:conjunction but is logical OR and is used for rules with disjunctions in the conclusion&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">rdf:List</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://www.w3.org/2000/10/swap/log">log:Formula</a>.
+
+<a class="qname" name="distinct">e:distinct</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">rdf:Property</a>, <a class="qname" href="#Builtin">e:Builtin</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;builtin to remove duplicate list items&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">rdf:List</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">rdf:List</a>.
+
+<a class="qname" name="evidence">e:evidence</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:DeprecatedProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;to say that subject has an evident relationship with object either as fact or as conclusion of rule&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://www.w3.org/2000/10/swap/log">log:Formula</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Resource</a>.
+
+<a class="qname" name="evidentiality">e:evidentiality</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:DeprecatedProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;a property to express the ratio (possibleModels+counterModels)/(possibleModels+counterModels+falseModels)&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Resource</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="#Numeral">e:Numeral</a>.
+
+<a class="qname" name="falseAncestors">e:falseAncestors</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:DeprecatedProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;used in e:falseModel explanation&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Resource</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://www.w3.org/2000/10/swap/log">log:Formula</a>.
+
+<a class="qname" name="falseDescendents">e:falseDescendents</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:DeprecatedProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;used in e:falseModel explanation&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Resource</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://www.w3.org/2000/10/swap/log">log:Formula</a>.
+
+<a class="qname" name="falseModel">e:falseModel</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:DeprecatedProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;object is a false model&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Resource</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://www.w3.org/2000/10/swap/log">log:Formula</a>.
+
+<a class="qname" name="falseModels">e:falseModels</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:DeprecatedProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;object is the number of false models&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Resource</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://www.w3.org/2001/XMLSchema">xsd:integer</a>.
+
+<a class="qname" name="findall">e:findall</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">rdf:Property</a>, <a class="qname" href="#Builtin">e:Builtin</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;&quot;&quot;builtin used as ?SCOPE e:findall (?SELECT ?WHERE ?ANSWER).
+		unifies ?ANSWER with a list that contains all the instantiations of ?SELECT satisfying the ?WHERE clause
+		within the ?SCOPE of all asserted N3 formulae and their log:conclusion&quot;&quot;&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;&quot;&quot;builtin used as ?SCOPE e:findall (?SELECT ?WHERE ?BAG ?TAIL).
+		unifies the difference list ?BAG-?TAIL with all instantiations of ?SELECT satisfying the ?WHERE clause
+		within the ?SCOPE of all asserted N3 formulae and their log:conclusion&quot;&quot;&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">rdf:List</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">rdf:List</a>.
+
+<a class="qname" name="format">e:format</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">rdf:Property</a>, <a class="qname" href="#Builtin">e:Builtin</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;&quot;&quot;builtin with the subject a list, whose first member is a format string, and whose remaining members are
+		arguments to the format string. The format string is the one used in prolog's format predicate.
+		The object is calculated from the subject&quot;&quot;&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">rdf:List</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Literal</a>.
+
+<a class="qname" name="gives">e:gives</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:DeprecatedProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;used in e:possibleModel and in e:falseModel explanation&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Resource</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://www.w3.org/2000/10/swap/log">log:Formula</a>.
+
+<a class="qname" name="graphCopy">e:graphCopy</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">rdf:Property</a>, <a class="qname" href="#Builtin">e:Builtin</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;builtin to make a grounded copy of the subject graph e.g. {:a :b :c. :d :e :f} e:graphCopy ?GRAPH.&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://www.w3.org/2000/10/swap/log">log:Formula</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://www.w3.org/2000/10/swap/log">log:Formula</a>.
+
+<a class="qname" name="graphDifference">e:graphDifference</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">rdf:Property</a>, <a class="qname" href="#Builtin">e:Builtin</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;builtin used for graph difference e.g. ({:a :b :c. :d :e :f} {:d :e :f}) e:graphDifference {:a :b :c}.&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">rdf:List</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://www.w3.org/2000/10/swap/log">log:Formula</a>.
+
+<a class="qname" name="graphIntersection">e:graphIntersection</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">rdf:Property</a>, <a class="qname" href="#Builtin">e:Builtin</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;builtin used for graph intersection e.g. ({:a :b :c. :d :e :f} {:d :e :f}) e:graphIntersection {:d :e :f}.&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">rdf:List</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://www.w3.org/2000/10/swap/log">log:Formula</a>.
+
+<a class="qname" name="graphList">e:graphList</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">rdf:Property</a>, <a class="qname" href="#Builtin">e:Builtin</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;builtin used for graph/list transformation e.g. {:a :b :c. :d :e :f} e:graphList ({:a :b :c} {:d :e :f}).&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://www.w3.org/2000/10/swap/log">log:Formula</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">rdf:List</a>.
+
+<a class="qname" name="inconsistentTriplesOrdering">e:inconsistentTriplesOrdering</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:DeprecatedProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;used in e:falseModel explanation&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Resource</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://www.w3.org/2000/10/swap/log">log:Formula</a>.
+
+<a class="qname" name="inductivity">e:inductivity</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:DeprecatedProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;a property to express the ratio possibleModels/(possibleModels+counterModels)&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Resource</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="#Numeral">e:Numeral</a>.
+
+<a class="qname" name="inferredDescendents">e:inferredDescendents</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:DeprecatedProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;used in e:falseModel explanation&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Resource</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://www.w3.org/2000/10/swap/log">log:Formula</a>.
+
+<a class="qname" name="integrityConstraint">e:integrityConstraint</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:DeprecatedProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;used in e:falseModel explanation&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Resource</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://www.w3.org/2000/10/swap/log">log:Formula</a>.
+
+<a class="qname" name="label">e:label</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">rdf:Property</a>, <a class="qname" href="#Builtin">e:Builtin</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;builtin to test wether the subject is a blank node and return the relabeled blank node label as object (this is a level breaker)&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Resource</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Literal</a>.
+
+<a class="qname" name="labelvars">e:labelvars</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">rdf:Property</a>, <a class="qname" href="#Builtin">e:Builtin</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;builtin to make a grounded copy of the subject&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Resource</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Resource</a>.
+
+<a class="qname" name="length">e:length</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">rdf:Property</a>, <a class="qname" href="#Builtin">e:Builtin</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;builtin that calculates the length of the subject list&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">rdf:List</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://www.w3.org/2001/XMLSchema">xsd:integer</a>.
+
+<a class="qname" name="max">e:max</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">rdf:Property</a>, <a class="qname" href="#Builtin">e:Builtin</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;builtin to maximum of the subject list&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">rdf:List</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Resource</a>.
+
+<a class="qname" name="min">e:min</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">rdf:Property</a>, <a class="qname" href="#Builtin">e:Builtin</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;builtin to minimum of the subject list&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">rdf:List</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Resource</a>.
+
+<a class="qname" name="notLabel">e:notLabel</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">rdf:Property</a>, <a class="qname" href="#Builtin">e:Builtin</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;builtin to test wether the subject is not a blank node with label in object (this is a level breaker)&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Resource</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Literal</a>.
+
+<a class="qname" name="numeral">e:numeral</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">rdf:Property</a>, <a class="qname" href="#Builtin">e:Builtin</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;&quot;&quot;builtin to convert literals to numerals e.g. &quot;2012&quot;^^xsd:long e:numeral 2012 .&quot;&quot;&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Literal</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="#Numeral">e:Numeral</a>.
+
+<a class="qname" name="optional">e:optional</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">rdf:Property</a>, <a class="qname" href="#Builtin">e:Builtin</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;builtin to call the object formula and to succeed anyway; is within the subject scope of all asserted N3 formulae and their log:conclusion&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">rdf:List</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://www.w3.org/2000/10/swap/log">log:Formula</a>.
+
+<a class="qname" name="possibility">e:possibility</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:DeprecatedProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;proof possibility&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://www.w3.org/2000/10/swap/log">log:Formula</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="#Numeral">e:Numeral</a>.
+
+<a class="qname" name="possibleModel">e:possibleModel</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:DeprecatedProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;object is a possible model&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Resource</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://www.w3.org/2000/10/swap/log">log:Formula</a>.
+
+<a class="qname" name="possibleModels">e:possibleModels</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:DeprecatedProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;object is the number of possible models&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Resource</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://www.w3.org/2001/XMLSchema">xsd:integer</a>.
+
+<a class="qname" name="proof">e:proof</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:DeprecatedProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;proof formula&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Resource</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://www.w3.org/2000/10/swap/log">log:Formula</a>.
+
+<a class="qname" name="proofID">e:proofID</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:DeprecatedProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;proof ID&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Resource</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://www.w3.org/2001/XMLSchema">xsd:integer</a>.
+
+<a class="qname" name="propertyChainExtension">e:propertyChainExtension</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">rdf:Property</a>, <a class="qname" href="#Builtin">e:Builtin</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;builtin to support owl:propertyChainAxiom inferencing i.e. {?sc owl:propertyChainAxiom ?x; rdfs:subPropertyOf ?p. ?x e:propertyChainExtension (?s ?o)} =&gt; {?s ?p ?o}.&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">rdf:List</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">rdf:List</a>.
+
+<a class="qname" name="reason">e:reason</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:DeprecatedProperty</a>, <a class="qname" href="#Builtin">e:Builtin</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;heavy builtin where the subject is the reasoning process and the object the returned status code&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Literal</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://www.w3.org/2001/XMLSchema">xsd:integer</a>.
+
+<a class="qname" name="relabel">e:relabel</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">rdf:Property</a>, <a class="qname" href="#Builtin">e:Builtin</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;relabel subject with object in the output of the reasoning run&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Resource</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Resource</a>.
+
+<a class="qname" name="reverse">e:reverse</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">rdf:Property</a>, <a class="qname" href="#Builtin">e:Builtin</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;builtin to reverse the subject list&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">rdf:List</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">rdf:List</a>.
+
+<a class="qname" name="roc">e:roc</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">rdf:Property</a>, <a class="qname" href="#Builtin">e:Builtin</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;builtin to simulate ROC curve e.g. strength e:roc (sensitivity aspecificity).&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="#Numeral">e:Numeral</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">rdf:List</a>.
+
+<a class="qname" name="selected">e:selected</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:DeprecatedProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;used in e:falseModel explanation and used in e:ancestorModel explanation&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Resource</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Resource</a>.
+
+<a class="qname" name="sigmoid">e:sigmoid</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">rdf:Property</a>, <a class="qname" href="#Builtin">e:Builtin</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;builtin to calculate a sigmoid e.g. -6 e:sigmoid 0.0024726231566347743.&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">rdf:List</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="#Numeral">e:Numeral</a>.
+
+<a class="qname" name="sort">e:sort</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">rdf:Property</a>, <a class="qname" href="#Builtin">e:Builtin</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;builtin to sort the subject list&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">rdf:List</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">rdf:List</a>.
+
+<a class="qname" name="source">e:source</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:DeprecatedProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;source of formula&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://www.w3.org/2000/10/swap/log">log:Formula</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Resource</a>.
+
+<a class="qname" name="stringEscape">e:stringEscape</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">rdf:Property</a>, <a class="qname" href="#Builtin">e:Builtin</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;builtin to escape the subject string&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Literal</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Literal</a>.
+
+<a class="qname" name="sublist">e:sublist</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">rdf:Property</a>, <a class="qname" href="#Builtin">e:Builtin</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;builtin to succeed if object list is a sublist of subject list&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">rdf:List</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">rdf:List</a>.
+
+<a class="qname" name="tactic">e:tactic</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:DeprecatedProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;predicate to express proof tactics&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">rdf:List</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">rdf:List</a>.
+
+<a class="qname" name="timeWindow">e:timeWindow</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:DeprecatedProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;&quot;&quot;day 7 is (&quot;P6D&quot;^^xsd:duration &quot;P1D&quot;^^xsd:duration) and is relative to e:T0&quot;&quot;&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Resource</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">rdf:List</a>.
+
+<a class="qname" name="trace">e:trace</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">rdf:Property</a>, <a class="qname" href="#Builtin">e:Builtin</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;builtin that outputs the object&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Resource</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Resource</a>.
+
+<a class="qname" name="tripleList">e:tripleList</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">rdf:Property</a>, <a class="qname" href="#Builtin">e:Builtin</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;builtin used for triple/list transformation e.g. {:a :b :c} e:tripleList (:a :b :c).&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://www.w3.org/2000/10/swap/log">log:Formula</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">rdf:List</a>.
+
+<a class="qname" name="triple">e:triple</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:DeprecatedProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;used in e:falseModel explanation&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Resource</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://www.w3.org/2000/10/swap/log">log:Formula</a>.
+
+<a class="qname" name="triples">e:triples</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:DeprecatedProperty</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;used in e:falseModel explanation&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Resource</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://www.w3.org/2000/10/swap/log">log:Formula</a>.
+
+<a class="qname" name="true">e:true</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:DeprecatedProperty</a>, <a class="qname" href="#Builtin">e:Builtin</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;builtin to model truth-value t(conclusion|premises)&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Resource</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="#Numeral">e:Numeral</a>.
+
+<a class="qname" name="tuple">e:tuple</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">rdf:Property</a>, <a class="qname" href="#Builtin">e:Builtin</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;builtin skolem function generator typically used with a subject that will get bound to a unique blank node which is a function of the object tuple&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Resource</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">rdf:List</a>.
+
+<a class="qname" name="valuation">e:valuation</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">rdf:Property</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://www.w3.org/2000/10/swap/log">log:Formula</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">rdf:List</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;to express (lower upper) valuation of a formula e.g. {:PatientWithNoFlu rdfs:subClassOf :PatientWithFever} e:valuation (0.032 0.048)&quot;</span>.
+
+<a class="qname" name="wwwFormEncode">e:wwwFormEncode</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">rdf:Property</a>, <a class="qname" href="#Builtin">e:Builtin</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;builtin bidirectional www form encoder&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Literal</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Literal</a>.
+		</pre>
+	</div>
+	</body>
+</html>

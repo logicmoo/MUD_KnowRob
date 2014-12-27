@@ -1,0 +1,18 @@
+:- op(1200,xfx,':=').
+:- op(1199,xfx,'=>').
+
+:- dynamic('rdf:type'/2).
+:- dynamic(answer/1).
+
+pfx('rdf:','<http://www.w3.org/1999/02/22-rdf-syntax-ns#>').
+pfx(':','<http://eulersharp.sourceforge.net/2006/02swap/test007#>').
+
+[f1] := true => 'rdf:type'(':Socrates',':Human').
+
+[c1] := 'rdf:type'(':Socrates',':Immortal') => false.
+
+[r1] := 'rdf:type'(X,':Human') => 'rdf:type'(X,':Mortal'); 'rdf:type'(X,':Immortal').
+
+[a1] := 'rdf:type'(X,Y) => answer('rdf:type'(X,Y)).
+
+[] := answer(_) => goal.

@@ -1,0 +1,80 @@
+#Processed by Id: euler.yap,v 1.112 2006/11/09 21:07:09 josd Exp 
+
+@prefix str: <http://www.w3.org/2000/10/swap/string#>.
+@prefix p0: <http://eulersharp.sourceforge.net/2003/03swap/rpo-rules#>.
+@prefix var: <http://localhost/var#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix list: <http://www.w3.org/2000/10/swap/list#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix : <http://www.agfa.com/w3c/euler/graph.axiom#>.
+@prefix time: <http://www.w3.org/2000/10/swap/time#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix n3: <http://www.w3.org/2004/06/rei#>.
+@prefix math: <http://www.w3.org/2000/10/swap/math#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix r: <http://www.w3.org/2000/10/swap/reason#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+[ a r:Proof, r:Conjunction;
+  r:component [ a r:Inference; r:gives {:paris :path :nantes}; r:evidence (
+    [ a r:Extraction; r:gives {:paris :path :nantes}; r:because [ a r:Inference; r:gives {:paris :path :nantes}; r:evidence (
+      [ a r:Extraction; r:gives {:path rdf:type owl:TransitiveProperty}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/graph.axiom.n3>]]
+      [ a r:Extraction; r:gives {:angers :path :nantes}; r:because [ a r:Inference; r:gives {:angers :path :nantes}; r:evidence (
+        [ a r:Extraction; r:gives {:oneway rdfs:subPropertyOf :path}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/graph.axiom.n3>]]
+        [ a r:Extraction; r:gives {:angers :oneway :nantes}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/graph.axiom.n3>]]);
+        r:binding [ r:variable [ n3:uri "http://localhost/var#P"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/graph.axiom#oneway"]]; 
+        r:binding [ r:variable [ n3:uri "http://localhost/var#R"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/graph.axiom#path"]]; 
+        r:binding [ r:variable [ n3:uri "http://localhost/var#S"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/graph.axiom#angers"]]; 
+        r:binding [ r:variable [ n3:uri "http://localhost/var#O"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/graph.axiom#nantes"]]; 
+        r:rule [ a r:Extraction; r:gives {@forAll var:P,var:R,var:S,var:O. {var:P rdfs:subPropertyOf var:R. var:S var:P var:O} => {var:S var:R var:O}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/rpo-rules.n3>]]]]
+      [ a r:Extraction; r:gives {:paris :path :angers}; r:because [ a r:Inference; r:gives {:paris :path :angers}; r:evidence (
+        [ a r:Extraction; r:gives {:path rdf:type owl:TransitiveProperty}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/graph.axiom.n3>]]
+        [ a r:Extraction; r:gives {:lemans :path :angers}; r:because [ a r:Inference; r:gives {:lemans :path :angers}; r:evidence (
+          [ a r:Extraction; r:gives {:oneway rdfs:subPropertyOf :path}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/graph.axiom.n3>]]
+          [ a r:Extraction; r:gives {:lemans :oneway :angers}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/graph.axiom.n3>]]);
+          r:binding [ r:variable [ n3:uri "http://localhost/var#P"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/graph.axiom#oneway"]]; 
+          r:binding [ r:variable [ n3:uri "http://localhost/var#R"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/graph.axiom#path"]]; 
+          r:binding [ r:variable [ n3:uri "http://localhost/var#S"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/graph.axiom#lemans"]]; 
+          r:binding [ r:variable [ n3:uri "http://localhost/var#O"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/graph.axiom#angers"]]; 
+          r:rule [ a r:Extraction; r:gives {@forAll var:P,var:R,var:S,var:O. {var:P rdfs:subPropertyOf var:R. var:S var:P var:O} => {var:S var:R var:O}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/rpo-rules.n3>]]]]
+        [ a r:Extraction; r:gives {:paris :path :lemans}; r:because [ a r:Inference; r:gives {:paris :path :lemans}; r:evidence (
+          [ a r:Extraction; r:gives {:path rdf:type owl:TransitiveProperty}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/graph.axiom.n3>]]
+          [ a r:Extraction; r:gives {:chartres :path :lemans}; r:because [ a r:Inference; r:gives {:chartres :path :lemans}; r:evidence (
+            [ a r:Extraction; r:gives {:oneway rdfs:subPropertyOf :path}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/graph.axiom.n3>]]
+            [ a r:Extraction; r:gives {:chartres :oneway :lemans}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/graph.axiom.n3>]]);
+            r:binding [ r:variable [ n3:uri "http://localhost/var#P"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/graph.axiom#oneway"]]; 
+            r:binding [ r:variable [ n3:uri "http://localhost/var#R"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/graph.axiom#path"]]; 
+            r:binding [ r:variable [ n3:uri "http://localhost/var#S"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/graph.axiom#chartres"]]; 
+            r:binding [ r:variable [ n3:uri "http://localhost/var#O"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/graph.axiom#lemans"]]; 
+            r:rule [ a r:Extraction; r:gives {@forAll var:P,var:R,var:S,var:O. {var:P rdfs:subPropertyOf var:R. var:S var:P var:O} => {var:S var:R var:O}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/rpo-rules.n3>]]]]
+          [ a r:Extraction; r:gives {:paris :path :chartres}; r:because [ a r:Inference; r:gives {:paris :path :chartres}; r:evidence (
+            [ a r:Extraction; r:gives {:oneway rdfs:subPropertyOf :path}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/graph.axiom.n3>]]
+            [ a r:Extraction; r:gives {:paris :oneway :chartres}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/graph.axiom.n3>]]);
+            r:binding [ r:variable [ n3:uri "http://localhost/var#P"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/graph.axiom#oneway"]]; 
+            r:binding [ r:variable [ n3:uri "http://localhost/var#R"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/graph.axiom#path"]]; 
+            r:binding [ r:variable [ n3:uri "http://localhost/var#S"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/graph.axiom#paris"]]; 
+            r:binding [ r:variable [ n3:uri "http://localhost/var#O"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/graph.axiom#chartres"]]; 
+            r:rule [ a r:Extraction; r:gives {@forAll var:P,var:R,var:S,var:O. {var:P rdfs:subPropertyOf var:R. var:S var:P var:O} => {var:S var:R var:O}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/rpo-rules.n3>]]]]);
+          r:binding [ r:variable [ n3:uri "http://localhost/var#P"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/graph.axiom#path"]]; 
+          r:binding [ r:variable [ n3:uri "http://localhost/var#X"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/graph.axiom#chartres"]]; 
+          r:binding [ r:variable [ n3:uri "http://localhost/var#O"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/graph.axiom#lemans"]]; 
+          r:binding [ r:variable [ n3:uri "http://localhost/var#S"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/graph.axiom#paris"]]; 
+          r:rule [ a r:Extraction; r:gives {@forAll var:P,var:X,var:O,var:S. {var:P a owl:TransitiveProperty. var:X var:P var:O. var:S var:P var:X} => {var:S var:P var:O}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/rpo-rules.n3>]]]]);
+        r:binding [ r:variable [ n3:uri "http://localhost/var#P"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/graph.axiom#path"]]; 
+        r:binding [ r:variable [ n3:uri "http://localhost/var#X"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/graph.axiom#lemans"]]; 
+        r:binding [ r:variable [ n3:uri "http://localhost/var#O"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/graph.axiom#angers"]]; 
+        r:binding [ r:variable [ n3:uri "http://localhost/var#S"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/graph.axiom#paris"]]; 
+        r:rule [ a r:Extraction; r:gives {@forAll var:P,var:X,var:O,var:S. {var:P a owl:TransitiveProperty. var:X var:P var:O. var:S var:P var:X} => {var:S var:P var:O}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/rpo-rules.n3>]]]]);
+      r:binding [ r:variable [ n3:uri "http://localhost/var#P"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/graph.axiom#path"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#X"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/graph.axiom#angers"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#O"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/graph.axiom#nantes"]]; 
+      r:binding [ r:variable [ n3:uri "http://localhost/var#S"]; r:boundTo [ n3:uri "http://www.agfa.com/w3c/euler/graph.axiom#paris"]]; 
+      r:rule [ a r:Extraction; r:gives {@forAll var:P,var:X,var:O,var:S. {var:P a owl:TransitiveProperty. var:X var:P var:O. var:S var:P var:X} => {var:S var:P var:O}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/rpo-rules.n3>]]]]);
+    r:rule [ a r:Extraction; r:gives {@forAll . {:paris :path :nantes} => {:paris :path :nantes}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/graph.filter.n3>]]];
+  r:gives {
+    :paris :path :nantes.}].
+
+#ENDS 10 msec.
+

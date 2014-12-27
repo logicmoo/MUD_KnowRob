@@ -1,0 +1,11 @@
+# PxButton | cwm    | bash .cwm http://localhost/euler/socrates.n3 --think --filter=http://localhost/euler/socratesF.n3 --why > socratesW.n3
+# PxButton | euler5 | bash .euler5 http://localhost/.euler+-prolog+http://localhost/euler/socrates.n3+-filter+http://localhost/euler/socratesF.n3 > socratesE.n3
+# PxButton | checkw | bash .check -v50 http://localhost/euler/socratesW.n3
+# PxButton | checke | bash .check -v50 http://localhost/euler/socratesE.n3
+
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix : <http://www.agfa.com/w3c/euler/socrates#>.
+
+{?WHO a ?WHAT} => {?WHO a ?WHAT}.

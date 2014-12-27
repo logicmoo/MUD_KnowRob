@@ -1,0 +1,180 @@
+# Generated with http://www.agfa.com/w3c/euler/#R3629 on 2003-10-30 12:42:24 AM
+{
+ (
+ <http://eulersharp.sourceforge.net/2003/03swap/test-rules.n3>!<http://www.w3.org/2000/10/swap/log#semantics>
+ <http://eulersharp.sourceforge.net/2003/03swap/test.n3>!<http://www.w3.org/2000/10/swap/log#semantics>
+ )!<http://www.w3.org/2000/10/swap/log#conjunction> =>
+ <http://eulersharp.sourceforge.net/2003/03swap/test-prop-lemma.n3>!<http://www.w3.org/2000/10/swap/log#semantics>
+}
+<http://www.w3.org/2000/10/swap/reason#because>
+{
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix isid: <http://purl.oclc.org/NET/introspector/2002/11/24/temp/node-ids#>.
+@prefix isnf: <http://purl.oclc.org/NET/introspector/2002/11/24/gcc/node_types#>.
+@prefix s: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix is: <http://introspector.sf.net/2003/04/27/introspector#>.
+@prefix dpo: <http://www.daml.org/2001/03/daml+oil#>.
+@prefix isad: <http://purl.oclc.org/NET/introspector/2002/11/24/temp/node-addresses#>.
+@prefix isnm: <http://purl.oclc.org/NET/introspector/2002/11/24/gcc/node_modifiers#>.
+@prefix math: <http://www.w3.org/2000/10/swap/math#>.
+@prefix idnm: <http://purl.oclc.org/NET/introspector/2002/11/24/name#>.
+@prefix idfn: <http://purl.oclc.org/NET/introspector/2002/11/24/filenames#>.
+@prefix neg: <http://www.agfa.com/w3c/euler/negation#>.
+@prefix idbl: <http://purl.oclc.org/NET/introspector/2002/11/24/logic/boolean#>.
+@prefix nsisnm: <http://purl.oclc.org/NET/introspector/2002/11/24/name#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix nsneg: <http://eulersharp.sourceforge.net/2003/03swap/negation#>.
+@prefix nsns: <http://www.agfa.com/w3c/euler/rdfs-rules#>.
+@prefix iw: <http://www.ksl.stanford.edu/software/IW/spec/iw#>.
+@prefix ns: <http://www.agfa.com/w3c/euler/owl-rules#>.
+@prefix isfn: <http://purl.oclc.org/NET/introspector/2002/11/24/temp/node-files#>.
+@prefix isbl: <http://purl.oclc.org/NET/introspector/2002/11/24/logic/boolean#>.
+@prefix string: <http://www.w3.org/2000/10/swap/string#>.
+@prefix str: <http://www.w3.org/2000/10/swap/string#>.
+@prefix isfl: <http://purl.oclc.org/NET/introspector/2002/11/24/gcc/node_fields#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix nsisfn: <http://purl.oclc.org/NET/introspector/2002/11/24/filenames#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix : <http://eulersharp.sourceforge.net/2003/03swap/test#>.
+@prefix isnt: <http://purl.oclc.org/NET/introspector/2002/11/24/gcc/node_types#>.
+
+[iw:Variable "_:someStruct20_3"; = isid:id-1] isfl:name [iw:Variable "_:someName20_3"; = isid:id-2]. 
+[iw:Variable "_:someName21_3"; = isid:id-2] isfl:strg [iw:Variable "_:someStr21_3"; = "::"]. 
+ {[iw:Variable "?someStruct"; = isid:id-5] isfl:name [iw:Variable "?someName"; = isid:id-3]. 
+  [iw:Variable "?someName"; = isid:id-3] isfl:name [iw:Variable "?someOtherName"; = isid:id-4]. 
+  [iw:Variable "?someOtherName"; = isid:id-4] isfl:strg [iw:Variable "?someStr"; = "y"]} =>
+{[iw:Variable "_:someStruct22_3"; = isid:id-5] isfl:namestr [iw:Variable "_:someStr22_3"; = "y"]}. 
+ {{[iw:Variable "?X"; = isid:id-27] isfl:chan [iw:Variable "?O"; = isid:id-32]. 
+     {{[iw:Variable "?someField5"; = isid:id-27] isfl:chan [iw:Variable "?someOtherField5"; = isid:id-32]. 
+        [iw:Variable "?someField5"; = isid:id-27] isfl:valu [iw:Variable "?someOtherField5v"; = isid:id-31]. 
+         {[iw:Variable "?someField5"; = isid:id-32] isfl:chan [iw:Variable "?someOtherField5"; = isid:id-34]. 
+          [iw:Variable "?someField5"; = isid:id-32] isfl:valu [iw:Variable "?someOtherField5v"; = isid:id-33]. 
+           {{{{[iw:Variable "?someField5"; = isid:id-27] isfl:chan [iw:Variable "?someOtherField5"; = isid:id-32]. 
+                  [iw:Variable "?someField5"; = isid:id-27] isfl:valu [iw:Variable "?someOtherField5v"; = isid:id-31]. 
+                   {[iw:Variable "?X"; = isid:id-32] isfl:chan [iw:Variable "?O"; = isid:id-34]. 
+                     {[iw:Variable "?someField5"; = isid:id-32] isfl:chan [iw:Variable "?someOtherField5"; = isid:id-34]. 
+                      [iw:Variable "?someField5"; = isid:id-32] isfl:valu [iw:Variable "?someOtherField5v"; = isid:id-33]. 
+                       {[iw:Variable "?X"; = isid:id-32] isfl:chan [iw:Variable "?O"; = isid:id-34]} =>
+                      {[iw:Variable "?someOtherField5"; = isid:id-34] isfl:chan [iw:Variable "?someNextField5"; = isid:id-32]}. 
+                      [iw:Variable "?someOtherField5"; = isid:id-34] isfl:valu [iw:Variable "?someNextField5v"; = isid:id-36]} =>
+                    {[iw:Variable "?S"; = isid:id-32] isfl:chan [iw:Variable "?X"; = isid:id-32]}} =>
+                  {[iw:Variable "?someOtherField5"; = isid:id-32] isfl:chan [iw:Variable "?someNextField5"; = isid:id-34]}. 
+                  [iw:Variable "?someOtherField5"; = isid:id-32] isfl:valu [iw:Variable "?someNextField5v"; = isid:id-33]} =>
+                {[iw:Variable "?someField5"; = isid:id-34] isfl:chan [iw:Variable "?someOtherField5"; = isid:id-32]}. 
+                [iw:Variable "?someField5"; = isid:id-34] isfl:valu [iw:Variable "?someOtherField5v"; = isid:id-36]. 
+                 {{[iw:Variable "?someOtherField4"; = isid:id-27] isfl:chan [iw:Variable "?someNextField4"; = isid:id-32]. 
+                    [iw:Variable "?someOtherField4"; = isid:id-27] isfl:valu [iw:Variable "?someNextFieldValue4"; = isid:id-31]} =>
+                  {[iw:Variable "?someField5"; = isid:id-32] isfl:chan [iw:Variable "?someOtherField5"; = isid:id-27]}. 
+                  [iw:Variable "?someField5"; = isid:id-32] isfl:valu [iw:Variable "?someOtherField5v"; = isid:id-33]. 
+                   {{[iw:Variable "?someOtherField4"; = isid:id-27] isfl:chan [iw:Variable "?someNextField4"; = isid:id-32]. 
+                      [iw:Variable "?someOtherField4"; = isid:id-27] isfl:valu [iw:Variable "?someNextFieldValue4"; = isid:id-31]} =>
+                    {[iw:Variable "?X"; = isid:id-32] isfl:chan [iw:Variable "?O"; = isid:id-27]}} =>
+                  {[iw:Variable "?someOtherField5"; = isid:id-27] isfl:chan [iw:Variable "?someNextField5"; = isid:id-32]}. 
+                  [iw:Variable "?someOtherField5"; = isid:id-27] isfl:valu [iw:Variable "?someNextField5v"; = isid:id-31]} =>
+                {[iw:Variable "?someOtherField5"; = isid:id-32] isfl:chan [iw:Variable "?someNextField5"; = isid:id-27]}. 
+                [iw:Variable "?someOtherField5"; = isid:id-32] isfl:valu [iw:Variable "?someNextField5v"; = isid:id-33]} =>
+              {[iw:Variable "?X"; = isid:id-34] isfl:chan [iw:Variable "?O"; = isid:id-27]}} =>
+            {[iw:Variable "?X"; = isid:id-27] isfl:chan [iw:Variable "?O"; = isid:id-34]}} =>
+          {[iw:Variable "?someOtherField5"; = isid:id-34] isfl:chan [iw:Variable "?someNextField5"; = isid:id-27]}. 
+          [iw:Variable "?someOtherField5"; = isid:id-34] isfl:valu [iw:Variable "?someNextField5v"; = isid:id-36]} =>
+        {[iw:Variable "?someOtherField5"; = isid:id-32] isfl:chan [iw:Variable "?someNextField5"; = isid:id-27]}. 
+        [iw:Variable "?someOtherField5"; = isid:id-32] isfl:valu [iw:Variable "?someNextField5v"; = isid:id-33]} =>
+      {[iw:Variable "?X"; = isid:id-27] isfl:chan [iw:Variable "?O"; = isid:id-27]}. 
+       {[iw:Variable "?someField5"; = isid:id-27] isfl:chan [iw:Variable "?someOtherField5"; = isid:id-32]. 
+        [iw:Variable "?someField5"; = isid:id-27] isfl:valu [iw:Variable "?someOtherField5v"; = isid:id-31]. 
+         {{{{{{[iw:Variable "?X"; = isid:id-27] isfl:chan [iw:Variable "?O"; = isid:id-32]} =>
+                  {[iw:Variable "?someOtherField3"; = isid:id-32] isfl:chan [iw:Variable "?someNextField3"; = isid:id-27]}. 
+                  [iw:Variable "?someOtherField3"; = isid:id-32] isfl:valu [iw:Variable "?listValue3"; = isid:id-33]} =>
+                {[iw:Variable "?X"; = isid:id-32] isfl:chan [iw:Variable "?O"; = isid:id-27]}} =>
+              {[iw:Variable "?someOtherField4"; = isid:id-27] isfl:chan [iw:Variable "?someNextField4"; = isid:id-32]}. 
+              [iw:Variable "?someOtherField4"; = isid:id-27] isfl:valu [iw:Variable "?someNextFieldValue4"; = isid:id-31]} =>
+            {[iw:Variable "?someField5"; = isid:id-32] isfl:chan [iw:Variable "?someOtherField5"; = isid:id-27]}. 
+            [iw:Variable "?someField5"; = isid:id-32] isfl:valu [iw:Variable "?someOtherField5v"; = isid:id-33]. 
+             {{[iw:Variable "?someOtherField4"; = isid:id-27] isfl:chan [iw:Variable "?someNextField4"; = isid:id-32]. 
+                [iw:Variable "?someOtherField4"; = isid:id-27] isfl:valu [iw:Variable "?someNextFieldValue4"; = isid:id-31]} =>
+              {[iw:Variable "?X"; = isid:id-32] isfl:chan [iw:Variable "?O"; = isid:id-27]}} =>
+            {[iw:Variable "?someOtherField5"; = isid:id-27] isfl:chan [iw:Variable "?someNextField5"; = isid:id-32]}. 
+            [iw:Variable "?someOtherField5"; = isid:id-27] isfl:valu [iw:Variable "?someNextField5v"; = isid:id-31]} =>
+          {[iw:Variable "?X"; = isid:id-32] isfl:chan [iw:Variable "?O"; = isid:id-27]}. 
+           {{[iw:Variable "?X"; = isid:id-27] isfl:chan [iw:Variable "?O"; = isid:id-32]. 
+               {[iw:Variable "?someField5"; = isid:id-32] isfl:chan [iw:Variable "?someOtherField5"; = isid:id-34]. 
+                [iw:Variable "?someField5"; = isid:id-32] isfl:valu [iw:Variable "?someOtherField5v"; = isid:id-33]. 
+                 {{{{{[iw:Variable "?someOtherField4"; = isid:id-27] isfl:chan [iw:Variable "?someNextField4"; = isid:id-32]. 
+                          [iw:Variable "?someOtherField4"; = isid:id-27] isfl:valu [iw:Variable "?someNextFieldValue4"; = isid:id-31]} =>
+                        {[iw:Variable "?someField5"; = isid:id-32] isfl:chan [iw:Variable "?someOtherField5"; = isid:id-27]}. 
+                        [iw:Variable "?someField5"; = isid:id-32] isfl:valu [iw:Variable "?someOtherField5v"; = isid:id-33]. 
+                        [iw:Variable "?someOtherField5"; = isid:id-27] isfl:chan [iw:Variable "?someNextField5"; = isid:id-32]. 
+                        [iw:Variable "?someOtherField5"; = isid:id-27] isfl:valu [iw:Variable "?someNextField5v"; = isid:id-31]} =>
+                      {[iw:Variable "?X"; = isid:id-32] isfl:chan [iw:Variable "?O"; = isid:id-27]}. 
+                       {{{[iw:Variable "?X"; = isid:id-27] isfl:chan [iw:Variable "?O"; = isid:id-32]. 
+                             {{[iw:Variable "?someField5"; = isid:id-27] isfl:chan [iw:Variable "?someOtherField5"; = isid:id-32]. 
+                                [iw:Variable "?someField5"; = isid:id-27] isfl:valu [iw:Variable "?someOtherField5v"; = isid:id-31]. 
+                                 {[iw:Variable "?X"; = isid:id-32] isfl:chan [iw:Variable "?O"; = isid:id-34]. 
+                                   {[iw:Variable "?someField5"; = isid:id-32] isfl:chan [iw:Variable "?someOtherField5"; = isid:id-34]. 
+                                    [iw:Variable "?someField5"; = isid:id-32] isfl:valu [iw:Variable "?someOtherField5v"; = isid:id-33]. 
+                                     {{[iw:Variable "?someOtherField4"; = isid:id-32] isfl:chan [iw:Variable "?someNextField4"; = isid:id-34]. 
+                                        [iw:Variable "?someOtherField4"; = isid:id-32] isfl:valu [iw:Variable "?someNextFieldValue4"; = isid:id-33]} =>
+                                      {[iw:Variable "?someField5"; = isid:id-34] isfl:chan [iw:Variable "?someOtherField5"; = isid:id-32]}. 
+                                      [iw:Variable "?someField5"; = isid:id-34] isfl:valu [iw:Variable "?someOtherField5v"; = isid:id-36]. 
+                                       {[iw:Variable "?someField5"; = isid:id-27] isfl:chan [iw:Variable "?someOtherField5"; = isid:id-32]. 
+                                        [iw:Variable "?someField5"; = isid:id-27] isfl:valu [iw:Variable "?someOtherField5v"; = isid:id-31]. 
+                                         {{{{[iw:Variable "?X"; = isid:id-27] isfl:chan [iw:Variable "?O"; = isid:id-32]. 
+                                                 {{[iw:Variable "?someOtherField4"; = isid:id-27] isfl:chan [iw:Variable "?someNextField4"; = isid:id-32]. 
+                                                    [iw:Variable "?someOtherField4"; = isid:id-27] isfl:valu [iw:Variable "?someNextFieldValue4"; = isid:id-31]} =>
+                                                  {[iw:Variable "?someField5"; = isid:id-32] isfl:chan [iw:Variable "?someOtherField5"; = isid:id-27]}. 
+                                                  [iw:Variable "?someField5"; = isid:id-32] isfl:valu [iw:Variable "?someOtherField5v"; = isid:id-33]. 
+                                                   {{[iw:Variable "?someOtherField4"; = isid:id-27] isfl:chan [iw:Variable "?someNextField4"; = isid:id-32]. 
+                                                      [iw:Variable "?someOtherField4"; = isid:id-27] isfl:valu [iw:Variable "?someNextFieldValue4"; = isid:id-31]} =>
+                                                    {[iw:Variable "?X"; = isid:id-32] isfl:chan [iw:Variable "?O"; = isid:id-27]}} =>
+                                                  {[iw:Variable "?someOtherField5"; = isid:id-27] isfl:chan [iw:Variable "?someNextField5"; = isid:id-32]}. 
+                                                  [iw:Variable "?someOtherField5"; = isid:id-27] isfl:valu [iw:Variable "?someNextField5v"; = isid:id-31]} =>
+                                                {[iw:Variable "?S"; = isid:id-32] isfl:chan [iw:Variable "?X"; = isid:id-27]}} =>
+                                              {[iw:Variable "?X"; = isid:id-32] isfl:chan [iw:Variable "?O"; = isid:id-32]}} =>
+                                            {[iw:Variable "?someOtherField3"; = isid:id-32] isfl:chan [iw:Variable "?someNextField3"; = isid:id-32]}. 
+                                            [iw:Variable "?someOtherField3"; = isid:id-32] isfl:valu [iw:Variable "?listValue3"; = isid:id-33]} =>
+                                          {[iw:Variable "?someOtherField4"; = isid:id-32] isfl:chan [iw:Variable "?someNextField4"; = isid:id-32]}. 
+                                          [iw:Variable "?someOtherField4"; = isid:id-32] isfl:valu [iw:Variable "?someNextFieldValue4"; = isid:id-33]} =>
+                                        {[iw:Variable "?someOtherField5"; = isid:id-32] isfl:chan [iw:Variable "?someNextField5"; = isid:id-32]}. 
+                                        [iw:Variable "?someOtherField5"; = isid:id-32] isfl:valu [iw:Variable "?someNextField5v"; = isid:id-33]} =>
+                                      {[iw:Variable "?someOtherField5"; = isid:id-32] isfl:chan [iw:Variable "?someNextField5"; = isid:id-32]}. 
+                                      [iw:Variable "?someOtherField5"; = isid:id-32] isfl:valu [iw:Variable "?someNextField5v"; = isid:id-33]} =>
+                                    {[iw:Variable "?someOtherField5"; = isid:id-34] isfl:chan [iw:Variable "?someNextField5"; = isid:id-32]}. 
+                                    [iw:Variable "?someOtherField5"; = isid:id-34] isfl:valu [iw:Variable "?someNextField5v"; = isid:id-36]} =>
+                                  {[iw:Variable "?S"; = isid:id-32] isfl:chan [iw:Variable "?X"; = isid:id-32]}} =>
+                                {[iw:Variable "?someOtherField5"; = isid:id-32] isfl:chan [iw:Variable "?someNextField5"; = isid:id-34]}. 
+                                [iw:Variable "?someOtherField5"; = isid:id-32] isfl:valu [iw:Variable "?someNextField5v"; = isid:id-33]} =>
+                              {[iw:Variable "?someField5"; = isid:id-34] isfl:chan [iw:Variable "?someOtherField5"; = isid:id-32]}. 
+                              [iw:Variable "?someField5"; = isid:id-34] isfl:valu [iw:Variable "?someOtherField5v"; = isid:id-36]. 
+                               {{[iw:Variable "?someOtherField4"; = isid:id-27] isfl:chan [iw:Variable "?someNextField4"; = isid:id-32]. 
+                                  [iw:Variable "?someOtherField4"; = isid:id-27] isfl:valu [iw:Variable "?someNextFieldValue4"; = isid:id-31]} =>
+                                {[iw:Variable "?someField5"; = isid:id-32] isfl:chan [iw:Variable "?someOtherField5"; = isid:id-27]}. 
+                                [iw:Variable "?someField5"; = isid:id-32] isfl:valu [iw:Variable "?someOtherField5v"; = isid:id-33]. 
+                                 {{[iw:Variable "?someOtherField4"; = isid:id-27] isfl:chan [iw:Variable "?someNextField4"; = isid:id-32]. 
+                                    [iw:Variable "?someOtherField4"; = isid:id-27] isfl:valu [iw:Variable "?someNextFieldValue4"; = isid:id-31]} =>
+                                  {[iw:Variable "?X"; = isid:id-32] isfl:chan [iw:Variable "?O"; = isid:id-27]}} =>
+                                {[iw:Variable "?someOtherField5"; = isid:id-27] isfl:chan [iw:Variable "?someNextField5"; = isid:id-32]}. 
+                                [iw:Variable "?someOtherField5"; = isid:id-27] isfl:valu [iw:Variable "?someNextField5v"; = isid:id-31]} =>
+                              {[iw:Variable "?someOtherField5"; = isid:id-32] isfl:chan [iw:Variable "?someNextField5"; = isid:id-27]}. 
+                              [iw:Variable "?someOtherField5"; = isid:id-32] isfl:valu [iw:Variable "?someNextField5v"; = isid:id-33]} =>
+                            {[iw:Variable "?S"; = isid:id-34] isfl:chan [iw:Variable "?X"; = isid:id-27]}} =>
+                          {[iw:Variable "?X"; = isid:id-34] isfl:chan [iw:Variable "?O"; = isid:id-32]}} =>
+                        {[iw:Variable "?X"; = isid:id-32] isfl:chan [iw:Variable "?O"; = isid:id-34]}} =>
+                      {[iw:Variable "?S"; = isid:id-34] isfl:chan [iw:Variable "?X"; = isid:id-32]}} =>
+                    {[iw:Variable "?X"; = isid:id-34] isfl:chan [iw:Variable "?O"; = isid:id-27]}} =>
+                  {[iw:Variable "?X"; = isid:id-27] isfl:chan [iw:Variable "?O"; = isid:id-34]}} =>
+                {[iw:Variable "?someOtherField5"; = isid:id-34] isfl:chan [iw:Variable "?someNextField5"; = isid:id-27]}. 
+                [iw:Variable "?someOtherField5"; = isid:id-34] isfl:valu [iw:Variable "?someNextField5v"; = isid:id-36]} =>
+              {[iw:Variable "?S"; = isid:id-32] isfl:chan [iw:Variable "?X"; = isid:id-27]}} =>
+            {[iw:Variable "?X"; = isid:id-32] isfl:chan [iw:Variable "?O"; = isid:id-32]}} =>
+          {[iw:Variable "?S"; = isid:id-32] isfl:chan [iw:Variable "?X"; = isid:id-32]}} =>
+        {[iw:Variable "?someOtherField5"; = isid:id-32] isfl:chan [iw:Variable "?someNextField5"; = isid:id-27]}. 
+        [iw:Variable "?someOtherField5"; = isid:id-32] isfl:valu [iw:Variable "?someNextField5v"; = isid:id-33]} =>
+      {[iw:Variable "?S"; = isid:id-27] isfl:chan [iw:Variable "?X"; = isid:id-27]}} =>
+    {[iw:Variable "?S"; = isid:id-27] isfl:chan [iw:Variable "?X"; = isid:id-27]}} =>
+  {[iw:Variable "?X"; = isid:id-27] isfl:chan [iw:Variable "?O"; = isid:id-32]}} =>
+{[iw:Variable "_:someOtherField3a_3"; = isid:id-32] isfl:chan [iw:Variable "_:someNextField3a_3"; = isid:id-27]}. 
+[iw:Variable "_:lista1_3"; = isid:id-27] isfl:valu [iw:Variable "_:listb1_3"; = isid:id-31]. 
+# Proof found for http://eulersharp.sourceforge.net/2003/03swap/test-prop-lemma.n3 in 853 steps (14193 steps/sec) using 1 engine
+}.
+

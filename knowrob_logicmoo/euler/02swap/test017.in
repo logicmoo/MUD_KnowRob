@@ -1,0 +1,27 @@
+% original version at http://www.csupomona.edu/~jrfisher/www/geolog/r3_5.gl
+% the Ramsey number theory for computing 3-cliques on five points
+% and having counter models which are gone when using six points!
+% see also http://en.wikipedia.org/wiki/Ramsey_theory
+
+:- op(1200,xfx,':=').
+:- op(1199,xfx,'=>').
+
+:- dynamic(lt/2).
+:- dynamic(r/2).
+:- dynamic(g/2).
+:- dynamic(answer/1).
+
+flag(keywords).
+flag(quiet).
+flag(quick).
+
+[a1] := true => lt(1,2), lt(2,3), lt(3,4), lt(4,5).
+
+[a2] := r(X,Y), r(Y,Z), r(X,Z) => goal.
+[a3] := g(X,Y), g(Y,Z), g(X,Z) => goal.
+
+[a4] := lt(X,Y), lt(Y,Z) => lt(X,Z).
+
+[a5] := lt(X,Y) => r(X,Y); g(X,Y).
+
+[] := answer(_) => goal.

@@ -1,0 +1,50 @@
+# $Id: etc3 1400 2007-07-20 20:08:38Z josd $
+
+echo \# +++++++++++++++++++++++++++++++++
+echo \# testing euler3 proof on localhost
+echo \# +++++++++++++++++++++++++++++++++
+echo
+echo \# =================
+echo \# etc3 FrenchCities
+echo \# =================
+wget -nv -O- http://localhost/.euler3+--why+http%3A%2F%2Feulersharp.sourceforge.net%2F2005%2F11swap%2Fgraph.n3
+
+echo \# ==================
+echo \# etc3 FrenchCities2
+echo \# ==================
+wget -nv -O- http://localhost/.euler3+--why+http%3A%2F%2Feulersharp.sourceforge.net%2F2005%2F11swap%2Fgrapht.n3
+
+echo \# ==========
+echo \# etc3 Lists
+echo \# ==========
+wget -nv -O- http://localhost/.euler3+--why+http%3A%2F%2Feulersharp.sourceforge.net%2F2005%2F11swap%2Flist.n3
+
+echo \# =============
+echo \# etc3 Socrates
+echo \# =============
+wget -nv -O- http://localhost/.euler3+--why+http%3A%2F%2Feulersharp.sourceforge.net%2F2005%2F11swap%2Fsocrates.n3
+
+echo \# ===============
+echo \# etc3 FamilyTree
+echo \# ===============
+wget -nv -O- http://localhost/.euler3+--why+http%3A%2F%2Feulersharp.sourceforge.net%2F2005%2F11swap%2Ftree.n3
+
+echo \# =============
+echo \# etc3 Einstein
+echo \# =============
+wget -nv -O- http://localhost/.euler3+--why+http%3A%2F%2Feulersharp.sourceforge.net%2F2005%2F11swap%2Feinstein.n3
+
+echo \# ========================
+echo \# etc3 IntraocularPressure
+echo \# ========================
+wget -nv -O- http://localhost/.euler3+--why+http%3A%2F%2Fwww.agfa.com%2Fw3c%2Feuler%2Fexample003P.n3
+
+echo \# ==========================
+echo \# etc3 MedicationInteraction
+echo \# ==========================
+wget -nv -O- http://localhost/.euler3+--why+http%3A%2F%2Fwww.agfa.com%2Fw3c%2Feuler%2FmedI.n3
+
+echo \# ==============
+echo \# etc3 Xanthippe
+echo \# ==============
+wget -nv -O- http://localhost/.euler3+--why+http%3A%2F%2Feulersharp.sourceforge.net%2F2005%2F11swap%2Fxanthippe.n3

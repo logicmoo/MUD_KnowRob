@@ -1,0 +1,1128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>
+		<meta name="generator" content="AGFA HealthCare N3 to HTML convertor"/>
+		<link rel="alternate" type="text/n3" title="RDF Representation" href="http://eulersharp.sourceforge.net/2003/03swap/units"/>
+		<title>units</title>
+		<style type="text/css">
+			a[href]:link { text-decoration:none; }
+			a[href]:visited { text-decoration:none; }
+			a[href]:active { text-decoration:underline; }
+			a:hover { background:#ffa; }
+			.keyword { font-weight: bold; }
+			.literal { color: blue }
+			.uri { color: darkblue }
+			.qname { color: black }
+			.var { color: gray }
+			.comment { font-style:italic; color: darkgreen }
+		</style>
+	</head>
+	<body>
+	<div>
+		<pre>
+<span class="keyword">@prefix</span> rdfs: <a class="uri" href="http://www.w3.org/2000/01/rdf-schema">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</a>.
+<span class="keyword">@prefix</span> owl: <a class="uri" href="http://www.w3.org/2002/07/owl">&lt;http://www.w3.org/2002/07/owl#&gt;</a>.
+<span class="keyword">@prefix</span> xsd: <a class="uri" href="http://www.w3.org/2001/XMLSchema">&lt;http://www.w3.org/2001/XMLSchema#&gt;</a>.
+<span class="keyword">@prefix</span> dce: <a class="uri" href="http://purl.org/dc/elements/1.1/">&lt;http://purl.org/dc/elements/1.1/&gt;</a>.
+<span class="keyword">@prefix</span> skos: <a class="uri" href="http://www.w3.org/2004/02/skos/core.html#">&lt;http://www.w3.org/2004/02/skos/core#&gt;</a>.
+<span class="keyword">@prefix</span> mrela: <a class="uri" href="http://sweet.jpl.nasa.gov/2.3/relaMath.owl">&lt;http://sweet.jpl.nasa.gov/2.3/relaMath.owl#&gt;</a>.
+<span class="keyword">@prefix</span> screla: <a class="uri" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">&lt;http://sweet.jpl.nasa.gov/2.3/relaSci.owl#&gt;</a>.
+<span class="keyword">@prefix</span> unit: <a class="uri" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">&lt;http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#&gt;</a>.
+<span class="keyword">@prefix</span> quant: <a class="uri" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#">&lt;http://eulersharp.sourceforge.net/2003/03swap/quantities#&gt;</a>.
+<span class="keyword">@prefix</span> clisko: <a class="uri" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#">&lt;http://www.agfa.com/w3c/2009/clinicalSKOSSchemes#&gt;</a>.
+<span class="keyword">@prefix</span> units: <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/units#&gt;</a>.
+
+<a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/units#&gt;</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Ontology</a>;
+	<a class="qname" href="http://purl.org/dc/elements/1.1">dce:title</a> <span class="literal">&quot;&quot;&quot;Units&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://purl.org/dc/elements/1.1">dce:creator</a> <span class="literal">&quot;&quot;&quot;Hans Cools, MD, Agfa Healthcare, Belgium&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://purl.org/dc/elements/1.1">dce:publisher</a> <span class="literal">&quot;&quot;&quot;Agfa Healthcare, Belgium&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://purl.org/dc/elements/1.1">dce:description</a> <span class="literal">&quot;&quot;&quot;Formal description of units.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;&quot;&quot;Using NASA 'SWEET' ontologies.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;&quot;&quot;Specific units are declared in respective ontologies, e.g. leukocytesPerLiter in http://www.agfa.com/w3c/2009/hemogram#.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://purl.org/dc/elements/1.1">dce:format</a> <span class="literal">&quot;&quot;&quot;OWL Full&quot;&quot;&quot;</span>@en.
+
+
+<a class="qname" name="Unit">units:Unit</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/units#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;unit&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Reference mesurement with value 1 in which a quantity measurement is expressed.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">unit:Unit</a>.
+
+
+<span class="comment">#</span>
+<span class="comment">#	PREFIXES</span>
+<span class="comment">#</span>
+
+<a class="qname" name="deci">units:deci</a>
+	<span class="keyword">a</span> <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">unit:Prefix</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/units#&gt;</a>;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasSymbol</a> <span class="literal">&quot;&quot;&quot;d&quot;&quot;&quot;</span>;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasNumericValue</a> <span class="literal">&quot;1e-01&quot;</span>^^<a class="qname" href="http://www.w3.org/2001/XMLSchema">xsd:double</a>.
+
+<a class="qname" name="pico">units:pico</a>
+	<span class="keyword">a</span> <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">unit:Prefix</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/units#&gt;</a>;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasSymbol</a> <span class="literal">&quot;&quot;&quot;p&quot;&quot;&quot;</span>;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasNumericValue</a> <span class="literal">&quot;1e-12&quot;</span>^^<a class="qname" href="http://www.w3.org/2001/XMLSchema">xsd:double</a>.
+
+<a class="qname" name="femto">units:femto</a>
+	<span class="keyword">a</span> <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">unit:Prefix</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/units#&gt;</a>;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasSymbol</a> <span class="literal">&quot;&quot;&quot;f&quot;&quot;&quot;</span>;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasNumericValue</a> <span class="literal">&quot;1e-15&quot;</span>^^<a class="qname" href="http://www.w3.org/2001/XMLSchema">xsd:double</a>.
+
+<a class="qname" name="atto">units:atto</a>
+	<span class="keyword">a</span> <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">unit:Prefix</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/units#&gt;</a>;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasSymbol</a> <span class="literal">&quot;&quot;&quot;a&quot;&quot;&quot;</span>;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasNumericValue</a> <span class="literal">&quot;1e-18&quot;</span>^^<a class="qname" href="http://www.w3.org/2001/XMLSchema">xsd:double</a>.
+
+<a class="qname" name="zepto">units:zepto</a>
+	<span class="keyword">a</span> <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">unit:Prefix</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/units#&gt;</a>;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasSymbol</a> <span class="literal">&quot;&quot;&quot;z&quot;&quot;&quot;</span>;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasNumericValue</a> <span class="literal">&quot;1e-21&quot;</span>^^<a class="qname" href="http://www.w3.org/2001/XMLSchema">xsd:double</a>.
+
+<a class="qname" name="yocto">units:yocto</a>
+	<span class="keyword">a</span> <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">unit:Prefix</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/units#&gt;</a>;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasSymbol</a> <span class="literal">&quot;&quot;&quot;y&quot;&quot;&quot;</span>;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasNumericValue</a> <span class="literal">&quot;1e-24&quot;</span>^^<a class="qname" href="http://www.w3.org/2001/XMLSchema">xsd:double</a>.
+
+
+<span class="comment">#</span>
+<span class="comment">#	UNITS OF LENGTH MEASUREMENT</span>
+<span class="comment">#</span>
+
+<a class="qname" name="meter">units:meter</a>
+	<span class="keyword">a</span> <a class="qname" href="#Unit">units:Unit</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/units#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;meter&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;The metre is the length of the path travelled by light in vacuum during a time interval of 1/299 792 458 of a second.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">unit:meter</a>, [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#unitOf">quant:unitOf</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#LengthMeasurement">quant:LengthMeasurement</a>];
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#exactMatch">skos:exactMatch</a> [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#Concept">skos:Concept</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#inScheme">skos:inScheme</a> <a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731">clisko:sct20080731</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#notation">skos:notation</a> <span class="literal">&quot;258669008&quot;</span>^^<a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731DT">clisko:sct20080731DT</a>].
+
+<a class="qname" name="decimeter">units:decimeter</a>
+	<span class="keyword">a</span> <a class="qname" href="#Unit">units:Unit</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/units#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;decimeter&quot;&quot;&quot;</span>@en;
+	<span class="keyword">a</span> <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">unit:UnitDerivedByScaling</a>;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasBaseUnit</a> <a class="qname" href="#meter">units:meter</a>;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasPrefix</a> <a class="qname" href="#deci">units:deci</a>;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasSymbol</a> <span class="literal">&quot;&quot;&quot;dm&quot;&quot;&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#unitOf">quant:unitOf</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#LengthMeasurement">quant:LengthMeasurement</a>];
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#exactMatch">skos:exactMatch</a> [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#Concept">skos:Concept</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#inScheme">skos:inScheme</a> <a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731">clisko:sct20080731</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#notation">skos:notation</a> <span class="literal">&quot;258671008&quot;</span>^^<a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731DT">clisko:sct20080731DT</a>].
+
+<a class="qname" name="centimeter">units:centimeter</a>
+	<span class="keyword">a</span> <a class="qname" href="#Unit">units:Unit</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/units#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;centimeter&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">unit:centimeter</a>, [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#unitOf">quant:unitOf</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#LengthMeasurement">quant:LengthMeasurement</a>];
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasSymbol</a> <span class="literal">&quot;&quot;&quot;cm&quot;&quot;&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#exactMatch">skos:exactMatch</a> [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#Concept">skos:Concept</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#inScheme">skos:inScheme</a> <a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731">clisko:sct20080731</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#notation">skos:notation</a> <span class="literal">&quot;258672001&quot;</span>^^<a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731DT">clisko:sct20080731DT</a>].
+
+<a class="qname" name="millimeter">units:millimeter</a>
+	<span class="keyword">a</span> <a class="qname" href="#Unit">units:Unit</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/units#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;millimeter&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">unit:millimeter</a>, [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#unitOf">quant:unitOf</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#LengthMeasurement">quant:LengthMeasurement</a>];
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasSymbol</a> <span class="literal">&quot;&quot;&quot;mm&quot;&quot;&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#exactMatch">skos:exactMatch</a> [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#Concept">skos:Concept</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#inScheme">skos:inScheme</a> <a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731">clisko:sct20080731</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#notation">skos:notation</a> <span class="literal">&quot;258673006&quot;</span>^^<a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731DT">clisko:sct20080731DT</a>].
+
+<a class="qname" name="micrometer">units:micrometer</a>
+	<span class="keyword">a</span> <a class="qname" href="#Unit">units:Unit</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/units#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;micrometer&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">unit:micrometer</a>, [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#unitOf">quant:unitOf</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#LengthMeasurement">quant:LengthMeasurement</a>];
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasSymbol</a> <span class="literal">&quot;&quot;&quot;µm&quot;&quot;&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#exactMatch">skos:exactMatch</a> [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#Concept">skos:Concept</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#inScheme">skos:inScheme</a> <a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731">clisko:sct20080731</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#notation">skos:notation</a> <span class="literal">&quot;258674000&quot;</span>^^<a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731DT">clisko:sct20080731DT</a>].
+
+<a class="qname" name="nanometer">units:nanometer</a>
+	<span class="keyword">a</span> <a class="qname" href="#Unit">units:Unit</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/units#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;nanometer&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">unit:nanometer</a>, [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#unitOf">quant:unitOf</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#LengthMeasurement">quant:LengthMeasurement</a>];
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasSymbol</a> <span class="literal">&quot;&quot;&quot;nm&quot;&quot;&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#exactMatch">skos:exactMatch</a> [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#Concept">skos:Concept</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#inScheme">skos:inScheme</a> <a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731">clisko:sct20080731</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#notation">skos:notation</a> <span class="literal">&quot;258675004&quot;</span>^^<a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731DT">clisko:sct20080731DT</a>].
+
+<a class="qname" name="picometer">units:picometer</a>
+	<span class="keyword">a</span> <a class="qname" href="#Unit">units:Unit</a>;
+	<span class="keyword">a</span> <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">unit:UnitDerivedByScaling</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/units#&gt;</a>;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasBaseUnit</a> <a class="qname" href="#meter">units:meter</a>;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasPrefix</a> <a class="qname" href="#pico">units:pico</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#unitOf">quant:unitOf</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#LengthMeasurement">quant:LengthMeasurement</a>];
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasSymbol</a> <span class="literal">&quot;&quot;&quot;pm&quot;&quot;&quot;</span>.
+
+
+<span class="comment">#</span>
+<span class="comment">#	UNITS OF MASS MEASUREMENT</span>
+<span class="comment">#</span>
+
+<a class="qname" name="kilogram">units:kilogram</a>
+	<span class="keyword">a</span> <a class="qname" href="#Unit">units:Unit</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/units#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;kilogram&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Kilogram is a unit of mass, equal to the mass of the international prototype of the kilogram.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">unit:kilogram</a>, [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#unitOf">quant:unitOf</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#MassMeasurement">quant:MassMeasurement</a>];
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#exactMatch">skos:exactMatch</a> [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#Concept">skos:Concept</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#inScheme">skos:inScheme</a> <a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731">clisko:sct20080731</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#notation">skos:notation</a> <span class="literal">&quot;258683005&quot;</span>^^<a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731DT">clisko:sct20080731DT</a>].
+
+<a class="qname" name="gram">units:gram</a>
+	<span class="keyword">a</span> <a class="qname" href="#Unit">units:Unit</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/units#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;gram&quot;&quot;&quot;</span>@en;
+	<span class="keyword">a</span> <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">unit:UnitDerivedByScaling</a>;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasBaseUnit</a> <a class="qname" href="#kilogram">units:kilogram</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#unitOf">quant:unitOf</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#MassMeasurement">quant:MassMeasurement</a>];
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasSymbol</a> <span class="literal">&quot;&quot;&quot;g&quot;&quot;&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#exactMatch">skos:exactMatch</a> [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#Concept">skos:Concept</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#inScheme">skos:inScheme</a> <a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731">clisko:sct20080731</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#notation">skos:notation</a> <span class="literal">&quot;258682000&quot;</span>^^<a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731DT">clisko:sct20080731DT</a>].
+
+<a class="qname" name="milligram">units:milligram</a>
+	<span class="keyword">a</span> <a class="qname" href="#Unit">units:Unit</a>;
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/units#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;milligram&quot;&quot;&quot;</span>@en;
+	<span class="keyword">a</span> <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">unit:UnitDerivedByScaling</a>;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasBaseUnit</a> <a class="qname" href="#gram">units:gram</a>;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasPrefix</a> <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">unit:milli</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#unitOf">quant:unitOf</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#MassMeasurement">quant:MassMeasurement</a>];
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasSymbol</a> <span class="literal">&quot;&quot;&quot;mg&quot;&quot;&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#exactMatch">skos:exactMatch</a> [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#Concept">skos:Concept</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#inScheme">skos:inScheme</a> <a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731">clisko:sct20080731</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#notation">skos:notation</a> <span class="literal">&quot;258684004&quot;</span>^^<a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731DT">clisko:sct20080731DT</a>].
+
+<a class="qname" name="microgram">units:microgram</a>
+	<span class="keyword">a</span> <a class="qname" href="#Unit">units:Unit</a>;
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/units#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;microgram&quot;&quot;&quot;</span>@en;
+	<span class="keyword">a</span> <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">unit:UnitDerivedByScaling</a>;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasBaseUnit</a> <a class="qname" href="#gram">units:gram</a>;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasPrefix</a> <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">unit:micro</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#unitOf">quant:unitOf</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#MassMeasurement">quant:MassMeasurement</a>];
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasSymbol</a> <span class="literal">&quot;&quot;&quot;µg&quot;&quot;&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#exactMatch">skos:exactMatch</a> [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#Concept">skos:Concept</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#inScheme">skos:inScheme</a> <a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731">clisko:sct20080731</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#notation">skos:notation</a> <span class="literal">&quot;258685003&quot;</span>^^<a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731DT">clisko:sct20080731DT</a>].
+
+<a class="qname" name="nanogram">units:nanogram</a>
+	<span class="keyword">a</span> <a class="qname" href="#Unit">units:Unit</a>;
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/units#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;nanogram&quot;&quot;&quot;</span>@en;
+	<span class="keyword">a</span> <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">unit:UnitDerivedByScaling</a>;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasBaseUnit</a> <a class="qname" href="#gram">units:gram</a>;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasPrefix</a> <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">unit:nano</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#unitOf">quant:unitOf</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#MassMeasurement">quant:MassMeasurement</a>];
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasSymbol</a> <span class="literal">&quot;&quot;&quot;ng&quot;&quot;&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#exactMatch">skos:exactMatch</a> [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#Concept">skos:Concept</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#inScheme">skos:inScheme</a> <a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731">clisko:sct20080731</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#notation">skos:notation</a> <span class="literal">&quot;258686002&quot;</span>^^<a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731DT">clisko:sct20080731DT</a>].
+
+<a class="qname" name="picogram">units:picogram</a>
+	<span class="keyword">a</span> <a class="qname" href="#Unit">units:Unit</a>;
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/units#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;picogram&quot;&quot;&quot;</span>@en;
+	<span class="keyword">a</span> <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">unit:UnitDerivedByScaling</a>;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasBaseUnit</a> <a class="qname" href="#gram">units:gram</a>;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasPrefix</a> <a class="qname" href="#pico">units:pico</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#unitOf">quant:unitOf</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#MassMeasurement">quant:MassMeasurement</a>];
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasSymbol</a> <span class="literal">&quot;&quot;&quot;pg&quot;&quot;&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#exactMatch">skos:exactMatch</a> [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#Concept">skos:Concept</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#inScheme">skos:inScheme</a> <a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731">clisko:sct20080731</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#notation">skos:notation</a> <span class="literal">&quot;258687006&quot;</span>^^<a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731DT">clisko:sct20080731DT</a>].
+
+
+<span class="comment">#</span>
+<span class="comment">#	UNITS OF TIME MEASUREMENT</span>
+<span class="comment">#</span>
+
+<a class="qname" name="second">units:second</a>
+	<span class="keyword">a</span> <a class="qname" href="#Unit">units:Unit</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="http://sweet.jpl.nasa.gov/2.0/sciUnits.owl">&lt;http://sweet.jpl.nasa.gov/2.0/sciUnits.owl#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;second&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Duration of 9 192 631 770 periods of the radiation corresponding to the transition between the two hyperfine levels of the ground state of the caesium 133 atom.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">unit:second</a>, [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#unitOf">quant:unitOf</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> [
+			<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#measurementOf">quant:measurementOf</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#Time">quant:Time</a>]];
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#exactMatch">skos:exactMatch</a> [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#Concept">skos:Concept</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#inScheme">skos:inScheme</a> <a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731">clisko:sct20080731</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#notation">skos:notation</a> <span class="literal">&quot;257997001&quot;</span>^^<a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731DT">clisko:sct20080731DT</a>].
+
+<a class="qname" name="millisecond">units:millisecond</a>
+	<span class="keyword">a</span> <a class="qname" href="#Unit">units:Unit</a>;
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/units#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;millisecond&quot;&quot;&quot;</span>@en;
+	<span class="keyword">a</span> <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">unit:UnitDerivedByScaling</a>;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasBaseUnit</a> <a class="qname" href="#second">units:second</a>;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasPrefix</a> <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">unit:milli</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#unitOf">quant:unitOf</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> [
+			<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#measurementOf">quant:measurementOf</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#Time">quant:Time</a>]];
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasSymbol</a> <span class="literal">&quot;&quot;&quot;ms&quot;&quot;&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#exactMatch">skos:exactMatch</a> [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#Concept">skos:Concept</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#inScheme">skos:inScheme</a> <a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731">clisko:sct20080731</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#notation">skos:notation</a> <span class="literal">&quot;258697002&quot;</span>^^<a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731DT">clisko:sct20080731DT</a>].
+
+<a class="qname" name="minute">units:minute</a>
+	<span class="keyword">a</span> <a class="qname" href="#Unit">units:Unit</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/units#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;minute&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasSymbol</a> <span class="literal">&quot;&quot;&quot;min&quot;&quot;&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">unit:minute</a>, [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#unitOf">quant:unitOf</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> [
+			<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#measurementOf">quant:measurementOf</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#Time">quant:Time</a>]];
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#exactMatch">skos:exactMatch</a> [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#Concept">skos:Concept</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#inScheme">skos:inScheme</a> <a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731">clisko:sct20080731</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#notation">skos:notation</a> <span class="literal">&quot;258701004&quot;</span>^^<a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731DT">clisko:sct20080731DT</a>].
+
+<a class="qname" name="hour">units:hour</a>
+	<span class="keyword">a</span> <a class="qname" href="#Unit">units:Unit</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/units#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;hour&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasSymbol</a> <span class="literal">&quot;&quot;&quot;h&quot;&quot;&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">unit:hour</a>, [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#unitOf">quant:unitOf</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> [
+			<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#measurementOf">quant:measurementOf</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#Time">quant:Time</a>]];
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#exactMatch">skos:exactMatch</a> [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#Concept">skos:Concept</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#inScheme">skos:inScheme</a> <a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731">clisko:sct20080731</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#notation">skos:notation</a> <span class="literal">&quot;258702006&quot;</span>^^<a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731DT">clisko:sct20080731DT</a>].
+
+<a class="qname" name="day">units:day</a>
+	<span class="keyword">a</span> <a class="qname" href="#Unit">units:Unit</a>;
+	<span class="keyword">a</span> <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">unit:UnitDerivedByScaling</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/units#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;day&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasBaseUnit</a> <a class="qname" href="#second">units:second</a>;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaMath.owl">mrela:hasScalingNumber</a> <span class="literal">&quot;86400.0e+00&quot;</span>^^<a class="qname" href="http://www.w3.org/2001/XMLSchema">xsd:double</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#unitOf">quant:unitOf</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> [
+			<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#measurementOf">quant:measurementOf</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#Time">quant:Time</a>]];
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasSymbol</a> <span class="literal">&quot;&quot;&quot;d&quot;&quot;&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#exactMatch">skos:exactMatch</a> [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#Concept">skos:Concept</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#inScheme">skos:inScheme</a> <a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731">clisko:sct20080731</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#notation">skos:notation</a> <span class="literal">&quot;258703001&quot;</span>^^<a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731DT">clisko:sct20080731DT</a>].
+
+<a class="qname" name="week">units:week</a>
+	<span class="keyword">a</span> <a class="qname" href="#Unit">units:Unit</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/units#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;week&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">unit:week</a>, [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#unitOf">quant:unitOf</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> [
+			<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#measurementOf">quant:measurementOf</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#Time">quant:Time</a>]];
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#exactMatch">skos:exactMatch</a> [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#Concept">skos:Concept</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#inScheme">skos:inScheme</a> <a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731">clisko:sct20080731</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#notation">skos:notation</a> <span class="literal">&quot;258705008&quot;</span>^^<a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731DT">clisko:sct20080731DT</a>].
+
+<a class="qname" name="month">units:month</a>
+	<span class="keyword">a</span> <a class="qname" href="#Unit">units:Unit</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/units#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;month&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">unit:month</a>, [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#unitOf">quant:unitOf</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> [
+			<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#measurementOf">quant:measurementOf</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#Time">quant:Time</a>]];
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasSymbol</a> <span class="literal">&quot;&quot;&quot;m&quot;&quot;&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#exactMatch">skos:exactMatch</a> [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#Concept">skos:Concept</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#inScheme">skos:inScheme</a> <a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731">clisko:sct20080731</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#notation">skos:notation</a> <span class="literal">&quot;258706009&quot;</span>^^<a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731DT">clisko:sct20080731DT</a>].
+
+<a class="qname" name="year">units:year</a>
+	<span class="keyword">a</span> <a class="qname" href="#Unit">units:Unit</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/units#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;year&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">unit:year</a>, [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#unitOf">quant:unitOf</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> [
+			<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#measurementOf">quant:measurementOf</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#Time">quant:Time</a>]];
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasSymbol</a> <span class="literal">&quot;&quot;&quot;y&quot;&quot;&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#exactMatch">skos:exactMatch</a> [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#Concept">skos:Concept</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#inScheme">skos:inScheme</a> <a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731">clisko:sct20080731</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#notation">skos:notation</a> <span class="literal">&quot;258707000&quot;</span>^^<a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731DT">clisko:sct20080731DT</a>].
+
+<a class="qname" name="decade">units:decade</a>
+	<span class="keyword">a</span> <a class="qname" href="#Unit">units:Unit</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/units#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">unit:decade</a>, [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#unitOf">quant:unitOf</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> [
+			<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#measurementOf">quant:measurementOf</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#Time">quant:Time</a>]].
+
+<a class="qname" name="century">units:century</a>
+	<span class="keyword">a</span> <a class="qname" href="#Unit">units:Unit</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/units#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">unit:century</a>, [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#unitOf">quant:unitOf</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> [
+			<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#measurementOf">quant:measurementOf</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#Time">quant:Time</a>]].
+
+
+<span class="comment">#</span>
+<span class="comment">#	UNITS OF AMOUNT-OF-SUBSTANCE MEASUREMENT</span>
+<span class="comment">#</span>
+
+<a class="qname" name="mole">units:mole</a>
+	<span class="keyword">a</span> <a class="qname" href="#Unit">units:Unit</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/units#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;mole&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">unit:mole</a>, [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#unitOf">quant:unitOf</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> [
+			<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#measurementOf">quant:measurementOf</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#AmountOfSubstance">quant:AmountOfSubstance</a>]];	
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;The mole is the amount of substance of a system which contains as many elementary entities as there are atoms in 0.012 kilogram of carbon 12; its symbol is â€œmolâ€?&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#exactMatch">skos:exactMatch</a> [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#Concept">skos:Concept</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#inScheme">skos:inScheme</a> <a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731">clisko:sct20080731</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#notation">skos:notation</a> <span class="literal">&quot;258717005&quot;</span>^^<a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731DT">clisko:sct20080731DT</a>].
+
+<a class="qname" name="millimole">units:millimole</a>
+	<span class="keyword">a</span> <a class="qname" href="#Unit">units:Unit</a>;
+	<span class="keyword">a</span> <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">unit:UnitDerivedByScaling</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/units#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;millimole&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasBaseUnit</a> <a class="qname" href="#mole">units:mole</a>;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasPrefix</a> <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">unit:milli</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#unitOf">quant:unitOf</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> [
+			<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#measurementOf">quant:measurementOf</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#AmountOfSubstance">quant:AmountOfSubstance</a>]];
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasSymbol</a> <span class="literal">&quot;mmol&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#exactMatch">skos:exactMatch</a> [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#Concept">skos:Concept</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#inScheme">skos:inScheme</a> <a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731">clisko:sct20080731</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#notation">skos:notation</a> <span class="literal">&quot;258718000&quot;</span>^^<a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731DT">clisko:sct20080731DT</a>].
+
+<a class="qname" name="micromole">units:micromole</a>
+	<span class="keyword">a</span> <a class="qname" href="#Unit">units:Unit</a>;
+	<span class="keyword">a</span> <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">unit:UnitDerivedByScaling</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/units#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;micromole&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasBaseUnit</a> <a class="qname" href="#mole">units:mole</a>;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasPrefix</a> <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">unit:micro</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#unitOf">quant:unitOf</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> [
+			<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#measurementOf">quant:measurementOf</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#AmountOfSubstance">quant:AmountOfSubstance</a>]];
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasSymbol</a> <span class="literal">&quot;µmol&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#exactMatch">skos:exactMatch</a> [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#Concept">skos:Concept</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#inScheme">skos:inScheme</a> <a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731">clisko:sct20080731</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#notation">skos:notation</a> <span class="literal">&quot;258719008&quot;</span>^^<a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731DT">clisko:sct20080731DT</a>].
+
+
+<span class="comment">#</span>
+<span class="comment">#	UNITS OF THERMODYNAMIC TEMPERATURE MEASUREMENT</span>
+<span class="comment">#</span>
+
+<a class="qname" name="kelvin">units:kelvin</a>
+	<span class="keyword">a</span> <a class="qname" href="#Unit">units:Unit</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/units#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;kelvin&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">unit:kelvin</a>, [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#unitOf">quant:unitOf</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#TemperatureMeasurement">quant:TemperatureMeasurement</a>];
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#exactMatch">skos:exactMatch</a> [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#Concept">skos:Concept</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#inScheme">skos:inScheme</a> <a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731">clisko:sct20080731</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#notation">skos:notation</a> <span class="literal">&quot;258713009&quot;</span>^^<a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731DT">clisko:sct20080731DT</a>].
+
+<a class="qname" name="degreeC">units:degreeC</a>
+	<span class="keyword">a</span> <a class="qname" href="#Unit">units:Unit</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/units#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;degree Celsius&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">unit:degreeC</a>, [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#unitOf">quant:unitOf</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#TemperatureMeasurement">quant:TemperatureMeasurement</a>];
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#exactMatch">skos:exactMatch</a> [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#Concept">skos:Concept</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#inScheme">skos:inScheme</a> <a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731">clisko:sct20080731</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#notation">skos:notation</a> <span class="literal">&quot;258712007&quot;</span>^^<a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731DT">clisko:sct20080731DT</a>].
+
+<a class="qname" name="degreeF">units:degreeF</a>
+	<span class="keyword">a</span> <a class="qname" href="#Unit">units:Unit</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/units#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;degree Fahrenheit&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">unit:degreeF</a>, [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#unitOf">quant:unitOf</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#TemperatureMeasurement">quant:TemperatureMeasurement</a>];
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#exactMatch">skos:exactMatch</a> [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#Concept">skos:Concept</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#inScheme">skos:inScheme</a> <a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731">clisko:sct20080731</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#notation">skos:notation</a> <span class="literal">&quot;258712004&quot;</span>^^<a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731DT">clisko:sct20080731DT</a>].
+
+
+<span class="comment">#</span>
+<span class="comment">#	UNITS OF AREA MEASUREMENT</span>
+<span class="comment">#</span>
+
+<a class="qname" name="squareMeter">units:squareMeter</a>
+	<span class="keyword">a</span> <a class="qname" href="#Unit">units:Unit</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/units#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;square meter&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;SI (International System of Units) derived unit of area.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#unitOf">quant:unitOf</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#AreaMeasurement">quant:AreaMeasurement</a>];
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasSymbol</a> <span class="literal">&quot;&quot;&quot;m²&quot;&quot;&quot;</span>.
+
+
+<span class="comment">#</span>
+<span class="comment">#	UNITS OF VOLUME MEASUREMENT</span>
+<span class="comment">#</span>
+
+<a class="qname" name="cubicMeter">units:cubicMeter</a>
+	<span class="keyword">a</span> <a class="qname" href="#Unit">units:Unit</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/units#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;cubic meter&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasSymbol</a> <span class="literal">&quot;m³&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">unit:meterCubed</a>, [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#unitOf">quant:unitOf</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#VolumeMeasurement">quant:VolumeMeasurement</a>];
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#exactMatch">skos:exactMatch</a> [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#Concept">skos:Concept</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#inScheme">skos:inScheme</a> <a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731">clisko:sct20080731</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#notation">skos:notation</a> <span class="literal">&quot;396154006&quot;</span>^^<a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731DT">clisko:sct20080731DT</a>].
+
+<a class="qname" name="decimeterCubed">units:decimeterCubed</a>
+	<span class="keyword">a</span> <a class="qname" href="#Unit">units:Unit</a>, <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">unit:UnitDerivedByRaisingToPower</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/units#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;cubic decimeter&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasBaseUnit</a> <a class="qname" href="#decimeter">units:decimeter</a>;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaMath.owl">mrela:toThePower</a> <span class="literal">&quot;3&quot;</span>^^<a class="qname" href="http://www.w3.org/2001/XMLSchema">xsd:double</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#unitOf">quant:unitOf</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#VolumeMeasurement">quant:VolumeMeasurement</a>];
+	<a class="qname" href="http://www.w3.org/2002/07/owl">owl:equivalentClass</a> <a class="qname" href="#liter">units:liter</a>;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasSymbol</a> <span class="literal">&quot;dm³&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#exactMatch">skos:exactMatch</a> [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#Concept">skos:Concept</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#inScheme">skos:inScheme</a> <a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731">clisko:sct20080731</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#notation">skos:notation</a> <span class="literal">&quot;258770004&quot;</span>^^<a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731DT">clisko:sct20080731DT</a>].
+
+<a class="qname" name="centimeterCubed">units:centimeterCubed</a>
+	<span class="keyword">a</span> <a class="qname" href="#Unit">units:Unit</a>, <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">unit:UnitDerivedByRaisingToPower</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/units#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;cubic centimeter&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasBaseUnit</a> <a class="qname" href="#centimeter">units:centimeter</a>;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaMath.owl">mrela:toThePower</a> <span class="literal">&quot;3&quot;</span>^^<a class="qname" href="http://www.w3.org/2001/XMLSchema">xsd:double</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#unitOf">quant:unitOf</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#VolumeMeasurement">quant:VolumeMeasurement</a>];
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasSymbol</a> <span class="literal">&quot;cm³&quot;</span>, <span class="literal">&quot;cc&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#exactMatch">skos:exactMatch</a> [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#Concept">skos:Concept</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#inScheme">skos:inScheme</a> <a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731">clisko:sct20080731</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#notation">skos:notation</a> <span class="literal">&quot;258773002&quot;</span>^^<a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731DT">clisko:sct20080731DT</a>].
+
+<a class="qname" name="millimeterCubed">units:millimeterCubed</a>
+	<span class="keyword">a</span> <a class="qname" href="#Unit">units:Unit</a>, <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">unit:UnitDerivedByRaisingToPower</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/units#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;cubic millimeter&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasBaseUnit</a> <a class="qname" href="#millimeter">units:millimeter</a>;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaMath.owl">mrela:toThePower</a> <span class="literal">&quot;3&quot;</span>^^<a class="qname" href="http://www.w3.org/2001/XMLSchema">xsd:double</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#unitOf">quant:unitOf</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#VolumeMeasurement">quant:VolumeMeasurement</a>];
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasSymbol</a> <span class="literal">&quot;mm³&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#exactMatch">skos:exactMatch</a> [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#Concept">skos:Concept</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#inScheme">skos:inScheme</a> <a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731">clisko:sct20080731</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#notation">skos:notation</a> <span class="literal">&quot;396162003&quot;</span>^^<a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731DT">clisko:sct20080731DT</a>].
+
+<a class="qname" name="liter">units:liter</a>
+	<span class="keyword">a</span> <a class="qname" href="#Unit">units:Unit</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/units#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;liter&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#unitOf">quant:unitOf</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#VolumeMeasurement">quant:VolumeMeasurement</a>];
+	<a class="qname" href="http://www.w3.org/2002/07/owl">owl:equivalentClass</a> <a class="qname" href="#decimeterCubed">units:decimeterCubed</a>;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasSymbol</a> <span class="literal">&quot;L&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#exactMatch">skos:exactMatch</a> [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#Concept">skos:Concept</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#inScheme">skos:inScheme</a> <a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731">clisko:sct20080731</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#notation">skos:notation</a> <span class="literal">&quot;258770004&quot;</span>^^<a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731DT">clisko:sct20080731DT</a>].
+
+<a class="qname" name="deciliter">units:deciliter</a>
+	<span class="keyword">a</span> <a class="qname" href="#Unit">units:Unit</a>, <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">unit:UnitDerivedByScaling</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/units#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;deciliter&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasBaseUnit</a> <a class="qname" href="#liter">units:liter</a>;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasPrefix</a> <a class="qname" href="#deci">units:deci</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#unitOf">quant:unitOf</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> [
+			<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#measurementOf">quant:measurementOf</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#Volume">quant:Volume</a>]];
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasSymbol</a> <span class="literal">&quot;dL&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#exactMatch">skos:exactMatch</a> [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#Concept">skos:Concept</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#inScheme">skos:inScheme</a> <a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731">clisko:sct20080731</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#notation">skos:notation</a> <span class="literal">&quot;258771000&quot;</span>^^<a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731DT">clisko:sct20080731DT</a>].
+
+<a class="qname" name="centiliter">units:centiliter</a>
+	<span class="keyword">a</span> <a class="qname" href="#Unit">units:Unit</a>, <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">unit:UnitDerivedByScaling</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/units#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;centiliter&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasBaseUnit</a> <a class="qname" href="#liter">units:liter</a>;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasPrefix</a> <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">unit:centi</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#unitOf">quant:unitOf</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> [
+			<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#measurementOf">quant:measurementOf</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#Volume">quant:Volume</a>]];
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasSymbol</a> <span class="literal">&quot;cL&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#exactMatch">skos:exactMatch</a> [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#Concept">skos:Concept</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#inScheme">skos:inScheme</a> <a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731">clisko:sct20080731</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#notation">skos:notation</a> <span class="literal">&quot;258772007&quot;</span>^^<a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731DT">clisko:sct20080731DT</a>].
+
+<a class="qname" name="milliliter">units:milliliter</a>
+	<span class="keyword">a</span> <a class="qname" href="#Unit">units:Unit</a>, <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">unit:UnitDerivedByScaling</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/units#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;milliliter&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasBaseUnit</a> <a class="qname" href="#liter">units:liter</a>;
+	<a class="qname" href="http://www.w3.org/2002/07/owl">owl:equivalentClass</a> <a class="qname" href="#centimeterCubed">units:centimeterCubed</a>;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasPrefix</a> <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">unit:milli</a>;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasSymbol</a> <span class="literal">&quot;mL&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#unitOf">quant:unitOf</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> [
+			<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#measurementOf">quant:measurementOf</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#Volume">quant:Volume</a>]];
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#exactMatch">skos:exactMatch</a> [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#Concept">skos:Concept</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#inScheme">skos:inScheme</a> <a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731">clisko:sct20080731</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#notation">skos:notation</a> <span class="literal">&quot; 258773002&quot;</span>^^<a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731DT">clisko:sct20080731DT</a>].
+
+<a class="qname" name="femtoliter">units:femtoliter</a>
+	<span class="keyword">a</span> <a class="qname" href="#Unit">units:Unit</a>, <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">unit:UnitDerivedByScaling</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/units#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;femtoliter&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasBaseUnit</a> <a class="qname" href="#liter">units:liter</a>;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasPrefix</a> <a class="qname" href="#femto">units:femto</a>;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasSymbol</a> <span class="literal">&quot;fL&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#unitOf">quant:unitOf</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> [
+			<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#measurementOf">quant:measurementOf</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#Volume">quant:Volume</a>]].
+
+<a class="qname" name="teaspoon">units:teaspoon</a>
+	<span class="keyword">a</span> <a class="qname" href="#Unit">units:Unit</a>, <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">unit:UnitDerivedByScaling</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/units#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;teaspoon&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Content of a teaspoon as unit of volume.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;&quot;&quot;Equals 5ml, e.g. of a clinical drug administration form sirup.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasBaseUnit</a> <a class="qname" href="#milliliter">units:milliliter</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#unitOf">quant:unitOf</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> [
+			<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#measurementOf">quant:measurementOf</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#Volume">quant:Volume</a>]];
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasSymbol</a> <span class="literal">&quot;tsp&quot;</span>.
+
+<a class="qname" name="tablespoon">units:tablespoon</a>
+	<span class="keyword">a</span> <a class="qname" href="#Unit">units:Unit</a>, <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">unit:UnitDerivedByScaling</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/units#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;tablespoon&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Content of a tablespoon as unit of volume.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;&quot;&quot;Equals 15ml, e.g. of a clinical drug administration form sirup.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasBaseUnit</a> <a class="qname" href="#milliliter">units:milliliter</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#unitOf">quant:unitOf</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> [
+			<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#measurementOf">quant:measurementOf</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#Volume">quant:Volume</a>]];
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasSymbol</a> <span class="literal">&quot;tbs&quot;</span>.
+
+
+<span class="comment">#</span>
+<span class="comment">#	UNITS OF PRESSURE MEASUREMENT</span>
+<span class="comment">#</span>
+
+<a class="qname" name="pascal">units:pascal</a>
+	<span class="keyword">a</span> <a class="qname" href="#Unit">units:Unit</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/units#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;pascal&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">unit:pascal</a>, [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#unitOf">quant:unitOf</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> [
+			<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#measurementOf">quant:measurementOf</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#Pressure">quant:Pressure</a>]];
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#exactMatch">skos:exactMatch</a> [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#Concept">skos:Concept</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#inScheme">skos:inScheme</a> <a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731">clisko:sct20080731</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#notation">skos:notation</a> <span class="literal">&quot;259016002&quot;</span>^^<a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731DT">clisko:sct20080731DT</a>].
+
+<a class="qname" name="mmHg">units:mmHg</a>
+	<span class="keyword">a</span> <a class="qname" href="#Unit">units:Unit</a>, <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">unit:UnitDerivedByScaling</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;millimeter of mercury&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/units#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;&quot;&quot;760 mmHg corresponds with 101.325 kPa.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasBaseUnit</a> <a class="qname" href="#pascal">units:pascal</a>;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaMath.owl">mrela:hasScalingNumber</a> <span class="literal">&quot;133.322&quot;</span>^^<a class="qname" href="http://www.w3.org/2001/XMLSchema">xsd:double</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#unitOf">quant:unitOf</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> [
+			<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#measurementOf">quant:measurementOf</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#Pressure">quant:Pressure</a>]];
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasSymbol</a> <span class="literal">&quot;mmHg&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#exactMatch">skos:exactMatch</a> [<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#Concept">skos:Concept</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#inScheme">skos:inScheme</a> <a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731">clisko:sct20080731</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#notation">skos:notation</a> <span class="literal">&quot;259018001&quot;</span>^^<a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731DT">clisko:sct20080731DT</a>].
+
+
+<span class="comment">#</span>
+<span class="comment">#	UNITS OF RATIO</span>
+<span class="comment">#</span>
+
+<a class="qname" name="percent">units:percent</a>
+	<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:DeprecatedClass</a>, <a class="qname" href="#Unit">units:Unit</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;&quot;&quot;Replaced by &lt;http://eulersharp.sourceforge.net/2003/03swap/quantities#percent&gt;.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/units#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;percent&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Unit of ratio with base (denominator) 100.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">unit:percent</a>, [<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#unitOf">quant:unitOf</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#PercentageMeasurement">quant:PercentageMeasurement</a>];
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasSymbol</a> <span class="literal">&quot;%&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#exactMatch">skos:exactMatch</a> [<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#Concept">skos:Concept</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#inScheme">skos:inScheme</a> <a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731">clisko:sct20080731</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#notation">skos:notation</a> <span class="literal">&quot;118582008&quot;</span>^^<a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731DT">clisko:sct20080731DT</a>].
+
+
+<span class="comment">#</span>
+<span class="comment">#	UNITS OF FREQUENCY MEASUREMENT</span>
+<span class="comment">#</span>
+
+<a class="qname" name="hertz">units:hertz</a>
+	<span class="keyword">a</span> <a class="qname" href="#Unit">units:Unit</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/units#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;hertz&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Number of cycles per second.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#note">skos:note</a> <span class="literal">&quot;&quot;&quot;SI unit of frequency.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasBaseUnit</a> <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">unit:second</a>;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaMath.owl">mrela:toThePower</a> <span class="literal">&quot;-1.0e+00&quot;</span>^^<a class="qname" href="http://www.w3.org/2001/XMLSchema">xsd:double</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> [<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#unitOf">quant:unitOf</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:allValuesFrom</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#FrequencyMeasurement">quant:FrequencyMeasurement</a>];
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasSymbol</a> <span class="literal">&quot;Hz&quot;</span>, <span class="literal">&quot;1/s&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#exactMatch">skos:exactMatch</a> [<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#Concept">skos:Concept</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#inScheme">skos:inScheme</a> <a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731">clisko:sct20080731</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#notation">skos:notation</a> <span class="literal">&quot;259025008&quot;</span>^^<a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731DT">clisko:sct20080731DT</a>].
+
+<a class="qname" name="perMinute">units:perMinute</a>
+	<span class="keyword">a</span> <a class="qname" href="#Unit">units:Unit</a>;
+	<span class="keyword">a</span> <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">unit:UnitDerivedByRaisingToPower</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/units#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;per minute&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Number of cycles per minute.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;&quot;&quot;E.g. unit for the frequency of respiration cycle, heart pumping cycle.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasBaseUnit</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="#minute">units:minute</a>;
+			<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaMath.owl">mrela:toThePower</a> <span class="literal">&quot;-1.0e+00&quot;</span>^^<a class="qname" href="http://www.w3.org/2001/XMLSchema">xsd:double</a>;], [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasBaseUnit</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="#hertz">units:hertz</a>;
+			<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaMath.owl">mrela:hasScalingNumber</a> <span class="literal">&quot;60&quot;</span>^^<a class="qname" href="http://www.w3.org/2001/XMLSchema">xsd:double</a>];
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> [<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#unitOf">quant:unitOf</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#FrequencyMeasurement">quant:FrequencyMeasurement</a>];
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasSymbol</a> <span class="literal">&quot;1/min&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#exactMatch">skos:exactMatch</a> [<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#Concept">skos:Concept</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#inScheme">skos:inScheme</a> <a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731">clisko:sct20080731</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#notation">skos:notation</a> <span class="literal">&quot;286549009&quot;</span>^^<a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731DT">clisko:sct20080731DT</a>].
+
+<a class="qname" name="perHour">units:perHour</a>
+	<span class="keyword">a</span> <a class="qname" href="#Unit">units:Unit</a>;
+	<span class="keyword">a</span> <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">unit:UnitDerivedByRaisingToPower</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/units#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;per hour&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Number of cycles per hour.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasBaseUnit</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="#hour">units:hour</a>;
+			<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaMath.owl">mrela:toThePower</a> <span class="literal">&quot;-1.0e+00&quot;</span>^^<a class="qname" href="http://www.w3.org/2001/XMLSchema">xsd:double</a>;], [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasBaseUnit</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="#perMinute">units:perMinute</a>;
+			<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaMath.owl">mrela:hasScalingNumber</a> <span class="literal">&quot;60&quot;</span>^^<a class="qname" href="http://www.w3.org/2001/XMLSchema">xsd:double</a>], [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasBaseUnit</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="#hertz">units:hertz</a>;
+			<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaMath.owl">mrela:hasScalingNumber</a> <span class="literal">&quot;3600&quot;</span>^^<a class="qname" href="http://www.w3.org/2001/XMLSchema">xsd:double</a>];
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> [<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#unitOf">quant:unitOf</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#FrequencyMeasurement">quant:FrequencyMeasurement</a>];
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasSymbol</a> <span class="literal">&quot;1/h&quot;</span>.
+
+<a class="qname" name="perDay">units:perDay</a>
+	<span class="keyword">a</span> <a class="qname" href="#Unit">units:Unit</a>;
+	<span class="keyword">a</span> <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">unit:UnitDerivedByRaisingToPower</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/units#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;per day&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Number of cycles per day.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;&quot;&quot;E.g. unit for the frequency of clinical drug administration.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasBaseUnit</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="#day">units:day</a>;
+			<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaMath.owl">mrela:toThePower</a> <span class="literal">&quot;-1.0e+00&quot;</span>^^<a class="qname" href="http://www.w3.org/2001/XMLSchema">xsd:double</a>;], [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasBaseUnit</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="#hertz">units:hertz</a>;
+			<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaMath.owl">mrela:hasScalingNumber</a> <span class="literal">&quot;86400&quot;</span>^^<a class="qname" href="http://www.w3.org/2001/XMLSchema">xsd:double</a>];
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> [<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#unitOf">quant:unitOf</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#FrequencyMeasurement">quant:FrequencyMeasurement</a>];
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasSymbol</a> <span class="literal">&quot;1/day&quot;</span>.
+
+<a class="qname" name="perYear">units:perYear</a>
+	<span class="keyword">a</span> <a class="qname" href="#Unit">units:Unit</a>;
+	<span class="keyword">a</span> <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">unit:UnitDerivedByRaisingToPower</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/units#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;per year&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Number of cycles per year.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:comment</a> <span class="literal">&quot;&quot;&quot;E.g. unit for the frequency of clinical vaccination.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> [<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#unitOf">quant:unitOf</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#FrequencyMeasurement">quant:FrequencyMeasurement</a>];
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasSymbol</a> <span class="literal">&quot;1/year&quot;</span>.
+
+
+<span class="comment">#</span>
+<span class="comment">#	UNITS OF DIGITAL SIZE MEASUREMENT</span>
+<span class="comment">#</span>
+
+<a class="qname" name="bit">units:bit</a>
+	<span class="keyword">a</span> <a class="qname" href="#Unit">units:Unit</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/units#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#unitOf">quant:unitOf</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> [
+			<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#measurementOf">quant:measurementOf</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#DigitalSize">quant:DigitalSize</a>]];
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasSymbol</a> <span class="literal">&quot;b&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Basic unit of information storage and communication in digital computing and digital information theory. A binary digit, takes a value of either 0 or 1.&quot;&quot;&quot;</span>@en.
+	
+<a class="qname" name="byte">units:byte</a>
+	<span class="keyword">a</span> <a class="qname" href="#Unit">units:Unit</a>;
+	<span class="keyword">a</span> <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">unit:UnitDerivedByScaling</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/units#&gt;</a>;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasBaseUnit</a> <a class="qname" href="#bit">units:bit</a>;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaMath.owl">mrela:hasScalingNumber</a> <span class="literal">&quot;8&quot;</span>^^<a class="qname" href="http://www.w3.org/2001/XMLSchema">xsd:double</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#unitOf">quant:unitOf</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> [
+			<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#measurementOf">quant:measurementOf</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#DigitalSize">quant:DigitalSize</a>]];
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasSymbol</a> <span class="literal">&quot;B&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;Eight bits&quot;&quot;&quot;</span>@en.
+
+<a class="qname" name="kiloByte">units:kiloByte</a>
+	<span class="keyword">a</span> <a class="qname" href="#Unit">units:Unit</a>;
+	<span class="keyword">a</span> <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">unit:UnitDerivedByScaling</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/units#&gt;</a>;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasBaseUnit</a> <a class="qname" href="#byte">units:byte</a>;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasPrefix</a> <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">unit:kilo</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#unitOf">quant:unitOf</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> [
+			<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#measurementOf">quant:measurementOf</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#DigitalSize">quant:DigitalSize</a>]];
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasSymbol</a> <span class="literal">&quot;KB&quot;</span>.
+
+<a class="qname" name="megaByte">units:megaByte</a>
+	<span class="keyword">a</span> <a class="qname" href="#Unit">units:Unit</a>;
+	<span class="keyword">a</span> <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">unit:UnitDerivedByScaling</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/units#&gt;</a>;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasBaseUnit</a> <a class="qname" href="#byte">units:byte</a>;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasPrefix</a> <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">unit:mega</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#unitOf">quant:unitOf</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> [
+			<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#measurementOf">quant:measurementOf</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#DigitalSize">quant:DigitalSize</a>]];
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasSymbol</a> <span class="literal">&quot;MB&quot;</span>.
+
+<a class="qname" name="gigaByte">units:gigaByte</a>
+	<span class="keyword">a</span> <a class="qname" href="#Unit">units:Unit</a>;
+	<span class="keyword">a</span> <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">unit:UnitDerivedByScaling</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/units#&gt;</a>;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasBaseUnit</a> <a class="qname" href="#byte">units:byte</a>;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasPrefix</a> <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">unit:giga</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#unitOf">quant:unitOf</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> [
+			<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#measurementOf">quant:measurementOf</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#DigitalSize">quant:DigitalSize</a>]];
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasSymbol</a> <span class="literal">&quot;GB&quot;</span>.
+
+<a class="qname" name="teraByte">units:teraByte</a>
+	<span class="keyword">a</span> <a class="qname" href="#Unit">units:Unit</a>;
+	<span class="keyword">a</span> <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">unit:UnitDerivedByScaling</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/units#&gt;</a>;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasBaseUnit</a> <a class="qname" href="#byte">units:byte</a>;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasPrefix</a> <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">unit:tera</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#unitOf">quant:unitOf</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> [
+			<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#measurementOf">quant:measurementOf</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#DigitalSize">quant:DigitalSize</a>]];
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasSymbol</a> <span class="literal">&quot;TB&quot;</span>.
+
+
+<span class="comment">#</span>
+<span class="comment">#	UNIT OF ELECTRICAL RESISTANCE MEASUREMENT</span>
+<span class="comment">#</span>
+
+<a class="qname" name="ohm">units:ohm</a>
+	<span class="keyword">a</span> <a class="qname" href="#Unit">units:Unit</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/units#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;ohm&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#definition">skos:definition</a> <span class="literal">&quot;&quot;&quot;1 ohm is the resistance between two points of a conductor when a constant potential difference of 1 volt, applied to these points, produces in the conductor a current of 1 ampere, the conductor not being the seat of any electromotive force.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#unitOf">quant:unitOf</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> [
+			<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#measurementOf">quant:measurementOf</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#ElectricalResistance">quant:ElectricalResistance</a>]];
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#exactMatch">skos:exactMatch</a> [<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#Concept">skos:Concept</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#inScheme">skos:inScheme</a> <a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731">clisko:sct20080731</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#notation">skos:notation</a> <span class="literal">&quot;282140003&quot;</span>^^<a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731DT">clisko:sct20080731DT</a>].
+
+
+<span class="comment">#</span>
+<span class="comment">#	UNITS OF CONCENTRATION MEASUREMENT</span>
+<span class="comment">#</span>
+
+<a class="qname" name="perLiter">units:perLiter</a>
+	<span class="keyword">a</span> <a class="qname" href="#Unit">units:Unit</a>, <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">unit:UnitDerivedByRaisingToPower</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/units#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;per liter&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasBaseUnit</a> <a class="qname" href="#liter">units:liter</a>;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaMath.owl">mrela:toThePower</a> <span class="literal">&quot;-1.0e+00&quot;</span>^^<a class="qname" href="http://www.w3.org/2001/XMLSchema">xsd:double</a>;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasSymbol</a> <span class="literal">&quot;&quot;&quot;1/L&quot;&quot;&quot;</span>.
+
+<a class="qname" name="perDeciliter">units:perDeciliter</a>
+	<span class="keyword">a</span> <a class="qname" href="#Unit">units:Unit</a>, <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">unit:UnitDerivedByRaisingToPower</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/units#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;per deciliter&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasBaseUnit</a> <a class="qname" href="#deciliter">units:deciliter</a>;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaMath.owl">mrela:toThePower</a> <span class="literal">&quot;-1.0e+00&quot;</span>^^<a class="qname" href="http://www.w3.org/2001/XMLSchema">xsd:double</a>;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasSymbol</a> <span class="literal">&quot;&quot;&quot;1/dL&quot;&quot;&quot;</span>.
+
+<a class="qname" name="perMilliliter">units:perMilliliter</a>
+	<span class="keyword">a</span> <a class="qname" href="#Unit">units:Unit</a>, <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">unit:UnitDerivedByRaisingToPower</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/units#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;per milliliter&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasBaseUnit</a> <a class="qname" href="#milliliter">units:milliliter</a>;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaMath.owl">mrela:toThePower</a> <span class="literal">&quot;-1.0e+00&quot;</span>^^<a class="qname" href="http://www.w3.org/2001/XMLSchema">xsd:double</a>;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasSymbol</a> <span class="literal">&quot;&quot;&quot;1/mL&quot;&quot;&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#exactMatch">skos:exactMatch</a> [<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#Concept">skos:Concept</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#inScheme">skos:inScheme</a> <a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731">clisko:sct20080731</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#notation">skos:notation</a> <span class="literal">&quot;259035002&quot;</span>^^<a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731DT">clisko:sct20080731DT</a>].
+
+<a class="qname" name="perTeaspoon">units:perTeaspoon</a>
+	<span class="keyword">a</span> <a class="qname" href="#Unit">units:Unit</a>, <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">unit:UnitDerivedByRaisingToPower</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/units#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;per teaspoon&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasBaseUnit</a> <a class="qname" href="#teaspoon">units:teaspoon</a>;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaMath.owl">mrela:toThePower</a> <span class="literal">&quot;-1.0e+00&quot;</span>^^<a class="qname" href="http://www.w3.org/2001/XMLSchema">xsd:double</a>;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasSymbol</a> <span class="literal">&quot;&quot;&quot;1/tsp&quot;&quot;&quot;</span>.
+
+<a class="qname" name="perKilogram">units:perKilogram</a>
+	<span class="keyword">a</span> <a class="qname" href="#Unit">units:Unit</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/units#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;per kilogram&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">unit:perKilogram</a>;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasSymbol</a> <span class="literal">&quot;&quot;&quot;1/g&quot;&quot;&quot;</span>.
+
+<a class="qname" name="perGram">units:perGram</a>
+	<span class="keyword">a</span> <a class="qname" href="#Unit">units:Unit</a>, <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">unit:UnitDerivedByRaisingToPower</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/units#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;per gram&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasBaseUnit</a> <a class="qname" href="#gram">units:gram</a>;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaMath.owl">mrela:toThePower</a> <span class="literal">&quot;-1.0e+00&quot;</span>^^<a class="qname" href="http://www.w3.org/2001/XMLSchema">xsd:double</a>;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasSymbol</a> <span class="literal">&quot;&quot;&quot;1/g&quot;&quot;&quot;</span>.
+	
+<a class="qname" name="perMillimeterCubed">units:perMillimeterCubed</a>
+	<span class="keyword">a</span> <a class="qname" href="#Unit">units:Unit</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/units#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;per cubic millimeter&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasSymbol</a> <span class="literal">&quot;&quot;&quot;1/mm³&quot;&quot;&quot;</span>.
+
+
+<span class="comment"># AMOUNT-OF-SUBSTANCE CONCENTRATION:</span>
+<span class="comment"># mole per cubic meter, mol/m³</span>
+<span class="comment"># mole per liter, mol/l</span>
+<span class="comment"># millimole per gram, mmol/g</span>
+
+
+<span class="comment">#  U/dL: SNOMEDCT 415783003</span>
+
+<a class="qname" name="nanogramPerMilliliter">units:nanogramPerMilliliter</a>
+	<span class="keyword">a</span> <a class="qname" href="#Unit">units:Unit</a>, <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">unit:UnitDefinedByProduct</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/units#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;nanogram per milliliter&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> [<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#unitOf">quant:unitOf</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#MassConcentrationMeasurement">quant:MassConcentrationMeasurement</a>];
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaMath.owl">mrela:hasOperand</a> <a class="qname" href="#nanogram">units:nanogram</a>, <a class="qname" href="#perMilliliter">units:perMilliliter</a>;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasSymbol</a> <span class="literal">&quot;&quot;&quot;ng/mL&quot;&quot;&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#exactMatch">skos:exactMatch</a> [<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#Concept">skos:Concept</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#inScheme">skos:inScheme</a> <a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731">clisko:sct20080731</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#notation">skos:notation</a> <span class="literal">&quot;258806002&quot;</span>^^<a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731DT">clisko:sct20080731DT</a>].
+
+<a class="qname" name="microgramPerMilliliter">units:microgramPerMilliliter</a>
+	<span class="keyword">a</span> <a class="qname" href="#Unit">units:Unit</a>, <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">unit:UnitDefinedByProduct</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/units#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;microgram per milliliter&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> [<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#unitOf">quant:unitOf</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#MassConcentrationMeasurement">quant:MassConcentrationMeasurement</a>];
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaMath.owl">mrela:hasOperand</a> <a class="qname" href="#microgram">units:microgram</a>, <a class="qname" href="#perMilliliter">units:perMilliliter</a>;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasSymbol</a> <span class="literal">&quot;&quot;&quot;µg/mL&quot;&quot;&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#exactMatch">skos:exactMatch</a> [<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#Concept">skos:Concept</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#inScheme">skos:inScheme</a> <a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731">clisko:sct20080731</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#notation">skos:notation</a> <span class="literal">&quot;258801007&quot;</span>^^<a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731DT">clisko:sct20080731DT</a>].
+
+<a class="qname" name="milligramPerLiter">units:milligramPerLiter</a>
+	<span class="keyword">a</span> <a class="qname" href="#Unit">units:Unit</a>, <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">unit:UnitDefinedByProduct</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/units#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> [<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#unitOf">quant:unitOf</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#MassConcentrationMeasurement">quant:MassConcentrationMeasurement</a>];
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaMath.owl">mrela:hasOperand</a> <a class="qname" href="#milligram">units:milligram</a>, <a class="qname" href="#perLiter">units:perLiter</a>;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasSymbol</a> <span class="literal">&quot;&quot;&quot;mg/L&quot;&quot;&quot;</span>.
+
+<a class="qname" name="milligramPerMilliliter">units:milligramPerMilliliter</a>
+	<span class="keyword">a</span> <a class="qname" href="#Unit">units:Unit</a>, <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">unit:UnitDefinedByProduct</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/units#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> [<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#unitOf">quant:unitOf</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#MassConcentrationMeasurement">quant:MassConcentrationMeasurement</a>];
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaMath.owl">mrela:hasOperand</a> <a class="qname" href="#milligram">units:milligram</a>, <a class="qname" href="#perMilliliter">units:perMilliliter</a>;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasSymbol</a> <span class="literal">&quot;&quot;&quot;mg/mL&quot;&quot;&quot;</span>.
+
+<a class="qname" name="milligramPerDeciliter">units:milligramPerDeciliter</a>
+	<span class="keyword">a</span> <a class="qname" href="#Unit">units:Unit</a>, <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">unit:UnitDefinedByProduct</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/units#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;milligram per deciliter&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> [<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#unitOf">quant:unitOf</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#MassConcentrationMeasurement">quant:MassConcentrationMeasurement</a>];
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaMath.owl">mrela:hasOperand</a> <a class="qname" href="#milligram">units:milligram</a>, <a class="qname" href="#perDeciliter">units:perDeciliter</a>;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasSymbol</a> <span class="literal">&quot;&quot;&quot;mg/dL&quot;&quot;&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#exactMatch">skos:exactMatch</a> [<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#Concept">skos:Concept</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#inScheme">skos:inScheme</a> <a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731">clisko:sct20080731</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#notation">skos:notation</a> <span class="literal">&quot;258797006&quot;</span>^^<a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731DT">clisko:sct20080731DT</a>].
+
+<a class="qname" name="gramPerDeciliter">units:gramPerDeciliter</a>
+	<span class="keyword">a</span> <a class="qname" href="#Unit">units:Unit</a>, <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">unit:UnitDefinedByProduct</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/units#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;gram per deciliter&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> [<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#unitOf">quant:unitOf</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#MassConcentrationMeasurement">quant:MassConcentrationMeasurement</a>];
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaMath.owl">mrela:hasOperand</a> <a class="qname" href="#gram">units:gram</a>, <a class="qname" href="#perDeciliter">units:perDeciliter</a>;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasSymbol</a> <span class="literal">&quot;&quot;&quot;g/dL&quot;&quot;&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#exactMatch">skos:exactMatch</a> [<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#Concept">skos:Concept</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#inScheme">skos:inScheme</a> <a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731">clisko:sct20080731</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#notation">skos:notation</a> <span class="literal">&quot;258795003&quot;</span>^^<a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731DT">clisko:sct20080731DT</a>].
+
+<a class="qname" name="gramPerLiter">units:gramPerLiter</a>
+	<span class="keyword">a</span> <a class="qname" href="#Unit">units:Unit</a>, <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">unit:UnitDefinedByProduct</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/units#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;gram per liter&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> [<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#unitOf">quant:unitOf</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#MassConcentrationMeasurement">quant:MassConcentrationMeasurement</a>];
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaMath.owl">mrela:hasOperand</a> <a class="qname" href="#gram">units:gram</a>, <a class="qname" href="#perLiter">units:perLiter</a>;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasSymbol</a> <span class="literal">&quot;&quot;&quot;g/L&quot;&quot;&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#exactMatch">skos:exactMatch</a> [<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#Concept">skos:Concept</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#inScheme">skos:inScheme</a> <a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731">clisko:sct20080731</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#notation">skos:notation</a> <span class="literal">&quot;258794004&quot;</span>^^<a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731DT">clisko:sct20080731DT</a>].
+
+<a class="qname" name="micromolePerLiter">units:micromolePerLiter</a>
+	<span class="keyword">a</span> <a class="qname" href="#Unit">units:Unit</a>, <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">unit:UnitDefinedByProduct</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/units#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;micromole per liter&quot;&quot;&quot;</span>@en;
+<span class="comment">#	rdfs:subClassOf [</span>
+<span class="comment">#		a owl:Restriction; owl:onProperty quant:unitOf; owl:someValuesFrom [</span>
+<span class="comment">#			a owl:Restriction; owl:onProperty quant:measurementOf; owl:someValuesFrom quant:Concentration]];</span>
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaMath.owl">mrela:hasOperand</a> <a class="qname" href="#micromole">units:micromole</a>, <a class="qname" href="#perLiter">units:perLiter</a>;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasSymbol</a> <span class="literal">&quot;&quot;&quot;µmol/L&quot;&quot;&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#exactMatch">skos:exactMatch</a> [<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#Concept">skos:Concept</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#inScheme">skos:inScheme</a> <a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731">clisko:sct20080731</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#notation">skos:notation</a> <span class="literal">&quot;258814008&quot;</span>^^<a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731DT">clisko:sct20080731DT</a>].
+
+<a class="qname" name="millimolePerLiter">units:millimolePerLiter</a>
+	<span class="keyword">a</span> <a class="qname" href="#Unit">units:Unit</a>, <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">unit:UnitDefinedByProduct</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/units#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;millimole per liter&quot;&quot;&quot;</span>@en;
+<span class="comment">#	rdfs:subClassOf [</span>
+<span class="comment">#		a owl:Restriction; owl:onProperty quant:unitOf; owl:someValuesFrom [</span>
+<span class="comment">#			a owl:Restriction; owl:onProperty quant:measurementOf; owl:someValuesFrom quant:Concentration]];</span>
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaMath.owl">mrela:hasOperand</a> <a class="qname" href="#millimole">units:millimole</a>, <a class="qname" href="#perLiter">units:perLiter</a>;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasSymbol</a> <span class="literal">&quot;&quot;&quot;mmol/L&quot;&quot;&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#exactMatch">skos:exactMatch</a> [<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#Concept">skos:Concept</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#inScheme">skos:inScheme</a> <a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731">clisko:sct20080731</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#notation">skos:notation</a> <span class="literal">&quot;258813002&quot;</span>^^<a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731DT">clisko:sct20080731DT</a>].
+
+<a class="qname" name="unitsPerLiter">units:unitsPerLiter</a>
+	<span class="keyword">a</span> <a class="qname" href="#Unit">units:Unit</a>, <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">unit:UnitDefinedByProduct</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/units#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;units per liter&quot;&quot;&quot;</span>@en;
+<span class="comment">#	rdfs:subClassOf [</span>
+<span class="comment">#		a owl:Restriction; owl:onProperty quant:unitOf; owl:someValuesFrom [</span>
+<span class="comment">#			a owl:Restriction; owl:onProperty quant:measurementOf; owl:someValuesFrom quant:Concentration]];</span>
+<span class="comment">#	mrela:hasOperand units:units, units:perLiter;</span>
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasSymbol</a> <span class="literal">&quot;&quot;&quot;U/L&quot;&quot;&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#exactMatch">skos:exactMatch</a> [<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#Concept">skos:Concept</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#inScheme">skos:inScheme</a> <a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731">clisko:sct20080731</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#notation">skos:notation</a> <span class="literal">&quot;258947003&quot;</span>^^<a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731DT">clisko:sct20080731DT</a>].
+
+<a class="qname" name="unitsPerMilliliter">units:unitsPerMilliliter</a>
+	<span class="keyword">a</span> <a class="qname" href="#Unit">units:Unit</a>, <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">unit:ComplexUnit</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/units#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;units per milliliter&quot;&quot;&quot;</span>@en;
+<span class="comment">#	rdfs:subClassOf [</span>
+<span class="comment">#		a owl:Restriction; owl:onProperty quant:unitOf; owl:someValuesFrom [</span>
+<span class="comment">#			a owl:Restriction; owl:onProperty quant:measurementOf; owl:someValuesFrom quant:Concentration]];</span>
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasSymbol</a> <span class="literal">&quot;&quot;&quot;U/ml&quot;&quot;&quot;</span>.
+
+<a class="qname" name="internationalUnitsPerMilliliter">units:internationalUnitsPerMilliliter</a>
+	<span class="keyword">a</span> <a class="qname" href="#Unit">units:Unit</a>, <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">unit:ComplexUnit</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/units#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;international units per milliliter&quot;&quot;&quot;</span>@en;
+<span class="comment">#	rdfs:subClassOf [</span>
+<span class="comment">#		a owl:Restriction; owl:onProperty quant:unitOf; owl:someValuesFrom [</span>
+<span class="comment">#			a owl:Restriction; owl:onProperty quant:measurementOf; owl:someValuesFrom quant:Concentration]];</span>
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasSymbol</a> <span class="literal">&quot;&quot;&quot;IU/ml&quot;&quot;&quot;</span>.
+
+<a class="qname" name="milliInternationalUnitsPerLiter">units:milliInternationalUnitsPerLiter</a>
+	<span class="keyword">a</span> <a class="qname" href="#Unit">units:Unit</a>, <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">unit:ComplexUnit</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/units#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;milli-international units per liter&quot;&quot;&quot;</span>@en;
+<span class="comment">#	rdfs:subClassOf [</span>
+<span class="comment">#		a owl:Restriction; owl:onProperty quant:unitOf; owl:someValuesFrom [</span>
+<span class="comment">#			a owl:Restriction; owl:onProperty quant:measurementOf; owl:someValuesFrom quant:Concentration]];</span>
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasSymbol</a> <span class="literal">&quot;&quot;&quot;mIU/L&quot;&quot;&quot;</span>.
+
+<a class="qname" name="microgramPerKilogram">units:microgramPerKilogram</a>
+	<span class="keyword">a</span> <a class="qname" href="#Unit">units:Unit</a>, <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">unit:UnitDefinedByProduct</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/units#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;microgram per kilogram&quot;&quot;&quot;</span>@en;
+<span class="comment">#	rdfs:subClassOf [</span>
+<span class="comment">#		a owl:Restriction; owl:onProperty quant:unitOf; owl:someValuesFrom [</span>
+<span class="comment">#			a owl:Restriction; owl:onProperty quant:measurementOf; owl:someValuesFrom quant:Concentration]];</span>
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaMath.owl">mrela:hasOperand</a> <a class="qname" href="#microgram">units:microgram</a>, <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">unit:perKilogram</a>;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasSymbol</a> <span class="literal">&quot;&quot;&quot;µg/kg&quot;&quot;&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#exactMatch">skos:exactMatch</a> [<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#Concept">skos:Concept</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#inScheme">skos:inScheme</a> <a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731">clisko:sct20080731</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#notation">skos:notation</a> <span class="literal">&quot;258803005&quot;</span>^^<a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731DT">clisko:sct20080731DT</a>].
+
+<a class="qname" name="milligramPerKilogram">units:milligramPerKilogram</a>
+	<span class="keyword">a</span> <a class="qname" href="#Unit">units:Unit</a>, <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">unit:UnitDefinedByProduct</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/units#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;milligram per kilogram&quot;&quot;&quot;</span>@en;
+<span class="comment">#	rdfs:subClassOf [</span>
+<span class="comment">#		a owl:Restriction; owl:onProperty quant:unitOf; owl:someValuesFrom [</span>
+<span class="comment">#			a owl:Restriction; owl:onProperty quant:measurementOf; owl:someValuesFrom quant:Concentration]];</span>
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaMath.owl">mrela:hasOperand</a> <a class="qname" href="#milligram">units:milligram</a>, <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">unit:perKilogram</a>;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasSymbol</a> <span class="literal">&quot;&quot;&quot;mg/kg&quot;&quot;&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#exactMatch">skos:exactMatch</a> [<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#Concept">skos:Concept</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#inScheme">skos:inScheme</a> <a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731">clisko:sct20080731</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#notation">skos:notation</a> <span class="literal">&quot;396163008&quot;</span>^^<a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731DT">clisko:sct20080731DT</a>].
+
+<a class="qname" name="milligramPerGram">units:milligramPerGram</a>
+	<span class="keyword">a</span> <a class="qname" href="#Unit">units:Unit</a>, <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">unit:UnitDefinedByProduct</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/units#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;milligram per gram&quot;&quot;&quot;</span>@en;
+<span class="comment">#	rdfs:subClassOf [</span>
+<span class="comment">#		a owl:Restriction; owl:onProperty quant:unitOf; owl:someValuesFrom [</span>
+<span class="comment">#			a owl:Restriction; owl:onProperty quant:measurementOf; owl:someValuesFrom quant:Concentration]];</span>
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaMath.owl">mrela:hasOperand</a> <a class="qname" href="#milligram">units:milligram</a>, <a class="qname" href="#perGram">units:perGram</a>;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasSymbol</a> <span class="literal">&quot;&quot;&quot;mg/g&quot;&quot;&quot;</span>.
+
+
+<span class="comment">#</span>
+<span class="comment">#	UNITS OF VELOCITY MEASUREMENT</span>
+<span class="comment">#</span>
+	
+<a class="qname" name="meterPerSecond">units:meterPerSecond</a>
+	<span class="keyword">a</span> <a class="qname" href="#Unit">units:Unit</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/units#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;meter per second&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">unit:meterPerSecond</a>, [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#unitOf">quant:unitOf</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> [
+			<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#measurementOf">quant:measurementOf</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#Velocity">quant:Velocity</a>]];
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasSymbol</a> <span class="literal">&quot;&quot;&quot;m/s&quot;&quot;&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#exactMatch">skos:exactMatch</a> [<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#Concept">skos:Concept</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#inScheme">skos:inScheme</a> <a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731">clisko:sct20080731</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#notation">skos:notation</a> <span class="literal">&quot;272090007&quot;</span>^^<a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731DT">clisko:sct20080731DT</a>].
+
+<a class="qname" name="centimeterPerSecond">units:centimeterPerSecond</a>
+	<span class="keyword">a</span> <a class="qname" href="#Unit">units:Unit</a>, <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">unit:UnitDefinedByProduct</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/units#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;centimeter per second&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaMath.owl">mrela:hasOperand</a> <a class="qname" href="#centimeter">units:centimeter</a>, <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">unit:perSecond</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#unitOf">quant:unitOf</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> [
+			<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#measurementOf">quant:measurementOf</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#Velocity">quant:Velocity</a>]];
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasSymbol</a> <span class="literal">&quot;&quot;&quot;cm/s&quot;&quot;&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#exactMatch">skos:exactMatch</a> [<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#Concept">skos:Concept</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#inScheme">skos:inScheme</a> <a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731">clisko:sct20080731</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#notation">skos:notation</a> <span class="literal">&quot;258990002&quot;</span>^^<a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731DT">clisko:sct20080731DT</a>].
+
+
+<span class="comment">#</span>
+<span class="comment">#	UNITS OF VOLUME FLOW RATE MEASUREMENT</span>
+<span class="comment">#</span>
+
+<a class="qname" name="cubicMeterPerSecond">units:cubicMeterPerSecond</a>
+	<span class="keyword">a</span> <a class="qname" href="#Unit">units:Unit</a>, <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">unit:UnitDefinedByProduct</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/units#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;cubic meter per second&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasSymbol</a> <span class="literal">&quot;m³/s&quot;</span>;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaMath.owl">mrela:hasOperand</a> <a class="qname" href="#cubicMeter">units:cubicMeter</a>, <a class="qname" href="#hertz">units:hertz</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> [
+		<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#unitOf">quant:unitOf</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#VolumeFLowRateMeasurement">quant:VolumeFLowRateMeasurement</a>].
+
+<a class="qname" name="milliliterPerMinute">units:milliliterPerMinute</a>
+	<span class="keyword">a</span> <a class="qname" href="#Unit">units:Unit</a>, <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">unit:UnitDefinedByProduct</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/units#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;milliliter per minute&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasSymbol</a> <span class="literal">&quot;&quot;&quot;mL/min&quot;&quot;&quot;</span>; <span class="comment"># -&gt; x 6e-5 m³/s</span>
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaMath.owl">mrela:hasOperand</a> <a class="qname" href="#milliliter">units:milliliter</a>, <a class="qname" href="#perMinute">units:perMinute</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:subClassOf</a> [<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:Restriction</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:onProperty</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#unitOf">quant:unitOf</a>; <a class="qname" href="http://www.w3.org/2002/07/owl">owl:someValuesFrom</a> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/quantities.html#VolumeFLowRateMeasurement">quant:VolumeFLowRateMeasurement</a>];	
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#exactMatch">skos:exactMatch</a> [<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#Concept">skos:Concept</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#inScheme">skos:inScheme</a> <a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731">clisko:sct20080731</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#notation">skos:notation</a> <span class="literal">&quot;258859000&quot;</span>^^<a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731DT">clisko:sct20080731DT</a>].
+
+
+<span class="comment">#</span>
+<span class="comment">#	OTHER COMPLEX UNITS</span>
+<span class="comment">#</span>
+
+<a class="qname" name="kilogramPerMeterSquare">units:kilogramPerMeterSquare</a>
+	<span class="keyword">a</span> <a class="qname" href="#Unit">units:Unit</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/units#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;kilogram per square meter&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasSymbol</a> <span class="literal">&quot;&quot;&quot;kg/m²&quot;&quot;&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#exactMatch">skos:exactMatch</a> [<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#Concept">skos:Concept</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#inScheme">skos:inScheme</a> <a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731">clisko:sct20080731</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#notation">skos:notation</a> <span class="literal">&quot;258896009&quot;</span>^^<a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731DT">clisko:sct20080731DT</a>].
+
+<a class="qname" name="microgramPerMinute">units:microgramPerMinute</a>
+	<span class="keyword">a</span> <a class="qname" href="#Unit">units:Unit</a>, <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">unit:UnitDefinedByProduct</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/units#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;microgram per minute&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaMath.owl">mrela:hasOperand</a> <a class="qname" href="#microgram">units:microgram</a>, <a class="qname" href="#perMinute">units:perMinute</a>;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasSymbol</a> <span class="literal">&quot;&quot;&quot;µg/min&quot;&quot;&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#exactMatch">skos:exactMatch</a> [<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#Concept">skos:Concept</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#inScheme">skos:inScheme</a> <a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731">clisko:sct20080731</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#notation">skos:notation</a> <span class="literal">&quot;258837002&quot;</span>^^<a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731DT">clisko:sct20080731DT</a>].
+
+<a class="qname" name="milligramPerHour">units:milligramPerHour</a>
+	<span class="keyword">a</span> <a class="qname" href="#Unit">units:Unit</a>, <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">unit:UnitDefinedByProduct</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/units#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;milligram per hour&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaMath.owl">mrela:hasOperand</a> <a class="qname" href="#milligram">units:milligram</a>, <a class="qname" href="#perHour">units:perHour</a>;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasSymbol</a> <span class="literal">&quot;&quot;&quot;mg/h&quot;&quot;&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#exactMatch">skos:exactMatch</a> [<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#Concept">skos:Concept</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#inScheme">skos:inScheme</a> <a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731">clisko:sct20080731</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#notation">skos:notation</a> <span class="literal">&quot;258834009&quot;</span>^^<a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731DT">clisko:sct20080731DT</a>].
+
+<a class="qname" name="milliliterPerKilogramPerHour">units:milliliterPerKilogramPerHour</a>
+	<span class="keyword">a</span> <a class="qname" href="#Unit">units:Unit</a>, <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">unit:UnitDefinedByProduct</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/units#&gt;</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:label</a> <span class="literal">&quot;&quot;&quot;milliliter per kilogram per hour&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaMath.owl">mrela:hasOperand</a> <a class="qname" href="#milliliter">units:milliliter</a>, <a class="qname" href="#perKilogram">units:perKilogram</a>, <a class="qname" href="#perHour">units:perHour</a>;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasSymbol</a> <span class="literal">&quot;&quot;&quot;mL/kg/h&quot;&quot;&quot;</span>;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#exactMatch">skos:exactMatch</a> [<span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#Concept">skos:Concept</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#inScheme">skos:inScheme</a> <a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731">clisko:sct20080731</a>; <a class="qname" href="http://www.w3.org/2004/02/skos/core.html#notation">skos:notation</a> <span class="literal">&quot;414739003&quot;</span>^^<a class="qname" href="http://www.agfa.com/w3c/2009/clinicalSKOSSchemes.html#sct20080731DT">clisko:sct20080731DT</a>].
+
+<a class="qname" name="microgramPerKilogramPerMinute">units:microgramPerKilogramPerMinute</a>
+	<span class="keyword">a</span> <a class="qname" href="#Unit">units:Unit</a>, <a class="qname" href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl">unit:UnitDefinedByProduct</a>;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:isDefinedBy</a> <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/units#&gt;</a>;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaMath.owl">mrela:hasOperand</a> <a class="qname" href="#microgram">units:microgram</a>, <a class="qname" href="#perKilogram">units:perKilogram</a>, <a class="qname" href="#perMinute">units:perMinute</a>;
+	<a class="qname" href="http://sweet.jpl.nasa.gov/2.3/relaSci.owl">screla:hasSymbol</a> <span class="literal">&quot;&quot;&quot;µg/kg/min&quot;&quot;&quot;</span>.
+
+
+<span class="comment"># units used in pharma, cf RXNORM</span>
+<span class="comment">#eq/l</span>
+<span class="comment">#meq/mg</span>
+<span class="comment">#meq/ml</span>
+<span class="comment">#mg/actuat</span>
+<span class="comment">#mg/mg</span>
+<span class="comment">#mg/ml</span>
+<span class="comment">#ml/ml</span>
+<span class="comment">#pnu/ml</span>
+<span class="comment">#unt/mg</span>
+<span class="comment">#IU</span>
+<span class="comment">#U</span>
+<span class="comment">#U FIP</span>
+<span class="comment">#U PE</span>
+<span class="comment">#U NF</span>
+		</pre>
+	</div>
+	</body>
+</html>

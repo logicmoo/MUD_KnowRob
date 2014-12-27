@@ -1,0 +1,158 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>
+		<meta name="generator" content="AGFA HealthCare N3 to HTML convertor"/>
+		<link rel="alternate" type="text/n3" title="RDF Representation" href="http://eulersharp.sourceforge.net/2003/03swap/pi-calc"/>
+		<title>pi-calc</title>
+		<style type="text/css">
+			a[href]:link { text-decoration:none; }
+			a[href]:visited { text-decoration:none; }
+			a[href]:active { text-decoration:underline; }
+			a:hover { background:#ffa; }
+			.keyword { font-weight: bold; }
+			.literal { color: blue }
+			.uri { color: darkblue }
+			.qname { color: black }
+			.var { color: gray }
+			.comment { font-style:italic; color: darkgreen }
+		</style>
+	</head>
+	<body>
+	<div>
+		<pre>
+<span class="keyword">@prefix</span> log: <a class="uri" href="http://www.w3.org/2000/10/swap/log">&lt;http://www.w3.org/2000/10/swap/log#&gt;</a>.
+<span class="keyword">@prefix</span> owl: <a class="uri" href="http://www.w3.org/2002/07/owl">&lt;http://www.w3.org/2002/07/owl#&gt;</a>.
+<span class="keyword">@prefix</span> xsd: <a class="uri" href="http://www.w3.org/2001/XMLSchema">&lt;http://www.w3.org/2001/XMLSchema#&gt;</a>.
+<span class="keyword">@prefix</span> rdfs: <a class="uri" href="http://www.w3.org/2000/01/rdf-schema">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</a>.
+<span class="keyword">@prefix</span> rdf: <a class="uri" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</a>.
+<span class="keyword">@prefix</span> : <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/pi-calc#&gt;</a>.
+
+
+<span class="comment">### Pi-Calculus</span>
+<span class="comment">#</span>
+<span class="comment"># see http://www.lfcs.inf.ed.ac.uk/reports/89/ECS-LFCS-89-85/ECS-LFCS-89-85.ps</span>
+<span class="comment">#     http://www.lfcs.inf.ed.ac.uk/reports/89/ECS-LFCS-89-86/ECS-LFCS-89-86.ps</span>
+<span class="comment">#</span>
+<span class="comment"># We presuppose an infinite set N of names, and let u, v, w, x, y, z range over names.</span>
+<span class="comment"># We also presuppose a set K of agent identifiers, each with an arity an integer &gt;= 0.</span>
+<span class="comment"># We let A, B, C, ... range over agent identifiers. We now let P, Q, R, ... range</span>
+<span class="comment"># over the agents or process expressions, which are of six kinds as follows:</span>
+
+<a class="qname" name="Process">:Process</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>.
+<a class="qname" name="Port">:Port</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>.
+<a class="qname" name="empty">:empty</a> <span class="keyword">a</span> <a class="qname" href="#Process">:Process</a>.
+
+
+<span class="comment"># 1. A summation</span>
+<span class="comment"># --------------</span>
+<span class="comment"># sum_i Pi where the index set I is finite.</span>
+<span class="comment"># This agent behaves like one or other of the Pi. We write 0 for the empty</span>
+<span class="comment"># summation, and call it inaction; this is the agent which can do nothing.</span>
+<span class="comment"># Henceforward, in defining the calculus, we confine ourselves just to 0 and</span>
+<span class="comment"># binary summation, written P1 + P2 .</span>
+<span class="comment"># e.g. (eg:process1 eg:process2) :summation eg:process.</span>
+
+<a class="qname" name="summation">:summation</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:FunctionalProperty</a>; <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">rdf:List</a>; <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="#Process">:Process</a>.
+
+
+<span class="comment"># 2. A prefix form -yx.P , y(x).P or tau.P</span>
+<span class="comment"># ----------------------------------------</span>
+<span class="comment"># '-yx.' is called a negative prefix. y may be thought of as an output port of</span>
+<span class="comment"># an agent which contains it; -yx.P outputs the name x at port y and then</span>
+<span class="comment"># behaves like P .</span>
+<span class="comment"># e.g. (eg:port1 (?name1 ?name2) eg:process1) :output eg:process.</span>
+
+<a class="qname" name="output">:output</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:FunctionalProperty</a>; <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">rdf:List</a>; <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="#Process">:Process</a>.
+
+
+<span class="comment"># 'y(x).' is called a positive prefix. A name y may be thought of as an input </span>
+<span class="comment"># port of an agent; y(x).P inputs an arbitrary name z at port y and then </span>
+<span class="comment"># behaves like P{z/x} (see the definition of substitution below). The name x </span>
+<span class="comment"># is bound by the positive prefix 'y(x).' (Note that a negative prefix does </span>
+<span class="comment"># not bind a name)</span>
+<span class="comment"># e.g. (eg:port1 (?name1 ?name2) eg:process1) :input eg:process.</span>
+
+<a class="qname" name="input">:input</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:FunctionalProperty</a>; <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">rdf:List</a>; <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="#Process">:Process</a>.
+
+
+<span class="comment"># 'tau.' is called a silent prefix. tau.P performs the silent action tau and then </span>
+<span class="comment"># behaves like P.</span>
+<span class="comment"># e.g. (eg:action1 eg:process1) :silent eg:process.</span>
+
+<a class="qname" name="silent">:silent</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:FunctionalProperty</a>; <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">rdf:List</a>; <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="#Process">:Process</a>.
+
+
+<span class="comment"># 3. A composition P1 | P2</span>
+<span class="comment"># ------------------------</span>
+<span class="comment"># This agent consists of P1 and P2 acting in parallel. The components may</span>
+<span class="comment"># act independently; also, an output action of P1 (resp. P2) at any output</span>
+<span class="comment"># port x may synchronize with an input action of P2 (resp. P1) at x, to create</span>
+<span class="comment"># a silent (tau) action of the composite agent P1 | P2 .</span>
+<span class="comment"># e.g. (eg:process1 eg:process2) :composition eg:process.</span>
+
+<a class="qname" name="composition">:composition</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:FunctionalProperty</a>; <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">rdf:List</a>; <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="#Process">:Process</a>.
+
+
+<span class="comment"># 4. A restriction (x)P</span>
+<span class="comment"># ---------------------</span>
+<span class="comment"># This agent behaves like P except that actions at ports -x and x are prohibited</span>
+<span class="comment"># (but communication between components of P along the link x are not</span>
+<span class="comment"># prohibited, since they have become tau actions as explained above).</span>
+<span class="comment"># e.g. (?name1 eg:process1) :restriction eg:process.</span>
+
+<a class="qname" name="restriction">:restriction</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:FunctionalProperty</a>; <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">rdf:List</a>; <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="#Process">:Process</a>.
+
+
+<span class="comment"># 5. A match [x = y]P</span>
+<span class="comment"># -------------------</span>
+<span class="comment"># This agent behaves like P if the names x and y are identical, and otherwise</span>
+<span class="comment"># like 0.</span>
+<span class="comment"># e.g. ((?name1 ?name2) d:process1) :match eg:process.</span>
+
+<a class="qname" name="match">:match</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:FunctionalProperty</a>; <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">rdf:List</a>; <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="#Process">:Process</a>.
+
+
+<span class="comment"># 6. A defined agent A(y1, ..., yn)</span>
+<span class="comment"># ---------------------------------</span>
+<span class="comment"># For any agent identifier A (with arity n) used thus, there must be a unique </span>
+<span class="comment"># defining equation A(x1, ..., xn) == P, where the names x1, ..., xn are distinct</span>
+<span class="comment"># and are the only names which may occur free in P . Then A(y1, ..., yn) behaves</span>
+<span class="comment"># like P{y1/x1, ..., yn/xn} (see below for the definition of substitution).</span>
+<span class="comment"># Defining equations provide recursion, since P may contain any agent</span>
+<span class="comment"># identifier, even A itself.</span>
+<span class="comment"># e.g. (eg:process1 eg:name1 eg:name2 eg:name3) :identifies eg:process.</span>
+
+<a class="qname" name="identifies">:identifies</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2002/07/owl">owl:FunctionalProperty</a>; <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">rdf:List</a>; <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="#Process">:Process</a>.
+
+
+<span class="comment">### axiomatic semantics</span>
+
+<a class="qname" name="reduction">:reduction</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">rdf:Property</a>; <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="#Process">:Process</a>; <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="#Process">:Process</a>.
+<a class="qname" name="congruent">:congruent</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">rdf:Property</a>; <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="#Process">:Process</a>; <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="#Process">:Process</a>.
+
+{} =&gt; {(<span class="var">?P1</span> <span class="var">?P2</span>)!<a class="qname" href="#summation">:summation</a> <a class="qname" href="#congruent">:congruent</a> (<span class="var">?P1</span> <span class="var">?P2</span>)!<a class="qname" href="#summation">:summation</a>}.
+{} =&gt; {(<span class="var">?P1</span> <span class="var">?P2</span>)!<a class="qname" href="#summation">:summation</a> <a class="qname" href="#congruent">:congruent</a> (<span class="var">?P2</span> <span class="var">?P1</span>)!<a class="qname" href="#summation">:summation</a>}.
+{} =&gt; {(<span class="var">?P1</span> (<span class="var">?P2</span> <span class="var">?P3</span>)!<a class="qname" href="#summation">:summation</a>)!<a class="qname" href="#summation">:summation</a> <a class="qname" href="#congruent">:congruent</a> ((<span class="var">?P1</span> <span class="var">?P2</span>)!<a class="qname" href="#summation">:summation</a> <span class="var">?P3</span>)!<a class="qname" href="#summation">:summation</a>}.
+{<span class="var">?P1</span> <a class="qname" href="#congruent">:congruent</a> <span class="var">?P2</span>} =&gt; {(<span class="var">?P1</span> <span class="var">?P3</span>)!<a class="qname" href="#summation">:summation</a> <a class="qname" href="#congruent">:congruent</a> (<span class="var">?P2</span> <span class="var">?P3</span>)!<a class="qname" href="#summation">:summation</a>}.
+
+{} =&gt; {(<span class="var">?P1</span> <span class="var">?P2</span>)!<a class="qname" href="#composition">:composition</a> <a class="qname" href="#congruent">:congruent</a> (<span class="var">?P1</span> <span class="var">?P2</span>)!<a class="qname" href="#composition">:composition</a>}.
+{} =&gt; {(<span class="var">?P1</span> <span class="var">?P2</span>)!<a class="qname" href="#composition">:composition</a> <a class="qname" href="#congruent">:congruent</a> (<span class="var">?P2</span> <span class="var">?P1</span>)!<a class="qname" href="#composition">:composition</a>}.
+{} =&gt; {(<span class="var">?P1</span> (<span class="var">?P2</span> <span class="var">?P3</span>)!<a class="qname" href="#composition">:composition</a>)!<a class="qname" href="#composition">:composition</a> <a class="qname" href="#congruent">:congruent</a> ((<span class="var">?P1</span> <span class="var">?P2</span>)!<a class="qname" href="#composition">:composition</a> <span class="var">?P3</span>)!<a class="qname" href="#composition">:composition</a>}.
+{<span class="var">?P1</span> <a class="qname" href="#congruent">:congruent</a> <span class="var">?P2</span>} =&gt; {(<span class="var">?P1</span> <span class="var">?P3</span>)!<a class="qname" href="#composition">:composition</a> <a class="qname" href="#congruent">:congruent</a> (<span class="var">?P2</span> <span class="var">?P3</span>)!<a class="qname" href="#composition">:composition</a>}.
+
+{<span class="var">?P1</span> <a class="qname" href="#congruent">:congruent</a> <span class="var">?P2</span>. <span class="var">?P2</span> <a class="qname" href="#congruent">:congruent</a> <span class="var">?P3</span>} =&gt; {<span class="var">?P1</span> <a class="qname" href="#congruent">:congruent</a> <span class="var">?P3</span>}.
+
+{} =&gt; {(<span class="var">?N</span> <a class="qname" href="#empty">:empty</a>)!<a class="qname" href="#restriction">:restriction</a> <a class="qname" href="#congruent">:congruent</a> <a class="qname" href="#empty">:empty</a>}.
+{} =&gt; {(<span class="var">?N</span> (<span class="var">?M</span> <span class="var">?P</span>)!<a class="qname" href="#restriction">:restriction</a>)!<a class="qname" href="#restriction">:restriction</a> <a class="qname" href="#congruent">:congruent</a> (<span class="var">?M</span> (<span class="var">?N</span> <span class="var">?P</span>)!<a class="qname" href="#restriction">:restriction</a>)!<a class="qname" href="#restriction">:restriction</a>}.
+{} =&gt; {((<span class="var">?N</span> <span class="var">?P1</span>)!<a class="qname" href="#restriction">:restriction</a> <span class="var">?P2</span>)!<a class="qname" href="#composition">:composition</a> <a class="qname" href="#congruent">:congruent</a> (<span class="var">?N</span> (<span class="var">?P1</span> <span class="var">?P2</span>)!<a class="qname" href="#composition">:composition</a>)!<a class="qname" href="#restriction">:restriction</a>}.
+
+{<span class="var">?P1</span> <a class="qname" href="#congruent">:congruent</a> (<span class="var">?P3</span> (<span class="var">?X</span> <span class="var">?Y</span> <span class="var">?P5</span>)!<a class="qname" href="#input">:input</a>)!<a class="qname" href="#summation">:summation</a>. <span class="var">?P2</span> <a class="qname" href="#congruent">:congruent</a> (<span class="var">?P4</span> (<span class="var">?X</span> <span class="var">?Y</span> <span class="var">?P6</span>)!<a class="qname" href="#output">:output</a>)!<a class="qname" href="#summation">:summation</a>} =&gt; {(<span class="var">?P1</span> <span class="var">?P2</span>)!<a class="qname" href="#composition">:composition</a> <a class="qname" href="#reduction">:reduction</a> (<span class="var">?P5</span> <span class="var">?P6</span>)!<a class="qname" href="#composition">:composition</a>}.
+
+{<span class="var">?P1</span> <a class="qname" href="#reduction">:reduction</a> <span class="var">?P3</span>} =&gt; {(<span class="var">?P1</span> <span class="var">?P2</span>)!<a class="qname" href="#composition">:composition</a> <a class="qname" href="#reduction">:reduction</a> (<span class="var">?P3</span> <span class="var">?P2</span>)!<a class="qname" href="#composition">:composition</a>}.
+{<span class="var">?P1</span> <a class="qname" href="#reduction">:reduction</a> <span class="var">?P3</span>} =&gt; {(<span class="var">?X</span> <span class="var">?P1</span>)!<a class="qname" href="#restriction">:restriction</a> <a class="qname" href="#reduction">:reduction</a> (<span class="var">?X</span> <span class="var">?P3</span>)!<a class="qname" href="#restriction">:restriction</a>}.
+{<span class="var">?P1</span> <a class="qname" href="#congruent">:congruent</a> <span class="var">?P2</span>. <span class="var">?P2</span> <a class="qname" href="#reduction">:reduction</a> <span class="var">?P3</span>. <span class="var">?P3</span> <a class="qname" href="#congruent">:congruent</a> <span class="var">?P4</span>} =&gt; {<span class="var">?P1</span> <a class="qname" href="#reduction">:reduction</a> <span class="var">?P4</span>}.
+		</pre>
+	</div>
+	</body>
+</html>

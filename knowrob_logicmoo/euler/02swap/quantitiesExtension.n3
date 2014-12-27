@@ -1,0 +1,814 @@
+@prefix dce: <http://purl.org/dc/elements/1.1/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix mathop: <http://sweet.jpl.nasa.gov/2.0/mathOperation.owl#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix phys: <http://sweet.jpl.nasa.gov/2.0/phys.owl>.
+@prefix pres: <http://sweet.jpl.nasa.gov/2.0/physPressure.owl>.
+@prefix physDynamics: <http://sweet.jpl.nasa.gov/2.0/physDynamics.owl#>.
+@prefix physThermo: <http://sweet.jpl.nasa.gov/2.0/physThermo.owl#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix spaceExtent: <http://sweet.jpl.nasa.gov/2.0/spaceExtent.owl#>.
+@prefix time: <http://sweet.jpl.nasa.gov/2.0/time.owl#>.
+@prefix units: <http://sweet.jpl.nasa.gov/2.0/sciUnits.owl#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix clinskos: <http://www.agfa.com/w3c/2009/clinicalSKOSSchemes#>.
+@prefix fos: <http://eulersharp.sourceforge.net/2003/03swap/foster#>.
+@prefix event: <http://eulersharp.sourceforge.net/2003/03swap/event#>.
+@prefix quex: <http://eulersharp.sourceforge.net/2003/03swap/quantitiesExtension#>.
+@prefix unex: <http://eulersharp.sourceforge.net/2003/03swap/unitsExtension#>.
+
+<http://eulersharp.sourceforge.net/2003/03swap/quantitiesExtension#>
+
+	rdfs:comment """Deprecated in favour of <http://eulersharp.sourceforge.net/2003/03swap/quantities#>"""@en;
+	
+	a owl:Ontology;
+	dce:title """Quantities Extension"""@en;
+	dce:creator """Hans Cools, MD, Agfa Healthcare/Belgium; Pieterjan De Potter and Pedro Debevere, Ghent University - IBBT/ELIS - Multimedia Lab/Belgium"""@en;
+	dce:publisher """Agfa Healthcare/Belgium"""@en;
+	dce:description """Formal description of quantities, as an extension of the NASA 'SWEET' ontologies."""@en;
+	rdfs:comment """Dealing with quantities, not physical phenomena. Specific quantities are declared in respective ontologies, e.g. :Strength and :hasStrength in http://www.agfa.com/w3c/2009/drugTherapy#."""@en;
+	dce:format """OWL Full"""@en.
+
+#
+# CLASSES
+#
+
+# Physical quantities declared in the NASA 'SWEET' ontologies:
+# mathop:Ratio sco mathop:Division sco mathop:BinaryOperation sco mathop:Operation sco math:MathematicalProcess (http://sweet.jpl.nasa.gov/2.0/math.owl) sco top:Process (http://sweet.jpl.nasa.gov/2.0/top.owl)
+# spaceExtent:Length sco spaceExtent:LinearExtent sco spaceExtent:SpatialMeasure
+# phys:Mass sco phys:ExtensiveProperty
+# time:Time
+# physThermo:Temperature sco phys:PhysicalProperty
+# spaceExtent:Area sco spaceExtent:SpatialMeasure
+# spaceExtent:Volume sco spaceExtent:SpatialMeasure
+# physDynamics:Velocity
+# phys:Density sco phys:IntensiveProperty
+# phys:Impedance sco phys:PhysicalProperty
+
+quex:Quantity
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/quantitiesExtension#>;
+	rdfs:label """quantity"""@en;
+	skos:definition """Property that can be quantified by the product of a numeric value and a unit value."""@en;
+	skos:definition """Property of a phenomenon, body, or substance, where the property has a magnitude that can be expressed as a number and a reference. http://www.w3.org/2005/Incubator/w3pm/XGR-w3pm-20091008/#A"""@en;
+	rdfs:subClassOf event:Observable.
+
+quex:PhysicalQuantity
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/quantitiesExtension#>;
+	rdfs:label """physical quantity"""@en;
+	skos:definition """Physical property that can be quantified by the product of a numeric value and a unit value."""@en;
+	rdfs:subClassOf quex:Quantity.
+
+quex:Measuring
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/quantitiesExtension#>;
+	rdfs:label """measuring"""@en;
+	skos:definition """Quantifying a property by comparison with a standard."""@en;
+	rdfs:subClassOf event:Examining, [
+		a owl:Restriction; owl:onProperty event:hasInput; owl:someValuesFrom quex:Quantity], [
+		a owl:Restriction; owl:onProperty event:hasOutput; owl:someValuesFrom quex:Measurement].
+
+quex:Measurement
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/quantitiesExtension#>;
+	rdfs:label """measurement"""@en;
+	skos:definition """Quantification of a property by comparison with a standard."""@en;
+	rdfs:subClassOf event:Examination, [
+		a owl:Restriction; owl:onProperty event:outputOf; owl:someValuesFrom event:Measuring].
+
+quex:Number
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/quantitiesExtension#>;
+	rdfs:label """number"""@en;
+	skos:definition """Quantity with the dimension of 1, without any physical unit."""@en;
+	rdfs:subClassOf quex:Quantity.
+
+quex:Total
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/quantitiesExtension#>;
+	rdfs:label """total"""@en;
+	skos:definition """Total set of something."""@en.
+	# rdfs:subClassOf rdfs:Class # fos:Group.
+
+quex:Part
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/quantitiesExtension#>;
+	rdfs:label """part"""@en;
+	skos:definition """Part set of something."""@en.
+	# rdfs:subClassOf rdfs:Class # fos:Group.
+
+quex:Ratio
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/quantitiesExtension#>;
+	rdfs:label """ratio"""@en;
+	skos:definition """Quantity of something as fractional representation of something else."""@en;
+	rdfs:comment """E.g. 5 g sugar/100 ml water"""@en;
+	rdfs:subClassOf quex:Quantity, mathop:Ratio.
+
+quex:Average
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/quantitiesExtension#>;
+	rdfs:label """average"""@en;
+	skos:definition """Central tendency value of a data set."""@en;
+	rdfs:subClassOf quex:Quantity.
+
+quex:ArithmeticMean
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/quantitiesExtension#>;
+	rdfs:label """arithmetic mean"""@en;
+	skos:definition """Sum of all numbers of a set divided by the number of numbers in the set."""@en;
+	rdfs:subClassOf quex:Average, quex:Ratio.
+
+# Median is the numeric value separating the higher half of a sample, a population, or a probability distribution, from the lower half.
+# Mode is the value in a set having the largest number of observations.
+
+quex:Minimum
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/quantitiesExtension#>;
+	rdfs:label """minimum"""@en;
+	skos:definition """Smallest number of a set of numbers."""@en.
+
+quex:Maximum
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/quantitiesExtension#>;
+	rdfs:label """maximum"""@en;
+	skos:definition """Largest number of a set of numbers."""@en;
+	rdfs:subClassOf quex:Number.
+
+quex:Probability
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/quantitiesExtension#>;
+	rdfs:label """probability"""@en;
+	skos:definition """Numerical expression of the chance of something to happen."""@en;
+	rdfs:subClassOf quex:Quantity.
+
+quex:Percentage
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/quantitiesExtension#>;
+	rdfs:label """percentage"""@en;
+	skos:definition """Ratio of something to 100 of something more general."""@en;
+	rdfs:subClassOf quex:Ratio, [
+		a owl:Restriction; owl:onProperty quex:hasUnit; owl:someValuesFrom unex:percent]. # owl:hasValue
+
+quex:Time
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/quantitiesExtension#>;
+	rdfs:label """time"""@en;
+	skos:definition """Quantity as dimension in which events occur in sequence."""@en;
+	rdfs:subClassOf quex:Quantity, time:Time.
+
+quex:Frequency
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/quantitiesExtension#>;
+	rdfs:label """frequency"""@en;
+	skos:definition """Quantity expressing the number of recurrent events per unit of time."""@en;
+	rdfs:subClassOf quex:Ratio, [
+		a owl:Restriction; owl:onProperty quex:hasNumerator; owl:someValuesFrom quex:NumberOfEvents], [
+		a owl:Restriction; owl:onProperty quex:hasMeasurement; owl:someValuesFrom [
+			a owl:Restriction; owl:onProperty quex:hasUnit; owl:someValuesFrom [
+				a owl:Restriction; owl:onProperty quex:unitOf; owl:someValuesFrom quex:Frequency]], [
+			a owl:Restriction; owl:onProperty quex:hasValue; owl:someValuesFrom xsd:nonNegativeInteger]].
+
+quex:NumberOfEvents
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/quantitiesExtension#>;
+	rdfs:label """number of recurrent events"""@en;
+	skos:definition """Count of recurrent events."""@en;
+	rdfs:subClassOf quex:Number.
+
+quex:Length
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/quantitiesExtension#>;
+	rdfs:label """length"""@en;
+	skos:definition """Any one-dimensional thing."""@en;
+	rdfs:subClassOf quex:PhysicalQuantity, spaceExtent:Length, [
+		a owl:Restriction; owl:onProperty quex:hasMeasurement; owl:someValuesFrom [
+			a owl:Restriction; owl:onProperty quex:hasUnit; owl:someValuesFrom [
+				a owl:Restriction; owl:onProperty quex:unitOf; owl:someValuesFrom spaceExtent:Length]]].
+
+quex:Surface
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/quantitiesExtension#>;
+	rdfs:label """surface"""@en;
+	skos:definition """Any two-dimensional thing."""@en;
+	rdfs:subClassOf quex:PhysicalQuantity, spaceExtent:Area.
+
+quex:Volume
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/quantitiesExtension#>;
+	rdfs:label """volume"""@en;
+	skos:definition """Any three-dimensional thing."""@en;
+	rdfs:subClassOf quex:PhysicalQuantity, spaceExtent:Volume;
+	owl:disjointWith quex:Mass.
+
+quex:Mass
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/quantitiesExtension#>;
+	rdfs:label """mass"""@en;
+	skos:definition """Physical quantity equal to an object's resistance to changing either the speed or direction of its motion."""@en;
+	skos:note """The mass of an object is independent of gravity and therefore different from but proportional to its weight."""@en;
+	rdfs:subClassOf quex:PhysicalQuantity, phys:Mass, [
+		a owl:Restriction; owl:onProperty quex:hasMeasurement; owl:someValuesFrom [
+			a owl:Restriction; owl:onProperty quex:hasUnit; owl:someValuesFrom [
+				a owl:Restriction; owl:onProperty quex:unitOf; owl:someValuesFrom [quex:measurementOf quex:Mass]]]].
+
+quex:Temperature
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/quantitiesExtension#>;
+	rdfs:label """thermodynamic temperature"""@en;
+	rdfs:subClassOf physThermo:Temperature.
+
+quex:TemperatureMeasurement
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/quantitiesExtension#>;
+	rdfs:label """thermodynamic temperature measurement"""@en;
+	rdfs:subClassOf event:Examination.
+
+quex:AmountOfSubstance
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/quantitiesExtension#>;
+	rdfs:label """amount of substance"""@en;
+	skos:definition """Physical quantity proportional to the number of elementary entities which may be atoms, molecules, ions, electrons, or particles, the choice of which is dependent upon context and must be stated."""@en;
+	rdfs:subClassOf quex:PhysicalQuantity.
+
+# quex:MassDensity rdfs:subClassOf phys:Density.
+
+quex:AmountOfSubstanceConcentration
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/quantitiesExtension#>;
+	rdfs:label """amount-of-substance concentration"""@en;
+	skos:definition """Physical quantity expressing the amount of substance of something per unit of volume."""@en;
+	rdfs:subClassOf quex:Quantity.
+
+quex:Speed
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/quantitiesExtension#>;
+	rdfs:label """speed"""@en;
+	skos:definition """Physical quantity expressing a change of position of something per change of time."""@en;
+	rdfs:subClassOf quex:PhysicalQuantity.
+
+quex:Velocity
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/quantitiesExtension#>;
+	rdfs:label """velocity"""@en;
+	skos:definition """Vector physical quantity expressing a speed of something and its direction."""@en;
+	rdfs:subClassOf quex:PhysicalQuantity, physDynamics:Velocity.
+
+quex:Concentration
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/quantitiesExtension#>;
+	rdfs:label """concentration"""@en;
+	skos:definition """Physical quantity expressing the amount of something per unit of something else."""@en;
+	rdfs:subClassOf quex:PhysicalQuantity.
+
+quex:MassConcentration
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/quantitiesExtension#>;
+	rdfs:label """mass concentration"""@en;
+	skos:definition """Physical quantity expressing the amount of mass of something per unit of something else."""@en;
+	rdfs:subClassOf quex:Concentration.
+
+quex:SolutionConcentration
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/quantitiesExtension#>;
+	rdfs:label """solution concentration"""@en;
+	skos:definition """Physical quantity expressing the amount of a solute per unit of a solution."""@en;
+	rdfs:subClassOf quex:Concentration.
+
+quex:Pressure
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/quantitiesExtension#>;
+	rdfs:label """pressure"""@en;
+	skos:definition """Physical quantity expressing the amount of force applied on a unit surface."""@en;
+	rdfs:subClassOf quex:PhysicalQuantity, pres:Pressure.
+
+quex:ElectricalResistance
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/quantitiesExtension#>;
+	rdfs:label """electrical resistance"""@en;
+	skos:definition """Physical quantity expressing the opposition to the passage of an electric current."""@en;
+	rdfs:subClassOf quex:PhysicalQuantity.
+
+quex:SampleSize
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/quantitiesExtension#>;
+	rdfs:label """sample size"""@en;
+	skos:definition """Number of members in a test sample."""@en;
+	rdfs:subClassOf fos:Group.
+
+#quex:Prevalence
+#	a rdfs:Class;
+#	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/quantitiesExtension#>;
+#	rdfs:label """prevalence"""@en;
+#	skos:definition """Percentage of individuals with a certain feature in a population, divided by the total number of individuals in that population, at a given moment."""@en;
+#	rdfs:subClassOf quex:Percentage.
+
+quex:Sensitivity # true positive rate (TPR), recall, power
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/quantitiesExtension#>;
+	rdfs:label """sensitivity"""@en;
+	skos:definition """Probability a test is positive given a condition, e.g. a human is sick."""@en;
+	rdfs:comment """The higher a sensitivity, the fewer true positive cases go undetected, e.g. the fewer sick people are considered healthy."""@en;
+	# ~ P(+test/+condition), = TP/(TP+FN) = 1 - false negative rate
+	rdfs:subClassOf quex:Ratio.
+
+quex:Specificity # true negative rate (TNR)
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/quantitiesExtension#>;
+	rdfs:label """specificity"""@en;
+	skos:definition """Probability a test is negative given the absence of a condition."""@en;
+	rdfs:comment """The higher a specificity, the more true negative cases are detected, e.g. the fewer healthy people are considered sick."""@en;
+ 	# ~ P(-test/-condition), = TN/(TN+FP) = 1 - aspecificity
+	rdfs:subClassOf quex:Ratio.
+
+quex:Aspecificity # false positive rate (FPR), fall-out, false alarm rate
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/quantitiesExtension#>;
+	rdfs:label """aspecificity"""@en;
+	skos:definition """Probability a test is positive given the absence of a condition."""@en;
+	rdfs:comment """The higher an aspecificity, the more false positive cases are detected, e.g. the more healthy people are considered sick."""@en;
+ 	# ~ P(+test/-condition), = FP/(FP+TN) = 1 - specificity
+	rdfs:subClassOf quex:Ratio.
+
+quex:FalseNegativeRate # FNR
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/quantitiesExtension#>;
+	rdfs:label """false negative rate"""@en;
+	skos:definition """Probability a test is negative given a condition."""@en;
+	rdfs:comment """The higher a false negative rate, the more true positive cases go undetected, e.g. the more sick people are considered healthy."""@en;
+ 	# ~ P(-test/+condition), = FN/(FN+TP) = 1 - Sensitivity
+	rdfs:subClassOf quex:Ratio.
+
+quex:Accuracy
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/quantitiesExtension#>;
+	rdfs:label """accuracy"""@en;
+	skos:definition """Probability a test result is true."""@en;
+	rdfs:comment """The higher an accuracy, the more test results are true."""@en;
+ 	# = (TP+TN)/(TP+TN+FP+FN) = T/total
+	rdfs:subClassOf quex:Ratio.
+
+quex:Precision # positive predictive value (PPV)
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/quantitiesExtension#>;
+	rdfs:label """precision"""@en;
+	skos:definition """Probability a positive test result is true."""@en;
+	rdfs:comment """The higher a precision, the more positive test results are true."""@en;
+ 	# = TP/(TP+FP) = TP/+test
+	rdfs:subClassOf quex:Ratio.
+
+quex:NegativePredictiveValue
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/quantitiesExtension#>;
+	rdfs:label """negative predictive value"""@en;
+	skos:definition """Probability a negative test result is true."""@en;
+	rdfs:comment """The higher a negative predictive value, the more negative test results are true."""@en;
+ 	# TN/(TN+FN) = TN/testN
+	rdfs:subClassOf quex:Ratio.
+
+quex:FalseDiscoveryRate
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/quantitiesExtension#>;
+	rdfs:label """false discovery rate"""@en;
+	skos:definition """Probability a positive test result is false."""@en;
+	rdfs:comment """The higher a false discovery rate, the more positive test results are false."""@en;
+ 	# FP/(FP+TP)
+	rdfs:subClassOf quex:Ratio.
+
+quex:DigitalSize
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/quantitiesExtension#>;
+	rdfs:label """digital size"""@en;
+	skos:definition """Physical quantity expressing the amount of information storage or communication in digital computing."""@en;
+	rdfs:subClassOf quex:PhysicalQuantity, [
+		a owl:Restriction; owl:onProperty quex:hasMeasurement; owl:allValuesFrom [
+			a owl:Restriction; owl:onProperty quex:hasUnit; owl:someValuesFrom [
+				a owl:Restriction; owl:onProperty quex:unitOf; owl:someValuesFrom quex:DigitalSize]]].
+
+# ROC curve (receiver or relative* operating characteristic, signal detection theory):
+# Graphical plot of the sensitivity vs. (1 - specificity) for a binary classifier system as its discrimination threshold is varied; also plot of the fraction of true positives (TPR = true positive rate) vs. the fraction of false positives (FPR = false positive rate).
+
+#Trend
+
+#Correlation
+
+#
+# INSTANCES
+#
+
+quex:increased
+	a event:State;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/quantitiesExtension#>;
+	rdfs:label """increased"""@en;
+	skos:definition """Quantity being increased compared to a reference."""@en;
+	rdfs:comment """Quantity having a bigger measurement value than a reference."""@en.
+
+quex:decreased
+	a event:State;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/quantitiesExtension#>;
+	rdfs:label """decreased"""@en;
+	skos:definition """Quantity being decreased compared to a reference."""@en;
+	rdfs:comment """Quantity having a smaller measurement value than a reference."""@en.
+
+quex:normal
+	a event:State;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/quantitiesExtension#>;
+	rdfs:label """normal"""@en;
+	skos:definition """Being compliant with a reference."""@en;
+	rdfs:comment """State of a quantity having a measurement value within a normative reference value range."""@en.
+
+quex:excessive
+	a event:State;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/quantitiesExtension#>;
+	rdfs:label """excessive"""@en;
+	skos:definition """Quantity being excessive compared to a reference."""@en;
+	rdfs:comment """Quantity having a bigger measurement value than a normative reference value range."""@en.
+
+quex:notExcessive
+	a event:State;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/quantitiesExtension#>;
+	rdfs:label """not excessive"""@en;
+	skos:definition """Quantity being not excessive compared to a reference."""@en;
+	rdfs:comment """Quantity having a not a bigger measurement value than a normative reference value range."""@en.
+
+quex:deficient
+	a event:State;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/quantitiesExtension#>;
+	rdfs:label """deficient"""@en;
+	skos:definition """Quantity being deficient compared to a reference."""@en;
+	rdfs:comment """Quantity having a smaller measurement value than a normative reference value range."""@en.
+
+quex:onceADay
+	a quex:Frequency;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/quantitiesExtension#>;
+	rdfs:label """once a day"""@en; # "o.d."
+	rdfs:comment """E.g. frequency of drug intake"""@en;
+	skos:exactMatch [
+		a skos:Concept; skos:inScheme clinskos:sct20080731; skos:notation "229797004"^^clinskos:sct20080731DT].
+
+quex:twiceADay
+	a quex:Frequency;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/quantitiesExtension#>;
+	rdfs:label """twice a day"""@en; # "b.i.d."
+	rdfs:comment """E.g. frequency of drug intake"""@en;
+	skos:exactMatch [
+		a skos:Concept; skos:inScheme clinskos:sct20080731; skos:notation "229799001"^^clinskos:sct20080731DT].
+	
+quex:thriceADay
+	a quex:Frequency;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/quantitiesExtension#>;
+	rdfs:label """thrice a day"""@en; # "t.i.d."
+	rdfs:comment """E.g. frequency of drug intake"""@en;
+	skos:exactMatch [
+		a skos:Concept; skos:inScheme clinskos:sct20080731; skos:notation "229798009"^^clinskos:sct20080731DT].
+
+#
+# PROPERTIES
+#
+
+# sci:hasQuantity has range sci:Quantity, no domain
+# units:hasValue has domain units:Prefix.
+# units:hasUnit has no domain.
+
+quex:hasQuantity
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/quantitiesExtension#>;
+	skos:definition """Specifying a quantifiable property of something."""@en;
+	rdfs:domain rdfs:Resource;
+	rdfs:range quex:Quantity.
+
+quex:hasPhysicalQuantity
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/quantitiesExtension#>;
+	skos:definition """Specifying a quantifiable physical property of something."""@en;
+	rdfs:subPropertyOf quex:hasQuantity;
+	rdfs:domain dct:PhysicalResource;
+	rdfs:range quex:PhysicalQuantity.
+
+quex:physicalQuantityOf
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/quantitiesExtension#>;
+	skos:definition """Specifying something having a quantifiable physical property."""@en;
+	owl:inverseOf quex:hasPhysicalQuantity.
+
+quex:measuringOf
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/quantitiesExtension#>;
+	skos:definition """Specifying a quantity, measured in a procedure, which is also the object of the output or a measurement."""@en;
+	rdfs:domain quex:Measuring;
+	rdfs:range quex:Quantity.
+
+quex:hasMeasurement
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/quantitiesExtension#>;
+	skos:definition """Specifying a measurement of a quantity."""@en;
+	rdfs:subPropertyOf event:objectOf;
+	rdfs:domain quex:Quantity;
+	rdfs:range quex:Measurement.
+
+quex:measurementOf
+	a owl:ObjectProperty;
+	rdfs:label """measurement of"""@en;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/quantitiesExtension#>;
+	skos:definition """Specifying a quantity of a measurement."""@en;
+	rdfs:subPropertyOf event:hasObject;
+	rdfs:domain quex:Measurement;
+	rdfs:range quex:Quantity.
+
+event:measuredIn
+	a owl:ObjectProperty;
+	rdfs:label """measured in"""@en;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/quantitiesExtension#>;
+	skos:definition """Specifying a measuring of a quantity."""@en;
+	rdfs:subPropertyOf event:outputObjectOf;
+	rdfs:domain quex:Quantity;
+	rdfs:range quex:Measuring.
+
+event:whereinMeasured
+	a owl:ObjectProperty;
+	rdfs:label """wherein measured"""@en;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/quantitiesExtension#>;
+	skos:definition """Specifying a quantity of a measuring."""@en;
+	rdfs:subPropertyOf event:hasOutputObject;
+	rdfs:domain quex:Measuring;
+	rdfs:range quex:Quantity.
+
+quex:hasUnit
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/quantitiesExtension#>;
+	skos:definition """Specifying a unit of a quantity."""@en;
+	rdfs:domain quex:Quantity;
+	rdfs:range units:Unit.
+
+quex:unitOf
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/quantitiesExtension#>;
+	skos:definition """Specifying a quantity having a unit."""@en;
+	owl:inverseOf quex:hasUnit;
+	rdfs:domain units:Unit;
+	rdfs:range quex:Quantity.
+
+quex:hasValue
+	a owl:DatatypeProperty, owl:FunctionalProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/quantitiesExtension#>;
+	skos:definition """Specifying a value of a quantity."""@en;
+	rdfs:domain quex:Quantity;
+	rdfs:range xsd:decimal.
+
+quex:hasLowerValue
+	a owl:DatatypeProperty, owl:FunctionalProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/quantitiesExtension#>;
+	skos:definition """Specifying a lower reference value of a quantity."""@en;
+	rdfs:domain quex:Quantity;
+	rdfs:range xsd:decimal.
+
+quex:hasUpperValue
+	a owl:DatatypeProperty, owl:FunctionalProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/quantitiesExtension#>;
+	skos:definition """Specifying an upper reference value of a quantity."""@en;
+	rdfs:domain quex:Quantity;
+	rdfs:range xsd:decimal.
+
+quex:hasValueIncrease
+	a owl:DatatypeProperty, owl:FunctionalProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/quantitiesExtension#>;
+	skos:definition """Specifying an increase of a value of a quantity compared to a reference."""@en;
+	rdfs:comment """Used in an N3 rule to calculate a value increase."""@en;
+	rdfs:domain quex:Quantity;
+	rdfs:range xsd:decimal.
+
+quex:hasValueDecrease
+	a owl:DatatypeProperty, owl:FunctionalProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/quantitiesExtension#>;
+	skos:definition """Specifying a decrease of a value of a quantity compared to a reference."""@en;
+	rdfs:comment """Used in an N3 rule to calculate a value decrease."""@en;
+	rdfs:domain quex:Quantity;
+	rdfs:range xsd:decimal.
+
+quex:hasValueExcess
+	a owl:DatatypeProperty, owl:FunctionalProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/quantitiesExtension#>;
+	skos:definition """Specifying an excess of a value of a quantity towards a normative reference."""@en;
+	rdfs:comment """Used in an N3 rule to calculate a value excess."""@en;
+	rdfs:domain quex:Quantity;
+	rdfs:range xsd:decimal.
+
+quex:hasValueShortage
+	a owl:DatatypeProperty, owl:FunctionalProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/quantitiesExtension#>;
+	skos:definition """Specifying a shortage of a value of a quantity towards a normative reference."""@en;
+	rdfs:comment """Used in an N3 rule to calculate a value shortage."""@en;
+	rdfs:domain quex:Quantity;
+	rdfs:range xsd:decimal.
+
+quex:valueOf
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/quantitiesExtension#>;
+	skos:definition """Specifying a quantity having a value."""@en;
+	rdfs:domain xsd:decimal;
+	rdfs:range quex:Quantity.
+
+quex:hasTotal
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/quantitiesExtension#>;
+	rdfs:label """has total"""@en;
+	skos:definition """Specifying a total of something."""@en;
+	rdfs:domain rdfs:Resource;
+	rdfs:range quex:Total.
+
+quex:totalOf
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/quantitiesExtension#>;
+	rdfs:label """total of"""@en;
+	skos:definition """Specifying something having a total."""@en;
+	owl:inverseOf quex:hasTotal;
+	rdfs:domain quex:Total;
+	rdfs:range rdfs:Resource.
+
+quex:hasNumerator
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/quantitiesExtension#>;
+	skos:definition """Specifying a numerator of a ratio."""@en;
+	rdfs:range quex:Ratio;
+	rdfs:domain quex:Numerator.
+
+quex:numeratorOf
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/quantitiesExtension#>;
+	skos:definition """Specifying a ratio having a numerator."""@en;
+	owl:inverseOf quex:hasNumerator;
+	rdfs:domain quex:Numerator;
+	rdfs:range quex:Ratio.
+
+quex:hasDenominator
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/quantitiesExtension#>;
+	skos:definition """Specifying a denominator of a ratio."""@en;
+	rdfs:domain quex:Ratio;
+	rdfs:range quex:Denominator.
+
+quex:denominatorOf
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/quantitiesExtension#>;
+	skos:definition """Specifying a ratio having a denominator."""@en;
+	owl:inverseOf quex:hasDenominator;
+	rdfs:domain quex:Denominator;
+	rdfs:range quex:Ratio.
+
+quex:percentageOf
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/quantitiesExtension#>;
+	rdfs:label """percentage of"""@en;
+	skos:definition """Specifying a total of a percentage, set of things that will be counted in a rule as a denominator to calculate a percentage value."""@en;
+	rdfs:domain quex:Percentage;
+	rdfs:range quex:Total.
+
+quex:percentageThat
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/quantitiesExtension#>;
+	rdfs:label """percentage that"""@en;
+	skos:definition """Specifying a part of a percentage, set of things that will be counted in a rule as the numerator to calculate a percentage value."""@en;
+	rdfs:domain quex:Percentage;
+	rdfs:range quex:Part.
+
+quex:partMemberOf
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/quantitiesExtension#>;
+	skos:definition """Specifying a percentage whereof something is a member of a part."""@en;
+	owl:propertyChainAxiom (fos:memberOf quex:numeratorOf);
+	rdfs:domain rdfs:Resource;
+	rdfs:range quex:Percentage.
+
+quex:hasPartMember	# {?pm a [quex:partMemberOf ?p]. ?tm a [quex:totalMemberOf ?p]} => {?pm a [rdfs:subClassOf [is rdf:type of ?tm]]}.
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/quantitiesExtension#>;
+	skos:definition """Specifying a member of a part of a percentage."""@en;
+	owl:inverseOf quex:partMemberOf;
+	owl:propertyChainAxiom (quex:percentageThat fos:hasMember);
+	rdfs:domain quex:Percentage;
+	rdfs:range rdfs:Resource.
+
+quex:totalMemberOf
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/quantitiesExtension#>;
+	skos:definition """Specifying a percentage whereof something is a member of the total."""@en;
+	owl:propertyChainAxiom (fos:memberOf quex:denominatorOf);
+	rdfs:domain rdfs:Resource;
+	rdfs:range quex:Percentage.
+
+quex:hasTotalMember
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/quantitiesExtension#>;
+	skos:definition """Specifying a member of a total of a percentage."""@en;
+	owl:inverseOf quex:totalMemberOf;
+	owl:propertyChainAxiom (quex:hasDenominator fos:hasMember);
+	rdfs:domain quex:Percentage;
+	rdfs:range rdfs:Resource.
+
+quex:counts
+	a owl:DatatypeProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/quantitiesExtension#>;
+	skos:definition """Specifying a number of members in a set."""@en;
+	rdfs:comment """Used in conclusion of a rule with in its antecedent a calculation of the value with a builtin."""@en;
+	rdfs:domain rdfs:Class;
+	rdfs:range xsd:nonNegativeInteger.
+
+quex:hasMinimum
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/quantitiesExtension#>;
+	skos:definition """Specifying the smallest number of a set of numbers."""@en;
+	rdfs:domain rdf:List;
+	rdfs:range quex:Minimum.
+
+quex:minimumOf
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/quantitiesExtension#>;
+	skos:definition """Specifying a set of numbers of which a number is the smallest."""@en;
+	rdfs:domain quex:Minimum;
+	rdfs:range rdf:List.
+
+quex:hasMaximum
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/quantitiesExtension#>;
+	skos:definition """Specifying the largest number of a set of numbers."""@en;
+	rdfs:domain rdf:List;
+	rdfs:range quex:Maximum.
+
+quex:maximumOf
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/quantitiesExtension#>;
+	skos:definition """Specifying a set of numbers of which a number is the largest."""@en;
+	rdfs:domain quex:Maximum;
+	rdfs:range rdf:List.
+
+quex:hasAverage
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/quantitiesExtension#>;
+	skos:definition """Specifying an average of a set of values."""@en;
+	rdfs:domain rdf:List;
+	rdfs:range quex:Average.
+
+quex:averageOf
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/quantitiesExtension#>;
+	skos:definition """Specifying a set of values having an average."""@en;
+	rdfs:domain quex:Average;
+	rdfs:range rdf:List.
+
+quex:hasFrequency
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/quantitiesExtension#>;
+	skos:definition """Specifying a frequency of an event."""@en;
+	rdfs:domain event:Event;
+	rdfs:range quex:Frequency.
+
+quex:frequencyOf
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/quantitiesExtension#>;
+	skos:definition """Specifying an event having a frequency."""@en;
+	owl:inverseOf quex:hasFrequency;
+	rdfs:domain quex:Frequency;
+	rdfs:range event:Event.
+
+quex:hasLength
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/quantitiesExtension#>;
+	skos:definition """Specifying a length of a physical resource."""@en;
+	rdfs:subPropertyOf quex:hasPhysicalQuantity;
+	rdfs:domain dct:PhysicalResource;
+	rdfs:range quex:Length.
+
+quex:hasSurface
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/quantitiesExtension#>;
+	skos:definition """Specifying a surface of a physical resource."""@en;
+	rdfs:subPropertyOf quex:hasPhysicalQuantity;
+	rdfs:domain dct:PhysicalResource;
+	rdfs:range quex:Surface.
+
+quex:hasVolume
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/quantitiesExtension#>;
+	skos:definition """Specifying a volume of a physical resource."""@en;
+	rdfs:subPropertyOf quex:hasPhysicalQuantity;
+	rdfs:domain dct:PhysicalResource;
+	rdfs:range quex:Volume.
+
+quex:hasMass
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/quantitiesExtension#>;
+	skos:definition """Specifying a mass of a physical resource."""@en;
+	rdfs:subPropertyOf quex:hasPhysicalQuantity;
+	rdfs:domain dct:PhysicalResource;
+	rdfs:range quex:Mass.
+
+quex:massOf
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/quantitiesExtension#>;
+	skos:definition """Specifying a physical resource having a mass."""@en;
+	rdfs:subPropertyOf quex:physicalQuantityOf;
+	rdfs:domain quex:Mass;
+	rdfs:range dct:PhysicalResource.

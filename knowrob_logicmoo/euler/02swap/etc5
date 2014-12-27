@@ -1,0 +1,70 @@
+# $Id: etc5 2642 2009-01-30 08:39:46Z josd $
+
+echo \# +++++++++++++++++++++++++++++++++
+echo \# testing euler5 proof on localhost
+echo \# +++++++++++++++++++++++++++++++++
+echo
+echo \# ====================
+echo \# etc5 Socrates mortal
+echo \# ====================
+wget -nv -O- http://localhost/socrates?why=think
+
+echo \# ==================
+echo \# etc5 French cities
+echo \# ==================
+wget -nv -O- http://localhost/graph?why=think
+
+echo \# ============================
+echo \# etc5 Medication prescription
+echo \# ============================
+wget -nv -O- http://localhost/med?why=think
+
+echo \# ==============================
+echo \# etc5 Medication prescription 2
+echo \# ==============================
+wget -nv -O- http://localhost/medic?why=think
+
+echo \# ============================
+echo \# etc5 Schubert\'s steamroller
+echo \# ============================
+wget -nv -O- http://localhost/shubert?why=think
+
+echo \# ===========
+echo \# etc5 RadLex
+echo \# ===========
+wget -nv -O- http://localhost/radlex?why=think
+
+echo \# ====================
+echo \# etc5 Einstein puzzle
+echo \# ====================
+wget -nv -O- http://localhost/einstein?why=think
+
+echo \# ====================
+echo \# etc5 Logic Framework
+echo \# ====================
+wget -nv -O- http://localhost/lf?why=think
+
+echo \# ===================
+echo \# etc5 Gedcom example
+echo \# ===================
+wget -nv -O- http://localhost/gedcom?why=think
+
+echo \# ==================
+echo \# etc5 Test builtins
+echo \# ==================
+wget -nv -O- http://localhost/testb?why=think
+
+echo \# ===============
+echo \# etc5 Exon query
+echo \# ===============
+wget -nv -O- http://localhost/exon?why=think
+
+echo \# =======================================
+echo \# etc5 Leg Length Discrepancy Measurement
+echo \# =======================================
+wget -nv -O- http://localhost/lldm?why=think
+
+echo \# ========================================
+echo \# etc5 She\'s a witch and I have the proof
+echo \# ========================================
+wget -nv -O- http://localhost/witch?why=think

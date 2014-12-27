@@ -1,0 +1,207 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>
+		<meta name="generator" content="AGFA HealthCare N3 to HTML convertor"/>
+		<link rel="alternate" type="text/n3" title="RDF Representation" href="http://eulersharp.sourceforge.net/2003/03swap/eventTime_rules"/>
+		<title>eventTime_rules</title>
+		<style type="text/css">
+			a[href]:link { text-decoration:none; }
+			a[href]:visited { text-decoration:none; }
+			a[href]:active { text-decoration:underline; }
+			a:hover { background:#ffa; }
+			.keyword { font-weight: bold; }
+			.literal { color: blue }
+			.uri { color: darkblue }
+			.qname { color: black }
+			.var { color: gray }
+			.comment { font-style:italic; color: darkgreen }
+		</style>
+	</head>
+	<body>
+	<div>
+		<pre>
+<span class="keyword">@prefix</span> rdfs: <a class="uri" href="http://www.w3.org/2000/01/rdf-schema">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</a>.
+<span class="keyword">@prefix</span> dce: <a class="uri" href="http://purl.org/dc/elements/1.1/">&lt;http://purl.org/dc/elements/1.1/&gt;</a>.
+<span class="keyword">@prefix</span> skos: <a class="uri" href="http://www.w3.org/2004/02/skos/core.html#">&lt;http://www.w3.org/2004/02/skos/core#&gt;</a>.
+<span class="keyword">@prefix</span> log: <a class="uri" href="http://www.w3.org/2000/10/swap/log">&lt;http://www.w3.org/2000/10/swap/log#&gt;</a>.
+<span class="keyword">@prefix</span> math: <a class="uri" href="http://www.w3.org/2000/10/swap/math">&lt;http://www.w3.org/2000/10/swap/math#&gt;</a>.
+<span class="keyword">@prefix</span> e: <a class="uri" href="http://eulersharp.sourceforge.net/2003/03swap/log-rules.html#">&lt;http://eulersharp.sourceforge.net/2003/03swap/log-rules#&gt;</a>.
+<span class="keyword">@prefix</span> time: <a class="uri" href="http://eulersharp.sourceforge.net/2003/03swap/time.html#">&lt;http://eulersharp.sourceforge.net/2003/03swap/time#&gt;</a>.
+
+<a class="uri" href="http://eulersharp.sourceforge.net/2003/03swap/eventTime_rules.html">&lt;http://eulersharp.sourceforge.net/2003/03swap/eventTime_rules&gt;</a>
+	<a class="qname" href="http://purl.org/dc/elements/1.1">dce:title</a> <span class="literal">&quot;&quot;&quot;Event time rules&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://purl.org/dc/elements/1.1">dce:creator</a> <span class="literal">&quot;&quot;&quot;Hans Cools&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://purl.org/dc/elements/1.1">dce:contributor</a> <span class="literal">&quot;&quot;&quot;Jos De Roo, Kristof Depraetere, Romain Endelin&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://purl.org/dc/elements/1.1">dce:publisher</a> <span class="literal">&quot;&quot;&quot;Agfa Healthcare/Belgium&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://purl.org/dc/elements/1.1">dce:description</a> <span class="literal">&quot;&quot;&quot;Rules to describe how 2 events relate in time.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2004/02/skos/core.html#note">skos:note</a> <span class="literal">&quot;&quot;&quot;Using epsilon precision, math:equalTo, log:notEqualTo, and 'past broadening time scope': the longer ago something happened, the broader the time description. E.g. a disease of 20 years ago will not be referred to as on a specific day or even in a month, but in a year.&quot;&quot;&quot;</span>@en;
+	<a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:seeAlso</a>
+		<a class="uri" href="http://eulersharp.sourceforge.net/2006/02swap/rif-plugin.yap">&lt;http://eulersharp.sourceforge.net/2006/02swap/rif-plugin.yap&gt;</a>,
+		<a class="uri" href="http://eulersharp.sourceforge.net/2007/07test/rifP.n3">&lt;http://eulersharp.sourceforge.net/2007/07test/rifP.n3&gt;</a>,
+		<a class="uri" href="http://eulersharp.sourceforge.net/2003/03swap/prolog">&lt;http://eulersharp.sourceforge.net/2003/03swap/prolog&gt;</a>,
+		<a class="uri" href="http://eulersharp.sourceforge.net/2007/07test/biP.n3">&lt;http://eulersharp.sourceforge.net/2007/07test/biP.n3&gt;</a>.
+
+
+<span class="comment"># INTEGRITY CONSTRAINT</span>
+
+<span class="comment">#{?event time:begins ?beginning; time:ends ?end. ?beginning math:notLessThan ?end} =&gt; false.</span>
+
+
+<span class="comment"># BEGINS BEFORE/BEGINS AFTER</span>
+
+{	<span class="var">?event1</span> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/time.html#begins">time:begins</a> <span class="var">?beginning1</span>.
+	<span class="var">?event2</span> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/time.html#begins">time:begins</a> <span class="var">?beginning2</span>.
+	<span class="var">?beginning1</span> <a class="qname" href="http://www.w3.org/2000/10/swap/math">math:lessThan</a> <span class="var">?beginning2</span>.
+} =&gt;
+{	<span class="var">?event1</span> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/time.html#beginsBefore">time:beginsBefore</a> <span class="var">?event2</span>.
+	<span class="var">?event2</span> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/time.html#beginsAfter">time:beginsAfter</a> <span class="var">?event1</span>.
+}.
+
+
+<span class="comment"># ENDS BEFORE/ENDS AFTER</span>
+
+{	<span class="var">?event1</span> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/time.html#ends">time:ends</a> <span class="var">?end1</span>.
+	<span class="var">?event2</span> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/time.html#ends">time:ends</a> <span class="var">?end2</span>.
+	<span class="var">?end1</span> <a class="qname" href="http://www.w3.org/2000/10/swap/math">math:lessThan</a> <span class="var">?end2</span>.
+} =&gt;
+{	<span class="var">?event1</span> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/time.html#endsBefore">time:endsBefore</a> <span class="var">?event2</span>.
+	<span class="var">?event2</span> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/time.html#endsAfter">time:endsAfter</a> <span class="var">?event1</span>.
+}.
+
+
+<span class="comment"># HAS SAME BEGINNING AS</span>
+
+{	<span class="var">?event1</span> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/time.html#begins">time:begins</a> <span class="var">?beginning1</span>.
+	<span class="var">?event2</span> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/time.html#begins">time:begins</a> <span class="var">?beginning2</span>.
+	<span class="var">?event1</span> <a class="qname" href="http://www.w3.org/2000/10/swap/log">log:notEqualTo</a> <span class="var">?event2</span>.
+	<span class="var">?beginning1</span> <a class="qname" href="http://www.w3.org/2000/10/swap/math">math:equalTo</a> <span class="var">?beginning2</span>.
+} =&gt;
+{	<span class="var">?event1</span> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/time.html#hasSameBeginningAs">time:hasSameBeginningAs</a> <span class="var">?event2</span>.
+}.
+
+
+<span class="comment"># HAS SAME END AS</span>
+
+{	<span class="var">?event1</span> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/time.html#ends">time:ends</a> <span class="var">?end1</span>.
+	<span class="var">?event2</span> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/time.html#ends">time:ends</a> <span class="var">?end2</span>.
+	<span class="var">?event1</span> <a class="qname" href="http://www.w3.org/2000/10/swap/log">log:notEqualTo</a> <span class="var">?event2</span>.
+	<span class="var">?end1</span> <a class="qname" href="http://www.w3.org/2000/10/swap/math">math:equalTo</a> <span class="var">?end2</span>.
+} =&gt;
+{	<span class="var">?event1</span> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/time.html#hasSameEndAs">time:hasSameEndAs</a> <span class="var">?event2</span>.
+}.
+
+
+<span class="comment"># BEFORE/AFTER</span>
+
+{	<span class="var">?event1</span> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/time.html#ends">time:ends</a> <span class="var">?end1</span>.
+	<span class="var">?event2</span> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/time.html#begins">time:begins</a> <span class="var">?beginning2</span>.
+	<span class="var">?end1</span> <a class="qname" href="http://www.w3.org/2000/10/swap/math">math:lessThan</a> <span class="var">?beginning2</span>.
+} =&gt;
+{	<span class="var">?event1</span> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/time.html#before">time:before</a> <span class="var">?event2</span>.
+	<span class="var">?event2</span> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/time.html#after">time:after</a> <span class="var">?event1</span>.
+}.
+
+
+<span class="comment"># OVERLAPS</span>
+
+{	<span class="var">?event2</span> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/time.html#begins">time:begins</a> <span class="var">?beginning2</span>.
+	<span class="var">?event1</span> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/time.html#ends">time:ends</a> <span class="var">?end1</span>.
+	<span class="var">?event1</span> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/time.html#beginsBefore">time:beginsBefore</a> <span class="var">?event2</span>.
+	<span class="var">?event1</span> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/time.html#endsBefore">time:endsBefore</a> <span class="var">?event2</span>.
+	<span class="var">?end1</span> <a class="qname" href="http://www.w3.org/2000/10/swap/math">math:greaterThan</a> <span class="var">?beginning2</span>.
+} =&gt;
+{	<span class="var">?event1</span> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/time.html#overlaps">time:overlaps</a> <span class="var">?event2</span>.
+}.
+
+
+<span class="comment"># HAS SAME TIME AS</span>
+
+{	<span class="var">?event1</span> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/time.html#hasSameBeginningAs">time:hasSameBeginningAs</a> <span class="var">?event2</span>.
+	<span class="var">?event1</span> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/time.html#hasSameEndAs">time:hasSameEndAs</a> <span class="var">?event2</span>.
+} =&gt;
+{	<span class="var">?event1</span> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/time.html#hasSameTimeAs">time:hasSameTimeAs</a> <span class="var">?event2</span>.
+}.
+
+
+<span class="comment"># DURING/INCLUDES</span>
+
+{	<span class="var">?event1</span> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/time.html#beginsBefore">time:beginsBefore</a> <span class="var">?event2</span>.
+	<span class="var">?event1</span> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/time.html#hasSameEndAs">time:hasSameEndAs</a> <span class="var">?event2</span>.
+} =&gt;
+{	<span class="var">?event2</span> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/time.html#during">time:during</a> <span class="var">?event1</span>.
+	<span class="var">?event1</span> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/time.html#includes">time:includes</a> <span class="var">?event2</span>.
+}.
+
+{	<span class="var">?event1</span> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/time.html#hasSameBeginningAs">time:hasSameBeginningAs</a> <span class="var">?event2</span>.
+	<span class="var">?event1</span> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/time.html#endsAfter">time:endsAfter</a> <span class="var">?event2</span>.
+} =&gt;
+{	<span class="var">?event2</span> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/time.html#during">time:during</a> <span class="var">?event1</span>.
+	<span class="var">?event1</span> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/time.html#includes">time:includes</a> <span class="var">?event2</span>.
+}.
+
+{	<span class="var">?event1</span> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/time.html#beginsBefore">time:beginsBefore</a> <span class="var">?event2</span>.
+	<span class="var">?event1</span> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/time.html#endsAfter">time:endsAfter</a> <span class="var">?event2</span>.
+} =&gt;
+{	<span class="var">?event2</span> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/time.html#during">time:during</a> <span class="var">?event1</span>.
+	<span class="var">?event1</span> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/time.html#includes">time:includes</a> <span class="var">?event2</span>.
+}.
+
+
+<span class="comment"># HAS DURATION</span>
+
+{	<span class="var">?event</span> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/time.html#begins">time:begins</a> <span class="var">?beginning</span>.
+	<span class="var">?event</span> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/time.html#ends">time:ends</a> <span class="var">?end</span>.
+	(<span class="var">?end</span> <span class="var">?beginning</span>) <a class="qname" href="http://www.w3.org/2000/10/swap/math">math:difference</a> <span class="var">?duration</span>.
+} =&gt;
+{	<span class="var">?event</span> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/time.html#hasDuration">time:hasDuration</a> <span class="var">?duration</span>.
+}.
+
+
+<span class="comment"># HAS SAME DURATION AS</span>
+
+{	<span class="var">?event1</span> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/time.html#hasDuration">time:hasDuration</a> <span class="var">?duration1</span>.
+	<span class="var">?event1</span> <a class="qname" href="http://www.w3.org/2000/10/swap/log">log:notEqualTo</a> <span class="var">?event2</span>.
+	<span class="var">?event2</span> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/time.html#hasDuration">time:hasDuration</a> <span class="var">?duration2</span>.
+	<span class="var">?duration1</span> <a class="qname" href="http://www.w3.org/2000/10/swap/math">math:equalTo</a> <span class="var">?duration2</span>.
+} =&gt;
+{	<span class="var">?event1</span> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/time.html#hasSameDurationAs">time:hasSameDurationAs</a> <span class="var">?event2</span>.
+}.
+
+
+<span class="comment"># TAKES LONGER THAN</span>
+
+{	<span class="var">?event1</span> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/time.html#hasDuration">time:hasDuration</a> <span class="var">?duration1</span>.
+	<span class="var">?event2</span> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/time.html#hasDuration">time:hasDuration</a> <span class="var">?duration2</span>.
+	<span class="var">?duration1</span> <a class="qname" href="http://www.w3.org/2000/10/swap/math">math:greaterThan</a> <span class="var">?duration2</span>.
+} =&gt;
+{	<span class="var">?event1</span> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/time.html#takesLongerThan">time:takesLongerThan</a> <span class="var">?event2</span>.
+}.
+
+
+<span class="comment"># TAKES LESS LONG THAN</span>
+
+{	<span class="var">?event1</span> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/time.html#hasDuration">time:hasDuration</a> <span class="var">?duration1</span>.
+	<span class="var">?event2</span> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/time.html#hasDuration">time:hasDuration</a> <span class="var">?duration2</span>.
+	<span class="var">?duration1</span> <a class="qname" href="http://www.w3.org/2000/10/swap/math">math:lessThan</a> <span class="var">?duration2</span>.
+} =&gt;
+{	<span class="var">?event1</span> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/time.html#takesLessLongThan">time:takesLessLongThan</a> <span class="var">?event2</span>.
+}.
+
+
+<span class="comment"># BEGINS SAME AS END OF/ENDS SAME AS BEGINNING OF</span>
+
+{
+    <span class="var">?event1</span> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/time.html#begins">time:begins</a> <span class="var">?beginning1</span> .
+    <span class="var">?event2</span> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/time.html#ends">time:ends</a> <span class="var">?end2</span> .
+    <span class="var">?beginning1</span> <a class="qname" href="http://www.w3.org/2000/10/swap/math">math:equalTo</a> <span class="var">?end2</span> .
+} =&gt;
+{
+    <span class="var">?event1</span> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/time.html#beginsSameAsEndOf">time:beginsSameAsEndOf</a> <span class="var">?event2</span> .
+    <span class="var">?event2</span> <a class="qname" href="http://eulersharp.sourceforge.net/2003/03swap/time.html#endsSameAsBeginningOf">time:endsSameAsBeginningOf</a> <span class="var">?event1</span> .
+} .
+
+		</pre>
+	</div>
+	</body>
+</html>

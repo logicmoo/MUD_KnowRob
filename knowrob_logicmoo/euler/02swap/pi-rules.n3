@@ -1,0 +1,42 @@
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix pi: <http://eulersharp.sourceforge.net/2003/03swap/pi-rules#>.
+
+
+### Pi-Calculus
+# see http://www.lfcs.inf.ed.ac.uk/reports/89/ECS-LFCS-89-85/ECS-LFCS-89-85.ps
+#     http://www.lfcs.inf.ed.ac.uk/reports/89/ECS-LFCS-89-86/ECS-LFCS-89-86.ps
+#
+# We presuppose an infinite set N of names, and let u, v, w, x, y, z range over names.
+# We also presuppose a set K of agent identifiers, each with an arity an integer >= 0.
+# We let A, B, C, ... range over agent identifiers. We now let P, Q, R, ... range
+# over the agents or process expressions, which are of six kinds as follows:
+
+pi:Process a rdfs:Class.
+pi:Port a rdfs:Class.
+
+
+# A summation P1 + P2
+# -------------------
+# sum_i Pi where the index set I is finite.
+# This agent behaves like one or other of the Pi. We write 0 for the empty
+# summation, and call it inaction; this is the agent which can do nothing.
+
+pi:summationOf a rdf:Property; rdfs:domain pi:Process; rdfs:range pi:Process.
+pi:substitutableBy a rdf:Property; rdfs:domain pi:Process; rdfs:range pi:Process.
+
+{?P a pi:Process} => {?P pi:substitutableBy ?P}.
+{?P1 pi:summationOf ?P2. ?P2 pi:substitutableBy ?P3} => {?P1 pi:substitutableBy ?P3}.
+
+
+# A composition P1 | P2
+# ---------------------
+# This agent consists of P1 and P2 acting in parallel. The components may
+# act independently; also, an output action of P1 (resp. P2) at any output
+# port x may synchronize with an input action of P2 (resp. P1) at x, to create
+# a silent (tau) action of the composite agent P1 | P2 .
+
+pi:compositionOf a rdf:Property; rdfs:domain pi:Process; rdfs:range pi:Process.

@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>
+		<meta name="generator" content="AGFA HealthCare N3 to HTML convertor"/>
+		<link rel="alternate" type="text/n3" title="RDF Representation" href="http://eulersharp.sourceforge.net/2003/03swap/pi-rules"/>
+		<title>pi-rules</title>
+		<style type="text/css">
+			a[href]:link { text-decoration:none; }
+			a[href]:visited { text-decoration:none; }
+			a[href]:active { text-decoration:underline; }
+			a:hover { background:#ffa; }
+			.keyword { font-weight: bold; }
+			.literal { color: blue }
+			.uri { color: darkblue }
+			.qname { color: black }
+			.var { color: gray }
+			.comment { font-style:italic; color: darkgreen }
+		</style>
+	</head>
+	<body>
+	<div>
+		<pre>
+<span class="keyword">@prefix</span> log: <a class="uri" href="http://www.w3.org/2000/10/swap/log">&lt;http://www.w3.org/2000/10/swap/log#&gt;</a>.
+<span class="keyword">@prefix</span> owl: <a class="uri" href="http://www.w3.org/2002/07/owl">&lt;http://www.w3.org/2002/07/owl#&gt;</a>.
+<span class="keyword">@prefix</span> xsd: <a class="uri" href="http://www.w3.org/2001/XMLSchema">&lt;http://www.w3.org/2001/XMLSchema#&gt;</a>.
+<span class="keyword">@prefix</span> rdfs: <a class="uri" href="http://www.w3.org/2000/01/rdf-schema">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</a>.
+<span class="keyword">@prefix</span> rdf: <a class="uri" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</a>.
+<span class="keyword">@prefix</span> pi: <a class="uri" href="#">&lt;http://eulersharp.sourceforge.net/2003/03swap/pi-rules#&gt;</a>.
+
+
+<span class="comment">### Pi-Calculus</span>
+<span class="comment"># see http://www.lfcs.inf.ed.ac.uk/reports/89/ECS-LFCS-89-85/ECS-LFCS-89-85.ps</span>
+<span class="comment">#     http://www.lfcs.inf.ed.ac.uk/reports/89/ECS-LFCS-89-86/ECS-LFCS-89-86.ps</span>
+<span class="comment">#</span>
+<span class="comment"># We presuppose an infinite set N of names, and let u, v, w, x, y, z range over names.</span>
+<span class="comment"># We also presuppose a set K of agent identifiers, each with an arity an integer &gt;= 0.</span>
+<span class="comment"># We let A, B, C, ... range over agent identifiers. We now let P, Q, R, ... range</span>
+<span class="comment"># over the agents or process expressions, which are of six kinds as follows:</span>
+
+<a class="qname" name="Process">pi:Process</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>.
+<a class="qname" name="Port">pi:Port</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:Class</a>.
+
+
+<span class="comment"># A summation P1 + P2</span>
+<span class="comment"># -------------------</span>
+<span class="comment"># sum_i Pi where the index set I is finite.</span>
+<span class="comment"># This agent behaves like one or other of the Pi. We write 0 for the empty</span>
+<span class="comment"># summation, and call it inaction; this is the agent which can do nothing.</span>
+
+<a class="qname" name="summationOf">pi:summationOf</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">rdf:Property</a>; <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="#Process">pi:Process</a>; <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="#Process">pi:Process</a>.
+<a class="qname" name="substitutableBy">pi:substitutableBy</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">rdf:Property</a>; <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="#Process">pi:Process</a>; <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="#Process">pi:Process</a>.
+
+{<span class="var">?P</span> <span class="keyword">a</span> <a class="qname" href="#Process">pi:Process</a>} =&gt; {<span class="var">?P</span> <a class="qname" href="#substitutableBy">pi:substitutableBy</a> <span class="var">?P</span>}.
+{<span class="var">?P1</span> <a class="qname" href="#summationOf">pi:summationOf</a> <span class="var">?P2</span>. <span class="var">?P2</span> <a class="qname" href="#substitutableBy">pi:substitutableBy</a> <span class="var">?P3</span>} =&gt; {<span class="var">?P1</span> <a class="qname" href="#substitutableBy">pi:substitutableBy</a> <span class="var">?P3</span>}.
+
+
+<span class="comment"># A composition P1 | P2</span>
+<span class="comment"># ---------------------</span>
+<span class="comment"># This agent consists of P1 and P2 acting in parallel. The components may</span>
+<span class="comment"># act independently; also, an output action of P1 (resp. P2) at any output</span>
+<span class="comment"># port x may synchronize with an input action of P2 (resp. P1) at x, to create</span>
+<span class="comment"># a silent (tau) action of the composite agent P1 | P2 .</span>
+
+<a class="qname" name="compositionOf">pi:compositionOf</a> <span class="keyword">a</span> <a class="qname" href="http://www.w3.org/1999/02/22-rdf-syntax-ns">rdf:Property</a>; <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:domain</a> <a class="qname" href="#Process">pi:Process</a>; <a class="qname" href="http://www.w3.org/2000/01/rdf-schema">rdfs:range</a> <a class="qname" href="#Process">pi:Process</a>.
+		</pre>
+	</div>
+	</body>
+</html>

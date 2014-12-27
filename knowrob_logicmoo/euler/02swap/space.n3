@@ -1,0 +1,365 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix dce: <http://purl.org/dc/elements/1.1/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#>.
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+@prefix spaceobject: <http://sweet.jpl.nasa.gov/2.3/reprSpaceGeometry.owl#>.
+@prefix event: <http://eulersharp.sourceforge.net/2003/03swap/event#>.
+@prefix quant: <http://eulersharp.sourceforge.net/2003/03swap/quantities#>.
+@prefix space: <http://eulersharp.sourceforge.net/2003/03swap/space#>.
+
+<http://eulersharp.sourceforge.net/2003/03swap/space>
+	a owl:Ontology;
+	dce:title """Space"""@en;
+	dce:creator """Hans Cools, MD, Agfa Healthcare, Belgium"""@en;
+	dce:publisher """Agfa Healthcare/Belgium"""@en;
+	dce:description """Formal description of space."""@en;
+	rdfs:seeAlso <http://www.w3.org/2003/01/geo/wgs84_pos>, <http://sweet.jpl.nasa.gov/2.3/reprSpaceGeometry.owl>;
+	dce:format """OWL Full"""@en.
+
+#
+# CLASSES
+#
+
+space:SpatialResource
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/space#>;
+	rdfs:label """spatial resource"""@en;
+	skos:definition """Resource with 0 to 3 dimensions."""@en;
+	rdfs:subClassOf geo:SpatialThing, spaceobject:GeometricalObject.
+
+space:Point
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/space#>;
+	rdfs:label """spatial point"""@en;
+	skos:definition """Spatial resource without spatial dimension."""@en;
+	rdfs:subClassOf space:SpatialResource, spaceobject:Point.
+
+space:OneDimensionalSpatialResource
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/space#>;
+	rdfs:label """one-dimensional spatial resource"""@en;
+	skos:definition """Spatial resource having 1 spatial dimension."""@en;
+	rdfs:subClassOf space:SpatialResource, spaceobject:GeometricalObject_1D.
+
+space:Curve
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/space#>;
+	rdfs:label """curve"""@en;
+	skos:definition """one-dimensional spatial resource consisting of points extending in any direction."""@en;
+	rdfs:subClassOf space:OneDimensionalSpatialResource, spaceobject:Curve.
+
+space:Line
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/space#>;
+	dce:source <http://en.wikipedia.org/wiki/Line#>;
+	rdfs:label """line"""@en;
+	skos:definition """Straight curve OR curve without curvature OR curve consisting of points extending in one direction."""@en;
+	rdfs:subClassOf space:Curve, spaceobject:Line.
+
+space:TwoDimensionalSpatialResource
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/space#>;
+	rdfs:label """two-dimensional spatial resource"""@en;
+	skos:definition """Spatial resource having 2 spatial dimensions."""@en;
+	rdfs:subClassOf space:SpatialResource, spaceobject:GeometricalObject_2D.
+
+space:ThreeDimensionalSpatialResource
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/space#>;
+	rdfs:label """three-dimensional spatial resource"""@en;
+	skos:definition """Spatial resource having 3 spatial dimensions."""@en;
+	rdfs:subClassOf space:SpatialResource, spaceobject:GeometricalObject_3D.
+
+space:Polygon
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/space#>;
+	dce:source <http://en.wikipedia.org/wiki/Polygon#>;
+	rdfs:label """polygon"""@en;
+	skos:definition """Flat two-dimensional spatial resource with at least 3 straight lines joined to form a closed chain."""@en;
+	rdfs:subClassOf space:TwoDimensionalSpatialResource, spaceobject:Polygon.
+
+space:Side
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/space#>;
+	dce:source <http://en.wikipedia.org/wiki/Polygon#>;
+	rdfs:label """side"""@en;
+	skos:definition """Straight line of a polygon."""@en;
+	rdfs:subClassOf space:Line.
+
+space:Quadrilateral
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/space#>;
+	dce:source <http://en.wikipedia.org/wiki/Quadrilateral#>;
+	rdfs:label """quadrilateral"""@en;
+	skos:definition """Polygon with four sides."""@en;
+	rdfs:subClassOf space:Polygon.
+
+space:Rectangle
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/space#>;
+	dce:source <http://en.wikipedia.org/wiki/Rectangle#>;
+	rdfs:label """rectangle"""@en;
+	skos:definition """Quadrilateral with four right angles."""@en;
+	rdfs:subClassOf space:Quadrilateral, spaceobject:Rectangle.
+
+space:Length
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/space#>;
+	dce:source <http://en.wikipedia.org/wiki/Rectangle#>;
+	rdfs:label """length"""@en;
+	skos:definition """Longer side of a rectangle."""@en;
+	rdfs:subClassOf space:Side.
+
+space:Width
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/space#>;
+	dce:source <http://en.wikipedia.org/wiki/Rectangle#>;
+	rdfs:label """width"""@en;
+	skos:definition """Shorter side of a rectangle."""@en;
+	rdfs:subClassOf space:Side.
+
+space:Square
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/space#>;
+	dce:source <http://en.wikipedia.org/wiki/Square#>;
+	rdfs:label """square"""@en;
+	skos:definition """Rectangle with two adjacent sides having equal length OR regular quadrilateral."""@en;
+	rdfs:subClassOf space:Rectangle, spaceobject:Square.
+
+space:Surface
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/space#>;
+	rdfs:label """surface"""@en;
+	skos:definition """Two-dimensional boundary of a 3-dimensional spatial resource."""@en;
+	rdfs:subClassOf space:TwoDimensionalSpatialResource.
+
+space:OuterSurface
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/space#>;
+	rdfs:label """outer surface"""@en;
+	skos:definition """Outer two-dimensional boundary of a 3-dimensional spatial resource."""@en;
+	rdfs:subClassOf space:Surface.
+
+space:Centroid
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/space#>;
+	dce:source <http://en.wikipedia.org/wiki/Centroid#>;
+	rdfs:label """centroid"""@en;
+	skos:definition """Intersection of all straight lines dividing object X in 2-dimensional space into two parts of equal moment about the line. Informally, it is the "average" (arithmetic mean) of all points of X. The definition extends to any object X in n-dimensional space: its centroid is the intersection of all hyperplanes that divide X into two parts of equal moment."""@en;
+	rdfs:subClassOf space:Point.
+
+space:XCoordinate
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/space#>;
+	rdfs:label """X coordinate"""@en;
+	skos:definition """X coordinate in a Cartesian coordinate system."""@en;
+	rdfs:subClassOf quant:Length.
+
+space:YCoordinate
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/space#>;
+	rdfs:label """Y coordinate"""@en;
+	skos:definition """Y coordinate in a Cartesian coordinate system."""@en;
+	rdfs:subClassOf quant:Length.
+
+space:ZCoordinate
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/space#>;
+	rdfs:label """Z coordinate"""@en;
+	skos:definition """Z coordinate in a Cartesian coordinate system."""@en;
+	rdfs:subClassOf quant:Length.
+
+space:Transferring
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/space#>;
+	rdfs:label """transferring"""@en;
+	skos:definition """Bringing something from one place to another."""@en;
+	rdfs:subClassOf event:Action.
+
+space:Transfer
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/space#>;
+	rdfs:label """transfer"""@en;
+	skos:definition """Something brought from one place to another."""@en;
+	rdfs:subClassOf [a owl:Restriction; owl:onProperty event:outputOf; owl:allValuesFrom space:Transferring].
+
+#
+# PROPERTIES
+#
+
+space:locatedIn
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/space#>;
+	skos:definition """Specifying a spatial resource wherein a spatial resource is located."""@en;
+	rdfs:domain space:SpatialResource;
+	rdfs:range space:SpatialResource.
+
+space:whereinLocated
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/space#>;
+	skos:definition """Specifying a spatial resource located in a spatial resource."""@en;
+	rdfs:domain space:SpatialResource;
+	rdfs:range space:SpatialResource.
+
+space:locatedOn
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/space#>;
+	skos:definition """Specifying a surface whereon a spatial resource is located."""@en;
+	rdfs:domain space:SpatialResource;
+	rdfs:range space:Surface.
+
+space:whereonLocated
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/space#>;
+	skos:definition """Specifying a spatial resource located on a surface."""@en;
+	rdfs:domain space:Surface;
+	rdfs:range space:SpatialResource.
+
+space:contains
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/space#>;
+	skos:definition """Specifying something physically contained by something else."""@en;
+	owl:propertyChainAxiom (space:contains foaf:member);
+	rdfs:domain dct:PhysicalResource;
+	rdfs:range dct:PhysicalResource.
+
+space:containedBy
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/space#>;
+	skos:definition """Specifying something physically containing something else."""@en;
+	owl:inverseOf space:contains;
+	rdfs:domain dct:PhysicalResource;
+	rdfs:range dct:PhysicalResource.
+
+space:hasSide
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/space#>;
+	skos:definition """Specifying a side of a polygon."""@en;
+	rdfs:domain space:Polygon;
+	rdfs:range space:Side.
+
+space:hasLength
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/space#>;
+	skos:definition """Specifying a length of a rectangle."""@en;
+	rdfs:domain space:Rectangle;
+	rdfs:range space:Length.
+
+space:hasWidth
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/space#>;
+	skos:definition """Specifying a width of a rectangle."""@en;
+	rdfs:domain space:Rectangle;
+	rdfs:range space:Width.
+
+space:hasPoint
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/space#>;
+	skos:definition """Specifying a point of a spatial resource."""@en;
+	rdfs:subPropertyOf space:whereinLocated;
+	rdfs:domain space:SpatialResource;
+	rdfs:range space:Point.
+
+space:hasCentroid
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/space#>;
+	skos:definition """Specifying a centroid of a spatial thing."""@en;
+	rdfs:subPropertyOf space:hasPoint;
+	rdfs:domain space:SpatialResource;
+	rdfs:range space:Centroid.
+
+space:hasUpperLeftAngle
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/space#>;
+	skos:definition """Specifying an upper left angle of a rectangle."""@en;
+	rdfs:subPropertyOf space:hasPoint;
+	rdfs:domain space:Rectangle;
+	rdfs:range space:Point.
+
+space:hasLowerLeftAngle
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/space#>;
+	skos:definition """Specifying a lower left angle of a rectangle."""@en;
+	rdfs:subPropertyOf space:hasPoint;
+	rdfs:domain space:Rectangle;
+	rdfs:range space:Point.
+
+space:hasPosition
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/space#>;
+	skos:definition """Specifying a position of a spatial resource."""@en;
+	rdfs:comment """A position is described by 0 to n coordinates."""@en;
+	rdfs:subPropertyOf geo:location;
+	rdfs:domain space:SpatialResource;
+	rdfs:range space:Point.
+
+space:hasXCoordinate
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/space#>;
+	skos:definition """Specifying an X coordinate of a point in space."""@en;
+	rdfs:subPropertyOf quant:hasLength;
+	rdfs:domain space:Point;
+	rdfs:range space:XCoordinate.
+
+space:hasYCoordinate
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/space#>;
+	skos:definition """Specifying a Y coordinate of a point in space."""@en;
+	rdfs:subPropertyOf quant:hasLength;
+	rdfs:domain space:Point;
+	rdfs:range space:YCoordinate.
+
+space:hasZCoordinate
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/space#>;
+	skos:definition """Specifying a Z coordinate of a point in space."""@en;
+	rdfs:subPropertyOf quant:hasLength;
+	rdfs:domain space:Point;
+	rdfs:range space:ZCoordinate.
+
+space:from
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/space#>;
+	skos:definition """Specifying a location something is being transferred from."""@en;
+	rdfs:domain space:Transferring;
+	rdfs:range space:SpatialResource.
+
+space:to
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/space#>;
+	skos:definition """Specifying a location something is being transferred to."""@en;
+	rdfs:domain space:Transferring;
+	rdfs:range space:SpatialResource.
+
+space:transferredFrom
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/space#>;
+	skos:definition """Specifying a location something is transferred from."""@en;
+	rdfs:domain rdfs:Resource;
+	rdfs:range space:SpatialResource.
+
+space:transferredTo
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/space#>;
+	skos:definition """Specifying a location something is transferred to."""@en;
+	rdfs:domain rdfs:Resource;
+	rdfs:range space:SpatialResource.
+
+space:transferringOf	# space:whereinTransferred
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/space#>;
+	skos:definition """Specifying something transferred in a transferring."""@en;
+	rdfs:subPropertyOf event:hasOutputObject;
+	rdfs:domain space:Transferring;
+	rdfs:range rdfs:Resource.
+	
+space:transferOf
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/space#>;
+	skos:definition """Specifying something transferred."""@en;
+	rdfs:subPropertyOf event:hasObject;
+	rdfs:domain space:Transfer;
+	rdfs:range rdfs:Resource.

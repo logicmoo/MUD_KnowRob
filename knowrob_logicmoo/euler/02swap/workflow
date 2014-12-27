@@ -1,0 +1,132 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix dce: <http://purl.org/dc/elements/1.1/>.
+@prefix event: <http://eulersharp.sourceforge.net/2003/03swap/event#>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix agent: <http://eulersharp.sourceforge.net/2003/03swap/agent#>.
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+@prefix workflow: <http://eulersharp.sourceforge.net/2003/03swap/workflow#>.
+
+<http://eulersharp.sourceforge.net/2003/03swap/workflow>
+	a owl:Ontology;
+	dce:title """Workflow"""@en;
+	dce:creator """Hans Cools, MD; Agfa Healthcare/Belgium"""@en;
+	dce:publisher """Agfa Healthcare, Belgium"""@en;
+	dce:description """Formal description of how work in a organization or other system is planned and executed."""@en;
+	dce:source """http://www.workflowpatterns.com/"""@en;
+	dce:format """OWL Full"""@en.
+
+#
+# CLASSES
+#
+
+workflow:Workflow
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/workflow#>;
+	rdfs:label """workflow"""@en;
+	skos:definition """Sequence of concatenated steps as abstraction of real work."""@en;
+	rdfs:comment"""Both plan and execution."""@en.
+
+workflow:Action
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/workflow#>;
+	rdfs:label """workflow action"""@en;
+	skos:definition """One of a sequence of concatenated steps as abstraction of real work."""@en;
+	rdfs:comment"""Both plan and execution."""@en.
+
+workflow:Resource
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/workflow#>;
+	rdfs:label """workflow action resource"""@en;
+	skos:definition """Resource for an action."""@en.
+
+workflow:Agent
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/workflow#>;
+	rdfs:label """workflow agent"""@en;
+	skos:definition """Agent for an action."""@en;
+	rdfs:comment """Agent can be e.g. person, group, organization, mechanism."""@en.
+
+workflow:Input
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/workflow#>;
+	rdfs:label """workflow action input"""@en;
+	skos:definition """Input of an action."""@en.
+
+workflow:Output
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/workflow#>;
+	rdfs:label """workflow action output"""@en;
+	skos:definition """Output of an action."""@en.
+
+workflow:Role
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/workflow#>;
+	rdfs:label """workflow agent role"""@en;
+	skos:definition """Role of an agent."""@en.
+
+workflow:Pattern
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/workflow#>;
+	rdfs:label """workflow pattern"""@en;
+	skos:definition """Way of executing actions."""@en.
+
+workflow:Sequence # sequential routing, serial routing
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/workflow#>;
+	rdfs:label """workflow sequence"""@en;
+	skos:definition """Workflow pattern describing enabling an action after completion of a preceding action in the same workflow."""@en;
+	rdfs:subClassOf workflow:Pattern.
+
+workflow:ParallelSplit # AND-split, parallel routing, parallel split, fork
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/workflow#>;
+	rdfs:label """workflow parallel split"""@en;
+	skos:definition """Workflow pattern describing enabling 2 or more simultaneous actions after completion of a preceding action in the same workflow."""@en;
+	rdfs:subClassOf workflow:Pattern.
+
+workflow:Synchronization # AND-join, rendezvous, synchronizer
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/workflow#>;
+	rdfs:label """workflow synchronization"""@en;
+	skos:definition """Workflow pattern describing enabling an action after completion of 2 or more simultaneous preceding actions in the same workflow."""@en;
+	rdfs:subClassOf workflow:Pattern.
+
+workflow:ExclusiveChoice # XOR-split, exclusive OR-split, conditional routing, switch, decision, case statement
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/workflow#>;
+	rdfs:label """workflow exclusive choice"""@en;
+	skos:definition """Workflow pattern describing enabling an action chosen from 2 or more actions, after completion of a preceding action in the same workflow."""@en;
+	rdfs:subClassOf workflow:Pattern.
+
+workflow:SimpleMerge # XOR-join, exclusive OR-join, asynchronous join, merge
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/workflow#>;
+	rdfs:label """workflow simple merge"""@en;
+	skos:definition """Workflow pattern describing enabling an action after completion of a preceding action chosen from 2 or more actions, in the same workflow."""@en;
+	rdfs:subClassOf workflow:Pattern.
+
+#
+# PROPERTIES
+#
+
+workflow:hasWorkflow
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/workflow#>;
+	skos:definition """Specifying a workflow of an agent."""@en;
+	rdfs:domain foaf:Agent;
+	rdfs:range workflow:Workflow.
+
+workflow:hasAction
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/workflow#>;
+	skos:definition """Specifying an action of a workflow."""@en;
+	rdfs:domain workflow:Workflow;
+	rdfs:range workflow:Action.
+
+workflow:actionOf
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/workflow#>;
+	skos:definition """Specifying a workflow having an action."""@en;
+	rdfs:domain workflow:Action;
+	rdfs:range workflow:Workflow.

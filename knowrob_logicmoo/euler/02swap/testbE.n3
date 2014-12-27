@@ -1,0 +1,206 @@
+#Processed by Id: euler.yap,v 1.116 2006/11/12 00:17:11 josd Exp 
+
+@prefix math: <http://www.w3.org/2000/10/swap/math#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix list: <http://www.w3.org/2000/10/swap/list#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rpo: <http://eulersharp.sourceforge.net/2003/03swap/rpo-rules#>.
+@prefix r: <http://www.w3.org/2000/10/swap/reason#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix fn: <http://www.w3.org/2006/xpath-functions#>.
+@prefix time: <http://www.w3.org/2000/10/swap/time#>.
+@prefix : <http://eulersharp.sourceforge.net/2006/02swap/testbuiltins#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix var: <http://localhost/var#>.
+@prefix m: <http://eulersharp.sourceforge.net/2006/02swap/med#>.
+@prefix str: <http://www.w3.org/2000/10/swap/string#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix n3: <http://www.w3.org/2004/06/rei#>.
+
+[ a r:Proof, r:Conjunction;
+  r:component [ a r:Inference; r:gives {log:includes :test :ok}; r:evidence (
+    [ a r:Fact; r:gives {{:b :a :c. :e :d :f. :h :g :i. :k :j :l} log:includes {:k :j :l. :e :d :f}}]);
+    r:binding [ r:variable [ n3:uri "http://localhost/var#X"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2006/02swap/testbuiltins#e"]]; 
+    r:binding [ r:variable [ n3:uri "http://localhost/var#Z"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2006/02swap/testbuiltins#f"]]; 
+    r:rule [ a r:Extraction; r:gives {@forAll var:X,var:Z. {{:b :a :c. :e :d :f. :h :g :i. :k :j :l} log:includes {:k :j :l. var:X :d var:Z}} => {log:includes :test :ok}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/testbuiltins.n3>]]];
+  r:component [ a r:Inference; r:gives {log:includes :test :ok1}; r:evidence (
+    [ a r:Extraction; r:gives {:ng1 :namedGraph {:b :a :c. :e :d :f. :h :g :i. :k :j :l}}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/testdata.n3>]]
+    [ a r:Fact; r:gives {{:b :a :c. :e :d :f. :h :g :i. :k :j :l} log:includes {:k :j :l. :e :d :f}}]);
+    r:binding [ r:variable [ n3:uri "http://localhost/var#F"]; r:boundTo {:b :a :c. :e :d :f. :h :g :i. :k :j :l}]; 
+    r:binding [ r:variable [ n3:uri "http://localhost/var#X"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2006/02swap/testbuiltins#e"]]; 
+    r:binding [ r:variable [ n3:uri "http://localhost/var#Y"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2006/02swap/testbuiltins#f"]]; 
+    r:rule [ a r:Extraction; r:gives {@forAll var:F,var:X,var:Y. {:ng1 :namedGraph var:F. var:F log:includes {:k :j :l. var:X :d var:Y}} => {log:includes :test :ok1}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/testbuiltins.n3>]]];
+  r:component [ a r:Inference; r:gives {log:includes :test :ok2}; r:evidence (
+    [ a r:Fact; r:gives {<http://www.agfa.com/w3c/euler/medic.n3> log:semantics {(m:Ann m:Fever) rpo:mu 0.8. (m:Ann m:AllergyForAspirin) rpo:mu 0.001. (m:Joe m:AcuteMyocardialInfarction) rpo:mu 0.9. (m:Joe m:ActivePepticUlcerDisease) rpo:mu 0.006. (m:Joe m:AllergyForAspirin) rpo:mu 0.001. (m:Joe m:SevereAsthma) rpo:mu 0.001. (m:Joe m:ChronicObstructivePumonaryDisease) rpo:mu 0.001. m:aspirinHighDose m:prescribedFor m:Fever. m:aspirinLowDose m:prescribedFor m:AcuteMyocardialInfarction. m:betaBlocker m:prescribedFor m:AcuteMyocardialInfarction. m:aspirinHighDose m:excludedFor m:ActivePepticUlcerDisease. m:aspirinHighDose m:excludedFor m:AllergyForAspirin. m:aspirinLowDose m:excludedFor m:ActivePepticUlcerDisease. m:aspirinLowDose m:excludedFor m:AllergyForAspirin. m:betaBlocker m:excludedFor m:SevereAsthma. m:betaBlocker m:excludedFor m:ChronicObstructivePumonaryDisease. {var:_2027 m:prescribedFor var:_2028. (var:_2037 var:_2028) rpo:mu var:_2035. var:_2035 math:greaterThan 0.7. var:_2052 e:findall (var:_2055 {var:_2027 m:excludedFor var:_2055} var:_2065). var:_2052 e:findall (var:_2055 {var:_2027 m:excludedFor var:_2055. (var:_2037 var:_2055) rpo:mu var:_2089. var:_2089 math:notGreaterThan 0.01} var:_2065)} log:implies {var:_2037 m:isPrescribed var:_2027}}}]
+    [ a r:Fact; r:gives {{(m:Ann m:Fever) rpo:mu 0.8. (m:Ann m:AllergyForAspirin) rpo:mu 0.001. (m:Joe m:AcuteMyocardialInfarction) rpo:mu 0.9. (m:Joe m:ActivePepticUlcerDisease) rpo:mu 0.006. (m:Joe m:AllergyForAspirin) rpo:mu 0.001. (m:Joe m:SevereAsthma) rpo:mu 0.001. (m:Joe m:ChronicObstructivePumonaryDisease) rpo:mu 0.001. m:aspirinHighDose m:prescribedFor m:Fever. m:aspirinLowDose m:prescribedFor m:AcuteMyocardialInfarction. m:betaBlocker m:prescribedFor m:AcuteMyocardialInfarction. m:aspirinHighDose m:excludedFor m:ActivePepticUlcerDisease. m:aspirinHighDose m:excludedFor m:AllergyForAspirin. m:aspirinLowDose m:excludedFor m:ActivePepticUlcerDisease. m:aspirinLowDose m:excludedFor m:AllergyForAspirin. m:betaBlocker m:excludedFor m:SevereAsthma. m:betaBlocker m:excludedFor m:ChronicObstructivePumonaryDisease. {var:_2027 m:prescribedFor var:_2028. (var:_2037 var:_2028) rpo:mu var:_2035. var:_2035 math:greaterThan 0.7. var:_2052 e:findall (var:_2055 {var:_2027 m:excludedFor var:_2055} var:_2065). var:_2052 e:findall (var:_2055 {var:_2027 m:excludedFor var:_2055. (var:_2037 var:_2055) rpo:mu var:_2089. var:_2089 math:notGreaterThan 0.01} var:_2065)} log:implies {var:_2037 m:isPrescribed var:_2027}} log:includes {m:aspirinHighDose m:excludedFor m:AllergyForAspirin}}]);
+    r:binding [ r:variable [ n3:uri "http://localhost/var#F"]; r:boundTo {(m:Ann m:Fever) rpo:mu 0.8. (m:Ann m:AllergyForAspirin) rpo:mu 0.001. (m:Joe m:AcuteMyocardialInfarction) rpo:mu 0.9. (m:Joe m:ActivePepticUlcerDisease) rpo:mu 0.006. (m:Joe m:AllergyForAspirin) rpo:mu 0.001. (m:Joe m:SevereAsthma) rpo:mu 0.001. (m:Joe m:ChronicObstructivePumonaryDisease) rpo:mu 0.001. m:aspirinHighDose m:prescribedFor m:Fever. m:aspirinLowDose m:prescribedFor m:AcuteMyocardialInfarction. m:betaBlocker m:prescribedFor m:AcuteMyocardialInfarction. m:aspirinHighDose m:excludedFor m:ActivePepticUlcerDisease. m:aspirinHighDose m:excludedFor m:AllergyForAspirin. m:aspirinLowDose m:excludedFor m:ActivePepticUlcerDisease. m:aspirinLowDose m:excludedFor m:AllergyForAspirin. m:betaBlocker m:excludedFor m:SevereAsthma. m:betaBlocker m:excludedFor m:ChronicObstructivePumonaryDisease. {var:_2027 m:prescribedFor var:_2028. (var:_2037 var:_2028) rpo:mu var:_2035. var:_2035 math:greaterThan 0.7. var:_2052 e:findall (var:_2055 {var:_2027 m:excludedFor var:_2055} var:_2065). var:_2052 e:findall (var:_2055 {var:_2027 m:excludedFor var:_2055. (var:_2037 var:_2055) rpo:mu var:_2089. var:_2089 math:notGreaterThan 0.01} var:_2065)} log:implies {var:_2037 m:isPrescribed var:_2027}}]; 
+    r:rule [ a r:Extraction; r:gives {@forAll var:F. {<http://www.agfa.com/w3c/euler/medic.n3> log:semantics var:F. var:F log:includes {m:aspirinHighDose m:excludedFor m:AllergyForAspirin}} => {log:includes :test :ok2}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/testbuiltins.n3>]]];
+  r:component [ a r:Inference; r:gives {log:notIncludes :test :ok}; r:evidence (
+    [ a r:Fact; r:gives {{:b :a :c. :e :d :f. :h :g :i} log:notIncludes {:e :d :f. :b :e :c}}]);
+    r:rule [ a r:Extraction; r:gives {@forAll . {{:b :a :c. :e :d :f. :h :g :i} log:notIncludes {:e :d :f. :b :e :c}} => {log:notIncludes :test :ok}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/testbuiltins.n3>]]];
+  r:component [ a r:Inference; r:gives {log:notIncludes :test :ok1}; r:evidence (
+    [ a r:Extraction; r:gives {:ng2 :namedGraph {:b :a :c. :e :d :f. :h :g :i}}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/testdata.n3>]]
+    [ a r:Fact; r:gives {{:b :a :c. :e :d :f. :h :g :i} log:notIncludes {:e :d :f. :b :e :c}}]);
+    r:binding [ r:variable [ n3:uri "http://localhost/var#F"]; r:boundTo {:b :a :c. :e :d :f. :h :g :i}]; 
+    r:rule [ a r:Extraction; r:gives {@forAll var:F. {:ng2 :namedGraph var:F. var:F log:notIncludes {:e :d :f. :b :e :c}} => {log:notIncludes :test :ok1}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/testbuiltins.n3>]]];
+  r:component [ a r:Inference; r:gives {log:notIncludes :test :ok2}; r:evidence (
+    [ a r:Fact; r:gives {<http://www.agfa.com/w3c/euler/medic.n3> log:semantics {(m:Ann m:Fever) rpo:mu 0.8. (m:Ann m:AllergyForAspirin) rpo:mu 0.001. (m:Joe m:AcuteMyocardialInfarction) rpo:mu 0.9. (m:Joe m:ActivePepticUlcerDisease) rpo:mu 0.006. (m:Joe m:AllergyForAspirin) rpo:mu 0.001. (m:Joe m:SevereAsthma) rpo:mu 0.001. (m:Joe m:ChronicObstructivePumonaryDisease) rpo:mu 0.001. m:aspirinHighDose m:prescribedFor m:Fever. m:aspirinLowDose m:prescribedFor m:AcuteMyocardialInfarction. m:betaBlocker m:prescribedFor m:AcuteMyocardialInfarction. m:aspirinHighDose m:excludedFor m:ActivePepticUlcerDisease. m:aspirinHighDose m:excludedFor m:AllergyForAspirin. m:aspirinLowDose m:excludedFor m:ActivePepticUlcerDisease. m:aspirinLowDose m:excludedFor m:AllergyForAspirin. m:betaBlocker m:excludedFor m:SevereAsthma. m:betaBlocker m:excludedFor m:ChronicObstructivePumonaryDisease. {var:_2027 m:prescribedFor var:_2028. (var:_2037 var:_2028) rpo:mu var:_2035. var:_2035 math:greaterThan 0.7. var:_2052 e:findall (var:_2055 {var:_2027 m:excludedFor var:_2055} var:_2065). var:_2052 e:findall (var:_2055 {var:_2027 m:excludedFor var:_2055. (var:_2037 var:_2055) rpo:mu var:_2089. var:_2089 math:notGreaterThan 0.01} var:_2065)} log:implies {var:_2037 m:isPrescribed var:_2027}}}]
+    [ a r:Fact; r:gives {{(m:Ann m:Fever) rpo:mu 0.8. (m:Ann m:AllergyForAspirin) rpo:mu 0.001. (m:Joe m:AcuteMyocardialInfarction) rpo:mu 0.9. (m:Joe m:ActivePepticUlcerDisease) rpo:mu 0.006. (m:Joe m:AllergyForAspirin) rpo:mu 0.001. (m:Joe m:SevereAsthma) rpo:mu 0.001. (m:Joe m:ChronicObstructivePumonaryDisease) rpo:mu 0.001. m:aspirinHighDose m:prescribedFor m:Fever. m:aspirinLowDose m:prescribedFor m:AcuteMyocardialInfarction. m:betaBlocker m:prescribedFor m:AcuteMyocardialInfarction. m:aspirinHighDose m:excludedFor m:ActivePepticUlcerDisease. m:aspirinHighDose m:excludedFor m:AllergyForAspirin. m:aspirinLowDose m:excludedFor m:ActivePepticUlcerDisease. m:aspirinLowDose m:excludedFor m:AllergyForAspirin. m:betaBlocker m:excludedFor m:SevereAsthma. m:betaBlocker m:excludedFor m:ChronicObstructivePumonaryDisease. {var:_2027 m:prescribedFor var:_2028. (var:_2037 var:_2028) rpo:mu var:_2035. var:_2035 math:greaterThan 0.7. var:_2052 e:findall (var:_2055 {var:_2027 m:excludedFor var:_2055} var:_2065). var:_2052 e:findall (var:_2055 {var:_2027 m:excludedFor var:_2055. (var:_2037 var:_2055) rpo:mu var:_2089. var:_2089 math:notGreaterThan 0.01} var:_2065)} log:implies {var:_2037 m:isPrescribed var:_2027}} log:notIncludes {m:aspirinLowDose m:excludedFor m:SevereAsthma}}]);
+    r:binding [ r:variable [ n3:uri "http://localhost/var#F"]; r:boundTo {(m:Ann m:Fever) rpo:mu 0.8. (m:Ann m:AllergyForAspirin) rpo:mu 0.001. (m:Joe m:AcuteMyocardialInfarction) rpo:mu 0.9. (m:Joe m:ActivePepticUlcerDisease) rpo:mu 0.006. (m:Joe m:AllergyForAspirin) rpo:mu 0.001. (m:Joe m:SevereAsthma) rpo:mu 0.001. (m:Joe m:ChronicObstructivePumonaryDisease) rpo:mu 0.001. m:aspirinHighDose m:prescribedFor m:Fever. m:aspirinLowDose m:prescribedFor m:AcuteMyocardialInfarction. m:betaBlocker m:prescribedFor m:AcuteMyocardialInfarction. m:aspirinHighDose m:excludedFor m:ActivePepticUlcerDisease. m:aspirinHighDose m:excludedFor m:AllergyForAspirin. m:aspirinLowDose m:excludedFor m:ActivePepticUlcerDisease. m:aspirinLowDose m:excludedFor m:AllergyForAspirin. m:betaBlocker m:excludedFor m:SevereAsthma. m:betaBlocker m:excludedFor m:ChronicObstructivePumonaryDisease. {var:_2027 m:prescribedFor var:_2028. (var:_2037 var:_2028) rpo:mu var:_2035. var:_2035 math:greaterThan 0.7. var:_2052 e:findall (var:_2055 {var:_2027 m:excludedFor var:_2055} var:_2065). var:_2052 e:findall (var:_2055 {var:_2027 m:excludedFor var:_2055. (var:_2037 var:_2055) rpo:mu var:_2089. var:_2089 math:notGreaterThan 0.01} var:_2065)} log:implies {var:_2037 m:isPrescribed var:_2027}}]; 
+    r:rule [ a r:Extraction; r:gives {@forAll var:F. {<http://www.agfa.com/w3c/euler/medic.n3> log:semantics var:F. var:F log:notIncludes {m:aspirinLowDose m:excludedFor m:SevereAsthma}} => {log:notIncludes :test :ok2}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/testbuiltins.n3>]]];
+  r:component [ a r:Inference; r:gives {math:notLessThan :test :ok}; r:evidence (
+    [ a r:Fact; r:gives {7 math:notLessThan 5}]);
+    r:rule [ a r:Extraction; r:gives {@forAll . {7 math:notLessThan 5} => {math:notLessThan :test :ok}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/testbuiltins.n3>]]];
+  r:component [ a r:Inference; r:gives {math:sum :test :ok}; r:evidence (
+    [ a r:Fact; r:gives {(1 1) math:sum 2}]);
+    r:rule [ a r:Extraction; r:gives {@forAll . {(1 1) math:sum 2} => {math:sum :test :ok}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/testbuiltins.n3>]]];
+  r:component [ a r:Inference; r:gives {str:concatenation :test :ok}; r:evidence (
+    [ a r:Fact; r:gives {("eul" "er") str:concatenation "euler"}]);
+    r:rule [ a r:Extraction; r:gives {@forAll . {("eul" "er") str:concatenation "euler"} => {str:concatenation :test :ok}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/testbuiltins.n3>]]];
+  r:component [ a r:Inference; r:gives {str:containsIgnoringCase :test :ok}; r:evidence (
+    [ a r:Fact; r:gives {"Tim" str:containsIgnoringCase "IM"}]
+    [ a r:Fact; r:gives {"Tim"="Tim"}]
+    [ a r:Fact; r:gives {"IM"="IM"}]);
+    r:binding [ r:variable [ n3:uri "http://localhost/var#X"]; r:boundTo "Tim"]; 
+    r:binding [ r:variable [ n3:uri "http://localhost/var#Y"]; r:boundTo "IM"]; 
+    r:rule [ a r:Extraction; r:gives {@forAll var:X,var:Y. {var:X str:containsIgnoringCase var:Y. var:X = "Tim". var:Y = "IM"} => {str:containsIgnoringCase :test :ok}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/testbuiltins.n3>]]];
+  r:component [ a r:Inference; r:gives {str:startsWith :test :ok}; r:evidence (
+    [ a r:Fact; r:gives {"euler" str:startsWith "eu"}]);
+    r:rule [ a r:Extraction; r:gives {@forAll . {"euler" str:startsWith "eu"} => {str:startsWith :test :ok}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/testbuiltins.n3>]]];
+  r:component [ a r:Inference; r:gives {list:first :test :ok}; r:evidence (
+    [ a r:Fact; r:gives {(:a :b :c) list:first :a}]);
+    r:rule [ a r:Extraction; r:gives {@forAll . {(:a :b :c) list:first :a} => {list:first :test :ok}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/testbuiltins.n3>]]];
+  r:component [ a r:Inference; r:gives {list:rest :test :ok}; r:evidence (
+    [ a r:Fact; r:gives {(:a :b :c) list:rest (:b :c)}]);
+    r:rule [ a r:Extraction; r:gives {@forAll . {(:a :b :c) list:rest (:b :c)} => {list:rest :test :ok}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/testbuiltins.n3>]]];
+  r:component [ a r:Inference; r:gives {list:last :test :ok}; r:evidence (
+    [ a r:Fact; r:gives {(:a :b :c) list:last :c}]);
+    r:rule [ a r:Extraction; r:gives {@forAll . {(:a :b :c) list:last :c} => {list:last :test :ok}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/testbuiltins.n3>]]];
+  r:component [ a r:Inference; r:gives {list:in :test :ok}; r:evidence (
+    [ a r:Fact; r:gives {:b list:in (:a :b :c)}]);
+    r:rule [ a r:Extraction; r:gives {@forAll . {:b list:in (:a :b :c)} => {list:in :test :ok}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/testbuiltins.n3>]]];
+  r:component [ a r:Inference; r:gives {list:member :test :ok}; r:evidence (
+    [ a r:Fact; r:gives {(:a :b :c :d) list:member :c}]);
+    r:rule [ a r:Extraction; r:gives {@forAll . {(:a :b :c :d) list:member :c} => {list:member :test :ok}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/testbuiltins.n3>]]];
+  r:component [ a r:Inference; r:gives {list:append :test :ok}; r:evidence (
+    [ a r:Fact; r:gives {((:a :b :c) (:d :e)) list:append (:a :b :c :d :e)}]);
+    r:rule [ a r:Extraction; r:gives {@forAll . {((:a :b :c) (:d :e)) list:append (:a :b :c :d :e)} => {list:append :test :ok}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/testbuiltins.n3>]]];
+  r:component [ a r:Inference; r:gives {list:append :test (() (:a :b :c :d :e))}; r:evidence (
+    [ a r:Fact; r:gives {(() (:a :b :c :d :e)) list:append (:a :b :c :d :e)}]);
+    r:binding [ r:variable [ n3:uri "http://localhost/var#X"]; r:boundTo ()]; 
+    r:binding [ r:variable [ n3:uri "http://localhost/var#Y"]; r:boundTo (:a :b :c :d :e)]; 
+    r:rule [ a r:Extraction; r:gives {@forAll var:X,var:Y. {(var:X var:Y) list:append (:a :b :c :d :e)} => {list:append :test (var:X var:Y)}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/testbuiltins.n3>]]];
+  r:component [ a r:Inference; r:gives {list:append :test ((:a) (:b :c :d :e))}; r:evidence (
+    [ a r:Fact; r:gives {((:a) (:b :c :d :e)) list:append (:a :b :c :d :e)}]);
+    r:binding [ r:variable [ n3:uri "http://localhost/var#X"]; r:boundTo (:a)]; 
+    r:binding [ r:variable [ n3:uri "http://localhost/var#Y"]; r:boundTo (:b :c :d :e)]; 
+    r:rule [ a r:Extraction; r:gives {@forAll var:X,var:Y. {(var:X var:Y) list:append (:a :b :c :d :e)} => {list:append :test (var:X var:Y)}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/testbuiltins.n3>]]];
+  r:component [ a r:Inference; r:gives {list:append :test ((:a :b) (:c :d :e))}; r:evidence (
+    [ a r:Fact; r:gives {((:a :b) (:c :d :e)) list:append (:a :b :c :d :e)}]);
+    r:binding [ r:variable [ n3:uri "http://localhost/var#X"]; r:boundTo (:a :b)]; 
+    r:binding [ r:variable [ n3:uri "http://localhost/var#Y"]; r:boundTo (:c :d :e)]; 
+    r:rule [ a r:Extraction; r:gives {@forAll var:X,var:Y. {(var:X var:Y) list:append (:a :b :c :d :e)} => {list:append :test (var:X var:Y)}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/testbuiltins.n3>]]];
+  r:component [ a r:Inference; r:gives {list:append :test ((:a :b :c) (:d :e))}; r:evidence (
+    [ a r:Fact; r:gives {((:a :b :c) (:d :e)) list:append (:a :b :c :d :e)}]);
+    r:binding [ r:variable [ n3:uri "http://localhost/var#X"]; r:boundTo (:a :b :c)]; 
+    r:binding [ r:variable [ n3:uri "http://localhost/var#Y"]; r:boundTo (:d :e)]; 
+    r:rule [ a r:Extraction; r:gives {@forAll var:X,var:Y. {(var:X var:Y) list:append (:a :b :c :d :e)} => {list:append :test (var:X var:Y)}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/testbuiltins.n3>]]];
+  r:component [ a r:Inference; r:gives {list:append :test ((:a :b :c :d) (:e))}; r:evidence (
+    [ a r:Fact; r:gives {((:a :b :c :d) (:e)) list:append (:a :b :c :d :e)}]);
+    r:binding [ r:variable [ n3:uri "http://localhost/var#X"]; r:boundTo (:a :b :c :d)]; 
+    r:binding [ r:variable [ n3:uri "http://localhost/var#Y"]; r:boundTo (:e)]; 
+    r:rule [ a r:Extraction; r:gives {@forAll var:X,var:Y. {(var:X var:Y) list:append (:a :b :c :d :e)} => {list:append :test (var:X var:Y)}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/testbuiltins.n3>]]];
+  r:component [ a r:Inference; r:gives {list:append :test ((:a :b :c :d :e) ())}; r:evidence (
+    [ a r:Fact; r:gives {((:a :b :c :d :e) ()) list:append (:a :b :c :d :e)}]);
+    r:binding [ r:variable [ n3:uri "http://localhost/var#X"]; r:boundTo (:a :b :c :d :e)]; 
+    r:binding [ r:variable [ n3:uri "http://localhost/var#Y"]; r:boundTo ()]; 
+    r:rule [ a r:Extraction; r:gives {@forAll var:X,var:Y. {(var:X var:Y) list:append (:a :b :c :d :e)} => {list:append :test (var:X var:Y)}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/testbuiltins.n3>]]];
+  r:component [ a r:Inference; r:gives {log:uri :test "http://eulersharp.sourceforge.net/2006/02swap/med#Fever"}; r:evidence (
+    [ a r:Fact; r:gives {<http://eulersharp.sourceforge.net/2006/02swap/med#Fever> log:uri "http://eulersharp.sourceforge.net/2006/02swap/med#Fever"}]);
+    r:binding [ r:variable [ n3:uri "http://localhost/var#X"]; r:boundTo "http://eulersharp.sourceforge.net/2006/02swap/med#Fever"]; 
+    r:rule [ a r:Extraction; r:gives {@forAll var:X. {<http://eulersharp.sourceforge.net/2006/02swap/med#Fever> log:uri var:X} => {log:uri :test var:X}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/testbuiltins.n3>]]];
+  r:component [ a r:Inference; r:gives {log:uri :test "http://eulersharp.sourceforge.net/2006/02swap/testbuiltins#betaBlocker"}; r:evidence (
+    [ a r:Extraction; r:gives {:betaBlocker log:uri "http://eulersharp.sourceforge.net/2006/02swap/testbuiltins#betaBlocker"}; r:because [ a r:Parsing; r:source _1874]]);
+    r:binding [ r:variable [ n3:uri "http://localhost/var#X"]; r:boundTo "http://eulersharp.sourceforge.net/2006/02swap/testbuiltins#betaBlocker"]; 
+    r:rule [ a r:Extraction; r:gives {@forAll var:X. {:betaBlocker log:uri var:X} => {log:uri :test var:X}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/testbuiltins.n3>]]];
+  r:component [ a r:Inference; r:gives {log:uri :test <http://eulersharp.sourceforge.net/2006/02swap/med#Fever>}; r:evidence (
+    [ a r:Fact; r:gives {<http://eulersharp.sourceforge.net/2006/02swap/med#Fever> log:uri "http://eulersharp.sourceforge.net/2006/02swap/med#Fever"}]);
+    r:binding [ r:variable [ n3:uri "http://localhost/var#X"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2006/02swap/med#Fever"]]; 
+    r:rule [ a r:Extraction; r:gives {@forAll var:X. {var:X log:uri "http://eulersharp.sourceforge.net/2006/02swap/med#Fever"} => {log:uri :test var:X}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/testbuiltins.n3>]]];
+  r:component [ a r:Inference; r:gives {fn:resolve-uri :test "http://www.w3.org/2000/10/swap/"}; r:evidence (
+    [ a r:Fact; r:gives {("2000/10/swap/" "http://www.w3.org/") fn:resolve-uri "http://www.w3.org/2000/10/swap/"}]);
+    r:binding [ r:variable [ n3:uri "http://localhost/var#X"]; r:boundTo "http://www.w3.org/2000/10/swap/"]; 
+    r:rule [ a r:Extraction; r:gives {@forAll var:X. {("2000/10/swap/" "http://www.w3.org/") fn:resolve-uri var:X} => {fn:resolve-uri :test var:X}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/testbuiltins.n3>]]];
+  r:component [ a r:Inference; r:gives {log:conjunction :test {:s1 :p1 :o1}}; r:evidence (
+    [ a r:Extraction; r:gives {:s :p {:s1 :p1 :o1}}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/testdata.n3>]]
+    [ a r:Extraction; r:gives {:s :p {:s1 :p1 :o1}}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/testdata.n3>]]
+    [ a r:Fact; r:gives {({:s1 :p1 :o1} {:s1 :p1 :o1}) log:conjunction {:s1 :p1 :o1}}]);
+    r:binding [ r:variable [ n3:uri "http://localhost/var#A"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2006/02swap/testbuiltins#s"]]; 
+    r:binding [ r:variable [ n3:uri "http://localhost/var#B"]; r:boundTo {:s1 :p1 :o1}]; 
+    r:binding [ r:variable [ n3:uri "http://localhost/var#C"]; r:boundTo {:s1 :p1 :o1}]; 
+    r:binding [ r:variable [ n3:uri "http://localhost/var#D"]; r:boundTo {:s1 :p1 :o1}]; 
+    r:rule [ a r:Extraction; r:gives {@forAll var:A,var:B,var:C,var:D. {var:A :p var:B. var:A :p var:C. (var:B var:C) log:conjunction var:D} => {log:conjunction :test var:D}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/testbuiltins.n3>]]];
+  r:component [ a r:Inference; r:gives {log:conjunction :test {:s1 :p1 :o1. :s2 :p2 :o2. :s3 :p3 :o3}}; r:evidence (
+    [ a r:Extraction; r:gives {:s :p {:s1 :p1 :o1}}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/testdata.n3>]]
+    [ a r:Extraction; r:gives {:s :p {:s2 :p2 :o2. :s3 :p3 :o3}}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/testdata.n3>]]
+    [ a r:Fact; r:gives {({:s1 :p1 :o1} {:s2 :p2 :o2. :s3 :p3 :o3}) log:conjunction {:s1 :p1 :o1. :s2 :p2 :o2. :s3 :p3 :o3}}]);
+    r:binding [ r:variable [ n3:uri "http://localhost/var#A"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2006/02swap/testbuiltins#s"]]; 
+    r:binding [ r:variable [ n3:uri "http://localhost/var#B"]; r:boundTo {:s1 :p1 :o1}]; 
+    r:binding [ r:variable [ n3:uri "http://localhost/var#C"]; r:boundTo {:s2 :p2 :o2. :s3 :p3 :o3}]; 
+    r:binding [ r:variable [ n3:uri "http://localhost/var#D"]; r:boundTo {:s1 :p1 :o1. :s2 :p2 :o2. :s3 :p3 :o3}]; 
+    r:rule [ a r:Extraction; r:gives {@forAll var:A,var:B,var:C,var:D. {var:A :p var:B. var:A :p var:C. (var:B var:C) log:conjunction var:D} => {log:conjunction :test var:D}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/testbuiltins.n3>]]];
+  r:component [ a r:Inference; r:gives {log:conjunction :test {:s2 :p2 :o2. :s3 :p3 :o3. :s1 :p1 :o1}}; r:evidence (
+    [ a r:Extraction; r:gives {:s :p {:s2 :p2 :o2. :s3 :p3 :o3}}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/testdata.n3>]]
+    [ a r:Extraction; r:gives {:s :p {:s1 :p1 :o1}}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/testdata.n3>]]
+    [ a r:Fact; r:gives {({:s2 :p2 :o2. :s3 :p3 :o3} {:s1 :p1 :o1}) log:conjunction {:s2 :p2 :o2. :s3 :p3 :o3. :s1 :p1 :o1}}]);
+    r:binding [ r:variable [ n3:uri "http://localhost/var#A"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2006/02swap/testbuiltins#s"]]; 
+    r:binding [ r:variable [ n3:uri "http://localhost/var#B"]; r:boundTo {:s2 :p2 :o2. :s3 :p3 :o3}]; 
+    r:binding [ r:variable [ n3:uri "http://localhost/var#C"]; r:boundTo {:s1 :p1 :o1}]; 
+    r:binding [ r:variable [ n3:uri "http://localhost/var#D"]; r:boundTo {:s2 :p2 :o2. :s3 :p3 :o3. :s1 :p1 :o1}]; 
+    r:rule [ a r:Extraction; r:gives {@forAll var:A,var:B,var:C,var:D. {var:A :p var:B. var:A :p var:C. (var:B var:C) log:conjunction var:D} => {log:conjunction :test var:D}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/testbuiltins.n3>]]];
+  r:component [ a r:Inference; r:gives {log:conjunction :test {:s2 :p2 :o2. :s3 :p3 :o3}}; r:evidence (
+    [ a r:Extraction; r:gives {:s :p {:s2 :p2 :o2. :s3 :p3 :o3}}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/testdata.n3>]]
+    [ a r:Extraction; r:gives {:s :p {:s2 :p2 :o2. :s3 :p3 :o3}}; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/testdata.n3>]]
+    [ a r:Fact; r:gives {({:s2 :p2 :o2. :s3 :p3 :o3} {:s2 :p2 :o2. :s3 :p3 :o3}) log:conjunction {:s2 :p2 :o2. :s3 :p3 :o3}}]);
+    r:binding [ r:variable [ n3:uri "http://localhost/var#A"]; r:boundTo [ n3:uri "http://eulersharp.sourceforge.net/2006/02swap/testbuiltins#s"]]; 
+    r:binding [ r:variable [ n3:uri "http://localhost/var#B"]; r:boundTo {:s2 :p2 :o2. :s3 :p3 :o3}]; 
+    r:binding [ r:variable [ n3:uri "http://localhost/var#C"]; r:boundTo {:s2 :p2 :o2. :s3 :p3 :o3}]; 
+    r:binding [ r:variable [ n3:uri "http://localhost/var#D"]; r:boundTo {:s2 :p2 :o2. :s3 :p3 :o3}]; 
+    r:rule [ a r:Extraction; r:gives {@forAll var:A,var:B,var:C,var:D. {var:A :p var:B. var:A :p var:C. (var:B var:C) log:conjunction var:D} => {log:conjunction :test var:D}. }; r:because [ a r:Parsing; r:source <http://www.agfa.com/w3c/euler/testbuiltins.n3>]]];
+  r:gives {
+    log:includes :test :ok.
+    log:includes :test :ok1.
+    log:includes :test :ok2.
+    log:notIncludes :test :ok.
+    log:notIncludes :test :ok1.
+    log:notIncludes :test :ok2.
+    math:notLessThan :test :ok.
+    math:sum :test :ok.
+    str:concatenation :test :ok.
+    str:containsIgnoringCase :test :ok.
+    str:startsWith :test :ok.
+    list:first :test :ok.
+    list:rest :test :ok.
+    list:last :test :ok.
+    list:in :test :ok.
+    list:member :test :ok.
+    list:append :test :ok.
+    list:append :test (() (:a :b :c :d :e)).
+    list:append :test ((:a) (:b :c :d :e)).
+    list:append :test ((:a :b) (:c :d :e)).
+    list:append :test ((:a :b :c) (:d :e)).
+    list:append :test ((:a :b :c :d) (:e)).
+    list:append :test ((:a :b :c :d :e) ()).
+    log:uri :test "http://eulersharp.sourceforge.net/2006/02swap/med#Fever".
+    log:uri :test "http://eulersharp.sourceforge.net/2006/02swap/testbuiltins#betaBlocker".
+    log:uri :test <http://eulersharp.sourceforge.net/2006/02swap/med#Fever>.
+    fn:resolve-uri :test "http://www.w3.org/2000/10/swap/".
+    log:conjunction :test {:s1 :p1 :o1}.
+    log:conjunction :test {:s1 :p1 :o1. :s2 :p2 :o2. :s3 :p3 :o3}.
+    log:conjunction :test {:s2 :p2 :o2. :s3 :p3 :o3. :s1 :p1 :o1}.
+    log:conjunction :test {:s2 :p2 :o2. :s3 :p3 :o3}.}].
+
+#ENDS 80 msec.
+

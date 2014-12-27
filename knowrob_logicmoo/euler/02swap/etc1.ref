@@ -1,0 +1,2645 @@
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:06 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+()!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:07 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/amp-in-url/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/amp-in-url/test001.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{<http://example/q?abc=1&def=2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "xxx"} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/amp-in-url/test001.rdf#_1>. 
+
+# Proof found in 1 step (100000 steps/sec) using 1 engine (8 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:07 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/datatypes/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/datatypes/test001.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{<http://example.org/foo> <http://example.org/bar> "10"^^<http://www.w3.org/2001/XMLSchema#integer>} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/datatypes/test001.rdf#_1>. 
+{<http://example.org/foo> <http://example.org/baz> "10"^^<http://www.w3.org/2001/XMLSchema#integer>} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/datatypes/test001.rdf#_2>. 
+
+# Proof found in 2 steps (33 steps/sec) using 1 engine (177 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:07 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/datatypes/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/datatypes/test002.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{<http://example.org/foo> <http://example.org/bar> "flargh"^^<http://www.w3.org/2001/XMLSchema#integer>} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/datatypes/test002.rdf#_1>. 
+
+# Proof found in 1 step (16 steps/sec) using 1 engine (176 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:07 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/rdf-charmod-literals/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdf-charmod-literals/test001.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{_:A710519adX3aX108f90fc409X3aXX2dX47ae_6_ <http://example.org/named> "D\u00FCrst"} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdf-charmod-literals/test001.rdf#_2>. 
+{<http://www.w3.org/TR/2002/WD-charmod-20020220> <http://example.org/Creator> _:A710519adX3aX108f90fc409X3aXX2dX47ae_6_} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdf-charmod-literals/test001.rdf#_1>. 
+
+# Proof found in 2 steps (200000 steps/sec) using 1 engine (28 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:07 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/rdf-charmod-uris/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdf-charmod-uris/test001.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{<http://example.org/#Andr\u00E9> <http://example.org/#owes> "2000"} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdf-charmod-uris/test001.rdf#_1>. 
+
+# Proof found in 1 step (100000 steps/sec) using 1 engine (47 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:07 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/rdf-charmod-uris/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdf-charmod-uris/test002.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{<http://example.org/#Andr%C3%A9> <http://example.org/#owes> "2000"} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdf-charmod-uris/test002.rdf#_1>. 
+
+# Proof found in 1 step (100000 steps/sec) using 1 engine (47 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:08 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/rdf-containers-syntax-vs-schema/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdf-containers-syntax-vs-schema/test001.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{_:A710519adX3aX108f90fc409X3aXX2dX47ad_11_ <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag>} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdf-containers-syntax-vs-schema/test001.rdf#_1>. 
+{_:A710519adX3aX108f90fc409X3aXX2dX47ad_11_ <http://www.w3.org/1999/02/22-rdf-syntax-ns#_1> "1"} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdf-containers-syntax-vs-schema/test001.rdf#_2>. 
+{_:A710519adX3aX108f90fc409X3aXX2dX47ad_11_ <http://www.w3.org/1999/02/22-rdf-syntax-ns#_2> "2"} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdf-containers-syntax-vs-schema/test001.rdf#_3>. 
+
+# Proof found in 31 steps (3096 steps/sec) using 1 engine (79 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:08 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/rdf-containers-syntax-vs-schema/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdf-containers-syntax-vs-schema/test002.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{_:A710519adX3aX108f90fc409X3aXX2dX47ac_13_ <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://foo/Bar>} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdf-containers-syntax-vs-schema/test002.rdf#_1>. 
+{_:A710519adX3aX108f90fc409X3aXX2dX47ac_13_ <http://www.w3.org/1999/02/22-rdf-syntax-ns#_1> "_1"} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdf-containers-syntax-vs-schema/test002.rdf#_2>. 
+{_:A710519adX3aX108f90fc409X3aXX2dX47ac_13_ <http://www.w3.org/1999/02/22-rdf-syntax-ns#_1> "1"} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdf-containers-syntax-vs-schema/test002.rdf#_3>. 
+{_:A710519adX3aX108f90fc409X3aXX2dX47ac_13_ <http://www.w3.org/1999/02/22-rdf-syntax-ns#_3> "_3"} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdf-containers-syntax-vs-schema/test002.rdf#_4>. 
+{_:A710519adX3aX108f90fc409X3aXX2dX47ac_13_ <http://www.w3.org/1999/02/22-rdf-syntax-ns#_2> "2"} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdf-containers-syntax-vs-schema/test002.rdf#_5>. 
+
+# Proof found in 34 steps (3400000 steps/sec) using 1 engine (81 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:08 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/rdf-containers-syntax-vs-schema/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdf-containers-syntax-vs-schema/test003.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{_:A710519adX3aX108f90fc409X3aXX2dX47ab_14_ <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://foo/Bar>} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdf-containers-syntax-vs-schema/test003.rdf#_1>. 
+{_:A710519adX3aX108f90fc409X3aXX2dX47ab_14_ <http://www.w3.org/1999/02/22-rdf-syntax-ns#_1> "1"} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdf-containers-syntax-vs-schema/test003.rdf#_2>. 
+{_:A710519adX3aX108f90fc409X3aXX2dX47ab_14_ <http://www.w3.org/1999/02/22-rdf-syntax-ns#_2> "2"} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdf-containers-syntax-vs-schema/test003.rdf#_3>. 
+
+# Proof found in 31 steps (3100000 steps/sec) using 1 engine (79 triples)
+}.
+
+# No proof found in 66 steps (6600000 steps/sec) using 1 engine (91 triples)
+# No proof found in 31 steps (3100000 steps/sec) using 1 engine (84 triples)
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:08 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/rdf-containers-syntax-vs-schema/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdf-containers-syntax-vs-schema/test007.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{_:A710519adX3aX108f90fc409X3aXX2dX47a6_17_ <http://www.w3.org/1999/02/22-rdf-syntax-ns#_1> _:A710519adX3aX108f90fc409X3aXX2dX47a5_17_} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdf-containers-syntax-vs-schema/test007.rdf#_3>. 
+{_:A710519adX3aX108f90fc409X3aXX2dX47a5_17_ <http://www.w3.org/1999/02/22-rdf-syntax-ns#_1> "1"} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdf-containers-syntax-vs-schema/test007.rdf#_1>. 
+{_:A710519adX3aX108f90fc409X3aXX2dX47a5_17_ <http://www.w3.org/1999/02/22-rdf-syntax-ns#_2> "2"} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdf-containers-syntax-vs-schema/test007.rdf#_2>. 
+{_:A710519adX3aX108f90fc409X3aXX2dX47a6_17_ <http://www.w3.org/1999/02/22-rdf-syntax-ns#_2> "2"} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdf-containers-syntax-vs-schema/test007.rdf#_4>. 
+
+# Proof found in 8 steps (800000 steps/sec) using 1 engine (80 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:08 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/rdf-containers-syntax-vs-schema/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdf-containers-syntax-vs-schema/test008.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{<http://desc> <http://www.w3.org/1999/02/22-rdf-syntax-ns#_1> "1"} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdf-containers-syntax-vs-schema/test008.rdf#_1>. 
+{<http://desc> <http://www.w3.org/1999/02/22-rdf-syntax-ns#_1> "1-again"} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdf-containers-syntax-vs-schema/test008.rdf#_2>. 
+
+# Proof found in 3 steps (300000 steps/sec) using 1 engine (78 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:08 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/rdf-element-not-mandatory/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdf-element-not-mandatory/test001.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{_:A710519adX3aX108f90fc409X3aXX2dX47a4_20_ <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/terms#Book>} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdf-element-not-mandatory/test001.rdf#_1>. 
+{_:A710519adX3aX108f90fc409X3aXX2dX47a4_20_ <http://example.org/terms#title> "Dogs in Hats"} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdf-element-not-mandatory/test001.rdf#_2>. 
+
+# Proof found in 5 steps (500000 steps/sec) using 1 engine (10 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:09 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/rdf-ns-prefix-confusion/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdf-ns-prefix-confusion/test0001.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{<http://example.org/resource1/> <http://example.org/property> "bar"} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdf-ns-prefix-confusion/test0001.rdf#_1>. 
+
+# Proof found in 1 step (100000 steps/sec) using 1 engine (167 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:09 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/rdf-ns-prefix-confusion/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdf-ns-prefix-confusion/test0003.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{<http://example.org/resource1/> <http://example.org/property> <http://example.org/resource2/>} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdf-ns-prefix-confusion/test0003.rdf#_1>. 
+
+# Proof found in 1 step (100000 steps/sec) using 1 engine (167 triples)
+}.
+
+# No proof found in 1 step (100000 steps/sec) using 1 engine (167 triples)
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:09 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/rdf-ns-prefix-confusion/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdf-ns-prefix-confusion/test0005.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{<http://example.org/resource1/> <http://example.org/property> _:A710519adX3aX108f90fc409X3aXX2dX47a3_25_} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdf-ns-prefix-confusion/test0005.rdf#_1>. 
+{_:A710519adX3aX108f90fc409X3aXX2dX47a3_25_ <http://example.org/property2> "bar"} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdf-ns-prefix-confusion/test0005.rdf#_2>. 
+
+# Proof found in 2 steps (200000 steps/sec) using 1 engine (168 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:09 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/rdf-ns-prefix-confusion/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdf-ns-prefix-confusion/test0006.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{<http://example.org/resource/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/class/>} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdf-ns-prefix-confusion/test0006.rdf#_1>. 
+
+# Proof found in 61 steps (6100000 steps/sec) using 1 engine (167 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:09 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/rdf-ns-prefix-confusion/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdf-ns-prefix-confusion/test0009.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{<http://example.org/resource/> <http://example.org/property> "bar"} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdf-ns-prefix-confusion/test0009.rdf#_1>. 
+
+# Proof found in 1 step (100000 steps/sec) using 1 engine (167 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:09 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/rdf-ns-prefix-confusion/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdf-ns-prefix-confusion/test0010.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{<http://example.org/resource/> <http://example.org/property> "bar"} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdf-ns-prefix-confusion/test0010.rdf#_1>. 
+
+# Proof found in 1 step (100000 steps/sec) using 1 engine (167 triples)
+}.
+
+# No proof found in 61 steps (6100000 steps/sec) using 1 engine (168 triples)
+# No proof found in 61 steps (6093 steps/sec) using 1 engine (168 triples)
+# No proof found in 61 steps (1219 steps/sec) using 1 engine (168 triples)
+# No proof found in 61 steps (6100000 steps/sec) using 1 engine (168 triples)
+# No proof found in 1 step (100000 steps/sec) using 1 engine (33 triples)
+# No proof found in 1 step (100000 steps/sec) using 1 engine (33 triples)
+# No proof found in 1 step (100000 steps/sec) using 1 engine (33 triples)
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:10 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-duplicate-member-props/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-duplicate-member-props/test001.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{<http://example.org/foo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag>} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-duplicate-member-props/test001.rdf#_1>. 
+{<http://example.org/foo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#_1> <http://example.org/a>} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-duplicate-member-props/test001.rdf#_2>. 
+{<http://example.org/foo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#_1> <http://example.org/b>} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-duplicate-member-props/test001.rdf#_3>. 
+
+# Proof found in 7 steps (700000 steps/sec) using 1 engine (12 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:10 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-empty-property-elements/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-empty-property-elements/test001.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{<http://random.ioctl.org/#bar> <http://random.ioctl.org/#someProperty> <http://random.ioctl.org/#foo>} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-empty-property-elements/test001.rdf#_1>. 
+
+# Proof found in 1 step (100000 steps/sec) using 1 engine (157 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:10 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-empty-property-elements/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-empty-property-elements/test002.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{<http://random.ioctl.org/#bar> <http://random.ioctl.org/#someProperty> ""} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-empty-property-elements/test002.rdf#_1>. 
+
+# Proof found in 1 step (100000 steps/sec) using 1 engine (157 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:10 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-empty-property-elements/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-empty-property-elements/test003.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{<http://random.ioctl.org/#bar> <http://random.ioctl.org/#someProperty> ""^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral>} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-empty-property-elements/test003.rdf#_1>. 
+
+# Proof found in 1 step (100000 steps/sec) using 1 engine (157 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:10 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-empty-property-elements/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-empty-property-elements/test004.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{<http://random.ioctl.org/#bar> <http://random.ioctl.org/#someProperty> _:A710519adX3aX108f90fc409X3aXX2dX47a2_43_} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-empty-property-elements/test004.rdf#_1>. 
+
+# Proof found in 1 step (100000 steps/sec) using 1 engine (157 triples)
+}.
+
+# No proof found in 59 steps (5894 steps/sec) using 1 engine (161 triples)
+# No proof found in 59 steps (1474 steps/sec) using 1 engine (161 triples)
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:11 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-empty-property-elements/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-empty-property-elements/test007.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{<http://random.ioctl.org/#bar> <http://random.ioctl.org/#someProperty> <http://random.ioctl.org/#foo>} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-empty-property-elements/test007.rdf#_1>. 
+
+# Proof found in 1 step (100000 steps/sec) using 1 engine (157 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:11 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-empty-property-elements/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-empty-property-elements/test008.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{<http://random.ioctl.org/#bar> <http://random.ioctl.org/#someProperty> ""} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-empty-property-elements/test008.rdf#_1>. 
+
+# Proof found in 1 step (100000 steps/sec) using 1 engine (157 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:11 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-empty-property-elements/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-empty-property-elements/test009.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{<http://random.ioctl.org/#bar> <http://random.ioctl.org/#someProperty> ""^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral>} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-empty-property-elements/test009.rdf#_1>. 
+
+# Proof found in 1 step (100000 steps/sec) using 1 engine (157 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:11 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-empty-property-elements/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-empty-property-elements/test010.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{<http://random.ioctl.org/#bar> <http://random.ioctl.org/#someProperty> _:A710519adX3aX108f90fc409X3aXX2dX47a0_49_} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-empty-property-elements/test010.rdf#_1>. 
+
+# Proof found in 1 step (100000 steps/sec) using 1 engine (157 triples)
+}.
+
+# No proof found in 59 steps (5894 steps/sec) using 1 engine (161 triples)
+# No proof found in 59 steps (5894 steps/sec) using 1 engine (161 triples)
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:11 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-empty-property-elements/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-empty-property-elements/test013.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{<http://random.ioctl.org/#bar> <http://random.ioctl.org/#someProperty> <http://random.ioctl.org/#foo>} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-empty-property-elements/test013.rdf#_2>. 
+{<http://random.ioctl.org/#foo> <http://random.ioctl.org/#prop2> "baz"} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-empty-property-elements/test013.rdf#_1>. 
+
+# Proof found in 2 steps (200000 steps/sec) using 1 engine (158 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:11 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-empty-property-elements/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-empty-property-elements/test014.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{<http://random.ioctl.org/#bar> <http://random.ioctl.org/#someProperty> _:A710519adX3aX108f90fc409X3aXX2dX479e_53_} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-empty-property-elements/test014.rdf#_2>. 
+{_:A710519adX3aX108f90fc409X3aXX2dX479e_53_ <http://random.ioctl.org/#prop2> "baz"} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-empty-property-elements/test014.rdf#_1>. 
+
+# Proof found in 2 steps (200000 steps/sec) using 1 engine (158 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:12 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-empty-property-elements/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-empty-property-elements/test015.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{<http://random.ioctl.org/#bar> <http://random.ioctl.org/#someProperty> _:A710519adX3aX108f90fc409X3aXX2dX479d_54_} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-empty-property-elements/test015.rdf#_2>. 
+{_:A710519adX3aX108f90fc409X3aXX2dX479d_54_ <http://random.ioctl.org/#prop2> "baz"} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-empty-property-elements/test015.rdf#_1>. 
+
+# Proof found in 2 steps (200000 steps/sec) using 1 engine (158 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:12 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-empty-property-elements/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-empty-property-elements/test016.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{<http://random.ioctl.org/#bar> <http://random.ioctl.org/#someProperty> <http://random.ioctl.org/#foo>} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-empty-property-elements/test016.rdf#_1>. 
+
+# Proof found in 1 step (100000 steps/sec) using 1 engine (157 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:12 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-empty-property-elements/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-empty-property-elements/test017.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{<http://random.ioctl.org/#bar> <http://random.ioctl.org/#someProperty> <http://random.ioctl.org/#foo>} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-empty-property-elements/test017.rdf#_1>. 
+
+# Proof found in 1 step (100000 steps/sec) using 1 engine (157 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:12 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-identity-anon-resources/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-identity-anon-resources/test001.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{_:A710519adX3aX108f90fc409X3aXX2dX479c_58_ <http://example.org/property> "property value"} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-identity-anon-resources/test001.rdf#_1>. 
+
+# Proof found in 1 step (100000 steps/sec) using 1 engine (41 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:12 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-identity-anon-resources/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-identity-anon-resources/test002.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{_:A710519adX3aX108f90fc409X3aXX2dX479b_59_ <http://example.org/property> "property value"} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-identity-anon-resources/test002.rdf#_2>. 
+{_:A710519adX3aX108f90fc409X3aXX2dX479b_59_ <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/node>} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-identity-anon-resources/test002.rdf#_1>. 
+
+# Proof found in 17 steps (1700000 steps/sec) using 1 engine (42 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:12 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-identity-anon-resources/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-identity-anon-resources/test003.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{_:A710519adX3aX108f90fc409X3aXX2dX479a_60_ <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag>} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-identity-anon-resources/test003.rdf#_1>. 
+
+# Proof found in 16 steps (1600000 steps/sec) using 1 engine (41 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:12 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-identity-anon-resources/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-identity-anon-resources/test004.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{_:A710519adX3aX108f90fc409X3aXX2dX4799_61_ <http://www.w3.org/1999/02/22-rdf-syntax-ns#_1> "some value"} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-identity-anon-resources/test004.rdf#_2>. 
+{_:A710519adX3aX108f90fc409X3aXX2dX4799_61_ <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt>} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-identity-anon-resources/test004.rdf#_1>. 
+
+# Proof found in 17 steps (1700000 steps/sec) using 1 engine (42 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:12 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-identity-anon-resources/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-identity-anon-resources/test005.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{_:A710519adX3aX108f90fc409X3aXX2dX4798_62_ <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq>} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-identity-anon-resources/test005.rdf#_1>. 
+
+# Proof found in 16 steps (1600000 steps/sec) using 1 engine (41 triples)
+}.
+
+# No proof found in 18 steps (1800000 steps/sec) using 1 engine (46 triples)
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:12 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-not-id-and-resource-attr/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-not-id-and-resource-attr/test002.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{<http://example.org/object#uriRef> <http://example.org/prop2> "val"} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-not-id-and-resource-attr/test002.rdf#_2>. 
+{_:A710519adX3aX108f90fc409X3aXX2dX4795_65_ <http://example.org/prop1> <http://example.org/object#uriRef>} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-not-id-and-resource-attr/test002.rdf#_1>. 
+
+# Proof found in 2 steps (99 steps/sec) using 1 engine (42 triples)
+}.
+
+# No proof found in 17 steps (1700000 steps/sec) using 1 engine (45 triples)
+# No proof found in 18 steps (1800000 steps/sec) using 1 engine (46 triples)
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:12 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-para196/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-para196/test001.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{<http://example.org/> <http://www.w3.org/TR/REC-rdf-syntaxfoo> "permitted"} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-para196/test001.rdf#_1>. 
+{<http://example.org/> <http://www.w3.org/TR/REC-rdf-syntax-blah-blahbar> "also permitted"} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-para196/test001.rdf#_2>. 
+{<http://example.org/> <http://www.w3.org/TR/REC-rdf-syntax#baz> "this one also permitted"} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-para196/test001.rdf#_3>. 
+
+# Proof found in 3 steps (300000 steps/sec) using 1 engine (11 triples)
+}.
+
+# No proof found in 1 step (100000 steps/sec) using 1 engine (443 triples)
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:13 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/test-002.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{<http://example.org/node> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq>} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/test-002.rdf#_1>. 
+
+# Proof found in 161 steps (16100000 steps/sec) using 1 engine (444 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:13 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/test-003.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{<http://example.org/node> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag>} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/test-003.rdf#_1>. 
+
+# Proof found in 161 steps (16100000 steps/sec) using 1 engine (444 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:13 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/test-004.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{<http://example.org/node> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt>} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/test-004.rdf#_1>. 
+
+# Proof found in 161 steps (16100000 steps/sec) using 1 engine (444 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:14 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/test-005.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{<http://example.org/node> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement>} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/test-005.rdf#_1>. 
+
+# Proof found in 161 steps (16100000 steps/sec) using 1 engine (444 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:14 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/test-006.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{<http://example.org/node> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property>} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/test-006.rdf#_1>. 
+
+# Proof found in 161 steps (16100000 steps/sec) using 1 engine (444 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:14 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/test-007.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{<http://example.org/node> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List>} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/test-007.rdf#_1>. 
+
+# Proof found in 161 steps (16100000 steps/sec) using 1 engine (444 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:14 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/test-008.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{<http://example.org/node> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject>} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/test-008.rdf#_1>. 
+
+# Proof found in 161 steps (16100000 steps/sec) using 1 engine (444 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:15 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/test-009.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{<http://example.org/node> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate>} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/test-009.rdf#_1>. 
+
+# Proof found in 161 steps (16100000 steps/sec) using 1 engine (444 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:15 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/test-010.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{<http://example.org/node> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#object>} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/test-010.rdf#_1>. 
+
+# Proof found in 161 steps (16100000 steps/sec) using 1 engine (444 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:15 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/test-011.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{<http://example.org/node> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/test-011.rdf#_1>. 
+
+# Proof found in 161 steps (16100000 steps/sec) using 1 engine (444 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:15 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/test-012.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{<http://example.org/node> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#value>} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/test-012.rdf#_1>. 
+
+# Proof found in 161 steps (16100000 steps/sec) using 1 engine (444 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:15 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/test-013.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{<http://example.org/node> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> rdf:first} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/test-013.rdf#_1>. 
+
+# Proof found in 161 steps (16100000 steps/sec) using 1 engine (444 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:16 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/test-014.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{<http://example.org/node> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> rdf:rest} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/test-014.rdf#_1>. 
+
+# Proof found in 161 steps (16100000 steps/sec) using 1 engine (444 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:16 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/test-015.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{<http://example.org/node> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#_1>} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/test-015.rdf#_1>. 
+
+# Proof found in 161 steps (16100000 steps/sec) using 1 engine (444 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:16 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/test-016.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{<http://example.org/node> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ()} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/test-016.rdf#_1>. 
+
+# Proof found in 161 steps (16100000 steps/sec) using 1 engine (444 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:16 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/test-017.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{<http://example.org/node1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq> <http://example.org/node2>} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/test-017.rdf#_1>. 
+
+# Proof found in 1 step (100000 steps/sec) using 1 engine (444 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:16 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/test-018.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{<http://example.org/node1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag> <http://example.org/node2>} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/test-018.rdf#_1>. 
+
+# Proof found in 1 step (100000 steps/sec) using 1 engine (444 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:17 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/test-019.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{<http://example.org/node1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt> <http://example.org/node2>} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/test-019.rdf#_1>. 
+
+# Proof found in 1 step (100000 steps/sec) using 1 engine (444 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:17 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/test-020.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{<http://example.org/node1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement> <http://example.org/node2>} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/test-020.rdf#_1>. 
+
+# Proof found in 1 step (100000 steps/sec) using 1 engine (444 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:17 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/test-021.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{<http://example.org/node1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> <http://example.org/node2>} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/test-021.rdf#_1>. 
+
+# Proof found in 1 step (100000 steps/sec) using 1 engine (444 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:17 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/test-022.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{<http://example.org/node1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> <http://example.org/node2>} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/test-022.rdf#_1>. 
+
+# Proof found in 1 step (100000 steps/sec) using 1 engine (444 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:17 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/test-023.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{<http://example.org/node1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> <http://example.org/node2>} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/test-023.rdf#_1>. 
+
+# Proof found in 1 step (100000 steps/sec) using 1 engine (444 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:18 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/test-024.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{<http://example.org/node1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate> <http://example.org/node2>} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/test-024.rdf#_1>. 
+
+# Proof found in 1 step (100000 steps/sec) using 1 engine (444 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:18 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/test-025.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{<http://example.org/node1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#object> <http://example.org/node2>} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/test-025.rdf#_1>. 
+
+# Proof found in 1 step (100000 steps/sec) using 1 engine (444 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:18 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/test-026.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{<http://example.org/node1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/node2>} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/test-026.rdf#_1>. 
+
+# Proof found in 161 steps (16100000 steps/sec) using 1 engine (444 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:18 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/test-027.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{<http://example.org/node1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> <http://example.org/node2>} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/test-027.rdf#_1>. 
+
+# Proof found in 1 step (100000 steps/sec) using 1 engine (444 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:18 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/test-028.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{<http://example.org/node1> rdf:first <http://example.org/node2>} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/test-028.rdf#_1>. 
+
+# Proof found in 1 step (100000 steps/sec) using 1 engine (444 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:19 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/test-029.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{<http://example.org/node1> rdf:rest <http://example.org/node2>} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/test-029.rdf#_1>. 
+
+# Proof found in 1 step (100000 steps/sec) using 1 engine (444 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:19 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/test-030.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{<http://example.org/node1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#_1> <http://example.org/node2>} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/test-030.rdf#_1>. 
+
+# Proof found in 1 step (100000 steps/sec) using 1 engine (444 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:19 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/test-031.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{<http://example.org/node1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#_1> <http://example.org/node2>} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/test-031.rdf#_1>. 
+
+# Proof found in 1 step (100000 steps/sec) using 1 engine (444 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:19 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/test-032.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{<http://example.org/node1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq> "string"} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/test-032.rdf#_1>. 
+
+# Proof found in 1 step (100000 steps/sec) using 1 engine (444 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:19 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/test-033.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{<http://example.org/node1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag> "string"} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/test-033.rdf#_1>. 
+
+# Proof found in 1 step (100000 steps/sec) using 1 engine (444 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:20 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/test-034.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{<http://example.org/node1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt> "string"} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/test-034.rdf#_1>. 
+
+# Proof found in 1 step (100000 steps/sec) using 1 engine (444 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:20 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/test-035.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{<http://example.org/node1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement> "string"} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/test-035.rdf#_1>. 
+
+# Proof found in 1 step (100000 steps/sec) using 1 engine (444 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:20 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/test-036.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{<http://example.org/node1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> "string"} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/test-036.rdf#_1>. 
+
+# Proof found in 1 step (100000 steps/sec) using 1 engine (444 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:20 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/test-037.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{<http://example.org/node1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> "string"} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/test-037.rdf#_1>. 
+
+# Proof found in 1 step (100000 steps/sec) using 1 engine (444 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:20 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/warn-001.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{<http://example.org/node> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#foo>} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/warn-001.rdf#_1>. 
+
+# Proof found in 161 steps (16083 steps/sec) using 1 engine (444 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:21 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/warn-002.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{<http://example.org/node1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#foo> <http://example.org/node2>} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/warn-002.rdf#_1>. 
+
+# Proof found in 1 step (100000 steps/sec) using 1 engine (444 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:21 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/warn-003.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{<http://example.org/node1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#foo> "string"} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-rdf-names-use/warn-003.rdf#_1>. 
+
+# Proof found in 1 step (100000 steps/sec) using 1 engine (444 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:21 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-reification-required/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-reification-required/test001.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{<http://example.org/> <http://example.org#prop> "10"} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-reification-required/test001.rdf#_1>. 
+
+# Proof found in 1 step (100000 steps/sec) using 1 engine (8 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:21 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-seq-representation/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-seq-representation/test001.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{<http://example.org/eg#eric> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> _:A710519adX3aX108f90fc409X3aXX2dX4792_114_} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-seq-representation/test001.rdf#_3>. 
+{_:A710519adX3aX108f90fc409X3aXX2dX4792_114_ <http://example.org/eg#intersectionOf> _:A710519adX3aX108f90fc409X3aXX2dX4791_114_} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-seq-representation/test001.rdf#_4>. 
+{_:A710519adX3aX108f90fc409X3aXX2dX4791_114_ rdf:first <http://example.org/eg#Person>} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-seq-representation/test001.rdf#_1>. 
+{_:A710519adX3aX108f90fc409X3aXX2dX4791_114_ rdf:rest _:A710519adX3aX108f90fc409X3aXX2dX4790_114_} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-seq-representation/test001.rdf#_2>. 
+{_:A710519adX3aX108f90fc409X3aXX2dX4790_114_ rdf:first <http://example.org/eg#Male>} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-seq-representation/test001.rdf#_5>. 
+{_:A710519adX3aX108f90fc409X3aXX2dX4790_114_ rdf:rest ()} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-seq-representation/test001.rdf#_6>. 
+
+# Proof found in 19 steps (1900000 steps/sec) using 1 engine (43 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:21 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-syntax-incomplete/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-syntax-incomplete/test001.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{_:A710519adX3aX108f90fc409X3aXX2dX478f_116_ <http://example.org/property> _:A710519adX3aX108f90fc409X3aXX2dX478f_116_} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-syntax-incomplete/test001.rdf#_1>. 
+
+# Proof found in 1 step (100000 steps/sec) using 1 engine (79 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:21 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-syntax-incomplete/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-syntax-incomplete/test002.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{_:A710519adX3aX108f90fc409X3aXX2dX478e_117_ <http://example.org/property1> _:A710519adX3aX108f90fc409X3aXX2dX478e_117_} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-syntax-incomplete/test002.rdf#_3>. 
+{_:A710519adX3aX108f90fc409X3aXX2dX478d_117_ <http://example.org/property2> _:A710519adX3aX108f90fc409X3aXX2dX478c_117_} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-syntax-incomplete/test002.rdf#_2>. 
+{_:A710519adX3aX108f90fc409X3aXX2dX478c_117_ <http://example.org/property3> _:A710519adX3aX108f90fc409X3aXX2dX478e_117_} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-syntax-incomplete/test002.rdf#_1>. 
+
+# Proof found in 3 steps (300000 steps/sec) using 1 engine (81 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:21 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-syntax-incomplete/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-syntax-incomplete/test003.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{_:A710519adX3aX108f90fc409X3aXX2dX478b_118_ <http://example.org/property1> "value"} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-syntax-incomplete/test003.rdf#_1>. 
+
+# Proof found in 1 step (100000 steps/sec) using 1 engine (79 triples)
+}.
+
+# No proof found in 26 steps (2600000 steps/sec) using 1 engine (84 triples)
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:21 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-uri-substructure/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-uri-substructure/test001.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{_:A710519adX3aX108f90fc409X3aXX2dX4787_121_ <http://example.org/property> "10"} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-uri-substructure/test001.rdf#_1>. 
+
+# Proof found in 1 step (100000 steps/sec) using 1 engine (15 triples)
+}.
+
+# No proof found in 1 step (100000 steps/sec) using 1 engine (17 triples)
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:21 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-xml-literal-namespaces/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-xml-literal-namespaces/test002.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{<http://mycorp.example.com/papers/NobelPaper1> <http://purl.org/metadata/dublin_core#Title> "\n    Ramifications of\n       <apply xmlns=\"http://www.w3.org/TR/REC-mathml\">\n      <power></power>\n      <apply>\n\t<plus></plus>\n\t<ci>a</ci>\n\t<ci>b</ci>\n      </apply>\n      <cn>2</cn>\n    </apply>\n    to World Peace\n  "^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral>} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-xml-literal-namespaces/test002.rdf#_1>. 
+{<http://mycorp.example.com/papers/NobelPaper1> <http://purl.org/metadata/dublin_core#Creator> "David Hume"} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-xml-literal-namespaces/test002.rdf#_2>. 
+
+# Proof found in 2 steps (200000 steps/sec) using 1 engine (18 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:22 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-xmllang/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-xmllang/test001.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{<http://example.org/node> <http://example.org/property> "chat"^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral>} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-xmllang/test001.rdf#_1>. 
+
+# Proof found in 1 step (100000 steps/sec) using 1 engine (67 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:22 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-xmllang/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-xmllang/test002.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{<http://example.org/node> <http://example.org/property> "chat"^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral>} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-xmllang/test002.rdf#_1>. 
+
+# Proof found in 1 step (100000 steps/sec) using 1 engine (67 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:22 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-xmllang/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-xmllang/test003.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{<http://example.org/node> <http://example.org/property> "chat"} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-xmllang/test003.rdf#_1>. 
+
+# Proof found in 1 step (100000 steps/sec) using 1 engine (67 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:22 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-xmllang/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-xmllang/test004.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{<http://example.org/node> <http://example.org/property> "chat"@fr} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-xmllang/test004.rdf#_1>. 
+
+# Proof found in 1 step (100000 steps/sec) using 1 engine (67 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:22 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-xmllang/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-xmllang/test005.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{<http://example.org/node> <http://example.org/property> "chat"} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-xmllang/test005.rdf#_1>. 
+
+# Proof found in 1 step (100000 steps/sec) using 1 engine (67 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:22 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-xmllang/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-xmllang/test006.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{<http://example.org/node> <http://example.org/property> "chat"@fr} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-xmllang/test006.rdf#_1>. 
+
+# Proof found in 1 step (100000 steps/sec) using 1 engine (67 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:22 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfs-domain-and-range/Manifest.n3>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfs-domain-and-range/test001.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix test: <http://www.w3.org/2000/10/rdf-tests/rdfcore/testSchema#>.
+@prefix : <http://www.w3.org/2000/03/rdf-tracking/#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{<http://example.org/bar> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property>} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfs-domain-and-range/test001.rdf#_1>. 
+{<http://example.org/bar> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/Domain1>} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfs-domain-and-range/test001.rdf#_2>. 
+{<http://example.org/bar> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/Domain2>} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfs-domain-and-range/test001.rdf#_3>. 
+
+# Proof found in 17 steps (1700000 steps/sec) using 1 engine (43 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:22 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfs-domain-and-range/Manifest.n3>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfs-domain-and-range/test002.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix test: <http://www.w3.org/2000/10/rdf-tests/rdfcore/testSchema#>.
+@prefix : <http://www.w3.org/2000/03/rdf-tracking/#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{<http://example.org/bar> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property>} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfs-domain-and-range/test002.rdf#_1>. 
+{<http://example.org/bar> <http://www.w3.org/2000/01/rdf-schema#range> <http://example.org/Range1>} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfs-domain-and-range/test002.rdf#_2>. 
+{<http://example.org/bar> <http://www.w3.org/2000/01/rdf-schema#range> <http://example.org/Range2>} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfs-domain-and-range/test002.rdf#_3>. 
+
+# Proof found in 17 steps (1700000 steps/sec) using 1 engine (43 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:22 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/unrecognised-xml-attributes/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/unrecognised-xml-attributes/test001.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{<http://example.org/thing> <http://example.org/schema#prop1> "blah"} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/unrecognised-xml-attributes/test001.rdf#_1>. 
+{<http://example.org/thing> <http://example.org/schema#prop2> "more"} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/unrecognised-xml-attributes/test001.rdf#_2>. 
+
+# Proof found in 2 steps (200000 steps/sec) using 1 engine (16 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:22 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/unrecognised-xml-attributes/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/unrecognised-xml-attributes/test002.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{<http://example.org/thing> <http://example.org/schema#prop1> "stuff"} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/unrecognised-xml-attributes/test002.rdf#_1>. 
+
+# Proof found in 1 step (100000 steps/sec) using 1 engine (15 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:22 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/xml-canon/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/xml-canon/test001.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{<http://www.example.org/a> <http://example.org/prop> "<br></br>"^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral>} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/xml-canon/test001.rdf#_1>. 
+
+# Proof found in 1 step (100000 steps/sec) using 1 engine (9 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:22 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/xmlbase/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/xmlbase/test001.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{<http://example.org/dir/file#frag> <http://example.org/value> "v"} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/xmlbase/test001.rdf#_1>. 
+
+# Proof found in 1 step (100000 steps/sec) using 1 engine (139 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:23 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/xmlbase/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/xmlbase/test002.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{_:A710519adX3aX108f90fc409X3aXX2dX4786_142_ <http://example.org/value> <http://example.org/dir/relFile>} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/xmlbase/test002.rdf#_1>. 
+
+# Proof found in 1 step (100000 steps/sec) using 1 engine (139 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:23 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/xmlbase/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/xmlbase/test003.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{<http://example.org/dir/relfile> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/type>} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/xmlbase/test003.rdf#_1>. 
+
+# Proof found in 51 steps (5100000 steps/sec) using 1 engine (139 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:23 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/xmlbase/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/xmlbase/test004.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{_:A710519adX3aX108f90fc409X3aXX2dX4785_144_ <http://example.org/value> "v"} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/xmlbase/test004.rdf#_1>. 
+{<http://example.org/dir/file#frag> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement>} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/xmlbase/test004.rdf#_2>. 
+{<http://example.org/dir/file#frag> <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> _:A710519adX3aX108f90fc409X3aXX2dX4785_144_} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/xmlbase/test004.rdf#_5>. 
+{<http://example.org/dir/file#frag> <http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate> <http://example.org/value>} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/xmlbase/test004.rdf#_4>. 
+{<http://example.org/dir/file#frag> <http://www.w3.org/1999/02/22-rdf-syntax-ns#object> "v"} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/xmlbase/test004.rdf#_3>. 
+
+# Proof found in 55 steps (5500000 steps/sec) using 1 engine (143 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:23 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/xmlbase/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/xmlbase/test006.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{<http://example.org/file2#frag> <http://example.org/value> "v"} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/xmlbase/test006.rdf#_2>. 
+{<http://example.org/dir/relFile> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/type>} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/xmlbase/test006.rdf#_1>. 
+
+# Proof found in 52 steps (5200000 steps/sec) using 1 engine (140 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:23 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/xmlbase/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/xmlbase/test007.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{<http://example.org/relfile> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/type>} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/xmlbase/test007.rdf#_1>. 
+
+# Proof found in 51 steps (5100000 steps/sec) using 1 engine (139 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:23 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/xmlbase/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/xmlbase/test008.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{<http://example.org/dir/file> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/type>} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/xmlbase/test008.rdf#_1>. 
+
+# Proof found in 51 steps (5094 steps/sec) using 1 engine (139 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:23 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/xmlbase/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/xmlbase/test009.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{<http://example.org/absfile> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/type>} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/xmlbase/test009.rdf#_1>. 
+
+# Proof found in 51 steps (5100000 steps/sec) using 1 engine (139 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:23 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/xmlbase/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/xmlbase/test010.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{<http://another.example.org/absfile> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/type>} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/xmlbase/test010.rdf#_1>. 
+
+# Proof found in 51 steps (5100000 steps/sec) using 1 engine (139 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:23 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/xmlbase/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/xmlbase/test011.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{<http://example.org/relfile> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/type>} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/xmlbase/test011.rdf#_1>. 
+
+# Proof found in 51 steps (5100000 steps/sec) using 1 engine (139 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:23 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/xmlbase/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/xmlbase/test013.rdf>!log:semantics)!log:conjunction =>
+{
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{<http://example.org/dir/file> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/type>} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/xmlbase/test013.rdf#_1>. 
+{<http://example.org/dir/file#foo> <http://example.org/value> <http://example.org/dir/relpath>} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/xmlbase/test013.rdf#_2>. 
+
+# Proof found in 52 steps (5200000 steps/sec) using 1 engine (140 triples)
+}.
+
+# No proof found in 4 steps (400000 steps/sec) using 1 engine (140 triples)
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:23 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/datatypes-intensional/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/datatypes-intensional/test002.nt>!log:semantics
+ <http://eulersharp.sourceforge.net/2003/03swap/xsd-rules.n3>!log:semantics
+ <http://eulersharp.sourceforge.net/2003/03swap/rdfs-rules.n3>!log:semantics)!log:conjunction =>
+{
+@prefix str: <http://www.w3.org/2000/10/swap/string#>.
+@prefix p0: <http://eulersharp.sourceforge.net/2003/03swap/rdfs-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix : <http://eulersharp.sourceforge.net/2003/03swap/xsd-rules#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix math: <http://www.w3.org/2000/10/swap/math#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{{xsd:integer rdfs:subClassOf xsd:decimal} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/xsd-rules.n3#_37>. 
+ {xsd:integer rdfs:subClassOf xsd:string} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/datatypes-intensional/test002.nt#_18>} => {
+{} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/xsd-rules.n3#_83>}. 
+
+# Proof found in 3231 steps (322777 steps/sec) using 1 engine (213 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:24 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/datatypes/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/datatypes/test002.nt>!log:semantics
+ <http://eulersharp.sourceforge.net/2003/03swap/xsd-rules.n3>!log:semantics
+ <http://eulersharp.sourceforge.net/2003/03swap/rdfs-rules.n3>!log:semantics)!log:conjunction =>
+{
+@prefix str: <http://www.w3.org/2000/10/swap/string#>.
+@prefix p0: <http://eulersharp.sourceforge.net/2003/03swap/rdfs-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix : <http://eulersharp.sourceforge.net/2003/03swap/xsd-rules#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix math: <http://www.w3.org/2000/10/swap/math#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{<http://example.org/foo> <http://example.org/bar> "flargh"^^<http://www.w3.org/2001/XMLSchema#integer>} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/datatypes/test002.nt#_14>. 
+
+# Proof found in 1 step (99 steps/sec) using 1 engine (362 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:24 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/datatypes/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/datatypes/test011a.nt>!log:semantics
+ <http://eulersharp.sourceforge.net/2003/03swap/xsd-rules.n3>!log:semantics
+ <http://eulersharp.sourceforge.net/2003/03swap/rdfs-rules.n3>!log:semantics)!log:conjunction =>
+{
+@prefix str: <http://www.w3.org/2000/10/swap/string#>.
+@prefix p0: <http://eulersharp.sourceforge.net/2003/03swap/rdfs-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix : <http://eulersharp.sourceforge.net/2003/03swap/xsd-rules#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix math: <http://www.w3.org/2000/10/swap/math#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{<http://example.org/foo> <http://example.org/bar> "a string"} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/datatypes/test011a.nt#_17>. 
+
+# Proof found in 1 step (100000 steps/sec) using 1 engine (362 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:24 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/datatypes/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/datatypes/test006.nt>!log:semantics
+ <http://eulersharp.sourceforge.net/2003/03swap/xsd-rules.n3>!log:semantics
+ <http://eulersharp.sourceforge.net/2003/03swap/rdfs-rules.n3>!log:semantics)!log:conjunction =>
+{
+@prefix str: <http://www.w3.org/2000/10/swap/string#>.
+@prefix p0: <http://eulersharp.sourceforge.net/2003/03swap/rdfs-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix : <http://eulersharp.sourceforge.net/2003/03swap/xsd-rules#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix math: <http://www.w3.org/2000/10/swap/math#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{{<http://example.org/bar> rdfs:range xsd:string} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/datatypes/test006.nt#_17>. 
+ {<http://example.org/foo> <http://example.org/bar> "25"^^xsd:decimal} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/datatypes/test006.nt#_16>} => {
+{} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/xsd-rules.n3#_81>}. 
+
+# Proof found in 100 steps (10000000 steps/sec) using 1 engine (363 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:24 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/datatypes/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/datatypes/test005a.nt>!log:semantics
+ <http://eulersharp.sourceforge.net/2003/03swap/xsd-rules.n3>!log:semantics
+ <http://eulersharp.sourceforge.net/2003/03swap/rdfs-rules.n3>!log:semantics)!log:conjunction =>
+{
+@prefix str: <http://www.w3.org/2000/10/swap/string#>.
+@prefix p0: <http://eulersharp.sourceforge.net/2003/03swap/rdfs-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix : <http://eulersharp.sourceforge.net/2003/03swap/xsd-rules#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix math: <http://www.w3.org/2000/10/swap/math#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{<http://example.org/foo> <http://example.org/bar> "10.0"^^<http://www.w3.org/2001/XMLSchema#decimal>} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/datatypes/test005a.nt#_16>. 
+
+# Proof found in 1 step (99 steps/sec) using 1 engine (362 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:24 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/datatypes/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/datatypes/test003a.nt>!log:semantics
+ <http://eulersharp.sourceforge.net/2003/03swap/xsd-rules.n3>!log:semantics
+ <http://eulersharp.sourceforge.net/2003/03swap/rdfs-rules.n3>!log:semantics)!log:conjunction =>
+{
+@prefix str: <http://www.w3.org/2000/10/swap/string#>.
+@prefix p0: <http://eulersharp.sourceforge.net/2003/03swap/rdfs-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix : <http://eulersharp.sourceforge.net/2003/03swap/xsd-rules#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix math: <http://www.w3.org/2000/10/swap/math#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{<http://example.org/foo> <http://example.org/bar> "10"^^<http://www.w3.org/2001/XMLSchema#integer>} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/datatypes/test003a.nt#_16>. 
+
+# Proof found in 1 step (100000 steps/sec) using 1 engine (362 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:24 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/datatypes/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/datatypes/test003b.nt>!log:semantics
+ <http://eulersharp.sourceforge.net/2003/03swap/xsd-rules.n3>!log:semantics
+ <http://eulersharp.sourceforge.net/2003/03swap/rdfs-rules.n3>!log:semantics)!log:conjunction =>
+{
+@prefix str: <http://www.w3.org/2000/10/swap/string#>.
+@prefix p0: <http://eulersharp.sourceforge.net/2003/03swap/rdfs-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix : <http://eulersharp.sourceforge.net/2003/03swap/xsd-rules#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix math: <http://www.w3.org/2000/10/swap/math#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{<http://example.org/foo> <http://example.org/bar> "010"^^<http://www.w3.org/2001/XMLSchema#integer>} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/datatypes/test003b.nt#_16>. 
+
+# Proof found in 1 step (100000 steps/sec) using 1 engine (362 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:24 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/datatypes/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/datatypes/test008a.nt>!log:semantics
+ <http://eulersharp.sourceforge.net/2003/03swap/xsd-rules.n3>!log:semantics
+ <http://eulersharp.sourceforge.net/2003/03swap/rdfs-rules.n3>!log:semantics)!log:conjunction =>
+{
+@prefix str: <http://www.w3.org/2000/10/swap/string#>.
+@prefix p0: <http://eulersharp.sourceforge.net/2003/03swap/rdfs-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix : <http://eulersharp.sourceforge.net/2003/03swap/xsd-rules#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix math: <http://www.w3.org/2000/10/swap/math#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{<http://example.org/a> <http://example.org/b> "10"} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/datatypes/test008a.nt#_14>. 
+{<http://example.org/c> <http://example.org/d> "10"} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/datatypes/test008a.nt#_15>. 
+
+# Proof found in 2 steps (200000 steps/sec) using 1 engine (363 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:24 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/datatypes/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/datatypes/test010.nt>!log:semantics
+ <http://eulersharp.sourceforge.net/2003/03swap/xsd-rules.n3>!log:semantics
+ <http://eulersharp.sourceforge.net/2003/03swap/rdfs-rules.n3>!log:semantics)!log:conjunction =>
+{
+@prefix str: <http://www.w3.org/2000/10/swap/string#>.
+@prefix p0: <http://eulersharp.sourceforge.net/2003/03swap/rdfs-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix : <http://eulersharp.sourceforge.net/2003/03swap/xsd-rules#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix math: <http://www.w3.org/2000/10/swap/math#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{{<http://example.org/bar> rdfs:range <http://www.w3.org/2001/XMLSchema#integer>} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/datatypes/test010.nt#_17>. 
+ {<http://www.w3.org/2001/XMLSchema#integer> a rdfs:Datatype} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/xsd-rules.n3#_37>. 
+ {<http://example.org/foo> <http://example.org/bar> "25"} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/datatypes/test010.nt#_16>. 
+ {"25" a xsd:string} e:evidence <http://www.w3.org/2002/07/owl#kb>} => {
+{} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/xsd-rules.n3#_82>}. 
+
+# Proof found in 191 steps (19100000 steps/sec) using 1 engine (363 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:24 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/pfps-10/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/pfps-10/test001a.nt>!log:semantics
+ <http://eulersharp.sourceforge.net/2003/03swap/xsd-rules.n3>!log:semantics
+ <http://eulersharp.sourceforge.net/2003/03swap/rdfs-rules.n3>!log:semantics)!log:conjunction =>
+{
+@prefix str: <http://www.w3.org/2000/10/swap/string#>.
+@prefix p0: <http://eulersharp.sourceforge.net/2003/03swap/rdfs-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix : <http://eulersharp.sourceforge.net/2003/03swap/xsd-rules#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix math: <http://www.w3.org/2000/10/swap/math#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{<http://example.org/foo> <http://example.org/bar> "a"} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/pfps-10/test001a.nt#_14>. 
+{"a" <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Literal>} e:evidence <http://www.w3.org/2002/07/owl#kb>. 
+
+# Proof found in 2 steps (200000 steps/sec) using 1 engine (197 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:24 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-seq-representation/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-seq-representation/empty.nt>!log:semantics
+ <http://eulersharp.sourceforge.net/2003/03swap/xsd-rules.n3>!log:semantics
+ <http://eulersharp.sourceforge.net/2003/03swap/rdfs-rules.n3>!log:semantics)!log:conjunction =>
+{
+@prefix str: <http://www.w3.org/2000/10/swap/string#>.
+@prefix p0: <http://eulersharp.sourceforge.net/2003/03swap/rdfs-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix : <http://eulersharp.sourceforge.net/2003/03swap/xsd-rules#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix math: <http://www.w3.org/2000/10/swap/math#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{<http://www.w3.org/1999/02/22-rdf-syntax-ns#_1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty>} e:evidence <http://www.w3.org/2002/07/owl#kb>. 
+
+# Proof found in 1 step (100000 steps/sec) using 1 engine (223 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:25 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-seq-representation/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-seq-representation/test003a.nt>!log:semantics
+ <http://eulersharp.sourceforge.net/2003/03swap/xsd-rules.n3>!log:semantics
+ <http://eulersharp.sourceforge.net/2003/03swap/rdfs-rules.n3>!log:semantics)!log:conjunction =>
+{
+@prefix str: <http://www.w3.org/2000/10/swap/string#>.
+@prefix p0: <http://eulersharp.sourceforge.net/2003/03swap/rdfs-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix : <http://eulersharp.sourceforge.net/2003/03swap/xsd-rules#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix math: <http://www.w3.org/2000/10/swap/math#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{{<http://www.w3.org/1999/02/22-rdf-syntax-ns#_1> rdfs:subPropertyOf <http://www.w3.org/2000/01/rdf-schema#member>} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/log-rules#kb>. 
+ {<http://example.org/a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#_1> <http://example.org/b>} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-seq-representation/test003a.nt#_14>} => {
+{<http://example.org/a> <http://www.w3.org/2000/01/rdf-schema#member> <http://example.org/b>} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/rdfs-rules.n3#_55>}. 
+
+# Proof found in 4 steps (400000 steps/sec) using 1 engine (224 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:25 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-seq-representation/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfms-seq-representation/empty.nt>!log:semantics
+ <http://eulersharp.sourceforge.net/2003/03swap/xsd-rules.n3>!log:semantics
+ <http://eulersharp.sourceforge.net/2003/03swap/rdfs-rules.n3>!log:semantics)!log:conjunction =>
+{
+@prefix str: <http://www.w3.org/2000/10/swap/string#>.
+@prefix p0: <http://eulersharp.sourceforge.net/2003/03swap/rdfs-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix : <http://eulersharp.sourceforge.net/2003/03swap/xsd-rules#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix math: <http://www.w3.org/2000/10/swap/math#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{{<http://www.w3.org/1999/02/22-rdf-syntax-ns#_1> a rdfs:ContainerMembershipProperty} e:evidence <http://www.w3.org/2002/07/owl#kb>} => {
+{<http://www.w3.org/1999/02/22-rdf-syntax-ns#_1> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2000/01/rdf-schema#member>} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/rdfs-rules.n3#_63>}. 
+
+# Proof found in 245 steps (24475 steps/sec) using 1 engine (223 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:25 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfs-entailment/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfs-entailment/test001.nt>!log:semantics
+ <http://eulersharp.sourceforge.net/2003/03swap/xsd-rules.n3>!log:semantics
+ <http://eulersharp.sourceforge.net/2003/03swap/rdfs-rules.n3>!log:semantics)!log:conjunction =>
+{
+@prefix str: <http://www.w3.org/2000/10/swap/string#>.
+@prefix p0: <http://eulersharp.sourceforge.net/2003/03swap/rdfs-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix : <http://eulersharp.sourceforge.net/2003/03swap/xsd-rules#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix math: <http://www.w3.org/2000/10/swap/math#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{{{<http://example.org/prop> rdfs:range rdf:XMLLiteral} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfs-entailment/test001.nt#_14>. 
+  {<http://example.org/foo> <http://example.org/prop> "<"^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral>} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfs-entailment/test001.nt#_15>} => {
+ {"<"^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral> a rdf:XMLLiteral} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/rdfs-rules.n3#_48>}. 
+ {"<"^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral> e:clashesWith rdf:XMLLiteral} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/log-rules#kb>} => {
+{} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/rdfs-rules.n3#_70>}. 
+
+# Proof found in 385192 steps (276716 steps/sec) using 1 engine (210 triples)
+}.
+
+# No proof found in 182 steps (18200000 steps/sec) using 1 engine (208 triples)
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:26 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfs-no-cycles-in-subClassOf/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfs-no-cycles-in-subClassOf/test001.rdf>!log:semantics
+ <http://eulersharp.sourceforge.net/2003/03swap/xsd-rules.n3>!log:semantics
+ <http://eulersharp.sourceforge.net/2003/03swap/rdfs-rules.n3>!log:semantics)!log:conjunction =>
+{
+@prefix str: <http://www.w3.org/2000/10/swap/string#>.
+@prefix p0: <http://eulersharp.sourceforge.net/2003/03swap/rdfs-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix : <http://eulersharp.sourceforge.net/2003/03swap/xsd-rules#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix math: <http://www.w3.org/2000/10/swap/math#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{<http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfs-no-cycles-in-subClassOf/test001#A> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfs-no-cycles-in-subClassOf/test001#B>} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfs-no-cycles-in-subClassOf/test001.rdf#_2>. 
+{<http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfs-no-cycles-in-subClassOf/test001#B> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfs-no-cycles-in-subClassOf/test001#A>} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfs-no-cycles-in-subClassOf/test001.rdf#_3>. 
+{<http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfs-no-cycles-in-subClassOf/test001#X> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfs-no-cycles-in-subClassOf/test001#X>} e:evidence <http://www.w3.org/2002/07/owl#kb>. 
+
+# Proof found in 6 steps (600000 steps/sec) using 1 engine (200 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:26 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfs-no-cycles-in-subPropertyOf/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfs-no-cycles-in-subPropertyOf/test001.rdf>!log:semantics
+ <http://eulersharp.sourceforge.net/2003/03swap/xsd-rules.n3>!log:semantics
+ <http://eulersharp.sourceforge.net/2003/03swap/rdfs-rules.n3>!log:semantics)!log:conjunction =>
+{
+@prefix str: <http://www.w3.org/2000/10/swap/string#>.
+@prefix p0: <http://eulersharp.sourceforge.net/2003/03swap/rdfs-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix : <http://eulersharp.sourceforge.net/2003/03swap/xsd-rules#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix math: <http://www.w3.org/2000/10/swap/math#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{<http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfs-no-cycles-in-subPropertyOf/test001#A> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfs-no-cycles-in-subPropertyOf/test001#B>} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfs-no-cycles-in-subPropertyOf/test001.rdf#_2>. 
+{<http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfs-no-cycles-in-subPropertyOf/test001#B> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfs-no-cycles-in-subPropertyOf/test001#A>} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfs-no-cycles-in-subPropertyOf/test001.rdf#_1>. 
+{<http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfs-no-cycles-in-subPropertyOf/test001#X> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfs-no-cycles-in-subPropertyOf/test001#X>} e:evidence <http://www.w3.org/2002/07/owl#kb>. 
+
+# Proof found in 4 steps (400000 steps/sec) using 1 engine (200 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:26 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfs-subPropertyOf-semantics/Manifest.n3>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfs-subPropertyOf-semantics/test001.nt>!log:semantics
+ <http://eulersharp.sourceforge.net/2003/03swap/xsd-rules.n3>!log:semantics
+ <http://eulersharp.sourceforge.net/2003/03swap/rdfs-rules.n3>!log:semantics)!log:conjunction =>
+{
+@prefix str: <http://www.w3.org/2000/10/swap/string#>.
+@prefix p0: <http://eulersharp.sourceforge.net/2003/03swap/rdfs-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix : <http://eulersharp.sourceforge.net/2003/03swap/xsd-rules#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix test: <http://www.w3.org/2000/10/rdf-tests/rdfcore/testSchema#>.
+@prefix math: <http://www.w3.org/2000/10/swap/math#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{{<http://example.org/bar> rdfs:domain <http://example.org/Domain1>} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfs-subPropertyOf-semantics/test001.nt#_20>. 
+ {{<http://example.org/bas> rdfs:subPropertyOf <http://example.org/bar>} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfs-subPropertyOf-semantics/test001.nt#_19>. 
+  {<http://example.org/baz1> <http://example.org/bas> <http://example.org/baz2>} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfs-subPropertyOf-semantics/test001.nt#_24>} => {
+ {<http://example.org/baz1> <http://example.org/bar> <http://example.org/baz2>} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/rdfs-rules.n3#_55>}} => {
+{<http://example.org/baz1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/Domain1>} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/rdfs-rules.n3#_46>}. 
+{{<http://example.org/bas> rdfs:domain <http://example.org/Domain2>} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfs-subPropertyOf-semantics/test001.nt#_21>. 
+ {<http://example.org/baz1> <http://example.org/bas> <http://example.org/baz2>} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfs-subPropertyOf-semantics/test001.nt#_24>} => {
+{<http://example.org/baz1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/Domain2>} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/rdfs-rules.n3#_46>}. 
+{{<http://example.org/bar> rdfs:range <http://example.org/Range1>} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfs-subPropertyOf-semantics/test001.nt#_22>. 
+ {{<http://example.org/bas> rdfs:subPropertyOf <http://example.org/bar>} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfs-subPropertyOf-semantics/test001.nt#_19>. 
+  {<http://example.org/baz1> <http://example.org/bas> <http://example.org/baz2>} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfs-subPropertyOf-semantics/test001.nt#_24>} => {
+ {<http://example.org/baz1> <http://example.org/bar> <http://example.org/baz2>} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/rdfs-rules.n3#_55>}} => {
+{<http://example.org/baz2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/Range1>} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/rdfs-rules.n3#_48>}. 
+{{<http://example.org/bas> rdfs:range <http://example.org/Range2>} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfs-subPropertyOf-semantics/test001.nt#_23>. 
+ {<http://example.org/baz1> <http://example.org/bas> <http://example.org/baz2>} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/rdfs-subPropertyOf-semantics/test001.nt#_24>} => {
+{<http://example.org/baz2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/Range2>} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/rdfs-rules.n3#_48>}. 
+
+# Proof found in 260 steps (26000000 steps/sec) using 1 engine (203 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:27 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/tex-01/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/tex-01/test001.rdf>!log:semantics
+ <http://eulersharp.sourceforge.net/2003/03swap/xsd-rules.n3>!log:semantics
+ <http://eulersharp.sourceforge.net/2003/03swap/rdfs-rules.n3>!log:semantics)!log:conjunction =>
+{
+@prefix str: <http://www.w3.org/2000/10/swap/string#>.
+@prefix p0: <http://eulersharp.sourceforge.net/2003/03swap/rdfs-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix : <http://eulersharp.sourceforge.net/2003/03swap/xsd-rules#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix math: <http://www.w3.org/2000/10/swap/math#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{_:A710519adX3aX108f90fc409X3aXX2dX476e_179_ <http://example.org/prop> "a"@en-US} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/tex-01/test001.rdf#_1>. 
+
+# Proof found in 1 step (100000 steps/sec) using 1 engine (203 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:27 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/tex-01/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/tex-01/test002.rdf>!log:semantics
+ <http://eulersharp.sourceforge.net/2003/03swap/xsd-rules.n3>!log:semantics
+ <http://eulersharp.sourceforge.net/2003/03swap/rdfs-rules.n3>!log:semantics)!log:conjunction =>
+{
+@prefix str: <http://www.w3.org/2000/10/swap/string#>.
+@prefix p0: <http://eulersharp.sourceforge.net/2003/03swap/rdfs-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix : <http://eulersharp.sourceforge.net/2003/03swap/xsd-rules#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix math: <http://www.w3.org/2000/10/swap/math#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{_:A710519adX3aX108f90fc409X3aXX2dX476c_180_ <http://example.org/prop> "a"@en-US} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/tex-01/test002.rdf#_1>. 
+
+# Proof found in 1 step (100000 steps/sec) using 1 engine (203 triples)
+}.
+
+# No proof found in 560225 steps (486302 steps/sec) using 1 engine (230 triples)
+# No proof found in 400013 steps (448943 steps/sec) using 1 engine (213 triples)
+# No proof found in 400015 steps (53328 steps/sec) using 1 engine (362 triples)
+# No proof found in 8 steps (800000 steps/sec) using 1 engine (363 triples)
+# No proof found in 93 steps (9300000 steps/sec) using 1 engine (210 triples)
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:37 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/horst-01/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/horst-01/test003.rdf>!log:semantics
+ <http://eulersharp.sourceforge.net/2003/03swap/xsd-rules.n3>!log:semantics
+ <http://eulersharp.sourceforge.net/2003/03swap/rdfs-rules.n3>!log:semantics)!log:conjunction =>
+{
+@prefix str: <http://www.w3.org/2000/10/swap/string#>.
+@prefix p0: <http://eulersharp.sourceforge.net/2003/03swap/rdfs-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix : <http://eulersharp.sourceforge.net/2003/03swap/xsd-rules#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix math: <http://www.w3.org/2000/10/swap/math#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{<http://example.org/p> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property>} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/horst-01/test003.rdf#_1>. 
+{{<http://example.org/p> rdfs:range xsd:integer} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/horst-01/test003.rdf#_2>. 
+ {<http://example.org/p> rdfs:range xsd:string} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/horst-01/test003.rdf#_3>} => {
+{<http://example.org/p> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://example.org/q>} e:evidence <http://eulersharp.sourceforge.net/2003/03swap/xsd-rules.n3#_69>}. 
+
+# Proof found in 10 steps (1000000 steps/sec) using 1 engine (212 triples)
+}.
+
+# No proof found in 4 steps (400000 steps/sec) using 1 engine (233 triples)
+# No proof found in 4 steps (400000 steps/sec) using 1 engine (233 triples)
+# No proof found in 4 steps (400000 steps/sec) using 1 engine (253 triples)
+# No proof found in 4 steps (400000 steps/sec) using 1 engine (253 triples)
+# No proof found in 4 steps (400000 steps/sec) using 1 engine (253 triples)
+# No proof found in 3 steps (300000 steps/sec) using 1 engine (197 triples)
+# No proof found in 215 steps (21500000 steps/sec) using 1 engine (231 triples)
+# No proof found in 400015 steps (264558 steps/sec) using 1 engine (231 triples)
+# No proof found in 321551 steps (465334 steps/sec) using 1 engine (199 triples)
+# No proof found in 4 steps (400000 steps/sec) using 1 engine (215 triples)
+# No proof found in 191 steps (19100000 steps/sec) using 1 engine (207 triples)
+# No proof found in 4 steps (400000 steps/sec) using 1 engine (215 triples)
+# No proof found in 191 steps (19100000 steps/sec) using 1 engine (207 triples)
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:40 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/xmlsch-02/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/xmlsch-02/test001.rdf>!log:semantics
+ <http://eulersharp.sourceforge.net/2003/03swap/xsd-rules.n3>!log:semantics
+ <http://eulersharp.sourceforge.net/2003/03swap/rdfs-rules.n3>!log:semantics)!log:conjunction =>
+{
+@prefix str: <http://www.w3.org/2000/10/swap/string#>.
+@prefix p0: <http://eulersharp.sourceforge.net/2003/03swap/rdfs-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix : <http://eulersharp.sourceforge.net/2003/03swap/xsd-rules#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix math: <http://www.w3.org/2000/10/swap/math#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{<http://www.example.org/a> <http://example.org/prop> " 3 "^^<http://www.w3.org/2001/XMLSchema#int>} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/xmlsch-02/test001.rdf#_1>. 
+
+# Proof found in 1 step (100000 steps/sec) using 1 engine (230 triples)
+}.
+
+# Generated with http://eulersharp.sourceforge.net/ version 1.4.26 on 23 Jan 2006 21:59:40 GMT
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+(<http://www.w3.org/2000/10/rdf-tests/rdfcore/xmlsch-02/Manifest.rdf>!log:semantics
+ <http://www.w3.org/2000/10/rdf-tests/rdfcore/xmlsch-02/test002.rdf>!log:semantics
+ <http://eulersharp.sourceforge.net/2003/03swap/xsd-rules.n3>!log:semantics
+ <http://eulersharp.sourceforge.net/2003/03swap/rdfs-rules.n3>!log:semantics)!log:conjunction =>
+{
+@prefix str: <http://www.w3.org/2000/10/swap/string#>.
+@prefix p0: <http://eulersharp.sourceforge.net/2003/03swap/rdfs-rules#>.
+@prefix q: <http://www.w3.org/2004/ql#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix : <http://eulersharp.sourceforge.net/2003/03swap/xsd-rules#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix math: <http://www.w3.org/2000/10/swap/math#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{<http://www.example.org/a> <http://example.org/prop> "3"^^<http://www.w3.org/2001/XMLSchema#int>} e:evidence <http://www.w3.org/2000/10/rdf-tests/rdfcore/xmlsch-02/test002.rdf#_1>. 
+
+# Proof found in 1 step (100000 steps/sec) using 1 engine (230 triples)
+}.
+
+# No proof found in 400006 steps (481349 steps/sec) using 1 engine (230 triples)
+
+# Proof found in 2876409 steps (83691 steps/sec) using 171 engines (0 triples)
+}.
+

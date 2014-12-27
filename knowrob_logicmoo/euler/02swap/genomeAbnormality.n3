@@ -1,0 +1,144 @@
+@prefix dce: <http://purl.org/dc/elements/1.1/>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix event: <http://eulersharp.sourceforge.net/2003/03swap/event#>.
+@prefix organism: <http://eulersharp.sourceforge.net/2003/03swap/organism#>.
+@prefix genomab: <http://eulersharp.sourceforge.net/2003/03swap/genomeAbnormality#>.
+
+<http://eulersharp.sourceforge.net/2003/03swap/genomeAbnormality#>
+	a owl:Ontology;
+	dce:title """Genome Abnormality"""@en;
+	dce:creator """Hans Cools, MD, Agfa Healthcare/Belgium"""@en;
+	dce:publisher """Agfa Healthcare/Belgium"""@en;
+	dce:description """Formal general description of genome abnormality."""@en;
+	dce:format """OWL Full"""@en.
+
+#
+# CLASSES
+#
+
+genomab:GenomeAbnormality
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/genomeAbnormality#>;
+	rdfs:label """genome abnormality"""@en;
+	skos:definition """Genome different from what is normal for an organism."""@en;
+	rdfs:subClassOf [
+		a owl:Restriction; owl:onProperty event:modificationOf; owl:someValuesFrom organism:Genome].
+
+genomab:ChromosomeAbnormality
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/genomeAbnormality#>;
+	rdfs:label """chromosome abnormality"""@en;
+	skos:definition """Chromosome different from what is normal for an organism."""@en;
+	rdfs:subClassOf genomab:GenomeAbnormality.
+
+genomab:Aneuploidy
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/genomeAbnormality#>;
+	rdfs:label """aneuploidy"""@en;
+	skos:definition """Numerical chromosome abnormality."""@en;
+	rdfs:subClassOf genomab:ChromosomeAbnormality.
+
+genomab:ChromosomeMutation
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/genomeAbnormality#>;
+	rdfs:label """chromosome mutation"""@en;
+	skos:definition """Structural chromosome abnormality."""@en;
+	rdfs:subClassOf genomab:ChromosomeAbnormality.
+
+genomab:SingleChromosomeMutation
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/genomeAbnormality#>;
+	rdfs:label """single chromosome mutation"""@en;
+	skos:definition """Structural abnormality of 1 chromosome."""@en;
+	rdfs:subClassOf genomab:ChromosomeMutation.
+
+genomab:ChromosomeDeletion
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/genomeAbnormality#>;
+	rdfs:label """chromosome deletion"""@en;
+	skos:definition """Loss of part of 1 chromosome."""@en;
+	rdfs:subClassOf genomab:SingleChromosomeMutation.
+
+genomab:ChromosomeDuplication
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/genomeAbnormality#>;
+	rdfs:label """chromosome duplication"""@en;
+	skos:definition """Duplication of part of 1 chromosome."""@en;
+	rdfs:subClassOf genomab:SingleChromosomeMutation.
+
+genomab:ChromosomeInversion
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/genomeAbnormality#>;
+	rdfs:label """chromosome inversion"""@en;
+	skos:definition """Inversion of part of 1 chromosome."""@en;
+	rdfs:subClassOf genomab:SingleChromosomeMutation.
+
+genomab:TwoChromosomeMutation
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/genomeAbnormality#>;
+	rdfs:label """two chromosome mutation"""@en;
+	skos:definition """Structural abnormality of 2 chromosomes."""@en;
+	rdfs:subClassOf genomab:ChromosomeMutation.
+
+genomab:ChromosomeInsertion
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/genomeAbnormality#>;
+	rdfs:label """chromosome insertion"""@en;
+	skos:definition """Part of one chromosome inserted into another chromosome."""@en;
+	rdfs:subClassOf genomab:TwoChromosomeMutation.
+
+genomab:ChromosomeTranslocation
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/genomeAbnormality#>;
+	rdfs:label """chromosome translocation"""@en;
+	skos:definition """One part of 2 chromosomes exchanged."""@en;
+	rdfs:subClassOf genomab:TwoChromosomeMutation.
+
+genomab:GeneAbnormality
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/genomeAbnormality#>;
+	rdfs:label """gene abnormality"""@en;
+	skos:definition """Gene different from what is normal for an organism."""@en;
+	rdfs:subClassOf genomab:GenomeAbnormality.
+
+genomab:MonogenicMutation
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/genomeAbnormality#>;
+	rdfs:label """monogenic mutation"""@en;
+	skos:definition """One gene different from what is normal for an organism."""@en;
+	rdfs:subClassOf genomab:GeneAbnormality.
+
+genomab:PolygenicMutation
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/genomeAbnormality#>;
+	rdfs:label """polygenic mutation"""@en;
+	skos:definition """More than one gene different from what is normal for an organism."""@en;
+	rdfs:subClassOf genomab:GeneAbnormality.
+
+genomab:Mutated
+	a rdfs:Class, event:State;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/genomeAbnormality#>;
+	rdfs:label """mutated"""@en;
+	skos:definition """State of chromosome or gene being structurally changed."""@en;
+	rdfs:subClassOf event:State.
+
+genomab:Unmutated
+	a rdfs:Class, event:State;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/genomeAbnormality#>;
+	rdfs:label """unmutated"""@en;
+	skos:definition """State of chromosome or gene being structurally unchanged."""@en;
+	rdfs:subClassOf event:State.
+
+#
+# PROPERTIES
+#
+
+#genomab:mutationOf
+#	a owl:ObjectProperty;
+#	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/genomeAbnormality#>;
+#	rdfs:label """mutation of"""@en;
+#	skos:definition """Specifying a chromosome or gene having a mutation."""@en;
+#	rdfs:domain owl:unionOf (genomab:ChromosomeMutation genomab:GeneAbnormality);
+#	rdfs:range humana:DNA.

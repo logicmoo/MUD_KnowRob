@@ -1,0 +1,11 @@
+Unzip eye.zip from https://sourceforge.net/projects/eulersharp/files/eulersharp/
+
+Install SWIPL from http://www.swi-prolog.org/download/stable
+
+Run the installation script install.sh which will
+- copy the EYE source file euler.yap to /opt/eye/src/euler.yap
+- create the EYE image file at /opt/eye/lib/eye.pvm
+- copy the EYE launch script eye.sh to /opt/eye/bin/eye.sh
+
+Test the EYE installation via /opt/eye/bin/eye.sh --version
+and it should return the version which is in the file VERSION.

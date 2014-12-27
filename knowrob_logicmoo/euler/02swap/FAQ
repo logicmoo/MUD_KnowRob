@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>FAQ</title>
+    <link rel="stylesheet" type="text/css" href="http://www.w3.org/StyleSheets/base.css">
+    <style type="text/css">a:hover {background:#ffa;}</style>
+    <style type="text/css">img {vertical-align:text-top;}</style>
+</head>
+
+<body>
+<h1><img src="http://eulersharp.sourceforge.net/2003/03swap/eye.png" alt="EYE" height="37" width="37"/> FAQ</h1><pre>
+Q: How to set up the build environment?
+   How are RDF/XML files handled?
+   How to run the test cases?
+
+A: See <a href="http://eulersharp.sourceforge.net/README">http://eulersharp.sourceforge.net/README</a>
+
+
+Q: Why does &lt;eg:a&gt; &lt;rdf:type&gt; &lt;eg:b&gt; fail?
+
+A: The reason is that &lt;rdf:type&gt; is a URI, using *scheme* rdf
+   and you should use rdf:type instead which is a Qname using
+   rdf: *namspace prefix*.
+   Things like &lt;eg:a&gt; should actually be written as eg:a
+   i.e. you either write &lt;http://example.org/xyz#a&gt; or eg:a.
+
+
+Q: Is the Euler path detection a valid mechanism?
+
+A: We believe that following holds for the Euler path detection 
+   Solution Lemma II:
+   Be C the set of all closure paths that generate solutions,
+   then there exist matching resolution paths that generate
+   the same solutions. 
+   (or no solutions are excluded) and 
+   Infinite Looping Path Lemma:
+   If the closure graph G' is not infinite and the resolution 
+   process generates an infinite number of looping paths then
+   this generation will be stopped by the anti-looping technique
+   and the resolution process will terminate in a finite time.
+
+   For more explanation see Master thesis of Guido Naudts
+   <a href="http://www.agfa.com/w3c/2002/02/thesis/thesis.pdf">http://www.agfa.com/w3c/2002/02/thesis/thesis.pdf</a>
+   which is about RDFEngine using same anti-looping technique:
+   Chapter 5
+   [[
+   5.14. Anti-looping technique .......................... 94
+   5.14.1. Introduction .................................. 95
+   5.14.2. Elaboration ................................... 95
+   5.14.3. Failure ....................................... 97
+   5.14.4. Soundness and completeness .................... 97
+   5.14.5. Monotonicity .................................. 97
+   ]]
+   and Appendix 5
+   [[
+   5.3. Lemmas .......................................... 151
+   ]]
+
+
+Q: What reasoning technique is Euler using? Is it using Tableaux?
+
+A: No tableaux but resolution (Robinson 1965).
+   Euler(sharp) is a backward-chaining reasoner enhanced
+   with Euler path detection and will tell you whether a
+   given set of facts and rules supports a given conclusion.
+   (the latter as an N3 expression obtained by some
+   primitive instrumentation of the code).
+
+   For both euler.pl and sem.pl the euler path detection is
+   roughly "don't step in your onwn steps" to avoid vicious
+   circles so to speak and in that repect there is a similarity
+   with what Leonhard Euler discovered in 1736 for the
+   "Königsberg Bridge Problem"
+   <a href="http://mathworld.wolfram.com/KoenigsbergBridgeProblem.html">http://mathworld.wolfram.com/KoenigsbergBridgeProblem.html</a>
+
+   Both reasoners are essentially backward-forward-backward
+   reasoners i.e. Prolog underlying backward chaining, forward
+   meta-level reasoning and backward proof construction.
+
+
+Q: What are the numbers TC, TP, BC, etc at the last line of
+   http://eulersharp.sourceforge.net/2007/07test/shubertE.n3
+
+A: Those are counters keeping track of:
+   TC = trunk conclusions
+   TP = trunk premises
+   BC = branch conclusions
+   BP = branch premises
+   PM = possible models
+   CM = counter models
+   FM = false models
+   AM = all models
+
+</pre>
+</body>
+</html>

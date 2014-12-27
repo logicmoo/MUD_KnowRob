@@ -1,0 +1,47 @@
+@prefix event: <http://eulersharp.sourceforge.net/2003/03swap/event#>.
+@prefix math: <http://www.w3.org/2000/10/swap/math#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix dce: <http://purl.org/dc/elements/1.1/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix agerule: <http://eulersharp.sourceforge.net/2003/03swap/age_rule#>.
+
+<http://eulersharp.sourceforge.net/2003/03swap/age_rule#>
+	dce:title """Age rule"""@en;
+	dce:creator """Hans Cools"""@en;
+	dce:publisher """Agfa Healthcare/Belgium"""@en;
+	dce:description """Rule to calculate an age in years of a being from its origination date time and/or beginning date time of its existence."""@en;
+	dce:language """English"""@en.
+
+
+# CALCULATION OF AN AGE IN YEARS OF SOMETHING - STARTING FROM ORIGINATION DATE TIME (year-month-day-hour-minute-second)
+# Age not restricted to a duration of life
+
+# INTEGRITY CONSTRAINT: ORIGINATION DATE OF SOMETHING HAS TO BE EARLIER THAN REFERENCE TIME POINT
+{	?being event:hasOriginationDateTime ?originationDateTime.
+	[event:hasSnapshotDateTime ?snapshotDateTime].
+	?originationDateTime math:notLessThan ?snapshotDateTime} => false.
+
+{	[event:hasSnapshotDateTime ?snapshotDateTime].
+	?being event:hasOriginationDateTime ?originationDateTime.
+	(?snapshotDateTime ?originationDateTime) math:difference ?sec.
+	(?sec "P1Y"^^xsd:duration) math:integerQuotient ?years.
+	?years math:notLessThan 1}
+=>
+{	?being event:hasAge ?years}.
+
+
+# CALCULATION OF AN AGE IN YEARS OF SOMETHING - STARTING FROM BEGINNING DATE OF ITS EXISTENCE (year-month-day-hour-minute-second)
+
+# INTEGRITY CONSTRAINT: ORIGINATION DATE OF SOMETHING HAS TO BE EARLIER THAN REFERENCE TIME POINT
+{	?event event:begins ?beginning.
+	[event:hasSnapshotDateTime ?snapshotDateTime].
+	?beginning math:notLessThan ?snapshotDateTime} => false.
+
+{	[event:hasSnapshotDateTime ?snapshotDateTime].
+	?being event:exists ?existence.
+	?existence event:begins ?beginning.
+	(?snapshotDateTime ?beginning) math:difference ?sec.
+	(?sec "P1Y"^^xsd:duration) math:integerQuotient ?years.
+	?years math:notLessThan 1}
+=>
+{	?being event:hasAge ?years}.

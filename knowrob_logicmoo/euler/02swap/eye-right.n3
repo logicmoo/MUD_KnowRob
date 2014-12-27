@@ -1,0 +1,7 @@
+# log:outputString test case
+# eye --nope --strings http://eulersharp.sourceforge.net/2003/03swap/eye-right.n3 http://eulersharp.sourceforge.net/2003/03swap/eye-logo.n3 http://eulersharp.sourceforge.net/2003/03swap/eye-look.n3
+
+@prefix : <http://eulersharp.sourceforge.net/2003/03swap/try#>.
+
+[] :look :right.
+

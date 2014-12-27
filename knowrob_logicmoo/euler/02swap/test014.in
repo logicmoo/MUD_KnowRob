@@ -1,0 +1,33 @@
+% original version at http://www.ii.uib.no/~bezem/GL/nl.in
+% induction step in Newman's Lemma
+
+:- op(1200,xfx,':=').
+:- op(1199,xfx,'=>').
+
+:- dynamic(e/2).
+:- dynamic(r/2).
+:- dynamic(s/2).
+:- dynamic(dom/1).
+:- dynamic(answer/1).
+
+flag(keywords).
+flag(quiet).
+flag(quick).
+
+% domain elements u,v,w
+dom(u). dom(v). dom(w).
+
+[found] := s(v,X), s(w,X) => answer((s(v,X), s(w,X))).
+[] := answer(_) => goal.
+
+[assump] := true => s(u,v), s(u,w).
+[ref_e] := dom(X) => e(X,X).
+[sym_e] := e(X,Y) => e(Y,X).
+[e_in_s] := e(X,Y) => s(X,Y).
+[r_in_s] := r(X,Y) => s(X,Y).
+[trans_s] := s(X,Y), s(Y,Z) => s(X,Z).
+
+[lo_cfl] := r(X,Y), r(X,Z) => dom(U), s(Y,U), s(Z,U).
+[ih_cfl] := r(u,X), s(X,Y), s(X,Z) => dom(U), s(Y,U), s(Z,U).
+% last to avoid infinite path
+[e_or_rs] := s(X,Y) => e(X,Y); dom(Z), r(X,Z), s(Z,Y).

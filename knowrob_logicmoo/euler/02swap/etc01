@@ -1,0 +1,20 @@
+eyes $* http://eulersharp.sourceforge.net/2003/03swap/socrates.n3 --query http://eulersharp.sourceforge.net/2003/03swap/socratesF.n3
+eyes $* http://eulersharp.sourceforge.net/2007/07test/socrates.n3 --query http://eulersharp.sourceforge.net/2007/07test/socratesQ.n3
+eyes $* http://eulersharp.sourceforge.net/2003/03swap/graph.axiom.n3 http://eulersharp.sourceforge.net/2003/03swap/rpo-rules.n3 --query http://eulersharp.sourceforge.net/2003/03swap/graph.filter.n3
+eyes $* http://eulersharp.sourceforge.net/2003/03swap/gedcom-facts.n3 http://eulersharp.sourceforge.net/2003/03swap/gedcom-relations.n3 http://eulersharp.sourceforge.net/2003/03swap/rpo-rules.n3 --query http://eulersharp.sourceforge.net/2003/03swap/gedcom-filter.n3
+eyes $* http://eulersharp.sourceforge.net/2004/04test/easterP.n3 --query http://eulersharp.sourceforge.net/2004/04test/easterF.n3
+eyes $* http://eulersharp.sourceforge.net/2004/04test/danP.n3 --query http://eulersharp.sourceforge.net/2004/04test/danC.n3
+eyes $* http://eulersharp.sourceforge.net/2003/03swap/lldmD.n3 http://eulersharp.sourceforge.net/2003/03swap/lldmP.n3 --query http://eulersharp.sourceforge.net/2003/03swap/lldmF.n3
+eyes $* http://eulersharp.sourceforge.net/2003/03swap/example001P.n3 http://eulersharp.sourceforge.net/2003/03swap/example002P.n3 http://eulersharp.sourceforge.net/2003/03swap/fl-rules.n3 --query http://eulersharp.sourceforge.net/2003/03swap/example003Q.n3
+eyes $* http://eulersharp.sourceforge.net/2004/04test/radlex.n3 --query http://eulersharp.sourceforge.net/2004/04test/radlexQ.n3
+eyes $* http://eulersharp.sourceforge.net/2004/04test/anatomy-facts.n3 http://eulersharp.sourceforge.net/2004/04test/anatomy-rules.n3 --query http://eulersharp.sourceforge.net/2004/04test/anatomy-filter.n3
+eyes $* http://eulersharp.sourceforge.net/2003/03swap/medic.n3 --query http://eulersharp.sourceforge.net/2003/03swap/medicF.n3
+eyes $* http://eulersharp.sourceforge.net/2004/04test/metastaticP001.n3 --query http://eulersharp.sourceforge.net/2004/04test/metastaticQ001.n3
+eyes $* http://eulersharp.sourceforge.net/2004/04test/metastaticP002.n3 --query http://eulersharp.sourceforge.net/2004/04test/metastaticQ001.n3
+eyes $* http://www.w3.org/2000/10/swap/test/reason/witch.n3 --query http://www.w3.org/2000/10/swap/test/reason/witch-goal.n3
+eyes $* http://eulersharp.sourceforge.net/2003/03swap/einstein.n3 --query http://eulersharp.sourceforge.net/2003/03swap/einsteinQ.n3
+eyes $* http://eulersharp.sourceforge.net/2004/04test/xanthippe.n3 --query http://eulersharp.sourceforge.net/2004/04test/xanthippeQ.n3
+eyes $* http://eulersharp.sourceforge.net/2007/07test/biP.n3 --query http://eulersharp.sourceforge.net/2007/07test/biQ.n3
+eyes $* http://eulersharp.sourceforge.net/2003/03swap/lf.n3 --query http://eulersharp.sourceforge.net/2003/03swap/lfF.n3
+eyes $* http://www.w3.org/2000/10/swap/test/EricNeumann/exdata.n3 --query http://eulersharp.sourceforge.net/2004/04test/exonQ.n3
+eyes $* --quick http://eulersharp.sourceforge.net/2007/07test/shubert.n3 --query http://eulersharp.sourceforge.net/2007/07test/shubertQ.n3

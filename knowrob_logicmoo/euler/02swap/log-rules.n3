@@ -1,0 +1,460 @@
+### Logic Framework Extension -- Jos De Roo
+### importing http://www.w3.org/2000/10/swap/log
+
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix math: <http://www.w3.org/2000/10/swap/math#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix prolog: <http://eulersharp.sourceforge.net/2003/03swap/prolog#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+<> owl:imports <http://www.w3.org/2000/10/swap/log>.
+
+### classes
+e:Builtin a rdfs:Class;
+	rdfs:comment "class of builtins".
+
+e:Fact a rdfs:Class;
+	rdfs:comment "class of facts".
+
+e:Lemma a rdfs:Class;
+	rdfs:comment "class of lemmas".
+
+e:Numeral a rdfs:Class;
+	rdfs:subClassOf rdfs:Literal;
+	rdfs:comment "class of things that are numerals".
+
+e:T0 a owl:DeprecatedClass;
+	rdfs:comment "class of things that are time reference points".
+
+
+### constants
+e:epsilon a e:Numeral;
+	rdfs:comment "the difference between the float 1.0 and the first larger floating point number".
+
+e:F a rdfs:Resource;
+	rdfs:comment "identifier for boolean false".
+
+e:T a rdfs:Resource;
+	rdfs:comment "identifier for boolean true".
+
+
+### properties
+e:allAncestors a owl:DeprecatedProperty, e:Builtin;
+	rdfs:comment "builtin to collect all ancestor triples of subject";
+	rdfs:domain log:Formula;
+	rdfs:range log:Formula.
+
+e:allAssertedAncestors a owl:DeprecatedProperty, e:Builtin;
+	rdfs:comment "builtin to collect all ancestor asserted triples of subject";
+	rdfs:domain log:Formula;
+	rdfs:range log:Formula.
+
+e:allDescendents a owl:DeprecatedProperty, e:Builtin;
+	rdfs:comment "builtin to collect all descendent triples of subject";
+	rdfs:domain log:Formula;
+	rdfs:range log:Formula.
+
+e:allModels a owl:DeprecatedProperty;
+	rdfs:comment "object is the number of possible, counter and false models";
+	rdfs:domain rdfs:Resource;
+	rdfs:range xsd:integer.
+
+e:ancestor a owl:DeprecatedProperty;
+	rdfs:comment "used in e:falseModel explanation";
+	rdfs:domain rdfs:Resource;
+	rdfs:range log:Formula.
+
+e:ancestorModel a owl:DeprecatedProperty;
+	rdfs:comment "object is a ancestor model";
+	rdfs:domain rdfs:Resource;
+	rdfs:range log:Formula.
+
+e:ancestors a owl:DeprecatedProperty;
+	rdfs:comment "used in e:ancestorModel explanation";
+	rdfs:domain rdfs:Resource;
+	rdfs:range log:Formula.
+
+e:answer a rdf:Property;
+	rdfs:comment "used to descibe an answer as a graph";
+	rdfs:domain rdfs:Resource;
+	rdfs:range log:Formula.
+
+e:applicability a owl:DeprecatedProperty;
+	rdfs:comment "a property to express the ratio possibleModels/(possibleModels+counterModels+falseModels)";
+	rdfs:domain rdfs:Resource;
+	rdfs:range e:Numeral.
+
+e:assertedAncestors a owl:DeprecatedProperty;
+	rdfs:comment "used in e:falseModel explanation";
+	rdfs:domain rdfs:Resource;
+	rdfs:range log:Formula.
+
+e:assertedTriple a owl:DeprecatedProperty, e:Builtin;
+	rdfs:comment "builtin to succeed when subject is an asserted triple";
+	rdfs:domain log:Formula;
+	rdfs:range log:Formula.
+
+e:bayesRule a owl:DeprecatedProperty;
+	rdfs:comment "Bayes Rule justification";
+	rdfs:domain rdfs:Resource;
+	rdfs:range rdf:List.
+
+e:because a owl:DeprecatedProperty;
+	rdfs:comment "proof of formula";
+	rdfs:domain rdfs:Resource;
+	rdfs:range rdfs:Resource.
+
+e:biconditional a rdf:Property, e:Builtin;
+	rdfs:comment "builtin and object is conditional belief of first element of subject list given rest of subject list";
+	rdfs:domain rdf:List;
+	rdfs:range e:Numeral.
+
+e:binaryEntropy a rdf:Property, e:Builtin;
+	rdfs:comment "builtin to calculate binary entropy e.g. 0.25 e:binaryEntropy 0.8112781244591328.";
+	rdfs:domain e:Numeral;
+	rdfs:range e:Numeral.
+
+e:boolean a rdf:Property;
+	rdfs:comment "to model a logical proposition";
+	rdfs:domain rdfs:Resource;
+	rdfs:range [ owl:oneOf (e:F e:T)].
+
+e:call a rdf:Property, e:Builtin;
+	rdfs:comment "builtin to call the object formula; is within the subject scope of all asserted N3 formulae and their log:conclusion";
+	rdfs:domain rdf:List;
+	rdfs:range log:Formula.
+
+e:cartesianProduct a rdf:Property, e:Builtin;
+	rdfs:comment "builtin (L1 L2 ... Ln) e:cartesianProduct L, where L is the n-ary cartesian product of the sets L1, L2, ...., Ln.";
+	rdfs:domain rdf:List;
+	rdfs:range rdf:List.
+
+e:clashesWith a rdf:Property;
+	rdfs:comment "to say that the graph is XSD-inconsistent or has a datatype clash";
+	rdfs:domain rdfs:Literal;
+	rdfs:range rdfs:Datatype.
+
+e:closure a owl:DeprecatedProperty, e:Builtin;
+	rdfs:comment "builtin to test the deductive closure; is within the subject scope of all asserted N3 formulae and their log:conclusion";
+	rdfs:domain rdf:List;
+	rdfs:range log:Formula.
+
+e:closureInconsistentTriplesOrdering a owl:DeprecatedProperty;
+	rdfs:comment "used in e:falseModel explanation";
+	rdfs:domain rdfs:Resource;
+	rdfs:range log:Formula.
+
+e:columns a rdf:Property;
+	rdfs:comment "to list the webized relational database collumns";
+	rdfs:domain rdfs:Class;
+	rdfs:range rdf:List.
+
+e:conditional a rdf:Property;
+	rdfs:comment "object is conditional belief of first element of subject list given rest of subject list";
+	rdfs:domain rdf:List;
+	rdfs:range e:Numeral.
+
+e:construct a rdf:Property;
+	rdfs:comment "connecting a resource to a formula";
+	rdfs:domain rdfs:Resource;
+	rdfs:range log:Formula.
+
+e:consistentGives a owl:DeprecatedProperty;
+	rdfs:comment "used in e:falseModel explanation";
+	rdfs:domain rdfs:Resource;
+	rdfs:range log:Formula.
+
+e:counterModel a owl:DeprecatedProperty;
+	rdfs:comment "object is a counter model";
+	rdfs:domain rdfs:Resource;
+	rdfs:range log:Formula.
+
+e:counterModels a owl:DeprecatedProperty;
+	rdfs:comment "object is the number of counter models";
+	rdfs:domain rdfs:Resource;
+	rdfs:range xsd:integer.
+
+e:csvTuple a rdf:Property, e:Builtin;
+	rdfs:comment "to generate CSV output with --strings";
+	rdfs:domain rdfs:Resource;
+	rdfs:range rdf:List.
+
+e:delta a owl:DeprecatedProperty;
+	rdfs:comment "used in proof output to explain belief differences";
+	rdfs:domain rdf:List;
+	rdfs:range e:Numeral.
+
+e:disjunction a owl:DeprecatedProperty, e:Builtin;
+	rdfs:comment "similar to log:conjunction but is logical OR and is used for rules with disjunctions in the conclusion";
+	rdfs:domain rdf:List;
+	rdfs:range log:Formula.
+
+e:distinct a rdf:Property, e:Builtin;
+	rdfs:comment "builtin to remove duplicate list items";
+	rdfs:domain rdf:List;
+	rdfs:range rdf:List.
+
+e:evidence a owl:DeprecatedProperty;
+	rdfs:comment "to say that subject has an evident relationship with object either as fact or as conclusion of rule";
+	rdfs:domain log:Formula;
+	rdfs:range rdfs:Resource.
+
+e:evidentiality a owl:DeprecatedProperty;
+	rdfs:comment "a property to express the ratio (possibleModels+counterModels)/(possibleModels+counterModels+falseModels)";
+	rdfs:domain rdfs:Resource;
+	rdfs:range e:Numeral.
+
+e:falseAncestors a owl:DeprecatedProperty;
+	rdfs:comment "used in e:falseModel explanation";
+	rdfs:domain rdfs:Resource;
+	rdfs:range log:Formula.
+
+e:falseDescendents a owl:DeprecatedProperty;
+	rdfs:comment "used in e:falseModel explanation";
+	rdfs:domain rdfs:Resource;
+	rdfs:range log:Formula.
+
+e:falseModel a owl:DeprecatedProperty;
+	rdfs:comment "object is a false model";
+	rdfs:domain rdfs:Resource;
+	rdfs:range log:Formula.
+
+e:falseModels a owl:DeprecatedProperty;
+	rdfs:comment "object is the number of false models";
+	rdfs:domain rdfs:Resource;
+	rdfs:range xsd:integer.
+
+e:findall a rdf:Property, e:Builtin;
+	rdfs:comment """builtin used as ?SCOPE e:findall (?SELECT ?WHERE ?ANSWER).
+		unifies ?ANSWER with a list that contains all the instantiations of ?SELECT satisfying the ?WHERE clause
+		within the ?SCOPE of all asserted N3 formulae and their log:conclusion""";
+	rdfs:comment """builtin used as ?SCOPE e:findall (?SELECT ?WHERE ?BAG ?TAIL).
+		unifies the difference list ?BAG-?TAIL with all instantiations of ?SELECT satisfying the ?WHERE clause
+		within the ?SCOPE of all asserted N3 formulae and their log:conclusion""";
+	rdfs:domain rdf:List;
+	rdfs:range rdf:List.
+
+e:format a rdf:Property, e:Builtin;
+	rdfs:comment """builtin with the subject a list, whose first member is a format string, and whose remaining members are
+		arguments to the format string. The format string is the one used in prolog's format predicate.
+		The object is calculated from the subject""";
+	rdfs:domain rdf:List;
+	rdfs:range rdfs:Literal.
+
+e:gives a owl:DeprecatedProperty;
+	rdfs:comment "used in e:possibleModel and in e:falseModel explanation";
+	rdfs:domain rdfs:Resource;
+	rdfs:range log:Formula.
+
+e:graphCopy a rdf:Property, e:Builtin;
+	rdfs:comment "builtin to make a grounded copy of the subject graph e.g. {:a :b :c. :d :e :f} e:graphCopy ?GRAPH.";
+	rdfs:domain log:Formula;
+	rdfs:range log:Formula.
+
+e:graphDifference a rdf:Property, e:Builtin;
+	rdfs:comment "builtin used for graph difference e.g. ({:a :b :c. :d :e :f} {:d :e :f}) e:graphDifference {:a :b :c}.";
+	rdfs:domain rdf:List;
+	rdfs:range log:Formula.
+
+e:graphIntersection a rdf:Property, e:Builtin;
+	rdfs:comment "builtin used for graph intersection e.g. ({:a :b :c. :d :e :f} {:d :e :f}) e:graphIntersection {:d :e :f}.";
+	rdfs:domain rdf:List;
+	rdfs:range log:Formula.
+
+e:graphList a rdf:Property, e:Builtin;
+	rdfs:comment "builtin used for graph/list transformation e.g. {:a :b :c. :d :e :f} e:graphList ({:a :b :c} {:d :e :f}).";
+	rdfs:domain log:Formula;
+	rdfs:range rdf:List.
+
+e:inconsistentTriplesOrdering a owl:DeprecatedProperty;
+	rdfs:comment "used in e:falseModel explanation";
+	rdfs:domain rdfs:Resource;
+	rdfs:range log:Formula.
+
+e:inductivity a owl:DeprecatedProperty;
+	rdfs:comment "a property to express the ratio possibleModels/(possibleModels+counterModels)";
+	rdfs:domain rdfs:Resource;
+	rdfs:range e:Numeral.
+
+e:inferredDescendents a owl:DeprecatedProperty;
+	rdfs:comment "used in e:falseModel explanation";
+	rdfs:domain rdfs:Resource;
+	rdfs:range log:Formula.
+
+e:integrityConstraint a owl:DeprecatedProperty;
+	rdfs:comment "used in e:falseModel explanation";
+	rdfs:domain rdfs:Resource;
+	rdfs:range log:Formula.
+
+e:label a rdf:Property, e:Builtin;
+	rdfs:comment "builtin to test wether the subject is a blank node and return the relabeled blank node label as object (this is a level breaker)";
+	rdfs:domain rdfs:Resource;
+	rdfs:range rdfs:Literal.
+
+e:labelvars a rdf:Property, e:Builtin;
+	rdfs:comment "builtin to make a grounded copy of the subject";
+	rdfs:domain rdfs:Resource;
+	rdfs:range rdfs:Resource.
+
+e:length a rdf:Property, e:Builtin;
+	rdfs:comment "builtin that calculates the length of the subject list";
+	rdfs:domain rdf:List;
+	rdfs:range xsd:integer.
+
+e:max a rdf:Property, e:Builtin;
+	rdfs:comment "builtin to maximum of the subject list";
+	rdfs:domain rdf:List;
+	rdfs:range rdfs:Resource.
+
+e:min a rdf:Property, e:Builtin;
+	rdfs:comment "builtin to minimum of the subject list";
+	rdfs:domain rdf:List;
+	rdfs:range rdfs:Resource.
+
+e:notLabel a rdf:Property, e:Builtin;
+	rdfs:comment "builtin to test wether the subject is not a blank node with label in object (this is a level breaker)";
+	rdfs:domain rdfs:Resource;
+	rdfs:range rdfs:Literal.
+
+e:numeral a rdf:Property, e:Builtin;
+	rdfs:comment """builtin to convert literals to numerals e.g. "2012"^^xsd:long e:numeral 2012 .""";
+	rdfs:domain rdfs:Literal;
+	rdfs:range e:Numeral.
+
+e:optional a rdf:Property, e:Builtin;
+	rdfs:comment "builtin to call the object formula and to succeed anyway; is within the subject scope of all asserted N3 formulae and their log:conclusion";
+	rdfs:domain rdf:List;
+	rdfs:range log:Formula.
+
+e:possibility a owl:DeprecatedProperty;
+	rdfs:comment "proof possibility";
+	rdfs:domain log:Formula;
+	rdfs:range e:Numeral.
+
+e:possibleModel a owl:DeprecatedProperty;
+	rdfs:comment "object is a possible model";
+	rdfs:domain rdfs:Resource;
+	rdfs:range log:Formula.
+
+e:possibleModels a owl:DeprecatedProperty;
+	rdfs:comment "object is the number of possible models";
+	rdfs:domain rdfs:Resource;
+	rdfs:range xsd:integer.
+
+e:proof a owl:DeprecatedProperty;
+	rdfs:comment "proof formula";
+	rdfs:domain rdfs:Resource;
+	rdfs:range log:Formula.
+
+e:proofID a owl:DeprecatedProperty;
+	rdfs:comment "proof ID";
+	rdfs:domain rdfs:Resource;
+	rdfs:range xsd:integer.
+
+e:propertyChainExtension a rdf:Property, e:Builtin;
+	rdfs:comment "builtin to support owl:propertyChainAxiom inferencing i.e. {?sc owl:propertyChainAxiom ?x; rdfs:subPropertyOf ?p. ?x e:propertyChainExtension (?s ?o)} => {?s ?p ?o}.";
+	rdfs:domain rdf:List;
+	rdfs:range rdf:List.
+
+e:reason a owl:DeprecatedProperty, e:Builtin;
+	rdfs:comment "heavy builtin where the subject is the reasoning process and the object the returned status code";
+	rdfs:domain rdfs:Literal;
+	rdfs:range xsd:integer.
+
+e:relabel a rdf:Property, e:Builtin;
+	rdfs:comment "relabel subject with object in the output of the reasoning run";
+	rdfs:domain rdfs:Resource;
+	rdfs:range rdfs:Resource.
+
+e:reverse a rdf:Property, e:Builtin;
+	rdfs:comment "builtin to reverse the subject list";
+	rdfs:domain rdf:List;
+	rdfs:range rdf:List.
+
+e:roc a rdf:Property, e:Builtin;
+	rdfs:comment "builtin to simulate ROC curve e.g. strength e:roc (sensitivity aspecificity).";
+	rdfs:domain e:Numeral;
+	rdfs:range rdf:List.
+
+e:selected a owl:DeprecatedProperty;
+	rdfs:comment "used in e:falseModel explanation and used in e:ancestorModel explanation";
+	rdfs:domain rdfs:Resource;
+	rdfs:range rdfs:Resource.
+
+e:sigmoid a rdf:Property, e:Builtin;
+	rdfs:comment "builtin to calculate a sigmoid e.g. -6 e:sigmoid 0.0024726231566347743.";
+	rdfs:domain rdf:List;
+	rdfs:range e:Numeral.
+
+e:sort a rdf:Property, e:Builtin;
+	rdfs:comment "builtin to sort the subject list";
+	rdfs:domain rdf:List;
+	rdfs:range rdf:List.
+
+e:source a owl:DeprecatedProperty;
+	rdfs:comment "source of formula";
+	rdfs:domain log:Formula;
+	rdfs:range rdfs:Resource.
+
+e:stringEscape a rdf:Property, e:Builtin;
+	rdfs:comment "builtin to escape the subject string";
+	rdfs:domain rdfs:Literal;
+	rdfs:range rdfs:Literal.
+
+e:sublist a rdf:Property, e:Builtin;
+	rdfs:comment "builtin to succeed if object list is a sublist of subject list";
+	rdfs:domain rdf:List;
+	rdfs:range rdf:List.
+
+e:tactic a owl:DeprecatedProperty;
+	rdfs:comment "predicate to express proof tactics";
+	rdfs:domain rdf:List;
+	rdfs:range rdf:List.
+
+e:timeWindow a owl:DeprecatedProperty;
+	rdfs:comment """day 7 is ("P6D"^^xsd:duration "P1D"^^xsd:duration) and is relative to e:T0""";
+	rdfs:domain rdfs:Resource;
+	rdfs:range rdf:List.
+
+e:trace a rdf:Property, e:Builtin;
+	rdfs:comment "builtin that outputs the object";
+	rdfs:domain rdfs:Resource;
+	rdfs:range rdfs:Resource.
+
+e:tripleList a rdf:Property, e:Builtin;
+	rdfs:comment "builtin used for triple/list transformation e.g. {:a :b :c} e:tripleList (:a :b :c).";
+	rdfs:domain log:Formula;
+	rdfs:range rdf:List.
+
+e:triple a owl:DeprecatedProperty;
+	rdfs:comment "used in e:falseModel explanation";
+	rdfs:domain rdfs:Resource;
+	rdfs:range log:Formula.
+
+e:triples a owl:DeprecatedProperty;
+	rdfs:comment "used in e:falseModel explanation";
+	rdfs:domain rdfs:Resource;
+	rdfs:range log:Formula.
+
+e:true a owl:DeprecatedProperty, e:Builtin;
+	rdfs:comment "builtin to model truth-value t(conclusion|premises)";
+	rdfs:domain rdfs:Resource;
+	rdfs:range e:Numeral.
+
+e:tuple a rdf:Property, e:Builtin;
+	rdfs:comment "builtin skolem function generator typically used with a subject that will get bound to a unique blank node which is a function of the object tuple";
+	rdfs:domain rdfs:Resource;
+	rdfs:range rdf:List.
+
+e:valuation a rdf:Property;
+	rdfs:domain log:Formula;
+	rdfs:range rdf:List;
+	rdfs:comment "to express (lower upper) valuation of a formula e.g. {:PatientWithNoFlu rdfs:subClassOf :PatientWithFever} e:valuation (0.032 0.048)".
+
+e:wwwFormEncode a rdf:Property, e:Builtin;
+	rdfs:comment "builtin bidirectional www form encoder";
+	rdfs:domain rdfs:Literal;
+	rdfs:range rdfs:Literal.

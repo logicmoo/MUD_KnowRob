@@ -1,0 +1,55 @@
+
+# DEPRECATED
+
+@prefix event: <http://eulersharp.sourceforge.net/2003/03swap/event#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix math: <http://www.w3.org/2000/10/swap/math#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix dce: <http://purl.org/dc/elements/1.1/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix dayagerule: <http://eulersharp.sourceforge.net/2003/03swap/dayAge_rule#>.
+
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+<http://eulersharp.sourceforge.net/2003/03swap/dayAge_rule#>
+	dce:title """Day age rule"""@en;
+	dce:creator """Hans Cools"""@en;
+	dce:publisher """Agfa Healthcare/Belgium"""@en;
+	dce:description """Rule to calculate an age in days of a being from its origination date time and/or beginning date time of its existence."""@en;
+	dce:language """English"""@en.
+
+
+# CALCULATION OF AN AGE IN DAYS OF SOMETHING - STARTING FROM ORIGINATION DATE TIME (year-month-day-hour-minute-second)
+# Note: age not restricted to a duration of life
+
+# deprecated: INTEGRITY CONSTRAINT: ORIGINATION DATE OF SOMETHING HAS TO BE EARLIER THAN REFERENCE TIME POINT
+#{	?being event:hasOriginationDateTime ?originationDateTime.
+#	[event:hasSnapshotDateTime ?snapshotDateTime].
+#	?originationDateTime math:notLessThan ?snapshotDateTime} => false.
+
+{	[event:hasSnapshotDateTime ?snapshotDateTime].
+	?being event:hasOriginationDateTime ?originationDateTime.
+	(?snapshotDateTime ?originationDateTime) math:difference ?seconds.
+	(?seconds "P1M"^^xsd:duration) math:quotient ?monthsNumeral.
+	?monthsNumeral math:lessThan 1.
+	(?lexical xsd:duration) log:dtlit ?seconds, ?duration}
+=>
+{	?being event:hasDayAge ?duration}.
+
+
+# CALCULATION OF AN AGE IN DAYS OF SOMETHING - STARTING FROM BEGINNING DATE OF ITS EXISTENCE (year-month-day-hour-minute-second)
+
+# deprecated: INTEGRITY CONSTRAINT: ORIGINATION DATE OF SOMETHING HAS TO BE EARLIER THAN REFERENCE TIME POINT
+#{	?event event:begins ?beginning.
+#	[event:hasSnapshotDateTime ?snapshotDateTime].
+#	?beginning math:notLessThan ?snapshotDateTime} => false.
+
+{	[event:hasSnapshotDateTime ?snapshotDateTime].
+	?being event:exists ?existence.
+	?existence event:begins ?beginning.
+	(?snapshotDateTime ?beginning) math:difference ?sec.
+	(?sec "P1Y"^^xsd:duration) math:integerQuotient ?years.
+	?years math:lessThan 1.
+	(?sec "P1D"^^xsd:duration) math:integerQuotient ?days}
+=>
+{	?being event:hasDayAge ?days}.
