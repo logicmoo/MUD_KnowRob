@@ -1,0 +1,110 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix owl:  <http://www.w3.org/2002/07/owl#>.
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#>.
+@prefix dce: <http://purl.org/dc/elements/1.1/>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix event: <http://eulersharp.sourceforge.net/2003/03swap/event#>.
+@prefix agent: <http://eulersharp.sourceforge.net/2003/03swap/agent#>.
+@prefix fos: <http://eulersharp.sourceforge.net/2003/03swap/foster#>.
+@prefix digproc: <http://eulersharp.sourceforge.net/2003/03swap/digitalProcedure#>.
+@prefix sparql: <http://eulersharp.sourceforge.net/2003/03swap/sparql#>.
+
+<http://eulersharp.sourceforge.net/2003/03swap/sparql#>
+	a owl:Ontology;
+	dce:title """SPARQL"""@en;
+	dce:creator """Hans Cools, MD; Agfa Healthcare, Belgium"""@nl;
+	dce:contributor """Kristof Depraetere, Boris De Vloed, Giovanni Mels; Agfa Healthcare, Belgium"""@nl;
+	dce:publisher """Agfa Healthcare, Belgium"""@en;
+	dce:description """Formal general description of SPARQL domain."""@en;
+	dce:format """OWL Full"""@en.
+
+# check out spin
+
+#
+# CLASSES
+#
+
+sparql:SPARQL
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/sparql#>;
+	rdfs:label """SPARQL"""@en;
+	skos:definition """Computer query language for RDF."""@en;
+	skos:note """Expanded: SPARQL Protocol and RDF Query Language."""@en;
+	rdfs:subClassOf digproc:QueryLanguage.
+
+sparql:Querying
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/sparql#>;
+	rdfs:label """SPARQL querying"""@en;
+	skos:definition """Executing a SPARQL query on a digital computer."""@en;
+	rdfs:subClassOf digproc:Querying, [
+		a owl:Restriction; owl:onProperty event:hasInput; owl:someValuesFrom sparql:Query], [
+		a owl:Restriction; owl:onProperty event:hasOutput; owl:someValuesFrom sparql:Result].
+
+sparql:Query
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/sparql#>;
+	rdfs:label """SPARQL query"""@en;
+	skos:definition """Query formulated in SPARQL."""@en;
+	rdfs:subClassOf digproc:Query.
+
+sparql:Result
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/sparql#>;
+	rdfs:label """SPARQL result"""@en;
+	skos:definition """Output of SPARQL querying."""@en;
+	rdfs:subClassOf digproc:Result, [
+			a owl:Restriction; owl:onProperty event:outputOf; owl:someValuesFrom sparql:Querying].
+
+sparql:Endpoint # service: agent
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/sparql#>;
+	rdfs:label """SPARQL endpoint"""@en;
+	skos:definition """A resource containing a mapping system between RDF and SQL DB scheme in order to query the DB."""@en.
+
+sparql:Template # construct
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/sparql#>;
+	rdfs:label """SPARQL query template"""@en;
+	skos:definition """Digital template to formulate a SPARQL query."""@en;
+	rdfs:subClassOf digproc:Template.
+
+sparql:TemplateBinding
+	a rdfs:Class;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/sparql#>;
+	rdfs:label """SPARQL query template binding"""@en;
+	skos:definition """Binding for a SPARQL query template."""@en.
+
+#
+# PROPERTIES
+#
+
+sparql:hasTemplate
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/sparql#>;
+	skos:definition """Specifying a template for a SPARQL query."""@en;
+	rdfs:domain sparql:Query;
+	rdfs:range sparql:Template.
+
+sparql:hasBinding
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/sparql#>;
+	skos:definition """Specifying a binding for a SPARQL query template."""@en;
+	rdfs:domain sparql:Template;
+	rdfs:range sparql:TemplateBinding.
+
+sparql:hasQuery a owl:ObjectProperty;
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/sparql#>;
+	skos:definition """Specifying a SPARQL query to execute."""@en;
+	rdfs:subPropertyOf event:hasInput;
+	rdfs:domain sparql:Querying;
+	rdfs:range sparql:Query.
+
+sparql:executedOn
+	a owl:ObjectProperty;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/sparql#>;
+	skos:definition """Specifying a SPARQL endpoint on which to execute a query."""@en;
+	rdfs:domain sparql:Query;
+	rdfs:range sparql:Endpoint.

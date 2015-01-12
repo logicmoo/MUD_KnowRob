@@ -24,7 +24,7 @@
 :- rdf_register_prefix(func, 'http://www.w3.org/2007/rif-builtin-function#').
 :- rdf_register_prefix(pred, 'http://www.w3.org/2007/rif-builtin-predicate#').
 
-reload_euler:-forall(sw_file(euler,'.',File),rdf_reload_file(File)).
+reload_euler:-forall(sw_file(euler,'./autoload',File),rdf_reload_file(File)).
 
-% :- initialization(reload_euler). 
+:- initialization(reload_euler). 
 
